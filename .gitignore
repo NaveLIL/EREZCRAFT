@@ -3,3 +3,19 @@ build/
 run/
 .idea/
 *.iml
+
+# Local baseline verification, recovery bundles, and runtime data.
+/.m00/
+saves/
+world/
+world_nether/
+world_the_end/
+logs/
+crash-reports/
+.cache/
+.DS_Store
+
+# Third-party research and generated binary archives stay local.
+/research/
+/art/generated/**/*.jar
+/art/generated/**/*.zip
