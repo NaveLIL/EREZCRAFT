@@ -6,6 +6,7 @@ run/
 
 # Local baseline verification, recovery bundles, and runtime data.
 /.m00/
+/.verification/
 saves/
 world/
 world_nether/

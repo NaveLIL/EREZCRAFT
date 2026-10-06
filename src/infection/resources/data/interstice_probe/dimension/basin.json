@@ -1,0 +1,18 @@
+{
+  "type": "interstice:fluid_lab",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "interstice_probe:basin",
+      "lakes": false,
+      "features": false,
+      "layers": [
+        {"height": 1, "block": "minecraft:bedrock"},
+        {"height": 61, "block": "minecraft:stone"},
+        {"height": 2, "block": "minecraft:dirt"},
+        {"height": 1, "block": "minecraft:grass_block"}
+      ],
+      "structure_overrides": []
+    }
+  }
+}

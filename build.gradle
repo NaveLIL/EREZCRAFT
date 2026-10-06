@@ -11,15 +11,51 @@ sourceSets {
         compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
         runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
     }
+    infection {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
 }
 configurations {
     smokeImplementation.extendsFrom implementation
     smokeCompileOnly.extendsFrom compileOnly
     smokeRuntimeOnly.extendsFrom runtimeOnly
+    infectionImplementation.extendsFrom implementation
+    infectionCompileOnly.extendsFrom compileOnly
+    infectionRuntimeOnly.extendsFrom runtimeOnly
+}
+def sporeArtifact = file(providers.gradleProperty('sporeJar').getOrElse('research/spore/spore_1.21.1_2.2.0j_neo-original.jar'))
+dependencies {
+    // The original third-party binary belongs only to the isolated probe classpath.
+    infectionCompileOnly files(sporeArtifact)
+    infectionRuntimeOnly files(sporeArtifact)
+}
+def verifySporeArtifact = tasks.register('verifySporeArtifact') {
+    doLast {
+        if (!sporeArtifact.isFile()) throw new GradleException('Obtain the original Spore 2.2.0j NeoForge JAR; see docs/progress/M01.md or use -PsporeJar=/path/to/original.jar')
+        def digest = java.security.MessageDigest.getInstance('SHA-256')
+        sporeArtifact.withInputStream { input ->
+            byte[] buffer = new byte[1024 * 1024]
+            int length
+            while ((length = input.read(buffer)) > 0) digest.update(buffer, 0, length)
+        }
+        def actual = digest.digest().encodeHex().toString()
+        if (actual != '0cdb027eb53e6872bdb8de601dc52c176fcb6ddd33a0a2e20a66392937c3d5fe')
+            throw new GradleException('Spore original SHA-256 mismatch: ' + actual)
+        logger.lifecycle('Verified original Spore 2.2.0j SHA-256: ' + actual)
+    }
 }
 neoForge {
     version = project.neo_version
+    mods {
+        interstice { sourceSet(sourceSets.main); sourceSet(sourceSets.smoke) }
+        interstice_probe { sourceSet(sourceSets.infection) }
+    }
     runs {
+        configureEach {
+            logLevel = org.slf4j.event.Level.INFO
+            loadedMods = [mods.interstice]
+        }
         client { client() }
         clientSmoke {
             client()
@@ -39,9 +75,21 @@ neoForge {
             type = 'gameTestServer'
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice'
         }
-        configureEach { logLevel = org.slf4j.event.Level.INFO }
+        infectionGameTestServer {
+            type = 'gameTestServer'
+            sourceSet = sourceSets.infection
+            loadedMods = [mods.interstice, mods.interstice_probe]
+            gameDirectory = file('build/infection-gametests')
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_probe'
+            taskBefore verifySporeArtifact
+        }
     }
-    mods { interstice { sourceSet(sourceSets.main); sourceSet(sourceSets.smoke) } }
+}
+// Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
+if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
+    neoForge.runs.configureEach {
+        gameDirectory = file(providers.gradleProperty('intersticeRunRoot').get() + '/' + name)
+    }
 }
 processResources {
     inputs.property 'version', project.version
@@ -50,12 +98,17 @@ processResources {
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
 // Avoid a race in NeoForge's early loading-window font initialization on macOS.
 // This affects only the disposable visual-test profile, not the installed game.
-tasks.matching { it.name == 'prepareClientSmokeRun' || it.name == 'prepareIslandSmokeRun' }.configureEach {
+tasks.matching { it.name in ['prepareClientSmokeRun', 'prepareIslandSmokeRun'] }.configureEach {
     doLast {
-        def config=file(it.name=='prepareIslandSmokeRun' ? 'build/island-smoke/config/fml.toml' : 'build/client-smoke/config/fml.toml')
+        def runName = it.name.substring('prepare'.length(), it.name.length() - 'Run'.length())
+        runName = runName[0].toLowerCase() + runName.substring(1)
+        def directory = neoForge.runs.getByName(runName).gameDirectory.get().asFile
+        def config = new File(directory, 'config/fml.toml')
         config.parentFile.mkdirs()
         config.text = config.exists()
                 ? config.text.replace('earlyWindowControl = true', 'earlyWindowControl = false')
                 : 'earlyWindowControl = false\n'
+        def options = new File(directory, 'options.txt')
+        if (!options.exists()) options.text = 'onboardAccessibility:false\n'
     }
 }
