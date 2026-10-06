@@ -65,6 +65,8 @@ public final class IslandVisualSmoke {
             if(mc.level.dimension().equals(IslandWorld.WORLD)) {
                 mc.getConnection().sendCommand("interstice leave"); stage=-1; return;
             }
+            // The player exists before its initial position packet is applied during world loading.
+            if(mc.screen!=null) return;
             origin=mc.level.dimension().location().toString();ox=mc.player.getX();oy=mc.player.getY();oz=mc.player.getZ();
             mc.getConnection().sendCommand("gamemode survival");
             mc.getConnection().sendCommand("interstice explore");stage=1;ticks=0;return;
