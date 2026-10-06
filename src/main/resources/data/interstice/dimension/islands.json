@@ -1,0 +1,11 @@
+{
+  "type": "interstice:islands",
+  "generator": {
+    "type": "interstice:coupled_islands",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:the_end"
+    },
+    "settings": "interstice:islands"
+  }
+}

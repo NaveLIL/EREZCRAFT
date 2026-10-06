@@ -1,0 +1,11 @@
+{
+  "itemGroup.interstice": "Междуморье · Лаборатория",
+  "block.interstice.light_toxin": "Лёгкая токсичная жидкость",
+  "block.interstice.heavy_toxin": "Тяжёлая токсичная жидкость",
+  "item.interstice.light_toxin_bucket": "Ведро лёгкой жидкости",
+  "item.interstice.heavy_toxin_bucket": "Ведро тяжёлой жидкости",
+  "fluid_type.interstice.light_toxin": "Лёгкая токсичная жидкость",
+  "fluid_type.interstice.heavy_toxin": "Тяжёлая токсичная жидкость",
+  "death.attack.interstice.toxin": "%1$s растворился в токсичном море",
+  "block.interstice.light_sea": "Лёгкий токсичный океан"
+}

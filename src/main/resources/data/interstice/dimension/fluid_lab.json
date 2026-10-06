@@ -1,0 +1,18 @@
+{
+  "type": "interstice:fluid_lab",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "minecraft:the_end",
+      "lakes": false,
+      "features": false,
+      "layers": [
+        {
+          "height": 128,
+          "block": "minecraft:air"
+        }
+      ],
+      "structure_overrides": []
+    }
+  }
+}

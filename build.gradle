@@ -1,0 +1,61 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+version = project.mod_version
+group = project.maven_group
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.withSourcesJar()
+sourceSets {
+    smoke {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+configurations {
+    smokeImplementation.extendsFrom implementation
+    smokeCompileOnly.extendsFrom compileOnly
+    smokeRuntimeOnly.extendsFrom runtimeOnly
+}
+neoForge {
+    version = project.neo_version
+    runs {
+        client { client() }
+        clientSmoke {
+            client()
+            gameDirectory = file('build/client-smoke')
+            systemProperty 'interstice.visualSmoke', 'true'
+        }
+        islandSmoke {
+            client()
+            gameDirectory=file('build/island-smoke')
+            systemProperty 'interstice.islandSmoke','true'
+        }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        gameTestServer {
+            type = 'gameTestServer'
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice'
+        }
+        configureEach { logLevel = org.slf4j.event.Level.INFO }
+    }
+    mods { interstice { sourceSet(sourceSets.main); sourceSet(sourceSets.smoke) } }
+}
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('META-INF/neoforge.mods.toml') { expand version: project.version }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+// Avoid a race in NeoForge's early loading-window font initialization on macOS.
+// This affects only the disposable visual-test profile, not the installed game.
+tasks.matching { it.name == 'prepareClientSmokeRun' || it.name == 'prepareIslandSmokeRun' }.configureEach {
+    doLast {
+        def config=file(it.name=='prepareIslandSmokeRun' ? 'build/island-smoke/config/fml.toml' : 'build/client-smoke/config/fml.toml')
+        config.parentFile.mkdirs()
+        config.text = config.exists()
+                ? config.text.replace('earlyWindowControl = true', 'earlyWindowControl = false')
+                : 'earlyWindowControl = false\n'
+    }
+}

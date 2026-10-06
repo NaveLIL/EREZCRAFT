@@ -1,0 +1,11 @@
+{
+  "itemGroup.interstice": "Interstice · Fluid Lab",
+  "block.interstice.light_toxin": "Light toxin",
+  "block.interstice.heavy_toxin": "Heavy toxin",
+  "item.interstice.light_toxin_bucket": "Light toxin bucket",
+  "item.interstice.heavy_toxin_bucket": "Heavy toxin bucket",
+  "fluid_type.interstice.light_toxin": "Light toxin",
+  "fluid_type.interstice.heavy_toxin": "Heavy toxin",
+  "death.attack.interstice.toxin": "%1$s dissolved in a toxic sea",
+  "block.interstice.light_sea": "Light toxic ocean"
+}
