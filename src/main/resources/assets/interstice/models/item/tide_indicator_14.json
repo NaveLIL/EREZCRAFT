@@ -1,7 +1,6 @@
 {
-  "parent": "interstice:item/tide_indicator_base",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "front": "interstice:item/tide_indicator_14",
-    "back": "interstice:item/tide_indicator_back"
+    "layer0": "interstice:item/tide_indicator_14"
   }
 }

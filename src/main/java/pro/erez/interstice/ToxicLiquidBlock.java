@@ -17,6 +17,23 @@ import net.neoforged.neoforge.event.tick.EntityTickEvent;
 public final class ToxicLiquidBlock extends LiquidBlock {
     public static final ResourceKey<DamageType> TOXIN = ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(Interstice.ID, "toxin"));
     public ToxicLiquidBlock(FlowingFluid fluid, Properties properties) { super(fluid, properties); }
+    @Override
+    public boolean isRandomlyTicking(net.minecraft.world.level.block.state.BlockState state) {
+        return true;
+    }
+
+    @Override
+    public void randomTick(net.minecraft.world.level.block.state.BlockState state, net.minecraft.server.level.ServerLevel level, BlockPos pos, net.minecraft.util.RandomSource random) {
+        super.randomTick(state, level, pos, random);
+        pro.erez.interstice.toxin.OverworldToxinHazard.corrodeEnvironment(level, pos, random);
+    }
+
+    @Override
+    public void animateTick(net.minecraft.world.level.block.state.BlockState state, Level level, BlockPos pos, net.minecraft.util.RandomSource random) {
+        super.animateTick(state, level, pos, random);
+        pro.erez.interstice.toxin.OverworldToxinHazard.animateFumes(level, pos, random);
+    }
+
     public static void onEntityTick(EntityTickEvent.Post event) {
         if (!(event.getEntity() instanceof LivingEntity living) || !living.isAlive()) return;
         Level world = living.level();
@@ -41,5 +58,6 @@ public final class ToxicLiquidBlock extends LiquidBlock {
         if (!touching) return;
         data.putLong("interstice:last_toxin_tick", now);
         living.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(TOXIN)), 6.0F);
+        pro.erez.interstice.toxin.OverworldToxinHazard.applyVaporHazard(living, world);
     }
 }

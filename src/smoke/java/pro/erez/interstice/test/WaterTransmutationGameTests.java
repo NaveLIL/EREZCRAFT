@@ -112,4 +112,37 @@ public final class WaterTransmutationGameTests {
         System.out.println("DYNAMIC_TIDE_DURATIONS 100_iterations_verified=true");
         h.succeed();
     }
+
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void overworldToxinCorrodesEnvironmentAndFlora(GameTestHelper h) {
+        ServerLevel level = h.getLevel();
+        BlockPos centerPos = h.absolutePos(new BlockPos(2, 2, 2));
+
+        // Place test vegetation and soil
+        BlockPos plantPos = centerPos.offset(1, 0, 0);
+        BlockPos grassPos = centerPos.offset(-1, 0, 0);
+        BlockPos stonePos = centerPos.offset(0, -1, 0);
+
+        level.setBlock(plantPos, Blocks.DANDELION.defaultBlockState(), 3);
+        level.setBlock(grassPos, Blocks.GRASS_BLOCK.defaultBlockState(), 3);
+        level.setBlock(stonePos, Blocks.STONE.defaultBlockState(), 3);
+
+        RandomSource random = RandomSource.create(999L);
+        // Force corrosion ticks around center
+        for (int i = 0; i < 20; i++) {
+            pro.erez.interstice.toxin.OverworldToxinHazard.corrodeEnvironment(level, centerPos, random);
+        }
+
+        // Verify plant was destroyed
+        h.assertTrue(!level.getBlockState(plantPos).is(Blocks.DANDELION), "Flora must be dissolved by toxin");
+
+        // Verify dimensional immunity logic
+        h.assertTrue(pro.erez.interstice.toxin.OverworldToxinHazard.isHazardousDimension(level),
+                "Test level should be hazardous for alien toxins");
+        h.assertTrue(!pro.erez.interstice.toxin.OverworldToxinHazard.isHazardousDimension(level.getServer().getLevel(IslandWorld.TALL_WORLD)),
+                "Interstice island world must be immune to alien toxin corrosion");
+
+        System.out.println("OVERWORLD_TOXIN_HAZARD verified=true");
+        h.succeed();
+    }
 }
