@@ -51,16 +51,8 @@ public final class FluidClient {
 
             net.minecraft.client.renderer.item.ItemProperties.register(
                     Interstice.TIDE_INDICATOR.get(),
-                    ResourceLocation.fromNamespaceAndPath(Interstice.ID, "tide_phase"),
-                    (stack, level, entity, seed) -> {
-                        pro.erez.interstice.tide.TideState state = pro.erez.interstice.tide.ClientTideState.get();
-                        return switch (state.phase()) {
-                            case CALM -> 0.00F;
-                            case WARNING -> 0.25F;
-                            case SURGE -> 0.50F;
-                            case EBB -> 0.75F;
-                        };
-                    }
+                    ResourceLocation.fromNamespaceAndPath(Interstice.ID, "tide_angle"),
+                    (stack, level, entity, seed) -> pro.erez.interstice.client.ClientTideEffects.getSmoothedAngle()
             );
         });
     }

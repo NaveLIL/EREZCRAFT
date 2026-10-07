@@ -5,7 +5,7 @@
   "item.interstice.light_toxin_bucket": "Light toxin bucket",
   "item.interstice.heavy_toxin_bucket": "Heavy toxin bucket",
   "item.interstice.tide_indicator": "Tide Barometer",
-  "item.interstice.tide_indicator.desc": "Measures atmospheric pressure and buoyant tide cycles",
+  "item.interstice.tide_indicator.desc": "Measures atmospheric pressure and buoyant tide cycles. Sneak + Right-Click a wall to mount.",
   "fluid_type.interstice.light_toxin": "Light toxin",
   "fluid_type.interstice.heavy_toxin": "Heavy toxin",
   "death.attack.interstice.toxin": "%1$s dissolved in a toxic sea",

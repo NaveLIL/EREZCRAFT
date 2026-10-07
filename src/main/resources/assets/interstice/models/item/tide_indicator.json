@@ -1,12 +1,105 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "interstice:item/tide_indicator_base",
   "textures": {
-    "layer0": "interstice:item/tide_indicator_calm"
+    "front": "interstice:item/tide_indicator_00",
+    "back": "interstice:item/tide_indicator_back"
   },
   "overrides": [
-    { "predicate": { "interstice:tide_phase": 0.00 }, "model": "interstice:item/tide_indicator_calm" },
-    { "predicate": { "interstice:tide_phase": 0.25 }, "model": "interstice:item/tide_indicator_warning" },
-    { "predicate": { "interstice:tide_phase": 0.50 }, "model": "interstice:item/tide_indicator_surge" },
-    { "predicate": { "interstice:tide_phase": 0.75 }, "model": "interstice:item/tide_indicator_ebb" }
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.0
+      },
+      "model": "interstice:item/tide_indicator_00"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.0625
+      },
+      "model": "interstice:item/tide_indicator_01"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.125
+      },
+      "model": "interstice:item/tide_indicator_02"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.1875
+      },
+      "model": "interstice:item/tide_indicator_03"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.25
+      },
+      "model": "interstice:item/tide_indicator_04"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.3125
+      },
+      "model": "interstice:item/tide_indicator_05"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.375
+      },
+      "model": "interstice:item/tide_indicator_06"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.4375
+      },
+      "model": "interstice:item/tide_indicator_07"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.5
+      },
+      "model": "interstice:item/tide_indicator_08"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.5625
+      },
+      "model": "interstice:item/tide_indicator_09"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.625
+      },
+      "model": "interstice:item/tide_indicator_10"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.6875
+      },
+      "model": "interstice:item/tide_indicator_11"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.75
+      },
+      "model": "interstice:item/tide_indicator_12"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.8125
+      },
+      "model": "interstice:item/tide_indicator_13"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.875
+      },
+      "model": "interstice:item/tide_indicator_14"
+    },
+    {
+      "predicate": {
+        "interstice:tide_angle": 0.9375
+      },
+      "model": "interstice:item/tide_indicator_15"
+    }
   ]
 }

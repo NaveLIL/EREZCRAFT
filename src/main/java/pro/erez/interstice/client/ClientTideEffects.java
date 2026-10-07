@@ -15,12 +15,18 @@ import pro.erez.interstice.tide.TideState;
 import pro.erez.interstice.worldgen.IslandWorld;
 
 /**
- * Handles client-side particle effects for rising wind vortexes and advances
- * the predicted client tide timer between server calibration packets.
+ * Handles client-side particle effects for rising wind vortexes, advances
+ * the predicted client tide timer, and smoothly interpolates the barometer needle.
  */
 @EventBusSubscriber(modid = Interstice.ID, value = Dist.CLIENT)
 public final class ClientTideEffects {
+    private static float currentAngle = 0.0F;
+
     private ClientTideEffects() {}
+
+    public static float getSmoothedAngle() {
+        return currentAngle;
+    }
 
     @SubscribeEvent
     public static void onClientTick(ClientTickEvent.Post event) {
@@ -28,6 +34,7 @@ public final class ClientTideEffects {
         if (mc.isPaused()) return;
 
         ClientTideState.clientTick();
+        updateNeedleAngle();
 
         var level = mc.level;
         var player = mc.player;
@@ -66,5 +73,46 @@ public final class ClientTideEffects {
                         (random.nextDouble() - 0.5) * 0.15);
             }
         }
+    }
+
+    private static void updateNeedleAngle() {
+        TideState state = ClientTideState.get();
+        float targetAngle = 0.0F;
+
+        switch (state.phase()) {
+            case CALM -> {
+                long remaining = Math.max(0, state.phaseDurationTicks() - state.phaseTicksElapsed());
+                if (remaining > 1200) {
+                    targetAngle = 0.0F; // Calm baseline (West / 0.0)
+                } else {
+                    // Creep towards warning in the final 60 seconds
+                    float progress = 1.0F - (remaining / 1200.0F);
+                    targetAngle = progress * 0.20F;
+                }
+            }
+            case WARNING -> {
+                // North zone (0.25) with subtle atmospheric vibration
+                float elapsed = state.phaseTicksElapsed();
+                float vibration = (float) Math.sin(elapsed * 0.6) * 0.02F;
+                targetAngle = 0.25F + vibration;
+            }
+            case SURGE -> {
+                // East zone: rises smoothly with buoyancy intensity from 0.28 to 0.50
+                targetAngle = 0.28F + 0.22F * state.buoyancyIntensity();
+            }
+            case EBB -> {
+                // South zone: sweeps from 0.50 through 0.75 back to 1.0 (Calm)
+                float decay = 1.0F - state.buoyancyIntensity();
+                targetAngle = 0.50F + decay * 0.50F;
+            }
+        }
+
+        // Circular smooth interpolation with shortest-path wrap around
+        float diff = targetAngle - currentAngle;
+        while (diff < -0.5F) diff += 1.0F;
+        while (diff > 0.5F) diff -= 1.0F;
+        currentAngle += diff * 0.15F;
+        while (currentAngle < 0.0F) currentAngle += 1.0F;
+        while (currentAngle >= 1.0F) currentAngle -= 1.0F;
     }
 }

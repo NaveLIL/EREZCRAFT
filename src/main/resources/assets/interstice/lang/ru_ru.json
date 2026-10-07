@@ -5,7 +5,7 @@
   "item.interstice.light_toxin_bucket": "Ведро лёгкой жидкости",
   "item.interstice.heavy_toxin_bucket": "Ведро тяжёлой жидкости",
   "item.interstice.tide_indicator": "Приливный барометр",
-  "item.interstice.tide_indicator.desc": "Измеряет атмосферное давление и фазы приливного цикла",
+  "item.interstice.tide_indicator.desc": "Измеряет атмосферное давление и фазы прилива. Shift + ПКМ по стене, чтобы повесить.",
   "fluid_type.interstice.light_toxin": "Лёгкая токсичная жидкость",
   "fluid_type.interstice.heavy_toxin": "Тяжёлая токсичная жидкость",
   "death.attack.interstice.toxin": "%1$s растворился в токсичном море",

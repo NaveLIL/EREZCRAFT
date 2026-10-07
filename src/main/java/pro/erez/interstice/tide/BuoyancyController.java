@@ -75,28 +75,29 @@ public final class BuoyancyController {
                 }
             }
         } else if (entity instanceof ItemEntity item) {
+            // If item reaches or touches the upper toxic sea, disintegrate it immediately!
+            GeometryProfile profile = GeometryProfiles.get(item.level());
+            double seaBottom = SeaSurface.cellMinimum(profile, item.getBlockX(), item.getBlockZ(), true);
+            if (item.getY() >= seaBottom || FluidContact.pointInLight(item.level(), item.getX(), item.getY(), item.getZ())) {
+                if (item.level() instanceof ServerLevel serverLevel) {
+                    serverLevel.sendParticles(ParticleTypes.POOF, item.getX(), item.getY(), item.getZ(), 8, 0.2, 0.2, 0.2, 0.02);
+                    serverLevel.sendParticles(ParticleTypes.SMOKE, item.getX(), item.getY(), item.getZ(), 5, 0.15, 0.15, 0.15, 0.01);
+                    serverLevel.playSound(null, item.getX(), item.getY(), item.getZ(),
+                            SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.6F, 1.6F);
+                }
+                item.discard();
+                return;
+            }
+
             // Dropped items out in the open during surge drift upward
             if (intensity > 0.0F && !ShelterDetector.isSheltered(item.level(), item)
-                    && !item.isInWater() && !item.isInFluidType()) {
+                    && !item.isInWater()) {
                 Vec3 delta = item.getDeltaMovement();
                 // Overcome vanilla item gravity (0.04) and lift smoothly towards the upper sky
                 double targetUpward = 0.32 * intensity;
                 if (delta.y < targetUpward) {
                     item.setDeltaMovement(delta.x, Math.min(targetUpward, delta.y + 0.06 * intensity), delta.z);
                     item.hasImpulse = true;
-                }
-
-                // If item reaches the upper toxic sea or light ocean, disintegrate it
-                GeometryProfile profile = GeometryProfiles.get(item.level());
-                double seaBottom = SeaSurface.cellMinimum(profile, item.getBlockX(), item.getBlockZ(), true);
-                if (item.getY() >= seaBottom || FluidContact.pointInLight(item.level(), item.getX(), item.getY(), item.getZ())) {
-                    if (item.level() instanceof ServerLevel serverLevel) {
-                        serverLevel.sendParticles(ParticleTypes.POOF, item.getX(), item.getY(), item.getZ(), 8, 0.2, 0.2, 0.2, 0.02);
-                        serverLevel.sendParticles(ParticleTypes.SMOKE, item.getX(), item.getY(), item.getZ(), 5, 0.15, 0.15, 0.15, 0.01);
-                        serverLevel.playSound(null, item.getX(), item.getY(), item.getZ(),
-                                SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.6F, 1.6F);
-                    }
-                    item.discard();
                 }
             }
         }

@@ -1,0 +1,7 @@
+{
+  "parent": "interstice:item/tide_indicator_base",
+  "textures": {
+    "front": "interstice:item/tide_indicator_12",
+    "back": "interstice:item/tide_indicator_back"
+  }
+}
