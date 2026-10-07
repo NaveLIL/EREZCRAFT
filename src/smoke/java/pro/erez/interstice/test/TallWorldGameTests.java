@@ -101,4 +101,138 @@ public final class TallWorldGameTests {
         System.out.println("TALL_LANDING "+landing);
         h.succeed();
     }
+    @GameTest(template="empty",timeoutTicks=300)
+    public static void multiTierBeltsAndArchipelagoVoidsVerified(GameTestHelper h) {
+        ServerLevel world=world(h);
+        var generator=(IslandChunkGenerator)world.getChunkSource().getGenerator();
+        var profile=GeometryProfile.TALL;
+        int tier1Voxels=0,tier2Voxels=0,tier3Voxels=0;
+        int voidColumns=0,landColumns=0;
+        for(int cx=-2;cx<=2;cx++) for(int cz=-2;cz<=2;cz++) {
+            var chunk=world.getChunk(cx,cz);
+            var pos=new BlockPos.MutableBlockPos();
+            for(int x=0;x<16;x++) for(int z=0;z<16;z++) {
+                int worldX=cx*16+x,worldZ=cz*16+z;
+                double underside=SeaSurface.cellMinimum(profile,worldX,worldZ,true);
+                boolean hasLandInCol=false;
+                for(int y=41;y<=205;y++) {
+                    pos.set(worldX,y,worldZ);
+                    var state=chunk.getBlockState(pos);
+                    if(!state.isAir() && !state.is(Blocks.BEDROCK) && state.getFluidState().isEmpty()) {
+                        h.assertTrue(y+1<=underside-6,"Clearance violation at "+pos);
+                        hasLandInCol=true;
+                        if(y<=85) tier1Voxels++;
+                        else if(y<=145) tier2Voxels++;
+                        else tier3Voxels++;
+                    }
+                }
+                if(hasLandInCol) landColumns++;
+                else voidColumns++;
+            }
+        }
+        h.assertTrue(tier1Voxels>0,"Tier 1 (Lower 41..85) must generate land; got "+tier1Voxels);
+        h.assertTrue(tier2Voxels>0,"Tier 2 (Mid 86..145) must generate land; got "+tier2Voxels);
+        h.assertTrue(tier3Voxels>0,"Tier 3 (Upper 146..205) must generate land; got "+tier3Voxels);
+        h.assertTrue(voidColumns>0,"Must have genuine void columns in spawn cluster; void="+voidColumns);
+        int regionalLand=0,regionalVoid=0;
+        var randomState=world.getChunkSource().randomState();
+        for(int rx=-256;rx<=256;rx+=32) for(int rz=-256;rz<=256;rz+=32) {
+            var col=generator.getBaseColumn(rx,rz,world,randomState);
+            boolean land=false;
+            for(int y=41;y<=205;y++) {
+                if(!col.getBlock(y).isAir() && !col.getBlock(y).is(Blocks.BEDROCK) && col.getBlock(y).getFluidState().isEmpty()) {
+                    land=true;
+                    break;
+                }
+            }
+            if(land) regionalLand++;
+            else regionalVoid++;
+        }
+        h.assertTrue(regionalLand>0,"Macro archipelagos must generate land regions");
+        h.assertTrue(regionalVoid>0,"Macro voids between archipelagos must exist; void="+regionalVoid);
+        System.out.println("TALL_TIERS land_columns="+landColumns+" void_columns="+voidColumns
+                +" tier1="+tier1Voxels+" tier2="+tier2Voxels+" tier3="+tier3Voxels);
+        System.out.println("ARCHIPELAGO_REGIONAL land="+regionalLand+" void="+regionalVoid
+                +" land_ratio="+String.format(java.util.Locale.ROOT,"%.2f",((double)regionalLand/(regionalLand+regionalVoid))));
+        h.succeed();
+    }
+    @GameTest(template="empty",timeoutTicks=300)
+    public static void tallAdjacentChunksAreIndependentOfGenerationOrder(GameTestHelper h) {
+        ServerLevel world=world(h);
+        var generator=(IslandChunkGenerator)world.getChunkSource().getGenerator();
+        var random=world.getChunkSource().randomState();
+        var height=net.minecraft.world.level.LevelHeightAccessor.create(0,256);
+        var biomes=world.registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.BIOME);
+        var f1=new net.minecraft.world.level.chunk.ProtoChunk(new net.minecraft.world.level.ChunkPos(0,0),net.minecraft.world.level.chunk.UpgradeData.EMPTY,height,biomes,null);
+        var f2=new net.minecraft.world.level.chunk.ProtoChunk(new net.minecraft.world.level.ChunkPos(1,0),net.minecraft.world.level.chunk.UpgradeData.EMPTY,height,biomes,null);
+        var f1Again=new net.minecraft.world.level.chunk.ProtoChunk(new net.minecraft.world.level.ChunkPos(0,0),net.minecraft.world.level.chunk.UpgradeData.EMPTY,height,biomes,null);
+        var f2Again=new net.minecraft.world.level.chunk.ProtoChunk(new net.minecraft.world.level.ChunkPos(1,0),net.minecraft.world.level.chunk.UpgradeData.EMPTY,height,biomes,null);
+        var first=generator.createBiomes(random,net.minecraft.world.level.levelgen.blending.Blender.empty(),world.structureManager(),f1)
+                .thenCompose(c->generator.fillFromNoise(net.minecraft.world.level.levelgen.blending.Blender.empty(),random,world.structureManager(),c))
+                .thenApply(c->{IslandChunkGenerator.fillSeas(generator.geometry(),c);return c;})
+                .thenCompose(c1->generator.createBiomes(random,net.minecraft.world.level.levelgen.blending.Blender.empty(),world.structureManager(),f2)
+                        .thenCompose(c->generator.fillFromNoise(net.minecraft.world.level.levelgen.blending.Blender.empty(),random,world.structureManager(),c))
+                        .thenApply(c->{IslandChunkGenerator.fillSeas(generator.geometry(),c);return new net.minecraft.world.level.chunk.ChunkAccess[]{c1,c};}));
+        var second=first.thenCompose(order1->generator.createBiomes(random,net.minecraft.world.level.levelgen.blending.Blender.empty(),world.structureManager(),f2Again)
+                .thenCompose(c->generator.fillFromNoise(net.minecraft.world.level.levelgen.blending.Blender.empty(),random,world.structureManager(),c))
+                .thenApply(c->{IslandChunkGenerator.fillSeas(generator.geometry(),c);return c;})
+                .thenCompose(c2->generator.createBiomes(random,net.minecraft.world.level.levelgen.blending.Blender.empty(),world.structureManager(),f1Again)
+                        .thenCompose(c->generator.fillFromNoise(net.minecraft.world.level.levelgen.blending.Blender.empty(),random,world.structureManager(),c))
+                        .thenApply(c->{IslandChunkGenerator.fillSeas(generator.geometry(),c);return new net.minecraft.world.level.chunk.ChunkAccess[]{order1[0],order1[1],c,c2};})));
+        h.succeedWhen(()->{
+            h.assertTrue(second.isDone(),"Waiting for reordered tall chunk generation");
+            net.minecraft.world.level.chunk.ChunkAccess[] chunks=second.join();
+            var chunk0A=chunks[0];var chunk1A=chunks[1];
+            var chunk0B=chunks[2];var chunk1B=chunks[3];
+            var pos=new BlockPos.MutableBlockPos();
+            for(int x=0;x<16;x++) for(int z=0;z<16;z++) for(int y=0;y<256;y++) {
+                pos.set(x,y,z);
+                h.assertTrue(chunk0A.getBlockState(pos).equals(chunk0B.getBlockState(pos)),"Chunk (0,0) order disagreement at "+pos);
+                h.assertTrue(chunk1A.getBlockState(pos).equals(chunk1B.getBlockState(pos)),"Chunk (1,0) order disagreement at "+pos);
+            }
+        });
+    }
+    @GameTest(template="empty",timeoutTicks=300)
+    public static void seedDiversityAndLandingReliabilityAcrossSeeds(GameTestHelper h) {
+        ServerLevel world=world(h);
+        var generator=(IslandChunkGenerator)world.getChunkSource().getGenerator();
+        var registries=world.registryAccess();
+        var settingsKey=net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.NOISE_SETTINGS,
+                net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_tall"));
+        var settings=registries.registryOrThrow(net.minecraft.core.registries.Registries.NOISE_SETTINGS).getHolderOrThrow(settingsKey);
+        var noiseLookup=registries.registryOrThrow(net.minecraft.core.registries.Registries.NOISE).asLookup();
+        long[] testSeeds={20261006L,12345678L,987654321L,42424242L,76198123L};
+        int differencesObserved=0;
+        net.minecraft.world.level.NoiseColumn baseColFirstSeed=null;
+        for(long seed:testSeeds) {
+            var randomState=net.minecraft.world.level.levelgen.RandomState.create(settings.value(),noiseLookup,seed);
+            var col=generator.getBaseColumn(0,0,world,randomState);
+            if(baseColFirstSeed==null) baseColFirstSeed=col;
+            else {
+                for(int y=41;y<=205;y++) if(!col.getBlock(y).equals(baseColFirstSeed.getBlock(y))) differencesObserved++;
+            }
+            boolean foundLanding=false;
+            for(int radius=0;radius<=24 && !foundLanding;radius++) {
+                for(int dx=-radius;dx<=radius && !foundLanding;dx++) {
+                    for(int dz=-radius;dz<=radius && !foundLanding;dz++) {
+                        if(Math.max(Math.abs(dx),Math.abs(dz))!=radius) continue;
+                        int x=dx*4,z=dz*4;
+                        var searchCol=generator.getBaseColumn(x,z,world,randomState);
+                        for(int y=generator.geometry().maxLand();y>=generator.geometry().minLand();y--) {
+                            if(searchCol.getBlock(y).isAir() || !searchCol.getBlock(y).getFluidState().isEmpty()) continue;
+                            if(!searchCol.getBlock(y+1).isAir() || !searchCol.getBlock(y+2).isAir()) break;
+                            double underside=SeaSurface.cellMinimum(generator.geometry(),x,z,true);
+                            h.assertTrue(y>=41 && y<=205 && y+1<=underside-6,"Landing violates clearance on seed "+seed);
+                            foundLanding=true;
+                            break;
+                        }
+                    }
+                }
+            }
+            h.assertTrue(foundLanding,"Safe landing must be found within 96 blocks on seed "+seed);
+        }
+        h.assertTrue(differencesObserved>0,"Different seeds must produce different column terrain");
+        System.out.println("SEED_DIVERSITY seeds="+testSeeds.length+" differences="+differencesObserved);
+        h.succeed();
+    }
 }

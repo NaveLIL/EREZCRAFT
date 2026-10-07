@@ -76,6 +76,7 @@ public final class IslandVisualSmoke {
             require(System.nanoTime()-began<900_000_000_000L,"Initialization or client operation timed out");
             if(!started && mc.screen instanceof TitleScreen) {
                 started=true;mc.options.pauseOnLostFocus=false;mc.options.renderDistance().set(6);
+                mc.options.gamma().set(1.0);
                 mc.options.framerateLimit().set(60);mc.options.hideGui=false;
                 mc.options.cloudStatus().set(CloudStatus.FANCY);
                 String name=(TALL ? "tall-island-check-" : "island-check-")+System.currentTimeMillis();
@@ -110,18 +111,20 @@ public final class IslandVisualSmoke {
                 arrival.put("floor",mc.level.getBlockState(mc.player.blockPosition().below()).toString());
                 capture(mc,"00-survival-arrival.png");
                 require(safeArrival,"Unsafe survival arrival: "+arrival);
-                mc.getConnection().sendCommand("gamemode creative");mc.options.hideGui=true;mc.options.fov().set(85);advance(2);
+                mc.getConnection().sendCommand("gamemode creative");
+                mc.getConnection().sendCommand("effect give @s minecraft:night_vision infinite 1 true");
+                mc.options.hideGui=true;mc.options.fov().set(85);advance(2);
             } else if(stage==2 && ticks==20) {
                 mc.getConnection().sendCommand("time set day");
                 var server=mc.getSingleplayerServer();var uuid=mc.player.getUUID();
                 server.execute(()->{var player=server.getPlayerList().getPlayer(uuid);player.getAbilities().flying=true;player.onUpdateAbilities();});
-                mc.getConnection().sendCommand("tp @s 28 70 -34 40 10");
+                mc.getConnection().sendCommand("tp @s 28 "+(TALL ? 120 : 70)+" -34 40 10");
             } else if(stage==2 && ticks>=220) {
                 nightStayedFixed &= mc.level.getTimeOfDay(0)==initialSunTime;
                 mc.getConnection().sendCommand("time set midnight");
-                capture(mc,"01-islands-overview.png");mc.getConnection().sendCommand("tp @s 64 68 40 130 10");advance(3);
+                capture(mc,"01-islands-overview.png");mc.getConnection().sendCommand("tp @s 64 "+(TALL ? 135 : 68)+" 40 130 10");advance(3);
             } else if(stage==3 && ticks>=180) {
-                capture(mc,"02-islands-and-seas.png");mc.getConnection().sendCommand("tp @s 384 68 -272 45 12");advance(4);
+                capture(mc,"02-islands-and-seas.png");mc.getConnection().sendCommand("tp @s 384 "+(TALL ? 125 : 68)+" -272 45 12");advance(4);
             } else if(stage==4 && ticks>=240) {
                 capture(mc,"03-distant-generated-region.png");
                 mc.getConnection().sendCommand("tp @s 24 "+(profile().upperReference()-18)+" -24 45 -25");advance(5);
@@ -157,6 +160,7 @@ public final class IslandVisualSmoke {
                         && Math.abs(mc.player.getX()-ox)<1 && Math.abs(mc.player.getY()-oy)<1 && Math.abs(mc.player.getZ()-oz)<1;
                 ordinarySkyRestored=mc.level.effects().skyType()==DimensionSpecialEffects.SkyType.NORMAL;
                 capture(mc,"08-return-to-overworld.png");
+                mc.getConnection().sendCommand("effect clear @s");
                 require(returned,"Original return location was lost");
                 require(nightStayedFixed && fogStayedBlack && blackFogFrames>10 && glowLitNeighbors && ordinarySkyRestored,"Atmosphere mismatch");
                 report(mc,true,"completed");
