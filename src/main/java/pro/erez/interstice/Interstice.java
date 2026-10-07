@@ -59,11 +59,13 @@ public final class Interstice {
     public Interstice(IEventBus bus) {
         bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerPayloads);
         bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerTask);
+        bus.addListener(pro.erez.interstice.tide.TideSync::registerPayloads);
         FluidLightUpgrade.register(bus);
         TYPES.register(bus); FLUIDS.register(bus); BLOCKS.register(bus); ITEMS.register(bus); TABS.register(bus);
         GENERATORS.register(bus);
         NeoForge.EVENT_BUS.addListener(FluidLab::registerCommands);
         NeoForge.EVENT_BUS.addListener(ToxicLiquidBlock::onEntityTick);
         NeoForge.EVENT_BUS.addListener(pro.erez.interstice.worldgen.IslandWorld::registerCommands);
+        NeoForge.EVENT_BUS.addListener(pro.erez.interstice.tide.TideManager::registerCommands);
     }
 }
