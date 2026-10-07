@@ -15,6 +15,10 @@ sourceSets {
         compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
         runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
     }
+    geometryFixture {
+        compileClasspath += sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.runtimeClasspath
+    }
 }
 configurations {
     smokeImplementation.extendsFrom implementation
@@ -50,6 +54,7 @@ neoForge {
     mods {
         interstice { sourceSet(sourceSets.main); sourceSet(sourceSets.smoke) }
         interstice_probe { sourceSet(sourceSets.infection) }
+        interstice_geometry_fixture { sourceSet(sourceSets.geometryFixture) }
     }
     runs {
         configureEach {
@@ -67,12 +72,41 @@ neoForge {
             gameDirectory=file('build/island-smoke')
             systemProperty 'interstice.islandSmoke','true'
         }
+        tallIslandSmoke {
+            client()
+            gameDirectory=file('build/tall-island-smoke')
+            systemProperty 'interstice.islandSmoke','true'
+            systemProperty 'interstice.tallSmoke','true'
+        }
+        islandPreview {
+            client()
+            gameDirectory = file('build/island-preview')
+            systemProperty 'interstice.islandPreview', 'true'
+        }
+        geometrySmoke {
+            client()
+            gameDirectory = file('build/geometry-smoke')
+            systemProperty 'interstice.geometrySmoke', 'true'
+        }
+        persistenceCreate {
+            client()
+            gameDirectory = file('build/persistence-smoke')
+            systemProperty 'interstice.persistenceSmoke', 'create'
+        }
+        persistenceReload {
+            client()
+            gameDirectory = file('build/persistence-smoke')
+            systemProperty 'interstice.persistenceSmoke', 'reload'
+        }
         server {
             server()
             programArgument '--nogui'
         }
         gameTestServer {
             type = 'gameTestServer'
+            // GameTestServer bakes only the flat world preset, not dimension JSONs.
+            // Its override must stay out of client, infection and release profiles.
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice'
         }
         infectionGameTestServer {
@@ -88,7 +122,8 @@ neoForge {
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        gameDirectory = file(providers.gradleProperty('intersticeRunRoot').get() + '/' + name)
+        def profileName = name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' : name
+        gameDirectory = file(providers.gradleProperty('intersticeRunRoot').get() + '/' + profileName)
     }
 }
 processResources {
@@ -98,7 +133,7 @@ processResources {
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
 // Avoid a race in NeoForge's early loading-window font initialization on macOS.
 // This affects only the disposable visual-test profile, not the installed game.
-tasks.matching { it.name in ['prepareClientSmokeRun', 'prepareIslandSmokeRun'] }.configureEach {
+tasks.matching { it.name in ['prepareClientSmokeRun', 'prepareIslandSmokeRun', 'prepareTallIslandSmokeRun', 'prepareIslandPreviewRun', 'prepareGeometrySmokeRun', 'preparePersistenceCreateRun', 'preparePersistenceReloadRun'] }.configureEach {
     doLast {
         def runName = it.name.substring('prepare'.length(), it.name.length() - 'Run'.length())
         runName = runName[0].toLowerCase() + runName.substring(1)
@@ -112,3 +147,6 @@ tasks.matching { it.name in ['prepareClientSmokeRun', 'prepareIslandSmokeRun'] }
         if (!options.exists()) options.text = 'onboardAccessibility:false\n'
     }
 }
+// Two different Minecraft JVMs, one fixture created exclusively for this check.
+tasks.named('runPersistenceReload') { dependsOn tasks.named('runPersistenceCreate') }
+tasks.register('runPersistenceSmoke') { dependsOn tasks.named('runPersistenceReload') }

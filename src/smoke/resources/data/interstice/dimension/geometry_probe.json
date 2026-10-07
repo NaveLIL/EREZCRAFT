@@ -1,0 +1,16 @@
+{
+  "type": "interstice:islands",
+  "generator": {
+    "type": "interstice:coupled_islands",
+    "biome_source": { "type": "minecraft:fixed", "biome": "minecraft:the_end" },
+    "settings": "interstice:islands",
+    "geometry": {
+      "version": 1,
+      "min_y": 0,
+      "height": 128,
+      "lower_sea_top": 34,
+      "upper_reference": 102,
+      "clearance": 6
+    }
+  }
+}

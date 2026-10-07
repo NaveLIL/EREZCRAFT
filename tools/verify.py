@@ -12,8 +12,8 @@ import sys
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOWED = {"build", "runGameTestServer", "runIslandSmoke",
-           "runInfectionGameTestServer"}
+ALLOWED = {"build", "runGameTestServer", "runIslandSmoke", "runTallIslandSmoke", "runGeometrySmoke",
+           "runPersistenceSmoke", "runInfectionGameTestServer"}
 SAVED_ROOTS = ("run/world", "build/island-smoke/saves/seeded-island-check",
                "build/client-smoke/saves/fluid-chaotic-check",
                "build/client-smoke/saves/fluid-relief-check",
@@ -84,8 +84,11 @@ def main():
                 passed = re.search(r"All ([1-9][0-9]*) required tests passed", log)
                 record["required_tests_passed"] = int(passed.group(1)) if passed else 0
                 accepted = passed is not None
-            if code == 0 and task in ("runIslandSmoke", "runInfectionGameTestServer"):
+            if code == 0 and task in ("runIslandSmoke", "runTallIslandSmoke", "runGeometrySmoke", "runPersistenceSmoke", "runInfectionGameTestServer"):
                 paths = {"runIslandSmoke": ("islandSmoke", "island-validation.json"),
+                         "runTallIslandSmoke": ("tallIslandSmoke", "island-validation.json"),
+                         "runGeometrySmoke": ("geometrySmoke", "geometry-validation.json"),
+                         "runPersistenceSmoke": ("persistenceSmoke", "persistence-validation.json"),
                          "runInfectionGameTestServer": ("infectionGameTestServer", "infection-baseline.json")}
                 run, name = paths[task]
                 result_path = evidence / "profiles" / run / name

@@ -1,6 +1,7 @@
 package pro.erez.interstice.worldgen;
 
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.EnumSet;
 import java.util.List;
@@ -30,6 +31,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 import pro.erez.interstice.Interstice;
 import pro.erez.interstice.OceanLiquidBlock;
 import pro.erez.interstice.SeaSurface;
+import pro.erez.interstice.geometry.GeometryProfile;
 
 /** Vanilla blended-noise islands, followed by a deterministic material layer for the two toxic seas. */
 public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
@@ -38,37 +40,64 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     public static final int MIN_LAND=LOWER_SEA_TOP+1+CLEARANCE;
     public static final int MAX_LAND=SeaSurface.MINIMUM-CLEARANCE-1;
     public static final int ROOF=127;
-    public static final MapCodec<IslandChunkGenerator> CODEC=RecordCodecBuilder.mapCodec(instance -> instance.group(
-            BiomeSource.CODEC.fieldOf("biome_source").forGetter(IslandChunkGenerator::getBiomeSource),
-            NoiseGeneratorSettings.CODEC.fieldOf("settings").forGetter(IslandChunkGenerator::generatorSettings)
-    ).apply(instance,IslandChunkGenerator::new));
+    private record Definition(BiomeSource biome,Holder<NoiseGeneratorSettings> settings,GeometryProfile geometry) {
+        DataResult<IslandChunkGenerator> decode() {
+            try { return DataResult.success(new IslandChunkGenerator(biome,settings,geometry)); }
+            catch(IllegalArgumentException error) { return DataResult.error(error::getMessage); }
+        }
+    }
+    public static final MapCodec<IslandChunkGenerator> CODEC=RecordCodecBuilder.<Definition>mapCodec(instance -> instance.group(
+            BiomeSource.CODEC.fieldOf("biome_source").forGetter(Definition::biome),
+            NoiseGeneratorSettings.CODEC.fieldOf("settings").forGetter(Definition::settings),
+            GeometryProfile.CODEC.optionalFieldOf("geometry")
+                    .xmap(value -> value.orElse(GeometryProfile.LEGACY),java.util.Optional::of).forGetter(Definition::geometry)
+    ).apply(instance,Definition::new)).flatXmap(Definition::decode,generator -> DataResult.success(
+            new Definition(generator.getBiomeSource(),generator.generatorSettings(),generator.geometry)));
+    private final GeometryProfile geometry;
 
-    public IslandChunkGenerator(BiomeSource biome,Holder<NoiseGeneratorSettings> settings) {super(biome,settings);}
+    /** Missing geometry in old world data means the original 128-block profile. */
+    public IslandChunkGenerator(BiomeSource biome,Holder<NoiseGeneratorSettings> settings) {this(biome,settings,GeometryProfile.LEGACY);}
+    public IslandChunkGenerator(BiomeSource biome,Holder<NoiseGeneratorSettings> settings,GeometryProfile geometry) {
+        super(biome,settings);
+        this.geometry=java.util.Objects.requireNonNull(geometry);
+        var noise=settings.value().noiseSettings();
+        if(noise.minY()!=geometry.minY() || noise.height()!=geometry.height())
+            throw new IllegalArgumentException("Island noise settings and geometry bounds must match");
+    }
+    public GeometryProfile geometry() {return geometry;}
     @Override protected MapCodec<? extends ChunkGenerator> codec() {return CODEC;}
 
     public static boolean landAllowed(int x,int y,int z) {
-        return landAllowed(y,SeaSurface.cellMinimum(x,z));
+        return landAllowed(GeometryProfile.LEGACY,x,y,z);
     }
-    private static boolean landAllowed(int y,double upperSurface) {
-        return y>=MIN_LAND && y<=MAX_LAND && y+1<=upperSurface-CLEARANCE;
+    public static boolean landAllowed(GeometryProfile profile,int x,int y,int z) {
+        return landAllowed(profile,y,SeaSurface.cellMinimum(profile,x,z,true));
+    }
+    private static boolean landAllowed(GeometryProfile profile,int y,double upperSurface) {
+        return y>=profile.minLand() && y<=profile.maxLand() && y+1<=upperSurface-profile.clearance();
     }
     public static BlockState materialAt(int x,int y,int z,BlockState terrain) {
-        return materialAt(y,terrain,SeaSurface.cellMinimum(x,z));
+        return materialAt(GeometryProfile.LEGACY,x,y,z,terrain);
     }
-    private static BlockState materialAt(int y,BlockState terrain,double upperSurface) {
-        if(y==0 || y==ROOF) return Blocks.BEDROCK.defaultBlockState();
-        if(y>0 && y<=LOWER_SEA_TOP) return Interstice.HEAVY_BLOCK.get().defaultBlockState();
-        if(y<ROOF && y>=Math.floor(upperSurface))
+    public static BlockState materialAt(GeometryProfile profile,int x,int y,int z,BlockState terrain) {
+        return materialAt(profile,y,terrain,SeaSurface.cellMinimum(profile,x,z,true));
+    }
+    private static BlockState materialAt(GeometryProfile profile,int y,BlockState terrain,double upperSurface) {
+        if(y<profile.minY() || y>=profile.maxYExclusive()) return Blocks.AIR.defaultBlockState();
+        if(y==profile.minY() || y==profile.roof()) return Blocks.BEDROCK.defaultBlockState();
+        if(y>profile.minY() && y<=profile.lowerSeaTop()) return Interstice.HEAVY_BLOCK.get().defaultBlockState();
+        if(y<profile.roof() && y>=Math.floor(upperSurface))
             return Interstice.LIGHT_SEA.get().defaultBlockState().setValue(OceanLiquidBlock.CHAOTIC,true);
-        return landAllowed(y,upperSurface) ? terrain : Blocks.AIR.defaultBlockState();
+        return landAllowed(profile,y,upperSurface) ? terrain : Blocks.AIR.defaultBlockState();
     }
     @Override public CompletableFuture<ChunkAccess> fillFromNoise(Blender blender,RandomState random,StructureManager structures,ChunkAccess chunk) {
+        geometry.checkHeight(chunk);
         return super.fillFromNoise(blender,random,structures,chunk).thenApply(result -> {
             var pos=new BlockPos.MutableBlockPos();
             int startX=result.getPos().getMinBlockX(),startZ=result.getPos().getMinBlockZ();
             for(int x=startX;x<startX+16;x++) for(int z=startZ;z<startZ+16;z++) {
-                double upperSurface=SeaSurface.cellMinimum(x,z);
-                for(int y=0;y<128;y++) if(!landAllowed(y,upperSurface)) {
+                double upperSurface=SeaSurface.cellMinimum(geometry,x,z,true);
+                for(int y=geometry.minY();y<geometry.maxYExclusive();y++) if(!landAllowed(geometry,y,upperSurface)) {
                     pos.set(x,y,z);if(!result.getBlockState(pos).isAir()) result.setBlockState(pos,Blocks.AIR.defaultBlockState(),false);
                 }
             }
@@ -79,32 +108,37 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     @Override public void buildSurface(WorldGenRegion region,StructureManager structures,RandomState random,ChunkAccess chunk) {
         // Surface rules run while heightmaps still describe land, before the upper sea hides it.
         super.buildSurface(region,structures,random,chunk);
-        fillSeas(chunk);
+        fillSeas(geometry,chunk);
     }
     public static void fillSeas(ChunkAccess chunk) {
+        fillSeas(GeometryProfile.LEGACY,chunk);
+    }
+    public static void fillSeas(GeometryProfile profile,ChunkAccess chunk) {
+        profile.checkHeight(chunk);
         var pos=new BlockPos.MutableBlockPos();
         int startX=chunk.getPos().getMinBlockX(),startZ=chunk.getPos().getMinBlockZ();
         for(int x=startX;x<startX+16;x++) for(int z=startZ;z<startZ+16;z++) {
-            double upperSurface=SeaSurface.cellMinimum(x,z);
-            for(int y=0;y<128;y++) {
+            double upperSurface=SeaSurface.cellMinimum(profile,x,z,true);
+            for(int y=profile.minY();y<profile.maxYExclusive();y++) {
                 pos.set(x,y,z);
-                BlockState before=chunk.getBlockState(pos),after=materialAt(y,before,upperSurface);
+                BlockState before=chunk.getBlockState(pos),after=materialAt(profile,y,before,upperSurface);
                 if(!before.equals(after)) chunk.setBlockState(pos,after,false);
             }
         }
         Heightmap.primeHeightmaps(chunk,EnumSet.of(Heightmap.Types.WORLD_SURFACE_WG,Heightmap.Types.OCEAN_FLOOR_WG));
     }
     @Override public NoiseColumn getBaseColumn(int x,int z,LevelHeightAccessor height,RandomState random) {
+        geometry.checkHeight(height);
         NoiseColumn base=super.getBaseColumn(x,z,height,random);
-        BlockState[] column=new BlockState[128];
-        double upperSurface=SeaSurface.cellMinimum(x,z);
-        for(int y=0;y<128;y++) column[y]=materialAt(y,base.getBlock(y),upperSurface);
-        return new NoiseColumn(0,column);
+        BlockState[] column=new BlockState[geometry.height()];
+        double upperSurface=SeaSurface.cellMinimum(geometry,x,z,true);
+        for(int y=geometry.minY();y<geometry.maxYExclusive();y++) column[y-geometry.minY()]=materialAt(geometry,y,base.getBlock(y),upperSurface);
+        return new NoiseColumn(geometry.minY(),column);
     }
     @Override public int getBaseHeight(int x,int z,Heightmap.Types type,LevelHeightAccessor height,RandomState random) {
         NoiseColumn column=getBaseColumn(x,z,height,random);
-        for(int y=127;y>=0;y--) if(type.isOpaque().test(column.getBlock(y))) return y+1;
-        return 0;
+        for(int y=geometry.roof();y>=geometry.minY();y--) if(type.isOpaque().test(column.getBlock(y))) return y+1;
+        return geometry.minY();
     }
     // Uncontrolled carvers, lakes and structures could breach the sea-clearance contract.
     @Override public void applyCarvers(WorldGenRegion region,long seed,RandomState random,BiomeManager biomes,StructureManager structures,ChunkAccess chunk,GenerationStep.Carving step) {}
@@ -113,6 +147,6 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     @Override public void createStructures(RegistryAccess registries,ChunkGeneratorStructureState state,StructureManager structures,ChunkAccess chunk,StructureTemplateManager templates) {}
     @Override public void addDebugScreenInfo(List<String> lines,RandomState random,BlockPos pos) {
         super.addDebugScreenInfo(lines,random,pos);
-        lines.add("Interstice islands: native 3D blended noise; land 41..77; toxic-sea clearance >= 6");
+        lines.add("Interstice islands: native 3D blended noise; land "+geometry.minLand()+".."+geometry.maxLand()+"; toxic-sea clearance >= "+geometry.clearance());
     }
 }

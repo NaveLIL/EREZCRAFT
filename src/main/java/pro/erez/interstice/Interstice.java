@@ -43,7 +43,7 @@ public final class Interstice {
     public static final DeferredHolder<Block, ToxicLiquidBlock> LIGHT_BLOCK = BLOCKS.register("light_toxin", () -> new ToxicLiquidBlock(LIGHT.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).lightLevel(s -> 15)));
     public static final DeferredHolder<Block, OceanLiquidBlock> LIGHT_SEA = BLOCKS.register("light_sea", () -> new OceanLiquidBlock(LIGHT.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).lightLevel(s -> 15)));
     public static final DeferredHolder<Block, ToxicLiquidBlock> HEAVY_BLOCK = BLOCKS.register("heavy_toxin", () -> new ToxicLiquidBlock(HEAVY.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
-    public static final DeferredHolder<Item, BucketItem> LIGHT_BUCKET = ITEMS.register("light_toxin_bucket", () -> new BucketItem(LIGHT.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredHolder<Item, BucketItem> LIGHT_BUCKET = ITEMS.register("light_toxin_bucket", () -> new LightBucketItem(new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredHolder<Item, BucketItem> HEAVY_BUCKET = ITEMS.register("heavy_toxin_bucket", () -> new BucketItem(HEAVY.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("fluids", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.interstice"))
@@ -57,6 +57,8 @@ public final class Interstice {
         return new BaseFlowingFluid.Properties(HEAVY_TYPE, HEAVY, HEAVY_FLOW).block(HEAVY_BLOCK).bucket(HEAVY_BUCKET).tickRate(5).levelDecreasePerBlock(1).explosionResistance(100);
     }
     public Interstice(IEventBus bus) {
+        bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerPayloads);
+        bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerTask);
         FluidLightUpgrade.register(bus);
         TYPES.register(bus); FLUIDS.register(bus); BLOCKS.register(bus); ITEMS.register(bus); TABS.register(bus);
         GENERATORS.register(bus);

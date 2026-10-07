@@ -22,6 +22,19 @@ public final class FluidLab {
     private static final ResourceKey<Level> RELIEF_WORLD = ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"relief_lab"));
     private static final ResourceKey<Level> LEGACY_WORLD = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(Interstice.ID, "fluid_lab"));
     private FluidLab() {}
+    public static boolean isIntersticeWorld(ResourceKey<Level> dimension) {
+        return dimension.equals(WORLD) || dimension.equals(LEGACY_WORLD) || dimension.equals(RELIEF_WORLD)
+                || pro.erez.interstice.worldgen.IslandWorld.isIsland(dimension);
+    }
+    /** Internal transfers preserve the location where the expedition originally began. */
+    public static void rememberReturn(ServerPlayer player) {
+        if (isIntersticeWorld(player.level().dimension())) return;
+        CompoundTag point = new CompoundTag();
+        point.putString("dimension", player.level().dimension().location().toString());
+        point.putDouble("x", player.getX()); point.putDouble("y", player.getY()); point.putDouble("z", player.getZ());
+        point.putFloat("yaw", player.getYRot()); point.putFloat("pitch", player.getXRot());
+        player.getPersistentData().put("interstice:return", point);
+    }
     public static void registerCommands(RegisterCommandsEvent event) {
         event.getDispatcher().register(Commands.literal("interstice").requires(source -> source.hasPermission(2))
                 .then(Commands.literal("lab").executes(context -> {
@@ -29,20 +42,14 @@ public final class FluidLab {
                     ServerLevel lab = player.server.getLevel(WORLD);
                     if (lab == null) { context.getSource().sendFailure(Component.literal("Fluid lab dimension unavailable. Create/reopen the world with the mod installed.")); return 0; }
                     prepare(lab);
-                    if (!player.level().dimension().equals(WORLD) && !player.level().dimension().equals(LEGACY_WORLD) && !player.level().dimension().equals(RELIEF_WORLD)) {
-                        CompoundTag point = new CompoundTag();
-                        point.putString("dimension", player.level().dimension().location().toString());
-                        point.putDouble("x", player.getX()); point.putDouble("y", player.getY()); point.putDouble("z", player.getZ());
-                        point.putFloat("yaw", player.getYRot()); point.putFloat("pitch", player.getXRot());
-                        player.getPersistentData().put("interstice:return", point);
-                    }
+                    rememberReturn(player);
                     player.teleportTo(lab, 0.5, 65, 0.5, java.util.Set.of(), 0, 0);
                     context.getSource().sendSuccess(() -> Component.literal("Fluid lab: light sea above, heavy sea below. /interstice leave to return. Buckets are in the Interstice creative tab."), false);
                     return 1;
                 }))
                 .then(Commands.literal("leave").executes(context -> {
                     ServerPlayer player = context.getSource().getPlayerOrException();
-                    if (!player.level().dimension().equals(WORLD) && !player.level().dimension().equals(LEGACY_WORLD) && !player.level().dimension().equals(RELIEF_WORLD) && !player.level().dimension().equals(pro.erez.interstice.worldgen.IslandWorld.WORLD)) return 0;
+                    if (!isIntersticeWorld(player.level().dimension())) return 0;
                     CompoundTag point = player.getPersistentData().getCompound("interstice:return");
                     ResourceLocation location = ResourceLocation.tryParse(point.getString("dimension"));
                     ServerLevel destination = location == null ? null : player.server.getLevel(ResourceKey.create(Registries.DIMENSION, location));

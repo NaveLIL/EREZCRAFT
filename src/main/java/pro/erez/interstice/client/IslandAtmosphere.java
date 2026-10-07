@@ -32,7 +32,7 @@ public final class IslandAtmosphere {
     public static void fogColor(ViewportEvent.ComputeFogColor event) {
         var camera = event.getCamera();
         var level = camera.getEntity().level();
-        if (!level.dimension().equals(IslandWorld.WORLD)) return;
+        if (!IslandWorld.isIsland(level.dimension())) return;
         var point = camera.getPosition();
         if (FluidContact.pointInLight(level, point.x, point.y, point.z)) {
             // Ceiling fluid's immersion differs from vanilla bottom-anchored fluid height.

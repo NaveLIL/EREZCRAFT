@@ -5,6 +5,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.AABB;
+import pro.erez.interstice.geometry.GeometryProfiles;
 
 public final class FluidContact {
     private FluidContact() {}
@@ -15,7 +16,7 @@ public final class FluidContact {
         if (box.maxX <= pos.getX() || box.minX >= pos.getX() + 1
                 || box.maxZ <= pos.getZ() || box.minZ >= pos.getZ() + 1) return 0;
         if (world.getBlockState(pos).getBlock() instanceof OceanLiquidBlock) {
-            bottom=Math.max(pos.getY(),SeaSurface.minimumUnderBox(pos,box.minX,box.maxX,box.minZ,box.maxZ,world.getBlockState(pos).getValue(OceanLiquidBlock.CHAOTIC)));
+            bottom=Math.max(pos.getY(),SeaSurface.minimumUnderBox(GeometryProfiles.get(world),pos,box.minX,box.maxX,box.minZ,box.maxZ,world.getBlockState(pos).getValue(OceanLiquidBlock.CHAOTIC)));
             top = pos.getY() + 1;
         }
         return Math.max(0, Math.min(box.maxY, top) - Math.max(box.minY, bottom));
@@ -37,7 +38,7 @@ public final class FluidContact {
     public static boolean pointInLight(BlockGetter world, double x, double y, double z) {
         BlockPos pos = BlockPos.containing(x, y, z);
         FluidState fluid = world.getFluidState(pos);
-        if (world.getBlockState(pos).getBlock() instanceof OceanLiquidBlock) return y>=SeaSurface.heightAt(x,z,world.getBlockState(pos).getValue(OceanLiquidBlock.CHAOTIC));
+        if (world.getBlockState(pos).getBlock() instanceof OceanLiquidBlock) return y>=SeaSurface.heightAt(GeometryProfiles.get(world),x,z,world.getBlockState(pos).getValue(OceanLiquidBlock.CHAOTIC));
         return fluid.getType() instanceof LightFluid && y >= pos.getY() + 1.0 - fluid.getHeight(world, pos);
     }
 }

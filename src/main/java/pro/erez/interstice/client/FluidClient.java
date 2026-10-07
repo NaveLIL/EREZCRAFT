@@ -29,6 +29,8 @@ import pro.erez.interstice.Interstice;
 import pro.erez.interstice.LightFluid;
 import pro.erez.interstice.OceanLiquidBlock;
 import pro.erez.interstice.SeaSurface;
+import pro.erez.interstice.geometry.GeometryProfile;
+import pro.erez.interstice.geometry.GeometryProfiles;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -126,7 +128,8 @@ public final class FluidClient {
         Point mix(Point other, double t) { return new Point(x+(other.x-x)*t,y+(other.y-y)*t,z+(other.z-z)*t); }
     }
     private static void renderOcean(BlockAndTintGetter world, BlockPos pos, VertexConsumer out, Appearance appearance) {
-        if(pos.getY()>=SeaSurface.MAXIMUM && !visible(world,pos.above())) {
+        GeometryProfile profile=GeometryProfiles.get(world);
+        if(pos.getY()>=profile.upperMaximum() && !visible(world,pos.above())) {
             boolean exposed=false;
             for(Direction side:Direction.Plane.HORIZONTAL) if(visible(world,pos.relative(side))) {exposed=true;break;}
             if(!exposed) return;
@@ -137,20 +140,20 @@ public final class FluidClient {
         int light=LightTexture.FULL_BRIGHT, color=appearance.getTintColor();
         int x=pos.getX(),z=pos.getZ();
         boolean chaotic=world.getBlockState(pos).getValue(OceanLiquidBlock.CHAOTIC);
-        Point a=new Point(x,SeaSurface.vertexHeight(x,z,chaotic),z);
-        Point b=new Point(x+1,SeaSurface.vertexHeight(x+1,z,chaotic),z);
-        Point c=new Point(x+1,SeaSurface.vertexHeight(x+1,z+1,chaotic),z+1);
-        Point d=new Point(x,SeaSurface.vertexHeight(x,z+1,chaotic),z+1);
+        Point a=new Point(x,SeaSurface.vertexHeight(profile,x,z,chaotic),z);
+        Point b=new Point(x+1,SeaSurface.vertexHeight(profile,x+1,z,chaotic),z);
+        Point c=new Point(x+1,SeaSurface.vertexHeight(profile,x+1,z+1,chaotic),z+1);
+        Point d=new Point(x,SeaSurface.vertexHeight(profile,x,z+1,chaotic),z+1);
         // Clip each real surface triangle into the occupied voxel. No oversized shader-only hills.
         double min=Math.min(Math.min(a.y,b.y),Math.min(c.y,d.y));
         double max=Math.max(Math.max(a.y,b.y),Math.max(c.y,d.y));
         if(pos.getY()<=max && pos.getY()+1>=min) {
-            oceanPolygon(out,still,color,light,pos,List.of(a,b,c),0,-1,0,true,chaotic);
-            oceanPolygon(out,still,color,light,pos,List.of(a,c,d),0,-1,0,true,chaotic);
+            oceanPolygon(out,still,color,light,pos,List.of(a,b,c),0,-1,0,true,chaotic,profile);
+            oceanPolygon(out,still,color,light,pos,List.of(a,c,d),0,-1,0,true,chaotic,profile);
         }
         if(visible(world,pos.above())) {
             double top=pos.getY()+1;
-            oceanPolygon(out,still,color,light,pos,List.of(new Point(x,top,z),new Point(x,top,z+1),new Point(x+1,top,z+1),new Point(x+1,top,z)),0,1,0,false,chaotic);
+            oceanPolygon(out,still,color,light,pos,List.of(new Point(x,top,z),new Point(x,top,z+1),new Point(x+1,top,z+1),new Point(x+1,top,z)),0,1,0,false,chaotic,profile);
         }
         for(Direction side:Direction.Plane.HORIZONTAL) {
             if(!visible(world,pos.relative(side))) continue;
@@ -163,7 +166,7 @@ public final class FluidClient {
                 default -> throw new IllegalStateException();
             }
             double top=pos.getY()+1;
-            oceanPolygon(out,flow,color,light,pos,List.of(left,new Point(left.x,top,left.z),new Point(right.x,top,right.z),right),side.getStepX(),0,side.getStepZ(),false,chaotic);
+            oceanPolygon(out,flow,color,light,pos,List.of(left,new Point(left.x,top,left.z),new Point(right.x,top,right.z),right),side.getStepX(),0,side.getStepZ(),false,chaotic,profile);
         }
     }
     private static List<Point> clipY(List<Point> polygon,double plane,boolean above) {
@@ -179,7 +182,7 @@ public final class FluidClient {
         }
         return clipped;
     }
-    private static void oceanPolygon(VertexConsumer out,TextureAtlasSprite sprite,int color,int light,BlockPos pos,List<Point> polygon,float nx,float ny,float nz,boolean surface,boolean chaotic) {
+    private static void oceanPolygon(VertexConsumer out,TextureAtlasSprite sprite,int color,int light,BlockPos pos,List<Point> polygon,float nx,float ny,float nz,boolean surface,boolean chaotic,GeometryProfile profile) {
         polygon=clipY(clipY(polygon,pos.getY(),true),pos.getY()+1,false);
         if(polygon.size()<3) return;
         for(int i=1;i+1<polygon.size();i++) {
@@ -194,7 +197,7 @@ public final class FluidClient {
                 xyz[j*3+1]=(float)(points[j].y-pos.getY()+(pos.getY()&15));
                 xyz[j*3+2]=(float)(points[j].z-pos.getZ()+(pos.getZ()&15));
             }
-            emitQuad(out,sprite,color,light,pos,nx,ny,nz,xyz,surface,chaotic);
+            emitQuad(out,sprite,color,light,pos,nx,ny,nz,xyz,surface,chaotic,profile);
         }
     }
     private static float mirrored(int cell,float fraction,int period) {
@@ -202,9 +205,9 @@ public final class FluidClient {
         return (Math.floorDiv(cell,period)&1)==0 ? coordinate : 1-coordinate;
     }
     private static void quad(VertexConsumer out, TextureAtlasSprite sprite, int color, int light, BlockPos pos, float nx, float ny, float nz, float... xyz) {
-        emitQuad(out,sprite,color,light,pos,nx,ny,nz,xyz,false,false);
+        emitQuad(out,sprite,color,light,pos,nx,ny,nz,xyz,false,false,GeometryProfile.LEGACY);
     }
-    private static void emitQuad(VertexConsumer out,TextureAtlasSprite sprite,int color,int light,BlockPos pos,float nx,float ny,float nz,float[] xyz,boolean oceanSurface,boolean chaotic) {
+    private static void emitQuad(VertexConsumer out,TextureAtlasSprite sprite,int color,int light,BlockPos pos,float nx,float ny,float nz,float[] xyz,boolean oceanSurface,boolean chaotic,GeometryProfile profile) {
         // 64px across four blocks, or 128px across eight: still 16 texels per block.
         int period=ny==0 ? 8 : 4;
         float insetU=0.5F/sprite.contents().width();
@@ -225,8 +228,8 @@ public final class FluidClient {
                 float shade=1;
                 if(oceanSurface) {
                     double wx=pos.getX()+xyz[p*3]-lx,wz=pos.getZ()+xyz[p*3+2]-lz;
-                    double dx=(SeaSurface.vertexHeight(wx+0.15,wz,chaotic)-SeaSurface.vertexHeight(wx-0.15,wz,chaotic))/0.3;
-                    double dz=(SeaSurface.vertexHeight(wx,wz+0.15,chaotic)-SeaSurface.vertexHeight(wx,wz-0.15,chaotic))/0.3;
+                    double dx=(SeaSurface.vertexHeight(profile,wx+0.15,wz,chaotic)-SeaSurface.vertexHeight(profile,wx-0.15,wz,chaotic))/0.3;
+                    double dz=(SeaSurface.vertexHeight(profile,wx,wz+0.15,chaotic)-SeaSurface.vertexHeight(profile,wx,wz-0.15,chaotic))/0.3;
                     double lighting=(0.32*dx+0.85+0.42*dz)/Math.sqrt(dx*dx+1+dz*dz);
                     shade=(float)(0.75+0.25*Math.max(0,Math.min(1,lighting)));
                 }
