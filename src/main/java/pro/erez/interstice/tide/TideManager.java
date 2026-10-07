@@ -1,7 +1,10 @@
 package pro.erez.interstice.tide;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;
@@ -168,10 +171,14 @@ public final class TideManager {
                 BuoyancyController.applyEntityBuoyancy(player, intensity);
             }
             if (activeNow || needsCleanup) {
+                List<Entity> nonPlayerEntities = new ArrayList<>();
                 for (var entity : level.getAllEntities()) {
-                    if (!(entity instanceof net.minecraft.world.entity.player.Player)) {
-                        BuoyancyController.applyEntityBuoyancy(entity, intensity);
+                    if (entity != null && !entity.isRemoved() && !(entity instanceof net.minecraft.world.entity.player.Player)) {
+                        nonPlayerEntities.add(entity);
                     }
+                }
+                for (var entity : nonPlayerEntities) {
+                    BuoyancyController.applyEntityBuoyancy(entity, intensity);
                 }
             }
         }

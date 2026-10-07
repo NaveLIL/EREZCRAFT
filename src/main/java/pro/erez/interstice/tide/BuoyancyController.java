@@ -38,7 +38,9 @@ public final class BuoyancyController {
      * Updates buoyancy on a single entity according to the current tide intensity.
      */
     public static void applyEntityBuoyancy(Entity entity, float intensity) {
-        if (entity.level().isClientSide()) return;
+        if (entity == null || entity.isRemoved()) return;
+        var level = entity.level();
+        if (level == null || level.isClientSide()) return;
 
         if (entity instanceof LivingEntity living) {
             var gravityAttr = living.getAttribute(Attributes.GRAVITY);
@@ -101,6 +103,7 @@ public final class BuoyancyController {
     }
 
     public static void removeBuoyancy(LivingEntity entity) {
+        if (entity == null) return;
         var gravityAttr = entity.getAttribute(Attributes.GRAVITY);
         if (gravityAttr != null && gravityAttr.hasModifier(BUOYANCY_ID)) {
             gravityAttr.removeModifier(BUOYANCY_ID);
