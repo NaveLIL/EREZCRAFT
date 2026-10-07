@@ -98,6 +98,7 @@ public final class TallWorldGameTests {
                 && !block.is(Blocks.BEDROCK),"Landing chose sea/shell instead of island ground");
         h.assertTrue(world.getBlockState(landing).isAir() && world.getBlockState(landing.above()).isAir(),"Landing lacks headroom");
         h.assertTrue(landing.getY()<=SeaSurface.cellMinimum(GeometryProfile.TALL,landing.getX(),landing.getZ(),true)-6,"Landing too close to upper sea");
+        h.assertTrue(IslandWorld.isSafeLandingPlatform(world,floor),"Landing platform must provide safe 3x3 footing");
         System.out.println("TALL_LANDING "+landing);
         h.succeed();
     }
@@ -107,33 +108,40 @@ public final class TallWorldGameTests {
         var generator=(IslandChunkGenerator)world.getChunkSource().getGenerator();
         var profile=GeometryProfile.TALL;
         int tier1Voxels=0,tier2Voxels=0,tier3Voxels=0;
-        int voidColumns=0,landColumns=0;
+        int voidColumns=0,landColumns=0,caveVoxels=0;
         for(int cx=-2;cx<=2;cx++) for(int cz=-2;cz<=2;cz++) {
             var chunk=world.getChunk(cx,cz);
             var pos=new BlockPos.MutableBlockPos();
             for(int x=0;x<16;x++) for(int z=0;z<16;z++) {
                 int worldX=cx*16+x,worldZ=cz*16+z;
                 double underside=SeaSurface.cellMinimum(profile,worldX,worldZ,true);
-                boolean hasLandInCol=false;
+                int minColY=999,maxColY=-1;
                 for(int y=41;y<=205;y++) {
                     pos.set(worldX,y,worldZ);
                     var state=chunk.getBlockState(pos);
                     if(!state.isAir() && !state.is(Blocks.BEDROCK) && state.getFluidState().isEmpty()) {
                         h.assertTrue(y+1<=underside-6,"Clearance violation at "+pos);
-                        hasLandInCol=true;
+                        if(y<minColY) minColY=y;
+                        if(y>maxColY) maxColY=y;
                         if(y<=85) tier1Voxels++;
                         else if(y<=145) tier2Voxels++;
                         else tier3Voxels++;
                     }
                 }
-                if(hasLandInCol) landColumns++;
-                else voidColumns++;
+                if(maxColY>=minColY) {
+                    landColumns++;
+                    for(int y=minColY+1;y<maxColY;y++) {
+                        pos.set(worldX,y,worldZ);
+                        if(chunk.getBlockState(pos).isAir()) caveVoxels++;
+                    }
+                } else voidColumns++;
             }
         }
         h.assertTrue(tier1Voxels>0,"Tier 1 (Lower 41..85) must generate land; got "+tier1Voxels);
         h.assertTrue(tier2Voxels>0,"Tier 2 (Mid 86..145) must generate land; got "+tier2Voxels);
         h.assertTrue(tier3Voxels>0,"Tier 3 (Upper 146..205) must generate land; got "+tier3Voxels);
         h.assertTrue(voidColumns>0,"Must have genuine void columns in spawn cluster; void="+voidColumns);
+        h.assertTrue(caveVoxels>0,"Must generate carved caves/grottos inside island bodies; got "+caveVoxels);
         int regionalLand=0,regionalVoid=0;
         var randomState=world.getChunkSource().randomState();
         for(int rx=-256;rx<=256;rx+=32) for(int rz=-256;rz<=256;rz+=32) {
@@ -151,7 +159,7 @@ public final class TallWorldGameTests {
         h.assertTrue(regionalLand>0,"Macro archipelagos must generate land regions");
         h.assertTrue(regionalVoid>0,"Macro voids between archipelagos must exist; void="+regionalVoid);
         System.out.println("TALL_TIERS land_columns="+landColumns+" void_columns="+voidColumns
-                +" tier1="+tier1Voxels+" tier2="+tier2Voxels+" tier3="+tier3Voxels);
+                +" cave_voxels="+caveVoxels+" tier1="+tier1Voxels+" tier2="+tier2Voxels+" tier3="+tier3Voxels);
         System.out.println("ARCHIPELAGO_REGIONAL land="+regionalLand+" void="+regionalVoid
                 +" land_ratio="+String.format(java.util.Locale.ROOT,"%.2f",((double)regionalLand/(regionalLand+regionalVoid))));
         h.succeed();

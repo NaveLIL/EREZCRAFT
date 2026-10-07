@@ -118,13 +118,18 @@ public final class IslandVisualSmoke {
                 mc.getConnection().sendCommand("time set day");
                 var server=mc.getSingleplayerServer();var uuid=mc.player.getUUID();
                 server.execute(()->{var player=server.getPlayerList().getPlayer(uuid);player.getAbilities().flying=true;player.onUpdateAbilities();});
-                mc.getConnection().sendCommand("tp @s 28 "+(TALL ? 120 : 70)+" -34 40 10");
+                var landingPos=mc.player.blockPosition();
+                mc.getConnection().sendCommand("tp @s "+landingPos.getX()+" "+(landingPos.getY()+0.1)+" "+landingPos.getZ()+" 45 10");
             } else if(stage==2 && ticks>=220) {
                 nightStayedFixed &= mc.level.getTimeOfDay(0)==initialSunTime;
                 mc.getConnection().sendCommand("time set midnight");
-                capture(mc,"01-islands-overview.png");mc.getConnection().sendCommand("tp @s 64 "+(TALL ? 135 : 68)+" 40 130 10");advance(3);
+                capture(mc,"01-islands-overview.png");
+                var cave=findCave(mc.level,mc.player.blockPosition());
+                mc.getConnection().sendCommand("tp @s "+(cave.getX()+0.5)+" "+(cave.getY()+0.1)+" "+(cave.getZ()+0.5)+" 90 0");advance(3);
             } else if(stage==3 && ticks>=180) {
-                capture(mc,"02-islands-and-seas.png");mc.getConnection().sendCommand("tp @s 384 "+(TALL ? 125 : 68)+" -272 45 12");advance(4);
+                capture(mc,"02-islands-and-seas.png");
+                var lowPos=findTierGround(mc.level,mc.player.blockPosition(),45,75);
+                mc.getConnection().sendCommand("tp @s "+(lowPos.getX()+0.5)+" "+(lowPos.getY()+0.1)+" "+(lowPos.getZ()+0.5)+" 45 -40");advance(4);
             } else if(stage==4 && ticks>=240) {
                 capture(mc,"03-distant-generated-region.png");
                 mc.getConnection().sendCommand("tp @s 24 "+(profile().upperReference()-18)+" -24 45 -25");advance(5);
@@ -169,6 +174,30 @@ public final class IslandVisualSmoke {
     }
     private static void capture(Minecraft mc,String name) {
         Screenshot.grab(mc.gameDirectory,name,mc.getMainRenderTarget(),message->System.out.println("ISLAND_VISUAL "+name));
+    }
+    private static BlockPos findCave(Level level, BlockPos near) {
+        for(int r=0;r<=48;r++) for(int dx=-r;dx<=r;dx++) for(int dz=-r;dz<=r;dz++) {
+            if(Math.max(Math.abs(dx),Math.abs(dz))!=r) continue;
+            int x=near.getX()+dx, z=near.getZ()+dz;
+            for(int y=45;y<=near.getY()-3;y++) {
+                BlockPos p=new BlockPos(x,y,z);
+                if(level.getBlockState(p).isAir() && !level.getBlockState(p.below()).isAir()
+                        && !level.getBlockState(p.above(3)).isAir()) return p;
+            }
+        }
+        return near;
+    }
+    private static BlockPos findTierGround(Level level, BlockPos near, int minY, int maxY) {
+        for(int r=0;r<=48;r++) for(int dx=-r;dx<=r;dx++) for(int dz=-r;dz<=r;dz++) {
+            if(Math.max(Math.abs(dx),Math.abs(dz))!=r) continue;
+            int x=near.getX()+dx, z=near.getZ()+dz;
+            for(int y=maxY;y>=minY;y--) {
+                BlockPos p=new BlockPos(x,y,z);
+                if(!level.getBlockState(p).isAir() && level.getBlockState(p.above()).isAir()
+                        && level.getBlockState(p.above(2)).isAir()) return p.above();
+            }
+        }
+        return near;
     }
     private static void report(Minecraft mc,boolean passed,String reason) {
         finished=true;

@@ -34,12 +34,32 @@ public final class IslandWorld {
                 if(!column.getBlock(y+1).isAir() || !column.getBlock(y+2).isAir()) break;
                 world.getChunk(x>>4,z>>4);
                 BlockPos floor=new BlockPos(x,y,z);
-                if(!world.getBlockState(floor).getCollisionShape(world,floor).isEmpty()
-                        && world.getBlockState(floor.above()).isAir() && world.getBlockState(floor.above(2)).isAir()) return floor.above();
+                if(isSafeLandingPlatform(world,floor)) return floor.above();
                 break;
             }
         }
         throw new IllegalStateException("No safe island landing within 96 blocks");
+    }
+    public static boolean isSafeLandingPlatform(ServerLevel world,BlockPos floor) {
+        var baseState=world.getBlockState(floor);
+        if(baseState.getCollisionShape(world,floor).isEmpty() || !baseState.getFluidState().isEmpty()
+                || baseState.is(net.minecraft.world.level.block.Blocks.BEDROCK)) return false;
+        for(int dx=-1;dx<=1;dx++) for(int dz=-1;dz<=1;dz++) {
+            BlockPos p=floor.offset(dx,0,dz);
+            var state=world.getBlockState(p);
+            var below=world.getBlockState(p.below());
+            boolean solid=!state.getCollisionShape(world,p).isEmpty() && state.getFluidState().isEmpty()
+                    && !state.is(net.minecraft.world.level.block.Blocks.BEDROCK);
+            boolean stepDown=!below.getCollisionShape(world,p.below()).isEmpty() && below.getFluidState().isEmpty()
+                    && !below.is(net.minecraft.world.level.block.Blocks.BEDROCK) && state.isAir();
+            if(!solid && !stepDown) return false;
+            int groundY=solid ? p.getY() : p.getY()-1;
+            for(int hy=1;hy<=3;hy++) {
+                BlockPos head=new BlockPos(p.getX(),groundY+hy,p.getZ());
+                if(!world.getBlockState(head).isAir()) return false;
+            }
+        }
+        return true;
     }
     public static void registerCommands(RegisterCommandsEvent event) {
         event.getDispatcher().register(Commands.literal("interstice").requires(source->source.hasPermission(2))
