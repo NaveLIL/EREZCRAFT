@@ -8,10 +8,10 @@ import net.minecraft.util.StringRepresentable;
  * The four cyclical phases of the Interstice atmospheric and gravitational tide.
  */
 public enum TidePhase implements StringRepresentable {
-    CALM(0, "calm", 18000, 22800),     // 15..19 minutes of tranquility
-    WARNING(1, "warning", 1200, 1200),  // 60 seconds of harbinger rumble and gathering storm
-    SURGE(2, "surge", 1800, 1800),      // 90 seconds of violent storm, upward lift, and intense lightning
-    EBB(3, "ebb", 600, 600);            // 30 seconds of decaying winds and settling air
+    CALM(0, "calm", 12000, 26400),    // 10..22 minutes of tranquility
+    WARNING(1, "warning", 900, 1600),  // 45..80 seconds of harbinger rumble and gathering storm
+    SURGE(2, "surge", 1200, 2600),     // 60..130 seconds of violent storm, upward lift, and intense lightning
+    EBB(3, "ebb", 400, 800);           // 20..40 seconds of decaying winds and settling air
 
     private final int id;
     private final String name;

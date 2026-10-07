@@ -2,7 +2,7 @@
   "required": true,
   "package": "pro.erez.interstice.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["EntityFluidContactMixin", "NavigationRegionGeometryMixin"],
+  "mixins": ["EntityFluidContactMixin", "NavigationRegionGeometryMixin", "BucketItemMixin", "FlowingFluidMixin", "IceBlockMixin"],
   "client": ["ClientLevelGeometryMixin", "RenderRegionGeometryMixin"],
   "injectors": {"defaultRequire": 1}
 }
