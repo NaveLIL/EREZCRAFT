@@ -7,6 +7,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.properties.SlabType;
@@ -15,6 +18,8 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 import pro.erez.interstice.Interstice;
+import pro.erez.interstice.SeaSurface;
+import pro.erez.interstice.geometry.GeometryProfiles;
 import pro.erez.interstice.tide.BuoyancyController;
 import pro.erez.interstice.tide.ShelterDetector;
 import pro.erez.interstice.tide.TidePhase;
@@ -334,4 +339,82 @@ public final class BuoyancyGameTests {
         world.setBlock(roofPos, Blocks.AIR.defaultBlockState(), 3);
         h.succeed();
     }
+
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void tallEntityBumpedAgainstCeilingSlabIsSheltered(GameTestHelper h) {
+        ServerLevel world = islandWorld(h);
+        clearTestColumn(world, 500, 320, 2, 101, 215);
+
+        // Place a ceiling slab at Y=104
+        BlockPos slabPos = new BlockPos(500, 104, 320);
+        world.setBlock(slabPos, Blocks.STONE_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, SlabType.BOTTOM), 3);
+
+        // An entity whose head is bumped into the slab (maxY = 104.05)
+        Zombie tallEntity = EntityType.ZOMBIE.create(world);
+        h.assertTrue(tallEntity != null, "Failed to create zombie");
+        // Zombie height is 1.95. Position at 102.1 makes maxY = 104.05
+        tallEntity.moveTo(500.5, 102.1, 320.5, 0, 0);
+
+        h.assertTrue(ShelterDetector.isSheltered(world, tallEntity),
+                "Entity touching/bumped against bottom of ceiling slab must be detected as sheltered");
+
+        // Verify buoyancy controller removes modifier when entity is against ceiling slab
+        BuoyancyController.applyEntityBuoyancy(tallEntity, 1.0F);
+        var attr = tallEntity.getAttribute(Attributes.GRAVITY);
+        h.assertTrue(attr != null && !attr.hasModifier(BuoyancyController.BUOYANCY_ID),
+                "Sheltered entity under slab ceiling must NOT retain buoyancy modifier");
+
+        world.setBlock(slabPos, Blocks.AIR.defaultBlockState(), 3);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void droppedItemRisesAndDisintegratesAtUpperSea(GameTestHelper h) {
+        ServerLevel world = islandWorld(h);
+        clearTestColumn(world, 520, 320, 2, 101, 215);
+
+        ItemEntity item = new ItemEntity(world, 520.5, 102.0, 320.5, new ItemStack(Items.DIAMOND));
+        world.addFreshEntity(item);
+
+        // 1. Initial state: item on ground, apply buoyancy
+        BuoyancyController.applyEntityBuoyancy(item, 1.0F);
+        h.assertTrue(item.getDeltaMovement().y > 0.0,
+                "Item out in the open during surge must receive upward buoyant velocity");
+
+        // 2. Teleport item to the lower boundary of the upper toxic sea
+        var profile = GeometryProfiles.get(world);
+        double seaBottom = SeaSurface.cellMinimum(profile, 520, 320, true);
+        item.moveTo(520.5, seaBottom + 0.5, 320.5, 0, 0);
+
+        // 3. Applying buoyancy at or above the upper sea must disintegrate the item
+        BuoyancyController.applyEntityBuoyancy(item, 1.0F);
+        h.assertTrue(item.isRemoved(),
+                "Item touching upper toxic sea must be disintegrated / discarded");
+
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void tideTransitionToCalmCleansUpAllMobBuoyancy(GameTestHelper h) {
+        ServerLevel world = islandWorld(h);
+        clearTestColumn(world, 540, 320, 2, 101, 215);
+
+        Zombie mob = EntityType.ZOMBIE.create(world);
+        h.assertTrue(mob != null, "Failed to create zombie");
+        mob.moveTo(540.5, 105.0, 320.5, 0, 0);
+
+        // During SURGE, mob in open receives buoyancy
+        BuoyancyController.applyEntityBuoyancy(mob, 1.0F);
+        var attr = mob.getAttribute(Attributes.GRAVITY);
+        h.assertTrue(attr != null && attr.hasModifier(BuoyancyController.BUOYANCY_ID),
+                "Mob in open during surge must have buoyancy modifier");
+
+        // When tide transitions to CALM (intensity 0.0F), cleanup strips modifier
+        BuoyancyController.applyEntityBuoyancy(mob, 0.0F);
+        h.assertTrue(!attr.hasModifier(BuoyancyController.BUOYANCY_ID),
+                "Transition to 0.0F intensity must completely remove buoyancy modifier so mob falls");
+
+        h.succeed();
+    }
 }
+

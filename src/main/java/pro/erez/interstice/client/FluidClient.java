@@ -48,6 +48,20 @@ public final class FluidClient {
             ItemBlockRenderTypes.setRenderLayer(Interstice.LIGHT_FLOW.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(Interstice.HEAVY.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(Interstice.HEAVY_FLOW.get(), RenderType.translucent());
+
+            net.minecraft.client.renderer.item.ItemProperties.register(
+                    Interstice.TIDE_INDICATOR.get(),
+                    ResourceLocation.fromNamespaceAndPath(Interstice.ID, "tide_phase"),
+                    (stack, level, entity, seed) -> {
+                        pro.erez.interstice.tide.TideState state = pro.erez.interstice.tide.ClientTideState.get();
+                        return switch (state.phase()) {
+                            case CALM -> 0.00F;
+                            case WARNING -> 0.25F;
+                            case SURGE -> 0.50F;
+                            case EBB -> 0.75F;
+                        };
+                    }
+            );
         });
     }
     private static final class Appearance implements IClientFluidTypeExtensions {

@@ -75,7 +75,15 @@ public final class ShelterDetector {
         int maxX = (int) Math.floor(box.maxX - 0.05);
         int minZ = (int) Math.floor(box.minZ + 0.05);
         int maxZ = (int) Math.floor(box.maxZ - 0.05);
-        int startY = (int) Math.ceil(box.maxY);
+        if (maxX < minX) {
+            minX = (int) Math.floor(box.getCenter().x);
+            maxX = minX;
+        }
+        if (maxZ < minZ) {
+            minZ = (int) Math.floor(box.getCenter().z);
+            maxZ = minZ;
+        }
+        int startY = (int) Math.floor(box.maxY);
 
         for (int x = minX; x <= maxX; x++) {
             for (int z = minZ; z <= maxZ; z++) {

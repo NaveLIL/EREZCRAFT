@@ -1,0 +1,44 @@
+{
+  "tide.warning": {
+    "category": "weather",
+    "subtitle": "subtitles.interstice.tide.warning",
+    "sounds": [
+      {
+        "name": "minecraft:ambient/cave/cave14",
+        "volume": 0.85,
+        "pitch": 0.65
+      },
+      {
+        "name": "minecraft:ambient/nether/basalt_deltas/wind1",
+        "volume": 0.9,
+        "pitch": 0.6
+      },
+      {
+        "name": "minecraft:ambient/cave/cave10",
+        "volume": 0.8,
+        "pitch": 0.5
+      }
+    ]
+  },
+  "tide.surge": {
+    "category": "weather",
+    "subtitle": "subtitles.interstice.tide.surge",
+    "sounds": [
+      {
+        "name": "minecraft:ambient/nether/basalt_deltas/wind2",
+        "volume": 1.0,
+        "pitch": 0.55
+      },
+      {
+        "name": "minecraft:ambient/cave/cave15",
+        "volume": 0.95,
+        "pitch": 0.6
+      },
+      {
+        "name": "minecraft:ambient/nether/soul_sand_valley/wind1",
+        "volume": 0.9,
+        "pitch": 0.7
+      }
+    ]
+  }
+}

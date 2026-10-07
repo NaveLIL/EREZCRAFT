@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "interstice:item/tide_indicator_calm"
+  },
+  "overrides": [
+    { "predicate": { "interstice:tide_phase": 0.00 }, "model": "interstice:item/tide_indicator_calm" },
+    { "predicate": { "interstice:tide_phase": 0.25 }, "model": "interstice:item/tide_indicator_warning" },
+    { "predicate": { "interstice:tide_phase": 0.50 }, "model": "interstice:item/tide_indicator_surge" },
+    { "predicate": { "interstice:tide_phase": 0.75 }, "model": "interstice:item/tide_indicator_ebb" }
+  ]
+}

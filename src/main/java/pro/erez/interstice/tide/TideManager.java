@@ -5,6 +5,7 @@ import java.util.Locale;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -22,6 +23,7 @@ import pro.erez.interstice.Interstice;
 import pro.erez.interstice.SeaSurface;
 import pro.erez.interstice.geometry.GeometryProfile;
 import pro.erez.interstice.geometry.GeometryProfiles;
+import pro.erez.interstice.sound.ModSounds;
 import pro.erez.interstice.worldgen.IslandChunkGenerator;
 import pro.erez.interstice.worldgen.IslandWorld;
 
@@ -32,6 +34,9 @@ import pro.erez.interstice.worldgen.IslandWorld;
 @EventBusSubscriber(modid = Interstice.ID)
 public final class TideManager {
     private static int lightningCooldown = 0;
+    private static int warningSoundCooldown = 0;
+    private static int particleCooldown = 0;
+    private static boolean buoyancyActiveLastTick = false;
 
     private TideManager() {}
 
@@ -67,9 +72,15 @@ public final class TideManager {
             state = data.snapshot();
             applyPhaseWeather(server, state);
             TideSync.broadcast(state);
+            broadcastPhaseSounds(server, next);
         } else if (state.phaseTicksElapsed() % 200 == 0) {
             // Heartbeat calibration every 10 seconds
             TideSync.broadcast(state);
+        }
+
+        // Atmospheric effects during WARNING
+        if (state.phase() == TidePhase.WARNING) {
+            tickWarningAtmosphere(server, state);
         }
 
         // Atmospheric effects during SURGE
@@ -77,17 +88,86 @@ public final class TideManager {
             tickSurgeAtmosphere(server, state);
         }
 
+        // Rising wind vortex particles during WARNING and SURGE
+        if (state.phase() == TidePhase.WARNING || state.phase() == TidePhase.SURGE) {
+            tickWindParticles(server, state);
+        }
+
         // Buoyant lifting force in island dimensions during SURGE and EBB
         tickBuoyancy(server, state.buoyancyIntensity());
     }
 
+    private static void broadcastPhaseSounds(MinecraftServer server, TidePhase phase) {
+        for (var level : server.getAllLevels()) {
+            if (!IslandWorld.isIsland(level.dimension())) continue;
+            for (var player : level.players()) {
+                if (phase == TidePhase.WARNING) {
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                            ModSounds.TIDE_WARNING.get(), net.minecraft.sounds.SoundSource.WEATHER, 1.2F, 0.7F);
+                } else if (phase == TidePhase.SURGE) {
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                            ModSounds.TIDE_SURGE.get(), net.minecraft.sounds.SoundSource.WEATHER, 1.5F, 0.6F);
+                }
+            }
+        }
+    }
+
+    private static void tickWarningAtmosphere(MinecraftServer server, TideState state) {
+        if (--warningSoundCooldown <= 0) {
+            warningSoundCooldown = 140; // Every 7 seconds
+            for (var level : server.getAllLevels()) {
+                if (!IslandWorld.isIsland(level.dimension())) continue;
+                for (var player : level.players()) {
+                    float pitch = 0.65F + player.getRandom().nextFloat() * 0.2F;
+                    level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                            ModSounds.TIDE_WARNING.get(), net.minecraft.sounds.SoundSource.WEATHER, 0.85F, pitch);
+                }
+            }
+        }
+    }
+
+    private static void tickWindParticles(MinecraftServer server, TideState state) {
+        if (--particleCooldown > 0) return;
+        boolean isSurge = state.phase() == TidePhase.SURGE;
+        particleCooldown = isSurge ? 4 : 8;
+
+        for (var level : server.getAllLevels()) {
+            if (!IslandWorld.isIsland(level.dimension())) continue;
+            for (var player : level.players()) {
+                var random = player.getRandom();
+                int px = player.getBlockX();
+                int py = player.getBlockY();
+                int pz = player.getBlockZ();
+
+                int bursts = isSurge ? 4 : 2;
+                for (int i = 0; i < bursts; i++) {
+                    int rx = px + random.nextIntBetweenInclusive(-14, 14);
+                    int rz = pz + random.nextIntBetweenInclusive(-14, 14);
+                    double sy = py + random.nextDouble() * 2.5 - 0.5;
+                    double vy = isSurge ? 0.32 + 0.15 * state.buoyancyIntensity() : 0.14;
+                    level.sendParticles(ParticleTypes.CLOUD, rx + 0.5, sy, rz + 0.5, 1,
+                            (random.nextDouble() - 0.5) * 0.08, vy, (random.nextDouble() - 0.5) * 0.08, 0.04);
+
+                    if (isSurge && random.nextFloat() < 0.35F) {
+                        level.sendParticles(ParticleTypes.ELECTRIC_SPARK, rx + 0.5, sy, rz + 0.5, 2,
+                                0.2, 0.3, 0.2, 0.08);
+                    }
+                }
+            }
+        }
+    }
+
     private static void tickBuoyancy(MinecraftServer server, float intensity) {
+        boolean activeNow = intensity > 0.0F;
+        boolean needsCleanup = !activeNow && buoyancyActiveLastTick;
+        buoyancyActiveLastTick = activeNow;
+
         for (var level : server.getAllLevels()) {
             if (!IslandWorld.isIsland(level.dimension())) continue;
             for (var player : level.players()) {
                 BuoyancyController.applyEntityBuoyancy(player, intensity);
             }
-            if (intensity > 0.0F) {
+            if (activeNow || needsCleanup) {
                 for (var entity : level.getAllEntities()) {
                     if (!(entity instanceof net.minecraft.world.entity.player.Player)) {
                         BuoyancyController.applyEntityBuoyancy(entity, intensity);

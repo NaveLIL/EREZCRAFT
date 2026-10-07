@@ -4,8 +4,22 @@
   "block.interstice.heavy_toxin": "Тяжёлая токсичная жидкость",
   "item.interstice.light_toxin_bucket": "Ведро лёгкой жидкости",
   "item.interstice.heavy_toxin_bucket": "Ведро тяжёлой жидкости",
+  "item.interstice.tide_indicator": "Приливный барометр",
+  "item.interstice.tide_indicator.desc": "Измеряет атмосферное давление и фазы приливного цикла",
   "fluid_type.interstice.light_toxin": "Лёгкая токсичная жидкость",
   "fluid_type.interstice.heavy_toxin": "Тяжёлая токсичная жидкость",
   "death.attack.interstice.toxin": "%1$s растворился в токсичном море",
-  "block.interstice.light_sea": "Лёгкий токсичный океан"
+  "block.interstice.light_sea": "Лёгкий токсичный океан",
+  "subtitles.interstice.tide.warning": "Прилив начинает рокотать",
+  "subtitles.interstice.tide.surge": "Прилив яростно вздымается",
+  "tide.interstice.status": "Прилив: %s (осталось %sс)",
+  "tide.interstice.sheltered": "Под укрытием",
+  "tide.interstice.exposed": "Открытое небо!",
+  "tide.interstice.phase.calm": "Спокойствие",
+  "tide.interstice.phase.warning": "Предупреждение",
+  "tide.interstice.phase.surge": "Подъём",
+  "tide.interstice.phase.ebb": "Затухание",
+  "tide.interstice.tooltip.phase": "Фаза",
+  "tide.interstice.tooltip.remaining": "Осталось: %sс",
+  "tide.interstice.tooltip.lift": "Подъёмная сила: %s%%"
 }

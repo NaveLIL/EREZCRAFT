@@ -1,7 +1,11 @@
 package pro.erez.interstice.tide;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -12,7 +16,11 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import pro.erez.interstice.FluidContact;
 import pro.erez.interstice.Interstice;
+import pro.erez.interstice.SeaSurface;
+import pro.erez.interstice.geometry.GeometryProfile;
+import pro.erez.interstice.geometry.GeometryProfiles;
 
 /**
  * Applies smooth, bounded upward buoyant lift during SURGE and EBB tide phases.
@@ -69,8 +77,24 @@ public final class BuoyancyController {
             if (intensity > 0.0F && !ShelterDetector.isSheltered(item.level(), item)
                     && !item.isInWater() && !item.isInFluidType()) {
                 Vec3 delta = item.getDeltaMovement();
-                if (delta.y < 0.25) {
-                    item.setDeltaMovement(delta.x, Math.min(0.25, delta.y + 0.025 * intensity), delta.z);
+                // Overcome vanilla item gravity (0.04) and lift smoothly towards the upper sky
+                double targetUpward = 0.32 * intensity;
+                if (delta.y < targetUpward) {
+                    item.setDeltaMovement(delta.x, Math.min(targetUpward, delta.y + 0.06 * intensity), delta.z);
+                    item.hasImpulse = true;
+                }
+
+                // If item reaches the upper toxic sea or light ocean, disintegrate it
+                GeometryProfile profile = GeometryProfiles.get(item.level());
+                double seaBottom = SeaSurface.cellMinimum(profile, item.getBlockX(), item.getBlockZ(), true);
+                if (item.getY() >= seaBottom || FluidContact.pointInLight(item.level(), item.getX(), item.getY(), item.getZ())) {
+                    if (item.level() instanceof ServerLevel serverLevel) {
+                        serverLevel.sendParticles(ParticleTypes.POOF, item.getX(), item.getY(), item.getZ(), 8, 0.2, 0.2, 0.2, 0.02);
+                        serverLevel.sendParticles(ParticleTypes.SMOKE, item.getX(), item.getY(), item.getZ(), 5, 0.15, 0.15, 0.15, 0.01);
+                        serverLevel.playSound(null, item.getX(), item.getY(), item.getZ(),
+                                SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.6F, 1.6F);
+                    }
+                    item.discard();
                 }
             }
         }

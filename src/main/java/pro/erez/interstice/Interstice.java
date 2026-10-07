@@ -45,10 +45,15 @@ public final class Interstice {
     public static final DeferredHolder<Block, ToxicLiquidBlock> HEAVY_BLOCK = BLOCKS.register("heavy_toxin", () -> new ToxicLiquidBlock(HEAVY.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
     public static final DeferredHolder<Item, BucketItem> LIGHT_BUCKET = ITEMS.register("light_toxin_bucket", () -> new LightBucketItem(new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredHolder<Item, BucketItem> HEAVY_BUCKET = ITEMS.register("heavy_toxin_bucket", () -> new BucketItem(HEAVY.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredHolder<Item, pro.erez.interstice.item.TideIndicatorItem> TIDE_INDICATOR = ITEMS.register("tide_indicator", () -> new pro.erez.interstice.item.TideIndicatorItem(new Item.Properties().stacksTo(1)));
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("fluids", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.interstice"))
             .icon(() -> LIGHT_BUCKET.get().getDefaultInstance())
-            .displayItems((parameters, output) -> { output.accept(LIGHT_BUCKET.get()); output.accept(HEAVY_BUCKET.get()); }).build());
+            .displayItems((parameters, output) -> {
+                output.accept(LIGHT_BUCKET.get());
+                output.accept(HEAVY_BUCKET.get());
+                output.accept(TIDE_INDICATOR.get());
+            }).build());
 
     private static BaseFlowingFluid.Properties lightProperties() {
         return new BaseFlowingFluid.Properties(LIGHT_TYPE, LIGHT, LIGHT_FLOW).block(LIGHT_BLOCK).bucket(LIGHT_BUCKET).tickRate(5).levelDecreasePerBlock(1).explosionResistance(100);
@@ -61,6 +66,7 @@ public final class Interstice {
         bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerTask);
         bus.addListener(pro.erez.interstice.tide.TideSync::registerPayloads);
         FluidLightUpgrade.register(bus);
+        pro.erez.interstice.sound.ModSounds.register(bus);
         TYPES.register(bus); FLUIDS.register(bus); BLOCKS.register(bus); ITEMS.register(bus); TABS.register(bus);
         GENERATORS.register(bus);
         NeoForge.EVENT_BUS.addListener(FluidLab::registerCommands);
