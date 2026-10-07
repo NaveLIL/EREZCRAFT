@@ -64,4 +64,18 @@ public record TideState(
         if (phase != TidePhase.SURGE) return Integer.MAX_VALUE;
         return isPeakSurge() ? 12 : 36;
     }
+
+    /**
+     * Normalized 0.0..1.0 intensity of the upward buoyant lifting force.
+     * Ramps in SURGE, stays full, and smoothly decays to 0.0 during EBB.
+     */
+    public float buoyancyIntensity() {
+        if (phase == TidePhase.SURGE) {
+            float p = progress();
+            return p < 0.05F ? p / 0.05F : 1.0F;
+        } else if (phase == TidePhase.EBB) {
+            return 1.0F - progress();
+        }
+        return 0.0F;
+    }
 }

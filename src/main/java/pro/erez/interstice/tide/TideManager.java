@@ -76,6 +76,25 @@ public final class TideManager {
         if (state.phase() == TidePhase.SURGE) {
             tickSurgeAtmosphere(server, state);
         }
+
+        // Buoyant lifting force in island dimensions during SURGE and EBB
+        tickBuoyancy(server, state.buoyancyIntensity());
+    }
+
+    private static void tickBuoyancy(MinecraftServer server, float intensity) {
+        for (var level : server.getAllLevels()) {
+            if (!IslandWorld.isIsland(level.dimension())) continue;
+            for (var player : level.players()) {
+                BuoyancyController.applyEntityBuoyancy(player, intensity);
+            }
+            if (intensity > 0.0F) {
+                for (var entity : level.getAllEntities()) {
+                    if (!(entity instanceof net.minecraft.world.entity.player.Player)) {
+                        BuoyancyController.applyEntityBuoyancy(entity, intensity);
+                    }
+                }
+            }
+        }
     }
 
     private static void applyPhaseWeather(MinecraftServer server, TideState state) {
