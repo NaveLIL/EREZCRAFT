@@ -1,5 +1,7 @@
 package pro.erez.interstice.fluid;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -16,13 +18,15 @@ import pro.erez.interstice.OceanLiquidBlock;
 
 /**
  * Handles cross-fluid reactions:
- * 1. Heavy Toxin + Light Toxin -> Cataclysmic annihilation explosion (14.0F radius).
+ * 1. Heavy Toxin + Light Toxin -> Cataclysmic annihilation explosion (14.0F radius, vaporizes local liquids).
  * 2. Heavy Toxin + Water -> Vitriolite (dark toxic slate).
  * 3. Heavy Toxin + Lava -> Pyrolith (ultra-hard volcanic cinder).
  * 4. Light Toxin + Water -> Aerolite (pale porous ethereal tuff).
  * 5. Light Toxin + Lava -> Phosphorite (vitrified green-amber crystalline slag).
  */
 public final class FluidReactions {
+    private static final Map<BlockPos, Long> ANNIHILATION_COOLDOWNS = new ConcurrentHashMap<>();
+
     private FluidReactions() {}
 
     public static boolean handleFluidContact(Level level, BlockPos pos, FluidState state) {
@@ -47,13 +51,14 @@ public final class FluidReactions {
 
             // 1. Heavy Toxin + Light Toxin: Matter-antimatter annihilation!
             if ((isHeavy && nLight) || (isLight && nHeavy)) {
-                triggerAnnihilation(level, pos, neighborPos);
-                return true;
+                if (triggerAnnihilation(level, pos, neighborPos)) {
+                    return true;
+                }
             }
 
             // 2. Heavy Toxin + Water -> Vitriolite
             if ((isHeavy && nWater) || (isWater && nHeavy)) {
-                BlockPos target = isWater ? pos : neighborPos;
+                BlockPos target = pickSolidificationTarget(pos, state, neighborPos, neighborFluid, isWater);
                 crystallize(level, target, Interstice.VITRIOLITE.get().defaultBlockState(),
                         SoundEvents.LAVA_EXTINGUISH, 0.4F, 1.3F);
                 return true;
@@ -61,7 +66,7 @@ public final class FluidReactions {
 
             // 3. Heavy Toxin + Lava -> Pyrolith
             if ((isHeavy && nLava) || (isLava && nHeavy)) {
-                BlockPos target = isLava ? pos : neighborPos;
+                BlockPos target = pickSolidificationTarget(pos, state, neighborPos, neighborFluid, isLava);
                 crystallize(level, target, Interstice.PYROLITH.get().defaultBlockState(),
                         SoundEvents.FIRE_EXTINGUISH, 0.7F, 0.6F);
                 return true;
@@ -69,7 +74,7 @@ public final class FluidReactions {
 
             // 4. Light Toxin + Water -> Aerolite
             if ((isLight && nWater) || (isWater && nLight)) {
-                BlockPos target = isWater ? pos : neighborPos;
+                BlockPos target = pickSolidificationTarget(pos, state, neighborPos, neighborFluid, isWater);
                 crystallize(level, target, Interstice.AEROLITE.get().defaultBlockState(),
                         SoundEvents.LAVA_EXTINGUISH, 0.5F, 1.8F);
                 return true;
@@ -77,7 +82,7 @@ public final class FluidReactions {
 
             // 5. Light Toxin + Lava -> Phosphorite
             if ((isLight && nLava) || (isLava && nLight)) {
-                BlockPos target = isLava ? pos : neighborPos;
+                BlockPos target = pickSolidificationTarget(pos, state, neighborPos, neighborFluid, isLava);
                 crystallize(level, target, Interstice.PHOSPHORITE.get().defaultBlockState(),
                         SoundEvents.GLASS_BREAK, 0.8F, 1.5F);
                 return true;
@@ -87,20 +92,65 @@ public final class FluidReactions {
         return false;
     }
 
-    private static void triggerAnnihilation(Level level, BlockPos pos1, BlockPos pos2) {
-        // Discard both colliding liquid cells
-        BlockState bs1 = level.getBlockState(pos1);
-        BlockState bs2 = level.getBlockState(pos2);
-        if (!(bs1.getBlock() instanceof OceanLiquidBlock)) {
-            level.setBlock(pos1, Blocks.AIR.defaultBlockState(), 3);
+    /**
+     * Chooses which block to solidify. If one is flowing and one is source,
+     * the flowing block solidifies (just like vanilla cobblestone/basalt generators).
+     */
+    private static BlockPos pickSolidificationTarget(BlockPos pos1, FluidState state1,
+                                                    BlockPos pos2, FluidState state2,
+                                                    boolean pos1IsVanilla) {
+        if (!state1.isSource() && state2.isSource()) return pos1;
+        if (!state2.isSource() && state1.isSource()) return pos2;
+        return pos1IsVanilla ? pos1 : pos2;
+    }
+
+    private static boolean triggerAnnihilation(Level level, BlockPos pos1, BlockPos pos2) {
+        long now = level.getGameTime();
+
+        // Clean old cooldown entries periodically
+        if (now % 100 == 0) {
+            ANNIHILATION_COOLDOWNS.entrySet().removeIf(e -> now - e.getValue() > 60);
         }
-        if (!(bs2.getBlock() instanceof OceanLiquidBlock)) {
-            level.setBlock(pos2, Blocks.AIR.defaultBlockState(), 3);
+
+        // Check if an explosion already occurred nearby within 40 ticks (2 seconds)
+        for (Map.Entry<BlockPos, Long> entry : ANNIHILATION_COOLDOWNS.entrySet()) {
+            if (now - entry.getValue() < 40 && entry.getKey().closerThan(pos1, 8.0)) {
+                // Already exploded recently at this site — clear local fluids to prevent infinite loop
+                clearFluidCell(level, pos1);
+                clearFluidCell(level, pos2);
+                return true;
+            }
         }
+
+        ANNIHILATION_COOLDOWNS.put(pos1.immutable(), now);
 
         double cx = (pos1.getX() + pos2.getX()) / 2.0 + 0.5;
         double cy = (pos1.getY() + pos2.getY()) / 2.0 + 0.5;
         double cz = (pos1.getZ() + pos2.getZ()) / 2.0 + 0.5;
+
+        // Vaporize all adjacent reacting fluids in radius 3 to consume the colliding matter
+        BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos();
+        int originX = pos1.getX();
+        int originY = pos1.getY();
+        int originZ = pos1.getZ();
+
+        for (int dx = -3; dx <= 3; dx++) {
+            for (int dy = -3; dy <= 3; dy++) {
+                for (int dz = -3; dz <= 3; dz++) {
+                    cursor.set(originX + dx, originY + dy, originZ + dz);
+                    if (!level.isLoaded(cursor)) continue;
+                    BlockState bs = level.getBlockState(cursor);
+                    if (bs.getBlock() instanceof OceanLiquidBlock) continue; // Never destroy monolithic ceiling ocean
+
+                    boolean isToxin = bs.is(Interstice.HEAVY_BLOCK.get()) || bs.is(Interstice.LIGHT_BLOCK.get())
+                            || bs.getFluidState().is(Interstice.HEAVY.get()) || bs.getFluidState().is(Interstice.LIGHT.get())
+                            || bs.getFluidState().is(Interstice.HEAVY_FLOW.get()) || bs.getFluidState().is(Interstice.LIGHT_FLOW.get());
+                    if (isToxin) {
+                        level.setBlock(cursor, Blocks.AIR.defaultBlockState(), 3);
+                    }
+                }
+            }
+        }
 
         // Cataclysmic 14.0F explosion (~10-12 TNTs!)
         level.explode(null, cx, cy, cz, 14.0F, Level.ExplosionInteraction.BLOCK);
@@ -109,6 +159,15 @@ public final class FluidReactions {
             serverLevel.sendParticles(ParticleTypes.SONIC_BOOM, cx, cy, cz, 1, 0, 0, 0, 0);
             serverLevel.sendParticles(ParticleTypes.EXPLOSION_EMITTER, cx, cy, cz, 3, 0.5, 0.5, 0.5, 0.1);
             serverLevel.playSound(null, cx, cy, cz, SoundEvents.WARDEN_SONIC_BOOM, SoundSource.BLOCKS, 2.0F, 0.6F);
+        }
+
+        return true;
+    }
+
+    private static void clearFluidCell(Level level, BlockPos pos) {
+        BlockState bs = level.getBlockState(pos);
+        if (!(bs.getBlock() instanceof OceanLiquidBlock)) {
+            level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
         }
     }
 

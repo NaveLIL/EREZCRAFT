@@ -50,13 +50,6 @@ public final class OverworldToxinHazard {
 
             BlockState state = level.getBlockState(target);
             if (state.isAir() || state.getBlock() instanceof LiquidBlock) {
-                // If it's vanilla water, alien toxin violently boils it away
-                if (state.is(Blocks.WATER)) {
-                    level.setBlock(target, Blocks.AIR.defaultBlockState(), 3);
-                    level.playSound(null, target, SoundEvents.LAVA_EXTINGUISH, SoundSource.BLOCKS, 0.6F, 1.6F);
-                    level.sendParticles(ParticleTypes.LARGE_SMOKE, target.getX() + 0.5, target.getY() + 0.5, target.getZ() + 0.5,
-                            6, 0.2, 0.2, 0.2, 0.03);
-                }
                 continue;
             }
 
