@@ -43,6 +43,16 @@ public final class Interstice {
     public static final DeferredHolder<Block, ToxicLiquidBlock> LIGHT_BLOCK = BLOCKS.register("light_toxin", () -> new ToxicLiquidBlock(LIGHT.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).lightLevel(s -> 15)));
     public static final DeferredHolder<Block, OceanLiquidBlock> LIGHT_SEA = BLOCKS.register("light_sea", () -> new OceanLiquidBlock(LIGHT.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).lightLevel(s -> 15)));
     public static final DeferredHolder<Block, ToxicLiquidBlock> HEAVY_BLOCK = BLOCKS.register("heavy_toxin", () -> new ToxicLiquidBlock(HEAVY.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final DeferredHolder<Block, Block> VITRIOLITE = BLOCKS.register("vitriolite", () -> new Block(BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.COLOR_BLACK).strength(2.0F, 6.0F).sound(net.minecraft.world.level.block.SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final DeferredHolder<Block, Block> PYROLITH = BLOCKS.register("pyrolith", () -> new Block(BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.COLOR_RED).strength(4.5F, 1200.0F).sound(net.minecraft.world.level.block.SoundType.DEEPSLATE).requiresCorrectToolForDrops().lightLevel(s -> 3)));
+    public static final DeferredHolder<Block, Block> AEROLITE = BLOCKS.register("aerolite", () -> new Block(BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.COLOR_CYAN).strength(1.2F, 3.0F).sound(net.minecraft.world.level.block.SoundType.TUFF).requiresCorrectToolForDrops()));
+    public static final DeferredHolder<Block, Block> PHOSPHORITE = BLOCKS.register("phosphorite", () -> new Block(BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.COLOR_LIGHT_GREEN).strength(2.5F, 6.0F).sound(net.minecraft.world.level.block.SoundType.GLASS).lightLevel(s -> 7)));
+
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> VITRIOLITE_ITEM = ITEMS.register("vitriolite", () -> new net.minecraft.world.item.BlockItem(VITRIOLITE.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> PYROLITH_ITEM = ITEMS.register("pyrolith", () -> new net.minecraft.world.item.BlockItem(PYROLITH.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> AEROLITE_ITEM = ITEMS.register("aerolite", () -> new net.minecraft.world.item.BlockItem(AEROLITE.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> PHOSPHORITE_ITEM = ITEMS.register("phosphorite", () -> new net.minecraft.world.item.BlockItem(PHOSPHORITE.get(), new Item.Properties()));
+
     public static final DeferredHolder<Item, BucketItem> LIGHT_BUCKET = ITEMS.register("light_toxin_bucket", () -> new LightBucketItem(new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredHolder<Item, BucketItem> HEAVY_BUCKET = ITEMS.register("heavy_toxin_bucket", () -> new BucketItem(HEAVY.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredHolder<Item, pro.erez.interstice.item.TideIndicatorItem> TIDE_INDICATOR = ITEMS.register("tide_indicator", () -> new pro.erez.interstice.item.TideIndicatorItem(new Item.Properties().stacksTo(1)));
@@ -53,6 +63,10 @@ public final class Interstice {
                 output.accept(LIGHT_BUCKET.get());
                 output.accept(HEAVY_BUCKET.get());
                 output.accept(TIDE_INDICATOR.get());
+                output.accept(VITRIOLITE_ITEM.get());
+                output.accept(PYROLITH_ITEM.get());
+                output.accept(AEROLITE_ITEM.get());
+                output.accept(PHOSPHORITE_ITEM.get());
             }).build());
 
     private static BaseFlowingFluid.Properties lightProperties() {

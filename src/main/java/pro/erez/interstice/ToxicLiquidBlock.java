@@ -23,6 +23,22 @@ public final class ToxicLiquidBlock extends LiquidBlock {
     }
 
     @Override
+    public void onPlace(net.minecraft.world.level.block.state.BlockState state, Level level, BlockPos pos, net.minecraft.world.level.block.state.BlockState oldState, boolean isMoving) {
+        super.onPlace(state, level, pos, oldState, isMoving);
+        if (!level.isClientSide()) {
+            pro.erez.interstice.fluid.FluidReactions.handleFluidContact(level, pos, state.getFluidState());
+        }
+    }
+
+    @Override
+    public void neighborChanged(net.minecraft.world.level.block.state.BlockState state, Level level, BlockPos pos, net.minecraft.world.level.block.Block block, BlockPos fromPos, boolean isMoving) {
+        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
+        if (!level.isClientSide()) {
+            pro.erez.interstice.fluid.FluidReactions.handleFluidContact(level, pos, state.getFluidState());
+        }
+    }
+
+    @Override
     public void randomTick(net.minecraft.world.level.block.state.BlockState state, net.minecraft.server.level.ServerLevel level, BlockPos pos, net.minecraft.util.RandomSource random) {
         super.randomTick(state, level, pos, random);
         pro.erez.interstice.toxin.OverworldToxinHazard.corrodeEnvironment(level, pos, random);

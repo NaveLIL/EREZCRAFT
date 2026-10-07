@@ -21,5 +21,9 @@
   "tide.interstice.phase.ebb": "Затухание",
   "tide.interstice.tooltip.phase": "Фаза",
   "tide.interstice.tooltip.remaining": "Осталось: %sс",
-  "tide.interstice.tooltip.lift": "Подъёмная сила: %s%%"
+  "tide.interstice.tooltip.lift": "Подъёмная сила: %s%%",
+  "block.interstice.vitriolite": "Витриолит",
+  "block.interstice.pyrolith": "Пиролит",
+  "block.interstice.aerolite": "Аэролит",
+  "block.interstice.phosphorite": "Фосфорит"
 }

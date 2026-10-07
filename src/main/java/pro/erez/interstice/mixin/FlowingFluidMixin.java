@@ -19,6 +19,10 @@ public abstract class FlowingFluidMixin {
         if (IslandWorld.isIsland(level.dimension()) && state.is(FluidTags.WATER)) {
             WaterTransmutationManager.transmuteAt(level, pos, null);
             ci.cancel();
+            return;
+        }
+        if (pro.erez.interstice.fluid.FluidReactions.handleFluidContact(level, pos, state)) {
+            ci.cancel();
         }
     }
 }

@@ -21,5 +21,9 @@
   "tide.interstice.phase.ebb": "Ebb",
   "tide.interstice.tooltip.phase": "Phase",
   "tide.interstice.tooltip.remaining": "Remaining: %ss",
-  "tide.interstice.tooltip.lift": "Buoyant Lift: %s%%"
+  "tide.interstice.tooltip.lift": "Buoyant Lift: %s%%",
+  "block.interstice.vitriolite": "Vitriolite",
+  "block.interstice.pyrolith": "Pyrolith",
+  "block.interstice.aerolite": "Aerolite",
+  "block.interstice.phosphorite": "Phosphorite"
 }
