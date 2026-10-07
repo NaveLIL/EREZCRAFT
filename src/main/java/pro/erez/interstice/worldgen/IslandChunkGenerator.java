@@ -109,6 +109,40 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         // Surface rules run while heightmaps still describe land, before the upper sea hides it.
         super.buildSurface(region,structures,random,chunk);
         fillSeas(geometry,chunk);
+        generateOres(geometry,chunk,region.getSeed());
+    }
+    public static void generateOres(GeometryProfile profile, ChunkAccess chunk, long seed) {
+        int cx = chunk.getPos().x;
+        int cz = chunk.getPos().z;
+        long chunkSeed = seed ^ (cx * 341873128712L + cz * 132897987541L);
+        java.util.Random rnd = new java.util.Random(chunkSeed);
+
+        int startX = chunk.getPos().getMinBlockX();
+        int startZ = chunk.getPos().getMinBlockZ();
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+        BlockState oreState = Interstice.RIFTSILVER_ORE.get().defaultBlockState();
+
+        int minLand = profile.minLand();
+        int maxLand = profile.maxLand();
+        if (maxLand - minLand <= 6) return;
+
+        for (int v = 0; v < 4; v++) {
+            int vx = startX + rnd.nextInt(16);
+            int vz = startZ + rnd.nextInt(16);
+            int vy = minLand + 2 + rnd.nextInt(maxLand - minLand - 4);
+            int veinSize = 4 + rnd.nextInt(5);
+
+            for (int i = 0; i < veinSize; i++) {
+                int ox = vx + rnd.nextInt(3) - 1;
+                int oy = vy + rnd.nextInt(3) - 1;
+                int oz = vz + rnd.nextInt(3) - 1;
+                pos.set(ox, oy, oz);
+
+                if (chunk.getBlockState(pos).is(Blocks.STONE)) {
+                    chunk.setBlockState(pos, oreState, false);
+                }
+            }
+        }
     }
     public static void fillSeas(ChunkAccess chunk) {
         fillSeas(GeometryProfile.LEGACY,chunk);

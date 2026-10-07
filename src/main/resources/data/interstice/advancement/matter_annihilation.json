@@ -1,0 +1,28 @@
+{
+  "parent": "interstice:root",
+  "display": {
+    "icon": {
+      "id": "minecraft:tnt",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.interstice.matter_annihilation.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.matter_annihilation.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "annihilation": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "annihilation"
+    ]
+  ]
+}

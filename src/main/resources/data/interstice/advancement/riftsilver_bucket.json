@@ -1,0 +1,35 @@
+{
+  "parent": "interstice:smelt_riftsilver",
+  "display": {
+    "icon": {
+      "id": "interstice:riftsilver_bucket",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.interstice.riftsilver_bucket.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.riftsilver_bucket.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "has_bucket": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsilver_bucket"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bucket"
+    ]
+  ]
+}

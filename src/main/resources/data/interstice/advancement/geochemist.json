@@ -1,0 +1,74 @@
+{
+  "parent": "interstice:root",
+  "display": {
+    "icon": {
+      "id": "interstice:pyrolith",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.interstice.geochemist.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.geochemist.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "vitriolite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:vitriolite"
+          }
+        ]
+      }
+    },
+    "pyrolith": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:pyrolith"
+          }
+        ]
+      }
+    },
+    "aerolite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:aerolite"
+          }
+        ]
+      }
+    },
+    "phosphorite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:phosphorite"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "vitriolite"
+    ],
+    [
+      "pyrolith"
+    ],
+    [
+      "aerolite"
+    ],
+    [
+      "phosphorite"
+    ]
+  ]
+}

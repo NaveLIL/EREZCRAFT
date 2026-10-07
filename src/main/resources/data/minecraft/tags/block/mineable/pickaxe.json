@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:vitriolite",
+    "interstice:pyrolith",
+    "interstice:aerolite",
+    "interstice:phosphorite",
+    "interstice:riftsilver_ore"
+  ]
+}

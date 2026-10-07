@@ -1,0 +1,28 @@
+{
+  "parent": "interstice:root",
+  "display": {
+    "icon": {
+      "id": "interstice:heavy_toxin_bucket",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.interstice.corrosive_lesson.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.corrosive_lesson.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "corroded": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "corroded"
+    ]
+  ]
+}

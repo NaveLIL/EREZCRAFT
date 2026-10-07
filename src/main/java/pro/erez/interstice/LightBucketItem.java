@@ -2,14 +2,16 @@ package pro.erez.interstice;
 
 import javax.annotation.Nullable;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
+import pro.erez.interstice.item.CorrosiveBucketHandler;
 
 /** Pouring into the held ocean merges the contents without replacing its shaped voxel. */
-public final class LightBucketItem extends BucketItem {
+public class LightBucketItem extends BucketItem {
     public LightBucketItem(Properties properties) { super(Interstice.LIGHT.get(), properties); }
 
     @Override
@@ -21,5 +23,21 @@ public final class LightBucketItem extends BucketItem {
             return true;
         }
         return super.emptyContents(player, level, pos, hit, container);
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+        CorrosiveBucketHandler.tickCorrosion(stack, level, entity, Interstice.LIGHT_BLOCK, true);
+    }
+
+    @Override
+    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
+        return slotChanged || oldStack.getItem() != newStack.getItem();
+    }
+
+    @Override
+    public boolean onEntityItemUpdate(ItemStack stack, net.minecraft.world.entity.item.ItemEntity entity) {
+        CorrosiveBucketHandler.tickDroppedCorrosion(stack, entity.level(), entity, Interstice.LIGHT_BLOCK, true);
+        return false;
     }
 }

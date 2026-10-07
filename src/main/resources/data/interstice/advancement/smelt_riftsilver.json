@@ -1,0 +1,35 @@
+{
+  "parent": "interstice:mine_riftsilver",
+  "display": {
+    "icon": {
+      "id": "interstice:riftsilver_ingot",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.interstice.smelt_riftsilver.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.smelt_riftsilver.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "has_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsilver_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ingot"
+    ]
+  ]
+}

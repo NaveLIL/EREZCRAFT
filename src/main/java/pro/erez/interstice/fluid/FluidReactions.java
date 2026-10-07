@@ -159,6 +159,12 @@ public final class FluidReactions {
             serverLevel.sendParticles(ParticleTypes.SONIC_BOOM, cx, cy, cz, 1, 0, 0, 0, 0);
             serverLevel.sendParticles(ParticleTypes.EXPLOSION_EMITTER, cx, cy, cz, 3, 0.5, 0.5, 0.5, 0.1);
             serverLevel.playSound(null, cx, cy, cz, SoundEvents.WARDEN_SONIC_BOOM, SoundSource.BLOCKS, 2.0F, 0.6F);
+
+            for (net.minecraft.server.level.ServerPlayer player : serverLevel.players()) {
+                if (player.distanceToSqr(cx, cy, cz) < 64.0 * 64.0) {
+                    pro.erez.interstice.item.CorrosiveBucketHandler.awardAdvancement(player, "matter_annihilation");
+                }
+            }
         }
 
         return true;

@@ -47,21 +47,36 @@ public final class Interstice {
     public static final DeferredHolder<Block, Block> PYROLITH = BLOCKS.register("pyrolith", () -> new Block(BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.COLOR_RED).strength(4.5F, 1200.0F).sound(net.minecraft.world.level.block.SoundType.DEEPSLATE).requiresCorrectToolForDrops().lightLevel(s -> 3)));
     public static final DeferredHolder<Block, Block> AEROLITE = BLOCKS.register("aerolite", () -> new Block(BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.COLOR_CYAN).strength(1.2F, 3.0F).sound(net.minecraft.world.level.block.SoundType.TUFF).requiresCorrectToolForDrops()));
     public static final DeferredHolder<Block, Block> PHOSPHORITE = BLOCKS.register("phosphorite", () -> new Block(BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.COLOR_LIGHT_GREEN).strength(2.5F, 6.0F).sound(net.minecraft.world.level.block.SoundType.GLASS).lightLevel(s -> 7)));
+    public static final DeferredHolder<Block, net.minecraft.world.level.block.DropExperienceBlock> RIFTSILVER_ORE = BLOCKS.register("riftsilver_ore",
+            () -> new net.minecraft.world.level.block.DropExperienceBlock(net.minecraft.util.valueproviders.UniformInt.of(1, 3),
+                    BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.COLOR_PURPLE).strength(3.0F, 3.0F).sound(net.minecraft.world.level.block.SoundType.STONE).requiresCorrectToolForDrops()));
 
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> VITRIOLITE_ITEM = ITEMS.register("vitriolite", () -> new net.minecraft.world.item.BlockItem(VITRIOLITE.get(), new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> PYROLITH_ITEM = ITEMS.register("pyrolith", () -> new net.minecraft.world.item.BlockItem(PYROLITH.get(), new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> AEROLITE_ITEM = ITEMS.register("aerolite", () -> new net.minecraft.world.item.BlockItem(AEROLITE.get(), new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> PHOSPHORITE_ITEM = ITEMS.register("phosphorite", () -> new net.minecraft.world.item.BlockItem(PHOSPHORITE.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> RIFTSILVER_ORE_ITEM = ITEMS.register("riftsilver_ore", () -> new net.minecraft.world.item.BlockItem(RIFTSILVER_ORE.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, Item> RAW_RIFTSILVER = ITEMS.register("raw_riftsilver", () -> new Item(new Item.Properties()));
+    public static final DeferredHolder<Item, Item> RIFTSILVER_INGOT = ITEMS.register("riftsilver_ingot", () -> new Item(new Item.Properties()));
 
     public static final DeferredHolder<Item, BucketItem> LIGHT_BUCKET = ITEMS.register("light_toxin_bucket", () -> new LightBucketItem(new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-    public static final DeferredHolder<Item, BucketItem> HEAVY_BUCKET = ITEMS.register("heavy_toxin_bucket", () -> new BucketItem(HEAVY.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredHolder<Item, BucketItem> HEAVY_BUCKET = ITEMS.register("heavy_toxin_bucket", () -> new pro.erez.interstice.item.HeavyBucketItem(new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredHolder<Item, pro.erez.interstice.item.RiftsilverBucketItem> RIFTSILVER_BUCKET = ITEMS.register("riftsilver_bucket", () -> new pro.erez.interstice.item.RiftsilverBucketItem(new Item.Properties().stacksTo(16)));
+    public static final DeferredHolder<Item, pro.erez.interstice.item.RiftsilverHeavyBucketItem> RIFTSILVER_HEAVY_BUCKET = ITEMS.register("riftsilver_heavy_bucket", () -> new pro.erez.interstice.item.RiftsilverHeavyBucketItem(new Item.Properties().craftRemainder(RIFTSILVER_BUCKET.get()).stacksTo(1)));
+    public static final DeferredHolder<Item, pro.erez.interstice.item.RiftsilverInvertedBucketItem> RIFTSILVER_INVERTED_BUCKET = ITEMS.register("riftsilver_inverted_bucket", () -> new pro.erez.interstice.item.RiftsilverInvertedBucketItem(new Item.Properties().craftRemainder(RIFTSILVER_BUCKET.get()).stacksTo(1)));
     public static final DeferredHolder<Item, pro.erez.interstice.item.TideIndicatorItem> TIDE_INDICATOR = ITEMS.register("tide_indicator", () -> new pro.erez.interstice.item.TideIndicatorItem(new Item.Properties().stacksTo(1)));
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("fluids", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.interstice"))
-            .icon(() -> LIGHT_BUCKET.get().getDefaultInstance())
+            .icon(() -> RIFTSILVER_INVERTED_BUCKET.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(LIGHT_BUCKET.get());
                 output.accept(HEAVY_BUCKET.get());
+                output.accept(RIFTSILVER_BUCKET.get());
+                output.accept(RIFTSILVER_HEAVY_BUCKET.get());
+                output.accept(RIFTSILVER_INVERTED_BUCKET.get());
+                output.accept(RAW_RIFTSILVER.get());
+                output.accept(RIFTSILVER_INGOT.get());
+                output.accept(RIFTSILVER_ORE_ITEM.get());
                 output.accept(TIDE_INDICATOR.get());
                 output.accept(VITRIOLITE_ITEM.get());
                 output.accept(PYROLITH_ITEM.get());

@@ -1,0 +1,46 @@
+{
+  "parent": "interstice:root",
+  "display": {
+    "icon": {
+      "id": "interstice:raw_riftsilver",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.interstice.mine_riftsilver.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.mine_riftsilver.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "has_raw": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:raw_riftsilver"
+          }
+        ]
+      }
+    },
+    "has_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsilver_ore"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_raw",
+      "has_ore"
+    ]
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "id": "interstice:vitriolite",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.interstice.root.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.root.description"
+    },
+    "background": "interstice:textures/block/vitriolite.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "entered_islands": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands"
+      }
+    },
+    "entered_tall": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_tall"
+      }
+    },
+    "entered_lab": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:fluid_lab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "entered_islands",
+      "entered_tall",
+      "entered_lab"
+    ]
+  ]
+}

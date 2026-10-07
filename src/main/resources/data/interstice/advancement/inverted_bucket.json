@@ -1,0 +1,35 @@
+{
+  "parent": "interstice:riftsilver_bucket",
+  "display": {
+    "icon": {
+      "id": "interstice:riftsilver_inverted_bucket",
+      "count": 1
+    },
+    "title": {
+      "translate": "advancements.interstice.inverted_bucket.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.inverted_bucket.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "has_inverted": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsilver_inverted_bucket"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_inverted"
+    ]
+  ]
+}
