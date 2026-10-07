@@ -89,6 +89,9 @@ public final class TideManager {
         // Atmospheric effects during SURGE
         if (state.phase() == TidePhase.SURGE) {
             tickSurgeAtmosphere(server, state);
+            if (state.phaseTicksElapsed() % 20 == 0) {
+                wakeAllIslandSprouts(server);
+            }
         }
 
         // Rising wind vortex particles during WARNING and SURGE
@@ -111,6 +114,7 @@ public final class TideManager {
                     level.playSound(null, player.getX(), player.getY(), player.getZ(),
                             ModSounds.TIDE_SURGE.get(), net.minecraft.sounds.SoundSource.WEATHER, 1.5F, 0.6F);
                 }
+                pro.erez.interstice.TideSproutBlock.wakeNearbySprouts(level, player.blockPosition(), 36);
             }
         }
     }
@@ -315,6 +319,7 @@ public final class TideManager {
         TideState state = data.snapshot();
         applyPhaseWeather(source.getServer(), state);
         TideSync.broadcast(state);
+        wakeAllIslandSprouts(source.getServer());
         source.sendSuccess(() -> Component.literal("Advanced tide to " + next.getSerializedName().toUpperCase(Locale.ROOT)), true);
         return 1;
     }
@@ -327,7 +332,17 @@ public final class TideManager {
         TideState state = data.snapshot();
         applyPhaseWeather(source.getServer(), state);
         TideSync.broadcast(state);
+        wakeAllIslandSprouts(source.getServer());
         source.sendSuccess(() -> Component.literal("Set tide phase to " + target.getSerializedName().toUpperCase(Locale.ROOT)), true);
         return 1;
+    }
+
+    public static void wakeAllIslandSprouts(MinecraftServer server) {
+        for (var level : server.getAllLevels()) {
+            if (!IslandWorld.isIsland(level.dimension())) continue;
+            for (var player : level.players()) {
+                pro.erez.interstice.TideSproutBlock.wakeNearbySprouts(level, player.blockPosition(), 32);
+            }
+        }
     }
 }

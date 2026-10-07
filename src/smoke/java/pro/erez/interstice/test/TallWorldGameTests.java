@@ -51,7 +51,7 @@ public final class TallWorldGameTests {
                     } else {
                         // Surface rules replace stone with dirt/moss; compare density occupancy.
                         // 3D trilinear cell interpolation of cave carving allows <= 5 boundary voxels out of 196,608.
-                        if (actual.isAir() != base.isAir()) {
+                        if (!actual.is(Interstice.TIDE_SPROUT.get()) && actual.isAir() != base.isAir()) {
                             densityMismatches++;
                         }
                         h.assertTrue(actual.getFluidState().isEmpty(),"Fluid escaped into island band at "+pos);

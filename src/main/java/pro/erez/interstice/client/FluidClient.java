@@ -48,6 +48,7 @@ public final class FluidClient {
             ItemBlockRenderTypes.setRenderLayer(Interstice.LIGHT_FLOW.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(Interstice.HEAVY.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(Interstice.HEAVY_FLOW.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(Interstice.TIDE_SPROUT.get(), RenderType.cutout());
 
             net.minecraft.client.renderer.item.ItemProperties.register(
                     Interstice.TIDE_INDICATOR.get(),

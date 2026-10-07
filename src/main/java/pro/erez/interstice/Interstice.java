@@ -50,12 +50,18 @@ public final class Interstice {
     public static final DeferredHolder<Block, net.minecraft.world.level.block.DropExperienceBlock> RIFTSILVER_ORE = BLOCKS.register("riftsilver_ore",
             () -> new net.minecraft.world.level.block.DropExperienceBlock(net.minecraft.util.valueproviders.UniformInt.of(1, 3),
                     BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.COLOR_PURPLE).strength(3.0F, 3.0F).sound(net.minecraft.world.level.block.SoundType.STONE).requiresCorrectToolForDrops()));
+    public static final DeferredHolder<Block, RiftstoneBlock> RIFTSTONE = BLOCKS.register("riftstone", RiftstoneBlock::new);
+    public static final DeferredHolder<Block, AbyssalTurfBlock> ABYSSAL_TURF = BLOCKS.register("abyssal_turf", AbyssalTurfBlock::new);
+    public static final DeferredHolder<Block, TideSproutBlock> TIDE_SPROUT = BLOCKS.register("tide_sprout", TideSproutBlock::new);
 
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> VITRIOLITE_ITEM = ITEMS.register("vitriolite", () -> new net.minecraft.world.item.BlockItem(VITRIOLITE.get(), new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> PYROLITH_ITEM = ITEMS.register("pyrolith", () -> new net.minecraft.world.item.BlockItem(PYROLITH.get(), new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> AEROLITE_ITEM = ITEMS.register("aerolite", () -> new net.minecraft.world.item.BlockItem(AEROLITE.get(), new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> PHOSPHORITE_ITEM = ITEMS.register("phosphorite", () -> new net.minecraft.world.item.BlockItem(PHOSPHORITE.get(), new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> RIFTSILVER_ORE_ITEM = ITEMS.register("riftsilver_ore", () -> new net.minecraft.world.item.BlockItem(RIFTSILVER_ORE.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> RIFTSTONE_ITEM = ITEMS.register("riftstone", () -> new net.minecraft.world.item.BlockItem(RIFTSTONE.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> ABYSSAL_TURF_ITEM = ITEMS.register("abyssal_turf", () -> new net.minecraft.world.item.BlockItem(ABYSSAL_TURF.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> TIDE_SPROUT_ITEM = ITEMS.register("tide_sprout", () -> new net.minecraft.world.item.BlockItem(TIDE_SPROUT.get(), new Item.Properties()));
     public static final DeferredHolder<Item, Item> RAW_RIFTSILVER = ITEMS.register("raw_riftsilver", () -> new Item(new Item.Properties()));
     public static final DeferredHolder<Item, Item> RIFTSILVER_INGOT = ITEMS.register("riftsilver_ingot", () -> new Item(new Item.Properties()));
 
@@ -77,6 +83,9 @@ public final class Interstice {
                 output.accept(RAW_RIFTSILVER.get());
                 output.accept(RIFTSILVER_INGOT.get());
                 output.accept(RIFTSILVER_ORE_ITEM.get());
+                output.accept(RIFTSTONE_ITEM.get());
+                output.accept(ABYSSAL_TURF_ITEM.get());
+                output.accept(TIDE_SPROUT_ITEM.get());
                 output.accept(TIDE_INDICATOR.get());
                 output.accept(VITRIOLITE_ITEM.get());
                 output.accept(PYROLITH_ITEM.get());

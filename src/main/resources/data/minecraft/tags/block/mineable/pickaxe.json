@@ -5,6 +5,8 @@
     "interstice:pyrolith",
     "interstice:aerolite",
     "interstice:phosphorite",
-    "interstice:riftsilver_ore"
+    "interstice:riftsilver_ore",
+    "interstice:riftstone",
+    "interstice:abyssal_turf"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "interstice:block/abyssal_turf_top",
+    "bottom": "interstice:block/riftstone",
+    "side": "interstice:block/abyssal_turf_side"
+  }
+}

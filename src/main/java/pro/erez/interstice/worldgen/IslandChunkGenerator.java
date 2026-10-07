@@ -88,7 +88,11 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         if(y>profile.minY() && y<=profile.lowerSeaTop()) return Interstice.HEAVY_BLOCK.get().defaultBlockState();
         if(y<profile.roof() && y>=Math.floor(upperSurface))
             return Interstice.LIGHT_SEA.get().defaultBlockState().setValue(OceanLiquidBlock.CHAOTIC,true);
-        return landAllowed(profile,y,upperSurface) ? terrain : Blocks.AIR.defaultBlockState();
+        if(!landAllowed(profile,y,upperSurface)) return Blocks.AIR.defaultBlockState();
+        // Land is allowed at this position — replace vanilla stone/dirt with riftstone, grass/moss with abyssal turf
+        if(terrain.is(Blocks.GRASS_BLOCK) || terrain.is(Blocks.MOSS_BLOCK) || terrain.is(Interstice.ABYSSAL_TURF.get())) return Interstice.ABYSSAL_TURF.get().defaultBlockState();
+        if(terrain.is(Blocks.STONE) || terrain.is(Blocks.DIRT) || terrain.is(Interstice.RIFTSTONE.get())) return Interstice.RIFTSTONE.get().defaultBlockState();
+        return terrain;
     }
     @Override public CompletableFuture<ChunkAccess> fillFromNoise(Blender blender,RandomState random,StructureManager structures,ChunkAccess chunk) {
         geometry.checkHeight(chunk);
@@ -110,6 +114,39 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         super.buildSurface(region,structures,random,chunk);
         fillSeas(geometry,chunk);
         generateOres(geometry,chunk,region.getSeed());
+        generateTideSprouts(geometry,chunk,region.getSeed());
+    }
+    public static void generateTideSprouts(GeometryProfile profile, ChunkAccess chunk, long seed) {
+        int cx = chunk.getPos().x;
+        int cz = chunk.getPos().z;
+        long chunkSeed = (seed ^ (cx * 987654321L + cz * 123456789L)) + 777L;
+        java.util.Random rnd = new java.util.Random(chunkSeed);
+
+        int startX = chunk.getPos().getMinBlockX();
+        int startZ = chunk.getPos().getMinBlockZ();
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+        BlockState sproutState = Interstice.TIDE_SPROUT.get().defaultBlockState();
+
+        // 4..7 attempts per chunk
+        int count = 4 + rnd.nextInt(4);
+        for (int i = 0; i < count; i++) {
+            int x = startX + rnd.nextInt(16);
+            int z = startZ + rnd.nextInt(16);
+
+            // Scan downward from top of land zone to find abyssal turf surface
+            for (int y = profile.maxLand(); y >= profile.minLand(); y--) {
+                pos.set(x, y, z);
+                BlockState at = chunk.getBlockState(pos);
+                if (at.is(Interstice.ABYSSAL_TURF.get())) {
+                    pos.set(x, y + 1, z);
+                    if (chunk.getBlockState(pos).isAir()) {
+                        chunk.setBlockState(pos, sproutState, false);
+                    }
+                    break;
+                }
+                if (!at.isAir()) break; // hit solid non-turf block — stop
+            }
+        }
     }
     public static void generateOres(GeometryProfile profile, ChunkAccess chunk, long seed) {
         int cx = chunk.getPos().x;
@@ -138,7 +175,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
                 int oz = vz + rnd.nextInt(3) - 1;
                 pos.set(ox, oy, oz);
 
-                if (chunk.getBlockState(pos).is(Blocks.STONE)) {
+                if (chunk.getBlockState(pos).is(Blocks.STONE) || chunk.getBlockState(pos).is(Interstice.RIFTSTONE.get())) {
                     chunk.setBlockState(pos, oreState, false);
                 }
             }
