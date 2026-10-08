@@ -1,0 +1,85 @@
+{
+  "kind": "read_only_research",
+  "checked": "2026-10-08",
+  "current_game_version": "0.2.5",
+  "new_terrain_implemented": false,
+  "primary_candidate": {
+    "project": "FreeTerraForged",
+    "branch": "1.21.1",
+    "commit": "c5d322f5e44539ca6d3a6059c5de440af9abcfe6",
+    "license": "MIT",
+    "upstream_minecraft": "1.21.1",
+    "upstream_neoforge": "21.1.219",
+    "upstream_version": "1.0.0002",
+    "our_neoforge": "21.1.252",
+    "integration_built_or_tested": false,
+    "files": [
+      {
+        "path": "gradle.properties",
+        "sha256": "7cbaefbb5e84f6c81241bf161d9a0424b4667b311dc42f17334d992d551f15d9",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/gradle.properties"
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "b773ac1dda8ef88d43f1e9ff384daca3b67c5fc6cc893bd10c49a9e50bfd98ae",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/LICENSE"
+      },
+      {
+        "path": "common/src/main/java/etcodehome/freeterraforged/mixin/MixinChunkMap.java",
+        "sha256": "3bfbc91fd479ea77dfd7c72c714d28b96f91b90a8b902315cef2e0d128716e06",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/mixin/MixinChunkMap.java"
+      },
+      {
+        "path": "common/src/main/java/etcodehome/freeterraforged/mixin/MixinRandomState.java",
+        "sha256": "bb1d160eeca182ed4076fa5cc77e2cd66ca3cd91f2d277f1039b6a0e00105994",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/mixin/MixinRandomState.java"
+      },
+      {
+        "path": "common/src/main/java/etcodehome/freeterraforged/data/worldgen/preset/PresetNoiseGeneratorSettings.java",
+        "sha256": "2f3cca89ab007df0c7a11423325f159f52a587e83fd5b02b4be474f0efaf7d5f",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/data/worldgen/preset/PresetNoiseGeneratorSettings.java"
+      },
+      {
+        "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/terrain/region/RegionModule.java",
+        "sha256": "52a516b04ab62041d869cabd725149c4ba38dfa378ed69638ab182f53b8b6d6a",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/terrain/region/RegionModule.java"
+      },
+      {
+        "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/terrain/Populators.java",
+        "sha256": "5f56cdc372e489e58d8b4fc19b03662ded18f28db75cd79afa538dc859d1a92d",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/terrain/Populators.java"
+      },
+      {
+        "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/terrain/populator/TerrainPopulator.java",
+        "sha256": "41b40c5a2f4f49271dfb4841307635ef9119ca59284a8cab3de057efeb958703",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/terrain/populator/TerrainPopulator.java"
+      },
+      {
+        "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/module/Cache2d.java",
+        "sha256": "9366a50a8a5f4e5632ddbc602cd20b1d1e5a07d78370c281da58324b31219702",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/module/Cache2d.java"
+      },
+      {
+        "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/heightmap/WorldLookup.java",
+        "sha256": "157309724ff28bd6b9e17bf211cd2286c67b1bc852616356ae64fed00d9fc57e",
+        "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/heightmap/WorldLookup.java"
+      }
+    ],
+    "constraints": [
+      "Whole mod context is gated to Overworld; isolated numeric adapter needed",
+      "Region and point landforms selected; full tile erosion deferred",
+      "Remove optional Cache2d or isolate per immutable world seed",
+      "Float coordinate precision needs explicit distant-coordinate tests",
+      "Native FTF grounded islands do not replace our suspended 3D field"
+    ]
+  },
+  "design": "docs/TERRAIN_V2_DESIGN.md",
+  "candidate_comparison": "docs/TERRAIN_TOOLS.md",
+  "validation": {
+    "passed": true,
+    "source_files_checked": 10,
+    "local_document_links_checked": 22,
+    "current_jar_sha256_unchanged": true,
+    "protected_artifact_sha256": "975c47a231e4861fd0c9a3fc2ef2f6a3bdf858bfc894741aabaabb40585d7b03"
+  }
+}
