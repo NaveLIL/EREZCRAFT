@@ -1,7 +1,9 @@
 package pro.erez.interstice.fluid;
 
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.HashMap;
+import java.util.Collections;
+import java.util.WeakHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -13,6 +15,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.level.LevelEvent;
+import net.neoforged.neoforge.event.tick.LevelTickEvent;
 import pro.erez.interstice.Interstice;
 import pro.erez.interstice.OceanLiquidBlock;
 
@@ -24,8 +30,11 @@ import pro.erez.interstice.OceanLiquidBlock;
  * 4. Light Toxin + Water -> Aerolite (pale porous ethereal tuff).
  * 5. Light Toxin + Lava -> Phosphorite (vitrified green-amber crystalline slag).
  */
+@EventBusSubscriber(modid = Interstice.ID)
 public final class FluidReactions {
-    private static final Map<BlockPos, Long> ANNIHILATION_COOLDOWNS = new ConcurrentHashMap<>();
+    private static final int ANNIHILATION_COOLDOWN_TICKS = 40;
+    private static final Map<Level, Map<BlockPos, Long>> ANNIHILATION_COOLDOWNS =
+            Collections.synchronizedMap(new WeakHashMap<>());
 
     private FluidReactions() {}
 
@@ -106,15 +115,12 @@ public final class FluidReactions {
 
     private static boolean triggerAnnihilation(Level level, BlockPos pos1, BlockPos pos2) {
         long now = level.getGameTime();
-
-        // Clean old cooldown entries periodically
-        if (now % 100 == 0) {
-            ANNIHILATION_COOLDOWNS.entrySet().removeIf(e -> now - e.getValue() > 60);
-        }
+        Map<BlockPos, Long> cooldowns = ANNIHILATION_COOLDOWNS.computeIfAbsent(level, key -> new HashMap<>());
+        pruneCooldowns(cooldowns, now);
 
         // Check if an explosion already occurred nearby within 40 ticks (2 seconds)
-        for (Map.Entry<BlockPos, Long> entry : ANNIHILATION_COOLDOWNS.entrySet()) {
-            if (now - entry.getValue() < 40 && entry.getKey().closerThan(pos1, 8.0)) {
+        for (Map.Entry<BlockPos, Long> entry : cooldowns.entrySet()) {
+            if (entry.getKey().closerThan(pos1, 8.0)) {
                 // Already exploded recently at this site — clear local fluids to prevent infinite loop
                 clearFluidCell(level, pos1);
                 clearFluidCell(level, pos2);
@@ -122,7 +128,7 @@ public final class FluidReactions {
             }
         }
 
-        ANNIHILATION_COOLDOWNS.put(pos1.immutable(), now);
+        cooldowns.put(pos1.immutable(), now);
 
         double cx = (pos1.getX() + pos2.getX()) / 2.0 + 0.5;
         double cy = (pos1.getY() + pos2.getY()) / 2.0 + 0.5;
@@ -168,6 +174,25 @@ public final class FluidReactions {
         }
 
         return true;
+    }
+
+    private static void pruneCooldowns(Map<BlockPos, Long> cooldowns, long now) {
+        cooldowns.values().removeIf(tick -> tick > now || now - tick >= ANNIHILATION_COOLDOWN_TICKS);
+    }
+
+    @SubscribeEvent
+    public static void onLevelTick(LevelTickEvent.Post event) {
+        Level level = event.getLevel();
+        if (level.isClientSide() || level.getGameTime() % 20 != 0) return;
+        Map<BlockPos, Long> cooldowns = ANNIHILATION_COOLDOWNS.get(level);
+        if (cooldowns == null) return;
+        pruneCooldowns(cooldowns, level.getGameTime());
+        if (cooldowns.isEmpty()) ANNIHILATION_COOLDOWNS.remove(level);
+    }
+
+    @SubscribeEvent
+    public static void onLevelUnload(LevelEvent.Unload event) {
+        ANNIHILATION_COOLDOWNS.remove(event.getLevel());
     }
 
     private static void clearFluidCell(Level level, BlockPos pos) {

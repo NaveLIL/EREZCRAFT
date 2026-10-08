@@ -1,0 +1,29 @@
+{
+  "project": "Interstice",
+  "generator": "tools/GenerateProjectTextures.java",
+  "license": "Apache-2.0",
+  "method": "Original deterministic pixel art authored in editable Java; no source images or third-party pixel layouts are read.",
+  "size": "16x16; portal 16x128 with eight frames",
+  "palette": "graphite-violet stone, ash-mauve turf, dark wood, mauve foliage and cyan bioluminescence",
+  "edge_policy": "Opposite edges match on repeating tile faces; turf sides retain separate upper cover and lower stone bands.",
+  "assets": [
+    "riftstone",
+    "abyssal_turf_top",
+    "abyssal_turf_side",
+    "riftsilver_ore",
+    "gloomcrown_log",
+    "gloomcrown_log_top",
+    "stripped_gloomcrown_log",
+    "stripped_gloomcrown_log_top",
+    "gloomcrown_planks",
+    "gloomcrown_leaves",
+    "tide_sprout_petal",
+    "tide_sprout_core",
+    "tide_sprout_stalk",
+    "rift_frame",
+    "rift_portal",
+    "rift_lens",
+    "wayfarer_key",
+    "pressure_coupler"
+  ]
+}

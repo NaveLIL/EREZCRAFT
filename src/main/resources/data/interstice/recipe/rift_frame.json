@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    " R ",
+    "RSR",
+    " R "
+  ],
+  "key": {
+    "R": {
+      "item": "interstice:riftstone"
+    },
+    "S": {
+      "item": "interstice:riftsilver_ingot"
+    }
+  },
+  "result": {
+    "id": "interstice:rift_frame",
+    "count": 4
+  }
+}

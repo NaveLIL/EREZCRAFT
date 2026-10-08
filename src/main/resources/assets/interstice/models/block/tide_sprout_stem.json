@@ -1,7 +1,82 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "minecraft:block/block",
   "render_type": "minecraft:cutout",
+  "ambientocclusion": true,
   "textures": {
-    "cross": "interstice:block/tide_sprout_stem"
-  }
+    "particle": "interstice:block/tide_sprout_petal",
+    "petal": "interstice:block/tide_sprout_petal",
+    "core": "interstice:block/tide_sprout_core",
+    "stalk": "interstice:block/tide_sprout_stalk"
+  },
+  "elements": [
+    {
+      "from": [
+        6.5,
+        0,
+        6.5
+      ],
+      "to": [
+        9.5,
+        16,
+        9.5
+      ],
+      "faces": {
+        "up": {
+          "texture": "#stalk"
+        },
+        "down": {
+          "texture": "#stalk"
+        },
+        "north": {
+          "texture": "#stalk"
+        },
+        "south": {
+          "texture": "#stalk"
+        },
+        "west": {
+          "texture": "#stalk"
+        },
+        "east": {
+          "texture": "#stalk"
+        }
+      }
+    },
+    {
+      "from": [
+        6.25,
+        7,
+        6.25
+      ],
+      "to": [
+        9.75,
+        8,
+        9.75
+      ],
+      "faces": {
+        "up": {
+          "texture": "#core",
+          "neoforge_data": {
+            "block_light": 11,
+            "sky_light": 0,
+            "ambient_occlusion": false
+          }
+        },
+        "down": {
+          "texture": "#petal"
+        },
+        "north": {
+          "texture": "#petal"
+        },
+        "south": {
+          "texture": "#petal"
+        },
+        "west": {
+          "texture": "#petal"
+        },
+        "east": {
+          "texture": "#petal"
+        }
+      }
+    }
+  ]
 }

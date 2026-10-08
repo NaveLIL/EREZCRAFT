@@ -1,0 +1,143 @@
+{
+  "scope": "M10-M12 controlled, guided Survival acceptance",
+  "passed": true,
+  "conditions": {
+    "seed": 20261006,
+    "difficulty": "normal",
+    "bonus_chest": true,
+    "first_entry_weather": "controlled thunder",
+    "tide_calendar": "unmodified"
+  },
+  "game_tests": {
+    "groups": [
+      17,
+      104,
+      16
+    ],
+    "total": 137,
+    "owner_saves_unchanged": true
+  },
+  "key_create": {
+    "passed": true,
+    "real_item_channel_ticks": 200,
+    "spent_survives_repeat_entry": true
+  },
+  "key_reload": {
+    "passed": true,
+    "spent_after_jvm_restart": true,
+    "copied_key_refused": true
+  },
+  "ruin_create": {
+    "passed": true,
+    "naturally_generated": true,
+    "component_count": 1,
+    "barrel_x": 89,
+    "barrel_y": 175,
+    "barrel_z": 55,
+    "barrel_emptied": true,
+    "camera_x": 96.0,
+    "camera_y": 181.0,
+    "camera_z": 48.0,
+    "camera_yaw": 45.0,
+    "camera_pitch": 25.0
+  },
+  "ruin_reload": {
+    "passed": true,
+    "empty_barrel_after_restart": true,
+    "player_alteration_preserved": true
+  },
+  "first_entry": {
+    "passed": true,
+    "actual_cauldron_interaction": true,
+    "attempts": 11,
+    "weather_condition": "controlled thunder in the private test world; production random chance unchanged",
+    "realm_feet": "-4, 175, -4",
+    "scope": "M12 first entry confirmed; ruin, tide, return and permanent portal pending"
+  },
+  "natural_tide": {
+    "passed": true,
+    "natural_calendar": true,
+    "roof_protected_actual_player": true,
+    "surge_samples": 100,
+    "health": 20.0,
+    "seconds": 469.3487904,
+    "scope": "M12 natural tide under entry roof; ruin loot and return still pending"
+  },
+  "expedition_return": {
+    "passed": true,
+    "actual_walk_steps": 203,
+    "actual_barrel_looted": true,
+    "actual_echo_return": true,
+    "riftstone": 12,
+    "health": 20.0,
+    "seconds": 79.6381633,
+    "scope": "M12 expedition and return; indicator and permanent portal still pending"
+  },
+  "portal_indicator": {
+    "passed": true,
+    "indicator_crafted_and_used": true,
+    "natural_phase_change": "CALM -> WARNING",
+    "client_server_phase_match": true,
+    "player_built_frame": true,
+    "actual_portal_contact": true,
+    "actual_echo_return": true,
+    "seconds": 586.9103666,
+    "world_game_ticks": 38000
+  },
+  "final_player": {
+    "dimension": "minecraft:overworld",
+    "health": 20.0,
+    "game_type": 0,
+    "abilities": {
+      "invulnerable": 0,
+      "mayfly": 0,
+      "instabuild": 0,
+      "walkSpeed": 0.10000000149011612,
+      "mayBuild": 1,
+      "flying": 0,
+      "flySpeed": 0.05000000074505806
+    },
+    "cheats": false,
+    "inventory": {
+      "interstice:tide_indicator": 1,
+      "minecraft:bread": 2,
+      "minecraft:apple": 2,
+      "minecraft:stick": 9,
+      "minecraft:cobblestone": 2,
+      "minecraft:dark_oak_log": 2,
+      "minecraft:stone_axe": 1,
+      "minecraft:salmon": 2,
+      "minecraft:wooden_pickaxe": 1,
+      "minecraft:sand": 3,
+      "minecraft:water_bucket": 1,
+      "interstice:rift_lens": 1,
+      "minecraft:compass": 1,
+      "minecraft:copper_ingot": 6,
+      "minecraft:amethyst_shard": 4,
+      "minecraft:stone_pickaxe": 1
+    },
+    "game_ticks": 38062
+  },
+  "tested_jar_sha256": "7521a114c47e4ff5a7f35d6eb1107cbd8a6b14142910cef1bcdd655b7921d9d9",
+  "python_tests": 17,
+  "publication_asset_update": {
+    "original_art_generator": "tools/GenerateProjectTextures.java",
+    "repeating_edges_validated": true,
+    "game_tests": 137,
+    "natural_ruin_client_check": {
+      "passed": true,
+      "naturally_generated": true,
+      "component_count": 1,
+      "barrel_x": 89,
+      "barrel_y": 175,
+      "barrel_z": 55,
+      "camera_x": 96.0,
+      "camera_y": 181.0,
+      "camera_z": 48.0,
+      "camera_yaw": 45.0,
+      "camera_pitch": 25.0
+    },
+    "owner_saves_unchanged": true,
+    "published_jar_sha256": "16c8845b9dc65cb2da8fcc71132cf0cf22a8b0af1a2a22566a2d16a62ba64208"
+  }
+}

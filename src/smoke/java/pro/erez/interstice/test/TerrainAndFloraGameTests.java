@@ -160,6 +160,23 @@ public final class TerrainAndFloraGameTests {
     }
 
     @GameTest(template = "empty", timeoutTicks = 60)
+    public static void tideSproutBreaksWhenSupportIsRemoved(GameTestHelper h) {
+        BlockPos root = new BlockPos(2, 2, 2);
+        h.setBlock(root.below(), Interstice.ABYSSAL_TURF.get());
+        h.setBlock(root, Interstice.TIDE_SPROUT.get().defaultBlockState()
+                .setValue(TideSproutBlock.HEIGHT, 1));
+        h.setBlock(root.above(), Interstice.TIDE_SPROUT.get().defaultBlockState()
+                .setValue(TideSproutBlock.SECTION, 3));
+
+        h.setBlock(root.below(), Blocks.AIR);
+        h.runAtTickTime(5, () -> {
+            h.assertTrue(h.getBlockState(root).isAir(), "Unsupported sprout root must break");
+            h.assertTrue(h.getBlockState(root.above()).isAir(), "Unsupported sprout top must break with its root");
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 60)
     public static void tideSproutCascadeBreaking(GameTestHelper h) {
         BlockPos origin = new BlockPos(2, 2, 2);
         h.setBlock(origin.below(), Interstice.ABYSSAL_TURF.get().defaultBlockState());

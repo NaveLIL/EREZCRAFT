@@ -5,12 +5,16 @@ import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.ChestBlockEntity;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.chunk.ProtoChunk;
 import net.minecraft.world.level.chunk.UpgradeData;
 import net.neoforged.neoforge.gametest.GameTestHolder;
@@ -60,6 +64,63 @@ public final class RiftsilverGameTests {
 
         h.assertTrue(!player.getInventory().getItem(0).isEmpty(), "Riftsilver heavy bucket must remain intact");
         h.assertTrue(!player.getInventory().getItem(1).isEmpty(), "Riftsilver inverted bucket must remain intact");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 100)
+    public static void droppedRiftsilverBucketsAreImmuneToCorrosion(GameTestHelper h) {
+        BlockPos pos = h.absolutePos(new BlockPos(2, 2, 2));
+        ItemEntity heavy = new ItemEntity(h.getLevel(), pos.getX(), pos.getY(), pos.getZ(),
+                new ItemStack(Interstice.RIFTSILVER_HEAVY_BUCKET.get()));
+        ItemEntity light = new ItemEntity(h.getLevel(), pos.getX(), pos.getY(), pos.getZ(),
+                new ItemStack(Interstice.RIFTSILVER_INVERTED_BUCKET.get()));
+        try {
+            for (int i = 0; i < 110; i++) {
+                for (ItemEntity item : new ItemEntity[]{heavy, light}) {
+                    if (!item.isRemoved()) {
+                        item.getItem().getItem().onEntityItemUpdate(item.getItem(), item);
+                    }
+                }
+            }
+            h.assertTrue(!heavy.isRemoved(), "Dropped riftsilver heavy bucket must remain intact");
+            h.assertTrue(!light.isRemoved(), "Dropped riftsilver inverted bucket must remain intact");
+        } finally {
+            heavy.discard();
+            light.discard();
+            h.getLevel().setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+        }
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 100)
+    public static void riftsilverBucketPreservesWaterloggedBlocksAndChestContents(GameTestHelper h) {
+        Player player = h.makeMockPlayer(GameType.SURVIVAL);
+        BlockPos local = new BlockPos(2, 2, 2);
+        for (var block : new net.minecraft.world.level.block.Block[]{Blocks.OAK_SLAB, Blocks.CHEST}) {
+            BlockPos pos = h.absolutePos(local);
+            h.setBlock(local, block.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, true));
+            if (h.getLevel().getBlockEntity(pos) instanceof ChestBlockEntity chest) {
+                chest.setItem(0, new ItemStack(Items.DIAMOND));
+            }
+            player.setPos(pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5);
+            player.setXRot(90.0F);
+            player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Interstice.RIFTSILVER_BUCKET.get()));
+
+            var result = Interstice.RIFTSILVER_BUCKET.get().use(h.getLevel(), player, InteractionHand.MAIN_HAND);
+            h.assertTrue(result.getObject().is(Interstice.RIFTSILVER_WATER_BUCKET.get()), "Collecting water must retain riftsilver");
+            var after = h.getLevel().getBlockState(pos);
+            h.assertTrue(after.is(block), "Collecting water must preserve the waterlogged block");
+            h.assertTrue(!after.getValue(BlockStateProperties.WATERLOGGED), "Waterlogged property must be cleared");
+            if (block == Blocks.CHEST) {
+                h.assertTrue(h.getLevel().getBlockEntity(pos) instanceof ChestBlockEntity,
+                        "Collecting water must preserve the chest block entity");
+                ChestBlockEntity chest = (ChestBlockEntity) h.getLevel().getBlockEntity(pos);
+                h.assertTrue(chest.getItem(0).is(Items.DIAMOND), "Chest contents must survive fluid pickup");
+                chest.clearContent();
+            }
+            h.setBlock(local, Blocks.AIR);
+            local = local.offset(3, 0, 0);
+        }
         h.succeed();
     }
 

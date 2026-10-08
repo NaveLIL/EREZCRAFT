@@ -29,7 +29,7 @@ import pro.erez.interstice.tide.TidePhase;
  * Behavior:
  * - During CALM / WARNING: remains a compact single-block bud (1 block high).
  * - During SURGE: dynamically grows 3 to 7 blocks high into the air, with leafy stems
- *   and a glowing, blooming bioluminescent flower at the top (light level 7).
+ *   and a glowing, blooming bioluminescent flower at the top (light level 14).
  * - During EBB: smoothly retracts back down to 1 block high.
  * - Supports Bone Meal: right-clicking with bone meal triggers immediate growth.
  * - Section types:
@@ -43,8 +43,15 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
     public static final IntegerProperty SECTION = IntegerProperty.create("section", 0, 3);
     public static final BooleanProperty BLOOMED = BooleanProperty.create("bloomed");
     public static final IntegerProperty HEIGHT = IntegerProperty.create("height", 0, 6);
+    private record Mutation(Level level, BlockPos root) {}
+    private static final ThreadLocal<Mutation> MUTATION = new ThreadLocal<>();
 
-    private static final VoxelShape SHAPE = Block.box(3, 0, 3, 13, 16, 13);
+    private static final VoxelShape BUD_SHAPE = Block.box(4, 0, 4, 12, 11, 12);
+    private static final VoxelShape FLOWER_SHAPE = Block.box(1, 0, 1, 15, 9, 15);
+    private static final VoxelShape STEM_SHAPE = Block.box(6, 0, 6, 10, 16, 10);
+    private static final VoxelShape LEAFY_STEM_SHAPE = Block.box(2, 0, 2, 14, 16, 14);
+    private static final VoxelShape ROOT_SHAPE = net.minecraft.world.phys.shapes.Shapes.or(STEM_SHAPE,
+            Block.box(4, 0, 6, 12, 2, 10), Block.box(6, 0, 4, 10, 2, 12));
 
     public TideSproutBlock() {
         super(BlockBehaviour.Properties.of()
@@ -53,7 +60,7 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
                 .sound(SoundType.WET_GRASS)
                 .noCollission()
                 .instabreak()
-                .lightLevel(s -> s.getValue(BLOOMED) && s.getValue(SECTION) == 3 ? 7 : 0)
+                .lightLevel(s -> !s.getValue(BLOOMED) ? 0 : switch (s.getValue(SECTION)) { case 3 -> 14; case 0 -> 7; default -> 5; })
                 .randomTicks());
         registerDefaultState(stateDefinition.any()
                 .setValue(SECTION, 0)
@@ -68,7 +75,11 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext ctx) {
-        return SHAPE;
+        int section = state.getValue(SECTION);
+        if (section == 3 || section == 0 && state.getValue(HEIGHT) == 0) {
+            return state.getValue(BLOOMED) ? FLOWER_SHAPE : BUD_SHAPE;
+        }
+        return section == 2 ? LEAFY_STEM_SHAPE : section == 0 ? ROOT_SHAPE : STEM_SHAPE;
     }
 
     @Override
@@ -94,6 +105,9 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         super.onPlace(state, level, pos, oldState, isMoving);
         if (!level.isClientSide && state.getValue(SECTION) == 0) {
+            if (level instanceof ServerLevel serverLevel) {
+                pro.erez.interstice.tide.TideSproutTracker.addRoot(serverLevel, pos);
+            }
             // Schedule immediate tick upon placement so it reacts right away
             level.scheduleTick(pos, this, 2);
         }
@@ -101,12 +115,11 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (state.getValue(SECTION) != 0) {
-            if (!state.canSurvive(level, pos)) {
-                level.destroyBlock(pos, true);
-            }
+        if (!state.canSurvive(level, pos)) {
+            level.destroyBlock(pos, true);
             return;
         }
+        if (state.getValue(SECTION) != 0) return;
         processGrowth(state, level, pos, random);
     }
 
@@ -119,6 +132,10 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
     private void processGrowth(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         var server = level.getServer();
         if (server == null) return;
+        if (malformed(level, pos, state.getValue(HEIGHT))) {
+            collapse(level, pos, true);
+            state = level.getBlockState(pos);
+        }
         TidePhase phase = TideManager.getSavedData(server).snapshot().phase();
         boolean surge = (phase == TidePhase.SURGE);
         int currentHeight = state.getValue(HEIGHT);
@@ -162,7 +179,7 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
             BlockState prevState = level.getBlockState(prevTop);
             if (prevState.is(this)) {
                 int stemSection = (newHeight % 2 == 0) ? 2 : 1;
-                level.setBlock(prevTop, prevState.setValue(SECTION, stemSection).setValue(BLOOMED, false), 3);
+                level.setBlock(prevTop, prevState.setValue(SECTION, stemSection).setValue(BLOOMED, true), 3);
             }
         }
 
@@ -184,7 +201,7 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
     private void shrink(ServerLevel level, BlockPos root, BlockState rootState, int currentHeight) {
         BlockPos topPos = root.above(currentHeight);
         if (level.getBlockState(topPos).is(this)) {
-            level.removeBlock(topPos, false);
+            mutate(level, root, () -> level.removeBlock(topPos, false));
         }
         int newHeight = currentHeight - 1;
         BlockState newRoot = rootState.setValue(HEIGHT, newHeight).setValue(BLOOMED, false);
@@ -239,45 +256,63 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
 
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moved) {
-        if (!newState.is(this) && !level.isClientSide) {
-            BlockPos above = pos.above();
-            while (level.getBlockState(above).is(this)) {
-                level.removeBlock(above, false);
-                above = above.above();
+        if (!newState.is(this) && !level.isClientSide && !internallyUpdating(level, pos)) {
+            if (state.getValue(SECTION) == 0 && level instanceof ServerLevel serverLevel) {
+                pro.erez.interstice.tide.TideSproutTracker.removeRoot(serverLevel, pos);
             }
-            BlockPos below = pos.below();
-            while (level.getBlockState(below).is(this)) {
-                BlockState bs = level.getBlockState(below);
-                if (bs.getValue(SECTION) == 0) {
-                    level.setBlock(below, bs.setValue(HEIGHT, 0).setValue(BLOOMED, false), 3);
-                    break;
-                }
-                below = below.below();
-            }
+            BlockPos root = findRoot(level, pos, state);
+            if (root != null) collapse(level, root, state.getValue(SECTION) != 0);
+            else collapse(level, pos, false);
         }
         super.onRemove(state, level, pos, newState, moved);
     }
 
-    /** Wakes up sprouts around the given position so they start growing or shrinking immediately. */
-    public static void wakeNearbySprouts(ServerLevel level, BlockPos center, int radius) {
-        BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
-        int minX = center.getX() - radius;
-        int maxX = center.getX() + radius;
-        int minZ = center.getZ() - radius;
-        int maxZ = center.getZ() + radius;
-        int minY = Math.max(level.getMinBuildHeight(), center.getY() - 6);
-        int maxY = Math.min(level.getMaxBuildHeight(), center.getY() + 8);
-        for (int x = minX; x <= maxX; x++) {
-            for (int z = minZ; z <= maxZ; z++) {
-                for (int y = maxY; y >= minY; y--) {
-                    p.set(x, y, z);
-                    BlockState s = level.getBlockState(p);
-                    if (s.is(Interstice.TIDE_SPROUT.get()) && s.getValue(SECTION) == 0) {
-                        level.scheduleTick(p.immutable(), s.getBlock(), 1 + level.random.nextInt(6));
-                        break;
-                    }
+    private static boolean internallyUpdating(Level level, BlockPos pos) {
+        Mutation mutation = MUTATION.get();
+        return mutation != null && mutation.level() == level && mutation.root().getX() == pos.getX()
+                && mutation.root().getZ() == pos.getZ() && pos.getY() >= mutation.root().getY()
+                && pos.getY() <= mutation.root().getY() + 6;
+    }
+    private static void mutate(Level level, BlockPos root, Runnable action) {
+        Mutation previous = MUTATION.get();
+        MUTATION.set(new Mutation(level, root.immutable()));
+        try { action.run(); }
+        finally { if (previous == null) MUTATION.remove(); else MUTATION.set(previous); }
+    }
+    private void collapse(Level level, BlockPos root, boolean keepRoot) {
+        mutate(level, root, () -> {
+            BlockState base = level.getBlockState(root);
+            if (keepRoot && base.is(this) && base.getValue(SECTION) == 0) {
+                level.setBlock(root, base.setValue(HEIGHT, 0).setValue(BLOOMED, false), 3);
+            }
+            for (int y = 1; y <= 6; y++) {
+                BlockPos part = root.above(y);
+                BlockState child = level.getBlockState(part);
+                if (child.is(this)) {
+                    if (child.getValue(SECTION) == 0) break;
+                    level.removeBlock(part, false);
                 }
             }
+        });
+        if (keepRoot) level.scheduleTick(root, this, 2);
+    }
+    private boolean malformed(Level level, BlockPos root, int height) {
+        for (int y = 1; y <= 6; y++) {
+            BlockState child = level.getBlockState(root.above(y));
+            if (y <= height) {
+                if (!child.is(this)) return true;
+                int section = child.getValue(SECTION);
+                if (y == height ? section != 3 : section != 1 && section != 2) return true;
+            } else if (child.is(this)) {
+                if (child.getValue(SECTION) == 0) break;
+                return true;
+            }
         }
+        return false;
+    }
+
+    /** Wakes up sprouts around the given position so they start growing or shrinking immediately. */
+    public static void wakeNearbySprouts(ServerLevel level, BlockPos center, int radius) {
+        pro.erez.interstice.tide.TideSproutTracker.wakeNearby(level, center, radius);
     }
 }

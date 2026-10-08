@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "interstice:block/stripped_gloomcrown_log"
+    },
+    "axis=x": {
+      "model": "interstice:block/stripped_gloomcrown_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=z": {
+      "model": "interstice:block/stripped_gloomcrown_log",
+      "x": 90
+    }
+  }
+}

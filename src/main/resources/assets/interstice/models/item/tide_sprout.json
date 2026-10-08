@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "interstice:block/tide_sprout_bud"
-  }
+  "parent": "interstice:block/tide_sprout_bud"
 }

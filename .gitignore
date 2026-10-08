@@ -3,6 +3,8 @@ build/
 run/
 .idea/
 *.iml
+__pycache__/
+*.py[cod]
 
 # Local baseline verification, recovery bundles, and runtime data.
 /.m00/
@@ -18,5 +20,11 @@ crash-reports/
 
 # Third-party research and generated binary archives stay local.
 /research/
+/textures/
+# Historical visual captures use the previous local artwork; publish fresh project-native previews.
+/art/generated/terrain-palette/
+/art/generated/vegetation-preview/
+/art/generated/rift-preview/
+/art/generated/expedition-preview/
 /art/generated/**/*.jar
 /art/generated/**/*.zip

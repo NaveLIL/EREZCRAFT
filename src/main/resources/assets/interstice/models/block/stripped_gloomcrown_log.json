@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "interstice:block/stripped_gloomcrown_log_top",
+    "side": "interstice:block/stripped_gloomcrown_log"
+  }
+}

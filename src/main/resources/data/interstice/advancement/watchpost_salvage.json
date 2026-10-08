@@ -1,0 +1,35 @@
+{
+  "parent": "interstice:root",
+  "display": {
+    "icon": {
+      "id": "interstice:pressure_coupler"
+    },
+    "title": {
+      "translate": "advancements.interstice.watchpost_salvage.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.watchpost_salvage.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "salvaged": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:pressure_coupler"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "interstice:tide_indicator"
+    ]
+  }
+}

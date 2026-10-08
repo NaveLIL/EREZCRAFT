@@ -9,6 +9,10 @@ import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 import pro.erez.interstice.Interstice;
 import pro.erez.interstice.fluid.FluidReactions;
+import pro.erez.interstice.worldgen.IslandWorld;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.level.ExplosionEvent;
+import java.util.function.Consumer;
 
 @GameTestHolder(Interstice.ID)
 @PrefixGameTestTemplate(false)
@@ -115,6 +119,35 @@ public final class FluidReactionGameTests {
         level.setBlock(pos2, Blocks.AIR.defaultBlockState(), 3);
 
         System.out.println("REACTION_PHOSPHORITE verified=true");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void annihilationCooldownsDoNotCrossDimensions(GameTestHelper h) {
+        ServerLevel first = h.getLevel().getServer().getLevel(IslandWorld.WORLD);
+        ServerLevel second = h.getLevel().getServer().getLevel(IslandWorld.TALL_WORLD);
+        BlockPos pos = new BlockPos(16008, 60, 16008);
+        int[] explosions = new int[2];
+        Consumer<ExplosionEvent.Detonate> listener = event -> {
+            if (event.getExplosion().center().distanceToSqr(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 1.0) < 1.0) {
+                if (event.getLevel() == first) explosions[0]++;
+                if (event.getLevel() == second) explosions[1]++;
+            }
+        };
+        NeoForge.EVENT_BUS.addListener(listener);
+        try {
+            for (ServerLevel world : new ServerLevel[]{first, second}) {
+                for (int dx = -3; dx <= 3; dx++) for (int dy = -3; dy <= 3; dy++) for (int dz = -3; dz <= 3; dz++) {
+                    world.setBlock(pos.offset(dx, dy, dz), Blocks.AIR.defaultBlockState(), 3);
+                }
+                world.setBlock(pos, Interstice.HEAVY_BLOCK.get().defaultBlockState(), 3);
+                world.setBlock(pos.south(), Interstice.LIGHT_BLOCK.get().defaultBlockState(), 3);
+            }
+            h.assertTrue(explosions[0] == 1 && explosions[1] == 1,
+                    "Both dimensions must explode independently at identical coordinates: " + explosions[0] + "/" + explosions[1]);
+        } finally {
+            NeoForge.EVENT_BUS.unregister(listener);
+        }
         h.succeed();
     }
 

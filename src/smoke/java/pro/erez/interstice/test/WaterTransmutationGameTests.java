@@ -66,6 +66,32 @@ public final class WaterTransmutationGameTests {
     }
 
     @GameTest(template = "empty", timeoutTicks = 200)
+    public static void expiredUnloadedSiteEvaporatesAfterItsChunkLoads(GameTestHelper h) {
+        ServerLevel world = h.getLevel().getServer().getLevel(IslandWorld.TALL_WORLD);
+        BlockPos pos = new BlockPos(1048568, 120, 1048568);
+        h.assertTrue(world.getChunkSource().getChunkNow(pos.getX() >> 4, pos.getZ() >> 4) == null,
+                "Expiration fixture must start unloaded");
+        WaterTransmutationSavedData data = WaterTransmutationSavedData.get(world);
+        data.addExpiring(pos, world.getGameTime() - 1);
+
+        h.runAtTickTime(5, () -> {
+            h.assertTrue(data.getExpiringBlocks().containsKey(pos), "Unloaded site must keep its expired deadline");
+            CompoundTag saved = data.save(new CompoundTag(), world.registryAccess());
+            WaterTransmutationSavedData restored = WaterTransmutationSavedData.load(saved, world.registryAccess());
+            h.assertTrue(restored.getExpiringBlocks().containsKey(pos), "Pending expiration must survive save/reload");
+            h.assertTrue(world.getChunkSource().getChunkNow(pos.getX() >> 4, pos.getZ() >> 4) == null,
+                    "Expiration polling must not force the chunk to load");
+            world.getChunkAt(pos);
+            world.setBlock(pos, Interstice.LIGHT_BLOCK.get().defaultBlockState(), 3);
+        });
+        h.runAtTickTime(9, () -> {
+            h.assertTrue(world.getBlockState(pos).isAir(), "Loaded overdue toxin must evaporate");
+            h.assertTrue(!data.getExpiringBlocks().containsKey(pos), "Completed expiration must be removed");
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 200)
     public static void waterTransmutationSavedDataSurvivesSaveAndReload(GameTestHelper h) {
         HolderLookup.Provider registries = h.getLevel().registryAccess();
         WaterTransmutationSavedData original = new WaterTransmutationSavedData();

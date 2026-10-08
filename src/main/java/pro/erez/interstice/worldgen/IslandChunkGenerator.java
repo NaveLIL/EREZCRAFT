@@ -114,6 +114,8 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         super.buildSurface(region,structures,random,chunk);
         fillSeas(geometry,chunk);
         generateOres(geometry,chunk,region.getSeed());
+        WatchpostRuins.generate(geometry, chunk, region.getSeed(), region.getLevel().getStructureManager(), region.registryAccess());
+        GloomcrownTree.generate(geometry,chunk,region.getSeed());
         generateTideSprouts(geometry,chunk,region.getSeed());
     }
     public static void generateTideSprouts(GeometryProfile profile, ChunkAccess chunk, long seed) {

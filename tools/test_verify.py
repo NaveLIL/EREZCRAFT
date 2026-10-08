@@ -3,6 +3,7 @@
 import contextlib
 import io
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
@@ -23,13 +24,23 @@ class VerificationResultTests(unittest.TestCase):
                     return 0
 
             def spawn(command, **kwargs):
+                self.command = command
+                self.environment = kwargs["env"]
                 if spawn_error is not None:
                     raise spawn_error
                 kwargs["stdout"].write(log)
                 if result is not None:
-                    destination = next((root / ".verification").iterdir()) / "profiles/islandSmoke"
-                    destination.mkdir(parents=True)
-                    (destination / "island-validation.json").write_text(json.dumps(result))
+                    evidence = next((root / ".verification").iterdir())
+                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke"):
+                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute"}[task]
+                        destination = evidence / "profiles" / profile
+                        destination.mkdir(parents=True)
+                        for name, value in result.items():
+                            (destination / name).write_text(json.dumps(value), encoding="utf-8")
+                    else:
+                        destination = evidence / "profiles/islandSmoke"
+                        destination.mkdir(parents=True)
+                        (destination / "island-validation.json").write_text(json.dumps(result), encoding="utf-8")
                 return Process()
 
             def output(command, **kwargs):
@@ -50,7 +61,30 @@ class VerificationResultTests(unittest.TestCase):
                     caught = error
                     code = None
             evidence = next((root / ".verification").iterdir())
-            return code, caught, json.loads((evidence / "summary.json").read_text())
+            return code, caught, json.loads((evidence / "summary.json").read_text(encoding="utf-8"))
+
+    def test_windows_uses_direct_java_wrapper(self):
+        with patch.object(verify.sys, "platform", "win32"):
+            code, _, _ = self.exercise("build", log="All 80 required tests passed :)\n")
+        self.assertEqual(code, 0)
+        self.assertEqual(Path(self.command[0]).name, "java.exe")
+        self.assertIn("org.gradle.wrapper.GradleWrapperMain", self.command)
+
+    def test_unix_uses_shell_wrapper(self):
+        with patch.object(verify.sys, "platform", "linux"):
+            code, _, _ = self.exercise("build", log="All 80 required tests passed :)\n")
+        self.assertEqual(code, 0)
+        self.assertEqual(Path(self.command[0]).name, "gradlew")
+
+    def test_java_home_keeps_platform_path_separator(self):
+        self.exercise("build")
+        self.assertEqual(self.environment["PATH"].split(os.pathsep)[0], os.path.join("/fixture/jdk", "bin"))
+
+    def test_evidence_is_written_as_utf8(self):
+        with tempfile.TemporaryDirectory(prefix="interstice-verifier-test-") as directory:
+            path = Path(directory) / "evidence.json"
+            verify.write(path, {"path": "проверка/🌊"})
+            self.assertEqual(json.loads(path.read_text(encoding="utf-8")), {"path": "проверка/🌊"})
 
     def test_process_start_failure_cannot_record_success(self):
         code, error, summary = self.exercise("build", spawn_error=OSError("fixture launch failure"))
@@ -62,6 +96,11 @@ class VerificationResultTests(unittest.TestCase):
 
     def test_gradle_zero_without_running_gametests_is_rejected(self):
         code, _, summary = self.exercise("runGameTestServer", log="BUILD SUCCESSFUL\n")
+        self.assertEqual(code, 1)
+        self.assertFalse(summary["passed"])
+
+    def test_build_without_required_gametests_is_rejected(self):
+        code, _, summary = self.exercise("build", log="BUILD SUCCESSFUL\n")
         self.assertEqual(code, 1)
         self.assertFalse(summary["passed"])
 
@@ -79,6 +118,44 @@ class VerificationResultTests(unittest.TestCase):
         code, _, summary = self.exercise("runGameTestServer", log="All 21 required tests passed :)\n")
         self.assertEqual(code, 0)
         self.assertTrue(summary["passed"])
+
+    def test_rift_server_requires_actual_gametest_completion(self):
+        code, _, summary = self.exercise("runRiftGameTestServer", log="BUILD SUCCESSFUL\n")
+        self.assertEqual(code, 1)
+        self.assertFalse(summary["passed"])
+
+    def test_rift_restart_missing_second_validation_is_rejected(self):
+        code, _, summary = self.exercise("runRiftPersistenceSmoke", result={"rift-create-validation.json": {"passed": True}})
+        self.assertEqual(code, 1)
+        self.assertFalse(summary["passed"])
+
+    def test_rift_restart_failed_second_validation_is_rejected(self):
+        code, _, summary = self.exercise("runRiftPersistenceSmoke", result={
+            "rift-create-validation.json": {"passed": True}, "rift-reload-validation.json": {"passed": False}})
+        self.assertEqual(code, 1)
+        self.assertFalse(summary["passed"])
+
+    def test_rift_restart_requires_both_successful_jvms(self):
+        code, _, summary = self.exercise("runRiftPersistenceSmoke", result={
+            "rift-create-validation.json": {"passed": True}, "rift-reload-validation.json": {"passed": True}})
+        self.assertEqual(code, 0)
+        self.assertTrue(summary["passed"])
+
+    def test_expeditions_need_actual_server_completion(self):
+        code, _, _ = self.exercise("runExpeditionGameTestServer", log="BUILD SUCCESSFUL\n")
+        self.assertEqual(code, 1)
+
+    def test_key_and_ruin_restart_require_second_jvm(self):
+        for task, prefix in (("runKeyPersistenceSmoke", "key"), ("runWatchpostPersistenceSmoke", "watchpost")):
+            with self.subTest(task=task):
+                code, _, _ = self.exercise(task, result={prefix + "-create-validation.json": {"passed": True}})
+                self.assertEqual(code, 1)
+                code, _, _ = self.exercise(task, result={prefix + "-create-validation.json": {"passed": True}, prefix + "-reload-validation.json": {"passed": True}})
+                self.assertEqual(code, 0)
+
+    def test_survival_preparation_does_not_accept_missing_equipment_run(self):
+        code, _, _ = self.exercise("runSurvivalPreparationSmoke", result={"survival-preparation.json": {"passed": True}})
+        self.assertEqual(code, 1)
 
 
 if __name__ == "__main__":

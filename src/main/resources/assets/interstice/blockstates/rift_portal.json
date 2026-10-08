@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "interstice:block/rift_portal"
+    },
+    "axis=z": {
+      "model": "interstice:block/rift_portal",
+      "y": 90
+    }
+  }
+}

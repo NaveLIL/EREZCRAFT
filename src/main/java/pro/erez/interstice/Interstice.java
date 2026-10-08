@@ -53,6 +53,23 @@ public final class Interstice {
     public static final DeferredHolder<Block, RiftstoneBlock> RIFTSTONE = BLOCKS.register("riftstone", RiftstoneBlock::new);
     public static final DeferredHolder<Block, AbyssalTurfBlock> ABYSSAL_TURF = BLOCKS.register("abyssal_turf", AbyssalTurfBlock::new);
     public static final DeferredHolder<Block, TideSproutBlock> TIDE_SPROUT = BLOCKS.register("tide_sprout", TideSproutBlock::new);
+    public static final DeferredHolder<Block, net.minecraft.world.level.block.RotatedPillarBlock> GLOOMCROWN_LOG = BLOCKS.register("gloomcrown_log", () -> new net.minecraft.world.level.block.RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_LOG).mapColor(net.minecraft.world.level.material.MapColor.COLOR_PURPLE)));
+    public static final DeferredHolder<Block, net.minecraft.world.level.block.RotatedPillarBlock> STRIPPED_GLOOMCROWN_LOG = BLOCKS.register("stripped_gloomcrown_log", () -> new net.minecraft.world.level.block.RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_DARK_OAK_LOG).mapColor(net.minecraft.world.level.material.MapColor.COLOR_PURPLE)));
+    public static final DeferredHolder<Block, Block> GLOOMCROWN_PLANKS = BLOCKS.register("gloomcrown_planks", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS).mapColor(net.minecraft.world.level.material.MapColor.COLOR_PURPLE)));
+    public static final DeferredHolder<Block, net.minecraft.world.level.block.LeavesBlock> GLOOMCROWN_LEAVES = BLOCKS.register("gloomcrown_leaves", () -> new net.minecraft.world.level.block.LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_LEAVES).mapColor(net.minecraft.world.level.material.MapColor.COLOR_PURPLE).lightLevel(s -> 3)));
+    public static final DeferredHolder<Block, GloomcrownSaplingBlock> GLOOMCROWN_SAPLING = BLOCKS.register("gloomcrown_sapling", () -> new GloomcrownSaplingBlock());
+    public static final DeferredHolder<Block, Block> RIFT_FRAME = BLOCKS.register("rift_frame", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_BRICKS).mapColor(net.minecraft.world.level.material.MapColor.COLOR_PURPLE)));
+    public static final DeferredHolder<Block, pro.erez.interstice.rift.RiftPortalBlock> RIFT_PORTAL = BLOCKS.register("rift_portal", pro.erez.interstice.rift.RiftPortalBlock::new);
+    public static final DeferredHolder<Block, pro.erez.interstice.rift.RiftEchoBlock> RIFT_ECHO = BLOCKS.register("rift_echo", pro.erez.interstice.rift.RiftEchoBlock::new);
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> RIFT_FRAME_ITEM = ITEMS.register("rift_frame", () -> new net.minecraft.world.item.BlockItem(RIFT_FRAME.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, pro.erez.interstice.rift.RiftLensItem> RIFT_LENS = ITEMS.register("rift_lens", pro.erez.interstice.rift.RiftLensItem::new);
+    public static final DeferredHolder<Item, pro.erez.interstice.expedition.WayfarerKeyItem> WAYFARER_KEY = ITEMS.register("wayfarer_key", pro.erez.interstice.expedition.WayfarerKeyItem::new);
+    public static final DeferredHolder<Item, Item> PRESSURE_COUPLER = ITEMS.register("pressure_coupler", () -> new Item(new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> GLOOMCROWN_LOG_ITEM = ITEMS.register("gloomcrown_log", () -> new net.minecraft.world.item.BlockItem(GLOOMCROWN_LOG.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> STRIPPED_GLOOMCROWN_LOG_ITEM = ITEMS.register("stripped_gloomcrown_log", () -> new net.minecraft.world.item.BlockItem(STRIPPED_GLOOMCROWN_LOG.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> GLOOMCROWN_PLANKS_ITEM = ITEMS.register("gloomcrown_planks", () -> new net.minecraft.world.item.BlockItem(GLOOMCROWN_PLANKS.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> GLOOMCROWN_LEAVES_ITEM = ITEMS.register("gloomcrown_leaves", () -> new net.minecraft.world.item.BlockItem(GLOOMCROWN_LEAVES.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> GLOOMCROWN_SAPLING_ITEM = ITEMS.register("gloomcrown_sapling", () -> new net.minecraft.world.item.BlockItem(GLOOMCROWN_SAPLING.get(), new Item.Properties()));
 
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> VITRIOLITE_ITEM = ITEMS.register("vitriolite", () -> new net.minecraft.world.item.BlockItem(VITRIOLITE.get(), new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> PYROLITH_ITEM = ITEMS.register("pyrolith", () -> new net.minecraft.world.item.BlockItem(PYROLITH.get(), new Item.Properties()));
@@ -68,6 +85,8 @@ public final class Interstice {
     public static final DeferredHolder<Item, BucketItem> LIGHT_BUCKET = ITEMS.register("light_toxin_bucket", () -> new LightBucketItem(new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredHolder<Item, BucketItem> HEAVY_BUCKET = ITEMS.register("heavy_toxin_bucket", () -> new pro.erez.interstice.item.HeavyBucketItem(new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final DeferredHolder<Item, pro.erez.interstice.item.RiftsilverBucketItem> RIFTSILVER_BUCKET = ITEMS.register("riftsilver_bucket", () -> new pro.erez.interstice.item.RiftsilverBucketItem(new Item.Properties().stacksTo(16)));
+    public static final DeferredHolder<Item, pro.erez.interstice.item.RiftsilverFilledBucketItem> RIFTSILVER_WATER_BUCKET = ITEMS.register("riftsilver_water_bucket", () -> new pro.erez.interstice.item.RiftsilverFilledBucketItem(net.minecraft.world.level.material.Fluids.WATER, new Item.Properties().craftRemainder(RIFTSILVER_BUCKET.get()).stacksTo(1)));
+    public static final DeferredHolder<Item, pro.erez.interstice.item.RiftsilverFilledBucketItem> RIFTSILVER_LAVA_BUCKET = ITEMS.register("riftsilver_lava_bucket", () -> new pro.erez.interstice.item.RiftsilverFilledBucketItem(net.minecraft.world.level.material.Fluids.LAVA, new Item.Properties().craftRemainder(RIFTSILVER_BUCKET.get()).stacksTo(1)));
     public static final DeferredHolder<Item, pro.erez.interstice.item.RiftsilverHeavyBucketItem> RIFTSILVER_HEAVY_BUCKET = ITEMS.register("riftsilver_heavy_bucket", () -> new pro.erez.interstice.item.RiftsilverHeavyBucketItem(new Item.Properties().craftRemainder(RIFTSILVER_BUCKET.get()).stacksTo(1)));
     public static final DeferredHolder<Item, pro.erez.interstice.item.RiftsilverInvertedBucketItem> RIFTSILVER_INVERTED_BUCKET = ITEMS.register("riftsilver_inverted_bucket", () -> new pro.erez.interstice.item.RiftsilverInvertedBucketItem(new Item.Properties().craftRemainder(RIFTSILVER_BUCKET.get()).stacksTo(1)));
     public static final DeferredHolder<Item, pro.erez.interstice.item.TideIndicatorItem> TIDE_INDICATOR = ITEMS.register("tide_indicator", () -> new pro.erez.interstice.item.TideIndicatorItem(new Item.Properties().stacksTo(1)));
@@ -78,6 +97,8 @@ public final class Interstice {
                 output.accept(LIGHT_BUCKET.get());
                 output.accept(HEAVY_BUCKET.get());
                 output.accept(RIFTSILVER_BUCKET.get());
+                output.accept(RIFTSILVER_WATER_BUCKET.get());
+                output.accept(RIFTSILVER_LAVA_BUCKET.get());
                 output.accept(RIFTSILVER_HEAVY_BUCKET.get());
                 output.accept(RIFTSILVER_INVERTED_BUCKET.get());
                 output.accept(RAW_RIFTSILVER.get());
@@ -86,6 +107,15 @@ public final class Interstice {
                 output.accept(RIFTSTONE_ITEM.get());
                 output.accept(ABYSSAL_TURF_ITEM.get());
                 output.accept(TIDE_SPROUT_ITEM.get());
+                output.accept(GLOOMCROWN_LOG_ITEM.get());
+                output.accept(STRIPPED_GLOOMCROWN_LOG_ITEM.get());
+                output.accept(GLOOMCROWN_PLANKS_ITEM.get());
+                output.accept(GLOOMCROWN_LEAVES_ITEM.get());
+                output.accept(GLOOMCROWN_SAPLING_ITEM.get());
+                output.accept(RIFT_FRAME_ITEM.get());
+                output.accept(RIFT_LENS.get());
+                output.accept(WAYFARER_KEY.get());
+                output.accept(PRESSURE_COUPLER.get());
                 output.accept(TIDE_INDICATOR.get());
                 output.accept(VITRIOLITE_ITEM.get());
                 output.accept(PYROLITH_ITEM.get());
@@ -103,6 +133,7 @@ public final class Interstice {
         bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerPayloads);
         bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerTask);
         bus.addListener(pro.erez.interstice.tide.TideSync::registerPayloads);
+        bus.addListener(pro.erez.interstice.item.RiftsilverBucketInteractions::setup);
         FluidLightUpgrade.register(bus);
         pro.erez.interstice.sound.ModSounds.register(bus);
         TYPES.register(bus); FLUIDS.register(bus); BLOCKS.register(bus); ITEMS.register(bus); TABS.register(bus);

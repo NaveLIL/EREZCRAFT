@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "CPC",
+    "CKC",
+    "CAC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "P": {
+      "item": "interstice:pressure_coupler"
+    },
+    "K": {
+      "item": "minecraft:compass"
+    },
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "id": "interstice:tide_indicator",
+    "count": 1
+  }
+}

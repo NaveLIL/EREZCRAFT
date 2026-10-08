@@ -117,7 +117,8 @@ public final class WaterTransmutationManager {
         Level level = event.getLevel();
         if (!IslandWorld.isIsland(level.dimension())) return;
         ItemStack stack = event.getItemStack();
-        if (!stack.is(Items.WATER_BUCKET)) return;
+        boolean riftsilver = stack.is(Interstice.RIFTSILVER_WATER_BUCKET.get());
+        if (!stack.is(Items.WATER_BUCKET) && !riftsilver) return;
 
         BlockPos pos = event.getPos();
         BlockState state = level.getBlockState(pos);
@@ -134,7 +135,7 @@ public final class WaterTransmutationManager {
                 }
                 if (player != null && !player.isCreative()) {
                     stack.shrink(1);
-                    ItemStack emptyBucket = new ItemStack(Items.BUCKET);
+                    ItemStack emptyBucket = new ItemStack(riftsilver ? Interstice.RIFTSILVER_BUCKET.get() : Items.BUCKET);
                     if (!player.getInventory().add(emptyBucket)) {
                         player.drop(emptyBucket, false);
                     }
@@ -169,6 +170,9 @@ public final class WaterTransmutationManager {
                 var entry = iterator.next();
                 if (now >= entry.getValue()) {
                     BlockPos pos = entry.getKey();
+                    // Retain the persisted deadline until the chunk is available again.
+                    // Reading or generating an unloaded chunk here would force it to stay active.
+                    if (!level.isLoaded(pos)) continue;
                     evaporateAt(level, pos);
                     iterator.remove();
                     data.setDirty();

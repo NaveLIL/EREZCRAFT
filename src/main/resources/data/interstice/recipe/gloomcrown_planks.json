@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "interstice:gloomcrown_logs"
+    }
+  ],
+  "result": {
+    "id": "interstice:gloomcrown_planks",
+    "count": 4
+  }
+}

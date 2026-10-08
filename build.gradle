@@ -83,7 +83,67 @@ neoForge {
             gameDirectory = file('build/island-preview')
             systemProperty 'interstice.islandPreview', 'true'
         }
+        playtest {
+            client()
+            gameDirectory = file('build/playtest')
+            systemProperty 'interstice.playtest', 'true'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        playtestResume {
+            client()
+            gameDirectory = file('build/playtest')
+        }
+        floraSmoke {
+            client()
+            gameDirectory = file('build/flora-smoke')
+            systemProperty 'interstice.floraSmoke', 'true'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        riftPersistenceCreate {
+            client()
+            gameDirectory = file('build/rift-persistence')
+            systemProperty 'interstice.riftPersistence', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        riftPersistenceReload {
+            client()
+            gameDirectory = file('build/rift-persistence')
+            systemProperty 'interstice.riftPersistence', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        keyPersistenceCreate {
+            client()
+            gameDirectory = file('build/key-persistence')
+            systemProperty 'interstice.keyPersistence', 'create'
+        }
+        keyPersistenceReload {
+            client()
+            gameDirectory = file('build/key-persistence')
+            systemProperty 'interstice.keyPersistence', 'reload'
+        }
+        watchpostSmoke {
+            client()
+            gameDirectory = file('build/watchpost-smoke')
+            systemProperty 'interstice.watchpostSmoke', 'true'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
         geometrySmoke {
+            // Geometry probes stay isolated from the authored ruin checks.
             client()
             gameDirectory = file('build/geometry-smoke')
             systemProperty 'interstice.geometrySmoke', 'true'
@@ -104,10 +164,86 @@ neoForge {
         }
         gameTestServer {
             type = 'gameTestServer'
+            gameDirectory = file('build/gametests')
             // GameTestServer bakes only the flat world preset, not dimension JSONs.
             // Its override must stay out of client, infection and release profiles.
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice'
+        }
+        watchpostPersistenceCreate {
+            client()
+            gameDirectory = file('build/watchpost-persistence')
+            systemProperty 'interstice.watchpostPersistence', 'create'
+        }
+        watchpostPersistenceReload {
+            client()
+            gameDirectory = file('build/watchpost-persistence')
+            systemProperty 'interstice.watchpostPersistence', 'reload'
+        }
+        survivalRouteBootstrap {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalRoute', 'bootstrap'
+        }
+        survivalRouteEquipment {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalRoute', 'equipment'
+        }
+        survivalEquipmentResume {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalRoute', 'equipment'
+        }
+        survivalOres {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalOres', 'true'
+            if (providers.gradleProperty('oreResumeSurfaceY').isPresent()) systemProperty 'interstice.oreResumeSurfaceY', providers.gradleProperty('oreResumeSurfaceY').get()
+        }
+        survivalToolRepair {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalRepair', 'true'
+        }
+        survivalForge {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalForge', 'true'
+            if (providers.gradleProperty('forgeResumeStage').isPresent()) systemProperty 'interstice.forgeResumeStage', providers.gradleProperty('forgeResumeStage').get()
+        }
+        survivalEntrance {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalEntrance', 'true'
+        }
+        survivalTideRoute {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalTideRoute', 'true'
+        }
+        survivalRuin {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalRuin', 'true'
+            if (providers.gradleProperty('ruinResumeStage').isPresent()) systemProperty 'interstice.ruinResumeStage', providers.gradleProperty('ruinResumeStage').get()
+        }
+        survivalPortal {
+            client()
+            gameDirectory = file('build/survival-route')
+            systemProperty 'interstice.survivalPortal', 'true'
+        }
+        riftGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/rift-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_rifts'
+        }
+        expeditionGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/expedition-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_expeditions'
         }
         infectionGameTestServer {
             type = 'gameTestServer'
@@ -122,7 +258,11 @@ neoForge {
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' : name
+        def profileName = name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
+                name in ['riftPersistenceCreate', 'riftPersistenceReload'] ? 'riftPersistence' :
+                name in ['keyPersistenceCreate', 'keyPersistenceReload'] ? 'keyPersistence' :
+                name in ['watchpostPersistenceCreate', 'watchpostPersistenceReload'] ? 'watchpostPersistence' :
+                name in ['survivalRouteBootstrap', 'survivalRouteEquipment', 'survivalEquipmentResume', 'survivalOres', 'survivalToolRepair', 'survivalForge', 'survivalEntrance', 'survivalTideRoute', 'survivalRuin', 'survivalPortal'] ? 'survivalRoute' : name
         gameDirectory = file(providers.gradleProperty('intersticeRunRoot').get() + '/' + profileName)
     }
 }
@@ -133,7 +273,9 @@ processResources {
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
 // Avoid a race in NeoForge's early loading-window font initialization on macOS.
 // This affects only the disposable visual-test profile, not the installed game.
-tasks.matching { it.name in ['prepareClientSmokeRun', 'prepareIslandSmokeRun', 'prepareTallIslandSmokeRun', 'prepareIslandPreviewRun', 'prepareGeometrySmokeRun', 'preparePersistenceCreateRun', 'preparePersistenceReloadRun'] }.configureEach {
+tasks.matching { it.name in ['prepareClientSmokeRun', 'prepareIslandSmokeRun', 'prepareTallIslandSmokeRun', 'prepareIslandPreviewRun', 'preparePlaytestRun', 'prepareFloraSmokeRun', 'prepareWatchpostSmokeRun', 'prepareKeyPersistenceCreateRun', 'prepareKeyPersistenceReloadRun', 'prepareRiftPersistenceCreateRun', 'prepareRiftPersistenceReloadRun', 'prepareGeometrySmokeRun', 'preparePersistenceCreateRun', 'preparePersistenceReloadRun'] }.configureEach {
+    // A different verification root needs its own onboarding/config files even if launch arguments are unchanged.
+    outputs.upToDateWhen { false }
     doLast {
         def runName = it.name.substring('prepare'.length(), it.name.length() - 'Run'.length())
         runName = runName[0].toLowerCase() + runName.substring(1)
@@ -150,3 +292,38 @@ tasks.matching { it.name in ['prepareClientSmokeRun', 'prepareIslandSmokeRun', '
 // Two different Minecraft JVMs, one fixture created exclusively for this check.
 tasks.named('runPersistenceReload') { dependsOn tasks.named('runPersistenceCreate') }
 tasks.register('runPersistenceSmoke') { dependsOn tasks.named('runPersistenceReload') }
+tasks.named('runRiftPersistenceReload') { dependsOn tasks.named('runRiftPersistenceCreate') }
+tasks.register('runRiftPersistenceSmoke') { dependsOn tasks.named('runRiftPersistenceReload') }
+tasks.named('runKeyPersistenceReload') { dependsOn tasks.named('runKeyPersistenceCreate') }
+tasks.register('runKeyPersistenceSmoke') { dependsOn tasks.named('runKeyPersistenceReload') }
+tasks.named('runWatchpostPersistenceReload') { dependsOn tasks.named('runWatchpostPersistenceCreate') }
+tasks.register('runWatchpostPersistenceSmoke') { dependsOn tasks.named('runWatchpostPersistenceReload') }
+
+tasks.matching { it.name in ['prepareWatchpostPersistenceCreateRun', 'prepareWatchpostPersistenceReloadRun'] }.configureEach {
+    outputs.upToDateWhen { false }
+    doLast {
+        def runName = it.name.contains('Reload') ? 'watchpostPersistenceReload' : 'watchpostPersistenceCreate'
+        def directory = neoForge.runs.getByName(runName).gameDirectory.get().asFile
+        def config = new File(directory, 'config/fml.toml')
+        config.parentFile.mkdirs()
+        config.text = 'earlyWindowControl = false\n'
+        def options = new File(directory, 'options.txt')
+        if (!options.exists()) options.text = 'onboardAccessibility:false\n'
+    }
+}
+tasks.matching { it.name in ['prepareSurvivalRouteBootstrapRun', 'prepareSurvivalRouteEquipmentRun', 'prepareSurvivalEquipmentResumeRun', 'prepareSurvivalOresRun', 'prepareSurvivalToolRepairRun', 'prepareSurvivalForgeRun', 'prepareSurvivalEntranceRun', 'prepareSurvivalTideRouteRun', 'prepareSurvivalRuinRun', 'prepareSurvivalPortalRun'] }.configureEach {
+    outputs.upToDateWhen { false }
+    doLast {
+        def runName = it.name.contains('Portal') ? 'survivalPortal' : it.name.contains('Ruin') ? 'survivalRuin' : it.name.contains('TideRoute') ? 'survivalTideRoute' : it.name.contains('Entrance') ? 'survivalEntrance' : it.name.contains('Forge') ? 'survivalForge' : it.name.contains('ToolRepair') ? 'survivalToolRepair' : it.name.contains('Ores') ? 'survivalOres' : it.name.contains('Resume') ? 'survivalEquipmentResume' : it.name.contains('Equipment') ? 'survivalRouteEquipment' : 'survivalRouteBootstrap'
+        def directory = neoForge.runs.getByName(runName).gameDirectory.get().asFile
+        def config = new File(directory, 'config/fml.toml')
+        config.parentFile.mkdirs(); config.text = 'earlyWindowControl = false\n'
+        def options = new File(directory, 'options.txt')
+        if (!options.exists()) options.text = 'onboardAccessibility:false\n'
+    }
+}
+tasks.named('runSurvivalRouteEquipment') { dependsOn tasks.named('runSurvivalRouteBootstrap') }
+tasks.register('runSurvivalPreparationSmoke') { dependsOn tasks.named('runSurvivalRouteEquipment') }
+
+// A successful build includes the server's behavioral tests, in a disposable profile.
+tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer') }

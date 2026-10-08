@@ -13,8 +13,10 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED = {"build", "runGameTestServer", "runIslandSmoke", "runTallIslandSmoke", "runGeometrySmoke",
-           "runPersistenceSmoke", "runInfectionGameTestServer"}
-SAVED_ROOTS = ("run/world", "build/island-smoke/saves/seeded-island-check",
+           "runPersistenceSmoke", "runInfectionGameTestServer", "runRiftGameTestServer", "runRiftPersistenceSmoke",
+           "runExpeditionGameTestServer", "runKeyPersistenceSmoke", "runWatchpostSmoke", "runWatchpostPersistenceSmoke",
+           "runSurvivalPreparationSmoke"}
+SAVED_ROOTS = ("run/world", "build/playtest/saves", "build/island-smoke/saves/seeded-island-check",
                "build/client-smoke/saves/fluid-chaotic-check",
                "build/client-smoke/saves/fluid-relief-check",
                "build/client-smoke/saves/fluid-visual-check")
@@ -35,7 +37,7 @@ def saves():
 
 
 def write(path, data):
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def main():
@@ -52,12 +54,12 @@ def main():
     if not env.get("JAVA_HOME") and sys.platform == "darwin":
         env["JAVA_HOME"] = subprocess.check_output(["/usr/libexec/java_home", "-v", "21"], text=True).strip()
     if env.get("JAVA_HOME"):
-        env["PATH"] = env["JAVA_HOME"] + "/bin:" + env.get("PATH", "")
+        env["PATH"] = os.path.join(env["JAVA_HOME"], "bin") + os.pathsep + env.get("PATH", "")
     before = saves()
     write(evidence / "saves-before.json", before)
     tracked = subprocess.check_output(["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"], cwd=ROOT)
     write(evidence / "source-sha256.json", {str(p.relative_to(ROOT)): checksum(p)
-          for name in tracked.decode().split("\0") if name for p in [ROOT / name] if p.is_file()})
+          for name in tracked.decode("utf-8").split("\0") if name for p in [ROOT / name] if p.is_file()})
     (evidence / "git-diff.patch").write_bytes(subprocess.check_output(["git", "diff", "--binary", "HEAD"], cwd=ROOT))
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     print("EVIDENCE " + str(evidence), flush=True)
@@ -66,12 +68,18 @@ def main():
     failure = None
     try:
         for task in args.tasks:
-            command = [str(ROOT / "gradlew"), "--no-daemon", "--console=plain",
+            wrapper = "gradlew.bat" if sys.platform == "win32" else "gradlew"
+            launcher = [str(ROOT / wrapper)]
+            if sys.platform == "win32" and env.get("JAVA_HOME"):
+                # Direct Java avoids a dependency on Windows batch execution policy.
+                launcher = [str(Path(env["JAVA_HOME"]) / "bin/java.exe"), "-classpath",
+                            str(ROOT / "gradle/wrapper/gradle-wrapper.jar"), "org.gradle.wrapper.GradleWrapperMain"]
+            command = launcher + ["--no-daemon", "--console=plain",
                        "-PintersticeRunRoot=" + str(evidence / "profiles"), task]
             record = {"command": command, "cwd": str(ROOT), "source_commit": head,
                       "java_home": env.get("JAVA_HOME"), "started_utc": dt.datetime.now(dt.timezone.utc).isoformat()}
             started = time.monotonic()
-            with (evidence / (task + ".log")).open("x") as stream:
+            with (evidence / (task + ".log")).open("x", encoding="utf-8") as stream:
                 process = subprocess.Popen(command, cwd=ROOT, env=env, stdout=stream, stderr=subprocess.STDOUT)
                 record["pid"] = process.pid
                 write(evidence / (task + ".json"), record)
@@ -79,22 +87,39 @@ def main():
             record.update(exit_code=code, duration_seconds=round(time.monotonic() - started, 3),
                           ended_utc=dt.datetime.now(dt.timezone.utc).isoformat())
             accepted = code == 0
-            if code == 0 and task in ("runGameTestServer", "runInfectionGameTestServer"):
-                log = (evidence / (task + ".log")).read_text(errors="replace")
-                passed = re.search(r"All ([1-9][0-9]*) required tests passed", log)
-                record["required_tests_passed"] = int(passed.group(1)) if passed else 0
-                accepted = passed is not None
-            if code == 0 and task in ("runIslandSmoke", "runTallIslandSmoke", "runGeometrySmoke", "runPersistenceSmoke", "runInfectionGameTestServer"):
+            if code == 0 and task in ("build", "runGameTestServer", "runInfectionGameTestServer", "runRiftGameTestServer", "runExpeditionGameTestServer"):
+                log = (evidence / (task + ".log")).read_text(encoding="utf-8", errors="replace")
+                groups = [int(count) for count in re.findall(r"All ([1-9][0-9]*) required tests passed", log)]
+                record["required_test_groups"] = groups
+                record["required_tests_passed"] = sum(groups)
+                accepted = bool(groups)
+            if code == 0 and task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke"):
+                record["validations"] = {}
+                prefix, profile = {"runRiftPersistenceSmoke": ("rift", "riftPersistence"),
+                                   "runKeyPersistenceSmoke": ("key", "keyPersistence"),
+                                   "runWatchpostPersistenceSmoke": ("watchpost", "watchpostPersistence"),
+                                   "runSurvivalPreparationSmoke": ("survival", "survivalRoute")}[task]
+                names = ("survival-preparation.json", "survival-equipment.json") if task == "runSurvivalPreparationSmoke" else (prefix + "-create-validation.json", prefix + "-reload-validation.json")
+                for name in names:
+                    result_path = evidence / "profiles" / profile / name
+                    try:
+                        result = json.loads(result_path.read_text(encoding="utf-8"))
+                        record["validations"][name] = result
+                        accepted = accepted and result.get("passed") is True
+                    except (OSError, ValueError) as error:
+                        record["validation_error"] = str(error); accepted = False
+            if code == 0 and task in ("runIslandSmoke", "runTallIslandSmoke", "runGeometrySmoke", "runPersistenceSmoke", "runInfectionGameTestServer", "runWatchpostSmoke"):
                 paths = {"runIslandSmoke": ("islandSmoke", "island-validation.json"),
                          "runTallIslandSmoke": ("tallIslandSmoke", "island-validation.json"),
                          "runGeometrySmoke": ("geometrySmoke", "geometry-validation.json"),
                          "runPersistenceSmoke": ("persistenceSmoke", "persistence-validation.json"),
-                         "runInfectionGameTestServer": ("infectionGameTestServer", "infection-baseline.json")}
+                         "runInfectionGameTestServer": ("infectionGameTestServer", "infection-baseline.json"),
+                         "runWatchpostSmoke": ("watchpostSmoke", "watchpost-validation.json")}
                 run, name = paths[task]
                 result_path = evidence / "profiles" / run / name
                 record["validation_file"] = str(result_path)
                 try:
-                    record["validation"] = json.loads(result_path.read_text())
+                    record["validation"] = json.loads(result_path.read_text(encoding="utf-8"))
                     accepted = accepted and record["validation"].get("passed") is True
                 except (OSError, ValueError) as error:
                     record["validation_error"] = str(error)
@@ -103,7 +128,7 @@ def main():
             write(evidence / (task + ".json"), record)
             completed.append(task)
             print(task + " exit=" + str(code) + " accepted=" + str(accepted) + " seconds=" + str(record["duration_seconds"]), flush=True)
-            print("\n".join((evidence / (task + ".log")).read_text(errors="replace").splitlines()[-8:]), flush=True)
+            print("\n".join((evidence / (task + ".log")).read_text(encoding="utf-8", errors="replace").splitlines()[-8:]), flush=True)
             if not accepted:
                 break
         else:

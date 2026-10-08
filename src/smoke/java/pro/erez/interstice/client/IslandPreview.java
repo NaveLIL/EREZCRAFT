@@ -14,6 +14,8 @@ import net.minecraft.world.level.LevelSettings;
 import net.minecraft.world.level.WorldDataConfiguration;
 import net.minecraft.world.level.levelgen.WorldOptions;
 import net.minecraft.world.level.levelgen.presets.WorldPresets;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -24,6 +26,7 @@ import pro.erez.interstice.worldgen.IslandWorld;
 @EventBusSubscriber(modid = Interstice.ID, value = Dist.CLIENT)
 public final class IslandPreview {
     private static final long SEED = 20261006L;
+    private static final boolean PLAYTEST = Boolean.getBoolean("interstice.playtest");
     private static boolean started;
     private static boolean finished;
     private static long deadline;
@@ -35,12 +38,12 @@ public final class IslandPreview {
 
     @SubscribeEvent
     public static void tick(net.neoforged.neoforge.client.event.ClientTickEvent.Post event) {
-        if (!Boolean.getBoolean("interstice.islandPreview") || finished) return;
+        if ((!Boolean.getBoolean("interstice.islandPreview") && !PLAYTEST) || finished) return;
         Minecraft mc = Minecraft.getInstance();
         if (!started && mc.screen instanceof TitleScreen) {
             started = true;
             deadline = System.nanoTime() + java.util.concurrent.TimeUnit.MINUTES.toNanos(5);
-            worldName = "island-preview-" + System.currentTimeMillis();
+            worldName = (PLAYTEST ? "interstice-playtest-" : "island-preview-") + System.currentTimeMillis();
             mc.options.pauseOnLostFocus = false;
             mc.options.renderDistance().set(6);
             mc.options.cloudStatus().set(CloudStatus.FANCY);
@@ -48,8 +51,10 @@ public final class IslandPreview {
             mc.options.fov().set(85);
             System.out.println("ISLAND_PREVIEW_CREATING " + mc.gameDirectory.toPath().resolve("saves").resolve(worldName));
             mc.createWorldOpenFlows().createFreshLevel(worldName,
-                    new LevelSettings("Interstice - island preview", GameType.CREATIVE, false,
-                            Difficulty.PEACEFUL, true, new GameRules(), WorldDataConfiguration.DEFAULT),
+                    new LevelSettings(PLAYTEST ? "Interstice - physics playtest" : "Interstice - island preview",
+                            PLAYTEST ? GameType.SURVIVAL : GameType.CREATIVE, false,
+                            PLAYTEST ? Difficulty.NORMAL : Difficulty.PEACEFUL, true,
+                            new GameRules(), WorldDataConfiguration.DEFAULT),
                     new WorldOptions(SEED, false, false), WorldPresets::createNormalWorldDimensions, mc.screen);
             return;
         }
@@ -73,17 +78,41 @@ public final class IslandPreview {
             server.execute(() -> {
                 var player = server.getPlayerList().getPlayer(uuid);
                 if (player == null || !player.level().dimension().equals(IslandWorld.TALL_WORLD)) return;
-                player.setGameMode(GameType.CREATIVE);
-                player.getAbilities().flying = true;
-                player.onUpdateAbilities();
-                player.teleportTo(player.serverLevel(), player.getX(), player.getY() + 3.0,
-                        player.getZ(), Set.of(), -35, 12);
+                if (PLAYTEST) {
+                    player.setGameMode(GameType.SURVIVAL);
+                    player.serverLevel().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).set(true, server);
+                    player.setRespawnPosition(IslandWorld.TALL_WORLD, player.blockPosition(), -35, true, false);
+                    var tide = pro.erez.interstice.tide.TideManager.getSavedData(server);
+                    tide.setPhase(pro.erez.interstice.tide.TidePhase.CALM, 12000);
+                    pro.erez.interstice.tide.TideSync.broadcast(tide.snapshot());
+                    for (ItemStack stack : new ItemStack[]{
+                            new ItemStack(Interstice.TIDE_INDICATOR.get()),
+                            new ItemStack(Interstice.RIFTSILVER_BUCKET.get(), 8),
+                            new ItemStack(Interstice.RIFTSILVER_HEAVY_BUCKET.get()),
+                            new ItemStack(Interstice.RIFTSILVER_INVERTED_BUCKET.get()),
+                            new ItemStack(Items.WATER_BUCKET), new ItemStack(Items.LAVA_BUCKET),
+                            new ItemStack(Items.BUCKET, 8), new ItemStack(Items.IRON_PICKAXE),
+                            new ItemStack(Items.COOKED_BEEF, 64), new ItemStack(Items.GLASS, 64),
+                            new ItemStack(Items.STONE_BRICKS, 64), new ItemStack(Items.OAK_SLAB, 64),
+                            new ItemStack(Items.LADDER, 32), new ItemStack(Items.OAK_LEAVES, 64)}) {
+                        player.getInventory().add(stack);
+                    }
+                    player.displayClientMessage(net.minecraft.network.chat.Component.literal(
+                            "/interstice tide set surge — test the tide; /interstice leave — return"), false);
+                } else {
+                    player.setGameMode(GameType.CREATIVE);
+                    player.getAbilities().flying = true;
+                    player.onUpdateAbilities();
+                    player.teleportTo(player.serverLevel(), player.getX(), player.getY() + 3.0,
+                            player.getZ(), Set.of(), -35, 12);
+                }
             });
             stage = 2;
             ticks = 0;
-        } else if (stage == 2 && ++ticks >= 60 && mc.player.getAbilities().flying) {
+        } else if (stage == 2 && ++ticks >= 60
+                && (PLAYTEST ? !mc.player.isCreative() : mc.player.getAbilities().flying)) {
             finished = true;
-            Screenshot.grab(mc.gameDirectory, "island-preview.png", mc.getMainRenderTarget(),
+            Screenshot.grab(mc.gameDirectory, PLAYTEST ? "playtest-ready.png" : "island-preview.png", mc.getMainRenderTarget(),
                     message -> System.out.println("ISLAND_PREVIEW_SCREENSHOT " + message.getString()));
             report(mc, true, "ready-for-owner");
         }
@@ -110,7 +139,7 @@ public final class IslandPreview {
             json.addProperty("z", mc.player.getZ());
         }
         try {
-            Files.writeString(mc.gameDirectory.toPath().resolve("preview-ready.json"), json.toString());
+            Files.writeString(mc.gameDirectory.toPath().resolve(PLAYTEST ? "playtest-ready.json" : "preview-ready.json"), json.toString());
         } catch (java.io.IOException exception) {
             throw new java.io.UncheckedIOException(exception);
         }
