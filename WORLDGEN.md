@@ -47,4 +47,14 @@ GameTests exercise actual native chunk generation, compare it with global noise 
 
 `/interstice explore` searches density columns for solid terrain with headroom, generates the selected chunk and checks the actual landing blocks. `/interstice leave` restores the recorded dimension, coordinates and view direction. Survival entry, distant chunk streaming and return are exercised by `runIslandSmoke` in a disposable client profile.
 
-This is the first terrain release. It has a fixed neutral biome and simple moss/dirt/stone surfaces. Custom biomes, vegetation, ores, ruins and mobs need a later pass using the same clearance contract. Poured fluids retain their existing gameplay physics; the generation contract concerns generated terrain and the two generated seas.
+The original terrain profile is retained. M13 adds seeded `ash_islands` and `stone_vaults` biomes in both height profiles. Vegetation, riftsilver ore, watchpost ruins and geological arches use the explicit Java surface pipeline; vanilla decoration/carvers/structures remain disabled. Poured fluids retain their existing gameplay physics; the generation contract concerns generated terrain and the two generated seas.
+
+## M13 geological pipeline
+
+Only `noise_router.continents` is extended with independent, Y-invariant `interstice:realm_geology` noise. Island density and both sea surfaces are unchanged. Vanilla multi-noise selects ash islands below continentalness 0.08 and stone vaults above it. `RealmBiomes.upgradeLegacy` replaces the former fixed End placeholder during generator decoding; custom biome sources are preserved. Existing chunk blocks and saved biome palettes are never rebuilt.
+
+`buildSurface` runs surface rules → sea/material conversion → geological surface → ore → watchpost → stone vault → tree → sprout. The vault biome changes the upper six exposed rock layers, with connected pockets of existing turf and authored flora. Ore remains mineable and is never overwritten by surface conversion. Ruins accept both old and new natural rock and have placement priority over arches.
+
+One deterministic arch candidate is attempted in roughly one quarter of chunks. Eligible stone-biome terrain can receive a 9×5 vault with three forms, heights 5–7 and two orientations. Every roof piece connects by block faces to ground supports. The full footprint needs real ground within two blocks of the center elevation, open air, and profile-specific clearance for every added block. Placement stays inside its chunk and validates everything before writing. No caves are carved, no fluids removed, and no neighboring chunks modified. This bounds generation and keeps chunk order independent.
+
+M13 evidence and limitations: [docs/progress/M13.md](docs/progress/M13.md). Fresh GameTests inspect both actual named dimensions; noise occupancy is compared before decoration, while runtime sea/heightmap/clearance checks remain on FULL chunks.

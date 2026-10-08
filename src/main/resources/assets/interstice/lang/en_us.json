@@ -105,5 +105,20 @@
   "message.interstice.key.returned": "Emergency return completed. This expedition's entitlement is spent.",
   "item.interstice.pressure_coupler": "Tidal Membrane",
   "advancements.interstice.watchpost_salvage.title": "The Watchpost Remembers",
-  "advancements.interstice.watchpost_salvage.description": "Salvage a tidal membrane from a ruined watchpost"
+  "advancements.interstice.watchpost_salvage.description": "Salvage a tidal membrane from a ruined watchpost",
+  "block.interstice.vaultstone": "Vaultstone",
+  "block.interstice.weathered_vaultstone": "Weathered Vaultstone",
+  "block.interstice.polished_vaultstone": "Polished Vaultstone",
+  "block.interstice.vaultstone_bricks": "Vaultstone Bricks",
+  "block.interstice.vaultstone_slab": "Vaultstone Slab",
+  "block.interstice.vaultstone_stairs": "Vaultstone Stairs",
+  "block.interstice.vaultstone_wall": "Vaultstone Wall",
+  "block.interstice.polished_vaultstone_slab": "Polished Vaultstone Slab",
+  "block.interstice.polished_vaultstone_stairs": "Polished Vaultstone Stairs",
+  "block.interstice.polished_vaultstone_wall": "Polished Vaultstone Wall",
+  "block.interstice.vaultstone_bricks_slab": "Vaultstone Brick Slab",
+  "block.interstice.vaultstone_bricks_stairs": "Vaultstone Brick Stairs",
+  "block.interstice.vaultstone_bricks_wall": "Vaultstone Brick Wall",
+  "biome.interstice.ash_islands": "Ash Islands",
+  "biome.interstice.stone_vaults": "Stone Vaults"
 }

@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import javax.imageio.ImageIO;
 
-/** Original, editable 16x16 project artwork. No source PNGs or external artwork are read. */
+/** Original project artwork plus the explicitly documented CC0 geological library. */
 public final class GenerateProjectTextures {
     static final Path ROOT=Path.of("src/main/resources/assets/interstice/textures");
     static BufferedImage image(){return new BufferedImage(16,16,BufferedImage.TYPE_INT_ARGB);}
@@ -86,10 +86,64 @@ public final class GenerateProjectTextures {
             portal.setRGB(x,phase*16+y,(188<<24)|(rgb&0xffffff));
         }save(portal,"block","rift_portal");
         for(String name:new String[]{"rift_lens","wayfarer_key","pressure_coupler"})save(icon(name),"item",name);
+        GeologyLibrary.generate();
+        stone=ImageIO.read(ROOT.resolve("block/riftstone.png").toFile());side=ImageIO.read(ROOT.resolve("block/abyssal_turf_side.png").toFile());ore=ImageIO.read(ROOT.resolve("block/riftsilver_ore.png").toFile());frame=ImageIO.read(ROOT.resolve("block/rift_frame.png").toFile());
         Path preview=Path.of("art/generated/project-textures/texture-sheet.png");Files.createDirectories(preview.getParent());
         BufferedImage sheet=new BufferedImage(960,480,BufferedImage.TYPE_INT_ARGB);var g=sheet.createGraphics();g.setColor(new Color(0x17141c));g.fillRect(0,0,960,480);g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
         BufferedImage[] tiles={stone,top,side,ore,bark(false),planks(),leaf,facets(60,125,116,419),icon("rift_lens"),icon("wayfarer_key"),icon("pressure_coupler"),frame};
         for(int i=0;i<tiles.length;i++){int x=(i%6)*160,y=(i/6)*240;g.drawImage(tiles[i],x+16,y+24,128,128,null);if(i<4){g.drawImage(tiles[i],x+16,y+170,48,48,null);g.drawImage(tiles[i],x+64,y+170,48,48,null);g.drawImage(tiles[i],x+112,y+170,32,48,null);}}
-        g.dispose();ImageIO.write(sheet,"PNG",preview.toFile());System.out.println("Generated 18 original project textures without reading any external images.");
+        g.dispose();ImageIO.write(sheet,"PNG",preview.toFile());
+        System.out.println("Generated original flora/items and documented CC0 geology. Oceans are unchanged.");
+    }
+}
+
+/** Small verified sources are kept in the repository; generation needs neither network nor research files. */
+final class GeologyLibrary {
+    static BufferedImage source(String name,String expected)throws Exception{
+        Path p=Path.of("art/sources/cc0/block-texture-set/"+name+".png");
+        String actual=java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(p)));
+        if(!actual.equals(expected))throw new IllegalStateException("CC0 source changed: "+p);
+        BufferedImage im=ImageIO.read(p.toFile());if(im.getWidth()!=16||im.getHeight()!=16)throw new IllegalStateException("Expected 16x16 CC0 tile");return im;
+    }
+    static BufferedImage tint(BufferedImage src,int r,int g,int b){
+        double mean=0;for(int y=0;y<16;y++)for(int x=0;x<16;x++){int c=src.getRGB(x,y);mean+=((c>>16)&255)*.2126+((c>>8)&255)*.7152+(c&255)*.0722;}mean/=256;
+        BufferedImage out=GenerateProjectTextures.image();for(int y=0;y<16;y++)for(int x=0;x<16;x++){
+            int c=src.getRGB(x,y);double l=(((c>>16)&255)*.2126+((c>>8)&255)*.7152+(c&255)*.0722)/mean;
+            out.setRGB(x,y,GenerateProjectTextures.color(r,g,b,.48+.52*l));
+        }GenerateProjectTextures.seams(out,true);return out;
+    }
+    static void preserveEdges(BufferedImage out,BufferedImage original){for(int i=0;i<16;i++){
+        out.setRGB(0,i,original.getRGB(0,i));out.setRGB(15,i,original.getRGB(15,i));out.setRGB(i,0,original.getRGB(i,0));out.setRGB(i,15,original.getRGB(i,15));
+    }}
+    static BufferedImage copy(BufferedImage source){BufferedImage out=GenerateProjectTextures.image();var g=out.createGraphics();g.drawImage(source,0,0,null);g.dispose();return out;}
+    static BufferedImage variation(BufferedImage source,int variant){
+        BufferedImage out=copy(source);for(int y=1;y<15;y++)for(int x=1;x<15;x++){
+            int sx=variant==1?15-x:y,sy=variant==1?y:15-x;out.setRGB(x,y,source.getRGB(sx,sy));
+        }preserveEdges(out,source);return out;
+    }
+    static void generate()throws Exception{
+        var basalt=source("basalt","18d71f03bc9427ec8d0c01becef67d6cf509f9873fcd07f1f8928e1c4ac9969f");
+        var schist=source("schist","a2fec5b29c6e21646efe83266f283628ac49eb9bf45cbb40916630ded39db708");
+        var vault=tint(schist,74,62,79);var weathered=tint(schist,103,87,94);var polished=tint(basalt,79,68,86);var bricks=copy(polished);
+        for(int y=0;y<16;y++)for(int x=0;x<16;x++)if(y%8==0||Math.floorMod(x+(y/8)*8,16)==0)bricks.setRGB(x,y,0xff332c3b);
+        GenerateProjectTextures.seams(bricks,true);
+        GenerateProjectTextures.save(vault,"block/stone","vaultstone");GenerateProjectTextures.save(weathered,"block/stone","weathered_vaultstone");
+        for(int variant=1;variant<=2;variant++){
+            GenerateProjectTextures.save(variation(vault,variant),"block/stone","vaultstone_"+variant);
+            GenerateProjectTextures.save(variation(weathered,variant),"block/stone","weathered_vaultstone_"+variant);
+        }
+        GenerateProjectTextures.save(polished,"block/stone","polished_vaultstone");GenerateProjectTextures.save(bricks,"block/stone","vaultstone_bricks");
+        var original=ImageIO.read(GenerateProjectTextures.ROOT.resolve("block/riftstone.png").toFile());var stone=tint(basalt,46,41,60);preserveEdges(stone,original);
+        GenerateProjectTextures.save(stone,"block","riftstone");
+        for(String name:new String[]{"riftsilver_ore","rift_frame","abyssal_turf_side"}){
+            var im=ImageIO.read(GenerateProjectTextures.ROOT.resolve("block/"+name+".png").toFile());var before=copy(im);
+            for(int y=1;y<15;y++)for(int x=1;x<15;x++)if(im.getRGB(x,y)==original.getRGB(x,y))im.setRGB(x,y,stone.getRGB(x,y));
+            preserveEdges(im,before);GenerateProjectTextures.save(im,"block",name);
+        }
+        String[] reaction={"vitriolite","pyrolith","aerolite","phosphorite"};int[][] colors={{44,43,55},{77,37,47},{95,106,111},{128,132,91}};
+        for(int i=0;i<reaction.length;i++)GenerateProjectTextures.save(tint(i==1?schist:basalt,colors[i][0],colors[i][1],colors[i][2]),"block",reaction[i]);
+        Path preview=Path.of("art/generated/project-textures/geology-sheet.png");BufferedImage sheet=new BufferedImage(640,160,BufferedImage.TYPE_INT_ARGB);var g=sheet.createGraphics();
+        g.setColor(new Color(0x17141c));g.fillRect(0,0,640,160);g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+        BufferedImage[] tiles={stone,vault,weathered,polished,bricks};for(int i=0;i<tiles.length;i++)g.drawImage(tiles[i],i*128+8,16,112,112,null);g.dispose();ImageIO.write(sheet,"PNG",preview.toFile());
     }
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "interstice:block/vaultstone_slab"
+    },
+    "type=top": {
+      "model": "interstice:block/vaultstone_slab_top"
+    },
+    "type=double": {
+      "model": "interstice:block/vaultstone"
+    }
+  }
+}

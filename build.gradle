@@ -245,6 +245,30 @@ neoForge {
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_expeditions'
         }
+        vaultGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/vault-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_vaults'
+        }
+        vaultPersistenceCreate {
+            client()
+            gameDirectory = file('build/vault-persistence')
+            systemProperty 'interstice.vaultSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        vaultPersistenceReload {
+            client()
+            gameDirectory = file('build/vault-persistence')
+            systemProperty 'interstice.vaultSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
         infectionGameTestServer {
             type = 'gameTestServer'
             sourceSet = sourceSets.infection
@@ -258,7 +282,8 @@ neoForge {
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
+        def profileName = name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
+                name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
                 name in ['riftPersistenceCreate', 'riftPersistenceReload'] ? 'riftPersistence' :
                 name in ['keyPersistenceCreate', 'keyPersistenceReload'] ? 'keyPersistence' :
                 name in ['watchpostPersistenceCreate', 'watchpostPersistenceReload'] ? 'watchpostPersistence' :
@@ -298,11 +323,14 @@ tasks.named('runKeyPersistenceReload') { dependsOn tasks.named('runKeyPersistenc
 tasks.register('runKeyPersistenceSmoke') { dependsOn tasks.named('runKeyPersistenceReload') }
 tasks.named('runWatchpostPersistenceReload') { dependsOn tasks.named('runWatchpostPersistenceCreate') }
 tasks.register('runWatchpostPersistenceSmoke') { dependsOn tasks.named('runWatchpostPersistenceReload') }
+tasks.named('runVaultPersistenceReload') { dependsOn tasks.named('runVaultPersistenceCreate') }
+tasks.register('runVaultPersistenceSmoke') { dependsOn tasks.named('runVaultPersistenceReload') }
 
-tasks.matching { it.name in ['prepareWatchpostPersistenceCreateRun', 'prepareWatchpostPersistenceReloadRun'] }.configureEach {
+tasks.matching { it.name in ['prepareWatchpostPersistenceCreateRun', 'prepareWatchpostPersistenceReloadRun', 'prepareVaultPersistenceCreateRun', 'prepareVaultPersistenceReloadRun'] }.configureEach {
     outputs.upToDateWhen { false }
     doLast {
-        def runName = it.name.contains('Reload') ? 'watchpostPersistenceReload' : 'watchpostPersistenceCreate'
+        def runName = it.name.contains('Vault') ? (it.name.contains('Reload') ? 'vaultPersistenceReload' : 'vaultPersistenceCreate') :
+                (it.name.contains('Reload') ? 'watchpostPersistenceReload' : 'watchpostPersistenceCreate')
         def directory = neoForge.runs.getByName(runName).gameDirectory.get().asFile
         def config = new File(directory, 'config/fml.toml')
         config.parentFile.mkdirs()
@@ -326,4 +354,4 @@ tasks.named('runSurvivalRouteEquipment') { dependsOn tasks.named('runSurvivalRou
 tasks.register('runSurvivalPreparationSmoke') { dependsOn tasks.named('runSurvivalRouteEquipment') }
 
 // A successful build includes the server's behavioral tests, in a disposable profile.
-tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer') }
+tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer') }

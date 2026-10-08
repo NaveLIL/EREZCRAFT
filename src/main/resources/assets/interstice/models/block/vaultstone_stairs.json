@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "interstice:block/stone/vaultstone",
+    "top": "interstice:block/stone/vaultstone",
+    "side": "interstice:block/stone/vaultstone"
+  }
+}

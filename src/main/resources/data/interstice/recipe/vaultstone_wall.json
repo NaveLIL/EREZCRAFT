@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "interstice:vaultstone"
+    }
+  },
+  "result": {
+    "id": "interstice:vaultstone_wall",
+    "count": 6
+  }
+}

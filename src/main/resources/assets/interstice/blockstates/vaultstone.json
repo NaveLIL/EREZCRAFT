@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "interstice:block/vaultstone"
+      },
+      {
+        "model": "interstice:block/vaultstone_1"
+      },
+      {
+        "model": "interstice:block/vaultstone_2"
+      }
+    ]
+  }
+}

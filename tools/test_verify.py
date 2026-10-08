@@ -31,8 +31,8 @@ class VerificationResultTests(unittest.TestCase):
                 kwargs["stdout"].write(log)
                 if result is not None:
                     evidence = next((root / ".verification").iterdir())
-                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke"):
-                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute"}[task]
+                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke"):
+                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute", "runVaultPersistenceSmoke": "vaultPersistence"}[task]
                         destination = evidence / "profiles" / profile
                         destination.mkdir(parents=True)
                         for name, value in result.items():
@@ -156,6 +156,39 @@ class VerificationResultTests(unittest.TestCase):
     def test_survival_preparation_does_not_accept_missing_equipment_run(self):
         code, _, _ = self.exercise("runSurvivalPreparationSmoke", result={"survival-preparation.json": {"passed": True}})
         self.assertEqual(code, 1)
+
+    def test_vault_server_requires_positive_gametest_completion(self):
+        for log, accepted in (("BUILD SUCCESSFUL\n", False),
+                              ("All 0 required tests passed :)\n", False),
+                              ("All 8 required tests passed :)\n", True)):
+            with self.subTest(log=log):
+                code, _, summary = self.exercise("runVaultGameTestServer", log=log)
+                self.assertEqual(code, 0 if accepted else 1)
+                self.assertEqual(summary["passed"], accepted)
+                self.assertEqual(summary["completed_tasks"], ["runVaultGameTestServer"])
+
+    def test_vault_restart_accepts_both_successful_validations(self):
+        code, _, summary = self.exercise("runVaultPersistenceSmoke", result={
+            "vault-create-validation.json": {"passed": True},
+            "vault-reload-validation.json": {"passed": True},
+        })
+        self.assertEqual(code, 0)
+        self.assertTrue(summary["passed"])
+        self.assertEqual(summary["completed_tasks"], ["runVaultPersistenceSmoke"])
+
+    def test_vault_restart_refuses_missing_or_failed_validation(self):
+        cases = {
+            "missing_reload": {"vault-create-validation.json": {"passed": True}},
+            "failed_reload": {"vault-create-validation.json": {"passed": True},
+                              "vault-reload-validation.json": {"passed": False}},
+            "failed_create": {"vault-create-validation.json": {"passed": False},
+                              "vault-reload-validation.json": {"passed": True}},
+        }
+        for reason, result in cases.items():
+            with self.subTest(reason=reason):
+                code, _, summary = self.exercise("runVaultPersistenceSmoke", result=result)
+                self.assertEqual(code, 1)
+                self.assertFalse(summary["passed"])
 
 
 if __name__ == "__main__":

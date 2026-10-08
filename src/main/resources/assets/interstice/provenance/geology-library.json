@@ -1,0 +1,36 @@
+{
+  "license": "CC0-1.0",
+  "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+  "author": "ARoachIFoundOnMyPillow",
+  "received": "2026-10-08",
+  "source_files": {
+    "basalt.png": "18d71f03bc9427ec8d0c01becef67d6cf509f9873fcd07f1f8928e1c4ac9969f",
+    "schist.png": "a2fec5b29c6e21646efe83266f283628ac49eb9bf45cbb40916630ded39db708"
+  },
+  "generator": "tools/GenerateProjectTextures.java (GeologyLibrary)",
+  "changes": [
+    "Palette remapping to the established realm palette",
+    "Opposite tile edge reconciliation",
+    "Original riftstone/ore/turf-side/frame edge pixels and authored ore/cover pixels preserved",
+    "Own brick joints added",
+    "Two deterministic interior variants for each natural vault rock; all variant edges exactly match their base tile"
+  ],
+  "outputs": {
+    "block/riftstone.png": "f9ae8a2f5668d9fbc0af713c5fdf6bc7e726f70272262fb79fc18468c9e80d44",
+    "block/riftsilver_ore.png": "5a3689864120c00711d2dcca39a722209ed080a30471b3faedaf8234f4b99ae8",
+    "block/abyssal_turf_side.png": "a97996c086328dcfdf47fe2a779bb53d76ad30413ba917df5a70d3cb9e10a8e6",
+    "block/rift_frame.png": "ee6e93d11b65a1d48693bf54724755e4adc61e14c31e481882823612b2b2588c",
+    "block/vitriolite.png": "8ff9a35ea2f96a8f6b525095bdb33bbe75ddccd39a9e37a9ba369b02509a26b7",
+    "block/pyrolith.png": "34eaa34b1150d5cbc162f8afef57f0844eb9feedf6dce9979b7acd50c3318673",
+    "block/aerolite.png": "409592c255d8b246979e4f28fa5ba44242ceedb0acceed43f7fae9537927e6cf",
+    "block/phosphorite.png": "b524e92ba9701a524627f62538892a39831004477358f0139099a6f48aa8af72",
+    "block/stone/vaultstone.png": "3d1fded258e3c338c45d75522ba5475055f709d6a2516f3fd05975d774061812",
+    "block/stone/weathered_vaultstone.png": "beb07efe440b8a1778612a74353dc6969c0f549688040553b2f78b60a33c457e",
+    "block/stone/polished_vaultstone.png": "9c4a930069273099f6397bdd3c73e7566a90992a805084f54368a1ee3ee4726a",
+    "block/stone/vaultstone_bricks.png": "92a63d0de202d02410a82f41a62a9e2982dd7ef46cfa6bf125744ad493ef3ce3",
+    "block/stone/vaultstone_1.png": "101f532352d679d92545bc3fcf607dda58f71f63998bcc91fd047300d982fc95",
+    "block/stone/vaultstone_2.png": "639cb25dbf5c56c24472e7ae671245557e03b56f78bc48e8f5677f73ccee9263",
+    "block/stone/weathered_vaultstone_1.png": "9273cc918f38a05e5e8ea29052c1fe8d61092c586231cb5c7aa3778fe9219466",
+    "block/stone/weathered_vaultstone_2.png": "ca79de955483e5d977a97792fde2e21d7718d96946e5af260a7430637bc3c12c"
+  }
+}

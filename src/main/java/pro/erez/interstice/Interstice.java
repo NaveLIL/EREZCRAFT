@@ -22,6 +22,7 @@ import net.minecraft.network.chat.Component;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import pro.erez.interstice.worldgen.IslandChunkGenerator;
+import pro.erez.interstice.worldgen.VaultMaterials;
 
 @Mod(Interstice.ID)
 public final class Interstice {
@@ -106,6 +107,7 @@ public final class Interstice {
                 output.accept(RIFTSILVER_ORE_ITEM.get());
                 output.accept(RIFTSTONE_ITEM.get());
                 output.accept(ABYSSAL_TURF_ITEM.get());
+                VaultMaterials.displayItems(output);
                 output.accept(TIDE_SPROUT_ITEM.get());
                 output.accept(GLOOMCROWN_LOG_ITEM.get());
                 output.accept(STRIPPED_GLOOMCROWN_LOG_ITEM.get());
@@ -136,6 +138,7 @@ public final class Interstice {
         bus.addListener(pro.erez.interstice.item.RiftsilverBucketInteractions::setup);
         FluidLightUpgrade.register(bus);
         pro.erez.interstice.sound.ModSounds.register(bus);
+        VaultMaterials.register(bus);
         TYPES.register(bus); FLUIDS.register(bus); BLOCKS.register(bus); ITEMS.register(bus); TABS.register(bus);
         GENERATORS.register(bus);
         NeoForge.EVENT_BUS.addListener(FluidLab::registerCommands);

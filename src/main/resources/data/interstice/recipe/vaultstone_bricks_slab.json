@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "interstice:vaultstone_bricks"
+    }
+  },
+  "result": {
+    "id": "interstice:vaultstone_bricks_slab",
+    "count": 6
+  }
+}

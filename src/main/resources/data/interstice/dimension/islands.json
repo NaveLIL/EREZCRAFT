@@ -3,8 +3,69 @@
   "generator": {
     "type": "interstice:coupled_islands",
     "biome_source": {
-      "type": "minecraft:fixed",
-      "biome": "minecraft:the_end"
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "interstice:ash_islands",
+          "parameters": {
+            "temperature": [
+              -2,
+              2
+            ],
+            "humidity": [
+              -2,
+              2
+            ],
+            "continentalness": [
+              -2,
+              0.08
+            ],
+            "erosion": [
+              -2,
+              2
+            ],
+            "depth": [
+              -2,
+              2
+            ],
+            "weirdness": [
+              -2,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "interstice:stone_vaults",
+          "parameters": {
+            "temperature": [
+              -2,
+              2
+            ],
+            "humidity": [
+              -2,
+              2
+            ],
+            "continentalness": [
+              0.08,
+              2
+            ],
+            "erosion": [
+              -2,
+              2
+            ],
+            "depth": [
+              -2,
+              2
+            ],
+            "weirdness": [
+              -2,
+              2
+            ],
+            "offset": 0
+          }
+        }
+      ]
     },
     "settings": "interstice:islands"
   }

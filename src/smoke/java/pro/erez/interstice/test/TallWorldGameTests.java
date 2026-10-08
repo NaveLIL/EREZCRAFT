@@ -32,6 +32,21 @@ public final class TallWorldGameTests {
         var random=world.getChunkSource().randomState();
         var profile=GeometryProfile.TALL;
         h.assertTrue(GeometryProfiles.get(world).equals(profile) && world.getHeight()==256,"Tall world bounds/profile mismatch");
+        // Full chunks contain legitimate decoration. Compare density independently at the
+        // NOISE stage, while retaining sea/clearance/heightmap checks on actual FULL chunks.
+        var pending = java.util.concurrent.CompletableFuture.completedFuture(new java.util.ArrayList<net.minecraft.world.level.chunk.ChunkAccess>());
+        for (int cx = -1; cx <= 1; cx++) {
+            var noiseChunk = new net.minecraft.world.level.chunk.ProtoChunk(new net.minecraft.world.level.ChunkPos(cx, 0),
+                    net.minecraft.world.level.chunk.UpgradeData.EMPTY, world,
+                    world.registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.BIOME), null);
+            pending = pending.thenCompose(chunks -> generator.createBiomes(random, net.minecraft.world.level.levelgen.blending.Blender.empty(), world.structureManager(), noiseChunk)
+                    .thenCompose(chunk -> generator.fillFromNoise(net.minecraft.world.level.levelgen.blending.Blender.empty(), random, world.structureManager(), chunk))
+                    .thenApply(chunk -> { IslandChunkGenerator.fillSeas(profile, chunk); chunks.add(chunk); return chunks; }));
+        }
+        var noiseChunks = pending;
+        h.succeedWhen(() -> {
+        h.assertTrue(noiseChunks.isDone(), "Waiting for undecorated tall noise chunks");
+        var noise = noiseChunks.join();
         int upperVoxels=0,landVoxels=0,columns=0,densityMismatches=0;
         var pos=new BlockPos.MutableBlockPos();
         // Include both sides of a chunk seam and coordinates with negative X.
@@ -49,11 +64,9 @@ public final class TallWorldGameTests {
                         h.assertTrue(actual.is(Interstice.LIGHT_SEA.get()) && actual.getValue(OceanLiquidBlock.CHAOTIC)
                                 && actual.equals(base),"Tall sea missing/changed at "+pos);upperVoxels++;
                     } else {
-                        // Surface rules replace stone with dirt/moss; compare density occupancy.
-                        // 3D trilinear cell interpolation of cave carving allows <= 5 boundary voxels out of 196,608.
-                        if (!actual.is(Interstice.TIDE_SPROUT.get()) && actual.isAir() != base.isAir()) {
-                            densityMismatches++;
-                        }
+                        // Compare noise occupancy before surface features can add arches,
+                        // trees or ruins. This is independent of any decoration block list.
+                        if (noise.get(cx + 1).getBlockState(pos).isAir() != base.isAir()) densityMismatches++;
                         h.assertTrue(actual.getFluidState().isEmpty(),"Fluid escaped into island band at "+pos);
                         if(!actual.isAir()) {
                             h.assertTrue(y>=41 && y<=205 && y+1<=underside-6,"Island violated sea clearance at "+pos);landVoxels++;
@@ -68,10 +81,11 @@ public final class TallWorldGameTests {
                 columns++;
             }
         }
-        h.assertTrue(densityMismatches <= 5, "Real chunk/column density disagreement count exceeded tolerance: " + densityMismatches);
+        // Retain the existing allowance for native 3D interpolation boundary voxels.
+        h.assertTrue(densityMismatches <= 5, "Undecorated noise chunk/column disagreement exceeded tolerance: " + densityMismatches);
         h.assertTrue(upperVoxels>0 && landVoxels>0,"Expected actual upper sea and island land");
         System.out.println("TALL_CHUNKS columns="+columns+" checked_voxels="+(columns*256)+" upper_voxels="+upperVoxels+" land_voxels="+landVoxels+" mismatches="+densityMismatches);
-        h.succeed();
+        });
     }
     @GameTest(template="empty",timeoutTicks=200)
     public static void tallSerializationAndLegacyDimensionStaySeparate(GameTestHelper h) {

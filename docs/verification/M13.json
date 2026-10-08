@@ -1,0 +1,66 @@
+{
+  "milestone": "M13",
+  "version": "0.2.2",
+  "passed": true,
+  "published": false,
+  "base_commit": "ec32d8eec2cfa903979d03ce94a2e84f7b437941",
+  "artifact": {
+    "path": "build/libs/interstice-0.2.2.jar",
+    "sha256": "604353b08cfaac080596cf464cf63c5ce68f2b7ebce90674648bed2ad7d1707a",
+    "smoke_code_excluded": true,
+    "resource_hashes_match": true
+  },
+  "checks": {
+    "gametests": 145,
+    "gametest_groups": [
+      17,
+      104,
+      16,
+      8
+    ],
+    "python_tests": 20,
+    "user_saves_unchanged": true,
+    "geology_texture_audit": {
+      "passed": true,
+      "checked_tiles": 12,
+      "original_edges_preserved": true,
+      "natural_variants_share_edges": true
+    },
+    "resource_regeneration": {
+      "passed": true,
+      "files_checked": 381,
+      "changed": []
+    },
+    "native_cold_restart": {
+      "naturally_generated": true,
+      "seed": 20261006,
+      "chunk_x": 2,
+      "chunk_z": 2,
+      "arch_blocks_added_to_native_air": 127,
+      "minimum_upper_sea_gap": 32.34623966586446,
+      "minimum_lower_sea_gap": 141.0,
+      "required_clearance": 6,
+      "biome_key": "interstice:stone_vaults",
+      "sheltered_beneath_natural_arch": true,
+      "one_roof_block_broken": true,
+      "broken_roof_air_after_cold_restart": true,
+      "saved_biome_unchanged": true,
+      "legacy_placeholder_upgraded_on_cold_restart": true,
+      "legacy_fixture_geometry_unchanged": true,
+      "new_candidate_chunk_generated_after_restart": true,
+      "creator_pid": 22132,
+      "reload_pid": 22884
+    }
+  },
+  "evidence": {
+    "build": ".verification/20261008T033510.814283Z-m13-complete-build",
+    "native": ".verification/20261008T034313.634389Z-m13-final-visual-variants",
+    "screenshots": "art/generated/stone-vaults"
+  },
+  "limitations": [
+    "Native scene is disposable Creative, not a Survival route",
+    "Legacy-source compatibility is an artificial old-placeholder fixture; owner worlds were not opened",
+    "Old chunk palettes/blocks preserved; new worldgen appears in unexplored chunks",
+    "Generator tools researched, no external runtime dependencies installed"
+  ]
+}

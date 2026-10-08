@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.RegistryOps;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.world.level.LevelHeightAccessor;
@@ -15,6 +18,7 @@ import net.minecraft.world.level.NoiseColumn;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.biome.BiomeManager;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -40,9 +44,9 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     public static final int MIN_LAND=LOWER_SEA_TOP+1+CLEARANCE;
     public static final int MAX_LAND=SeaSurface.MINIMUM-CLEARANCE-1;
     public static final int ROOF=127;
-    private record Definition(BiomeSource biome,Holder<NoiseGeneratorSettings> settings,GeometryProfile geometry) {
+    private record Definition(BiomeSource biome,Holder<NoiseGeneratorSettings> settings,GeometryProfile geometry,HolderGetter<Biome> biomes) {
         DataResult<IslandChunkGenerator> decode() {
-            try { return DataResult.success(new IslandChunkGenerator(biome,settings,geometry)); }
+            try { return DataResult.success(new IslandChunkGenerator(RealmBiomes.upgradeLegacy(biome,biomes),settings,geometry)); }
             catch(IllegalArgumentException error) { return DataResult.error(error::getMessage); }
         }
     }
@@ -50,9 +54,10 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
             BiomeSource.CODEC.fieldOf("biome_source").forGetter(Definition::biome),
             NoiseGeneratorSettings.CODEC.fieldOf("settings").forGetter(Definition::settings),
             GeometryProfile.CODEC.optionalFieldOf("geometry")
-                    .xmap(value -> value.orElse(GeometryProfile.LEGACY),java.util.Optional::of).forGetter(Definition::geometry)
+                    .xmap(value -> value.orElse(GeometryProfile.LEGACY),java.util.Optional::of).forGetter(Definition::geometry),
+            RegistryOps.retrieveGetter(Registries.BIOME)
     ).apply(instance,Definition::new)).flatXmap(Definition::decode,generator -> DataResult.success(
-            new Definition(generator.getBiomeSource(),generator.generatorSettings(),generator.geometry)));
+            new Definition(generator.getBiomeSource(),generator.generatorSettings(),generator.geometry,null)));
     private final GeometryProfile geometry;
 
     /** Missing geometry in old world data means the original 128-block profile. */
@@ -113,8 +118,10 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         // Surface rules run while heightmaps still describe land, before the upper sea hides it.
         super.buildSurface(region,structures,random,chunk);
         fillSeas(geometry,chunk);
+        StoneVaults.geologicalSurface(geometry,chunk,region.getSeed());
         generateOres(geometry,chunk,region.getSeed());
         WatchpostRuins.generate(geometry, chunk, region.getSeed(), region.getLevel().getStructureManager(), region.registryAccess());
+        StoneVaults.generate(geometry,chunk,region.getSeed());
         GloomcrownTree.generate(geometry,chunk,region.getSeed());
         generateTideSprouts(geometry,chunk,region.getSeed());
     }
@@ -175,9 +182,12 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
                 int ox = vx + rnd.nextInt(3) - 1;
                 int oy = vy + rnd.nextInt(3) - 1;
                 int oz = vz + rnd.nextInt(3) - 1;
+                if (ox < startX || ox >= startX + 16 || oz < startZ || oz >= startZ + 16) continue;
                 pos.set(ox, oy, oz);
 
-                if (chunk.getBlockState(pos).is(Blocks.STONE) || chunk.getBlockState(pos).is(Interstice.RIFTSTONE.get())) {
+                if (chunk.getBlockState(pos).is(Blocks.STONE) || chunk.getBlockState(pos).is(Interstice.RIFTSTONE.get())
+                        || chunk.getBlockState(pos).is(VaultMaterials.VAULTSTONE.get())
+                        || chunk.getBlockState(pos).is(VaultMaterials.WEATHERED_VAULTSTONE.get())) {
                     chunk.setBlockState(pos, oreState, false);
                 }
             }

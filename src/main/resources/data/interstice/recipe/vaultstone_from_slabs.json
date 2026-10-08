@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "interstice:vaultstone_slab"
+    },
+    {
+      "item": "interstice:vaultstone_slab"
+    }
+  ],
+  "result": {
+    "id": "interstice:vaultstone",
+    "count": 1
+  }
+}

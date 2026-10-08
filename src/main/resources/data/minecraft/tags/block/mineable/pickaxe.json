@@ -8,6 +8,19 @@
     "interstice:riftsilver_ore",
     "interstice:riftstone",
     "interstice:abyssal_turf",
-    "interstice:rift_frame"
+    "interstice:rift_frame",
+    "interstice:vaultstone",
+    "interstice:weathered_vaultstone",
+    "interstice:polished_vaultstone",
+    "interstice:vaultstone_bricks",
+    "interstice:vaultstone_slab",
+    "interstice:vaultstone_stairs",
+    "interstice:vaultstone_wall",
+    "interstice:polished_vaultstone_slab",
+    "interstice:polished_vaultstone_stairs",
+    "interstice:polished_vaultstone_wall",
+    "interstice:vaultstone_bricks_slab",
+    "interstice:vaultstone_bricks_stairs",
+    "interstice:vaultstone_bricks_wall"
   ]
 }

@@ -105,5 +105,20 @@
   "message.interstice.key.returned": "Аварийный возврат выполнен. Право этого похода использовано.",
   "item.interstice.pressure_coupler": "Приливная мембрана",
   "advancements.interstice.watchpost_salvage.title": "Пост ещё помнит море",
-  "advancements.interstice.watchpost_salvage.description": "Найдите приливную мембрану в руине наблюдательного поста"
+  "advancements.interstice.watchpost_salvage.description": "Найдите приливную мембрану в руине наблюдательного поста",
+  "block.interstice.vaultstone": "Сводчатый камень",
+  "block.interstice.weathered_vaultstone": "Выветренный сводчатый камень",
+  "block.interstice.polished_vaultstone": "Полированный сводчатый камень",
+  "block.interstice.vaultstone_bricks": "Кирпичи сводчатого камня",
+  "block.interstice.vaultstone_slab": "Плита из сводчатого камня",
+  "block.interstice.vaultstone_stairs": "Ступени из сводчатого камня",
+  "block.interstice.vaultstone_wall": "Ограда из сводчатого камня",
+  "block.interstice.polished_vaultstone_slab": "Плита из полированного сводчатого камня",
+  "block.interstice.polished_vaultstone_stairs": "Ступени из полированного сводчатого камня",
+  "block.interstice.polished_vaultstone_wall": "Ограда из полированного сводчатого камня",
+  "block.interstice.vaultstone_bricks_slab": "Плита из кирпичей сводчатого камня",
+  "block.interstice.vaultstone_bricks_stairs": "Ступени из кирпичей сводчатого камня",
+  "block.interstice.vaultstone_bricks_wall": "Ограда из кирпичей сводчатого камня",
+  "biome.interstice.ash_islands": "Пепельные острова",
+  "biome.interstice.stone_vaults": "Каменные своды"
 }

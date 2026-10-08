@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "interstice:block/stone/polished_vaultstone",
+    "top": "interstice:block/stone/polished_vaultstone",
+    "side": "interstice:block/stone/polished_vaultstone"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "interstice:weathered_vaultstone"
+  },
+  "result": {
+    "id": "interstice:vaultstone",
+    "count": 1
+  }
+}

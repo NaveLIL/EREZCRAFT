@@ -43,7 +43,7 @@ public final class WatchpostRuins {
             for (int y = profile.maxLand(); y >= profile.minLand(); y--) {
                 var state = chunk.getBlockState(new BlockPos(x + dx, y, z + dz));
                 if (state.isAir()) continue;
-                if (state.is(Interstice.RIFTSTONE.get()) || state.is(Interstice.ABYSSAL_TURF.get()) || state.is(Interstice.RIFTSILVER_ORE.get())) ground = y;
+                if (StoneVaults.isGround(state)) ground = y;
                 break;
             }
             if (ground == Integer.MIN_VALUE) return false;

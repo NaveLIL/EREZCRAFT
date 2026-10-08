@@ -21,7 +21,12 @@
     "lava": 0.0,
     "temperature": 0.0,
     "vegetation": 0.0,
-    "continents": 0.0,
+    "continents": {
+      "type": "minecraft:noise",
+      "noise": "interstice:realm_geology",
+      "xz_scale": 0.45,
+      "y_scale": 0
+    },
     "erosion": 0.0,
     "depth": 0.0,
     "ridges": 0.0,

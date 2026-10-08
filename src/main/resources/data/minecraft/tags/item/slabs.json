@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:vaultstone_slab",
+    "interstice:polished_vaultstone_slab",
+    "interstice:vaultstone_bricks_slab"
+  ]
+}
