@@ -1,0 +1,179 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": true,
+  "textures": {
+    "particle": "interstice:block/garden/paleheart_planks",
+    "texture": "interstice:block/garden/paleheart_planks",
+    "silver": "interstice:block/minerals/riftsilver"
+  },
+  "elements": [
+    {
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        16,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#texture"
+        },
+        "south": {
+          "texture": "#texture"
+        },
+        "east": {
+          "texture": "#texture"
+        },
+        "west": {
+          "texture": "#texture"
+        },
+        "up": {
+          "texture": "#texture"
+        },
+        "down": {
+          "texture": "#texture"
+        }
+      }
+    },
+    {
+      "from": [
+        5.9,
+        5.5,
+        5.9
+      ],
+      "to": [
+        10.1,
+        6.0,
+        10.1
+      ],
+      "faces": {
+        "north": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "south": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "east": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "west": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "up": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "down": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        5.9,
+        13,
+        5.9
+      ],
+      "to": [
+        10.1,
+        13.5,
+        10.1
+      ],
+      "faces": {
+        "north": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "south": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "east": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "west": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "up": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        },
+        "down": {
+          "texture": "#silver",
+          "uv": [
+            6,
+            7,
+            10,
+            9
+          ]
+        }
+      }
+    }
+  ]
+}

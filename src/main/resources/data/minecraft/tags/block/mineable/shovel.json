@@ -4,6 +4,7 @@
     "interstice:root_loam",
     "interstice:toxic_sand",
     "interstice:mineral_frost",
-    "interstice:mineral_powder"
+    "interstice:mineral_powder",
+    "interstice:toxic_farmland"
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "interstice:vitriolite"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "interstice:pyrolith"
+      },
+      "count": 1
+    }
+  ],
+  "outputs": [
+    {
+      "id": "interstice:vitriolite_lining",
+      "count": 4
+    }
+  ],
+  "ticks": 400
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "filled=false": {
+      "model": "interstice:block/agriculture/reservoir_false"
+    },
+    "filled=true": {
+      "model": "interstice:block/agriculture/reservoir_true"
+    }
+  }
+}

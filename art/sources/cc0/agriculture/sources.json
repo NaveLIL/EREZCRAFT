@@ -1,0 +1,171 @@
+{
+  "operation": "Whole files extracted unchanged; see runtime provenance for bijective palette preparation",
+  "sources": [
+    {
+      "file": "wheat_1.png",
+      "source_member": "blocks/plants/crops/wheat_stage1.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "ccd8084a14c01af01a689d408064a60d6ccda52d63d7067c21da6e260de532f7",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "wheat_2.png",
+      "source_member": "blocks/plants/crops/wheat_stage2.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "9f2d3ace73fef236b54221fe269a6adcb7eb5c252921b7c7ee37db2b239066ee",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "wheat_3.png",
+      "source_member": "blocks/plants/crops/wheat_stage3.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "5d58e9ed23a034ab57ac462e5bf4616b92140214d68cea4c1aefca9054a38f1f",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "wheat_4.png",
+      "source_member": "blocks/plants/crops/wheat_stage4.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "ea1f5a5adc55ad05b3fe0d718f2a1bc04dad80497abaae3aa9ffd5d940b4567f",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "wheat_5.png",
+      "source_member": "blocks/plants/crops/wheat_stage5.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "b1b3296ed753406033fc8692fd93a90d0817c0e8f4350d83d73cfae4bc9b0a07",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "carrots_1.png",
+      "source_member": "blocks/plants/crops/carrots_stage1.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "9f6fadaab6e2e3303e46009ae80a41691f025023cbd25b7600494c8fea866de5",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "carrots_2.png",
+      "source_member": "blocks/plants/crops/carrots_stage2.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "36084cf78fd81be2cd600de1305ecab5e41ffaba0a8def84f50cf2cdf898435a",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "carrots_3.png",
+      "source_member": "blocks/plants/crops/carrots_stage3.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "26e1097ac8408c1cfbeacf8a43f19572355969d4e4bf7f6a187601d80635ebff",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "carrots_4.png",
+      "source_member": "blocks/plants/crops/carrots_stage4.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "ffb66a4e86b1b5ce8656ce27027f97d20432abbf90fbbebce275964529eb1ab8",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "farmland.png",
+      "source_member": "blocks/farmland.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "2f6df1b5fbac02c8ce1dae68995fae9295e149d792ecb7a7074694bba2f7a501",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "grain.png",
+      "source_member": "corn.png",
+      "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+      "author": "JoeEnderman",
+      "license": "CC0-1.0",
+      "sha256": "38452b36f9aa6c12a28941c5525d1087a50a78b6ca2a606fb81e3e3315190122",
+      "archive": "research/leaf-source-preview/assorted_2.zip",
+      "archive_sha256": "8082718fb1c5d4cca66f374c98a7d99e23532b48deb6a2db580c18dbd6f5b6cd"
+    },
+    {
+      "file": "root.png",
+      "source_member": "purple carrot.png",
+      "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+      "author": "JoeEnderman",
+      "license": "CC0-1.0",
+      "sha256": "f45d6af0c934b1160f372a62e01c8826b36ab9161130aa6ec2e2bd96b773e61b",
+      "archive": "research/leaf-source-preview/assorted_2.zip",
+      "archive_sha256": "8082718fb1c5d4cca66f374c98a7d99e23532b48deb6a2db580c18dbd6f5b6cd"
+    },
+    {
+      "file": "bread.png",
+      "source_member": "farming_bread.png",
+      "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+      "author": "JoeEnderman",
+      "license": "CC0-1.0",
+      "sha256": "870377dacc0c52dd62899b390a952fcf1b78d4a7e0ac90ce3865534f3e8eee2f",
+      "archive": "research/leaf-source-preview/assorted_1.zip",
+      "archive_sha256": "c63e177de809ee689391deb8bceefb553c7e57de151e999786efb19d866994b5"
+    },
+    {
+      "file": "stick.png",
+      "source": "art/sources/cc0/minerals/stick.png",
+      "provenance_parent": "assets/interstice/provenance/minerals.json",
+      "sha256": "0b33e4ee900a091c74ebe9167450d3312644fbfa076cc09778db80b669f1fe67",
+      "license": "CC0-1.0",
+      "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+      "author": "JoeEnderman"
+    },
+    {
+      "file": "coal.png",
+      "source": "art/sources/cc0/minerals/coal_lump.png",
+      "provenance_parent": "assets/interstice/provenance/minerals.json",
+      "sha256": "ff3d501e4597f0983776546cecc5bd4b7610f3190f2b396b817e1441b473165e",
+      "license": "CC0-1.0",
+      "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+      "author": "JoeEnderman"
+    },
+    {
+      "file": "crystal.png",
+      "source": "art/sources/cc0/minerals/lexxite_shard.png",
+      "provenance_parent": "assets/interstice/provenance/minerals.json",
+      "sha256": "13659f9616f2c6c7688b71f9556a831fc8f8df6da1b4950ed32fea4b1bb4a572",
+      "license": "CC0-1.0",
+      "source_url": "https://github.com/Auseawesome/Minecraft-Textures/blob/149e1b2a852de778841d85b0acc0fef9562538ba/items/gem/lexxite/shard.png",
+      "author": "Auseawesome"
+    },
+    {
+      "file": "shard.png",
+      "source": "art/sources/cc0/minerals/ausene_shard.png",
+      "provenance_parent": "assets/interstice/provenance/minerals.json",
+      "sha256": "ba945631e67764e7ceb0759864dbbce41bc9ad44446ca3c6afda6cc009ff94e6",
+      "license": "CC0-1.0",
+      "source_url": "https://github.com/Auseawesome/Minecraft-Textures/blob/149e1b2a852de778841d85b0acc0fef9562538ba/items/gem/ausene/shard.png",
+      "author": "Auseawesome"
+    }
+  ]
+}

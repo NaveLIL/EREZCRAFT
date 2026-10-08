@@ -31,16 +31,16 @@ class VerificationResultTests(unittest.TestCase):
                 kwargs["stdout"].write(log)
                 if result is not None:
                     evidence = next((root / ".verification").iterdir())
-                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke", "runCrownFoodSmoke", "runLivingRealmSmoke", "runMiningSmoke"):
-                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute", "runVaultPersistenceSmoke": "vaultPersistence", "runGardenPersistenceSmoke": "gardenPersistence", "runCrownFoodSmoke":"crownFood","runLivingRealmSmoke":"livingRealm", "runMiningSmoke":"miningSmoke"}[task]
+                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke", "runCrownFoodSmoke", "runLivingRealmSmoke", "runMiningSmoke", "runAgricultureSmoke"):
+                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute", "runVaultPersistenceSmoke": "vaultPersistence", "runGardenPersistenceSmoke": "gardenPersistence", "runCrownFoodSmoke":"crownFood","runLivingRealmSmoke":"livingRealm", "runMiningSmoke":"miningSmoke", "runAgricultureSmoke":"agricultureSmoke"}[task]
                         destination = evidence / "profiles" / profile
                         destination.mkdir(parents=True)
                         for name, value in result.items():
                             (destination / name).write_text(json.dumps(value), encoding="utf-8")
-                    elif task == 'runHydrologySmoke':
-                        destination = evidence / 'profiles/hydrologySmoke'
+                    elif task in ('runHydrologySmoke','runAgriculturePropsSmoke'):
+                        destination = evidence / ('profiles/hydrologySmoke' if task=='runHydrologySmoke' else 'profiles/agriculturePropsSmoke')
                         destination.mkdir(parents=True)
-                        (destination / 'hydrology-validation.json').write_text(json.dumps(result), encoding='utf-8')
+                        (destination / ('hydrology-validation.json' if task=='runHydrologySmoke' else 'agriculture-props-validation.json')).write_text(json.dumps(result), encoding='utf-8')
                     else:
                         destination = evidence / "profiles/islandSmoke"
                         destination.mkdir(parents=True)
@@ -122,7 +122,7 @@ class VerificationResultTests(unittest.TestCase):
                 self.assertEqual(code,expected)
 
     def test_living_and_ecology_require_executed_gametests(self):
-        for task in ('runLivingGameTestServer','runEcologyGameTestServer','runMiningGameTestServer'):
+        for task in ('runLivingGameTestServer','runEcologyGameTestServer','runMiningGameTestServer','runAgricultureGameTestServer'):
             self.assertEqual(self.exercise(task,log='BUILD SUCCESSFUL\n')[0],1)
             self.assertEqual(self.exercise(task,log='All 6 required tests passed :)\n')[0],0)
 
@@ -132,6 +132,12 @@ class VerificationResultTests(unittest.TestCase):
                                   ({'mining-create-validation.json':{'passed':True},'mining-reload-validation.json':{'passed':True}},0)):
             with self.subTest(reports=reports):
                 self.assertEqual(self.exercise('runMiningSmoke',result=reports)[0],expected)
+
+    def test_agriculture_requires_both_positive_jvm_reports(self):
+        for reports,expected in (({'agriculture-create-validation.json':{'passed':True}},1),
+                                 ({'agriculture-create-validation.json':{'passed':True},'agriculture-reload-validation.json':{'passed':False}},1),
+                                 ({'agriculture-create-validation.json':{'passed':True},'agriculture-reload-validation.json':{'passed':True}},0)):
+            with self.subTest(reports=reports):self.assertEqual(self.exercise('runAgricultureSmoke',result=reports)[0],expected)
 
     def test_garden_cold_restart_requires_both_reports(self):
         for reports, expected in (({"garden-create-validation.json": {"passed": True}}, 1),
@@ -199,6 +205,10 @@ class VerificationResultTests(unittest.TestCase):
         for report, expected in ((None,1),({'passed':False},1),({'passed':True},0)):
             with self.subTest(report=report):
                 self.assertEqual(self.exercise('runHydrologySmoke',result=report)[0],expected)
+
+    def test_agriculture_props_requires_positive_native_report(self):
+        for report,expected in ((None,1),({'passed':False},1),({'passed':True},0)):
+            with self.subTest(report=report):self.assertEqual(self.exercise('runAgriculturePropsSmoke',result=report)[0],expected)
 
     def test_rift_restart_missing_second_validation_is_rejected(self):
         code, _, summary = self.exercise("runRiftPersistenceSmoke", result={"rift-create-validation.json": {"passed": True}})

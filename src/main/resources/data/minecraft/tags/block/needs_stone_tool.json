@@ -14,6 +14,9 @@
     "interstice:vaultstone_bricks_slab",
     "interstice:vaultstone_bricks_stairs",
     "interstice:vaultstone_bricks_wall",
-    "#interstice:stone_mineral_ores"
+    "#interstice:stone_mineral_ores",
+    "interstice:reaction_retort",
+    "interstice:reinforced_fence",
+    "interstice:reinforced_fence_gate"
   ]
 }

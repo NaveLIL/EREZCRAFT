@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "interstice:phosphorite_paste"
+    },
+    {
+      "item": "interstice:plant_fiber"
+    },
+    {
+      "item": "interstice:root_loam"
+    }
+  ],
+  "result": {
+    "id": "interstice:mineral_fertilizer",
+    "count": 4
+  }
+}

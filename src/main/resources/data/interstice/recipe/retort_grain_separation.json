@@ -1,0 +1,22 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "interstice:ash_grain"
+      },
+      "count": 2
+    }
+  ],
+  "outputs": [
+    {
+      "id": "interstice:ash_flour",
+      "count": 2
+    },
+    {
+      "id": "interstice:plant_fiber",
+      "count": 1
+    }
+  ],
+  "ticks": 200
+}

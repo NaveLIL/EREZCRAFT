@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/farmland",
+  "textures": {
+    "dirt": "interstice:block/minerals/root_loam",
+    "top": "interstice:block/agriculture/farmland_wet"
+  }
+}

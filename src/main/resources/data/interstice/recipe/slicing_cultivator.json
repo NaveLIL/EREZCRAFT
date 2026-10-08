@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ILI",
+    " W ",
+    " WS"
+  ],
+  "key": {
+    "I": {
+      "item": "interstice:riftsilver_ingot"
+    },
+    "W": {
+      "item": "interstice:riftsilver_wire"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    },
+    "S": {
+      "item": "interstice:world_stick"
+    }
+  },
+  "result": {
+    "id": "interstice:slicing_cultivator",
+    "count": 1
+  }
+}

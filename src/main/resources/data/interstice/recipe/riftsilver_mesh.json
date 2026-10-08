@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "interstice:riftsilver_wire"
+    },
+    {
+      "item": "interstice:riftsilver_wire"
+    },
+    {
+      "item": "interstice:riftsilver_wire"
+    },
+    {
+      "item": "interstice:riftsilver_wire"
+    }
+  ],
+  "result": {
+    "id": "interstice:riftsilver_mesh",
+    "count": 1
+  }
+}

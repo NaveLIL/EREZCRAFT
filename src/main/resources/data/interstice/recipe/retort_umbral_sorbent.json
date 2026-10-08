@@ -1,0 +1,24 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "interstice:umbral_coal"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "interstice:aerolite"
+      },
+      "count": 1
+    }
+  ],
+  "outputs": [
+    {
+      "id": "interstice:umbral_sorbent",
+      "count": 2
+    }
+  ],
+  "ticks": 400
+}

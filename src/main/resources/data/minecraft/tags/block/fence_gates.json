@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "interstice:paleheart_fence_gate",
-    "interstice:crown_fence_gate"
+    "interstice:crown_fence_gate",
+    "interstice:reinforced_fence_gate"
   ]
 }

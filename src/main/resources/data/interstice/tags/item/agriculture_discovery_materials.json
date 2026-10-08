@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:world_stick",
+    "interstice:riftsilver_ingot",
+    "interstice:ash_grain",
+    "interstice:phosphorite_crystal"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "interstice:block/agriculture/lantern_false"
+    },
+    "hanging=true": {
+      "model": "interstice:block/agriculture/lantern_true"
+    }
+  }
+}

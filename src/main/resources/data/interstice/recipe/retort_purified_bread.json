@@ -1,0 +1,24 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "interstice:ash_flour"
+      },
+      "count": 4
+    },
+    {
+      "ingredient": {
+        "item": "interstice:umbral_sorbent"
+      },
+      "count": 1
+    }
+  ],
+  "outputs": [
+    {
+      "id": "interstice:purified_bread",
+      "count": 4
+    }
+  ],
+  "ticks": 800
+}

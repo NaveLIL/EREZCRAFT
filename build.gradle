@@ -281,6 +281,39 @@ neoForge {
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_mining'
         }
+        agricultureGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/agriculture-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_agriculture'
+        }
+        agriculturePropsSmoke {
+            client()
+            gameDirectory = file('build/agriculture-props-smoke')
+            systemProperty 'interstice.agriculturePropsSmoke', 'true'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        agricultureCreate {
+            client()
+            gameDirectory = file('build/agriculture-smoke')
+            systemProperty 'interstice.agricultureSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        agricultureReload {
+            client()
+            gameDirectory = file('build/agriculture-smoke')
+            systemProperty 'interstice.agricultureSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
         hydrologySmoke {
             client()
             gameDirectory = file('build/hydrology-smoke')
@@ -393,7 +426,7 @@ neoForge {
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+        def profileName = name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
                 name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
                 name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
@@ -446,13 +479,15 @@ tasks.named('runLivingRealmReload') { dependsOn tasks.named('runLivingRealmCreat
 tasks.register('runLivingRealmSmoke') { dependsOn tasks.named('runLivingRealmReload') }
 tasks.named('runMiningReload') { dependsOn tasks.named('runMiningCreate') }
 tasks.register('runMiningSmoke') { dependsOn tasks.named('runMiningReload') }
-tasks.matching { it.name in ['prepareLivingRealmCreateRun','prepareLivingRealmReloadRun','prepareMiningCreateRun','prepareMiningReloadRun','prepareHydrologySmokeRun'] }.configureEach {
+tasks.named('runAgricultureReload') { dependsOn tasks.named('runAgricultureCreate') }
+tasks.register('runAgricultureSmoke') { dependsOn tasks.named('runAgricultureReload') }
+tasks.matching { it.name in ['prepareLivingRealmCreateRun','prepareLivingRealmReloadRun','prepareMiningCreateRun','prepareMiningReloadRun','prepareHydrologySmokeRun','prepareAgricultureCreateRun','prepareAgricultureReloadRun','prepareAgriculturePropsSmokeRun'] }.configureEach {
     outputs.upToDateWhen { false }
     doLast {
-        def runName=it.name.contains('Hydrology') ? 'hydrologySmoke' : it.name.contains('Mining') ? (it.name.contains('Reload')?'miningReload':'miningCreate') : (it.name.contains('Reload')?'livingRealmReload':'livingRealmCreate')
+        def runName=it.name.contains('AgricultureProps') ? 'agriculturePropsSmoke' : it.name.contains('Agriculture') ? (it.name.contains('Reload')?'agricultureReload':'agricultureCreate') : it.name.contains('Hydrology') ? 'hydrologySmoke' : it.name.contains('Mining') ? (it.name.contains('Reload')?'miningReload':'miningCreate') : (it.name.contains('Reload')?'livingRealmReload':'livingRealmCreate')
         def directory=neoForge.runs.getByName(runName).gameDirectory.get().asFile
         def config=new File(directory,'config/fml.toml');config.parentFile.mkdirs();config.text='earlyWindowControl = false\n'
-        def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\n'
+        def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\n'+(it.name.contains('Agriculture')?'lang:ru_ru\ntutorialStep:none\n':'')
     }
 }
 
@@ -486,4 +521,4 @@ tasks.named('runSurvivalRouteEquipment') { dependsOn tasks.named('runSurvivalRou
 tasks.register('runSurvivalPreparationSmoke') { dependsOn tasks.named('runSurvivalRouteEquipment') }
 
 // A successful build includes the server's behavioral tests, in a disposable profile.
-tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer') }
+tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer'),tasks.named('runAgricultureGameTestServer') }

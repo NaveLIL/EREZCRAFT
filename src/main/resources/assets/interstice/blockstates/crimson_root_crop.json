@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "interstice:block/agriculture/crimson_root_crop_0"
+    },
+    "age=1": {
+      "model": "interstice:block/agriculture/crimson_root_crop_1"
+    },
+    "age=2": {
+      "model": "interstice:block/agriculture/crimson_root_crop_2"
+    },
+    "age=3": {
+      "model": "interstice:block/agriculture/crimson_root_crop_3"
+    },
+    "age=4": {
+      "model": "interstice:block/agriculture/crimson_root_crop_3"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "RLR",
+    "RLR"
+  ],
+  "key": {
+    "R": {
+      "item": "interstice:riftstone"
+    },
+    "L": {
+      "item": "interstice:vitriolite_lining"
+    }
+  },
+  "result": {
+    "id": "interstice:nutrient_reservoir",
+    "count": 4
+  }
+}

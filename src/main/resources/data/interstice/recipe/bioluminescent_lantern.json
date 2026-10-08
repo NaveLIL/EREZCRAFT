@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "WPW",
+    "WBW",
+    "PLS"
+  ],
+  "key": {
+    "W": {
+      "item": "interstice:riftsilver_wire"
+    },
+    "P": {
+      "item": "interstice:phosphorite_paste"
+    },
+    "B": {
+      "item": "interstice:luminous_bud"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    },
+    "S": {
+      "item": "interstice:world_stick"
+    }
+  },
+  "result": {
+    "id": "interstice:bioluminescent_lantern",
+    "count": 1
+  }
+}

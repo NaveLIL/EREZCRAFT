@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "moisture=0": {
+      "model": "interstice:block/agriculture/farmland_false"
+    },
+    "moisture=1": {
+      "model": "interstice:block/agriculture/farmland_true"
+    },
+    "moisture=2": {
+      "model": "interstice:block/agriculture/farmland_true"
+    },
+    "moisture=3": {
+      "model": "interstice:block/agriculture/farmland_true"
+    },
+    "moisture=4": {
+      "model": "interstice:block/agriculture/farmland_true"
+    },
+    "moisture=5": {
+      "model": "interstice:block/agriculture/farmland_true"
+    },
+    "moisture=6": {
+      "model": "interstice:block/agriculture/farmland_true"
+    },
+    "moisture=7": {
+      "model": "interstice:block/agriculture/farmland_true"
+    }
+  }
+}

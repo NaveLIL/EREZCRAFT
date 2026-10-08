@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "interstice:block/agriculture/retort_false"
+    },
+    "lit=true": {
+      "model": "interstice:block/agriculture/retort_true"
+    }
+  }
+}

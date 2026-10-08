@@ -49,6 +49,7 @@ public final class OverworldToxinHazard {
             if (!level.isLoaded(target)) continue;
 
             BlockState state = level.getBlockState(target);
+            if(state.getBlock() instanceof pro.erez.interstice.agriculture.NativeCropBlock)continue;
             if (state.isAir() || state.getBlock() instanceof LiquidBlock) {
                 continue;
             }

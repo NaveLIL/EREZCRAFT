@@ -29,6 +29,11 @@
     "interstice:palestone_wall",
     "#interstice:cave_spires",
     "#interstice:mineral_ores",
-    "interstice:rift_shale"
+    "interstice:rift_shale",
+    "interstice:reaction_retort",
+    "interstice:reinforced_fence",
+    "interstice:reinforced_fence_gate",
+    "interstice:nutrient_reservoir",
+    "interstice:bioluminescent_lantern"
   ]
 }

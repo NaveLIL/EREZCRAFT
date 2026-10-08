@@ -250,6 +250,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         PaleGardens.undergrowth(geometry,chunk,region.getSeed(),minimum);
         if(FeatureDistribution.tideSproutsAllowed(terrainRevision,region.getSeed(),chunk.getPos().x,chunk.getPos().z))
             generateTideSprouts(geometry,chunk,region.getSeed(),minimum);
+        NativeCropPatches.generate(geometry,chunk,region.getSeed(),terrainRevision);
     }
     private void livingSurface(ChunkAccess chunk){
         for(int x=chunk.getPos().getMinBlockX();x<=chunk.getPos().getMaxBlockX();x++)for(int z=chunk.getPos().getMinBlockZ();z<=chunk.getPos().getMaxBlockZ();z++){

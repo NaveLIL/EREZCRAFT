@@ -1,0 +1,11 @@
+{
+  "parent": "interstice:block/agriculture/reservoir_false",
+  "overrides": [
+    {
+      "predicate": {
+        "interstice:filled": 1
+      },
+      "model": "interstice:block/agriculture/reservoir_true"
+    }
+  ]
+}

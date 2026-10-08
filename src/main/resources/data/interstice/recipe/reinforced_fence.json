@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "WSW",
+    "WSW",
+    "M M"
+  ],
+  "key": {
+    "W": {
+      "tag": "interstice:world_planks"
+    },
+    "S": {
+      "item": "interstice:world_stick"
+    },
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    }
+  },
+  "result": {
+    "id": "interstice:reinforced_fence",
+    "count": 6
+  }
+}
