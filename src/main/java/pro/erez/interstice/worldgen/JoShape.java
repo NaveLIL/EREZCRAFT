@@ -47,7 +47,7 @@ public final class JoShape {
                 Direction dir=Direction.from3DDataValue(code);
                 if(dir.getAxis()!=Direction.Axis.Y)for(int rotation=0;rotation<turn;rotation++)dir=dir.getClockWise();
                 pos=pos.relative(dir);
-                if(pos.getY()<root.getY() || pos.getY()>root.getY()+20 || Math.abs(pos.getX()-root.getX())>7 || Math.abs(pos.getZ()-root.getZ())>7)
+                if(pos.getY()<root.getY() || pos.getY()>root.getY()+36 || Math.abs(pos.getX()-root.getX())>7 || Math.abs(pos.getZ()-root.getZ())>7)
                     throw new IllegalArgumentException("JoCode leaves the checked tree envelope");
                 logs.putIfAbsent(pos,dir.getAxis());
             }

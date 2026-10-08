@@ -138,5 +138,15 @@
   "block.interstice.pale_fern": "Пепельная гребёнка",
   "block.interstice.pale_litter": "Бледная подстилка",
   "biome.interstice.pale_gardens": "Бледные сады",
-  "block.interstice.pale_vine": "Бледная лиана"
+  "block.interstice.pale_vine": "Бледная лиана",
+  "item.interstice.tide_heart": "Приливное сердце",
+  "block.interstice.crown_fruit": "Плод венечной кроны",
+  "block.interstice.crown_sapling": "Саженец венечного бледносердника",
+  "effect.interstice.tide_heart_reaction": "Послевкусие приливного сердца",
+  "tooltip.interstice.tide_heart.food": "Еда: 3 деления голода. После еды остаётся саженец.",
+  "tooltip.interstice.tide_heart.benefit": "Ночное зрение: 40 секунд.",
+  "tooltip.interstice.tide_heart.cost": "Затем слабость и свечение: 45 секунд.",
+  "tooltip.interstice.tide_heart.repeat": "Повторная порция не обновляет эффект и не отменяет последствия.",
+  "message.interstice.tide_heart.aftertaste": "Зрение вернулось к норме. Теперь ты слабее и заметнее.",
+  "message.interstice.tide_heart.unripe": "Плод ещё не созрел."
 }

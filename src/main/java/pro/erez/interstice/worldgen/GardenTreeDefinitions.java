@@ -16,7 +16,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 
 /** Reloadable vanilla trunk/foliage recipes. Parsing commits a complete valid catalog atomically. */
 public final class GardenTreeDefinitions extends SimpleJsonResourceReloadListener {
-    public record Variant(int weight, TreeConfiguration tree, String branchPath, int stemWidth, int extraHeight,int vineAttempts,int vineLength,String joCode) {
+    public record Variant(int weight, TreeConfiguration tree, String branchPath, int stemWidth, int extraHeight,int vineAttempts,int vineLength,String joCode,int fruitCount) {
         public static final Codec<Variant> CODEC = RecordCodecBuilder.<Variant>create(i -> i.group(
                 Codec.intRange(1, 32).fieldOf("weight").forGetter(Variant::weight),
                 TreeConfiguration.CODEC.fieldOf("tree").forGetter(Variant::tree),
@@ -25,7 +25,8 @@ public final class GardenTreeDefinitions extends SimpleJsonResourceReloadListene
                 Codec.intRange(0,3).optionalFieldOf("extra_height",0).forGetter(Variant::extraHeight),
                 Codec.intRange(0,8).optionalFieldOf("vine_attempts",5).forGetter(Variant::vineAttempts),
                 Codec.intRange(1,8).optionalFieldOf("vine_length",6).forGetter(Variant::vineLength),
-                Codec.STRING.optionalFieldOf("jo_code", "").forGetter(Variant::joCode)).apply(i, Variant::new))
+                Codec.STRING.optionalFieldOf("jo_code", "").forGetter(Variant::joCode),
+                Codec.intRange(0,6).optionalFieldOf("fruit_count",0).forGetter(Variant::fruitCount)).apply(i, Variant::new))
                 .validate(v -> {
                     try {
                         if(!v.branchPath.isEmpty()&&!v.joCode.isEmpty())throw new IllegalArgumentException("Choose branch_path or jo_code, not both");
@@ -52,6 +53,7 @@ public final class GardenTreeDefinitions extends SimpleJsonResourceReloadListene
         }
     }
     public static final ResourceLocation PALEHEART = ResourceLocation.fromNamespaceAndPath("interstice", "paleheart");
+    public static final ResourceLocation CROWN = ResourceLocation.fromNamespaceAndPath("interstice", "paleheart_crown");
     private static volatile Map<ResourceLocation, Definition> catalog = Map.of();
     public GardenTreeDefinitions() { super(new Gson(), "interstice_trees"); }
     public static Definition get(ResourceLocation id) {
@@ -62,7 +64,7 @@ public final class GardenTreeDefinitions extends SimpleJsonResourceReloadListene
     @Override protected void apply(Map<ResourceLocation, JsonElement> entries, ResourceManager manager, ProfilerFiller profiler) {
         Map<ResourceLocation, Definition> parsed = new java.util.HashMap<>();
         entries.forEach((id, data) -> parsed.put(id, Definition.CODEC.parse(JsonOps.INSTANCE, data).getOrThrow()));
-        if (!parsed.containsKey(PALEHEART)) throw new IllegalStateException("Missing required paleheart tree catalog");
+        if (!parsed.containsKey(PALEHEART)||!parsed.containsKey(CROWN)) throw new IllegalStateException("Missing required paleheart tree catalog");
         catalog = Map.copyOf(parsed);
     }
 }

@@ -257,6 +257,30 @@ neoForge {
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_gardens'
         }
+        foodGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/food-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_food'
+        }
+        crownFoodCreate {
+            client()
+            gameDirectory = file('build/crown-food')
+            systemProperty 'interstice.crownFoodSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        crownFoodReload {
+            client()
+            gameDirectory = file('build/crown-food')
+            systemProperty 'interstice.crownFoodSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
         vaultPersistenceCreate {
             client()
             gameDirectory = file('build/vault-persistence')
@@ -306,7 +330,8 @@ neoForge {
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
+        def profileName = name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+                name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
                 name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
                 name in ['riftPersistenceCreate', 'riftPersistenceReload'] ? 'riftPersistence' :
@@ -352,11 +377,14 @@ tasks.named('runVaultPersistenceReload') { dependsOn tasks.named('runVaultPersis
 tasks.register('runVaultPersistenceSmoke') { dependsOn tasks.named('runVaultPersistenceReload') }
 tasks.named('runGardenPersistenceReload') { dependsOn tasks.named('runGardenPersistenceCreate') }
 tasks.register('runGardenPersistenceSmoke') { dependsOn tasks.named('runGardenPersistenceReload') }
+tasks.named('runCrownFoodReload') { dependsOn tasks.named('runCrownFoodCreate') }
+tasks.register('runCrownFoodSmoke') { dependsOn tasks.named('runCrownFoodReload') }
 
-tasks.matching { it.name in ['prepareWatchpostPersistenceCreateRun', 'prepareWatchpostPersistenceReloadRun', 'prepareVaultPersistenceCreateRun', 'prepareVaultPersistenceReloadRun', 'prepareGardenPersistenceCreateRun', 'prepareGardenPersistenceReloadRun'] }.configureEach {
+tasks.matching { it.name in ['prepareWatchpostPersistenceCreateRun', 'prepareWatchpostPersistenceReloadRun', 'prepareVaultPersistenceCreateRun', 'prepareVaultPersistenceReloadRun', 'prepareGardenPersistenceCreateRun', 'prepareGardenPersistenceReloadRun', 'prepareCrownFoodCreateRun', 'prepareCrownFoodReloadRun'] }.configureEach {
     outputs.upToDateWhen { false }
     doLast {
-        def runName = it.name.contains('Garden') ? (it.name.contains('Reload') ? 'gardenPersistenceReload' : 'gardenPersistenceCreate') :
+        def runName = it.name.contains('CrownFood') ? (it.name.contains('Reload') ? 'crownFoodReload' : 'crownFoodCreate') :
+                it.name.contains('Garden') ? (it.name.contains('Reload') ? 'gardenPersistenceReload' : 'gardenPersistenceCreate') :
                 it.name.contains('Vault') ? (it.name.contains('Reload') ? 'vaultPersistenceReload' : 'vaultPersistenceCreate') :
                 (it.name.contains('Reload') ? 'watchpostPersistenceReload' : 'watchpostPersistenceCreate')
         def directory = neoForge.runs.getByName(runName).gameDirectory.get().asFile
@@ -382,4 +410,4 @@ tasks.named('runSurvivalRouteEquipment') { dependsOn tasks.named('runSurvivalRou
 tasks.register('runSurvivalPreparationSmoke') { dependsOn tasks.named('runSurvivalRouteEquipment') }
 
 // A successful build includes the server's behavioral tests, in a disposable profile.
-tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer') }
+tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer') }

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "interstice:block/crown_fruit_unripe"
+    },
+    "age=1": {
+      "model": "interstice:block/crown_fruit_unripe"
+    },
+    "age=2": {
+      "model": "interstice:block/crown_fruit_unripe"
+    },
+    "age=3": {
+      "model": "interstice:block/crown_fruit"
+    }
+  }
+}

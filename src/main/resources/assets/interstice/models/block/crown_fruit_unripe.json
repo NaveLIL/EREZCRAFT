@@ -1,0 +1,74 @@
+{
+  "render_type": "minecraft:cutout",
+  "ambientocclusion": false,
+  "textures": {
+    "pod": "interstice:block/garden/tide_heart_unripe",
+    "particle": "#pod"
+  },
+  "elements": [
+    {
+      "from": [
+        3,
+        0,
+        8
+      ],
+      "to": [
+        13,
+        13,
+        8
+      ],
+      "faces": {
+        "north": {
+          "texture": "#pod",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#pod",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        8,
+        0,
+        3
+      ],
+      "to": [
+        8,
+        13,
+        13
+      ],
+      "faces": {
+        "east": {
+          "texture": "#pod",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#pod",
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

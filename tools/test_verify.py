@@ -31,8 +31,8 @@ class VerificationResultTests(unittest.TestCase):
                 kwargs["stdout"].write(log)
                 if result is not None:
                     evidence = next((root / ".verification").iterdir())
-                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke"):
-                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute", "runVaultPersistenceSmoke": "vaultPersistence", "runGardenPersistenceSmoke": "gardenPersistence"}[task]
+                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke", "runCrownFoodSmoke"):
+                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute", "runVaultPersistenceSmoke": "vaultPersistence", "runGardenPersistenceSmoke": "gardenPersistence", "runCrownFoodSmoke":"crownFood"}[task]
                         destination = evidence / "profiles" / profile
                         destination.mkdir(parents=True)
                         for name, value in result.items():
@@ -74,6 +74,20 @@ class VerificationResultTests(unittest.TestCase):
         for log, expected in (("BUILD SUCCESSFUL\n", 1), ("All 9 required tests passed :)\n", 0)):
             with self.subTest(log=log):
                 code, _, _ = self.exercise("runGardenGameTestServer", log=log)
+                self.assertEqual(code, expected)
+
+    def test_food_server_requires_executed_tests(self):
+        code, _, _ = self.exercise("runFoodGameTestServer", log="BUILD SUCCESSFUL\n")
+        self.assertEqual(code, 1)
+        code, _, _ = self.exercise("runFoodGameTestServer", log="All 7 required tests passed :)\n")
+        self.assertEqual(code, 0)
+
+    def test_crown_food_requires_saved_and_resumed_reaction(self):
+        for result, expected in (({"crown-create-validation.json":{"passed":True}},1),
+                                 ({"crown-create-validation.json":{"passed":True},"crown-reload-validation.json":{"passed":False}},1),
+                                 ({"crown-create-validation.json":{"passed":True},"crown-reload-validation.json":{"passed":True}},0)):
+            with self.subTest(result=result):
+                code, _, _ = self.exercise("runCrownFoodSmoke", result=result)
                 self.assertEqual(code, expected)
 
     def test_garden_cold_restart_requires_both_reports(self):

@@ -1,0 +1,81 @@
+{
+  "milestone": "M15",
+  "version": "0.2.4",
+  "passed": true,
+  "published": false,
+  "base_commit": "a1105e072a968fd3379cf9aa7087002690d8330a",
+  "artifact": {
+    "path": "build/libs/interstice-0.2.4.jar",
+    "sha256": "e43ea22eaf545bacd5d45e8c5a6f5615d183612e7474c011be57b6c1710a7b51",
+    "smoke_code_excluded": true,
+    "resource_hashes_match": true
+  },
+  "checks": {
+    "gametests": 161,
+    "groups": [
+      17,
+      7,
+      104,
+      9,
+      16,
+      8
+    ],
+    "python_tests": 24,
+    "user_saves_unchanged": true,
+    "resources": {
+      "passed": true,
+      "files_checked": 525,
+      "regeneration_changes": [],
+      "ready_palette_textures": 16,
+      "source_patterns_and_alpha_preserved": true
+    },
+    "native": {
+      "creator_pid": 22204,
+      "naturally_generated": true,
+      "seed": 20261006,
+      "chunk_x": -1,
+      "chunk_z": 1,
+      "fruit_count": 4,
+      "root_y": 175,
+      "fruit_height_above_root": 28,
+      "fruit_x": -13,
+      "fruit_y": 203,
+      "fruit_z": 24,
+      "upper_sea_gap": 12.449778704156358,
+      "scene_scope": "Natural Creative visual inspection, then positioned Survival player for real harvest/eating; not an autonomous climbing route",
+      "fixture_player_positioned_on_crown": true,
+      "fixture_hunger_before": 12,
+      "ordinary_client_hand_harvest": true,
+      "ordinary_client_food_consumption": true,
+      "hunger_after": 18,
+      "night_vision_after_eating": true,
+      "plantable_seed_returned": true,
+      "reaction_ticks_at_save": 1683,
+      "passed": true,
+      "mode": "reload",
+      "stage": 13,
+      "reason": "Cold restart preserved harvest and positive reaction; real countdown produced weakness and visible prey signal",
+      "positive_phase_persisted_after_restart": true,
+      "pod_harvest_persisted": true,
+      "reload_pid": 27208,
+      "reaction_ticks_loaded": 1632,
+      "real_delayed_weakness": true,
+      "real_delayed_glowing": true,
+      "future_creature_signal": true,
+      "real_ticks_waited_after_reload": 731
+    },
+    "screenshots": [
+      "crown-natural-darkness.png",
+      "crown-natural-giant.png",
+      "crown-top-fruits.png",
+      "crown-first-meal.png",
+      "crown-delayed-cost.png"
+    ]
+  },
+  "evidence": ".verification/20261008T055059.197055Z-m15-final-crowns-food",
+  "limits": [
+    "Inspection used Creative, then the Survival player was positioned on the crown; no autonomous climb from the ground was claimed",
+    "Future mob AI not implemented; marked-prey signal and normal glowing effect provided",
+    "Existing chunks untouched; large crowns occur in new suitable chunks"
+  ]
+}

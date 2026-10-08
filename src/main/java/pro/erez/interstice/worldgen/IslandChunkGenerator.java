@@ -123,6 +123,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         generateOres(geometry,chunk,region.getSeed());
         WatchpostRuins.generate(geometry, chunk, region.getSeed(), region.getLevel().getStructureManager(), region.registryAccess());
         StoneVaults.generate(geometry,chunk,region.getSeed());
+        GardenTrees.generate(geometry,chunk,region.getSeed(),region,GardenTreeDefinitions.CROWN);
         GloomcrownTree.generate(geometry,chunk,region.getSeed());
         GardenTrees.generate(geometry,chunk,region.getSeed(),region);
         PaleGardens.undergrowth(geometry,chunk,region.getSeed());

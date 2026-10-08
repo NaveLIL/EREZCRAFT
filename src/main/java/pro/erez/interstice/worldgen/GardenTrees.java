@@ -42,7 +42,7 @@ import pro.erez.interstice.geometry.GeometryProfile;
 /** Uses Minecraft's configurable trunk/foliage placers in an in-memory view before any world writes. */
 public final class GardenTrees {
     private GardenTrees() {}
-    private static final int MAX_RADIUS = 7, MAX_HEIGHT = 16, MAX_CELLS = 2048;
+    private static final int MAX_RADIUS = 7, MAX_HEIGHT = 32, MAX_CELLS = 4096;
     public static Map<BlockPos, BlockState> plan(LevelReader level, Function<BlockPos, BlockState> blocks,
                                                BlockPos root, GardenTreeDefinitions.Variant variant, RandomSource random) {
         TreeConfiguration config=variant.tree();
@@ -98,6 +98,20 @@ public final class GardenTrees {
         cells.entrySet().removeIf(e -> e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get()) && !distances.containsKey(e.getKey()));
         cells.replaceAll((p, state) -> state.is(GardenMaterials.PALEHEART_LEAVES.get())
                 ? state.setValue(LeavesBlock.DISTANCE, distances.get(p)).setValue(LeavesBlock.PERSISTENT, false) : state);
+        if(variant.fruitCount()>0){
+            int top=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get())).mapToInt(e->e.getKey().getY()).max().orElse(root.getY());
+            // Food-bearing crowns must remain genuinely high; no easy fruit from short garden shrubs.
+            if(top-root.getY()<18)return Map.of();
+            var sites=new java.util.ArrayList<>(cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get())
+                    &&e.getKey().getY()==top&&!cells.containsKey(e.getKey().above())).map(e->e.getKey().above()).toList());
+            var chosen=new java.util.ArrayList<BlockPos>();
+            while(!sites.isEmpty()&&chosen.size()<variant.fruitCount()){
+                var site=sites.remove(random.nextInt(sites.size()));
+                if(chosen.stream().anyMatch(p->p.distManhattan(site)<3))continue;
+                cells.put(site,GardenMaterials.CROWN_FRUIT.get().defaultBlockState());chosen.add(site);
+            }
+            if(chosen.isEmpty())return Map.of();
+        }
         // Optional chains stop at real ground/obstacles and never overwrite part of the tree.
         var anchors=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get())&&!cells.containsKey(e.getKey().below()))
                 .map(Map.Entry::getKey).toList();
@@ -122,14 +136,17 @@ public final class GardenTrees {
         // Every foot of a thick native trunk has real ground, not only the first sapling.
         for (var entry : cells.entrySet()) {
             var pos = entry.getKey(); var existing = blocks.apply(pos);
-            if (!allowed.test(pos) || (!existing.isAir() && !(pos.equals(root) && existing.is(GardenMaterials.PALEHEART_SAPLING.get())))) return false;
+            if (!allowed.test(pos) || (!existing.isAir() && !(pos.equals(root) && (existing.is(GardenMaterials.PALEHEART_SAPLING.get())||existing.is(GardenMaterials.CROWN_SAPLING.get()))))) return false;
             if (entry.getValue().is(GardenMaterials.PALEHEART_LOG.get()) && pos.getY() == root.getY()
                     && !blocks.apply(pos.below()).is(Interstice.ABYSSAL_TURF.get())) return false;
         }
         return true;
     }
     public static boolean grow(ServerLevel level, BlockPos root, RandomSource random) {
-        var config = GardenTreeDefinitions.get(GardenTreeDefinitions.PALEHEART).select(random);
+        return grow(level,root,random,GardenTreeDefinitions.PALEHEART);
+    }
+    public static boolean grow(ServerLevel level,BlockPos root,RandomSource random,net.minecraft.resources.ResourceLocation definition){
+        var config = GardenTreeDefinitions.get(definition).select(random);
         var cells = plan(level, level::getBlockState, root, config, random);
         var generator = level.getChunkSource().getGenerator();
         if (!fits(cells, level::getBlockState, p -> level.hasChunkAt(p) && !level.isOutsideBuildHeight(p)
@@ -137,11 +154,15 @@ public final class GardenTrees {
         cells.forEach((p, state) -> level.setBlock(p, state, 3)); return true;
     }
     public static void generate(GeometryProfile profile, ChunkAccess chunk, long seed, LevelReader level) {
-        var definition = GardenTreeDefinitions.get(GardenTreeDefinitions.PALEHEART);
-        var random = RandomSource.create(seed ^ chunk.getPos().toLong() ^ 0x9A1L);
+        generate(profile,chunk,seed,level,GardenTreeDefinitions.PALEHEART);
+    }
+    public static void generate(GeometryProfile profile,ChunkAccess chunk,long seed,LevelReader level,net.minecraft.resources.ResourceLocation id){
+        var definition = GardenTreeDefinitions.get(id);
+        boolean crown=id.equals(GardenTreeDefinitions.CROWN);
+        var random = RandomSource.create(seed ^ chunk.getPos().toLong() ^ (crown?0xCA015L:0x9A1L));
         if (random.nextInt(definition.chance()) != 0) return;
         for (int attempt = 0; attempt < definition.attempts(); attempt++) {
-            int x = chunk.getPos().getMinBlockX() + 5 + random.nextInt(6), z = chunk.getPos().getMinBlockZ() + 5 + random.nextInt(6);
+            int x = chunk.getPos().getMinBlockX() + (crown?7:5+random.nextInt(6)), z = chunk.getPos().getMinBlockZ() + (crown?7:5+random.nextInt(6));
             for (int y = profile.maxLand(); y >= profile.minLand(); y--) {
                 var ground = new BlockPos(x, y, z); var state = chunk.getBlockState(ground);
                 if (state.isAir()) continue;

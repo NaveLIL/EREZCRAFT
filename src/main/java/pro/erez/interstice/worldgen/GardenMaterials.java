@@ -39,6 +39,9 @@ public final class GardenMaterials {
     public static final DeferredHolder<Block,Block> PALEHEART_PLANKS=register("paleheart_planks",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
     public static final DeferredHolder<Block,LeavesBlock> PALEHEART_LEAVES=register("paleheart_leaves",()->new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).lightLevel(s->1)));
     public static final DeferredHolder<Block,GardenSapling> PALEHEART_SAPLING=register("paleheart_sapling",GardenSapling::new);
+    public static final DeferredHolder<Block,GardenSapling> CROWN_SAPLING=register("crown_sapling",()->new GardenSapling(){
+        @Override protected net.minecraft.resources.ResourceLocation definition(){return GardenTreeDefinitions.CROWN;}
+    });
     public static final DeferredHolder<Block,SlabBlock> PALEHEART_SLAB=register("paleheart_slab",()->new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
     public static final DeferredHolder<Block,StairBlock> PALEHEART_STAIRS=register("paleheart_stairs",()->new StairBlock(PALEHEART_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
     public static final DeferredHolder<Block,FenceBlock> PALEHEART_FENCE=register("paleheart_fence",()->new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
@@ -50,6 +53,8 @@ public final class GardenMaterials {
     public static final DeferredHolder<Block,WallBlock> PALESTONE_WALL=register("palestone_wall",()->new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL)));
     public static final DeferredHolder<Block,GardenBush> PALE_FERN=register("pale_fern",GardenBush::new);
     public static final DeferredHolder<Block,GardenVineBlock> PALE_VINE=register("pale_vine",GardenVineBlock::new);
+    // No BlockItem: a harvested food cannot plant a crown pod on the ground.
+    public static final DeferredHolder<Block,pro.erez.interstice.food.CrownFruitBlock> CROWN_FRUIT=BLOCKS.register("crown_fruit",pro.erez.interstice.food.CrownFruitBlock::new);
     public static final DeferredHolder<Block,CarpetBlock> PALE_LITTER=register("pale_litter",()->new CarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_CARPET).lightLevel(s->1)) {
         @Override public boolean canSurvive(BlockState state,LevelReader level,BlockPos pos) { return level.getBlockState(pos.below()).is(Interstice.ABYSSAL_TURF.get()); }
     });
@@ -64,13 +69,14 @@ public final class GardenMaterials {
         @Override protected boolean mayPlaceOn(BlockState state,BlockGetter level,BlockPos pos) { return state.is(Interstice.ABYSSAL_TURF.get()); }
         @Override public com.mojang.serialization.MapCodec<? extends GardenBush> codec() { return simpleCodec(GardenBush::new); }
     }
-    public static final class GardenSapling extends GardenBush implements BonemealableBlock {
+    public static class GardenSapling extends GardenBush implements BonemealableBlock {
         public GardenSapling() { super(); }
         public GardenSapling(BlockBehaviour.Properties properties) { super(properties); }
         @Override public com.mojang.serialization.MapCodec<GardenSapling> codec() { return simpleCodec(GardenSapling::new); }
-        @Override public void randomTick(BlockState state,ServerLevel level,BlockPos pos,RandomSource random) { if(random.nextInt(7)==0) GardenTrees.grow(level,pos,random); }
+        protected net.minecraft.resources.ResourceLocation definition(){return GardenTreeDefinitions.PALEHEART;}
+        @Override public void randomTick(BlockState state,ServerLevel level,BlockPos pos,RandomSource random) { if(random.nextInt(7)==0) GardenTrees.grow(level,pos,random,definition()); }
         @Override public boolean isValidBonemealTarget(LevelReader level,BlockPos pos,BlockState state) { return true; }
         @Override public boolean isBonemealSuccess(Level level,RandomSource random,BlockPos pos,BlockState state) { return true; }
-        @Override public void performBonemeal(ServerLevel level,RandomSource random,BlockPos pos,BlockState state) { GardenTrees.grow(level,pos,random); }
+        @Override public void performBonemeal(ServerLevel level,RandomSource random,BlockPos pos,BlockState state) { GardenTrees.grow(level,pos,random,definition()); }
     }
 }
