@@ -52,7 +52,7 @@ public final class FloraVisualSmoke {
         if (!started) return;
         if (System.nanoTime() > deadline) throw new IllegalStateException("Flora gallery timed out");
         if (mc.player == null || mc.level == null || mc.getConnection() == null || mc.screen != null) return;
-        if (stage == 0) { mc.getConnection().sendCommand("interstice explore"); stage = 1; ticks = 0; return; }
+        if (stage == 0) { mc.getConnection().sendCommand("interstice explore tall"); stage = 1; ticks = 0; return; }
         if (!mc.level.dimension().equals(IslandWorld.TALL_WORLD)) return;
         if (stage == 1 && ++ticks >= 60) {
             x = mc.player.blockPosition().getX(); z = mc.player.blockPosition().getZ();

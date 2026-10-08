@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "interstice:block/hanging_glow_bloom",
+      "x": 180
+    }
+  }
+}

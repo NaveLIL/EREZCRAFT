@@ -74,7 +74,7 @@ public final class GardenVisualSmoke {
             if(mc.player==null||mc.level==null||mc.screen!=null||mc.getConnection()==null)return;
             var server=mc.getSingleplayerServer();var uuid=mc.player.getUUID();
             if(stage==0){
-                if(MODE.equals("create")){mc.getConnection().sendCommand("interstice explore");stage=1;}
+                if(MODE.equals("create")){mc.getConnection().sendCommand("interstice explore tall");stage=1;}
                 else{work=server.submit(()->{checkReload(server.getLevel(IslandWorld.TALL_WORLD));return true;});stage=12;}ticks=0;return;
             }
             if(!mc.level.dimension().equals(IslandWorld.TALL_WORLD))return;

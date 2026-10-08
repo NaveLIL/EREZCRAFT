@@ -1,0 +1,61 @@
+{
+  "version": "0.3.1",
+  "terrain_revision": 4,
+  "passed": true,
+  "jar": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\libs\\interstice-0.3.1.jar",
+  "jar_sha256": "c0ad0d1f11b51e0caafa354b04db8d22ce7436cc67347d45681acd52741758e3",
+  "build_receipt": ".verification\\20261008T112957.283700Z-compact-accepted-build",
+  "native_receipt": ".verification\\20261008T113008.853981Z-compact-accepted-native",
+  "required_game_tests": 214,
+  "game_test_groups": [
+    6,
+    17,
+    7,
+    132,
+    12,
+    6,
+    10,
+    16,
+    8
+  ],
+  "python_verifier_tests": 31,
+  "artifact_models": 312,
+  "artifact_resources": 855,
+  "new_ready_palettes_verified": 17,
+  "native_checks": {
+    "runMiningSmoke": {
+      "exit_code": 0,
+      "accepted": true,
+      "seconds": 176.266
+    },
+    "runHydrologySmoke": {
+      "exit_code": 0,
+      "accepted": true,
+      "seconds": 143.14
+    },
+    "runLivingRealmSmoke": {
+      "exit_code": 0,
+      "accepted": true,
+      "seconds": 188.781
+    }
+  },
+  "screenshots": [
+    "art\\generated\\living-realm\\v4\\hydrology-beach-river-clear.png",
+    "art\\generated\\living-realm\\v4\\hydrology-mineral-snow-peak-clear.png",
+    "art\\generated\\living-realm\\v4\\hydrology-island-waterfall-clear.png",
+    "art\\generated\\living-realm\\v4\\living-ash-surface-clear.png",
+    "art\\generated\\living-realm\\v4\\living-vault-cave-dark.png",
+    "art\\generated\\living-realm\\v4\\living-clingweed-passage.png",
+    "art\\generated\\living-realm\\v4\\mining-dual-torches-living.png"
+  ],
+  "scope": "Natural Creative geography/water inspection. Prepared Survival rooms/inventory/scaffold/SURGE for isolated mechanics. Not an autonomous Survival progression.",
+  "user_saves": {
+    "build": true,
+    "native": true,
+    "world_regeneration_or_owner_client_restart_performed": false
+  },
+  "future_not_implemented": [
+    "compact stacked toxic island biome",
+    "vanilla-compatible iron and redstone deposits"
+  ]
+}

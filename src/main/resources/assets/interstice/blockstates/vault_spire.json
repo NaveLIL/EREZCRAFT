@@ -1,0 +1,39 @@
+{
+  "variants": {
+    "thickness=base,vertical_direction=up": {
+      "model": "interstice:block/vault_spire_base"
+    },
+    "thickness=base,vertical_direction=down": {
+      "model": "interstice:block/vault_spire_base",
+      "x": 180
+    },
+    "thickness=middle,vertical_direction=up": {
+      "model": "interstice:block/vault_spire_middle"
+    },
+    "thickness=middle,vertical_direction=down": {
+      "model": "interstice:block/vault_spire_middle",
+      "x": 180
+    },
+    "thickness=frustum,vertical_direction=up": {
+      "model": "interstice:block/vault_spire_frustum"
+    },
+    "thickness=frustum,vertical_direction=down": {
+      "model": "interstice:block/vault_spire_frustum",
+      "x": 180
+    },
+    "thickness=tip,vertical_direction=up": {
+      "model": "interstice:block/vault_spire_tip"
+    },
+    "thickness=tip,vertical_direction=down": {
+      "model": "interstice:block/vault_spire_tip",
+      "x": 180
+    },
+    "thickness=tip_merge,vertical_direction=up": {
+      "model": "interstice:block/vault_spire_tip_merge"
+    },
+    "thickness=tip_merge,vertical_direction=down": {
+      "model": "interstice:block/vault_spire_tip_merge",
+      "x": 180
+    }
+  }
+}

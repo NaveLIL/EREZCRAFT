@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "interstice:world_planks"
+    }
+  ],
+  "result": {
+    "id": "interstice:world_stick",
+    "count": 2
+  }
+}

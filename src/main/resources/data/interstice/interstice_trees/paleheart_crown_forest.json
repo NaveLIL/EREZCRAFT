@@ -1,0 +1,122 @@
+{
+  "attempts": 1,
+  "chance": 24,
+  "variants": [
+    {
+      "weight": 1,
+      "stem_width": 2,
+      "extra_height": 2,
+      "vine_attempts": 8,
+      "vine_length": 8,
+      "fruit_count": 4,
+      "branch_path": "UUUUUUUU[WUWWUUWD]UUUUUEUU[NNUNNUU][SSUSSUEUU][EEUEUD]UUUUWUU[NNUNNUU][SSUSSUU][EEUEEUUU][WWUWWUU]",
+      "tree": {
+        "trunk_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "interstice:crown_log",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        },
+        "trunk_placer": {
+          "type": "minecraft:straight_trunk_placer",
+          "base_height": 20,
+          "height_rand_a": 2,
+          "height_rand_b": 1
+        },
+        "foliage_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "interstice:crown_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          }
+        },
+        "foliage_placer": {
+          "type": "minecraft:fancy_foliage_placer",
+          "radius": 2,
+          "offset": 0,
+          "height": 5
+        },
+        "dirt_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "interstice:abyssal_turf"
+          }
+        },
+        "minimum_size": {
+          "type": "minecraft:two_layers_feature_size",
+          "limit": 1,
+          "lower_size": 0,
+          "upper_size": 1
+        },
+        "decorators": [],
+        "ignore_vines": true,
+        "force_dirt": false
+      }
+    },
+    {
+      "weight": 1,
+      "stem_width": 2,
+      "extra_height": 2,
+      "vine_attempts": 8,
+      "vine_length": 8,
+      "fruit_count": 4,
+      "branch_path": "UUUUUUUUU[EEUEUUD]UUUUWUU[SSUSSUU][NNUNNWUU][WWUWUD]UUUEUU[SSUSSUU][NNUNNUUU][WWUWWU][EEUEEUUUU]",
+      "tree": {
+        "trunk_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "interstice:crown_log",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        },
+        "trunk_placer": {
+          "type": "minecraft:straight_trunk_placer",
+          "base_height": 20,
+          "height_rand_a": 2,
+          "height_rand_b": 1
+        },
+        "foliage_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "interstice:crown_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          }
+        },
+        "foliage_placer": {
+          "type": "minecraft:fancy_foliage_placer",
+          "radius": 2,
+          "offset": 0,
+          "height": 5
+        },
+        "dirt_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "interstice:abyssal_turf"
+          }
+        },
+        "minimum_size": {
+          "type": "minecraft:two_layers_feature_size",
+          "limit": 1,
+          "lower_size": 0,
+          "upper_size": 1
+        },
+        "decorators": [],
+        "ignore_vines": true,
+        "force_dirt": false
+      }
+    }
+  ]
+}

@@ -17,14 +17,21 @@ public final class RiftSafety {
     public static boolean standing(ServerLevel level, BlockPos feet) {
         if (level.isOutsideBuildHeight(feet) || level.isOutsideBuildHeight(feet.above())
                 || !level.getWorldBorder().isWithinBounds(feet)) return false;
+        for(var cloud:level.getEntitiesOfClass(net.minecraft.world.entity.AreaEffectCloud.class,new AABB(feet).inflate(4),
+                entity->entity.isAlive()&&entity.getTags().contains(pro.erez.interstice.ecology.ClingweedGas.ENTITY_TAG)))
+            if(cloud.distanceToSqr(net.minecraft.world.phys.Vec3.atCenterOf(feet))<Math.pow(cloud.getRadius()+1,2))return false;
         var floor = level.getBlockState(feet.below());
         if (!floor.isFaceSturdy(level, feet.below(), Direction.UP) || !floor.getFluidState().isEmpty()
+                || floor.is(pro.erez.interstice.minerals.MineralEcology.MINERAL_POWDER.get())
                 || floor.is(Blocks.MAGMA_BLOCK) || floor.is(Blocks.CACTUS) || floor.is(Blocks.CAMPFIRE) || floor.is(Blocks.SOUL_CAMPFIRE)) return false;
         for (int y = 0; y <= 1; y++) {
             var state = level.getBlockState(feet.above(y));
             if (!state.getFluidState().isEmpty() || state.is(Blocks.FIRE) || state.is(Blocks.SOUL_FIRE)
                     || state.is(Blocks.SWEET_BERRY_BUSH) || state.is(Blocks.POWDER_SNOW) || state.is(Blocks.POINTED_DRIPSTONE)
                     || state.is(Blocks.NETHER_PORTAL) || state.is(Blocks.END_PORTAL) || state.is(Blocks.END_GATEWAY) || state.is(Interstice.RIFT_PORTAL.get())) return false;
+            if(state.is(pro.erez.interstice.ecology.CaveEcology.CLINGWEED.get())||state.is(pro.erez.interstice.ecology.CaveEcology.STING_FROND.get())
+                    ||state.is(pro.erez.interstice.minerals.MineralEcology.MINERAL_POWDER.get())
+                    ||state.is(pro.erez.interstice.worldgen.cave.CaveMaterials.ASH_SPIRE.get())||state.is(pro.erez.interstice.worldgen.cave.CaveMaterials.GARDEN_SPIRE.get())||state.is(pro.erez.interstice.worldgen.cave.CaveMaterials.VAULT_SPIRE.get()))return false;
         }
         return level.noCollision(new AABB(feet.getX() + .2, feet.getY() + .01, feet.getZ() + .2,
                 feet.getX() + .8, feet.getY() + 1.91, feet.getZ() + .8));
@@ -59,7 +66,7 @@ public final class RiftSafety {
         for (int dx = -1; dx <= 1; dx++) for (int dz = -1; dz <= 1; dz++) {
             BlockPos column = feet.offset(dx, 0, dz);
             if (!level.hasChunkAt(column)) return false;
-            if (IslandWorld.isIsland(level.dimension()) && !pro.erez.interstice.worldgen.IslandChunkGenerator.landAllowed(
+            if (IslandWorld.isIsland(level.dimension()) && !pro.erez.interstice.worldgen.IslandChunkGenerator.featureAllowed(level,
                     GeometryProfiles.get(level), column.getX(), column.getY() + 2, column.getZ())) return false;
             var floor = level.getBlockState(column.below());
             boolean step = floor.isAir() && standing(level, column.below());

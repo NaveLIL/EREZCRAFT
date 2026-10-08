@@ -1,0 +1,12 @@
+{
+  "asset": "block/cave/clingweed.png",
+  "origin": "Original built-in ImageGen artwork commissioned for this project",
+  "created": "2026-10-08",
+  "source": "art/sources/original/clingweed-sprite-master.png",
+  "source_sha256": "e0851c64b972abbce04dd1bc99707c05b15560132e96fbf5f18556b7176c6188",
+  "output_sha256": "3ba15c91b689aa0e05e05c574a82ae49d76e41218435cb8b6cb1ab7d21adddf7",
+  "preparation": "Nearest-neighbor resolution preparation to32x32 with original transparency",
+  "generator": "tools/PrepareClingweedTexture.java",
+  "prompt_record": "art/sources/original/CLINGWEED.md",
+  "prompt_record_is_verbatim": false
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "CC",
+    "CC"
+  ],
+  "key": {
+    "C": {
+      "item": "interstice:phosphorite_crystal"
+    }
+  },
+  "result": {
+    "id": "interstice:phosphorite",
+    "count": 1
+  }
+}

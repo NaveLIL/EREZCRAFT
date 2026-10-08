@@ -1,0 +1,17 @@
+{
+  "parent": "interstice:block/minerals/luminous_bud",
+  "display": {
+    "gui": {
+      "rotation": [
+        25,
+        35,
+        0
+      ],
+      "scale": [
+        1.2,
+        1.2,
+        1.2
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "CC",
+    "CC"
+  ],
+  "key": {
+    "C": {
+      "item": "interstice:vitriolite_shard"
+    }
+  },
+  "result": {
+    "id": "interstice:vitriolite",
+    "count": 1
+  }
+}

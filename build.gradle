@@ -263,6 +263,69 @@ neoForge {
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_food'
         }
+        livingGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/living-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_living'
+        }
+        ecologyGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/ecology-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_ecology'
+        }
+        miningGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/mining-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_mining'
+        }
+        hydrologySmoke {
+            client()
+            gameDirectory = file('build/hydrology-smoke')
+            systemProperty 'interstice.hydrologySmoke', 'true'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        miningCreate {
+            client()
+            gameDirectory = file('build/mining-smoke')
+            systemProperty 'interstice.miningSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        miningReload {
+            client()
+            gameDirectory = file('build/mining-smoke')
+            systemProperty 'interstice.miningSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        livingRealmCreate {
+            client()
+            gameDirectory = file('build/living-realm')
+            systemProperty 'interstice.livingRealmSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        livingRealmReload {
+            client()
+            gameDirectory = file('build/living-realm')
+            systemProperty 'interstice.livingRealmSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
         crownFoodCreate {
             client()
             gameDirectory = file('build/crown-food')
@@ -330,7 +393,7 @@ neoForge {
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+        def profileName = name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
                 name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
                 name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
@@ -379,6 +442,19 @@ tasks.named('runGardenPersistenceReload') { dependsOn tasks.named('runGardenPers
 tasks.register('runGardenPersistenceSmoke') { dependsOn tasks.named('runGardenPersistenceReload') }
 tasks.named('runCrownFoodReload') { dependsOn tasks.named('runCrownFoodCreate') }
 tasks.register('runCrownFoodSmoke') { dependsOn tasks.named('runCrownFoodReload') }
+tasks.named('runLivingRealmReload') { dependsOn tasks.named('runLivingRealmCreate') }
+tasks.register('runLivingRealmSmoke') { dependsOn tasks.named('runLivingRealmReload') }
+tasks.named('runMiningReload') { dependsOn tasks.named('runMiningCreate') }
+tasks.register('runMiningSmoke') { dependsOn tasks.named('runMiningReload') }
+tasks.matching { it.name in ['prepareLivingRealmCreateRun','prepareLivingRealmReloadRun','prepareMiningCreateRun','prepareMiningReloadRun','prepareHydrologySmokeRun'] }.configureEach {
+    outputs.upToDateWhen { false }
+    doLast {
+        def runName=it.name.contains('Hydrology') ? 'hydrologySmoke' : it.name.contains('Mining') ? (it.name.contains('Reload')?'miningReload':'miningCreate') : (it.name.contains('Reload')?'livingRealmReload':'livingRealmCreate')
+        def directory=neoForge.runs.getByName(runName).gameDirectory.get().asFile
+        def config=new File(directory,'config/fml.toml');config.parentFile.mkdirs();config.text='earlyWindowControl = false\n'
+        def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\n'
+    }
+}
 
 tasks.matching { it.name in ['prepareWatchpostPersistenceCreateRun', 'prepareWatchpostPersistenceReloadRun', 'prepareVaultPersistenceCreateRun', 'prepareVaultPersistenceReloadRun', 'prepareGardenPersistenceCreateRun', 'prepareGardenPersistenceReloadRun', 'prepareCrownFoodCreateRun', 'prepareCrownFoodReloadRun'] }.configureEach {
     outputs.upToDateWhen { false }
@@ -410,4 +486,4 @@ tasks.named('runSurvivalRouteEquipment') { dependsOn tasks.named('runSurvivalRou
 tasks.register('runSurvivalPreparationSmoke') { dependsOn tasks.named('runSurvivalRouteEquipment') }
 
 // A successful build includes the server's behavioral tests, in a disposable profile.
-tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer') }
+tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer') }

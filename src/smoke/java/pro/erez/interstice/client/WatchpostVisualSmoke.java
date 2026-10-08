@@ -67,7 +67,7 @@ public final class WatchpostVisualSmoke {
             return;
         }
         if (stage == 4 && ready && ++ticks >= 60) { System.out.println("WATCHPOST_RESTART_VALIDATION passed"); mc.stop(); return; }
-        if (stage == 0) { mc.getConnection().sendCommand("interstice explore"); stage = 1; ticks = 0; return; }
+        if (stage == 0) { mc.getConnection().sendCommand("interstice explore tall"); stage = 1; ticks = 0; return; }
         if (!mc.level.dimension().equals(IslandWorld.TALL_WORLD)) return;
         if (stage == 1 && ++ticks >= 40) {
             stage = 2; ticks = 0;

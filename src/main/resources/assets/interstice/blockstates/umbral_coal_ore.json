@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "host=riftstone": {
+      "model": "interstice:block/minerals/umbral_coal_ore_riftstone_0"
+    },
+    "host=palestone": [
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_palestone_0"
+      },
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_palestone_1"
+      },
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_palestone_2",
+        "y": 180
+      },
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_palestone_3",
+        "y": 180
+      }
+    ],
+    "host=vaultstone": [
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_vaultstone_0"
+      },
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_vaultstone_1"
+      },
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_vaultstone_2"
+      }
+    ],
+    "host=weathered_vaultstone": [
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_weathered_vaultstone_0"
+      },
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_weathered_vaultstone_1"
+      },
+      {
+        "model": "interstice:block/minerals/umbral_coal_ore_weathered_vaultstone_2"
+      }
+    ],
+    "host=rift_shale": {
+      "model": "interstice:block/minerals/umbral_coal_ore_rift_shale_0"
+    }
+  }
+}

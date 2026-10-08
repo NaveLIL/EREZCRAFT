@@ -50,7 +50,7 @@ public final class IslandVisualSmoke {
 
     private static ResourceKey<Level> target() {return TALL ? IslandWorld.TALL_WORLD : IslandWorld.WORLD;}
     private static GeometryProfile profile() {return TALL ? GeometryProfile.TALL : GeometryProfile.LEGACY;}
-    private static String enterCommand() {return TALL ? "interstice explore" : "interstice explore legacy";}
+    private static String enterCommand() {return TALL ? "interstice explore tall" : "interstice explore legacy";}
     private static void require(boolean condition,String message) {if(!condition) throw new IllegalStateException(message);}
     private static void advance(int next) {stage=next;ticks=0;}
 

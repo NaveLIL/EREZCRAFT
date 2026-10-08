@@ -1,0 +1,29 @@
+{
+  "retrieved": "2026-10-08",
+  "sources": [
+    {
+      "file": "sand_ugly_2.png",
+      "sha256": "42536b97603b2ed9742f76759cf3a70a55f0074076fa77d8081c211f09d3a155",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "snow.png",
+      "sha256": "87d2b6795de39b4597f4e4b52e30bdd31c153d38dfefcc5e29ecd4b23997e367",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "gravel.png",
+      "sha256": "74df0a9f7530526d197b90665b227055b3154d30e96afa82a20847959b84d28f",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0"
+    }
+  ]
+}

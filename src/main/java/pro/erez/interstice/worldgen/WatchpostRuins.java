@@ -33,6 +33,9 @@ public final class WatchpostRuins {
     }
     public static boolean generate(GeometryProfile profile, ChunkAccess chunk, long seed, StructureTemplateManager templates,
                                    net.minecraft.core.HolderLookup.Provider registries) {
+        return generate(profile,chunk,seed,templates,registries,profile.minLand());
+    }
+    public static boolean generate(GeometryProfile profile,ChunkAccess chunk,long seed,StructureTemplateManager templates,net.minecraft.core.HolderLookup.Provider registries,int minimum) {
         if (!candidate(seed, chunk.getPos().x, chunk.getPos().z)) return false;
         var optional = templates.get(TEMPLATE); if (optional.isEmpty()) throw new IllegalStateException("Missing authored Watchpost ruin template");
         List<Cell> plan = plan(optional.get(), registries);
@@ -40,7 +43,7 @@ public final class WatchpostRuins {
         int low = Integer.MAX_VALUE, high = Integer.MIN_VALUE;
         for (int dx = 0; dx < 9; dx++) for (int dz = 0; dz < 9; dz++) {
             int ground = Integer.MIN_VALUE;
-            for (int y = profile.maxLand(); y >= profile.minLand(); y--) {
+            for (int y = profile.maxLand(); y >= minimum; y--) {
                 var state = chunk.getBlockState(new BlockPos(x + dx, y, z + dz));
                 if (state.isAir()) continue;
                 if (StoneVaults.isGround(state)) ground = y;
@@ -55,7 +58,7 @@ public final class WatchpostRuins {
         Rotation rotation = Rotation.values()[turn];
         for (Cell cell : plan) {
             BlockPos point = base.offset(rotated(cell.pos(), turn));
-            if (!IslandChunkGenerator.landAllowed(profile, point.getX(), point.getY(), point.getZ()) || !chunk.getBlockState(point).isAir()) return false;
+            if (!IslandChunkGenerator.featureAllowed(profile, point.getX(), point.getY(), point.getZ(),minimum) || !chunk.getBlockState(point).isAir()) return false;
         }
         for (Cell cell : plan) {
             BlockPos point = base.offset(rotated(cell.pos(), turn));

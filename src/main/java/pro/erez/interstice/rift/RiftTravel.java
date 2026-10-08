@@ -106,7 +106,7 @@ public final class RiftTravel {
         RiftLinks data = RiftLinks.get(player.server);
         RiftLinks.Link link = data.source(source, kind);
         if (link == null) {
-            ServerLevel destination = player.server.getLevel(IslandWorld.isIsland(source.dimension()) ? Level.OVERWORLD : IslandWorld.TALL_WORLD);
+            ServerLevel destination = player.server.getLevel(IslandWorld.isIsland(source.dimension()) ? Level.OVERWORLD : IslandWorld.LIVING_WORLD);
             if (destination == null) return fail(player, "missing_dimension");
             BlockPos hint;
             try { hint = returnHint(player, destination); }

@@ -62,7 +62,7 @@ public final class CrownFoodVisualSmoke {
             if(!started||SmokeWorldPrompts.advance(mc))return;require(System.nanoTime()<deadline,"Crown/food smoke timed out stage "+stage);
             if(mc.player==null||mc.level==null||mc.screen!=null||mc.getConnection()==null)return;var server=mc.getSingleplayerServer();var uuid=mc.player.getUUID();
             if(stage==0){
-                if(MODE.equals("create")){mc.getConnection().sendCommand("interstice explore");stage=1;ticks=0;}
+                if(MODE.equals("create")){mc.getConnection().sendCommand("interstice explore tall");stage=1;ticks=0;}
                 else{work=server.submit(()->{var p=server.getPlayerList().getPlayer(uuid);require(p.hasEffect(MobEffects.NIGHT_VISION)&&p.hasEffect(TideHeart.REACTION),"Positive phase was not preserved across logout");
                     require(!p.isCreative()&&!p.getAbilities().flying,"Consumption fixture reopened in Creative");
                     var fruit=position();require(p.serverLevel().getBlockState(fruit).getValue(CrownFruitBlock.AGE)<3,"Harvested pod became ripe again on restart");

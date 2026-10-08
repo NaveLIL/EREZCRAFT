@@ -1,0 +1,49 @@
+{
+  "license": "CC0-1.0",
+  "author": "ARoachIFoundOnMyPillow",
+  "generator": "tools/generate_cave_resources.py",
+  "operation": "One-to-one palette substitution only; source resolution, pixel positions, pattern classes and alpha preserved",
+  "pattern_and_alpha_verified": true,
+  "outputs": [
+    {
+      "output": "block/cave/glow_bloom.png",
+      "source": "flower3.png",
+      "source_url": "https://opengameart.org/content/plant-tileset",
+      "source_sha256": "d1c6e4dc32afb29e18240171434def8c501e5e85ea10348d7334b74462b004d7",
+      "output_sha256": "b3efdc642a2daacfe6f9dc57fafbca452747506a4d708e1eaec85a41ef76cf14",
+      "palette_colors": 9
+    },
+    {
+      "output": "block/cave/sting_frond.png",
+      "source": "root1.png",
+      "source_url": "https://opengameart.org/content/plant-tileset",
+      "source_sha256": "69d500742b28a06d56534400d8a4efbdb3443e9982db88dd49d813b248e2c6aa",
+      "output_sha256": "71ceb30381f7876ecc870b92ee01687a5a9592a188e5c044ddc250d7fa2a58a5",
+      "palette_colors": 6
+    },
+    {
+      "output": "block/cave/ash_spire.png",
+      "source": "sandstone.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "source_sha256": "b9805f993a80b3f3b0d88459f5f6a19cc69dd55d0fc3b47a3697d71cb70e0763",
+      "output_sha256": "d9c5c7dc854ae2a3c0d82b3bd8943fbe467fd60bf1b2306cddff3a3e9693cdc7",
+      "palette_colors": 5
+    },
+    {
+      "output": "block/cave/garden_spire.png",
+      "source": "sandstone.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "source_sha256": "b9805f993a80b3f3b0d88459f5f6a19cc69dd55d0fc3b47a3697d71cb70e0763",
+      "output_sha256": "6303c1142d246a521d356dc4beef323ed05108e840a2228835ab8f9ece35e3be",
+      "palette_colors": 5
+    },
+    {
+      "output": "block/cave/vault_spire.png",
+      "source": "sandstone.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "source_sha256": "b9805f993a80b3f3b0d88459f5f6a19cc69dd55d0fc3b47a3697d71cb70e0763",
+      "output_sha256": "39b280b33802b51cc0090b5b6dd52c5411005797a15b0ef8154751449cd33dff",
+      "palette_colors": 5
+    }
+  ]
+}

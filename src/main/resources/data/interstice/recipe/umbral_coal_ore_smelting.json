@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "interstice:umbral_coal_ore"
+  },
+  "result": {
+    "id": "interstice:umbral_coal"
+  },
+  "experience": 0.1,
+  "cookingtime": 200
+}

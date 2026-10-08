@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "interstice:pyrolith",
-    "interstice:riftsilver_ore"
+    "interstice:riftsilver_ore",
+    "#interstice:iron_mineral_ores"
   ]
 }

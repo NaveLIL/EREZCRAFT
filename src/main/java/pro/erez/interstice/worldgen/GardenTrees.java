@@ -42,6 +42,8 @@ import pro.erez.interstice.geometry.GeometryProfile;
 /** Uses Minecraft's configurable trunk/foliage placers in an in-memory view before any world writes. */
 public final class GardenTrees {
     private GardenTrees() {}
+    private static final net.minecraft.resources.ResourceLocation FOREST=net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("interstice","paleheart_forest");
+    private static final net.minecraft.resources.ResourceLocation FOREST_CROWN=net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("interstice","paleheart_crown_forest");
     private static final int MAX_RADIUS = 7, MAX_HEIGHT = 32, MAX_CELLS = 4096;
     private static boolean log(BlockState state){return state.is(GardenMaterials.PALEHEART_LOG.get())||state.is(GardenMaterials.CROWN_LOG.get());}
     private static boolean leaf(BlockState state){return state.is(GardenMaterials.PALEHEART_LEAVES.get())||state.is(GardenMaterials.CROWN_LEAVES.get());}
@@ -153,17 +155,18 @@ public final class GardenTrees {
         return grow(level,root,random,GardenTreeDefinitions.PALEHEART);
     }
     public static boolean grow(ServerLevel level,BlockPos root,RandomSource random,net.minecraft.resources.ResourceLocation definition){
-        var config = GardenTreeDefinitions.get(definition).select(random);
+        var config = GardenTreeDefinitions.get(forestDefinition(level,definition)).select(random);
         var cells = plan(level, level::getBlockState, root, config, random);
         var generator = level.getChunkSource().getGenerator();
         if (!fits(cells, level::getBlockState, p -> level.hasChunkAt(p) && !level.isOutsideBuildHeight(p)
-                && (!(generator instanceof IslandChunkGenerator islands) || IslandChunkGenerator.landAllowed(islands.geometry(), p.getX(), p.getY(), p.getZ())), root)) return false;
+                && (!(generator instanceof IslandChunkGenerator islands) || IslandChunkGenerator.featureAllowed(level,islands.geometry(), p.getX(), p.getY(), p.getZ())), root)) return false;
         cells.forEach((p, state) -> level.setBlock(p, state, 3)); return true;
     }
     public static void generate(GeometryProfile profile, ChunkAccess chunk, long seed, LevelReader level) {
         generate(profile,chunk,seed,level,GardenTreeDefinitions.PALEHEART);
     }
     public static void generate(GeometryProfile profile,ChunkAccess chunk,long seed,LevelReader level,net.minecraft.resources.ResourceLocation id){
+        if(modernForest(level)){generateForest(profile,chunk,seed,level,id);return;}
         var definition = GardenTreeDefinitions.get(id);
         boolean crown=id.equals(GardenTreeDefinitions.CROWN);
         var random = RandomSource.create(seed ^ chunk.getPos().toLong() ^ (crown?0xCA015L:0x9A1L));
@@ -178,6 +181,42 @@ public final class GardenTrees {
                     var cells = plan(level, p -> inside(chunk, p) ? chunk.getBlockState(p) : Blocks.BEDROCK.defaultBlockState(), root, definition.select(random), random);
                     if (fits(cells, chunk::getBlockState, p -> inside(chunk, p)
                             && IslandChunkGenerator.landAllowed(profile, p.getX(), p.getY(), p.getZ()), root)) cells.forEach((p, s) -> chunk.setBlockState(p, s, false));
+                }
+                break;
+            }
+        }
+    }
+    static boolean modernForest(LevelReader level) {
+        ServerLevel server=level instanceof ServerLevel s?s:level instanceof net.minecraft.server.level.WorldGenRegion r?r.getLevel():null;
+        return server!=null&&server.getChunkSource().getGenerator() instanceof IslandChunkGenerator islands&&islands.terrainRevision()>=3;
+    }
+    private static net.minecraft.resources.ResourceLocation forestDefinition(LevelReader level,net.minecraft.resources.ResourceLocation id) {
+        if(!modernForest(level))return id;
+        return id.equals(GardenTreeDefinitions.PALEHEART)?FOREST:id.equals(GardenTreeDefinitions.CROWN)?FOREST_CROWN:id;
+    }
+    private static void generateForest(GeometryProfile profile,ChunkAccess chunk,long seed,LevelReader level,net.minecraft.resources.ResourceLocation id) {
+        var definition=GardenTreeDefinitions.get(forestDefinition(level,id));
+        var kind=id.equals(GardenTreeDefinitions.CROWN)?ForestDistribution.Kind.CROWN:ForestDistribution.Kind.PALEHEART;
+        for(var candidate:ForestDistribution.candidates(seed,chunk.getPos().x,chunk.getPos().z,kind,definition.chance(),definition.attempts())) {
+            var variant=definition.select(RandomSource.create(candidate.treeSeed()^0x5348415045L));
+            // Derive the complete shape's asymmetric footprint first. Larger canopies keep safe margins;
+            // bent/split forms get their own wider root range instead of sharing a fixed central square.
+            var previewRoot=new BlockPos(0,profile.lowerSeaTop()+2,0);
+            var preview=plan(level,p->p.getY()<previewRoot.getY()?Interstice.ABYSSAL_TURF.get().defaultBlockState():Blocks.AIR.defaultBlockState(),previewRoot,variant,RandomSource.create(candidate.treeSeed()));
+            if(preview.isEmpty())continue;
+            int minX=preview.keySet().stream().mapToInt(BlockPos::getX).min().orElse(0),maxX=preview.keySet().stream().mapToInt(BlockPos::getX).max().orElse(0);
+            int minZ=preview.keySet().stream().mapToInt(BlockPos::getZ).min().orElse(0),maxZ=preview.keySet().stream().mapToInt(BlockPos::getZ).max().orElse(0);
+            if(maxX-minX>15||maxZ-minZ>15)continue;
+            int x=chunk.getPos().getMinBlockX()+candidate.localX(Math.max(0,-minX),Math.min(15,15-maxX));
+            int z=chunk.getPos().getMinBlockZ()+candidate.localZ(Math.max(0,-minZ),Math.min(15,15-maxZ));
+            for(int y=profile.maxLand();y>=IslandChunkGenerator.featureMinimum(level,profile);y--) {
+                var ground=new BlockPos(x,y,z);var state=chunk.getBlockState(ground);
+                if(state.isAir())continue;
+                if(state.is(Interstice.ABYSSAL_TURF.get())&&RealmBiomes.isGarden(chunk,ground)) {
+                    var root=ground.above();
+                    var cells=plan(level,p->inside(chunk,p)?chunk.getBlockState(p):Blocks.BEDROCK.defaultBlockState(),root,variant,RandomSource.create(candidate.treeSeed()));
+                    if(fits(cells,chunk::getBlockState,p->inside(chunk,p)&&IslandChunkGenerator.featureAllowed(level,profile,p.getX(),p.getY(),p.getZ()),root))
+                        cells.forEach((p,s)->chunk.setBlockState(p,s,false));
                 }
                 break;
             }

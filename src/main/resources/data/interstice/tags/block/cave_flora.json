@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:glow_bloom",
+    "interstice:hanging_glow_bloom",
+    "interstice:sting_frond",
+    "interstice:clingweed"
+  ]
+}

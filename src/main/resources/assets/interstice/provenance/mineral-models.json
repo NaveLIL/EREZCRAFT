@@ -1,0 +1,457 @@
+{
+  "generator": "tools/generate_mineral_resources.py",
+  "operation": "Exact host cube model, textures, weighted choices and UV orientation retained; whole ready mineral sprites added as surface geometry",
+  "ore_hosts": [
+    {
+      "ore": "riftsilver_seam",
+      "host": "riftstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/riftstone",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_riftstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "palestone",
+      "variant": 0,
+      "original_host_model": "interstice:block/palestone",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_palestone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "palestone",
+      "variant": 1,
+      "original_host_model": "interstice:block/palestone_mirrored",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_palestone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "palestone",
+      "variant": 2,
+      "original_host_model": "interstice:block/palestone",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_palestone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {
+        "y": 180
+      }
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "palestone",
+      "variant": 3,
+      "original_host_model": "interstice:block/palestone_mirrored",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_palestone_3",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {
+        "y": 180
+      }
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "vaultstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/vaultstone",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_vaultstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "vaultstone",
+      "variant": 1,
+      "original_host_model": "interstice:block/vaultstone_1",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_vaultstone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "vaultstone",
+      "variant": 2,
+      "original_host_model": "interstice:block/vaultstone_2",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_vaultstone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "weathered_vaultstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/weathered_vaultstone",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_weathered_vaultstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "weathered_vaultstone",
+      "variant": 1,
+      "original_host_model": "interstice:block/weathered_vaultstone_1",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_weathered_vaultstone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "weathered_vaultstone",
+      "variant": 2,
+      "original_host_model": "interstice:block/weathered_vaultstone_2",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_weathered_vaultstone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "riftsilver_seam",
+      "host": "rift_shale",
+      "variant": 0,
+      "original_host_model": "interstice:block/minerals/rift_shale",
+      "ore_model": "interstice:block/minerals/riftsilver_seam_rift_shale_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "riftstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/riftstone",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_riftstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "palestone",
+      "variant": 0,
+      "original_host_model": "interstice:block/palestone",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_palestone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "palestone",
+      "variant": 1,
+      "original_host_model": "interstice:block/palestone_mirrored",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_palestone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "palestone",
+      "variant": 2,
+      "original_host_model": "interstice:block/palestone",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_palestone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {
+        "y": 180
+      }
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "palestone",
+      "variant": 3,
+      "original_host_model": "interstice:block/palestone_mirrored",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_palestone_3",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {
+        "y": 180
+      }
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "vaultstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/vaultstone",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_vaultstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "vaultstone",
+      "variant": 1,
+      "original_host_model": "interstice:block/vaultstone_1",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_vaultstone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "vaultstone",
+      "variant": 2,
+      "original_host_model": "interstice:block/vaultstone_2",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_vaultstone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "weathered_vaultstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/weathered_vaultstone",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_weathered_vaultstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "weathered_vaultstone",
+      "variant": 1,
+      "original_host_model": "interstice:block/weathered_vaultstone_1",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_weathered_vaultstone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "weathered_vaultstone",
+      "variant": 2,
+      "original_host_model": "interstice:block/weathered_vaultstone_2",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_weathered_vaultstone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "umbral_coal_ore",
+      "host": "rift_shale",
+      "variant": 0,
+      "original_host_model": "interstice:block/minerals/rift_shale",
+      "ore_model": "interstice:block/minerals/umbral_coal_ore_rift_shale_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "riftstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/riftstone",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_riftstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "palestone",
+      "variant": 0,
+      "original_host_model": "interstice:block/palestone",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_palestone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "palestone",
+      "variant": 1,
+      "original_host_model": "interstice:block/palestone_mirrored",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_palestone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "palestone",
+      "variant": 2,
+      "original_host_model": "interstice:block/palestone",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_palestone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {
+        "y": 180
+      }
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "palestone",
+      "variant": 3,
+      "original_host_model": "interstice:block/palestone_mirrored",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_palestone_3",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {
+        "y": 180
+      }
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "vaultstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/vaultstone",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_vaultstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "vaultstone",
+      "variant": 1,
+      "original_host_model": "interstice:block/vaultstone_1",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_vaultstone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "vaultstone",
+      "variant": 2,
+      "original_host_model": "interstice:block/vaultstone_2",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_vaultstone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "weathered_vaultstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/weathered_vaultstone",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_weathered_vaultstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "weathered_vaultstone",
+      "variant": 1,
+      "original_host_model": "interstice:block/weathered_vaultstone_1",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_weathered_vaultstone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "weathered_vaultstone",
+      "variant": 2,
+      "original_host_model": "interstice:block/weathered_vaultstone_2",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_weathered_vaultstone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "phosphorite_ore",
+      "host": "rift_shale",
+      "variant": 0,
+      "original_host_model": "interstice:block/minerals/rift_shale",
+      "ore_model": "interstice:block/minerals/phosphorite_ore_rift_shale_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "riftstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/riftstone",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_riftstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "palestone",
+      "variant": 0,
+      "original_host_model": "interstice:block/palestone",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_palestone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "palestone",
+      "variant": 1,
+      "original_host_model": "interstice:block/palestone_mirrored",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_palestone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "palestone",
+      "variant": 2,
+      "original_host_model": "interstice:block/palestone",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_palestone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {
+        "y": 180
+      }
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "palestone",
+      "variant": 3,
+      "original_host_model": "interstice:block/palestone_mirrored",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_palestone_3",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {
+        "y": 180
+      }
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "vaultstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/vaultstone",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_vaultstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "vaultstone",
+      "variant": 1,
+      "original_host_model": "interstice:block/vaultstone_1",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_vaultstone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "vaultstone",
+      "variant": 2,
+      "original_host_model": "interstice:block/vaultstone_2",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_vaultstone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "weathered_vaultstone",
+      "variant": 0,
+      "original_host_model": "interstice:block/weathered_vaultstone",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_weathered_vaultstone_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "weathered_vaultstone",
+      "variant": 1,
+      "original_host_model": "interstice:block/weathered_vaultstone_1",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_weathered_vaultstone_1",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "weathered_vaultstone",
+      "variant": 2,
+      "original_host_model": "interstice:block/weathered_vaultstone_2",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_weathered_vaultstone_2",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    },
+    {
+      "ore": "vitriolite_ore",
+      "host": "rift_shale",
+      "variant": 0,
+      "original_host_model": "interstice:block/minerals/rift_shale",
+      "ore_model": "interstice:block/minerals/vitriolite_ore_rift_shale_0",
+      "host_geometry_uv_textures_exact": true,
+      "state_transform_and_weight_preserved": {}
+    }
+  ],
+  "world_stick": "Ready Assorted Minecraft16x16 stick sprite; palette only",
+  "living_torch": "Original TideSprout flower central bud and petal mesh, scaled to .45 on a realm wood stem; exact original UVs and textures retained; inventory bud uses the same original mesh",
+  "coal_torch": "Fully original More Blocks torch2 PNG unchanged; native torch/wall model parents with project texture reference"
+}

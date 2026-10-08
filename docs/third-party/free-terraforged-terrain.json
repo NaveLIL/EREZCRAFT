@@ -1,0 +1,53 @@
+{
+  "project": "FreeTerraForged",
+  "source_commit": "c5d322f5e44539ca6d3a6059c5de440af9abcfe6",
+  "source_branch": "1.21.1",
+  "source_repository": "https://github.com/ETcodehome/FreeTerraForged",
+  "license": "MIT",
+  "license_file": "src/main/resources/META-INF/licenses/freeterraforged-terrain.txt",
+  "source_files": [
+    {
+      "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/NoiseUtil.java",
+      "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/NoiseUtil.java",
+      "sha256": "b4d63017feb1199d774f81398329cf27c355a342a976fb9f2a608222a75c8d38"
+    },
+    {
+      "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/module/Perlin.java",
+      "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/module/Perlin.java",
+      "sha256": "dde5eac727a6d2611a227c2f27588e5ae446f56bb4375da4b627d3801f8eae13"
+    },
+    {
+      "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/module/PerlinRidge.java",
+      "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/module/PerlinRidge.java",
+      "sha256": "0aad722b5e724e35d078a6a624317e5bcb5815b6e6730406cf6234b29bf9b05e"
+    },
+    {
+      "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/module/Alpha.java",
+      "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/module/Alpha.java",
+      "sha256": "941ce0a873f819793d279da1d41a149791d3c65867d481ae39f18d4c03edc203"
+    },
+    {
+      "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/domain/DomainWarp.java",
+      "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/noise/domain/DomainWarp.java",
+      "sha256": "0460d718a92af8f1cb56b70c7c60aef40217db263ccb93458e72810b898d2c78"
+    },
+    {
+      "path": "common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/terrain/Populators.java",
+      "url": "https://github.com/ETcodehome/FreeTerraForged/blob/c5d322f5e44539ca6d3a6059c5de440af9abcfe6/common/src/main/java/etcodehome/freeterraforged/world/worldgen/cell/terrain/Populators.java",
+      "sha256": "5f56cdc372e489e58d8b4fc19b03662ded18f28db75cd79afa538dc859d1a92d"
+    }
+  ],
+  "adapted_files": [
+    "src/main/java/pro/erez/interstice/worldgen/terrain/FreeTerraNoise.java"
+  ],
+  "adaptation": [
+    "Perlin interpolation/hash/gradient table and octave normalization, PerlinRidge feedback/spectral weighting, DomainWarp unit-to-signed offsets, Alpha and selected Populators.makeMountains/makePlains numerical compositions",
+    "Coordinates and intermediates use double; negative integer floor is corrected; all 64 world-seed bits select immutable fields",
+    "Selected scales and height/valley envelopes are tuned to the realm; pure numeric calls replace registry/codec/noise graph wrappers",
+    "No FTF runtime dependency, Overworld bootstrap, global preset state, tile caches, erosion, smoothing, vanilla biomes, or fluids"
+  ],
+  "new_project_code": [
+    "TerrainV2 climate blending, bounded heights and deterministic sparse ellipsoid floating-body field"
+  ],
+  "validation_note": "Numerical substrate reuse; native Minecraft integration and visual acceptance are verified separately by the project harness."
+}

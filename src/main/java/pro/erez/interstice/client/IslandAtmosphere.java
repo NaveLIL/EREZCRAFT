@@ -17,6 +17,8 @@ import org.joml.Matrix4f;
 import pro.erez.interstice.FluidContact;
 import pro.erez.interstice.Interstice;
 import pro.erez.interstice.worldgen.IslandWorld;
+import net.minecraft.client.renderer.FogRenderer;
+import net.minecraft.world.effect.MobEffects;
 
 /** An empty sky and black distance fog, scoped to the procedural island world. */
 @EventBusSubscriber(modid = Interstice.ID, value = Dist.CLIENT)
@@ -43,7 +45,17 @@ public final class IslandAtmosphere {
         if (camera.getFluidInCamera() != FogType.NONE || (!fluid.isEmpty()
                 && fluid.getType().getFluidType() != Interstice.LIGHT_TYPE.get()
                 && point.y < camera.getBlockPosition().getY() + fluid.getHeight(level, camera.getBlockPosition()))) return;
-        event.setRed(0); event.setGreen(0); event.setBlue(0);
+        if((level.dimension().equals(IslandWorld.LIVING_WORLD)||level.dimension().equals(IslandWorld.PREVIOUS_WORLD))&&camera.getEntity() instanceof net.minecraft.world.entity.LivingEntity entity&&entity.hasEffect(MobEffects.NIGHT_VISION)){
+            event.setRed(.055F);event.setGreen(.042F);event.setBlue(.062F);
+        }else{event.setRed(0);event.setGreen(0);event.setBlue(0);}
+    }
+    @SubscribeEvent public static void nightVisionDistance(ViewportEvent.RenderFog event){
+        var camera=event.getCamera();var level=camera.getEntity().level();
+        if(!(level.dimension().equals(IslandWorld.LIVING_WORLD)||level.dimension().equals(IslandWorld.PREVIOUS_WORLD))||event.getMode()!=FogRenderer.FogMode.FOG_TERRAIN||event.getType()!=FogType.NONE)return;
+        if(!(camera.getEntity() instanceof net.minecraft.world.entity.LivingEntity entity)||!entity.hasEffect(MobEffects.NIGHT_VISION))return;
+        var p=camera.getPosition();if(FluidContact.pointInLight(level,p.x,p.y,p.z)||!level.getFluidState(camera.getBlockPosition()).isEmpty())return;
+        float distance=net.minecraft.client.Minecraft.getInstance().options.renderDistance().get()*16F;
+        event.setNearPlaneDistance(distance*.92F);event.setFarPlaneDistance(distance);event.setCanceled(true);
     }
 
     public static final class BlackVoidEffects extends DimensionSpecialEffects {

@@ -1,0 +1,40 @@
+{
+  "generator": "tools/generate_surface_resources.py",
+  "operation": "Bijective colour palette substitution only; original coordinates,16x16 resolution and alpha preserved",
+  "pattern_and_alpha_verified": true,
+  "outputs": [
+    {
+      "output": "block/minerals/toxic_sand.png",
+      "source": "sand_ugly_2.png",
+      "file": "sand_ugly_2.png",
+      "sha256": "42536b97603b2ed9742f76759cf3a70a55f0074076fa77d8081c211f09d3a155",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "output_sha256": "5a31acdf9e6f3a4f9ef04268be8277d0d7e26d5593d17512a042b2cd153bd7b5"
+    },
+    {
+      "output": "block/minerals/mineral_frost.png",
+      "source": "snow.png",
+      "file": "snow.png",
+      "sha256": "87d2b6795de39b4597f4e4b52e30bdd31c153d38dfefcc5e29ecd4b23997e367",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "output_sha256": "96b9652aaba20f2090635b0bbefa67e5c8f2e6549c425cf642661ce1fc82c9dc"
+    },
+    {
+      "output": "block/minerals/mineral_powder.png",
+      "source": "gravel.png",
+      "file": "gravel.png",
+      "sha256": "74df0a9f7530526d197b90665b227055b3154d30e96afa82a20847959b84d28f",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "output_sha256": "6951ec7f12f6d4679f015f66bcbc7ea4a324df64b0b30eea4b1155778081be04"
+    }
+  ]
+}

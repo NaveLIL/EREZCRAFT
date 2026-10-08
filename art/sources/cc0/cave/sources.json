@@ -1,0 +1,29 @@
+{
+  "retrieved": "2026-10-08",
+  "sources": [
+    {
+      "file": "flower3.png",
+      "archive_sha256": "c4f90cc1c8d0c52e07513ce11508dd64f197e6ac407fa7d815fbaa4deeac4e6b",
+      "sha256": "d1c6e4dc32afb29e18240171434def8c501e5e85ea10348d7334b74462b004d7",
+      "source_url": "https://opengameart.org/content/plant-tileset",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "root1.png",
+      "archive_sha256": "c4f90cc1c8d0c52e07513ce11508dd64f197e6ac407fa7d815fbaa4deeac4e6b",
+      "sha256": "69d500742b28a06d56534400d8a4efbdb3443e9982db88dd49d813b248e2c6aa",
+      "source_url": "https://opengameart.org/content/plant-tileset",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "sandstone.png",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467",
+      "sha256": "b9805f993a80b3f3b0d88459f5f6a19cc69dd55d0fc3b47a3697d71cb70e0763",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0"
+    }
+  ]
+}

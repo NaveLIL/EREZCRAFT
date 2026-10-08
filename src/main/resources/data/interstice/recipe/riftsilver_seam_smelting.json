@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "interstice:riftsilver_seam"
+  },
+  "result": {
+    "id": "interstice:riftsilver_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

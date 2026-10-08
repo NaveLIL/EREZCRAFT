@@ -66,7 +66,7 @@ public final class IslandPreview {
         }
         if (mc.player == null || mc.level == null || mc.getConnection() == null || mc.screen != null) return;
         if (stage == 0) {
-            mc.getConnection().sendCommand("interstice explore");
+            mc.getConnection().sendCommand("interstice explore tall");
             stage = 1;
             return;
         }

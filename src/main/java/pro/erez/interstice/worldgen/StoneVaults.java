@@ -21,7 +21,9 @@ public final class StoneVaults {
     public static boolean isGround(BlockState state) {
         return state.is(Interstice.RIFTSTONE.get()) || state.is(Interstice.ABYSSAL_TURF.get())
                 || state.is(Interstice.RIFTSILVER_ORE.get()) || state.is(VaultMaterials.VAULTSTONE.get())
-                || state.is(VaultMaterials.WEATHERED_VAULTSTONE.get()) || state.is(GardenMaterials.PALESTONE.get());
+                || state.is(VaultMaterials.WEATHERED_VAULTSTONE.get()) || state.is(GardenMaterials.PALESTONE.get())
+                ||state.is(pro.erez.interstice.minerals.MineralEcology.ROOT_LOAM.get())||state.is(pro.erez.interstice.minerals.MineralEcology.RIFT_SHALE.get())
+                ||state.getBlock() instanceof pro.erez.interstice.minerals.RiftOreBlock;
     }
     public static Map<BlockPos, BlockState> plan(BlockPos root, int height, boolean alongX, int shape) {
         if (height < 5 || height > 7 || shape < 0 || shape > 2) throw new IllegalArgumentException("Invalid stone vault form");
@@ -42,6 +44,9 @@ public final class StoneVaults {
         plan.put(root.offset(x ? u : v, y, x ? v : u), (weathered ? VaultMaterials.WEATHERED_VAULTSTONE : VaultMaterials.VAULTSTONE).get().defaultBlockState());
     }
     public static boolean place(GeometryProfile profile, ChunkAccess chunk, BlockPos root, int height, boolean alongX, int shape) {
+        return place(profile,chunk,root,height,alongX,shape,profile.minLand());
+    }
+    private static boolean place(GeometryProfile profile,ChunkAccess chunk,BlockPos root,int height,boolean alongX,int shape,int minimum) {
         Map<BlockPos, BlockState> cells = plan(root, height, alongX, shape);
         // The whole walkable footprint must be supported, including the opening.
         for (int u = -4; u <= 4; u++) for (int v = -2; v <= 2; v++) {
@@ -50,7 +55,7 @@ public final class StoneVaults {
             int ground = -1;
             for (int dy = 1; dy <= 3; dy++) {
                 BlockPos p = foot.below(dy);
-                if (!IslandChunkGenerator.landAllowed(profile, p.getX(), p.getY(), p.getZ())) return false;
+                if (!IslandChunkGenerator.featureAllowed(profile, p.getX(), p.getY(), p.getZ(),minimum)) return false;
                 var existing = chunk.getBlockState(p);
                 if (isGround(existing)) { ground = dy; break; }
                 if (!existing.isAir()) return false;
@@ -64,7 +69,7 @@ public final class StoneVaults {
             }
         }
         for (BlockPos p : cells.keySet()) if (!inside(chunk, p)
-                || !IslandChunkGenerator.landAllowed(profile, p.getX(), p.getY(), p.getZ())
+                || !IslandChunkGenerator.featureAllowed(profile, p.getX(), p.getY(), p.getZ(),minimum)
                 || !chunk.getBlockState(p).isAir()) return false;
         cells.forEach((p, state) -> chunk.setBlockState(p, state, false));
         return true;
@@ -74,26 +79,32 @@ public final class StoneVaults {
                 && p.getZ() >= chunk.getPos().getMinBlockZ() && p.getZ() <= chunk.getPos().getMaxBlockZ();
     }
     public static boolean generate(GeometryProfile profile, ChunkAccess chunk, long seed) {
+        return generate(profile,chunk,seed,profile.minLand());
+    }
+    public static boolean generate(GeometryProfile profile,ChunkAccess chunk,long seed,int minimum) {
         var random = random(seed, chunk.getPos().x, chunk.getPos().z);
         if (random.nextInt(4) != 0) return false;
         int height = 5 + random.nextInt(3), shape = random.nextInt(3);
         boolean alongX = random.nextBoolean();
         BlockPos center = new BlockPos(chunk.getPos().getMinBlockX() + 7, 0, chunk.getPos().getMinBlockZ() + 7);
         // Work top-down, but try every exposed tier: high islands can have insufficient headroom.
-        for (int y = profile.maxLand(); y >= profile.minLand(); y--) {
+        for (int y = profile.maxLand(); y >= minimum; y--) {
             BlockPos ground = center.atY(y);
             if (!isGround(chunk.getBlockState(ground)) || !chunk.getBlockState(ground.above()).isAir()
                     || !RealmBiomes.isVault(chunk, ground)) continue;
-            if (place(profile, chunk, ground.above(), height, alongX, shape)) return true;
+            if (place(profile, chunk, ground.above(), height, alongX, shape,minimum)) return true;
         }
         return false;
     }
     public static void geologicalSurface(GeometryProfile profile, ChunkAccess chunk, long seed) {
+        geologicalSurface(profile,chunk,seed,profile.minLand());
+    }
+    public static void geologicalSurface(GeometryProfile profile,ChunkAccess chunk,long seed,int minimum) {
         var pos = new BlockPos.MutableBlockPos();
         int startX = chunk.getPos().getMinBlockX(), startZ = chunk.getPos().getMinBlockZ();
         for (int x = startX; x < startX + 16; x++) for (int z = startZ; z < startZ + 16; z++) {
             int depth = 0;
-            for (int y = profile.maxLand(); y >= profile.minLand(); y--) {
+            for (int y = profile.maxLand(); y >= minimum; y--) {
                 pos.set(x, y, z);
                 var state = chunk.getBlockState(pos);
                 if (state.isAir()) { depth = 0; continue; }

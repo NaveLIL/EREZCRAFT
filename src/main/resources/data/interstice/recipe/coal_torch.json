@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "B",
+    "S"
+  ],
+  "key": {
+    "B": {
+      "item": "interstice:umbral_coal"
+    },
+    "S": {
+      "item": "interstice:world_stick"
+    }
+  },
+  "result": {
+    "id": "interstice:coal_torch",
+    "count": 4
+  }
+}

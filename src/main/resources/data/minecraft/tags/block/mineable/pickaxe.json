@@ -26,6 +26,9 @@
     "interstice:palestone_bricks",
     "interstice:palestone_slab",
     "interstice:palestone_stairs",
-    "interstice:palestone_wall"
+    "interstice:palestone_wall",
+    "#interstice:cave_spires",
+    "#interstice:mineral_ores",
+    "interstice:rift_shale"
   ]
 }

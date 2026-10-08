@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkAccess;
+import net.minecraft.world.level.LevelReader;
 import pro.erez.interstice.Interstice;
 import pro.erez.interstice.geometry.GeometryProfile;
 
@@ -98,7 +99,7 @@ public final class GloomcrownTree {
         if (!fits(tree, level::getBlockState, pos -> level.hasChunkAt(pos)
                 && !level.isOutsideBuildHeight(pos)
                 && (!(generator instanceof IslandChunkGenerator islands)
-                    || IslandChunkGenerator.landAllowed(islands.geometry(), pos.getX(), pos.getY(), pos.getZ())), root)) return false;
+                    || IslandChunkGenerator.featureAllowed(level,islands.geometry(), pos.getX(), pos.getY(), pos.getZ())), root)) return false;
         tree.forEach((pos, state) -> level.setBlock(pos, state, 3));
         return true;
     }
@@ -123,6 +124,27 @@ public final class GloomcrownTree {
                 }
             }
             break;
+        }
+    }
+    /** V3 uses the same historical forms with properly mixed seeds and globally coherent grove edges. */
+    public static void generate(GeometryProfile profile,ChunkAccess chunk,long seed,LevelReader level) {
+        if(!GardenTrees.modernForest(level)){generate(profile,chunk,seed);return;}
+        for(var candidate:ForestDistribution.candidates(seed,chunk.getPos().x,chunk.getPos().z,ForestDistribution.Kind.GLOOMCROWN,3,1)) {
+            var random=RandomSource.create(candidate.treeSeed());
+            int height=5+random.nextInt(3),shape=random.nextInt(3);boolean alongX=random.nextBoolean();
+            var footprint=plan(BlockPos.ZERO,height,alongX,shape);
+            int minX=footprint.keySet().stream().mapToInt(BlockPos::getX).min().orElse(0),maxX=footprint.keySet().stream().mapToInt(BlockPos::getX).max().orElse(0);
+            int minZ=footprint.keySet().stream().mapToInt(BlockPos::getZ).min().orElse(0),maxZ=footprint.keySet().stream().mapToInt(BlockPos::getZ).max().orElse(0);
+            int x=chunk.getPos().getMinBlockX()+candidate.localX(-minX,15-maxX),z=chunk.getPos().getMinBlockZ()+candidate.localZ(-minZ,15-maxZ);
+            for(int y=profile.maxLand();y>=IslandChunkGenerator.featureMinimum(level,profile);y--) {
+                var ground=new BlockPos(x,y,z);var existing=chunk.getBlockState(ground);if(existing.isAir())continue;
+                if(existing.is(Interstice.ABYSSAL_TURF.get())) {
+                    var root=ground.above();var tree=plan(root,height,alongX,shape);
+                    if(fits(tree,chunk::getBlockState,p->(p.getX()>>4)==chunk.getPos().x&&(p.getZ()>>4)==chunk.getPos().z
+                            &&IslandChunkGenerator.featureAllowed(level,profile,p.getX(),p.getY(),p.getZ()),root))tree.forEach((p,s)->chunk.setBlockState(p,s,false));
+                }
+                break;
+            }
         }
     }
 }

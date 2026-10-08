@@ -13,7 +13,7 @@ import verify
 
 
 class VerificationResultTests(unittest.TestCase):
-    def exercise(self, task, log="", result=None, spawn_error=None):
+    def exercise(self, task, log="", result=None, spawn_error=None, before=None, after=None, active=()):
         with tempfile.TemporaryDirectory(prefix="interstice-verifier-test-") as directory:
             root = Path(directory)
 
@@ -31,12 +31,16 @@ class VerificationResultTests(unittest.TestCase):
                 kwargs["stdout"].write(log)
                 if result is not None:
                     evidence = next((root / ".verification").iterdir())
-                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke", "runCrownFoodSmoke"):
-                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute", "runVaultPersistenceSmoke": "vaultPersistence", "runGardenPersistenceSmoke": "gardenPersistence", "runCrownFoodSmoke":"crownFood"}[task]
+                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke", "runCrownFoodSmoke", "runLivingRealmSmoke", "runMiningSmoke"):
+                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute", "runVaultPersistenceSmoke": "vaultPersistence", "runGardenPersistenceSmoke": "gardenPersistence", "runCrownFoodSmoke":"crownFood","runLivingRealmSmoke":"livingRealm", "runMiningSmoke":"miningSmoke"}[task]
                         destination = evidence / "profiles" / profile
                         destination.mkdir(parents=True)
                         for name, value in result.items():
                             (destination / name).write_text(json.dumps(value), encoding="utf-8")
+                    elif task == 'runHydrologySmoke':
+                        destination = evidence / 'profiles/hydrologySmoke'
+                        destination.mkdir(parents=True)
+                        (destination / 'hydrology-validation.json').write_text(json.dumps(result), encoding='utf-8')
                     else:
                         destination = evidence / "profiles/islandSmoke"
                         destination.mkdir(parents=True)
@@ -49,7 +53,8 @@ class VerificationResultTests(unittest.TestCase):
                 return b""
 
             caught = None
-            with patch.object(verify, "ROOT", root), patch.object(verify, "saves", return_value={}), \
+            with patch.object(verify, "ROOT", root), patch.object(verify, "saves", side_effect=[before or {}, after or {}]), \
+                    patch.object(verify, "active_worlds", return_value=list(active)), \
                     patch.object(verify.subprocess, "check_output", side_effect=output), \
                     patch.object(verify.subprocess, "Popen", side_effect=spawn), \
                     patch.dict(verify.os.environ, {"JAVA_HOME": "/fixture/jdk"}), \
@@ -62,6 +67,24 @@ class VerificationResultTests(unittest.TestCase):
                     code = None
             evidence = next((root / ".verification").iterdir())
             return code, caught, json.loads((evidence / "summary.json").read_text(encoding="utf-8"))
+
+    def test_active_user_world_is_reported_without_false_unchanged_claim(self):
+        key='build/playtest/saves/owned/level.dat'
+        code,_,summary=self.exercise('build',log='All 80 required tests passed :)\n',before={key:1},after={key:2},active=['build/playtest/saves/owned'])
+        self.assertEqual(code,0)
+        self.assertIsNone(summary['saves_unchanged'])
+        self.assertTrue(summary['inactive_saves_unchanged'])
+
+    def test_active_world_does_not_exempt_another_protected_save(self):
+        key='build/playtest/saves/other/level.dat'
+        code,_,summary=self.exercise('build',log='All 80 required tests passed :)\n',before={key:1},after={key:2},active=['build/playtest/saves/owned'])
+        self.assertEqual(code,1)
+        self.assertFalse(summary['inactive_saves_unchanged'])
+
+    def test_inactive_save_change_still_rejects_checks(self):
+        code,_,summary=self.exercise('build',log='All 80 required tests passed :)\n',before={'run/world/level.dat':1},after={'run/world/level.dat':2})
+        self.assertEqual(code,1)
+        self.assertFalse(summary['saves_unchanged'])
 
     def test_windows_uses_direct_java_wrapper(self):
         with patch.object(verify.sys, "platform", "win32"):
@@ -89,6 +112,26 @@ class VerificationResultTests(unittest.TestCase):
             with self.subTest(result=result):
                 code, _, _ = self.exercise("runCrownFoodSmoke", result=result)
                 self.assertEqual(code, expected)
+
+    def test_living_realm_requires_real_cold_restart(self):
+        for result, expected in (({"living-create-validation.json":{"passed":True}},1),
+                                 ({"living-create-validation.json":{"passed":True},"living-reload-validation.json":{"passed":False}},1),
+                                 ({"living-create-validation.json":{"passed":True},"living-reload-validation.json":{"passed":True}},0)):
+            with self.subTest(result=result):
+                code, _, _ = self.exercise("runLivingRealmSmoke",result=result)
+                self.assertEqual(code,expected)
+
+    def test_living_and_ecology_require_executed_gametests(self):
+        for task in ('runLivingGameTestServer','runEcologyGameTestServer','runMiningGameTestServer'):
+            self.assertEqual(self.exercise(task,log='BUILD SUCCESSFUL\n')[0],1)
+            self.assertEqual(self.exercise(task,log='All 6 required tests passed :)\n')[0],0)
+
+    def test_mining_requires_both_cold_restart_reports(self):
+        for reports, expected in (({'mining-create-validation.json':{'passed':True}},1),
+                                  ({'mining-create-validation.json':{'passed':True},'mining-reload-validation.json':{'passed':False}},1),
+                                  ({'mining-create-validation.json':{'passed':True},'mining-reload-validation.json':{'passed':True}},0)):
+            with self.subTest(reports=reports):
+                self.assertEqual(self.exercise('runMiningSmoke',result=reports)[0],expected)
 
     def test_garden_cold_restart_requires_both_reports(self):
         for reports, expected in (({"garden-create-validation.json": {"passed": True}}, 1),
@@ -151,6 +194,11 @@ class VerificationResultTests(unittest.TestCase):
         code, _, summary = self.exercise("runRiftGameTestServer", log="BUILD SUCCESSFUL\n")
         self.assertEqual(code, 1)
         self.assertFalse(summary["passed"])
+
+    def test_hydrology_requires_positive_native_report(self):
+        for report, expected in ((None,1),({'passed':False},1),({'passed':True},0)):
+            with self.subTest(report=report):
+                self.assertEqual(self.exercise('runHydrologySmoke',result=report)[0],expected)
 
     def test_rift_restart_missing_second_validation_is_rejected(self):
         code, _, summary = self.exercise("runRiftPersistenceSmoke", result={"rift-create-validation.json": {"passed": True}})

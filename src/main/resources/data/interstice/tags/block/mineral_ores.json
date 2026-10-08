@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:riftsilver_seam",
+    "interstice:umbral_coal_ore",
+    "interstice:phosphorite_ore",
+    "interstice:vitriolite_ore"
+  ]
+}

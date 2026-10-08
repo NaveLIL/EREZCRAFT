@@ -234,7 +234,7 @@ public final class TideManager {
 
         GeometryProfile profile = GeometryProfiles.get(level);
         int maxLand = profile.maxLand();
-        int minLand = profile.minLand();
+        int minLand = IslandChunkGenerator.featureMinimum(level,profile);
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
 
         for (int y = maxLand; y >= minLand; y--) {

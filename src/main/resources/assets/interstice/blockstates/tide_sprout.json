@@ -1,172 +1,340 @@
 {
   "variants": {
-    "bloomed=false,height=0,section=0": {
+    "bloomed=false,harvested=false,height=0,section=0": {
       "model": "interstice:block/tide_sprout_bud"
     },
-    "bloomed=false,height=1,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=false,height=2,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=false,height=3,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=false,height=4,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=false,height=5,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=false,height=6,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=true,height=0,section=0": {
-      "model": "interstice:block/tide_sprout_flower"
-    },
-    "bloomed=true,height=1,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=true,height=2,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=true,height=3,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=true,height=4,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=true,height=5,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=true,height=6,section=0": {
-      "model": "interstice:block/tide_sprout_root"
-    },
-    "bloomed=false,height=0,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=false,height=1,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=false,height=2,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=false,height=3,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=false,height=4,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=false,height=5,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=false,height=6,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=true,height=0,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=true,height=1,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=true,height=2,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=true,height=3,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=true,height=4,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=true,height=5,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=true,height=6,section=1": {
-      "model": "interstice:block/tide_sprout_stem"
-    },
-    "bloomed=false,height=0,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=false,height=1,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=false,height=2,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=false,height=3,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=false,height=4,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=false,height=5,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=false,height=6,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=true,height=0,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=true,height=1,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=true,height=2,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=true,height=3,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=true,height=4,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=true,height=5,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=true,height=6,section=2": {
-      "model": "interstice:block/tide_sprout_stem_leaf"
-    },
-    "bloomed=false,height=0,section=3": {
+    "bloomed=false,harvested=true,height=0,section=0": {
       "model": "interstice:block/tide_sprout_bud"
     },
-    "bloomed=false,height=1,section=3": {
+    "bloomed=false,harvested=false,height=1,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=true,height=1,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=false,height=2,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=true,height=2,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=false,height=3,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=true,height=3,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=false,height=4,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=true,height=4,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=false,height=5,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=true,height=5,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=false,height=6,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=true,height=6,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=false,height=0,section=0": {
+      "model": "interstice:block/tide_sprout_flower"
+    },
+    "bloomed=true,harvested=true,height=0,section=0": {
+      "model": "interstice:block/tide_sprout_flower_harvested"
+    },
+    "bloomed=true,harvested=false,height=1,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=true,height=1,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=false,height=2,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=true,height=2,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=false,height=3,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=true,height=3,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=false,height=4,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=true,height=4,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=false,height=5,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=true,height=5,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=false,height=6,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=true,harvested=true,height=6,section=0": {
+      "model": "interstice:block/tide_sprout_root"
+    },
+    "bloomed=false,harvested=false,height=0,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=true,height=0,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=false,height=1,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=true,height=1,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=false,height=2,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=true,height=2,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=false,height=3,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=true,height=3,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=false,height=4,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=true,height=4,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=false,height=5,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=true,height=5,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=false,height=6,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=true,height=6,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=false,height=0,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=true,height=0,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=false,height=1,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=true,height=1,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=false,height=2,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=true,height=2,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=false,height=3,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=true,height=3,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=false,height=4,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=true,height=4,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=false,height=5,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=true,height=5,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=false,height=6,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=true,harvested=true,height=6,section=1": {
+      "model": "interstice:block/tide_sprout_stem"
+    },
+    "bloomed=false,harvested=false,height=0,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=true,height=0,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=false,height=1,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=true,height=1,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=false,height=2,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=true,height=2,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=false,height=3,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=true,height=3,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=false,height=4,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=true,height=4,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=false,height=5,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=true,height=5,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=false,height=6,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=true,height=6,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=false,height=0,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=true,height=0,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=false,height=1,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=true,height=1,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=false,height=2,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=true,height=2,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=false,height=3,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=true,height=3,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=false,height=4,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=true,height=4,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=false,height=5,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=true,height=5,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=false,height=6,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=true,harvested=true,height=6,section=2": {
+      "model": "interstice:block/tide_sprout_stem_leaf"
+    },
+    "bloomed=false,harvested=false,height=0,section=3": {
       "model": "interstice:block/tide_sprout_bud"
     },
-    "bloomed=false,height=2,section=3": {
+    "bloomed=false,harvested=true,height=0,section=3": {
       "model": "interstice:block/tide_sprout_bud"
     },
-    "bloomed=false,height=3,section=3": {
+    "bloomed=false,harvested=false,height=1,section=3": {
       "model": "interstice:block/tide_sprout_bud"
     },
-    "bloomed=false,height=4,section=3": {
+    "bloomed=false,harvested=true,height=1,section=3": {
       "model": "interstice:block/tide_sprout_bud"
     },
-    "bloomed=false,height=5,section=3": {
+    "bloomed=false,harvested=false,height=2,section=3": {
       "model": "interstice:block/tide_sprout_bud"
     },
-    "bloomed=false,height=6,section=3": {
+    "bloomed=false,harvested=true,height=2,section=3": {
       "model": "interstice:block/tide_sprout_bud"
     },
-    "bloomed=true,height=0,section=3": {
+    "bloomed=false,harvested=false,height=3,section=3": {
+      "model": "interstice:block/tide_sprout_bud"
+    },
+    "bloomed=false,harvested=true,height=3,section=3": {
+      "model": "interstice:block/tide_sprout_bud"
+    },
+    "bloomed=false,harvested=false,height=4,section=3": {
+      "model": "interstice:block/tide_sprout_bud"
+    },
+    "bloomed=false,harvested=true,height=4,section=3": {
+      "model": "interstice:block/tide_sprout_bud"
+    },
+    "bloomed=false,harvested=false,height=5,section=3": {
+      "model": "interstice:block/tide_sprout_bud"
+    },
+    "bloomed=false,harvested=true,height=5,section=3": {
+      "model": "interstice:block/tide_sprout_bud"
+    },
+    "bloomed=false,harvested=false,height=6,section=3": {
+      "model": "interstice:block/tide_sprout_bud"
+    },
+    "bloomed=false,harvested=true,height=6,section=3": {
+      "model": "interstice:block/tide_sprout_bud"
+    },
+    "bloomed=true,harvested=false,height=0,section=3": {
       "model": "interstice:block/tide_sprout_flower"
     },
-    "bloomed=true,height=1,section=3": {
+    "bloomed=true,harvested=true,height=0,section=3": {
+      "model": "interstice:block/tide_sprout_flower_harvested"
+    },
+    "bloomed=true,harvested=false,height=1,section=3": {
       "model": "interstice:block/tide_sprout_flower"
     },
-    "bloomed=true,height=2,section=3": {
+    "bloomed=true,harvested=true,height=1,section=3": {
+      "model": "interstice:block/tide_sprout_flower_harvested"
+    },
+    "bloomed=true,harvested=false,height=2,section=3": {
       "model": "interstice:block/tide_sprout_flower"
     },
-    "bloomed=true,height=3,section=3": {
+    "bloomed=true,harvested=true,height=2,section=3": {
+      "model": "interstice:block/tide_sprout_flower_harvested"
+    },
+    "bloomed=true,harvested=false,height=3,section=3": {
       "model": "interstice:block/tide_sprout_flower"
     },
-    "bloomed=true,height=4,section=3": {
+    "bloomed=true,harvested=true,height=3,section=3": {
+      "model": "interstice:block/tide_sprout_flower_harvested"
+    },
+    "bloomed=true,harvested=false,height=4,section=3": {
       "model": "interstice:block/tide_sprout_flower"
     },
-    "bloomed=true,height=5,section=3": {
+    "bloomed=true,harvested=true,height=4,section=3": {
+      "model": "interstice:block/tide_sprout_flower_harvested"
+    },
+    "bloomed=true,harvested=false,height=5,section=3": {
       "model": "interstice:block/tide_sprout_flower"
     },
-    "bloomed=true,height=6,section=3": {
+    "bloomed=true,harvested=true,height=5,section=3": {
+      "model": "interstice:block/tide_sprout_flower_harvested"
+    },
+    "bloomed=true,harvested=false,height=6,section=3": {
       "model": "interstice:block/tide_sprout_flower"
+    },
+    "bloomed=true,harvested=true,height=6,section=3": {
+      "model": "interstice:block/tide_sprout_flower_harvested"
     }
   }
 }

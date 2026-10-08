@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "B",
+    "S"
+  ],
+  "key": {
+    "B": {
+      "item": "interstice:luminous_bud"
+    },
+    "S": {
+      "item": "interstice:world_stick"
+    }
+  },
+  "result": {
+    "id": "interstice:living_torch",
+    "count": 1
+  }
+}

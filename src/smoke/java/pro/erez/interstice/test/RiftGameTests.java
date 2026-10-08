@@ -114,7 +114,7 @@ public final class RiftGameTests {
         ServerPlayer player = player(h, ROOT);
         try {
             h.assertTrue(RiftTravel.enter(player, frame.endpoint(h.getLevel()), RiftLinks.Kind.PORTAL), "Portal must enter without commands");
-            h.assertTrue(player.level().dimension().equals(IslandWorld.TALL_WORLD), "New entrances must use tall islands");
+            h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD), "New entrances must use tall islands");
             h.assertTrue(ShelterDetector.isSheltered(player.level(), player), "First landing must have a roof against the tide");
             var link = RiftLinks.get(player.server).byId(player.getPersistentData().getUUID(RiftTravel.ACTIVE));
             h.assertTrue(!RiftTravel.returnThroughEcho(player, link.echo().pos()), "Immediate bounce must be blocked");
@@ -160,7 +160,7 @@ public final class RiftGameTests {
             h.assertTrue(RiftTravel.enter(player, frame.endpoint(h.getLevel()), RiftLinks.Kind.PORTAL), "Initial connection must succeed");
             var link = RiftLinks.get(player.server).byId(player.getPersistentData().getUUID(RiftTravel.ACTIVE));
             h.getLevel().removeBlock(frame.at(-1, 1), false); player.getPersistentData().remove(RiftTravel.COOLDOWN);
-            h.assertTrue(!RiftTravel.returnThroughEcho(player, link.echo().pos()) && player.level().dimension().equals(IslandWorld.TALL_WORLD), "A broken source must not produce an unsafe return");
+            h.assertTrue(!RiftTravel.returnThroughEcho(player, link.echo().pos()) && player.level().dimension().equals(IslandWorld.LIVING_WORLD), "A broken source must not produce an unsafe return");
             h.getLevel().setBlock(frame.at(-1, 1), Interstice.RIFT_FRAME.get().defaultBlockState(), 3);
             RiftGeometry.activate(h.getLevel(), frame.at(-1, 1));
             h.assertTrue(RiftTravel.returnThroughEcho(player, link.echo().pos()), "Repair must reuse the existing saved connection");
@@ -179,7 +179,7 @@ public final class RiftGameTests {
         } catch (Throwable error) { remove(player); throw error; }
         finally { h.getLevel().setWeatherParameters(0, 0, false, false); h.getLevel().setRainLevel(0); h.getLevel().setThunderLevel(0); }
         h.runAtTickTime(40, () -> {
-            try { h.assertTrue(player.level().dimension().equals(IslandWorld.TALL_WORLD), "Queued catch must enter the realm"); h.succeed(); }
+            try { h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD), "Queued catch must enter the realm"); h.succeed(); }
             finally { remove(player); }
         });
     }
@@ -192,7 +192,7 @@ public final class RiftGameTests {
         var event = new ItemFishedEvent(List.of(new ItemStack(Items.COD, 2)), 1, hook); NeoForge.EVENT_BUS.post(event);
         h.assertTrue(!event.isCanceled() && event.getDrops().getFirst().is(Items.COD) && event.getDrops().getFirst().getCount() == 2 && event.getRodDamage() == 1, "The anomaly must preserve vanilla loot and rod wear");
         h.assertTrue(player.serverLevel() == h.getLevel(), "The event must finish before transfer");
-        h.runAtTickTime(40, () -> { try { h.assertTrue(player.level().dimension().equals(IslandWorld.TALL_WORLD), "Lens must make a successful catch repeatable without a storm"); h.succeed(); } finally { remove(player); } });
+        h.runAtTickTime(40, () -> { try { h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD), "Lens must make a successful catch repeatable without a storm"); h.succeed(); } finally { remove(player); } });
     }
     @GameTest(template = "empty", timeoutTicks = 300)
     public static void cauldronKeepsVanillaBucketPickupBeforeTransfer(GameTestHelper h) {
@@ -204,7 +204,7 @@ public final class RiftGameTests {
         CauldronInteraction.WATER.map().get(Items.BUCKET).interact(full, h.getLevel(), pos, player, InteractionHand.MAIN_HAND, player.getMainHandItem());
         h.assertTrue(player.serverLevel() == h.getLevel(), "Vanilla cauldron operation must finish first");
         h.runAtTickTime(40, () -> { try {
-            h.assertTrue(player.level().dimension().equals(IslandWorld.TALL_WORLD), "Cauldron must transfer after pickup");
+            h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD), "Cauldron must transfer after pickup");
             h.assertTrue(player.getMainHandItem().is(Items.WATER_BUCKET) || player.getInventory().contains(new ItemStack(Items.WATER_BUCKET)), "Collected water must remain in the inventory");
             h.succeed();
         } finally { remove(player); } });

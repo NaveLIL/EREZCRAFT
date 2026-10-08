@@ -14,8 +14,8 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED = {"build", "runGameTestServer", "runIslandSmoke", "runTallIslandSmoke", "runGeometrySmoke",
            "runPersistenceSmoke", "runInfectionGameTestServer", "runRiftGameTestServer", "runRiftPersistenceSmoke",
-           "runExpeditionGameTestServer", "runKeyPersistenceSmoke", "runWatchpostSmoke", "runWatchpostPersistenceSmoke",
-           "runSurvivalPreparationSmoke", "runVaultGameTestServer", "runVaultPersistenceSmoke", "runGardenGameTestServer", "runGardenPersistenceSmoke", "runFoodGameTestServer", "runCrownFoodSmoke"}
+           "runExpeditionGameTestServer", "runKeyPersistenceSmoke", "runWatchpostSmoke", "runWatchpostPersistenceSmoke", "runLivingGameTestServer", "runEcologyGameTestServer", "runMiningGameTestServer", "runLivingRealmSmoke",
+           "runSurvivalPreparationSmoke", "runVaultGameTestServer", "runVaultPersistenceSmoke", "runGardenGameTestServer", "runGardenPersistenceSmoke", "runFoodGameTestServer", "runCrownFoodSmoke", "runMiningSmoke", "runHydrologySmoke"}
 SAVED_ROOTS = ("run/world", "build/playtest/saves", "build/island-smoke/saves/seeded-island-check",
                "build/client-smoke/saves/fluid-chaotic-check",
                "build/client-smoke/saves/fluid-relief-check",
@@ -33,7 +33,20 @@ def checksum(path):
 def saves():
     return {str(p.relative_to(ROOT)): {"bytes": p.stat().st_size, "mtime_ns": p.stat().st_mtime_ns,
                                       "sha256": checksum(p)}
-            for root in SAVED_ROOTS for p in sorted((ROOT / root).rglob("*")) if p.is_file()}
+            for root in SAVED_ROOTS for p in sorted((ROOT / root).rglob("*")) if p.is_file() and p.name != "session.lock"}
+
+
+def active_worlds():
+    """Windows Minecraft exclusively locks session.lock; never close that user's game."""
+    active = []
+    for root in SAVED_ROOTS:
+        for lock in (ROOT / root).rglob("session.lock"):
+            try:
+                with lock.open("rb") as stream:
+                    stream.read(1)
+            except PermissionError:
+                active.append(lock.parent.relative_to(ROOT).as_posix())
+    return sorted(set(active))
 
 
 def write(path, data):
@@ -55,6 +68,7 @@ def main():
         env["JAVA_HOME"] = subprocess.check_output(["/usr/libexec/java_home", "-v", "21"], text=True).strip()
     if env.get("JAVA_HOME"):
         env["PATH"] = os.path.join(env["JAVA_HOME"], "bin") + os.pathsep + env.get("PATH", "")
+    active_before = active_worlds()
     before = saves()
     write(evidence / "saves-before.json", before)
     tracked = subprocess.check_output(["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"], cwd=ROOT)
@@ -87,13 +101,13 @@ def main():
             record.update(exit_code=code, duration_seconds=round(time.monotonic() - started, 3),
                           ended_utc=dt.datetime.now(dt.timezone.utc).isoformat())
             accepted = code == 0
-            if code == 0 and task in ("build", "runGameTestServer", "runInfectionGameTestServer", "runRiftGameTestServer", "runExpeditionGameTestServer", "runVaultGameTestServer", "runGardenGameTestServer", "runFoodGameTestServer"):
+            if code == 0 and task in ("build", "runGameTestServer", "runInfectionGameTestServer", "runRiftGameTestServer", "runExpeditionGameTestServer", "runVaultGameTestServer", "runGardenGameTestServer", "runFoodGameTestServer", "runLivingGameTestServer", "runEcologyGameTestServer", "runMiningGameTestServer"):
                 log = (evidence / (task + ".log")).read_text(encoding="utf-8", errors="replace")
                 groups = [int(count) for count in re.findall(r"All ([1-9][0-9]*) required tests passed", log)]
                 record["required_test_groups"] = groups
                 record["required_tests_passed"] = sum(groups)
                 accepted = bool(groups)
-            if code == 0 and task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke", "runCrownFoodSmoke"):
+            if code == 0 and task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke", "runCrownFoodSmoke", "runLivingRealmSmoke", "runMiningSmoke"):
                 record["validations"] = {}
                 prefix, profile = {"runRiftPersistenceSmoke": ("rift", "riftPersistence"),
                                    "runKeyPersistenceSmoke": ("key", "keyPersistence"),
@@ -101,7 +115,7 @@ def main():
                                    "runSurvivalPreparationSmoke": ("survival", "survivalRoute"),
                                    "runVaultPersistenceSmoke": ("vault", "vaultPersistence"),
                                    "runGardenPersistenceSmoke": ("garden", "gardenPersistence"),
-                                   "runCrownFoodSmoke": ("crown", "crownFood")}[task]
+                                   "runCrownFoodSmoke": ("crown", "crownFood"), "runLivingRealmSmoke":("living","livingRealm"), "runMiningSmoke": ("mining", "miningSmoke")}[task]
                 names = ("survival-preparation.json", "survival-equipment.json") if task == "runSurvivalPreparationSmoke" else (prefix + "-create-validation.json", prefix + "-reload-validation.json")
                 for name in names:
                     result_path = evidence / "profiles" / profile / name
@@ -111,13 +125,13 @@ def main():
                         accepted = accepted and result.get("passed") is True
                     except (OSError, ValueError) as error:
                         record["validation_error"] = str(error); accepted = False
-            if code == 0 and task in ("runIslandSmoke", "runTallIslandSmoke", "runGeometrySmoke", "runPersistenceSmoke", "runInfectionGameTestServer", "runWatchpostSmoke"):
+            if code == 0 and task in ("runIslandSmoke", "runTallIslandSmoke", "runGeometrySmoke", "runPersistenceSmoke", "runInfectionGameTestServer", "runWatchpostSmoke", "runHydrologySmoke"):
                 paths = {"runIslandSmoke": ("islandSmoke", "island-validation.json"),
                          "runTallIslandSmoke": ("tallIslandSmoke", "island-validation.json"),
                          "runGeometrySmoke": ("geometrySmoke", "geometry-validation.json"),
                          "runPersistenceSmoke": ("persistenceSmoke", "persistence-validation.json"),
                          "runInfectionGameTestServer": ("infectionGameTestServer", "infection-baseline.json"),
-                         "runWatchpostSmoke": ("watchpostSmoke", "watchpost-validation.json")}
+                         "runWatchpostSmoke": ("watchpostSmoke", "watchpost-validation.json"), "runHydrologySmoke":("hydrologySmoke","hydrology-validation.json")}
                 run, name = paths[task]
                 result_path = evidence / "profiles" / run / name
                 record["validation_file"] = str(result_path)
@@ -141,13 +155,23 @@ def main():
         raise
     finally:
         after = saves()
-        unchanged = before == after
+        active = sorted(set(active_before + active_worlds()))
+        differences = [p for p in sorted(before.keys() | after.keys()) if before.get(p) != after.get(p)]
+        def user_active(path):
+            normalized = path.replace("\\", "/")
+            return any(normalized.startswith(world + "/") for world in active)
+        protected_differences = [p for p in differences if not user_active(p)]
+        unchanged = before == after if not active else None
+        protected_unchanged = not protected_differences
         write(evidence / "saves-verification.json", {"unchanged": unchanged, "files": len(before),
-              "differences": [p for p in sorted(before.keys() | after.keys()) if before.get(p) != after.get(p)]})
-        success = success and unchanged
+              "active_user_worlds": active, "inactive_saves_unchanged": protected_unchanged,
+              "differences": differences, "inactive_differences": protected_differences,
+              "note": "Active user worlds are externally changing; no immutability claim is made for them. Tests run only in the new evidence profile." if active else None})
+        success = success and protected_unchanged
         write(evidence / "summary.json", {"passed": success, "source_commit": head, "tasks": args.tasks,
               "completed_tasks": completed, "failure": failure,
-              "saves_unchanged": unchanged, "evidence": str(evidence)})
+              "saves_unchanged": unchanged, "inactive_saves_unchanged": protected_unchanged,
+              "active_user_worlds": active, "evidence": str(evidence)})
     return 0 if success else 1
 
 

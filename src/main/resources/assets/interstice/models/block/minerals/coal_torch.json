@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/torch",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "torch": "interstice:block/minerals/coal_torch"
+  }
+}

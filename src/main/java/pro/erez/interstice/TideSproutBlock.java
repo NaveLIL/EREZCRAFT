@@ -43,6 +43,7 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
     public static final IntegerProperty SECTION = IntegerProperty.create("section", 0, 3);
     public static final BooleanProperty BLOOMED = BooleanProperty.create("bloomed");
     public static final IntegerProperty HEIGHT = IntegerProperty.create("height", 0, 6);
+    public static final BooleanProperty HARVESTED = BooleanProperty.create("harvested");
     private record Mutation(Level level, BlockPos root) {}
     private static final ThreadLocal<Mutation> MUTATION = new ThreadLocal<>();
 
@@ -60,17 +61,18 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
                 .sound(SoundType.WET_GRASS)
                 .noCollission()
                 .instabreak()
-                .lightLevel(s -> !s.getValue(BLOOMED) ? 0 : switch (s.getValue(SECTION)) { case 3 -> 14; case 0 -> 7; default -> 5; })
+                .lightLevel(s -> !s.getValue(BLOOMED) ? 0 : switch (s.getValue(SECTION)) { case 3 -> s.getValue(HARVESTED) ? 0 : 14; case 0 -> 7; default -> 5; })
                 .randomTicks());
         registerDefaultState(stateDefinition.any()
                 .setValue(SECTION, 0)
                 .setValue(BLOOMED, false)
+                .setValue(HARVESTED, false)
                 .setValue(HEIGHT, 0));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(SECTION, BLOOMED, HEIGHT);
+        builder.add(SECTION, BLOOMED, HEIGHT, HARVESTED);
     }
 
     @Override
@@ -136,8 +138,15 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
             collapse(level, pos, true);
             state = level.getBlockState(pos);
         }
-        TidePhase phase = TideManager.getSavedData(server).snapshot().phase();
+        var tide = TideManager.getSavedData(server).snapshot();
+        TidePhase phase = tide.phase();
         boolean surge = (phase == TidePhase.SURGE);
+        var harvests=pro.erez.interstice.minerals.SproutHarvestData.get(level);
+        if(state.getValue(HARVESTED)&&(!surge||harvests.older(pos,tide.totalCycles()))){
+            state=state.setValue(HARVESTED,false);level.setBlock(pos,state,3);harvests.clear(pos);
+            var oldTop=level.getBlockState(pos.above(state.getValue(HEIGHT)));
+            if(oldTop.is(this))level.setBlock(pos.above(state.getValue(HEIGHT)),oldTop.setValue(HARVESTED,false),3);
+        }
         int currentHeight = state.getValue(HEIGHT);
         int targetHeight = 2 + Math.abs((pos.getX() * 31 + pos.getZ() * 17) % 5);
 
@@ -171,6 +180,8 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
 
     private void grow(ServerLevel level, BlockPos root, BlockState rootState, int newHeight, RandomSource random) {
         BlockPos topPos = root.above(newHeight);
+        if(level.getChunkSource().getGenerator() instanceof pro.erez.interstice.worldgen.IslandChunkGenerator islands
+                &&!pro.erez.interstice.worldgen.IslandChunkGenerator.featureAllowed(level,islands.geometry(),topPos.getX(),topPos.getY(),topPos.getZ()))return;
         if (!level.getBlockState(topPos).isAir()) return;
 
         // Convert previous top to stem section
@@ -187,6 +198,7 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
         BlockState newTop = defaultBlockState()
                 .setValue(SECTION, 3)
                 .setValue(BLOOMED, true)
+                .setValue(HARVESTED, rootState.getValue(HARVESTED))
                 .setValue(HEIGHT, newHeight);
         level.setBlock(topPos, newTop, 3);
 
@@ -265,6 +277,43 @@ public final class TideSproutBlock extends Block implements BonemealableBlock {
             else collapse(level, pos, false);
         }
         super.onRemove(state, level, pos, newState, moved);
+    }
+
+    @Override protected net.minecraft.world.ItemInteractionResult useItemOn(net.minecraft.world.item.ItemStack stack,BlockState state,Level level,BlockPos pos,net.minecraft.world.entity.player.Player player,net.minecraft.world.InteractionHand hand,net.minecraft.world.phys.BlockHitResult hit){
+        if(!stack.is(net.minecraft.world.item.Items.SHEARS))return net.minecraft.world.ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if(state.getValue(SECTION)!=3||!state.getValue(BLOOMED)||player.isSpectator()||!player.canInteractWithBlock(pos,1.0))return net.minecraft.world.ItemInteractionResult.FAIL;
+        BlockPos root=findRoot(level,pos,state);if(root==null)return net.minecraft.world.ItemInteractionResult.FAIL;
+        BlockState base=level.getBlockState(root);
+        if(!base.getValue(BLOOMED)||!root.above(base.getValue(HEIGHT)).equals(pos)||malformed(level,root,base.getValue(HEIGHT)))return net.minecraft.world.ItemInteractionResult.FAIL;
+        if(level.isClientSide)return net.minecraft.world.ItemInteractionResult.SUCCESS;
+        var server=(ServerLevel)level;var tide=TideManager.getSavedData(server.getServer()).snapshot();
+        var harvests=pro.erez.interstice.minerals.SproutHarvestData.get(server);
+        if(tide.phase()!=TidePhase.SURGE||harvests.locked(root,tide.totalCycles())||base.getValue(HARVESTED)&&!harvests.older(root,tide.totalCycles()))return net.minecraft.world.ItemInteractionResult.FAIL;
+        harvests.mark(root,tide.totalCycles());
+        level.setBlock(root,base.setValue(HARVESTED,true),3);level.setBlock(pos,state.setValue(HARVESTED,true),3);
+        var bud=new net.minecraft.world.item.ItemStack(pro.erez.interstice.minerals.MineralEcology.LUMINOUS_BUD.get());if(!player.addItem(bud))player.drop(bud,false);
+        if(!player.isCreative())stack.hurtAndBreak(1,player,net.minecraft.world.entity.LivingEntity.getSlotForHand(hand));
+        server.sendParticles(ParticleTypes.GLOW,pos.getX()+.5,pos.getY()+.5,pos.getZ()+.5,6,.15,.15,.15,.01);
+        return net.minecraft.world.ItemInteractionResult.CONSUME;
+    }
+    @Override public java.util.List<net.minecraft.world.item.ItemStack> getDrops(BlockState state,net.minecraft.world.level.storage.loot.LootParams.Builder builder){
+        // Detached sections never duplicate a rooted plant. The retained root still folds normally.
+        if(state.getValue(SECTION)!=0)return java.util.List.of();
+        var drops=super.getDrops(state,builder);
+        if(state.getValue(HARVESTED))for(var stack:drops)if(stack.is(Interstice.TIDE_SPROUT_ITEM.get())){
+            stack.set(net.minecraft.core.component.DataComponents.BLOCK_STATE,net.minecraft.world.item.component.BlockItemStateProperties.EMPTY.with(HARVESTED,true));
+            var origin=builder.getOptionalParameter(net.minecraft.world.level.storage.loot.parameters.LootContextParams.ORIGIN);
+            Long cycle=origin==null?null:pro.erez.interstice.minerals.SproutHarvestData.get(builder.getLevel()).cycle(BlockPos.containing(origin));
+            if(cycle!=null){var tag=new net.minecraft.nbt.CompoundTag();tag.putLong("interstice_bud_cycle",cycle);stack.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA,net.minecraft.world.item.component.CustomData.of(tag));}
+        }
+        return drops;
+    }
+    @Override public void setPlacedBy(Level level,BlockPos pos,BlockState state,net.minecraft.world.entity.LivingEntity placer,net.minecraft.world.item.ItemStack stack){
+        super.setPlacedBy(level,pos,state,placer,stack);
+        if(level instanceof ServerLevel server&&state.getValue(SECTION)==0&&state.getValue(HARVESTED)){
+            var data=stack.get(net.minecraft.core.component.DataComponents.CUSTOM_DATA);
+            if(data!=null&&data.copyTag().contains("interstice_bud_cycle"))pro.erez.interstice.minerals.SproutHarvestData.get(server).mark(pos,data.copyTag().getLong("interstice_bud_cycle"));
+        }
     }
 
     private static boolean internallyUpdating(Level level, BlockPos pos) {
