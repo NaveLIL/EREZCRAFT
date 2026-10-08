@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "interstice:block/garden/palestone",
+    "side": "interstice:block/garden/palestone",
+    "top": "interstice:block/garden/palestone"
+  }
+}

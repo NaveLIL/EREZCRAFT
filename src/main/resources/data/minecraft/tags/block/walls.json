@@ -3,6 +3,7 @@
   "values": [
     "interstice:vaultstone_wall",
     "interstice:polished_vaultstone_wall",
-    "interstice:vaultstone_bricks_wall"
+    "interstice:vaultstone_bricks_wall",
+    "interstice:palestone_wall"
   ]
 }

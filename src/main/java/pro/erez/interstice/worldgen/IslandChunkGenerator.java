@@ -119,10 +119,13 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         super.buildSurface(region,structures,random,chunk);
         fillSeas(geometry,chunk);
         StoneVaults.geologicalSurface(geometry,chunk,region.getSeed());
+        PaleGardens.geology(geometry,chunk,region.getSeed());
         generateOres(geometry,chunk,region.getSeed());
         WatchpostRuins.generate(geometry, chunk, region.getSeed(), region.getLevel().getStructureManager(), region.registryAccess());
         StoneVaults.generate(geometry,chunk,region.getSeed());
         GloomcrownTree.generate(geometry,chunk,region.getSeed());
+        GardenTrees.generate(geometry,chunk,region.getSeed(),region);
+        PaleGardens.undergrowth(geometry,chunk,region.getSeed());
         generateTideSprouts(geometry,chunk,region.getSeed());
     }
     public static void generateTideSprouts(GeometryProfile profile, ChunkAccess chunk, long seed) {
@@ -187,7 +190,8 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
 
                 if (chunk.getBlockState(pos).is(Blocks.STONE) || chunk.getBlockState(pos).is(Interstice.RIFTSTONE.get())
                         || chunk.getBlockState(pos).is(VaultMaterials.VAULTSTONE.get())
-                        || chunk.getBlockState(pos).is(VaultMaterials.WEATHERED_VAULTSTONE.get())) {
+                        || chunk.getBlockState(pos).is(VaultMaterials.WEATHERED_VAULTSTONE.get())
+                        || chunk.getBlockState(pos).is(GardenMaterials.PALESTONE.get())) {
                     chunk.setBlockState(pos, oreState, false);
                 }
             }

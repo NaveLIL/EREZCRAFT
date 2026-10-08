@@ -31,8 +31,8 @@ class VerificationResultTests(unittest.TestCase):
                 kwargs["stdout"].write(log)
                 if result is not None:
                     evidence = next((root / ".verification").iterdir())
-                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke"):
-                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute", "runVaultPersistenceSmoke": "vaultPersistence"}[task]
+                    if task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke"):
+                        profile = {"runRiftPersistenceSmoke": "riftPersistence", "runKeyPersistenceSmoke": "keyPersistence", "runWatchpostPersistenceSmoke": "watchpostPersistence", "runSurvivalPreparationSmoke": "survivalRoute", "runVaultPersistenceSmoke": "vaultPersistence", "runGardenPersistenceSmoke": "gardenPersistence"}[task]
                         destination = evidence / "profiles" / profile
                         destination.mkdir(parents=True)
                         for name, value in result.items():
@@ -69,6 +69,20 @@ class VerificationResultTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertEqual(Path(self.command[0]).name, "java.exe")
         self.assertIn("org.gradle.wrapper.GradleWrapperMain", self.command)
+
+    def test_garden_server_requires_executed_tests(self):
+        for log, expected in (("BUILD SUCCESSFUL\n", 1), ("All 9 required tests passed :)\n", 0)):
+            with self.subTest(log=log):
+                code, _, _ = self.exercise("runGardenGameTestServer", log=log)
+                self.assertEqual(code, expected)
+
+    def test_garden_cold_restart_requires_both_reports(self):
+        for reports, expected in (({"garden-create-validation.json": {"passed": True}}, 1),
+                                  ({"garden-create-validation.json": {"passed": True}, "garden-reload-validation.json": {"passed": False}}, 1),
+                                  ({"garden-create-validation.json": {"passed": True}, "garden-reload-validation.json": {"passed": True}}, 0)):
+            with self.subTest(reports=reports):
+                code, _, _ = self.exercise("runGardenPersistenceSmoke", result=reports)
+                self.assertEqual(code, expected)
 
     def test_unix_uses_shell_wrapper(self):
         with patch.object(verify.sys, "platform", "linux"):

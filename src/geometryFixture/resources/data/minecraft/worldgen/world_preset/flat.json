@@ -82,6 +82,36 @@
                 ],
                 "humidity": [
                   -2,
+                  0.14
+                ],
+                "continentalness": [
+                  -2,
+                  0.08
+                ],
+                "erosion": [
+                  -2,
+                  2
+                ],
+                "depth": [
+                  -2,
+                  2
+                ],
+                "weirdness": [
+                  -2,
+                  2
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "interstice:pale_gardens",
+              "parameters": {
+                "temperature": [
+                  -2,
+                  2
+                ],
+                "humidity": [
+                  0.14,
                   2
                 ],
                 "continentalness": [
@@ -154,6 +184,36 @@
                 ],
                 "humidity": [
                   -2,
+                  0.14
+                ],
+                "continentalness": [
+                  -2,
+                  0.08
+                ],
+                "erosion": [
+                  -2,
+                  2
+                ],
+                "depth": [
+                  -2,
+                  2
+                ],
+                "weirdness": [
+                  -2,
+                  2
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "interstice:pale_gardens",
+              "parameters": {
+                "temperature": [
+                  -2,
+                  2
+                ],
+                "humidity": [
+                  0.14,
                   2
                 ],
                 "continentalness": [

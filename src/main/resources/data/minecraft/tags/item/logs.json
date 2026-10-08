@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "interstice:gloomcrown_log",
-    "interstice:stripped_gloomcrown_log"
+    "interstice:stripped_gloomcrown_log",
+    "interstice:paleheart_log",
+    "interstice:stripped_paleheart_log"
   ]
 }

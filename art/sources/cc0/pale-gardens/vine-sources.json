@@ -1,0 +1,12 @@
+{
+  "source_url": "https://opengameart.org/content/plant-tileset",
+  "archive_url": "https://opengameart.org/sites/default/files/plant_individual_tiles.zip",
+  "archive_sha256": "c4f90cc1c8d0c52e07513ce11508dd64f197e6ac407fa7d815fbaa4deeac4e6b",
+  "license": "CC0-1.0",
+  "author": "ARoachIFoundOnMyPillow",
+  "files": {
+    "stem2_leaf_both.png": "6c8eb777909e0b89c5eec0ec6225c7fd6f413744ed979ff0e2f591c7c489b199",
+    "stem2.png": "47c9e9c17b5a8425edeafbcbcce7e722a0e40ed385070551be49b9507a79f628",
+    "tip2.png": "04e6eb479b35dad9c707d85877a7732648ad07fdab8fc9cfcd7593a0123e7988"
+  }
+}

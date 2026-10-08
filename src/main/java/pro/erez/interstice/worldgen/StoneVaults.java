@@ -21,7 +21,7 @@ public final class StoneVaults {
     public static boolean isGround(BlockState state) {
         return state.is(Interstice.RIFTSTONE.get()) || state.is(Interstice.ABYSSAL_TURF.get())
                 || state.is(Interstice.RIFTSILVER_ORE.get()) || state.is(VaultMaterials.VAULTSTONE.get())
-                || state.is(VaultMaterials.WEATHERED_VAULTSTONE.get());
+                || state.is(VaultMaterials.WEATHERED_VAULTSTONE.get()) || state.is(GardenMaterials.PALESTONE.get());
     }
     public static Map<BlockPos, BlockState> plan(BlockPos root, int height, boolean alongX, int shape) {
         if (height < 5 || height > 7 || shape < 0 || shape > 2) throw new IllegalArgumentException("Invalid stone vault form");

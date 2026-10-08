@@ -88,7 +88,7 @@ public final class StoneVaultGameTests {
                 int qx = QuartPos.fromBlock(x), qy = QuartPos.fromBlock(profile.minLand() + 8), qz = QuartPos.fromBlock(z);
                 var a = source.getNoiseBiome(qx, qy, qz, first.sampler());
                 h.assertTrue(a.equals(source.getNoiseBiome(qx, qy, qz, repeated.sampler())), "Recreating the same seed changed biome selection");
-                h.assertTrue(a.is(RealmBiomes.STONE_VAULTS) || a.is(RealmBiomes.ASH_ISLANDS), "Foreign biome selected in the realm");
+                h.assertTrue(a.is(RealmBiomes.STONE_VAULTS) || a.is(RealmBiomes.ASH_ISLANDS) || a.is(RealmBiomes.PALE_GARDENS), "Foreign biome selected in the realm");
                 if (a.is(RealmBiomes.STONE_VAULTS)) vaults++; else ash++;
                 if (!a.equals(source.getNoiseBiome(qx, qy, qz, second.sampler()))) changed++;
             }

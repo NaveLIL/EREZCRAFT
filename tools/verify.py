@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ALLOWED = {"build", "runGameTestServer", "runIslandSmoke", "runTallIslandSmoke", "runGeometrySmoke",
            "runPersistenceSmoke", "runInfectionGameTestServer", "runRiftGameTestServer", "runRiftPersistenceSmoke",
            "runExpeditionGameTestServer", "runKeyPersistenceSmoke", "runWatchpostSmoke", "runWatchpostPersistenceSmoke",
-           "runSurvivalPreparationSmoke", "runVaultGameTestServer", "runVaultPersistenceSmoke"}
+           "runSurvivalPreparationSmoke", "runVaultGameTestServer", "runVaultPersistenceSmoke", "runGardenGameTestServer", "runGardenPersistenceSmoke"}
 SAVED_ROOTS = ("run/world", "build/playtest/saves", "build/island-smoke/saves/seeded-island-check",
                "build/client-smoke/saves/fluid-chaotic-check",
                "build/client-smoke/saves/fluid-relief-check",
@@ -87,19 +87,20 @@ def main():
             record.update(exit_code=code, duration_seconds=round(time.monotonic() - started, 3),
                           ended_utc=dt.datetime.now(dt.timezone.utc).isoformat())
             accepted = code == 0
-            if code == 0 and task in ("build", "runGameTestServer", "runInfectionGameTestServer", "runRiftGameTestServer", "runExpeditionGameTestServer", "runVaultGameTestServer"):
+            if code == 0 and task in ("build", "runGameTestServer", "runInfectionGameTestServer", "runRiftGameTestServer", "runExpeditionGameTestServer", "runVaultGameTestServer", "runGardenGameTestServer"):
                 log = (evidence / (task + ".log")).read_text(encoding="utf-8", errors="replace")
                 groups = [int(count) for count in re.findall(r"All ([1-9][0-9]*) required tests passed", log)]
                 record["required_test_groups"] = groups
                 record["required_tests_passed"] = sum(groups)
                 accepted = bool(groups)
-            if code == 0 and task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke"):
+            if code == 0 and task in ("runRiftPersistenceSmoke", "runKeyPersistenceSmoke", "runWatchpostPersistenceSmoke", "runSurvivalPreparationSmoke", "runVaultPersistenceSmoke", "runGardenPersistenceSmoke"):
                 record["validations"] = {}
                 prefix, profile = {"runRiftPersistenceSmoke": ("rift", "riftPersistence"),
                                    "runKeyPersistenceSmoke": ("key", "keyPersistence"),
                                    "runWatchpostPersistenceSmoke": ("watchpost", "watchpostPersistence"),
                                    "runSurvivalPreparationSmoke": ("survival", "survivalRoute"),
-                                   "runVaultPersistenceSmoke": ("vault", "vaultPersistence")}[task]
+                                   "runVaultPersistenceSmoke": ("vault", "vaultPersistence"),
+                                   "runGardenPersistenceSmoke": ("garden", "gardenPersistence")}[task]
                 names = ("survival-preparation.json", "survival-equipment.json") if task == "runSurvivalPreparationSmoke" else (prefix + "-create-validation.json", prefix + "-reload-validation.json")
                 for name in names:
                     result_path = evidence / "profiles" / profile / name

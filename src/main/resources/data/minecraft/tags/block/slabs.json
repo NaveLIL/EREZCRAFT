@@ -3,6 +3,8 @@
   "values": [
     "interstice:vaultstone_slab",
     "interstice:polished_vaultstone_slab",
-    "interstice:vaultstone_bricks_slab"
+    "interstice:vaultstone_bricks_slab",
+    "interstice:paleheart_slab",
+    "interstice:palestone_slab"
   ]
 }

@@ -1,0 +1,99 @@
+{
+  "milestone": "M14",
+  "version": "0.2.3",
+  "passed": true,
+  "published": false,
+  "base_commit": "638f86588821634270e390819bb7507966dee8c5",
+  "artifact": {
+    "path": "build/libs/interstice-0.2.3.jar",
+    "sha256": "1acaef1cda6037460a73ab65af921d34a88d9bb259742755c37fef287ed62bdd",
+    "smoke_code_excluded": true,
+    "source_license_included": true,
+    "palette_output_hashes_match": true
+  },
+  "checks": {
+    "gametests": 154,
+    "groups": [
+      17,
+      104,
+      9,
+      16,
+      8
+    ],
+    "python_tests": 22,
+    "user_saves_unchanged": true,
+    "resource_audit": {
+      "passed": true,
+      "resource_files_checked": 557,
+      "regeneration_changes": [],
+      "new_palette_textures": 13,
+      "original_patterns_and_alpha_preserved": true,
+      "existing_pngs_unchanged": true
+    },
+    "native_client": {
+      "creator_pid": 28900,
+      "naturally_generated": true,
+      "scene_type": "disposable Creative natural generation and persistence inspection; not Survival",
+      "seed": 20261006,
+      "chunk_x": -1,
+      "chunk_z": 1,
+      "loaded_candidates": 1,
+      "pale_logs": 28,
+      "pale_leaves": 40,
+      "vine_blocks": 13,
+      "original_grey_turf": 684,
+      "buried_pale_stone": 1170,
+      "minimum_upper_sea_gap": 35.226647212670144,
+      "required_clearance": 6,
+      "floor_y": 174,
+      "canopy_x": -10,
+      "canopy_y": 179,
+      "canopy_z": 23,
+      "vine_x": -9,
+      "vine_y": 176,
+      "vine_z": 23,
+      "biome_key": "interstice:pale_gardens",
+      "grove_camera": {
+        "x": 2.5,
+        "y": 180.5,
+        "z": 11.5,
+        "yaw": 45.0,
+        "pitch": 13.6458845
+      },
+      "sheltered_beneath_natural_canopy": true,
+      "canopy_camera": {
+        "x": -9.5,
+        "y": 175.0,
+        "z": 23.5,
+        "yaw": -90.0,
+        "pitch": -90.0
+      },
+      "broken_vine_and_lower_segment_removed": true,
+      "real_datapack_reload_changes_future_shapes": true,
+      "existing_tree_logs_unchanged_by_reload": true,
+      "default_catalog_restored": true,
+      "passed": true,
+      "mode": "reload",
+      "stage": 14,
+      "reason": "Cold restart preserved old chunks and the broken vine; the previous two-biome source upgraded",
+      "old_layout_fixture_scope": "Only the disposable world's source table was replaced by the exact M13 table; not a blanket test of all older worlds",
+      "broken_vine_preserved_after_restart": true,
+      "old_two_biome_source_upgraded": true,
+      "saved_biome_palette_unchanged": true,
+      "reload_pid": 29784
+    },
+    "screenshots_saved": [
+      "garden-natural-darkness.png",
+      "garden-natural-grove.png",
+      "garden-canopy-and-vines.png",
+      "garden-cold-reloaded.png"
+    ]
+  },
+  "evidence": ".verification/20261008T045552.998515Z-m14-alien-shapes-final",
+  "limits": [
+    "Disposable Creative natural-generation check; not Survival acceptance",
+    "Old-source compatibility uses a synthetic M13 source table in the disposable save",
+    "Existing chunks/biome palettes preserved; new biomes appear in unexplored chunks",
+    "Manual artistic acceptance still belongs to the owner"
+  ]
+}

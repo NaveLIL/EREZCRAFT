@@ -1,0 +1,9 @@
+{
+  "project": "Dynamic Trees",
+  "source_commit": "8bf66d83ac3a707fe482782fe21d2cb732527c66",
+  "source_url": "https://github.com/DynamicTreesTeam/DynamicTrees/blob/8bf66d83ac3a707fe482782fe21d2cb732527c66/common/src/main/java/com/dtteam/dynamictrees/worldgen/JoCode.java",
+  "license": "MIT",
+  "source_sha256": "0e0f7460b6c46d80e0d87c78425ea55667b531e7ff8e569616890e00fb614b70",
+  "adapted_file": "src/main/java/pro/erez/interstice/worldgen/JoShape.java",
+  "adaptation": "JoCode instruction packing/fork-return interpretation adapted for a bounded in-memory plan; no Dynamic Trees runtime dependency"
+}

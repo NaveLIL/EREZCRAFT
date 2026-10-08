@@ -11,13 +11,16 @@ def write(path, value):
 
 def source():
     points = []
-    for name, interval in [('ash_islands', [-2, .08]), ('stone_vaults', [.08, 2])]:
+    for name, interval, humidity in [('ash_islands', [-2, .08], [-2,.14]),
+                                      ('pale_gardens',[-2,.08],[.14,2]),
+                                      ('stone_vaults', [.08, 2],[-2,2])]:
         parameters = {name: [-2, 2] for name in ('temperature', 'humidity', 'continentalness', 'erosion', 'depth', 'weirdness')}
         parameters.update(continentalness=interval, offset=0)
+        parameters['humidity']=humidity
         points.append({'biome': 'interstice:' + name, 'parameters': parameters})
     return {'type': 'minecraft:multi_noise', 'biomes': points}
 
-for name in ('ash_islands', 'stone_vaults'):
+for name in ('ash_islands', 'stone_vaults', 'pale_gardens'):
     biome = {'has_precipitation': False, 'temperature': .5, 'downfall': 0,
              'effects': {'fog_color': 0, 'sky_color': 0, 'water_color': 4159204, 'water_fog_color': 329011,
                          'grass_color': 7102055, 'foliage_color': 6179159,
@@ -29,6 +32,7 @@ for name in ('ash_islands', 'stone_vaults'):
     write(DATA / 'worldgen/biome' / (name + '.json'), biome)
 
 write(DATA / 'worldgen/noise/realm_geology.json', {'firstOctave': -5, 'amplitudes': [1, .35, .15]})
+write(DATA / 'worldgen/noise/realm_gardens.json', {'firstOctave': -5, 'amplitudes': [1,.25]})
 for name in ('islands', 'islands_tall'):
     path = DATA / 'dimension' / (name + '.json')
     dimension = json.loads(path.read_text(encoding='utf-8'))
@@ -39,6 +43,8 @@ for name in ('islands', 'islands_tall'):
     # Seeded, Y-invariant geology. Independent from final_density and the sea surface.
     settings['noise_router']['continents'] = {'type': 'minecraft:noise', 'noise': 'interstice:realm_geology',
                                             'xz_scale': .45, 'y_scale': 0}
+    settings['noise_router']['vegetation'] = {'type':'minecraft:noise','noise':'interstice:realm_gardens',
+                                             'xz_scale':.55,'y_scale':0}
     write(path, settings)
 
 fixture = ROOT / 'src/geometryFixture/resources/data/minecraft/worldgen/world_preset/flat.json'
@@ -47,12 +53,12 @@ for name in ('islands', 'islands_tall'):
     value['dimensions']['interstice:' + name]['generator']['biome_source'] = source()
 write(fixture, value)
 
-for locale, names in {'en_us': ('Ash Islands', 'Stone Vaults'),
-                      'ru_ru': ('Пепельные острова', 'Каменные своды')}.items():
+for locale, names in {'en_us': ('Ash Islands', 'Stone Vaults','Pale Gardens'),
+                      'ru_ru': ('Пепельные острова', 'Каменные своды','Бледные сады')}.items():
     path = ROOT / 'src/main/resources/assets/interstice/lang' / (locale + '.json')
     value = json.loads(path.read_text(encoding='utf-8'))
-    value.update(dict(zip(('biome.interstice.ash_islands', 'biome.interstice.stone_vaults'), names)))
+    value.update(dict(zip(('biome.interstice.ash_islands', 'biome.interstice.stone_vaults','biome.interstice.pale_gardens'), names)))
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 write(DATA / 'tags/worldgen/biome/is_interstice.json',
-      {'replace': False, 'values': ['interstice:ash_islands', 'interstice:stone_vaults']})
+      {'replace': False, 'values': ['interstice:ash_islands', 'interstice:stone_vaults','interstice:pale_gardens']})

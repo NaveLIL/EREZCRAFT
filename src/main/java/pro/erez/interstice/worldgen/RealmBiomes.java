@@ -21,6 +21,7 @@ import pro.erez.interstice.Interstice;
 public final class RealmBiomes {
     public static final ResourceKey<Biome> ASH_ISLANDS = key("ash_islands");
     public static final ResourceKey<Biome> STONE_VAULTS = key("stone_vaults");
+    public static final ResourceKey<Biome> PALE_GARDENS = key("pale_gardens");
     private RealmBiomes() {}
     private static ResourceKey<Biome> key(String name) {
         return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Interstice.ID, name));
@@ -28,17 +29,32 @@ public final class RealmBiomes {
     public static BiomeSource create(HolderGetter<Biome> biomes) {
         var all = Climate.Parameter.span(-2, 2);
         return MultiNoiseBiomeSource.createFromList(new Climate.ParameterList<>(List.of(
-                Pair.of(Climate.parameters(all, all, Climate.Parameter.span(-2, .08F), all, all, all, 0), biomes.getOrThrow(ASH_ISLANDS)),
+                Pair.of(Climate.parameters(all, Climate.Parameter.span(-2,.14F), Climate.Parameter.span(-2, .08F), all, all, all, 0), biomes.getOrThrow(ASH_ISLANDS)),
+                Pair.of(Climate.parameters(all, Climate.Parameter.span(.14F,2), Climate.Parameter.span(-2, .08F), all, all, all, 0), biomes.getOrThrow(PALE_GARDENS)),
                 Pair.of(Climate.parameters(all, all, Climate.Parameter.span(.08F, 2), all, all, all, 0), biomes.getOrThrow(STONE_VAULTS)))));
     }
     /** Upgrade only our former placeholder. Existing chunk biome palettes and blocks are never rewritten. */
     public static BiomeSource upgradeLegacy(BiomeSource source, HolderGetter<Biome> biomes) {
         if (source instanceof FixedBiomeSource && source.possibleBiomes().size() == 1
                 && source.possibleBiomes().iterator().next().is(Biomes.THE_END)) return create(biomes);
+        if(source instanceof MultiNoiseBiomeSource multi && source.possibleBiomes().size()==2
+                && source.possibleBiomes().stream().allMatch(b->b.is(ASH_ISLANDS)||b.is(STONE_VAULTS))) {
+            var all=Climate.Parameter.span(-2,2);
+            var old=MultiNoiseBiomeSource.createFromList(new Climate.ParameterList<>(List.of(
+                    Pair.of(Climate.parameters(all,all,Climate.Parameter.span(-2,.08F),all,all,all,0),biomes.getOrThrow(ASH_ISLANDS)),
+                    Pair.of(Climate.parameters(all,all,Climate.Parameter.span(.08F,2),all,all,all,0),biomes.getOrThrow(STONE_VAULTS)))));
+            var encoded=MultiNoiseBiomeSource.CODEC.codec().encodeStart(com.mojang.serialization.JsonOps.INSTANCE,multi).result();
+            var expected=MultiNoiseBiomeSource.CODEC.codec().encodeStart(com.mojang.serialization.JsonOps.INSTANCE,old).result();
+            // Exact previous parameter table only; custom points and presets retain their authors' choices.
+            if(encoded.isPresent() && expected.isPresent() && encoded.get().equals(expected.get()))return create(biomes);
+        }
         return source;
     }
     public static boolean isVault(ChunkAccess chunk, BlockPos pos) {
         return chunk.getNoiseBiome(QuartPos.fromBlock(pos.getX()), QuartPos.fromBlock(pos.getY()),
                 QuartPos.fromBlock(pos.getZ())).is(STONE_VAULTS);
+    }
+    public static boolean isGarden(ChunkAccess chunk,BlockPos pos) {
+        return chunk.getNoiseBiome(QuartPos.fromBlock(pos.getX()),QuartPos.fromBlock(pos.getY()),QuartPos.fromBlock(pos.getZ())).is(PALE_GARDENS);
     }
 }

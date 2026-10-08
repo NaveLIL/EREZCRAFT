@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "interstice:block/palestone"
+      },
+      {
+        "model": "interstice:block/palestone_mirrored"
+      },
+      {
+        "model": "interstice:block/palestone",
+        "y": 180
+      },
+      {
+        "model": "interstice:block/palestone_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

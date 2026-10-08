@@ -108,6 +108,7 @@ public final class Interstice {
                 output.accept(RIFTSTONE_ITEM.get());
                 output.accept(ABYSSAL_TURF_ITEM.get());
                 VaultMaterials.displayItems(output);
+                pro.erez.interstice.worldgen.GardenMaterials.displayItems(output);
                 output.accept(TIDE_SPROUT_ITEM.get());
                 output.accept(GLOOMCROWN_LOG_ITEM.get());
                 output.accept(STRIPPED_GLOOMCROWN_LOG_ITEM.get());
@@ -139,6 +140,8 @@ public final class Interstice {
         FluidLightUpgrade.register(bus);
         pro.erez.interstice.sound.ModSounds.register(bus);
         VaultMaterials.register(bus);
+        pro.erez.interstice.worldgen.GardenMaterials.register(bus);
+        NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.AddReloadListenerEvent event) -> event.addListener(new pro.erez.interstice.worldgen.GardenTreeDefinitions()));
         TYPES.register(bus); FLUIDS.register(bus); BLOCKS.register(bus); ITEMS.register(bus); TABS.register(bus);
         GENERATORS.register(bus);
         NeoForge.EVENT_BUS.addListener(FluidLab::registerCommands);

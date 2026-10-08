@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "interstice:gloomcrown_sapling"
+    "interstice:gloomcrown_sapling",
+    "interstice:paleheart_sapling"
   ]
 }

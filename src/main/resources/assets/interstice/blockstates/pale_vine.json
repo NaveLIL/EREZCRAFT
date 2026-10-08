@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "section=0": {
+      "model": "interstice:block/pale_vine_0"
+    },
+    "section=1": {
+      "model": "interstice:block/pale_vine_1"
+    },
+    "section=2": {
+      "model": "interstice:block/pale_vine_2"
+    },
+    "section=3": {
+      "model": "interstice:block/pale_vine_3"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "license":"CC0-1.0",
+  "author":"ARoachIFoundOnMyPillow",
+  "source_url":"https://opengameart.org/content/16x16-block-texture-set",
+  "generator":"tools/GenerateGardenPalettes.java",
+  "operation":"One-to-one palette substitution only; pixel positions, original pattern, size and alpha preserved",
+  "pattern_and_alpha_verified":true,
+  "outputs":[
+    {"output":"block/garden/paleheart_log.png","source":"eucalyptus_log_side.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"eded58dbfac53673c3c11561c6ef8786bdc766709b3fcfe36ac7286ab92592e4","output_sha256":"89f5e4201ab5bd5621a39991cf555e99db91b33ef8b140bfc9de60e02e505f5e","palette_colors":4},
+    {"output":"block/garden/paleheart_log_top.png","source":"eucalyptus_log_top.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"f2884f1f87f46ab27bd427c2d57a801336b4c5306c262a719a66faac477cf00a","output_sha256":"4c286662e4c7845b23bc4f1c436a309d457bd7686f9d5364feb743a07e69ed4a","palette_colors":6},
+    {"output":"block/garden/stripped_paleheart_log.png","source":"beech_log_side.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"29fa0c448cf26e190f2f736d1f1ebc3eb7cf4d3006712ba58aa63a8b61a75808","output_sha256":"ea8f580cb50e1296be26424a619f59f069e5aa215750a123b9875488b349a43a","palette_colors":4},
+    {"output":"block/garden/stripped_paleheart_log_top.png","source":"eucalyptus_log_top.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"f2884f1f87f46ab27bd427c2d57a801336b4c5306c262a719a66faac477cf00a","output_sha256":"415df0f0f5b16d86639602487c7e8b0401c01d2a8e953607e4d9261c8e60e674","palette_colors":6},
+    {"output":"block/garden/paleheart_planks.png","source":"beech_planks.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"ec23e6dbdae042d35d24450e56231c3d077bf8004dcfbaf815051eec7acf54c8","output_sha256":"ed66e9a2860d53d967ad306c11a72c9a9b29775580b1fe749f5cf7b1a6d9ec77","palette_colors":4},
+    {"output":"block/garden/paleheart_leaves.png","source":"beech_leaves.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"43c1a71292fd0b9a058d32e8db3a7d3fe6644789fa4a833c5f7883f5246f6d83","output_sha256":"4f920b9a2101773006bf5a58610940c94f1869df791c3ea97fc878ee138fdc3e","palette_colors":5},
+    {"output":"block/garden/paleheart_sapling.png","source":"sapling_beech.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"470378f165f4860e2955c338edd56f76cf37a816fc97caf1c4fdf11bfbe110bc","output_sha256":"389116751686f30703e35fee1fe9ca8424850eabaa06b2525de594c73dfd400e","palette_colors":6},
+    {"output":"block/garden/pale_fern.png","source":"fern2.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"66ff2c2752b2e40d925a7830e51de7c06b6d2387007efce14672819c94cf7dab","output_sha256":"bfea0d12772cac173e6c8ba7404f69e9ab5b59a57729045294873c4c1418c681","palette_colors":4},
+    {"output":"block/garden/pale_litter.png","source":"grass_top.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"dce0f22011225ddd2b0b86f223c5699c020c681379b9e0ecc2be948a5e5dba79","output_sha256":"34d0afc6c6530862f3ec2a48573f15afe1afdf32a5e95e31b0fc1379c97f9657","palette_colors":4},
+    {"output":"block/garden/palestone.png","source":"limestone.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"5d1ac0581ba31a973ed4e9af00009d94f17983e3b3db84b8348b2fe0547ca7e2","output_sha256":"8e885beb8e42e5e770849046cd201bc6f95586298c64287ab4c241af0063e662","palette_colors":5},
+    {"output":"block/garden/palestone_bricks.png","source":"limestone_bricks.png","source_url":"https://opengameart.org/content/16x16-block-texture-set","source_sha256":"aa8433dcf3ef271b9f4b8e3bf616309be93626e591a3df5652a8327c99df53bb","output_sha256":"a26563f0ce062ea431aaf3fd92dc81d2ccba34da6733be0518ed523b12569b19","palette_colors":5},
+    {"output":"block/garden/pale_vine.png","source":"stem2_leaf_both.png","source_url":"https://opengameart.org/content/plant-tileset","source_sha256":"6c8eb777909e0b89c5eec0ec6225c7fd6f413744ed979ff0e2f591c7c489b199","output_sha256":"fae48fad7c2d8582896c83b99e6077b760fbfba9ace4b0d0ca8c2641aed4cb99","palette_colors":6},
+    {"output":"block/garden/pale_vine_tip.png","source":"tip2.png","source_url":"https://opengameart.org/content/plant-tileset","source_sha256":"04e6eb479b35dad9c707d85877a7732648ad07fdab8fc9cfcd7593a0123e7988","output_sha256":"c87b1882536c2d492fd6e7c3a8a55e5e5306d44d75f725589c555b2cf814dd43","palette_colors":6}
+  ]
+}

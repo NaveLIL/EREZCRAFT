@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "interstice:palestone"
+  },
+  "result": {
+    "id": "interstice:palestone_stairs",
+    "count": 1
+  }
+}

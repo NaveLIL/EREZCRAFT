@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "interstice:block/palestone_slab"
+    },
+    "type=double": {
+      "model": "interstice:block/palestone"
+    },
+    "type=top": {
+      "model": "interstice:block/palestone_slab_top"
+    }
+  }
+}

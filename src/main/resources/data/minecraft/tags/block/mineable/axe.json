@@ -3,6 +3,13 @@
   "values": [
     "interstice:gloomcrown_log",
     "interstice:stripped_gloomcrown_log",
-    "interstice:gloomcrown_planks"
+    "interstice:gloomcrown_planks",
+    "interstice:paleheart_log",
+    "interstice:stripped_paleheart_log",
+    "interstice:paleheart_planks",
+    "interstice:paleheart_slab",
+    "interstice:paleheart_stairs",
+    "interstice:paleheart_fence",
+    "interstice:paleheart_fence_gate"
   ]
 }

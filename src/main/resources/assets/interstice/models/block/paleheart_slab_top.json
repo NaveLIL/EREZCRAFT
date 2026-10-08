@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "interstice:block/garden/paleheart_planks",
+    "side": "interstice:block/garden/paleheart_planks",
+    "top": "interstice:block/garden/paleheart_planks"
+  }
+}

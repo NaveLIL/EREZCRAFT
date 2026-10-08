@@ -21,6 +21,11 @@
     "interstice:polished_vaultstone_wall",
     "interstice:vaultstone_bricks_slab",
     "interstice:vaultstone_bricks_stairs",
-    "interstice:vaultstone_bricks_wall"
+    "interstice:vaultstone_bricks_wall",
+    "interstice:palestone",
+    "interstice:palestone_bricks",
+    "interstice:palestone_slab",
+    "interstice:palestone_stairs",
+    "interstice:palestone_wall"
   ]
 }

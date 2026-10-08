@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "interstice:block/garden/paleheart_log_top",
+    "side": "interstice:block/garden/paleheart_log"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+  "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467",
+  "license": "CC0-1.0",
+  "author": "ARoachIFoundOnMyPillow",
+  "received": "2026-10-08",
+  "files": {
+    "eucalyptus_log_side": "eded58dbfac53673c3c11561c6ef8786bdc766709b3fcfe36ac7286ab92592e4",
+    "eucalyptus_log_top": "f2884f1f87f46ab27bd427c2d57a801336b4c5306c262a719a66faac477cf00a",
+    "beech_log_side": "29fa0c448cf26e190f2f736d1f1ebc3eb7cf4d3006712ba58aa63a8b61a75808",
+    "beech_planks": "ec23e6dbdae042d35d24450e56231c3d077bf8004dcfbaf815051eec7acf54c8",
+    "beech_leaves": "43c1a71292fd0b9a058d32e8db3a7d3fe6644789fa4a833c5f7883f5246f6d83",
+    "plants/sapling_beech": "470378f165f4860e2955c338edd56f76cf37a816fc97caf1c4fdf11bfbe110bc",
+    "plants/fern2": "66ff2c2752b2e40d925a7830e51de7c06b6d2387007efce14672819c94cf7dab",
+    "grass_top": "dce0f22011225ddd2b0b86f223c5699c020c681379b9e0ecc2be948a5e5dba79",
+    "limestone": "5d1ac0581ba31a973ed4e9af00009d94f17983e3b3db84b8348b2fe0547ca7e2",
+    "limestone_bricks": "aa8433dcf3ef271b9f4b8e3bf616309be93626e591a3df5652a8327c99df53bb"
+  }
+}
