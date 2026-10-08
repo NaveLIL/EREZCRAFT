@@ -4,6 +4,7 @@ import java.util.*;
 import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.*;
 import net.minecraft.world.inventory.*;
@@ -19,6 +20,7 @@ public final class RetortBlockEntity extends BlockEntity implements WorldlyConta
     private NonNullList<ItemStack> reserved=NonNullList.withSize(6,ItemStack.EMPTY),pending=NonNullList.withSize(3,ItemStack.EMPTY);
     private int progress,total,heat,status;
     private boolean batch;
+    private ResourceLocation selectedRecipe;
     public final ContainerData data=new ContainerData(){
         @Override public int get(int i){return switch(i){case 0->progress;case 1->total;case 2->heat;case 3->status;default->0;};}
         @Override public void set(int i,int value){switch(i){case 0->progress=value;case 1->total=value;case 2->heat=value;case 3->status=value;}}
@@ -27,17 +29,37 @@ public final class RetortBlockEntity extends BlockEntity implements WorldlyConta
     public RetortBlockEntity(BlockPos pos,BlockState state){super(RealmAgriculture.RETORT_ENTITY.get(),pos,state);}
     public List<ItemStack> preview(){
         if(batch)return pending.stream().map(ItemStack::copy).toList();
+        if(selectedRecipe!=null){var selected=selected();return selected==null?List.of():selected.outputs().stream().map(ItemStack::copy).toList();}
         var candidate=candidate();return candidate==null?List.of():candidate.outputs().stream().map(ItemStack::copy).toList();
     }
+    public boolean hasBatch(){return batch;}
+    public ResourceLocation selectedRecipe(){return selectedRecipe;}
+    public boolean selectRecipe(ResourceLocation id){
+        if(level==null||level.isClientSide||batch)return false;
+        if(id!=null&&recipe(id)==null)return false;
+        selectedRecipe=id;setChanged();return true;
+    }
+    public boolean canFitOutputs(List<ItemStack> output){return merged(output)!=null;}
+    private RetortRecipe recipe(ResourceLocation id){
+        if(level==null)return null;
+        return level.getRecipeManager().byKey(id).filter(r->r.value().getType()==RealmAgriculture.RETORT_RECIPE_TYPE.get())
+                .map(r->(RetortRecipe)r.value()).orElse(null);
+    }
+    private RetortRecipe selected(){return selectedRecipe==null?null:recipe(selectedRecipe);}
     private RetortRecipe candidate(){
         if(level==null||level.isClientSide)return null;
         var input=input();
+        if(selectedRecipe!=null){var selected=selected();return selected!=null&&selected.matches(input,level)?selected:null;}
         return level.getRecipeManager().getAllRecipesFor(RealmAgriculture.RETORT_RECIPE_TYPE.get()).stream()
                 .sorted(Comparator.comparing(r->r.id().toString())).map(r->r.value()).filter(r->r.matches(input,level)).findFirst().orElse(null);
     }
     private RetortInput input(){return new RetortInput(java.util.stream.IntStream.range(0,6).mapToObj(i->items.get(i).copy()).toList());}
     private NonNullList<ItemStack> merged(List<ItemStack> outputs){
-        var slots=NonNullList.withSize(3,ItemStack.EMPTY);for(int i=0;i<3;i++)slots.set(i,items.get(i+7).copy());
+        return mergeOutputs(outputs,java.util.stream.IntStream.range(7,10).mapToObj(items::get).toList());
+    }
+    public static NonNullList<ItemStack> mergeOutputs(List<ItemStack> outputs,List<ItemStack> current){
+        if(current.size()!=3)return null;
+        var slots=NonNullList.withSize(3,ItemStack.EMPTY);for(int i=0;i<3;i++)slots.set(i,current.get(i).copy());
         for(var original:outputs){var stack=original.copy();
             for(int i=0;i<3&&!stack.isEmpty();i++){var at=slots.get(i);if(at.isEmpty()||!ItemStack.isSameItemSameComponents(at,stack))continue;
                 int count=Math.min(stack.getCount(),at.getMaxStackSize()-at.getCount());at.grow(count);stack.shrink(count);}
@@ -48,7 +70,7 @@ public final class RetortBlockEntity extends BlockEntity implements WorldlyConta
     public void process(){
         if(level==null||level.isClientSide)return;
         status=0;
-        if(!batch){var recipe=candidate();if(recipe!=null){
+        if(!batch){var recipe=candidate();if(recipe==null&&selectedRecipe!=null)status=selected()==null?5:4;if(recipe!=null){
             if(merged(recipe.outputs())==null){status=3;return;}
             if(heat==0&&!items.get(6).is(MineralEcology.UMBRAL_COAL.get())){status=2;return;}
             int[] take=recipe.allocation(input());for(int i=0;i<6;i++)reserved.set(i,items.get(i).split(take[i]));
@@ -77,11 +99,14 @@ public final class RetortBlockEntity extends BlockEntity implements WorldlyConta
     @Override protected void saveAdditional(CompoundTag tag,HolderLookup.Provider lookup){super.saveAdditional(tag,lookup);ContainerHelper.saveAllItems(tag,items,lookup);
         var r=new CompoundTag();ContainerHelper.saveAllItems(r,reserved,lookup);tag.put("Reserved",r);var p=new CompoundTag();ContainerHelper.saveAllItems(p,pending,lookup);tag.put("Pending",p);
         tag.putBoolean("Batch",batch);tag.putInt("Progress",progress);tag.putInt("Total",total);tag.putInt("Heat",heat);
+        if(selectedRecipe!=null)tag.putString("SelectedRecipe",selectedRecipe.toString());
     }
     @Override protected void loadAdditional(CompoundTag tag,HolderLookup.Provider lookup){super.loadAdditional(tag,lookup);
         items=NonNullList.withSize(10,ItemStack.EMPTY);ContainerHelper.loadAllItems(tag,items,lookup);reserved=NonNullList.withSize(6,ItemStack.EMPTY);pending=NonNullList.withSize(3,ItemStack.EMPTY);
         ContainerHelper.loadAllItems(tag.getCompound("Reserved"),reserved,lookup);ContainerHelper.loadAllItems(tag.getCompound("Pending"),pending,lookup);
         batch=tag.getBoolean("Batch");total=Math.max(0,Math.min(32000,tag.getInt("Total")));progress=Math.max(0,Math.min(total,tag.getInt("Progress")));heat=Math.max(0,Math.min(3200,tag.getInt("Heat")));
+        String storedSelection=tag.getString("SelectedRecipe");
+        selectedRecipe=storedSelection.isBlank()?null:ResourceLocation.tryParse(storedSelection);
     }
     @Override public int getContainerSize(){return 10;}
     @Override public boolean isEmpty(){return !batch&&items.stream().allMatch(ItemStack::isEmpty);}

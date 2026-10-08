@@ -113,6 +113,7 @@ public final class Interstice {
                 pro.erez.interstice.ecology.CaveEcology.displayItems(output);
                 pro.erez.interstice.minerals.MineralEcology.displayItems(output);
                 pro.erez.interstice.agriculture.RealmAgriculture.displayItems(output);
+                pro.erez.interstice.equipment.ExpeditionEquipment.displayItems(output);
                 output.accept(pro.erez.interstice.food.TideHeart.FRUIT.get());
                 output.accept(TIDE_SPROUT_ITEM.get());
                 output.accept(GLOOMCROWN_LOG_ITEM.get());
@@ -151,6 +152,7 @@ public final class Interstice {
         pro.erez.interstice.ecology.CaveEcology.register(bus);
         pro.erez.interstice.minerals.MineralEcology.register(bus);
         pro.erez.interstice.agriculture.RealmAgriculture.register(bus);
+        pro.erez.interstice.equipment.ExpeditionEquipment.register(bus);
         NeoForge.EVENT_BUS.addListener(pro.erez.interstice.food.TideHeart::tick);
         NeoForge.EVENT_BUS.addListener(pro.erez.interstice.food.TideHeart::playerTick);
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.AddReloadListenerEvent event) -> event.addListener(new pro.erez.interstice.worldgen.GardenTreeDefinitions()));

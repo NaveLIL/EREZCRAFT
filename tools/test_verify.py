@@ -277,5 +277,91 @@ class VerificationResultTests(unittest.TestCase):
                 self.assertFalse(summary["passed"])
 
 
+class EquipmentVerificationTests(unittest.TestCase):
+    """New task gates use a zero-exit fake Java process and genuine on-disk report locations."""
+    def exercise(self, task, log="", reports=None):
+        with tempfile.TemporaryDirectory(prefix="interstice-equipment-verifier-") as directory:
+            root = Path(directory)
+
+            class Process:
+                pid = 456
+                def wait(self):
+                    return 0
+
+            def spawn(command, **kwargs):
+                kwargs["stdout"].write(log)
+                evidence = next((root / ".verification").iterdir())
+                profile = "wearBackpackSmoke" if task == "runWearBackpackSmoke" else "backpackSmoke" if task == "runBackpackSmoke" else "retortUiSmoke"
+                for name, value in (reports or {}).items():
+                    path = evidence / "profiles" / profile / name
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_text(json.dumps(value), encoding="utf-8")
+                return Process()
+
+            def output(command, **kwargs):
+                return "equipment-fixture-commit\n" if command[1] == "rev-parse" else b""
+
+            with patch.object(verify, "ROOT", root), patch.object(verify, "saves", return_value={}), \
+                    patch.object(verify, "active_worlds", return_value=[]), \
+                    patch.object(verify.subprocess, "check_output", side_effect=output), \
+                    patch.object(verify.subprocess, "Popen", side_effect=spawn), \
+                    patch.dict(verify.os.environ, {"JAVA_HOME": "/fixture/jdk"}), \
+                    patch.object(verify.sys, "argv", ["verify.py", "--label", "equipment-test", task]), \
+                    contextlib.redirect_stdout(io.StringIO()):
+                code = verify.main()
+            evidence = next((root / ".verification").iterdir())
+            return code, json.loads((evidence / "summary.json").read_text(encoding="utf-8")), \
+                json.loads((evidence / (task + ".json")).read_text(encoding="utf-8"))
+
+    def test_equipment_server_requires_positive_executed_gametests(self):
+        for log, accepted in (("BUILD SUCCESSFUL\n", False),
+                              ("All 0 required tests passed :)\n", False),
+                              ("All 11 required tests passed :)\n", True)):
+            with self.subTest(log=log):
+                code, summary, record = self.exercise("runEquipmentGameTestServer", log=log)
+                self.assertEqual(code, 0 if accepted else 1)
+                self.assertEqual(summary["passed"], accepted)
+                self.assertEqual(record["accepted"], accepted)
+                self.assertEqual(record["required_tests_passed"], 11 if accepted else 0)
+
+    def test_backpack_smoke_requires_both_positive_cold_jvm_reports(self):
+        create, reload = "backpack-create-validation.json", "backpack-reload-validation.json"
+        cases = [({}, False), ({create: {"passed": True}}, False), ({reload: {"passed": True}}, False),
+                 ({create: {"passed": False}, reload: {"passed": True}}, False),
+                 ({create: {"passed": True}, reload: {"passed": False}}, False),
+                 ({create: {"passed": "true"}, reload: {"passed": True}}, False),
+                 ({create: {"passed": True}, reload: {"passed": True}}, True)]
+        for reports, accepted in cases:
+            with self.subTest(reports=reports):
+                code, summary, record = self.exercise("runBackpackSmoke", reports=reports)
+                self.assertEqual(code, 0 if accepted else 1)
+                self.assertEqual(summary["passed"], accepted)
+                self.assertEqual(record["accepted"], accepted)
+                self.assertEqual(summary["completed_tasks"], ["runBackpackSmoke"])
+
+    def test_retort_ui_smoke_rejects_missing_false_and_merely_truthy_report(self):
+        for value, accepted in ((None, False), ({"passed": False}, False), ({"passed": 1}, False),
+                                ({"passed": "true"}, False), ({"passed": True}, True)):
+            with self.subTest(value=value):
+                reports = {} if value is None else {"retort-ui-validation.json": value}
+                code, summary, record = self.exercise("runRetortUiSmoke", reports=reports)
+                self.assertEqual(code, 0 if accepted else 1)
+                self.assertEqual(summary["passed"], accepted)
+                self.assertEqual(record["accepted"], accepted)
+                if value is None:
+                    self.assertIn("validation_error", record)
+
+    def test_worn_backpack_requires_both_cold_process_reports(self):
+        create,reload="wear-backpack-create-validation.json","wear-backpack-reload-validation.json"
+        for reports,accepted in (({},False),({create:{"passed":True}},False),
+                                 ({create:{"passed":True},reload:{"passed":False}},False),
+                                 ({create:{"passed":True},reload:{"passed":True}},True)):
+            with self.subTest(reports=reports):
+                code,summary,record=self.exercise("runWearBackpackSmoke",reports=reports)
+                self.assertEqual(code,0 if accepted else 1)
+                self.assertEqual(summary["passed"],accepted)
+                self.assertEqual(record["accepted"],accepted)
+
+
 if __name__ == "__main__":
     unittest.main()

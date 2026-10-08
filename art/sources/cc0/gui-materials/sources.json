@@ -1,0 +1,51 @@
+{
+  "sources": [
+    {
+      "file": "steel_block.png",
+      "author": "JoeEnderman",
+      "license": "CC0-1.0",
+      "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+      "source_member": "default_steel_block.png",
+      "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+      "archive_file": "assorted_1.zip",
+      "archive_url": "https://opengameart.org/sites/default/files/assorted_textures_1.zip",
+      "archive_sha256": "c63e177de809ee689391deb8bceefb553c7e57de151e999786efb19d866994b5",
+      "source_page_file": "joe-enderman-page.html",
+      "source_page_sha256": "c7d87b22d98b592469d7b01f4f0f734edf46bf4cc0bb43b1ba9d09b7ca7dfb14",
+      "retrieved": "2026-10-08",
+      "width": 16,
+      "height": 16,
+      "original_classes": 7
+    },
+    {
+      "file": "linen_pattern.png",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "source_url": "https://kenney.nl/assets/pattern-pack-pixel",
+      "source_member": "Tiles (Grayscale)/tile_0013.png",
+      "source_sha256": "0be27d43f3a41aa9fed0e909affe1167ca7c746c270b757b23d6ec90826e161f",
+      "archive_file": "kenney_pattern-pack-pixel.zip",
+      "archive_url": "https://kenney.nl/media/pages/assets/pattern-pack-pixel/65c3f0f0a1-1721640064/kenney_pattern-pack-pixel.zip",
+      "archive_sha256": "73fb47d01bc6db1f94ddddb6528f2f8b5bd8780a5b572e8bafe8e8ce8400b96f",
+      "source_page_file": "kenney-page.html",
+      "source_page_sha256": "9b86a9095ebecead67d5a119fcb9555b417caaad4444e2e69e256f7d3aa82890",
+      "retrieved": "2026-10-08",
+      "width": 16,
+      "height": 16,
+      "original_classes": 2
+    }
+  ],
+  "technical_originality_checks": [
+    {
+      "source": "steel_block.png",
+      "comparison_count": 1568,
+      "palette_alpha_structure_matches": []
+    },
+    {
+      "source": "linen_pattern.png",
+      "comparison_count": 1568,
+      "palette_alpha_structure_matches": []
+    }
+  ],
+  "operation": "Whole individual ready PNGs preserved; runtime preparation changes only bijective colors."
+}

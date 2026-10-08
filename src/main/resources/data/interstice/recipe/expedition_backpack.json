@@ -1,0 +1,26 @@
+{
+  "type": "interstice:backpack_upgrade",
+  "category": "equipment",
+  "pattern": [
+    "FMF",
+    "LBL",
+    "FMF"
+  ],
+  "key": {
+    "F": {
+      "item": "interstice:chemotrophic_fabric"
+    },
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    },
+    "B": {
+      "item": "interstice:field_backpack"
+    }
+  },
+  "result": {
+    "id": "interstice:expedition_backpack"
+  }
+}

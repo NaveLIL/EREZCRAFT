@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "FFF",
+    "FCF",
+    "MLF"
+  ],
+  "key": {
+    "F": {
+      "item": "interstice:chemotrophic_fabric"
+    },
+    "C": {
+      "item": "minecraft:chest"
+    },
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    }
+  },
+  "result": {
+    "id": "interstice:field_backpack"
+  }
+}

@@ -11,15 +11,19 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.*;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.phys.shapes.*;
 import pro.erez.interstice.Interstice;
 
 public final class NutrientReservoirBlock extends BaseEntityBlock {
     public static final BooleanProperty FILLED=BooleanProperty.create("filled");
-    public NutrientReservoirBlock(){this(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS).strength(3,8));}
+    private static final VoxelShape SHAPE=Shapes.or(Block.box(0,0,0,16,15,16),Block.box(2,15,2,14,16,14));
+    public NutrientReservoirBlock(){this(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS).noOcclusion().strength(3,8));}
     private NutrientReservoirBlock(BlockBehaviour.Properties properties){super(properties);registerDefaultState(stateDefinition.any().setValue(FILLED,false));}
     @Override public MapCodec<NutrientReservoirBlock> codec(){return simpleCodec(NutrientReservoirBlock::new);}
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> builder){builder.add(FILLED);}
     @Override protected RenderShape getRenderShape(BlockState state){return RenderShape.MODEL;}
+    @Override protected VoxelShape getShape(BlockState state,BlockGetter level,BlockPos pos,CollisionContext context){return SHAPE;}
     @Override public BlockEntity newBlockEntity(BlockPos pos,BlockState state){return new NutrientReservoirEntity(pos,state);}
     @Override protected ItemInteractionResult useItemOn(ItemStack stack,BlockState state,Level level,BlockPos pos,Player player,InteractionHand hand,BlockHitResult hit){
         if(!(level.getBlockEntity(pos) instanceof NutrientReservoirEntity reservoir))return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;

@@ -1,0 +1,364 @@
+{
+  "passed": true,
+  "version": "0.5.0",
+  "date": "2026-10-08",
+  "base_commit": "1da448b8864f90891f5762c3d275b272a232d57a",
+  "evidence": ".verification\\20261008T171530.150927Z-equipment-wear-native",
+  "build": {
+    "required_tests_passed": 262,
+    "groups": [
+      31,
+      6,
+      17,
+      17,
+      7,
+      132,
+      12,
+      6,
+      10,
+      16,
+      8
+    ],
+    "accepted": true
+  },
+  "python_verifier_tests": 37,
+  "native": {
+    "retortUiSmoke": {
+      "files": [
+        "retort-ui-validation.json"
+      ],
+      "reports": [
+        {
+          "creator_pid": 12700,
+          "scope": "Disposable prepared platform and Survival inventory; genuine GUI widget events and inventory/button packets, not a resource-gathering Survival journey",
+          "settle_before_actions": {
+            "purpose": "retort_ui_before_actions",
+            "server_tick": 121,
+            "elapsed_actual_server_ticks": 78,
+            "stable_actual_server_ticks": 39,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "native_buttons_clear_actual_inventory_slots": true,
+          "full_scaled_width": 640,
+          "client_custom_recipe_count": 8,
+          "actual_search_and_recipe_browse": true,
+          "compact_scaled_width": 320,
+          "actual_compact_overlay_and_scrolling": true,
+          "native_one_batch_fill_preserves_components_and_counts": true,
+          "invalid_native_token_rejected": true,
+          "running_native_controls_disabled_and_server_locked": true,
+          "settle_terminal": {
+            "purpose": "retort_ui_terminal",
+            "server_tick": 249,
+            "elapsed_actual_server_ticks": 19,
+            "stable_actual_server_ticks": 20,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "clean_generation_before_mc_stop": true,
+          "passed": true,
+          "stage": 15,
+          "reason": "Native full/compact library, search, scrolling, counted component-safe transfer, invalid-token rejection and active-batch controls passed"
+        }
+      ]
+    },
+    "backpackSmoke": {
+      "files": [
+        "backpack-create-validation.json",
+        "backpack-reload-validation.json"
+      ],
+      "reports": [
+        {
+          "creator_pid": 31560,
+          "scope": "Prepared disposable Creative platform, inventory and pickup entities; ordinary native RMB, inventory packets and menu buttons. No autonomous Survival route or vanilla upgrade crafting is claimed.",
+          "settle_before_native_menu": {
+            "purpose": "backpack_initial_generation",
+            "server_tick": 127,
+            "elapsed_actual_server_ticks": 84,
+            "stable_actual_server_ticks": 48,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "native_shift_sort_stash_refill_and_matching_button": true,
+          "native_nested_shulker_and_bundle_rejected": true,
+          "ordinary_matching_item_pickup_preserved_components": true,
+          "ordinary_expedition_material_pickup": true,
+          "field_uuid": "c00fc8aa-5337-4fab-a003-5eff17e517c0",
+          "expedition_uuid": "e0efbbf2-e3db-4f43-96cd-c4eabd6f2c65",
+          "settle_terminal": {
+            "purpose": "backpack_terminal_shutdown",
+            "server_tick": 373,
+            "elapsed_actual_server_ticks": 19,
+            "stable_actual_server_ticks": 20,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "clean_generation_before_mc_stop": true,
+          "passed": true,
+          "reason": "Native54/72 slot menus, actual inventory/button packets, matching/material pickup and component-preserving saved packs passed",
+          "mode": "create",
+          "stage": 19,
+          "shutdown_pending": false
+        },
+        {
+          "creator_pid": 31560,
+          "scope": "Prepared disposable Creative platform, inventory and pickup entities; ordinary native RMB, inventory packets and menu buttons. No autonomous Survival route or vanilla upgrade crafting is claimed.",
+          "settle_before_native_menu": {
+            "purpose": "backpack_initial_generation",
+            "server_tick": 473,
+            "elapsed_actual_server_ticks": 60,
+            "stable_actual_server_ticks": 49,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "native_shift_sort_stash_refill_and_matching_button": true,
+          "native_nested_shulker_and_bundle_rejected": true,
+          "ordinary_matching_item_pickup_preserved_components": true,
+          "ordinary_expedition_material_pickup": true,
+          "field_uuid": "c00fc8aa-5337-4fab-a003-5eff17e517c0",
+          "expedition_uuid": "e0efbbf2-e3db-4f43-96cd-c4eabd6f2c65",
+          "settle_terminal": {
+            "purpose": "backpack_terminal_shutdown",
+            "server_tick": 574,
+            "elapsed_actual_server_ticks": 19,
+            "stable_actual_server_ticks": 20,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "clean_generation_before_mc_stop": true,
+          "passed": true,
+          "reason": "Different-JVM reload preserves both UUIDs, mode, exact item counts, custom data/name and tool damage; both native menus reopened",
+          "mode": "reload",
+          "stage": 43,
+          "shutdown_pending": false,
+          "reload_pid": 28232,
+          "cold_exact_components_quantities_ids_modes_preserved": true,
+          "native_registered_hotkey_open": true,
+          "native_registered_hotkey": "B"
+        }
+      ]
+    },
+    "wearBackpackSmoke": {
+      "files": [
+        "wear-backpack-create-validation.json",
+        "wear-backpack-reload-validation.json"
+      ],
+      "reports": [
+        {
+          "creator_pid": 16924,
+          "initial_uuid": "8b515593-1956-4de5-b1d7-6114eb5d024c",
+          "base_x": -210,
+          "base_y": 66,
+          "base_z": 457,
+          "scope": "Disposable prepared platform/items, then Survival interaction rules: actual client Shift/RMB, registered B, ordinary inventory button and equipment slot packets. No unaided Survival resource/recipe route is claimed.",
+          "settle_before_wearing": {
+            "purpose": "wear_backpack_initial_generation",
+            "server_tick": 140,
+            "elapsed_actual_server_ticks": 101,
+            "stable_actual_server_ticks": 49,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "native_wide_and_slim_renderer_layers": {
+            "WIDE": true,
+            "SLIM": true
+          },
+          "actual_local_player_skin": "SLIM",
+          "actual_client_shift_rmb_equips_without_armor_slot": true,
+          "registered_B_opens_worn_slot_41": true,
+          "actual_inventory_equipment_button_clicked": true,
+          "actual_equipment_slot_takeoff_once": true,
+          "actual_equipment_slot_rewear_once": true,
+          "native_third_person_back_view_with_chest_armor": true,
+          "worn_uuid": "8b515593-1956-4de5-b1d7-6114eb5d024c",
+          "armor_unchanged_through_actual_wear_and_equipment_menu": true,
+          "settle_terminal": {
+            "purpose": "wear_backpack_terminal_shutdown",
+            "server_tick": 567,
+            "elapsed_actual_server_ticks": 19,
+            "stable_actual_server_ticks": 20,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "clean_generation_before_mc_stop": true,
+          "passed": true,
+          "reason": "Native Shift RMB wears one loaded pack without using armor; registered B and ordinary inventory equipment button/slot clicks passed; native third-person views captured",
+          "mode": "create",
+          "stage": 16,
+          "shutdown_pending": false
+        },
+        {
+          "creator_pid": 16924,
+          "initial_uuid": "8b515593-1956-4de5-b1d7-6114eb5d024c",
+          "base_x": -210,
+          "base_y": 66,
+          "base_z": 457,
+          "scope": "Disposable prepared platform/items, then Survival interaction rules: actual client Shift/RMB, registered B, ordinary inventory button and equipment slot packets. No unaided Survival resource/recipe route is claimed.",
+          "settle_before_wearing": {
+            "purpose": "wear_backpack_initial_generation",
+            "server_tick": 661,
+            "elapsed_actual_server_ticks": 62,
+            "stable_actual_server_ticks": 49,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "native_wide_and_slim_renderer_layers": {
+            "WIDE": true,
+            "SLIM": true
+          },
+          "actual_local_player_skin": "SLIM",
+          "actual_client_shift_rmb_equips_without_armor_slot": true,
+          "registered_B_opens_worn_slot_41": true,
+          "actual_inventory_equipment_button_clicked": true,
+          "actual_equipment_slot_takeoff_once": true,
+          "actual_equipment_slot_rewear_once": true,
+          "native_third_person_back_view_with_chest_armor": true,
+          "worn_uuid": "8b515593-1956-4de5-b1d7-6114eb5d024c",
+          "armor_unchanged_through_actual_wear_and_equipment_menu": true,
+          "settle_terminal": {
+            "purpose": "wear_backpack_terminal_shutdown",
+            "server_tick": 812,
+            "elapsed_actual_server_ticks": 19,
+            "stable_actual_server_ticks": 20,
+            "holders_checked": 961,
+            "generation_ref_count": 0,
+            "save_futures_pending": 0,
+            "holders_not_ready_for_saving": 0,
+            "pending_generation_tasks": 0,
+            "save_futures_failed": 0,
+            "timed_out": false,
+            "non_quiet_examples": []
+          },
+          "clean_generation_before_mc_stop": true,
+          "passed": true,
+          "reason": "Different-JVM attachment reload preserves worn identity, exact stored components/counts and chest armor; B reopened the actual worn storage and native third-person scene",
+          "mode": "reload",
+          "stage": 42,
+          "shutdown_pending": false,
+          "reload_pid": 10076,
+          "cold_attachment_exact_components_and_armor_preserved": true,
+          "cold_registered_B_opens_worn_pack": true
+        }
+      ]
+    }
+  },
+  "artifact": {
+    "passed": true,
+    "jar": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\libs\\interstice-0.5.0.jar",
+    "jar_sha256": "a7b53f3e712d843e2e21be61daa6a350bf44d919818f0dcdeacf3576415cdcc2",
+    "models_checked": 361,
+    "resources_compared": 993,
+    "errors": []
+  },
+  "source_jar_java_files_compared": 140,
+  "palette_checks": [
+    {
+      "output": "item/expedition/field_backpack.png",
+      "classes": 9,
+      "resolution": [
+        16,
+        16
+      ],
+      "pattern_and_alpha_preserved": true
+    },
+    {
+      "output": "item/expedition/expedition_backpack.png",
+      "classes": 9,
+      "resolution": [
+        16,
+        16
+      ],
+      "pattern_and_alpha_preserved": true
+    },
+    {
+      "output": "item/expedition/chemotrophic_fabric.png",
+      "classes": 6,
+      "resolution": [
+        16,
+        16
+      ],
+      "pattern_and_alpha_preserved": true
+    },
+    {
+      "output": "gui/retort_metal.png",
+      "classes": 7,
+      "resolution": [
+        16,
+        16
+      ],
+      "pattern_and_alpha_preserved": true
+    },
+    {
+      "output": "gui/backpack_cloth.png",
+      "classes": 2,
+      "resolution": [
+        16,
+        16
+      ],
+      "pattern_and_alpha_preserved": true
+    }
+  ],
+  "artifact_followup": ".verification\\20261008T175742.200572Z-equipment-final-artifact",
+  "owner_saves_unchanged": true,
+  "limitations": [
+    "Prepared disposable client scenes; no unaided Survival collection/crafting route is claimed.",
+    "Both player renderers have the layer; the actual photographed skin is SLIM. Elytra geometry is supported but not photographed.",
+    "The reinforced item resists fire while intact. Void, despawn and ordinary damage can still remove a bag.",
+    "Client and server both need the same updated mod. This task did not publish GitHub or replace owner saves."
+  ]
+}

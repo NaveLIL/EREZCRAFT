@@ -1,0 +1,154 @@
+{
+  "menu.interstice.retort.auto": [
+    "АВТО",
+    "AUTO"
+  ],
+  "menu.interstice.retort.auto_active": [
+    "АВТО ✓",
+    "AUTO ✓"
+  ],
+  "menu.interstice.retort.auto_hint": [
+    "Автоматически выбирать подходящую операцию по сырью в реторте.",
+    "Choose a matching operation automatically from the retort inputs."
+  ],
+  "menu.interstice.retort.library": [
+    "Рецепты",
+    "Recipes"
+  ],
+  "menu.interstice.retort.library_title": [
+    "Операции реторты",
+    "Retort operations"
+  ],
+  "menu.interstice.retort.back": [
+    "Назад",
+    "Back"
+  ],
+  "menu.interstice.retort.search": [
+    "Поиск по продукту или сырью",
+    "Search product or ingredient"
+  ],
+  "menu.interstice.retort.no_results": [
+    "Подходящих операций нет",
+    "No matching operations"
+  ],
+  "menu.interstice.retort.pin": [
+    "Закрепить",
+    "Pin recipe"
+  ],
+  "menu.interstice.retort.pinned": [
+    "Закреплено",
+    "Pinned"
+  ],
+  "menu.interstice.retort.pin_hint": [
+    "Выполнять только эту операцию. Сырьё можно добавить вручную или воронкой. Во время партии выбор заблокирован.",
+    "Run only this operation. Insert ingredients manually or using a hopper. Selection is locked during a batch."
+  ],
+  "menu.interstice.retort.fill_one": [
+    "Заполнить 1",
+    "Fill 1 batch"
+  ],
+  "menu.interstice.retort.fill_hint": [
+    "Закрепить выбранную операцию и перенести ровно недостающее сырьё для одной партии из инвентаря. Топливо добавляется отдельно.",
+    "Pin this operation and transfer only the missing ingredients for one batch from your inventory. Add fuel separately."
+  ],
+  "menu.interstice.retort.ingredients_counted": [
+    "Сырьё: есть / нужно",
+    "Ingredients: have / need"
+  ],
+  "menu.interstice.retort.have_need": [
+    "Есть: %s; нужно для партии: %s",
+    "Available: %s; needed per batch: %s"
+  ],
+  "menu.interstice.retort.count_scope": [
+    "Учитывается сырьё в реторте и основном инвентаре. Топливная ячейка не считается сырьём.",
+    "Counts retort inputs and your main inventory. The fuel slot does not count as an ingredient."
+  ],
+  "menu.interstice.retort.batch_time": [
+    "Партия: %sс при 20TPS",
+    "Batch: %ss at 20TPS"
+  ],
+  "menu.interstice.retort.batch_heat": [
+    "Расход нагрева: %s тиков",
+    "Heat used: %s ticks"
+  ],
+  "menu.interstice.retort.progress_hint": [
+    "Прогресс партии: %s / %s тиков",
+    "Batch progress: %s / %s ticks"
+  ],
+  "menu.interstice.retort.remaining": [
+    "Осталось нагрева: %sс",
+    "Processing remaining: %ss"
+  ],
+  "menu.interstice.retort.saved_batch": [
+    "Сырьё уже зарезервировано. Партия и её результат сохраняются при перезапуске.",
+    "Ingredients are already reserved. This batch and its result persist through restarts."
+  ],
+  "menu.interstice.retort.heat_hint": [
+    "Запас нагрева: %s тиков (%sс)",
+    "Stored heat: %s ticks (%ss)"
+  ],
+  "menu.interstice.retort.fuel_separate": [
+    "Сумрачный уголь даёт 3200 тиков нагрева. Уголь для сорбента — отдельный ингредиент, его нужно положить во входную ячейку.",
+    "Umbral coal provides 3200 heat ticks. Coal used for sorbent is a separate ingredient and belongs in an input slot."
+  ],
+  "menu.interstice.retort.status.0": [
+    "Ожидает подходящее сырьё",
+    "Waiting for matching inputs"
+  ],
+  "menu.interstice.retort.status.1": [
+    "Партия готовится",
+    "Processing batch"
+  ],
+  "menu.interstice.retort.status.2": [
+    "Добавьте сумрачный уголь",
+    "Add umbral coal fuel"
+  ],
+  "menu.interstice.retort.status.3": [
+    "Освободите выходные ячейки",
+    "Clear output space"
+  ],
+  "menu.interstice.retort.status.4": [
+    "Недостаточно сырья для рецепта",
+    "Pinned recipe needs inputs"
+  ],
+  "menu.interstice.retort.feedback.1": [
+    "Сначала дождитесь конца партии",
+    "Wait for the current batch"
+  ],
+  "menu.interstice.retort.feedback.2": [
+    "Недостаточно сырья в инвентаре",
+    "Missing inventory ingredients"
+  ],
+  "menu.interstice.retort.feedback.3": [
+    "Освободите входные ячейки",
+    "Clear input space"
+  ],
+  "menu.interstice.retort.feedback.4": [
+    "Освободите выходные ячейки",
+    "Clear output space"
+  ],
+  "menu.interstice.retort.feedback.5": [
+    "Сырьё одной партии перенесено",
+    "One batch transferred"
+  ],
+  "menu.interstice.retort.feedback.6": [
+    "Операция недоступна; обновите список",
+    "Recipe unavailable; refresh the list"
+  ],
+  "menu.interstice.retort.feedback.7": [
+    "Сырьё партии уже находится в реторте",
+    "The inputs already contain a full batch"
+  ],
+  "menu.interstice.retort.pending_fuel": [
+    "Партия ждёт топлива",
+    "Batch is waiting for fuel"
+  ],
+  "menu.interstice.retort.pending_output": [
+    "Готово: освободите выход",
+    "Complete: clear output space"
+  ],
+  "menu.interstice.retort.status.5": [
+    "Закреплённая операция недоступна",
+    "Pinned operation is unavailable"
+  ]
+}

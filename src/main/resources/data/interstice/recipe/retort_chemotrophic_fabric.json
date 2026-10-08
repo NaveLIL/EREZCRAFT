@@ -1,0 +1,24 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "interstice:plant_fiber"
+      },
+      "count": 4
+    },
+    {
+      "ingredient": {
+        "item": "interstice:phosphorite_paste"
+      },
+      "count": 1
+    }
+  ],
+  "outputs": [
+    {
+      "id": "interstice:chemotrophic_fabric",
+      "count": 2
+    }
+  ],
+  "ticks": 600
+}

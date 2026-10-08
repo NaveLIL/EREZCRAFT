@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "#c:ores",
+    "#c:raw_materials",
+    "#c:gems",
+    "#c:ingots",
+    "interstice:ash_grain",
+    "interstice:crimson_root",
+    "interstice:plant_fiber",
+    "interstice:umbral_coal",
+    "interstice:phosphorite_crystal",
+    "interstice:vitriolite_shard",
+    "interstice:phosphorite",
+    "interstice:vitriolite",
+    "interstice:aerolite",
+    "interstice:pyrolith",
+    "interstice:raw_riftsilver",
+    "interstice:riftstone",
+    "interstice:root_loam"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "sources": [
+    {
+      "file": "bag.png",
+      "source_member": "bag.png",
+      "author": "twiswist",
+      "source_url": "https://opengameart.org/content/inventory-filter-icons",
+      "archive_url": "https://opengameart.org/sites/default/files/inventory_icons.zip",
+      "archive_file": "inventory_icons.zip",
+      "archive_sha256": "c275f6cb31327370776eab52ad7bff43bc3e7c66b9fb4ab660f81df1ebbe9cd4",
+      "source_sha256": "1cd9bb658456761a14013e925724f4f50ce61e498d76c870161e2a8421c64551",
+      "license": "CC0-1.0",
+      "retrieved": "2026-10-08",
+      "width": 16,
+      "height": 16,
+      "changes": "Original whole file copied unchanged; runtime colors prepared separately."
+    },
+    {
+      "file": "sack.png",
+      "source_member": "sack.png",
+      "author": "twiswist",
+      "source_url": "https://opengameart.org/content/inventory-filter-icons",
+      "archive_url": "https://opengameart.org/sites/default/files/inventory_icons.zip",
+      "archive_file": "inventory_icons.zip",
+      "archive_sha256": "c275f6cb31327370776eab52ad7bff43bc3e7c66b9fb4ab660f81df1ebbe9cd4",
+      "source_sha256": "026b97306dd1e3ac02798907e9312c72e9dd8cae93106763c935f688cd693f86",
+      "license": "CC0-1.0",
+      "retrieved": "2026-10-08",
+      "width": 16,
+      "height": 16,
+      "changes": "Original whole file copied unchanged; runtime colors prepared separately."
+    }
+  ],
+  "source_page_sha256": "488bae4bdac62276bc582aa21115f9096a4abf79c93dce1f305a5a21e6cb4729",
+  "license_copy_sha256": "b43732f4c1463b087cf10d4daf8d8766514b2bf8f21bc5ef50905f95be227726",
+  "mc_1_21_1_structure_review": {
+    "scope": "Whole16px block/item images; original plus flips/rotations; palette classes and alpha",
+    "comparison_count": 1568,
+    "matches": 0,
+    "note": "Technical comparison, not a full provenance/legal audit."
+  }
+}
