@@ -186,9 +186,10 @@ public final class GardenGameTests {
         h.assertTrue(actor.onClimbable(),"A real living entity does not recognise our climbing vine");
         vine.performBonemeal(level,RandomSource.create(1),top.below(3),level.getBlockState(top.below(3)));
         h.assertTrue(level.getBlockState(top.below(4)).is(vine),"Bone meal did not extend a supported hanging tip");
+        h.assertTrue(level.getBlockState(top.below(4)).getValue(GardenVineBlock.SECTION)==4,"Odd-length chain leaves a truncated half-tip");
         var shears=new ItemStack(Items.SHEARS);h.assertTrue(Block.getDrops(vine.defaultBlockState(),level,top,null,null,shears).stream().anyMatch(s->s.is(vine.asItem())),"Shears did not collect vine material");
         level.destroyBlock(top.below(1),false);
         h.assertTrue(level.getBlockState(top.below(2)).isAir()&&level.getBlockState(top.below(4)).isAir(),"Broken chain left hanging unsupported segments");
-        h.assertTrue(level.getBlockState(top).is(vine),"Breaking a lower link deleted the supported top");h.succeed();
+        h.assertTrue(level.getBlockState(top).is(vine)&&level.getBlockState(top).getValue(GardenVineBlock.SECTION)==4,"Broken chain did not finish its surviving short tip");h.succeed();
     }
 }

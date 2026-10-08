@@ -15,11 +15,13 @@ def write(path,data):
 base=json.loads((DATA/'interstice_trees/paleheart.json').read_text(encoding='utf-8'))['variants'][0]['tree']
 tree=copy.deepcopy(base)
 tree['trunk_placer'].update(base_height=20,height_rand_a=2,height_rand_b=1)
-tree['foliage_placer'].update(radius=3,height=3)
-arms=['[WUWUWDD]','[EUEUEDD]','[NUNUNDD]','[SUSUSDD]']
-top=['[WUWWUUD]','[EUEEUUD]','[NUNNUUD]','[SUSSUUD]']
-paths=['U'*9+arms[0]+arms[1]+'U'*6+arms[2]+arms[3]+'U'*6+''.join(top),
-       'U'*10+arms[2]+arms[3]+'U'*5+arms[0]+arms[1]+'U'*7+''.join(reversed(top))]
+tree['trunk_provider']['state']['Name']='interstice:crown_log'
+tree['foliage_provider']['state']['Name']='interstice:crown_leaves'
+tree['foliage_placer']={'type':'minecraft:fancy_foliage_placer','radius':2,'offset':0,'height':5}
+# Bent main spines and staggered branch ends: overlapping rounded volumes,
+# rather than synchronized horizontal platforms. Both shapes stay chunk-local.
+paths=['U'*8+'[WUWWUUWD]'+'UUUUUEUU'+'[NNUNNUU][SSUSSUEUU][EEUEUD]'+'UUUUWUU'+'[NNUNNUU][SSUSSUU][EEUEEUUU][WWUWWUU]',
+       'U'*9+'[EEUEUUD]'+'UUUUWUU'+'[SSUSSUU][NNUNNWUU][WWUWUD]'+'UUUEUU'+'[SSUSSUU][NNUNNUUU][WWUWWU][EEUEEUUUU]']
 write(DATA/'interstice_trees/paleheart_crown.json',{'attempts':1,'chance':8,'variants':[
     {'weight':1,'stem_width':2,'extra_height':2,'vine_attempts':8,'vine_length':8,'fruit_count':4,'branch_path':path,'tree':tree} for path in paths]})
 
@@ -59,4 +61,32 @@ translations={
              'message.interstice.tide_heart.unripe':'The fruit is not ripe yet.'}}
 for language,values in translations.items():
     p=ASSETS/f'lang/{language}.json';d=json.loads(p.read_text(encoding='utf-8'));d.update(values);write(p,d)
-print('Generated rare giant crown presets, pod/food/sapling resources and explicit effect explanations.')
+# A separate species must yield its own wood and saplings, including old vanilla
+# inventory/loot/recipe conventions. Reuse our established native templates.
+for folder in ('blockstates','models/block','models/item'):
+    for p in sorted((ASSETS/folder).glob('*paleheart*.json')):
+        if 'sapling' in p.name:continue
+        write(ASSETS/folder/p.name.replace('paleheart','crown'),json.loads(p.read_text(encoding='utf-8').replace('paleheart','crown')))
+for folder in ('loot_table/blocks','recipe','advancement/recipes/building_blocks'):
+    for p in sorted((DATA/folder).glob('*paleheart*.json')):
+        if 'sapling' in p.name:continue
+        write(DATA/folder/p.name.replace('paleheart','crown'),json.loads(p.read_text(encoding='utf-8').replace('paleheart','crown')))
+for namespace in ('minecraft','interstice'):
+    for p in (RES/f'data/{namespace}/tags').rglob('*.json'):
+        d=json.loads(p.read_text(encoding='utf-8'));new=[v.replace('paleheart','crown') for v in d.get('values',[]) if isinstance(v,str) and 'paleheart' in v and 'sapling' not in v]
+        if not new:continue
+        if 'paleheart' in p.name:write(p.with_name(p.name.replace('paleheart','crown')),{'replace':False,'values':new})
+        else:d['values']=list(dict.fromkeys(d['values']+new));write(p,d)
+# Ready leaf sources already contain holes. Variation changes only the resource
+# reference; no rotation, mirrored pixels or newly drawn alpha masks.
+leaf=json.loads((ASSETS/'models/block/crown_leaves.json').read_text(encoding='utf-8'))
+leaf['textures']['all']='interstice:block/garden/crown_leaves_2'
+write(ASSETS/'models/block/crown_leaves_2.json',leaf)
+write(ASSETS/'blockstates/crown_leaves.json',{'variants':{'':[{'model':'interstice:block/crown_leaves','weight':2},{'model':'interstice:block/crown_leaves_2','weight':1}]}})
+ru=['Бревно венечника','Обтёсанное бревно венечника','Доски венечника','Листва венечника','Плита из венечника','Ступени из венечника','Забор из венечника','Калитка из венечника']
+names=['crown_log','stripped_crown_log','crown_planks','crown_leaves','crown_slab','crown_stairs','crown_fence','crown_fence_gate']
+for language in ('ru_ru','en_us'):
+    p=ASSETS/f'lang/{language}.json';d=json.loads(p.read_text(encoding='utf-8'))
+    d.update({f'block.interstice.{name}':ru[i] if language=='ru_ru' else name.replace('_',' ').title() for i,name in enumerate(names)})
+    d['block.interstice.crown_sapling']='Саженец венечника' if language=='ru_ru' else 'Crown Tree Sapling';write(p,d)
+print('Generated distinct crown wood family, rounded asymmetric giant presets and fruit resources.')

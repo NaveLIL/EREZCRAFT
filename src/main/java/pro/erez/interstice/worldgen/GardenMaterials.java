@@ -38,6 +38,19 @@ public final class GardenMaterials {
     public static final DeferredHolder<Block,RotatedPillarBlock> STRIPPED_PALEHEART_LOG=register("stripped_paleheart_log",()->new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
     public static final DeferredHolder<Block,Block> PALEHEART_PLANKS=register("paleheart_planks",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
     public static final DeferredHolder<Block,LeavesBlock> PALEHEART_LEAVES=register("paleheart_leaves",()->new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).lightLevel(s->1)));
+    public static final DeferredHolder<Block,RotatedPillarBlock> CROWN_LOG=register("crown_log",()->new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)){
+        @Override public BlockState getToolModifiedState(BlockState state,UseOnContext context,ItemAbility action,boolean simulate){
+            if(action==ItemAbilities.AXE_STRIP)return STRIPPED_CROWN_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            return super.getToolModifiedState(state,context,action,simulate);
+        }
+    });
+    public static final DeferredHolder<Block,RotatedPillarBlock> STRIPPED_CROWN_LOG=register("stripped_crown_log",()->new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+    public static final DeferredHolder<Block,Block> CROWN_PLANKS=register("crown_planks",()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final DeferredHolder<Block,LeavesBlock> CROWN_LEAVES=register("crown_leaves",()->new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).lightLevel(s->1)));
+    public static final DeferredHolder<Block,SlabBlock> CROWN_SLAB=register("crown_slab",()->new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
+    public static final DeferredHolder<Block,StairBlock> CROWN_STAIRS=register("crown_stairs",()->new StairBlock(CROWN_PLANKS.get().defaultBlockState(),BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
+    public static final DeferredHolder<Block,FenceBlock> CROWN_FENCE=register("crown_fence",()->new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
+    public static final DeferredHolder<Block,FenceGateBlock> CROWN_FENCE_GATE=register("crown_fence_gate",()->new FenceGateBlock(WoodType.OAK,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
     public static final DeferredHolder<Block,GardenSapling> PALEHEART_SAPLING=register("paleheart_sapling",GardenSapling::new);
     public static final DeferredHolder<Block,GardenSapling> CROWN_SAPLING=register("crown_sapling",()->new GardenSapling(){
         @Override protected net.minecraft.resources.ResourceLocation definition(){return GardenTreeDefinitions.CROWN;}

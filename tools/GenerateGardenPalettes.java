@@ -27,8 +27,7 @@ public final class GenerateGardenPalettes {
         {"pale_vine","stem2_leaf_both","111","87","108"},
         {"pale_vine_tip","tip2","120","96","114"},
         {"tide_heart","bud","184","139","94"},
-        {"tide_heart_unripe","bud","98","82","105"},
-        {"crown_sapling","sapling_beech","148","114","121"}
+        {"tide_heart_unripe","bud","98","82","105"}
     };
     static String hash(Path path)throws Exception{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(path)));}
     static int clamp(double value){return Math.max(0,Math.min(255,(int)Math.round(value)));}

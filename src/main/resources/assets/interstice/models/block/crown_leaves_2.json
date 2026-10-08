@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "interstice:block/garden/crown_leaves_2"
+  },
+  "render_type": "minecraft:cutout_mipped"
+}

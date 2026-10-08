@@ -1,0 +1,155 @@
+{
+  "revision": "CROWN_REVISION",
+  "version": "0.2.5",
+  "passed": true,
+  "published": false,
+  "base_commit": "05dcd16be4482a4c917bc815df8886b2c0202791",
+  "artifact": {
+    "path": "build/libs/interstice-0.2.5.jar",
+    "sha256": "975c47a231e4861fd0c9a3fc2ef2f6a3bdf858bfc894741aabaabb40585d7b03",
+    "resource_hashes_match": true,
+    "smoke_code_excluded": true
+  },
+  "checks": {
+    "gametests": 161,
+    "groups": [
+      17,
+      7,
+      104,
+      9,
+      16,
+      8
+    ],
+    "python_tests": 24,
+    "user_saves_unchanged": true,
+    "resources": {
+      "passed": true,
+      "resources_checked": 634,
+      "model_texture_references_checked": 770,
+      "regeneration_changes": [],
+      "ready_palette_textures": 23,
+      "pattern_and_alpha_verified_by_generators": true,
+      "old_garden_pngs_unchanged": [
+        "paleheart_leaves.png",
+        "paleheart_log.png",
+        "paleheart_log_top.png",
+        "paleheart_planks.png",
+        "paleheart_sapling.png",
+        "palestone.png",
+        "palestone_bricks.png",
+        "pale_fern.png",
+        "pale_litter.png",
+        "pale_vine.png",
+        "pale_vine_tip.png",
+        "stripped_paleheart_log.png",
+        "stripped_paleheart_log_top.png",
+        "tide_heart.png",
+        "tide_heart_unripe.png"
+      ]
+    },
+    "incremental_check": {
+      "reason": "Guard against unsupported non-log trunk providers added after full suite; rebuilt final artifact and re-ran affected food tests",
+      "gametests": 7,
+      "passed": true,
+      "evidence": ".verification/20261008T064648.669728Z-crown-provider-guard"
+    },
+    "native": {
+      "crown-create-validation.json": {
+        "creator_pid": 30280,
+        "naturally_generated": true,
+        "seed": 20261006,
+        "chunk_x": -1,
+        "chunk_z": 1,
+        "fruit_count": 4,
+        "root_y": 175,
+        "fruit_height_above_root": 28,
+        "fruit_x": -13,
+        "fruit_y": 203,
+        "fruit_z": 23,
+        "upper_sea_gap": 12.321940580467327,
+        "scene_scope": "Natural Creative visual inspection, then positioned Survival player for real harvest/eating; not an autonomous climbing route",
+        "natural_vine_tip_section": 3,
+        "fixture_player_positioned_on_crown": true,
+        "fixture_hunger_before": 12,
+        "ordinary_client_hand_harvest": true,
+        "ordinary_client_food_consumption": true,
+        "hunger_after": 18,
+        "night_vision_after_eating": true,
+        "plantable_seed_returned": true,
+        "reaction_ticks_at_save": 1682,
+        "passed": true,
+        "mode": "create",
+        "stage": 9,
+        "reason": "Natural giant inspected; ordinary hand harvest and eating passed, positive reaction saved"
+      },
+      "crown-reload-validation.json": {
+        "creator_pid": 30280,
+        "naturally_generated": true,
+        "seed": 20261006,
+        "chunk_x": -1,
+        "chunk_z": 1,
+        "fruit_count": 4,
+        "root_y": 175,
+        "fruit_height_above_root": 28,
+        "fruit_x": -13,
+        "fruit_y": 203,
+        "fruit_z": 23,
+        "upper_sea_gap": 12.321940580467327,
+        "scene_scope": "Natural Creative visual inspection, then positioned Survival player for real harvest/eating; not an autonomous climbing route",
+        "natural_vine_tip_section": 3,
+        "fixture_player_positioned_on_crown": true,
+        "fixture_hunger_before": 12,
+        "ordinary_client_hand_harvest": true,
+        "ordinary_client_food_consumption": true,
+        "hunger_after": 18,
+        "night_vision_after_eating": true,
+        "plantable_seed_returned": true,
+        "reaction_ticks_at_save": 1682,
+        "passed": true,
+        "mode": "reload",
+        "stage": 13,
+        "reason": "Cold restart preserved harvest and positive reaction; real countdown produced weakness and visible prey signal",
+        "positive_phase_persisted_after_restart": true,
+        "pod_harvest_persisted": true,
+        "reload_pid": 30748,
+        "reaction_ticks_loaded": 1633,
+        "real_delayed_weakness": true,
+        "real_delayed_glowing": true,
+        "future_creature_signal": true,
+        "real_ticks_waited_after_reload": 732
+      }
+    }
+  },
+  "evidence": ".verification/20261008T063840.747658Z-crown-species-final",
+  "screenshots": [
+    {
+      "path": "art/generated/crown-tree/crown-delayed-cost.png",
+      "sha256": "a19e40e2e9b140b648cf912f03f5a57525e495b85010cee671e818fca01e7f08"
+    },
+    {
+      "path": "art/generated/crown-tree/crown-first-meal.png",
+      "sha256": "a48e4a27cdd1787bfb1784aa2bd520d6692e7add2982ac4d6151eb33146ffa43"
+    },
+    {
+      "path": "art/generated/crown-tree/crown-natural-darkness.png",
+      "sha256": "31a648b4d8a4ca01436c4d94e744ff0f55fdf6a1372bda11b0910e9a0458c453"
+    },
+    {
+      "path": "art/generated/crown-tree/crown-natural-giant.png",
+      "sha256": "622053c2ecc10481a285459992a2885a837d563f15aab6f930ae7cfb895ff3d8"
+    },
+    {
+      "path": "art/generated/crown-tree/crown-top-fruits.png",
+      "sha256": "4eca55713ff234d97973a1297da71becaff60809b85b62b3108dc03de580e8ea"
+    },
+    {
+      "path": "art/generated/crown-tree/crown-vine-tip.png",
+      "sha256": "5dc3e7dd861edeefd7476ae62762bafbd66f73578ffcb4d48698b238182fba1b"
+    }
+  ],
+  "limits": [
+    "Existing generated trees retain old shape and materials; new chunks and newly grown saplings use new definitions",
+    "Native Survival player was positioned on the crown; an unaided climb from the ground was not verified",
+    "Future-creature prey signal is preserved, but future creatures are not implemented in this revision"
+  ]
+}

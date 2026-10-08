@@ -141,12 +141,20 @@
   "block.interstice.pale_vine": "Бледная лиана",
   "item.interstice.tide_heart": "Приливное сердце",
   "block.interstice.crown_fruit": "Плод венечной кроны",
-  "block.interstice.crown_sapling": "Саженец венечного бледносердника",
+  "block.interstice.crown_sapling": "Саженец венечника",
   "effect.interstice.tide_heart_reaction": "Послевкусие приливного сердца",
   "tooltip.interstice.tide_heart.food": "Еда: 3 деления голода. После еды остаётся саженец.",
   "tooltip.interstice.tide_heart.benefit": "Ночное зрение: 40 секунд.",
   "tooltip.interstice.tide_heart.cost": "Затем слабость и свечение: 45 секунд.",
   "tooltip.interstice.tide_heart.repeat": "Повторная порция не обновляет эффект и не отменяет последствия.",
   "message.interstice.tide_heart.aftertaste": "Зрение вернулось к норме. Теперь ты слабее и заметнее.",
-  "message.interstice.tide_heart.unripe": "Плод ещё не созрел."
+  "message.interstice.tide_heart.unripe": "Плод ещё не созрел.",
+  "block.interstice.crown_log": "Бревно венечника",
+  "block.interstice.stripped_crown_log": "Обтёсанное бревно венечника",
+  "block.interstice.crown_planks": "Доски венечника",
+  "block.interstice.crown_leaves": "Листва венечника",
+  "block.interstice.crown_slab": "Плита из венечника",
+  "block.interstice.crown_stairs": "Ступени из венечника",
+  "block.interstice.crown_fence": "Забор из венечника",
+  "block.interstice.crown_fence_gate": "Калитка из венечника"
 }

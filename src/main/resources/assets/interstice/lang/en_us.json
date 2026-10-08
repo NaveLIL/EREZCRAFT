@@ -141,12 +141,20 @@
   "block.interstice.pale_vine": "Pale Vine",
   "item.interstice.tide_heart": "Tide Heart",
   "block.interstice.crown_fruit": "Crown Pod",
-  "block.interstice.crown_sapling": "Crowned Paleheart Sapling",
+  "block.interstice.crown_sapling": "Crown Tree Sapling",
   "effect.interstice.tide_heart_reaction": "Tide Heart Aftertaste",
   "tooltip.interstice.tide_heart.food": "Food: 3 hunger bars. Leaves a sapling after eating.",
   "tooltip.interstice.tide_heart.benefit": "Night Vision: 40 seconds.",
   "tooltip.interstice.tide_heart.cost": "Then Weakness and Glowing: 45 seconds.",
   "tooltip.interstice.tide_heart.repeat": "Another serving does not refresh the effect or remove its cost.",
   "message.interstice.tide_heart.aftertaste": "Your sight returns to normal. You are now weaker and more visible.",
-  "message.interstice.tide_heart.unripe": "The fruit is not ripe yet."
+  "message.interstice.tide_heart.unripe": "The fruit is not ripe yet.",
+  "block.interstice.crown_log": "Crown Log",
+  "block.interstice.stripped_crown_log": "Stripped Crown Log",
+  "block.interstice.crown_planks": "Crown Planks",
+  "block.interstice.crown_leaves": "Crown Leaves",
+  "block.interstice.crown_slab": "Crown Slab",
+  "block.interstice.crown_stairs": "Crown Stairs",
+  "block.interstice.crown_fence": "Crown Fence",
+  "block.interstice.crown_fence_gate": "Crown Fence Gate"
 }

@@ -34,7 +34,7 @@ public final class CrownFruitBlock extends Block {
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> b){b.add(AGE);}
     @Override public VoxelShape getShape(BlockState s,BlockGetter l,BlockPos p,CollisionContext c){return SHAPE;}
     @Override public boolean canSurvive(BlockState state,LevelReader level,BlockPos pos){
-        var support=level.getBlockState(pos.below());return support.is(GardenMaterials.PALEHEART_LEAVES.get())&&support.getValue(LeavesBlock.DISTANCE)<7;
+        var support=level.getBlockState(pos.below());return (support.is(GardenMaterials.PALEHEART_LEAVES.get())||support.is(GardenMaterials.CROWN_LEAVES.get()))&&support.getValue(LeavesBlock.DISTANCE)<7;
     }
     @Override public BlockState updateShape(BlockState state,Direction direction,BlockState neighbor,LevelAccessor level,BlockPos pos,BlockPos other){
         if(direction==Direction.DOWN&&!canSurvive(state,level,pos))return Blocks.AIR.defaultBlockState();

@@ -27,21 +27,34 @@ import pro.erez.interstice.worldgen.*;
 @PrefixGameTestTemplate(false)
 public final class CrownFoodGameTests {
     @GameTest(template="empty",timeoutTicks=100)
-    public static void giantPlansHaveSeveralBroadTiersAndOnlyHighGlowingFruit(GameTestHelper h){
+    public static void giantPlansHaveDistinctWoodRoundedCrownsAndOnlyHighGlowingFruit(GameTestHelper h){
         var root=new BlockPos(7,80,7);var definition=GardenTreeDefinitions.get(GardenTreeDefinitions.CROWN);
         for(var variant:definition.variants()){
             var cells=GardenTrees.plan(h.getLevel(),p->p.getY()==79?Interstice.ABYSSAL_TURF.get().defaultBlockState():Blocks.AIR.defaultBlockState(),root,variant,RandomSource.create(8));
             h.assertTrue(!cells.isEmpty(),"Giant preset produces no complete tree");
-            int top=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get())).mapToInt(e->e.getKey().getY()).max().orElse(0);
+            h.assertTrue(cells.values().stream().noneMatch(s->s.is(GardenMaterials.PALEHEART_LOG.get())||s.is(GardenMaterials.PALEHEART_LEAVES.get())),"New giant reused the small tree species");
+            int top=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.CROWN_LEAVES.get())).mapToInt(e->e.getKey().getY()).max().orElse(0);
             long fruit=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.CROWN_FRUIT.get())).peek(e->{
-                h.assertTrue(e.getKey().getY()==top+1&&e.getKey().getY()-root.getY()>=18,"Fruit is available on a low branch instead of the crown summit");
+                h.assertTrue(e.getKey().getY()>=top&&e.getKey().getY()-root.getY()>=18,"Fruit is available on a low branch instead of the crown summit");
                 h.assertTrue(e.getValue().getLightEmission(h.getLevel(),e.getKey())==14,"Ripe crown food does not visibly emit light");
             }).count();
             int lowX=cells.keySet().stream().mapToInt(BlockPos::getX).min().orElse(0),highX=cells.keySet().stream().mapToInt(BlockPos::getX).max().orElse(0);
-            h.assertTrue(top-root.getY()>=20&&highX-lowX>=10&&fruit>=2,"Giant lacks height, broad crown or distinct harvest sites");
-            long layers=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get())).map(e->(e.getKey().getY()-root.getY())/5).distinct().count();
+            h.assertTrue(top-root.getY()>=20&&highX-lowX>=12&&fruit>=2,"Giant lacks height, broad crown or distinct harvest sites");
+            long layers=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.CROWN_LEAVES.get())).map(e->(e.getKey().getY()-root.getY())/5).distinct().count();
             h.assertTrue(layers>=3,"Multi-tier crown collapsed to one canopy");
-        }h.succeed();
+            long summit=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.CROWN_LEAVES.get())&&e.getKey().getY()==top).count();
+            long belly=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.CROWN_LEAVES.get())&&e.getKey().getY()==top-2).count();
+            h.assertTrue(summit<belly,"Upper crown still has a flat platform instead of tapered rounded foliage");
+            h.assertTrue(cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.CROWN_LEAVES.get())).allMatch(e->e.getValue().getValue(LeavesBlock.DISTANCE)<7),"New species leaves will decay without branch support");
+        }
+        var grid=net.minecraft.world.item.crafting.CraftingInput.of(1,1,List.of(new ItemStack(GardenMaterials.CROWN_LOG.get())));
+        var recipe=h.getLevel().getRecipeManager().getRecipeFor(net.minecraft.world.item.crafting.RecipeType.CRAFTING,grid,h.getLevel()).orElseThrow().value();
+        var planks=recipe.assemble(grid,h.getLevel().registryAccess());
+        h.assertTrue(planks.is(GardenMaterials.CROWN_PLANKS.get().asItem())&&planks.getCount()==4,"Distinct crown wood has no usable plank recipe");
+        h.assertTrue(GardenMaterials.CROWN_LOG.get().defaultBlockState().is(net.minecraft.tags.BlockTags.LOGS)&&GardenMaterials.CROWN_LEAVES.get().defaultBlockState().is(net.minecraft.tags.BlockTags.LEAVES),"Separate giant species is missing living log/leaf tags");
+        var shears=new ItemStack(Items.SHEARS);
+        h.assertTrue(Block.getDrops(GardenMaterials.CROWN_LEAVES.get().defaultBlockState(),h.getLevel(),h.absolutePos(BlockPos.ZERO),null,null,shears).stream().anyMatch(s->s.is(GardenMaterials.CROWN_LEAVES.get().asItem())),"Crown canopy drops the wrong species");
+        h.succeed();
     }
     @GameTest(template="empty",timeoutTicks=100)
     public static void unsuitableGiantDoesNotLeavePartialWoodOrPods(GameTestHelper h){
@@ -49,6 +62,10 @@ public final class CrownFoodGameTests {
         var cells=GardenTrees.plan(h.getLevel(),p->p.getY()==79?Interstice.ABYSSAL_TURF.get().defaultBlockState():Blocks.AIR.defaultBlockState(),root,variant,RandomSource.create(8));
         var blocker=cells.keySet().iterator().next();
         h.assertTrue(!GardenTrees.fits(cells,p->p.equals(blocker)?Blocks.CHEST.defaultBlockState():p.getY()==79?Interstice.ABYSSAL_TURF.get().defaultBlockState():Blocks.AIR.defaultBlockState(),p->true,root),"Giant overwrites an obstacle");
+        var old=variant.tree();var bad=new net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration.TreeConfigurationBuilder(
+                net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider.simple(Blocks.STONE),old.trunkPlacer,old.foliageProvider,old.foliagePlacer,old.minimumSize).build();
+        var malformed=new GardenTreeDefinitions.Variant(variant.weight(),bad,variant.branchPath(),variant.stemWidth(),variant.extraHeight(),0,1,variant.joCode(),variant.fruitCount());
+        h.assertTrue(GardenTrees.plan(h.getLevel(),p->p.getY()==79?Interstice.ABYSSAL_TURF.get().defaultBlockState():Blocks.AIR.defaultBlockState(),root,malformed,RandomSource.create(8)).isEmpty(),"Bad trunk provider crashes or produces partial giant wood");
         h.assertTrue(!GardenTrees.fits(cells,p->p.getY()==79?Interstice.ABYSSAL_TURF.get().defaultBlockState():Blocks.AIR.defaultBlockState(),p->IslandChunkGenerator.landAllowed(GeometryProfile.LEGACY,p.getX(),p.getY(),p.getZ()),root),"Giant ignores sea/build limits");h.succeed();
     }
     @GameTest(template="empty",timeoutTicks=600)

@@ -23,18 +23,18 @@ import pro.erez.interstice.Interstice;
 
 /** Hanging, climbable chains. The original 16x32 artwork is shown across two 16px-high blocks. */
 public final class GardenVineBlock extends Block implements BonemealableBlock {
-    public static final IntegerProperty SECTION=IntegerProperty.create("section",0,3); // body upper/lower, tip upper/lower
-    public GardenVineBlock(){super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).noCollission().instabreak().sound(SoundType.WEEPING_VINES).randomTicks());registerDefaultState(stateDefinition.any().setValue(SECTION,2));}
+    public static final IntegerProperty SECTION=IntegerProperty.create("section",0,4); // body pair, tip pair, whole short tip
+    public GardenVineBlock(){super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).noCollission().instabreak().sound(SoundType.WEEPING_VINES).randomTicks());registerDefaultState(stateDefinition.any().setValue(SECTION,4));}
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> b){b.add(SECTION);}
     @Override public VoxelShape getShape(BlockState s,BlockGetter l,BlockPos p,CollisionContext c){return box(4,0,4,12,16,12);}
-    public static boolean anchor(BlockState s){return s.is(GardenMaterials.PALEHEART_LOG.get())||s.is(GardenMaterials.PALEHEART_LEAVES.get())||s.is(Interstice.GLOOMCROWN_LOG.get())||s.is(Interstice.GLOOMCROWN_LEAVES.get());}
+    public static boolean anchor(BlockState s){return s.is(GardenMaterials.PALEHEART_LOG.get())||s.is(GardenMaterials.PALEHEART_LEAVES.get())||s.is(GardenMaterials.CROWN_LOG.get())||s.is(GardenMaterials.CROWN_LEAVES.get())||s.is(Interstice.GLOOMCROWN_LOG.get())||s.is(Interstice.GLOOMCROWN_LEAVES.get());}
     @Override public boolean canSurvive(BlockState s,LevelReader l,BlockPos p){var above=l.getBlockState(p.above());return anchor(above)||above.is(this);}
     @Override public BlockState updateShape(BlockState state,Direction direction,BlockState neighbor,LevelAccessor level,BlockPos pos,BlockPos other){
         if(direction==Direction.UP&&!canSurvive(state,level,pos))return Blocks.AIR.defaultBlockState();
         if(direction==Direction.UP||direction==Direction.DOWN){
             var above=level.getBlockState(pos.above());int part=above.is(this)?1-(above.getValue(SECTION)&1):0;
             var below=level.getBlockState(pos.below());boolean cap=!below.is(this)||(part==0&&below.getValue(SECTION)==3);
-            return state.setValue(SECTION,part+(cap?2:0));
+            return state.setValue(SECTION,!below.is(this)&&part==0?4:part+(cap?2:0));
         }return state;
     }
     private boolean canExtend(ServerLevel l,BlockPos p){

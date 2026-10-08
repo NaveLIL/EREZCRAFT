@@ -43,6 +43,8 @@ import pro.erez.interstice.geometry.GeometryProfile;
 public final class GardenTrees {
     private GardenTrees() {}
     private static final int MAX_RADIUS = 7, MAX_HEIGHT = 32, MAX_CELLS = 4096;
+    private static boolean log(BlockState state){return state.is(GardenMaterials.PALEHEART_LOG.get())||state.is(GardenMaterials.CROWN_LOG.get());}
+    private static boolean leaf(BlockState state){return state.is(GardenMaterials.PALEHEART_LEAVES.get())||state.is(GardenMaterials.CROWN_LEAVES.get());}
     public static Map<BlockPos, BlockState> plan(LevelReader level, Function<BlockPos, BlockState> blocks,
                                                BlockPos root, GardenTreeDefinitions.Variant variant, RandomSource random) {
         TreeConfiguration config=variant.tree();
@@ -55,11 +57,15 @@ public final class GardenTrees {
         List<FoliagePlacer.FoliageAttachment> attachments;
         if(!variant.branchPath().isEmpty()||!variant.joCode().isEmpty()) {
             var skeleton=JoShape.draw(variant.code(),root,random.nextInt(4),random.nextInt(variant.extraHeight()+1));
-            skeleton.logs().forEach((p,axis)->cells.put(p,GardenMaterials.PALEHEART_LOG.get().defaultBlockState().setValue(net.minecraft.world.level.block.RotatedPillarBlock.AXIS,axis)));
+            for(var entry:skeleton.logs().entrySet()){
+                var state=config.trunkProvider.getState(random,entry.getKey());
+                if(!log(state))return Map.of(); // Bad resource providers must fail without world writes.
+                cells.put(entry.getKey(),state.setValue(net.minecraft.world.level.block.RotatedPillarBlock.AXIS,entry.getValue()));
+            }
             if(variant.stemWidth()==2) {
-                var core=new java.util.ArrayList<>(cells.keySet());
-                for(var p:core)if(p.getX()==root.getX() && p.getZ()==root.getZ())for(int dx=0;dx<2;dx++)for(int dz=0;dz<2;dz++)
-                    cells.putIfAbsent(p.offset(dx,0,dz),GardenMaterials.PALEHEART_LOG.get().defaultBlockState());
+                int top=skeleton.spine().stream().mapToInt(BlockPos::getY).max().orElse(root.getY());
+                for(var p:skeleton.spine())if(p.getY()<top-3)for(int dx=0;dx<2;dx++)for(int dz=0;dz<2;dz++)
+                    cells.putIfAbsent(p.offset(dx,0,dz),config.trunkProvider.getState(random,p));
             }
             height=cells.keySet().stream().mapToInt(p->p.getY()-root.getY()+1).max().orElse(0);
             attachments=skeleton.ends().stream().map(p->new FoliagePlacer.FoliageAttachment(p.above(),0,false)).toList();
@@ -73,20 +79,20 @@ public final class GardenTrees {
         if(foliageHeight>6 || foliageRadius>4)return Map.of();
         FoliagePlacer.FoliageSetter setter = new FoliagePlacer.FoliageSetter() {
             public void set(BlockPos p, BlockState state) { cells.putIfAbsent(p.immutable(), state); }
-            public boolean isSet(BlockPos p) { return cells.containsKey(p) && cells.get(p).is(GardenMaterials.PALEHEART_LEAVES.get()); }
+            public boolean isSet(BlockPos p) { return cells.containsKey(p) && leaf(cells.get(p)); }
         };
         planning[1]=true;
         for (var attachment : attachments) config.foliagePlacer.createFoliage(view, setter, random, config, height, attachment, foliageHeight, foliageRadius);
-        if (planning[0] || cells.isEmpty() || cells.size() > MAX_CELLS || !cells.getOrDefault(root, Blocks.AIR.defaultBlockState()).is(GardenMaterials.PALEHEART_LOG.get())) return Map.of();
+        if (planning[0] || cells.isEmpty() || cells.size() > MAX_CELLS || !log(cells.getOrDefault(root, Blocks.AIR.defaultBlockState()))) return Map.of();
         for (var entry : cells.entrySet()) {
             var p = entry.getKey(); var state = entry.getValue();
             if (Math.abs(p.getX() - root.getX()) > MAX_RADIUS || Math.abs(p.getZ() - root.getZ()) > MAX_RADIUS
                     || p.getY() < root.getY() || p.getY() > root.getY() + MAX_HEIGHT + 4
-                    || !(state.is(GardenMaterials.PALEHEART_LOG.get()) || state.is(GardenMaterials.PALEHEART_LEAVES.get()))) return Map.of();
+                    || !(log(state) || leaf(state))) return Map.of();
         }
         // Native foliage recipes may contain leaves beyond distance 6. Keep only a living connected crown.
         Map<BlockPos, Integer> distances = new java.util.HashMap<>(); var queue = new ArrayDeque<BlockPos>();
-        cells.forEach((p, state) -> { if (state.is(GardenMaterials.PALEHEART_LOG.get())) { distances.put(p, 0); queue.add(p); } });
+        cells.forEach((p, state) -> { if (log(state)) { distances.put(p, 0); queue.add(p); } });
         while (!queue.isEmpty()) {
             var p = queue.remove(); int distance = distances.get(p) + 1;
             if (distance > 6) continue;
@@ -95,15 +101,15 @@ public final class GardenTrees {
                 if (cells.containsKey(next) && !distances.containsKey(next)) { distances.put(next, distance); queue.add(next); }
             }
         }
-        cells.entrySet().removeIf(e -> e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get()) && !distances.containsKey(e.getKey()));
-        cells.replaceAll((p, state) -> state.is(GardenMaterials.PALEHEART_LEAVES.get())
+        cells.entrySet().removeIf(e -> leaf(e.getValue()) && !distances.containsKey(e.getKey()));
+        cells.replaceAll((p, state) -> leaf(state)
                 ? state.setValue(LeavesBlock.DISTANCE, distances.get(p)).setValue(LeavesBlock.PERSISTENT, false) : state);
         if(variant.fruitCount()>0){
-            int top=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get())).mapToInt(e->e.getKey().getY()).max().orElse(root.getY());
+            int top=cells.entrySet().stream().filter(e->leaf(e.getValue())).mapToInt(e->e.getKey().getY()).max().orElse(root.getY());
             // Food-bearing crowns must remain genuinely high; no easy fruit from short garden shrubs.
             if(top-root.getY()<18)return Map.of();
-            var sites=new java.util.ArrayList<>(cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get())
-                    &&e.getKey().getY()==top&&!cells.containsKey(e.getKey().above())).map(e->e.getKey().above()).toList());
+            var sites=new java.util.ArrayList<>(cells.entrySet().stream().filter(e->leaf(e.getValue())
+                    &&e.getKey().getY()>=top-1&&!cells.containsKey(e.getKey().above())).map(e->e.getKey().above()).toList());
             var chosen=new java.util.ArrayList<BlockPos>();
             while(!sites.isEmpty()&&chosen.size()<variant.fruitCount()){
                 var site=sites.remove(random.nextInt(sites.size()));
@@ -113,7 +119,7 @@ public final class GardenTrees {
             if(chosen.isEmpty())return Map.of();
         }
         // Optional chains stop at real ground/obstacles and never overwrite part of the tree.
-        var anchors=cells.entrySet().stream().filter(e->e.getValue().is(GardenMaterials.PALEHEART_LEAVES.get())&&!cells.containsKey(e.getKey().below()))
+        var anchors=cells.entrySet().stream().filter(e->leaf(e.getValue())&&!cells.containsKey(e.getKey().below()))
                 .map(Map.Entry::getKey).toList();
         for(int attempt=0;attempt<variant.vineAttempts()&&!anchors.isEmpty();attempt++){
             var anchor=anchors.get(random.nextInt(anchors.size()));var chain=new java.util.ArrayList<BlockPos>();
@@ -125,7 +131,8 @@ public final class GardenTrees {
             }
             for(int i=0;i<chain.size();i++){
                 boolean cap=i==chain.size()-1 || (i==chain.size()-2 && (i&1)==0);
-                cells.put(chain.get(i),GardenMaterials.PALE_VINE.get().defaultBlockState().setValue(GardenVineBlock.SECTION,(i&1)+(cap?2:0)));
+                int section=i==chain.size()-1&&(i&1)==0?4:(i&1)+(cap?2:0);
+                cells.put(chain.get(i),GardenMaterials.PALE_VINE.get().defaultBlockState().setValue(GardenVineBlock.SECTION,section));
             }
         }
         return cells;
@@ -137,7 +144,7 @@ public final class GardenTrees {
         for (var entry : cells.entrySet()) {
             var pos = entry.getKey(); var existing = blocks.apply(pos);
             if (!allowed.test(pos) || (!existing.isAir() && !(pos.equals(root) && (existing.is(GardenMaterials.PALEHEART_SAPLING.get())||existing.is(GardenMaterials.CROWN_SAPLING.get()))))) return false;
-            if (entry.getValue().is(GardenMaterials.PALEHEART_LOG.get()) && pos.getY() == root.getY()
+            if (log(entry.getValue()) && pos.getY() == root.getY()
                     && !blocks.apply(pos.below()).is(Interstice.ABYSSAL_TURF.get())) return false;
         }
         return true;

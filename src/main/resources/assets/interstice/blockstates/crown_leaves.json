@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "interstice:block/crown_leaves",
+        "weight": 2
+      },
+      {
+        "model": "interstice:block/crown_leaves_2",
+        "weight": 1
+      }
+    ]
+  }
+}

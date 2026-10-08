@@ -1,0 +1,35 @@
+{
+  "received": "2026-10-08",
+  "license": "CC0-1.0",
+  "author": "ARoachIFoundOnMyPillow",
+  "files": {
+    "maple_log_side.png": {
+      "sha256": "ccfee5d05c3baea0c628d6050d77ae68feb643ba996ba6e97e9ba0d09a532003",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set"
+    },
+    "maple_log_top.png": {
+      "sha256": "f9561bfb710537d7e54c45853951780d2690b477135a8b1943ca8286ec48e73e",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set"
+    },
+    "maple_planks.png": {
+      "sha256": "a68c62d9bab0058b8054fba6f1db26444fc624bd59305d93176ae1b8953fed69",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set"
+    },
+    "oak_leaves_2.png": {
+      "sha256": "d344e04c52f853835b38beee207d1950aefc48fd51b760a7b4c1573aa3f6ec6b",
+      "source_url": "https://opengameart.org/content/more-blocks"
+    },
+    "oak_leaves_3.png": {
+      "sha256": "d83a36ae8439500acb03de571d602436b5a1d9a0d78cae332c1a0ae530698aeb",
+      "source_url": "https://opengameart.org/content/more-blocks"
+    },
+    "sapling_maple.png": {
+      "sha256": "e694671ebe1a218390fb55fc52519dbf11d0bdb248dc31539937746681709c13",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set"
+    }
+  },
+  "archives": {
+    "blocks_2.zip": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467",
+    "new_blocks.zip": "d54516c1d5d0c3a23e872b9b17e2dd537054fe0aa0cb6712ab774a393ade39b8"
+  }
+}

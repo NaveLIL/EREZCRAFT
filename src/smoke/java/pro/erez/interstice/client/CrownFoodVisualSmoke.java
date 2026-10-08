@@ -74,6 +74,10 @@ public final class CrownFoodVisualSmoke {
             else if(stage==3&&++ticks>=100){shot(mc,"crown-natural-darkness.png");server.execute(()->server.getPlayerList().getPlayer(uuid).addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,12000,0,false,false)));stage=4;ticks=0;}
             else if(stage==4&&++ticks>=70){
                 shot(mc,"crown-natural-giant.png");
+                work=server.submit(()->{inspectVine(server.getPlayerList().getPlayer(uuid));return true;});stage=16;ticks=0;
+            }else if(stage==16&&done()){stage=17;ticks=0;}
+            else if(stage==17&&++ticks>=70){
+                shot(mc,"crown-vine-tip.png");
                 work=server.submit(()->{var p=server.getPlayerList().getPlayer(uuid);var fruit=position();camera(p,p.serverLevel(),fruit.getX()+5.5,fruit.getY()+4,fruit.getZ()-5.5,fruit.getX()+.5,fruit.getY()+.5,fruit.getZ()+.5,true);return true;});stage=14;ticks=0;
             }else if(stage==14&&done()){stage=15;ticks=0;}
             else if(stage==15&&++ticks>=70){
@@ -123,7 +127,7 @@ public final class CrownFoodVisualSmoke {
                 }
             }
             if(selected==null||count<2)continue;
-            for(int y=41;y<selected.getY();y++){var p=new BlockPos(cx*16+7,y,cz*16+7);if(chunk.getBlockState(p).is(GardenMaterials.PALEHEART_LOG.get())&&StoneVaults.isGround(chunk.getBlockState(p.below())))rootY=y;}
+            for(int y=41;y<selected.getY();y++){var p=new BlockPos(cx*16+7,y,cz*16+7);if(chunk.getBlockState(p).is(GardenMaterials.CROWN_LOG.get())&&StoneVaults.isGround(chunk.getBlockState(p.below())))rootY=y;}
             if(rootY<0||selected.getY()-rootY<18)continue;
             JsonObject found=new JsonObject();found.addProperty("creator_pid",ProcessHandle.current().pid());found.addProperty("naturally_generated",true);found.addProperty("seed",level.getSeed());
             found.addProperty("chunk_x",cx);found.addProperty("chunk_z",cz);found.addProperty("fruit_count",count);found.addProperty("root_y",rootY);found.addProperty("fruit_height_above_root",selected.getY()-rootY);
@@ -139,6 +143,19 @@ public final class CrownFoodVisualSmoke {
         }throw new IllegalStateException("No naturally generated fruiting giant");
     }
     private static void camera(ServerPlayer p,ServerLevel l,double x,double y,double z,double tx,double ty,double tz,boolean fly){double dx=tx-x,dz=tz-z,dy=ty-(y+p.getEyeHeight());p.teleportTo(l,x,y,z,Set.of(),(float)(Math.toDegrees(Math.atan2(dz,dx))-90),(float)-Math.toDegrees(Math.atan2(dy,Math.hypot(dx,dz))));p.setDeltaMovement(0,0,0);p.getAbilities().flying=fly;p.onUpdateAbilities();}
+    private static void inspectVine(ServerPlayer player){
+        var level=player.serverLevel();int cx=data.get("chunk_x").getAsInt(),cz=data.get("chunk_z").getAsInt(),root=data.get("root_y").getAsInt();
+        for(int y=root;y<position().getY();y++)for(int x=cx*16;x<cx*16+16;x++)for(int z=cz*16;z<cz*16+16;z++){
+            var p=new BlockPos(x,y,z);var state=level.getBlockState(p);
+            if(!state.is(GardenMaterials.PALE_VINE.get())||level.getBlockState(p.below()).is(GardenMaterials.PALE_VINE.get()))continue;
+            require(state.getValue(GardenVineBlock.SECTION)==3||state.getValue(GardenVineBlock.SECTION)==4,"Natural vine has a truncated half-tip");
+            for(int[] off:new int[][]{{3,-3},{-3,-3},{3,3},{-3,3}}){
+                double px=x+off[0]+.5,py=y-.5,pz=z+off[1]+.5;
+                if(!level.getBlockState(BlockPos.containing(px,py,pz)).isAir()||!level.getBlockState(BlockPos.containing(px,py+1,pz)).isAir())continue;
+                camera(player,level,px,py,pz,x+.5,y+1,z+.5,true);data.addProperty("natural_vine_tip_section",state.getValue(GardenVineBlock.SECTION));return;
+            }
+        }throw new IllegalStateException("No inspectable finished vine on the natural giant");
+    }
     private static BlockPos position(){return new BlockPos(data.get("fruit_x").getAsInt(),data.get("fruit_y").getAsInt(),data.get("fruit_z").getAsInt());}
     private static java.nio.file.Path world(Minecraft mc){return mc.gameDirectory.toPath().resolve("saves").resolve(WORLD);}
     private static java.nio.file.Path report(Minecraft mc,String mode){return mc.gameDirectory.toPath().resolve("crown-"+mode+"-validation.json");}

@@ -17,7 +17,7 @@ public final class JoShape {
     private static final String ALPHABET="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
     private static final String PATH="DUNSWE[]";
     private JoShape() {}
-    public record Skeleton(Map<BlockPos,Direction.Axis> logs,List<BlockPos> ends) {}
+    public record Skeleton(Map<BlockPos,Direction.Axis> logs,List<BlockPos> ends,List<BlockPos> spine) {}
     public static String encodePath(String path) {
         if(path.isEmpty() || path.length()>512)throw new IllegalArgumentException("Tree path must contain 1..512 instructions");
         int depth=0;
@@ -33,9 +33,9 @@ public final class JoShape {
     }
     public static Skeleton draw(String encoded,BlockPos root,int turn,int extraHeight) {
         if(encoded.isEmpty() || encoded.length()>256 || turn<0 || turn>3 || extraHeight<0 || extraHeight>3)throw new IllegalArgumentException("Invalid bounded JoCode");
-        Map<BlockPos,Direction.Axis> logs=new LinkedHashMap<>();List<BlockPos> ends=new ArrayList<>();var forks=new ArrayDeque<BlockPos>();
+        Map<BlockPos,Direction.Axis> logs=new LinkedHashMap<>();List<BlockPos> ends=new ArrayList<>();List<BlockPos> spine=new ArrayList<>();var forks=new ArrayDeque<BlockPos>();
         BlockPos pos=root.below();
-        for(int i=0;i<extraHeight;i++){pos=pos.above();logs.put(pos,Direction.Axis.Y);}
+        for(int i=0;i<extraHeight;i++){pos=pos.above();logs.put(pos,Direction.Axis.Y);spine.add(pos);}
         boolean ended=false;
         for(int i=0;i<encoded.length()*2;i++) {
             int packed=ALPHABET.indexOf(encoded.charAt(i/2));if(packed<0)throw new IllegalArgumentException("Invalid JoCode character");
@@ -50,6 +50,7 @@ public final class JoShape {
                 if(pos.getY()<root.getY() || pos.getY()>root.getY()+36 || Math.abs(pos.getX()-root.getX())>7 || Math.abs(pos.getZ()-root.getZ())>7)
                     throw new IllegalArgumentException("JoCode leaves the checked tree envelope");
                 logs.putIfAbsent(pos,dir.getAxis());
+                if(forks.isEmpty())spine.add(pos);
             }
         }
         if(!forks.isEmpty())throw new IllegalArgumentException("JoCode has an unclosed fork");
@@ -59,6 +60,6 @@ public final class JoShape {
             int neighbors=0;for(var d:Direction.values())if(logs.containsKey(p.relative(d)))neighbors++;
             if(neighbors==1)ends.add(p);
         }
-        return new Skeleton(java.util.Collections.unmodifiableMap(new LinkedHashMap<>(logs)),List.copyOf(ends));
+        return new Skeleton(java.util.Collections.unmodifiableMap(new LinkedHashMap<>(logs)),List.copyOf(ends),List.copyOf(spine));
     }
 }

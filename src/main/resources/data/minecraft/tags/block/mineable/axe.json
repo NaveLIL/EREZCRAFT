@@ -10,6 +10,13 @@
     "interstice:paleheart_slab",
     "interstice:paleheart_stairs",
     "interstice:paleheart_fence",
-    "interstice:paleheart_fence_gate"
+    "interstice:paleheart_fence_gate",
+    "interstice:crown_log",
+    "interstice:stripped_crown_log",
+    "interstice:crown_planks",
+    "interstice:crown_slab",
+    "interstice:crown_stairs",
+    "interstice:crown_fence",
+    "interstice:crown_fence_gate"
   ]
 }

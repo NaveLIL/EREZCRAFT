@@ -126,7 +126,8 @@ for kind in ('block','item'):
     tag(kind,'planks',['paleheart_planks']);tag(kind,'saplings',['paleheart_sapling'])
     for shape in ('slab','stairs'):
         names=[n for n in BLOCKS if n.endswith('_'+shape)]
-        tag(kind,shape+'s',names);tag(kind,'wooden_'+shape+'s',[n for n in names if n.startswith('paleheart')])
+        plural=shape if shape.endswith('s') else shape+'s'
+        tag(kind,plural,names);tag(kind,'wooden_'+plural,[n for n in names if n.startswith('paleheart')])
     tag(kind,'walls',['palestone_wall']);tag(kind,'fences',['paleheart_fence']);tag(kind,'wooden_fences',['paleheart_fence'])
     tag(kind,'fence_gates',['paleheart_fence_gate'])
 tag('block','carpets',['pale_litter']);tag('item','carpets',['pale_litter'])
@@ -158,13 +159,15 @@ write(DATA/'interstice/interstice_trees/paleheart.json',{'attempts':3,'chance':1
 print('Generated garden material family, native model/loot templates, 13 recipes and alien branch catalog.')
 
 # A 16x32 ready vine sprite spans two blocks through UV halves; the PNG itself is unchanged.
-for section in range(4):
+for section in range(5):
     name='pale_vine_'+str(section);texture='pale_vine_tip' if section>=2 else 'pale_vine'
-    uv=[0,8*(section&1),16,8+8*(section&1)]
+    # The source tip grows upwards. Turn the model down, joining the bottom source
+    # half to the top half across two blocks; leave the original PNG untouched.
+    uv=[0,0,16,16] if section==4 else [0,8*(1-(section&1)),16,8+8*(1-(section&1))]
     faces=[('north','south',[0,0,8],[16,16,8]),('east','west',[8,0,0],[8,16,16])]
     elements=[{'from':start,'to':end,'shade':False,'faces':{direction:{'uv':uv,'texture':'#vine'} for direction in (a,b)}} for a,b,start,end in faces]
     write(ASSETS/f'models/block/{name}.json',{'textures':{'vine':'interstice:block/garden/'+texture,'particle':'#vine'},'render_type':'minecraft:cutout','elements':elements})
-write(ASSETS/'blockstates/pale_vine.json',{'variants':{f'section={n}':{'model':f'interstice:block/pale_vine_{n}'} for n in range(4)}})
+write(ASSETS/'blockstates/pale_vine.json',{'variants':{f'section={n}':{'model':f'interstice:block/pale_vine_{n}','x':180} for n in range(5)}})
 write(ASSETS/'models/item/pale_vine.json',{'parent':'minecraft:item/generated','textures':{'layer0':'interstice:block/garden/pale_vine'}})
 write(DATA/'interstice/loot_table/blocks/pale_vine.json',{'type':'minecraft:block','pools':[{'rolls':1,'entries':[{'type':'minecraft:item','name':'interstice:pale_vine'}],
     'conditions':[{'condition':'minecraft:match_tool','predicate':{'items':'minecraft:shears'}},{'condition':'minecraft:survives_explosion'}]}]})

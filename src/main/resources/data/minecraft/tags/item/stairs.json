@@ -3,6 +3,9 @@
   "values": [
     "interstice:vaultstone_stairs",
     "interstice:polished_vaultstone_stairs",
-    "interstice:vaultstone_bricks_stairs"
+    "interstice:vaultstone_bricks_stairs",
+    "interstice:paleheart_stairs",
+    "interstice:palestone_stairs",
+    "interstice:crown_stairs"
   ]
 }

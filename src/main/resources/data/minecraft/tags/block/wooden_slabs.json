@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "interstice:paleheart_slab"
+    "interstice:paleheart_slab",
+    "interstice:crown_slab"
   ]
 }

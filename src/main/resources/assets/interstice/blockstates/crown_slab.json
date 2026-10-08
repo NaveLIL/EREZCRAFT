@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "interstice:block/crown_slab"
+    },
+    "type=double": {
+      "model": "interstice:block/crown_planks"
+    },
+    "type=top": {
+      "model": "interstice:block/crown_slab_top"
+    }
+  }
+}

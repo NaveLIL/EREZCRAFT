@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "interstice:crown_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "interstice:crown_planks"
+  }
+}
