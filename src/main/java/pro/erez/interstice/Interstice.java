@@ -82,6 +82,17 @@ public final class Interstice {
                     .build("toxin_spit"));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> RIFT_COBWEB_ITEM = ITEMS.register("rift_cobweb", () -> new net.minecraft.world.item.BlockItem(RIFT_COBWEB.get(), new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> SPIDER_EGG_SAC_ITEM = ITEMS.register("spider_egg_sac", () -> new net.minecraft.world.item.BlockItem(SPIDER_EGG_SAC.get(), new Item.Properties()));
+    public static final DeferredHolder<net.minecraft.world.entity.EntityType<?>, net.minecraft.world.entity.EntityType<pro.erez.interstice.entity.EchoRiftEntity>> ECHO_RIFT =
+            ENTITY_TYPES.register("echo_rift", () -> net.minecraft.world.entity.EntityType.Builder.<pro.erez.interstice.entity.EchoRiftEntity>of(pro.erez.interstice.entity.EchoRiftEntity::new, net.minecraft.world.entity.MobCategory.MISC)
+                    .sized(2.0F, 2.0F)
+                    .clientTrackingRange(10)
+                    .updateInterval(1)
+                    .fireImmune()
+                    .build("echo_rift"));
+    public static final DeferredHolder<Item, pro.erez.interstice.item.EchoShardItem> ECHO_SHARD =
+            ITEMS.register("echo_shard", () -> new pro.erez.interstice.item.EchoShardItem(new Item.Properties()));
+    public static final DeferredHolder<Item, pro.erez.interstice.item.EchoRiftAnchorItem> ECHO_RIFT_ANCHOR =
+            ITEMS.register("echo_rift_anchor", () -> new pro.erez.interstice.item.EchoRiftAnchorItem(new Item.Properties()));
     public static final DeferredHolder<Item, Item> CAVE_RIFT_SPIDER_SPAWN_EGG = ITEMS.register("cave_rift_spider_spawn_egg", () -> new net.neoforged.neoforge.common.DeferredSpawnEggItem(CAVE_RIFT_SPIDER, 0x1d1926, 0x2cf5c0, new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> RIFT_FRAME_ITEM = ITEMS.register("rift_frame", () -> new net.minecraft.world.item.BlockItem(RIFT_FRAME.get(), new Item.Properties()));
     public static final DeferredHolder<Item, pro.erez.interstice.rift.RiftLensItem> RIFT_LENS = ITEMS.register("rift_lens", pro.erez.interstice.rift.RiftLensItem::new);
@@ -158,6 +169,8 @@ public final class Interstice {
                 output.accept(RIFT_COBWEB_ITEM.get());
                 output.accept(SPIDER_EGG_SAC_ITEM.get());
                 output.accept(CAVE_RIFT_SPIDER_SPAWN_EGG.get());
+                output.accept(ECHO_SHARD.get());
+                output.accept(ECHO_RIFT_ANCHOR.get());
             }).build());
 
     private static BaseFlowingFluid.Properties lightProperties() {
