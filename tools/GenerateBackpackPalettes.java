@@ -39,10 +39,23 @@ public final class GenerateBackpackPalettes {
                 0xffc32d  // buckle: glowing vitriolite amber crystal
         );
 
+        var riftMap = createBagMap(
+                0x120c1d, // outline: dark abyssal void
+                0x2c2242, // body: riftstone deep violet weave
+                0x563e77, // straps: rift obsidian amethyst trim
+                0x1b1528, // shadow: deep rift void shadow
+                0x54d8c6  // buckle/core: radiant turquoise cyan rift crystal
+        );
+
         var entries = List.of(
                 new Entry("bag.png", "1cd9bb658456761a14013e925724f4f50ce61e498d76c870161e2a8421c64551", "field_backpack", 0x4e4468, fieldMap),
                 new Entry("bag.png", "1cd9bb658456761a14013e925724f4f50ce61e498d76c870161e2a8421c64551", "expedition_backpack", 0x285f69, expeditionMap),
-                new Entry("sack.png", "026b97306dd1e3ac02798907e9312c72e9dd8cae93106763c935f688cd693f86", "chemotrophic_fabric", 0x9b858e, null));
+                new Entry("bag.png", "1cd9bb658456761a14013e925724f4f50ce61e498d76c870161e2a8421c64551", "rift_backpack", 0x2c2242, riftMap),
+                new Entry("sack.png", "026b97306dd1e3ac02798907e9312c72e9dd8cae93106763c935f688cd693f86", "chemotrophic_fabric", 0x9b858e, null),
+                new Entry("grid.png", "62feee5954077dc43563aa59248624e97d89df4f310102454cdc35a26d43e577", "blank_module", 0x96cdd7, null),
+                new Entry("magical.png", "f37839127ffeedef8f30595160370599c3683ab846f623290f29ad9b9f551963", "magnet_module_tier1", 0x54d8c6, null),
+                new Entry("unpaid.png", "057e2d81a03c97990dc6ac12e3627c61b61c034205c63ff892f02ba7b8d06bbf", "feeder_module_tier1", 0xffc32d, null),
+                new Entry("equipped.png", "286dd18ded05421cb4015d869d8cece8bbfeab6efb6a45085f09fae4f5d1ee54", "compression_module_tier1", 0xa8b4b8, null));
 
         var records = new ArrayList<String>();
         for (var entry : entries) {
@@ -100,7 +113,7 @@ public final class GenerateBackpackPalettes {
         Path record = ASSETS.resolve("provenance/backpacks.json");
         Files.createDirectories(record.getParent());
         Files.writeString(record, "{\"license\":\"CC0-1.0\",\"author\":\"twiswist\",\"source_url\":\"https://opengameart.org/content/inventory-filter-icons\",\"sources\":\"art/sources/cc0/backpacks/sources.json\",\"generator\":\"tools/GenerateBackpackPalettes.java\",\"pattern_and_alpha_verified\":true,\"operation\":\"Bijective palette substitution; whole source coordinates, resolution and alpha preserved\",\"outputs\":[" + String.join(",", records) + "]}\n");
-        System.out.println("Verified 3 whole CC0 backpack/fabric palettes and item models");
+        System.out.println("Verified " + entries.size() + " whole CC0 backpack/module/fabric palettes and item models");
     }
 
     private static Map<Integer, Integer> createBagMap(int outlineRgb, int bodyRgb, int strapsRgb, int shadowRgb, int buckleRgb) {

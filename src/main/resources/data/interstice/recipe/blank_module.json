@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "SMS",
+    "FRF",
+    "SMS"
+  ],
+  "key": {
+    "S": {
+      "item": "interstice:riftsilver_ingot"
+    },
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    },
+    "F": {
+      "item": "interstice:chemotrophic_fabric"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "interstice:blank_module"
+  }
+}

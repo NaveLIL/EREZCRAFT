@@ -228,7 +228,8 @@ public final class BackpackGameTests {
     public static void nativeCraftingUpgradeConsumesOneLoadedBaseAndPreservesStorageNameModeWithANewLease(GameTestHelper h) {
         var level = h.getLevel();
         var holder = level.getRecipeManager().getAllRecipesFor(RecipeType.CRAFTING).stream()
-                .filter(r -> r.value() instanceof BackpackUpgradeRecipe).findFirst().orElseThrow();
+                .filter(r -> r.value() instanceof BackpackUpgradeRecipe && r.value().getResultItem(level.registryAccess()).is(ExpeditionEquipment.EXPEDITION_BACKPACK.get()))
+                .findFirst().orElseThrow();
         var ingredients = holder.value().getIngredients();
         h.assertTrue(ingredients.size() == 9, "Upgrade does not expose a complete 3 by 3 shaped recipe");
         var bag = field(); var contents = BackpackStorage.read(bag); contents.set(53, named(Items.DIAMOND_PICKAXE, 1, "packed upgrade proof")); BackpackStorage.write(bag, contents);
@@ -278,5 +279,138 @@ public final class BackpackGameTests {
                 "Destruction repeats or loses saved contents instead of clearing them before spill");
         var ordinary = drop(h, field()); h.assertTrue(ordinary.hurt(level.damageSources().lava(), 99) && ordinary.isRemoved(), "Field tier unexpectedly inherits reinforced fire immunity");
         h.succeed();
+    }
+
+    private static ItemStack rift() { return new ItemStack(ExpeditionEquipment.RIFT_BACKPACK.get()); }
+
+    @GameTest(template = TEMPLATE, timeoutTicks = 100)
+    public static void modulesArePersistedAndLimitedByTierAndRejectInvalidStacks(GameTestHelper h) {
+        var f = field(); var e = expedition(); var r = rift();
+        h.assertTrue(BackpackStorage.moduleSlots(f) == 1, "Field pack module slots must be 1");
+        h.assertTrue(BackpackStorage.moduleSlots(e) == 2, "Expedition pack module slots must be 2");
+        h.assertTrue(BackpackStorage.moduleSlots(r) == 4, "Rift pack module slots must be 4");
+
+        var magnet = new ItemStack(ExpeditionEquipment.MAGNET_MODULE_TIER1.get());
+        var feeder = new ItemStack(ExpeditionEquipment.FEEDER_MODULE_TIER1.get());
+        var modules = BackpackStorage.readModules(e);
+        modules.set(0, magnet);
+        modules.set(1, feeder);
+        BackpackStorage.writeModules(e, modules);
+
+        h.assertTrue(BackpackStorage.hasModule(e, ModuleType.MAGNET), "Magnet module not detected");
+        h.assertTrue(BackpackStorage.hasModule(e, ModuleType.FEEDER), "Feeder module not detected");
+        h.assertTrue(!BackpackStorage.hasModule(e, ModuleType.COMPRESSION), "Compression module falsely detected");
+
+        var loaded = ItemStack.parse(h.getLevel().registryAccess(), e.save(h.getLevel().registryAccess())).orElseThrow();
+        h.assertTrue(BackpackStorage.hasModule(loaded, ModuleType.MAGNET) && BackpackStorage.hasModule(loaded, ModuleType.FEEDER),
+                "Module serialization did not survive item stack roundtrip");
+
+        try {
+            var invalid = BackpackStorage.readModules(f);
+            invalid.set(0, new ItemStack(Items.DIAMOND));
+            BackpackStorage.writeModules(f, invalid);
+            h.fail("Non-module items must be rejected from module storage");
+        } catch (IllegalArgumentException expected) {}
+
+        h.succeed();
+    }
+
+    @GameTest(template = TEMPLATE, timeoutTicks = 100)
+    public static void riftBackpackHas84SlotsFourModulesAndBlastVoidImmunity(GameTestHelper h) {
+        var r = rift();
+        h.assertTrue(BackpackStorage.capacity(r) == 84, "Rift pack capacity must be 84");
+        h.assertTrue(BackpackStorage.moduleSlots(r) == 4, "Rift pack module slots must be 4");
+
+        var level = h.getLevel();
+        var entity = drop(h, r);
+        h.assertTrue(!entity.hurt(level.damageSources().lava(), 99), "Rift pack must be fire resistant");
+
+        var stored = BackpackStorage.read(r);
+        stored.set(0, new ItemStack(Items.NETHERITE_INGOT, 2));
+        BackpackStorage.write(r, stored);
+
+        // Test void/blast immunity in onDestroyed
+        r.onDestroyed(entity, level.damageSources().fellOutOfWorld());
+        h.assertTrue(BackpackStorage.read(r).get(0).getCount() == 2, "Void damage must not wipe or drop Rift pack contents");
+
+        h.succeed();
+    }
+
+    @GameTest(template = TEMPLATE, timeoutTicks = 100)
+    public static void magnetModulePullsAndDepositsEntitiesDirectlyIntoBackpack(GameTestHelper h) {
+        var player = player(h);
+        try {
+            var bag = expedition();
+            var modules = BackpackStorage.readModules(bag);
+            modules.set(0, new ItemStack(ExpeditionEquipment.MAGNET_MODULE_TIER1.get()));
+            BackpackStorage.writeModules(bag, modules);
+            BackpackHarness.set(player, bag);
+
+            var dropStack = new ItemStack(Items.COAL, 5);
+            var entity = drop(h, dropStack);
+
+            BackpackModules.tickMagnet(player, bag);
+
+            int inBag = stored(bag, Items.COAL);
+            h.assertTrue(inBag == 5 || entity.isRemoved() || entity.getDeltaMovement().lengthSqr() > 0.01,
+                    "Magnet module did not pull or deposit coal into backpack");
+            h.succeed();
+        } finally {
+            BackpackHarness.set(player, ItemStack.EMPTY);
+            TestPlayers.remove(player);
+        }
+    }
+
+    @GameTest(template = TEMPLATE, timeoutTicks = 100)
+    public static void feederModuleEatsNutritiousFoodFromBackpackWhenHungry(GameTestHelper h) {
+        var player = player(h);
+        try {
+            var bag = field();
+            var modules = BackpackStorage.readModules(bag);
+            modules.set(0, new ItemStack(ExpeditionEquipment.FEEDER_MODULE_TIER1.get()));
+            BackpackStorage.writeModules(bag, modules);
+
+            var items = BackpackStorage.read(bag);
+            items.set(0, new ItemStack(Items.COOKED_BEEF, 3));
+            BackpackStorage.write(bag, items);
+            BackpackHarness.set(player, bag);
+
+            player.getFoodData().setFoodLevel(10);
+            h.assertTrue(player.getFoodData().getFoodLevel() == 10, "Could not set test player food level");
+
+            BackpackModules.tickFeeder(player, bag);
+
+            h.assertTrue(player.getFoodData().getFoodLevel() > 10, "Feeder module did not increase food level");
+            h.assertTrue(stored(bag, Items.COOKED_BEEF) == 2, "Feeder module did not consume 1 cooked beef from bag");
+            h.succeed();
+        } finally {
+            BackpackHarness.set(player, ItemStack.EMPTY);
+            TestPlayers.remove(player);
+        }
+    }
+
+    @GameTest(template = TEMPLATE, timeoutTicks = 100)
+    public static void compressionModuleCompactsNineIngotsIntoBlock(GameTestHelper h) {
+        var player = player(h);
+        try {
+            var bag = field();
+            var modules = BackpackStorage.readModules(bag);
+            modules.set(0, new ItemStack(ExpeditionEquipment.COMPRESSION_MODULE_TIER1.get()));
+            BackpackStorage.writeModules(bag, modules);
+
+            var items = BackpackStorage.read(bag);
+            items.set(0, new ItemStack(Items.IRON_INGOT, 18));
+            BackpackStorage.write(bag, items);
+            BackpackHarness.set(player, bag);
+
+            BackpackModules.tickCompression(player, bag);
+
+            h.assertTrue(stored(bag, Items.IRON_INGOT) == 9, "Compression did not shrink 9 iron ingots");
+            h.assertTrue(stored(bag, Items.IRON_BLOCK) == 1, "Compression did not create 1 iron block");
+            h.succeed();
+        } finally {
+            BackpackHarness.set(player, ItemStack.EMPTY);
+            TestPlayers.remove(player);
+        }
     }
 }

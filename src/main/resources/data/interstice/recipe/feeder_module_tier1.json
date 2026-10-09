@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " G ",
+    "ABA",
+    " G "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:golden_carrot"
+    },
+    "A": {
+      "item": "minecraft:bread"
+    },
+    "B": {
+      "item": "interstice:blank_module"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "interstice:feeder_module_tier1"
+  }
+}

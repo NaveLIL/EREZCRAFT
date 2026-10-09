@@ -37,17 +37,18 @@ public final class BackpackLayer extends RenderLayer<AbstractClientPlayer, Playe
         if (!player.isAlive() || player.isSpectator() || player.isInvisible()) return;
         var worn = BackpackHarness.get(player);
         if (!BackpackStorage.isPack(worn)) return;
+        boolean rift = BackpackStorage.capacity(worn) >= 84;
         boolean reinforced = BackpackStorage.capacity(worn) > 54;
         boolean armor = player.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof ArmorItem;
         // Folded vanilla wings occupy the first two model pixels behind the torso.
         float back = player.getItemBySlot(EquipmentSlot.CHEST).is(Items.ELYTRA) ? 4.15F : armor ? 3.1F : 2.15F;
         float front = armor ? -3.1F : -2.15F;
-        float halfWidth = reinforced ? 4.3F : 4F;
-        float depth = reinforced ? 4.1F : 3.5F;
+        float halfWidth = rift ? 4.5F : reinforced ? 4.3F : 4F;
+        float depth = rift ? 4.3F : reinforced ? 4.1F : 3.5F;
         float outer = back + depth;
-        float red = reinforced ? .45F : .85F;
-        float green = reinforced ? .92F : .72F;
-        float blue = reinforced ? .96F : 1.0F;
+        float red = rift ? .52F : reinforced ? .45F : .85F;
+        float green = rift ? .40F : reinforced ? .92F : .72F;
+        float blue = rift ? .76F : reinforced ? .96F : 1.0F;
         poses.pushPose();
         try {
             // The parent's animated torso includes sneaking, swimming, flight and either player skin width.
@@ -69,10 +70,10 @@ public final class BackpackLayer extends RenderLayer<AbstractClientPlayer, Playe
                 cube(cloth, pose, light, 4.15F, 5F, back + .65F, 5.2F, 10.5F, outer - .45F,
                         red * .75F, green * .75F, blue * .75F);
             }
-            // Straps: warm saddle leather for field pack, riftsilver reinforced webbing for expedition pack.
-            float strapR = reinforced ? .75F : .95F;
-            float strapG = reinforced ? .95F : .58F;
-            float strapB = reinforced ? 1.0F : .32F;
+            // Straps: warm saddle leather for field, riftsilver webbing for expedition, amethyst void trim for rift.
+            float strapR = rift ? .48F : reinforced ? .75F : .95F;
+            float strapG = rift ? .38F : reinforced ? .95F : .58F;
+            float strapB = rift ? .65F : reinforced ? 1.0F : .32F;
             for (float center : new float[]{-2.65F, 2.65F}) {
                 cube(cloth, pose, light, center - .45F, .25F, front - .12F, center + .45F, 11.2F, front + .06F,
                         strapR, strapG, strapB);
@@ -81,11 +82,11 @@ public final class BackpackLayer extends RenderLayer<AbstractClientPlayer, Playe
                 cube(cloth, pose, light, center - .3F, 2.25F, outer + .02F, center + .3F, 5.55F, outer + .2F,
                         strapR, strapG, strapB);
             }
-            // Metal hardware: gleaming riftsilver for field pack, vitriolite golden amber for expedition pack.
+            // Metal hardware: gleaming riftsilver for field, vitriolite amber for expedition, radiant cyan rift for rift.
             var metal = buffers.getBuffer(RenderType.entityCutoutNoCull(METAL));
-            float metalR = reinforced ? 1.0F : .90F;
-            float metalG = reinforced ? .78F : .95F;
-            float metalB = reinforced ? .22F : 1.0F;
+            float metalR = rift ? .33F : reinforced ? 1.0F : .90F;
+            float metalG = rift ? .85F : reinforced ? .78F : .95F;
+            float metalB = rift ? .78F : reinforced ? .22F : 1.0F;
             for (float center : new float[]{-2.65F, 2.65F}) {
                 cube(metal, pose, light, center - .62F, 7.65F, front - .24F, center + .62F, 8.75F, front - .1F,
                         metalR, metalG, metalB);
