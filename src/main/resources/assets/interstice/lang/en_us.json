@@ -16,6 +16,8 @@
   "entity.interstice.echo_rift": "Echo Rift",
   "item.interstice.echo_shard": "Echo Shard",
   "item.interstice.echo_rift_anchor": "Echo Rift Anchor",
+  "message.interstice.echo_rift_unstable": "The rift is unstable and has not yet coalesced an Echo Shard...",
+  "message.interstice.echo_rift_too_far": "Too far from the rift's core to harvest essence.",
   "block.interstice.light_sea": "Light toxic ocean",
   "subtitles.interstice.tide.warning": "The tide begins to rumble",
   "subtitles.interstice.tide.surge": "The tide surges violently",

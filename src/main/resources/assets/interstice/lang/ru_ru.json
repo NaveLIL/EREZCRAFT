@@ -16,6 +16,8 @@
   "entity.interstice.echo_rift": "Эхо-разлом",
   "item.interstice.echo_shard": "Осколок эха",
   "item.interstice.echo_rift_anchor": "Якорь Эхо-разлома",
+  "message.interstice.echo_rift_unstable": "Аномалия нестабильна и еще не сконденсировала осколок эха...",
+  "message.interstice.echo_rift_too_far": "Слишком далеко от ядра аномалии для забора эссенции.",
   "block.interstice.light_sea": "Лёгкий токсичный океан",
   "subtitles.interstice.tide.warning": "Прилив начинает рокотать",
   "subtitles.interstice.tide.surge": "Прилив яростно вздымается",
