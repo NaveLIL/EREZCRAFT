@@ -10,6 +10,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import pro.erez.interstice.Interstice;
 import pro.erez.interstice.entity.client.CaveRiftSpiderModel;
 import pro.erez.interstice.entity.client.CaveRiftSpiderRenderer;
+import pro.erez.interstice.entity.client.EchoRiftRenderer;
 import pro.erez.interstice.entity.client.ToxinSpitRenderer;
 
 @EventBusSubscriber(modid = Interstice.ID, value = Dist.CLIENT)
@@ -25,6 +26,7 @@ public final class SpiderClient {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(Interstice.CAVE_RIFT_SPIDER.get(), CaveRiftSpiderRenderer::new);
         event.registerEntityRenderer(Interstice.TOXIN_SPIT.get(), ToxinSpitRenderer::new);
+        event.registerEntityRenderer(Interstice.ECHO_RIFT.get(), EchoRiftRenderer::new);
     }
 
     @SubscribeEvent
