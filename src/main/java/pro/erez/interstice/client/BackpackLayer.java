@@ -21,8 +21,6 @@ import pro.erez.interstice.equipment.BackpackStorage;
 public final class BackpackLayer extends RenderLayer<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> {
     private static final ResourceLocation CLOTH = texture("gui/backpack_cloth.png");
     private static final ResourceLocation METAL = texture("gui/retort_metal.png");
-    private static final ResourceLocation FIELD_MARK = texture("item/expedition/field_backpack.png");
-    private static final ResourceLocation EXPEDITION_MARK = texture("item/expedition/expedition_backpack.png");
 
     public BackpackLayer(RenderLayerParent<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> renderer) {
         super(renderer);
@@ -47,9 +45,9 @@ public final class BackpackLayer extends RenderLayer<AbstractClientPlayer, Playe
         float halfWidth = reinforced ? 4.3F : 4F;
         float depth = reinforced ? 4.1F : 3.5F;
         float outer = back + depth;
-        float red = reinforced ? .55F : .9F;
-        float green = reinforced ? .94F : .76F;
-        float blue = reinforced ? .87F : .94F;
+        float red = reinforced ? .45F : .85F;
+        float green = reinforced ? .92F : .72F;
+        float blue = reinforced ? .96F : 1.0F;
         poses.pushPose();
         try {
             // The parent's animated torso includes sneaking, swimming, flight and either player skin width.
@@ -71,26 +69,32 @@ public final class BackpackLayer extends RenderLayer<AbstractClientPlayer, Playe
                 cube(cloth, pose, light, 4.15F, 5F, back + .65F, 5.2F, 10.5F, outer - .45F,
                         red * .75F, green * .75F, blue * .75F);
             }
-            // Two front straps sit just beyond bare torso or chest armor; neither uses an equipment armor slot.
+            // Straps: warm saddle leather for field pack, riftsilver reinforced webbing for expedition pack.
+            float strapR = reinforced ? .75F : .95F;
+            float strapG = reinforced ? .95F : .58F;
+            float strapB = reinforced ? 1.0F : .32F;
             for (float center : new float[]{-2.65F, 2.65F}) {
                 cube(cloth, pose, light, center - .45F, .25F, front - .12F, center + .45F, 11.2F, front + .06F,
-                        red * .52F, green * .52F, blue * .52F);
+                        strapR, strapG, strapB);
                 cube(cloth, pose, light, center - .45F, .25F, front, center + .45F, 1F, back + .3F,
-                        red * .52F, green * .52F, blue * .52F);
+                        strapR, strapG, strapB);
                 cube(cloth, pose, light, center - .3F, 2.25F, outer + .02F, center + .3F, 5.55F, outer + .2F,
-                        red * .48F, green * .48F, blue * .48F);
+                        strapR, strapG, strapB);
             }
+            // Metal hardware: gleaming riftsilver for field pack, vitriolite golden amber for expedition pack.
             var metal = buffers.getBuffer(RenderType.entityCutoutNoCull(METAL));
+            float metalR = reinforced ? 1.0F : .90F;
+            float metalG = reinforced ? .78F : .95F;
+            float metalB = reinforced ? .22F : 1.0F;
             for (float center : new float[]{-2.65F, 2.65F}) {
                 cube(metal, pose, light, center - .62F, 7.65F, front - .24F, center + .62F, 8.75F, front - .1F,
-                        .9F, .92F, 1F);
+                        metalR, metalG, metalB);
                 cube(metal, pose, light, center - .48F, 3.8F, outer + .18F, center + .48F, 4.7F, outer + .35F,
-                        .9F, .92F, 1F);
+                        metalR, metalG, metalB);
             }
-            // The already shipped item sprite is a small sewn marker on the outer pocket, not a new bitmap.
-            var mark = buffers.getBuffer(RenderType.entityCutoutNoCull(reinforced ? EXPEDITION_MARK : FIELD_MARK));
-            quad(mark, pose, light, -1.5F, 7.1F, outer + 1.17F, 1.5F, 7.1F, outer + 1.17F,
-                    1.5F, 10.1F, outer + 1.17F, -1.5F, 10.1F, outer + 1.17F, 0, 0, 1, 1, 1, 1);
+            // 3D clasp on the outer pocket flap
+            cube(metal, pose, light, -0.65F, 6.35F, outer + 1.16F, 0.65F, 7.35F, outer + 1.36F,
+                    metalR, metalG, metalB);
         } finally {
             poses.popPose();
         }
