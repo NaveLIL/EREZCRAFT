@@ -9,6 +9,10 @@
   "fluid_type.interstice.light_toxin": "Лёгкая токсичная жидкость",
   "fluid_type.interstice.heavy_toxin": "Тяжёлая токсичная жидкость",
   "death.attack.interstice.toxin": "%1$s растворился в токсичном море",
+  "death.attack.interstice.spider_bite": "%1$s был растерзан сквозь броню %2$s",
+  "death.attack.interstice.spider_bite.item": "%1$s был растерзан сквозь броню %2$s",
+  "death.attack.interstice.spider_spit": "%1$s был сожжён едким плевком %2$s",
+  "death.attack.interstice.spider_spit.item": "%1$s был сожжён едким плевком %2$s",
   "block.interstice.light_sea": "Лёгкий токсичный океан",
   "subtitles.interstice.tide.warning": "Прилив начинает рокотать",
   "subtitles.interstice.tide.surge": "Прилив яростно вздымается",
@@ -356,5 +360,13 @@
   "message.interstice.winch.attached": "Страховочная линия: %sбл.",
   "message.interstice.winch.broken": "Линия отсоединена: препятствие или потерянный узел.",
   "message.interstice.winch.release_warning": "До освобождения линии1с: найдите опору!",
-  "message.interstice.winch.safety_release": "Линия освобождена: длительная неподвижная подвеска."
+  "message.interstice.winch.safety_release": "Линия освобождена: длительная неподвижная подвеска.",
+  "entity.interstice.cave_rift_spider": "Пещерный разломный паук",
+  "entity.interstice.cave_rift_spider.skirmisher": "Разломный застрельщик",
+  "entity.interstice.cave_rift_spider.lurker": "Пещерный ловчий",
+  "entity.interstice.cave_rift_spider.spitter": "Токсичный плевун",
+  "entity.interstice.toxin_spit": "Сгусток токсина",
+  "block.interstice.rift_cobweb": "Разломная паутина",
+  "block.interstice.spider_egg_sac": "Паучий кокон с кладкой",
+  "item.interstice.cave_rift_spider_spawn_egg": "Яйцо призыва пещерного разломного паука"
 }

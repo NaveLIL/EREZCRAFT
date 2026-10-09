@@ -14,6 +14,7 @@ import pro.erez.interstice.worldgen.RealmBiomes;
 import pro.erez.interstice.worldgen.StoneVaults;
 import pro.erez.interstice.worldgen.FeatureDistribution;
 import pro.erez.interstice.ecology.CaveEcology;
+import pro.erez.interstice.Interstice;
 
 /** Decorations inspect actual enclosed air, never a guessed cave or a neighbor chunk. */
 public final class CaveFeatures {
@@ -131,6 +132,25 @@ public final class CaveFeatures {
                         var state=CaveEcology.CLINGWEED.get().defaultBlockState()
                                 .setValue(BlockStateProperties.FACING,growth==null?Direction.DOWN:growth);
                         chunk.setBlockState(pos,state,false);clings++;
+                    }
+                }
+
+                boolean isNest = Math.floorMod(hash(seed ^ 0x9B14E7L, x >> 3, 0, z >> 3), 11) == 0;
+                if (isNest && !colony && space >= 3) {
+                    int nestRoll = choice(seed ^ 0x7E3F1A9L, floor, 100);
+                    if (chunk.getBlockState(floor).isAir() && rock(chunk.getBlockState(floor.below()))) {
+                        if (nestRoll < 12) {
+                            chunk.setBlockState(floor, Interstice.SPIDER_EGG_SAC.get().defaultBlockState().setValue(pro.erez.interstice.block.SpiderEggSacBlock.FACING, Direction.UP), false);
+                        } else if (nestRoll < 35) {
+                            chunk.setBlockState(floor, Interstice.RIFT_COBWEB.get().defaultBlockState(), false);
+                        }
+                    }
+                    if (chunk.getBlockState(pendant).isAir() && rock(chunk.getBlockState(pendant.above()))) {
+                        if (nestRoll > 88) {
+                            chunk.setBlockState(pendant, Interstice.SPIDER_EGG_SAC.get().defaultBlockState().setValue(pro.erez.interstice.block.SpiderEggSacBlock.FACING, Direction.DOWN), false);
+                        } else if (nestRoll > 60) {
+                            chunk.setBlockState(pendant, Interstice.RIFT_COBWEB.get().defaultBlockState(), false);
+                        }
                     }
                 }
             }

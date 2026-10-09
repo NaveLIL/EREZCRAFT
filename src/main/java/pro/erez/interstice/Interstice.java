@@ -31,6 +31,7 @@ public final class Interstice {
     private static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID, ID);
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, ID);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, ID);
+    private static final DeferredRegister<net.minecraft.world.entity.EntityType<?>> ENTITY_TYPES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, ID);
     private static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(BuiltInRegistries.CREATIVE_MODE_TAB, ID);
     private static final DeferredRegister<MapCodec<? extends ChunkGenerator>> GENERATORS=DeferredRegister.create(BuiltInRegistries.CHUNK_GENERATOR,ID);
     private static final DeferredRegister<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>> DENSITIES=DeferredRegister.create(BuiltInRegistries.DENSITY_FUNCTION_TYPE,ID);
@@ -66,6 +67,22 @@ public final class Interstice {
     public static final DeferredHolder<Block, Block> RIFT_FRAME = BLOCKS.register("rift_frame", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_BRICKS).mapColor(net.minecraft.world.level.material.MapColor.COLOR_PURPLE)));
     public static final DeferredHolder<Block, pro.erez.interstice.rift.RiftPortalBlock> RIFT_PORTAL = BLOCKS.register("rift_portal", pro.erez.interstice.rift.RiftPortalBlock::new);
     public static final DeferredHolder<Block, pro.erez.interstice.rift.RiftEchoBlock> RIFT_ECHO = BLOCKS.register("rift_echo", pro.erez.interstice.rift.RiftEchoBlock::new);
+    public static final DeferredHolder<Block, pro.erez.interstice.block.RiftCobwebBlock> RIFT_COBWEB = BLOCKS.register("rift_cobweb", pro.erez.interstice.block.RiftCobwebBlock::new);
+    public static final DeferredHolder<Block, pro.erez.interstice.block.SpiderEggSacBlock> SPIDER_EGG_SAC = BLOCKS.register("spider_egg_sac", pro.erez.interstice.block.SpiderEggSacBlock::new);
+    public static final DeferredHolder<net.minecraft.world.entity.EntityType<?>, net.minecraft.world.entity.EntityType<pro.erez.interstice.entity.CaveRiftSpiderEntity>> CAVE_RIFT_SPIDER =
+            ENTITY_TYPES.register("cave_rift_spider", () -> net.minecraft.world.entity.EntityType.Builder.of(pro.erez.interstice.entity.CaveRiftSpiderEntity::new, net.minecraft.world.entity.MobCategory.MONSTER)
+                    .sized(1.2F, 0.7F)
+                    .clientTrackingRange(8)
+                    .build("cave_rift_spider"));
+    public static final DeferredHolder<net.minecraft.world.entity.EntityType<?>, net.minecraft.world.entity.EntityType<pro.erez.interstice.entity.ToxinSpitEntity>> TOXIN_SPIT =
+            ENTITY_TYPES.register("toxin_spit", () -> net.minecraft.world.entity.EntityType.Builder.<pro.erez.interstice.entity.ToxinSpitEntity>of(pro.erez.interstice.entity.ToxinSpitEntity::new, net.minecraft.world.entity.MobCategory.MISC)
+                    .sized(0.25F, 0.25F)
+                    .clientTrackingRange(4)
+                    .updateInterval(10)
+                    .build("toxin_spit"));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> RIFT_COBWEB_ITEM = ITEMS.register("rift_cobweb", () -> new net.minecraft.world.item.BlockItem(RIFT_COBWEB.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> SPIDER_EGG_SAC_ITEM = ITEMS.register("spider_egg_sac", () -> new net.minecraft.world.item.BlockItem(SPIDER_EGG_SAC.get(), new Item.Properties()));
+    public static final DeferredHolder<Item, Item> CAVE_RIFT_SPIDER_SPAWN_EGG = ITEMS.register("cave_rift_spider_spawn_egg", () -> new net.neoforged.neoforge.common.DeferredSpawnEggItem(CAVE_RIFT_SPIDER, 0x1d1926, 0x2cf5c0, new Item.Properties()));
     public static final DeferredHolder<Item, net.minecraft.world.item.BlockItem> RIFT_FRAME_ITEM = ITEMS.register("rift_frame", () -> new net.minecraft.world.item.BlockItem(RIFT_FRAME.get(), new Item.Properties()));
     public static final DeferredHolder<Item, pro.erez.interstice.rift.RiftLensItem> RIFT_LENS = ITEMS.register("rift_lens", pro.erez.interstice.rift.RiftLensItem::new);
     public static final DeferredHolder<Item, pro.erez.interstice.expedition.WayfarerKeyItem> WAYFARER_KEY = ITEMS.register("wayfarer_key", pro.erez.interstice.expedition.WayfarerKeyItem::new);
@@ -138,6 +155,9 @@ public final class Interstice {
                 output.accept(PYROLITH_ITEM.get());
                 output.accept(AEROLITE_ITEM.get());
                 output.accept(PHOSPHORITE_ITEM.get());
+                output.accept(RIFT_COBWEB_ITEM.get());
+                output.accept(SPIDER_EGG_SAC_ITEM.get());
+                output.accept(CAVE_RIFT_SPIDER_SPAWN_EGG.get());
             }).build());
 
     private static BaseFlowingFluid.Properties lightProperties() {
@@ -169,8 +189,16 @@ public final class Interstice {
         NeoForge.EVENT_BUS.addListener(pro.erez.interstice.food.TideHeart::tick);
         NeoForge.EVENT_BUS.addListener(pro.erez.interstice.food.TideHeart::playerTick);
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.AddReloadListenerEvent event) -> event.addListener(new pro.erez.interstice.worldgen.GardenTreeDefinitions()));
-        TYPES.register(bus); FLUIDS.register(bus); BLOCKS.register(bus); ITEMS.register(bus); TABS.register(bus);
+        TYPES.register(bus); FLUIDS.register(bus); BLOCKS.register(bus); ITEMS.register(bus); ENTITY_TYPES.register(bus); TABS.register(bus);
         GENERATORS.register(bus);
+        bus.addListener((net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent event) ->
+                event.put(CAVE_RIFT_SPIDER.get(), pro.erez.interstice.entity.CaveRiftSpiderEntity.createAttributes().build()));
+        bus.addListener((net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent event) ->
+                event.register(CAVE_RIFT_SPIDER.get(),
+                        net.minecraft.world.entity.SpawnPlacementTypes.ON_GROUND,
+                        net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                        pro.erez.interstice.entity.CaveRiftSpiderEntity::checkCaveSpiderSpawnRules,
+                        net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent.Operation.REPLACE));
         NeoForge.EVENT_BUS.addListener(FluidLab::registerCommands);
         NeoForge.EVENT_BUS.addListener(ToxicLiquidBlock::onEntityTick);
         NeoForge.EVENT_BUS.addListener(pro.erez.interstice.worldgen.IslandWorld::registerCommands);

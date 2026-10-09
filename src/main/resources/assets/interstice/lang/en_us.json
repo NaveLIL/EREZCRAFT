@@ -9,6 +9,10 @@
   "fluid_type.interstice.light_toxin": "Light toxin",
   "fluid_type.interstice.heavy_toxin": "Heavy toxin",
   "death.attack.interstice.toxin": "%1$s dissolved in a toxic sea",
+  "death.attack.interstice.spider_bite": "%1$s was torn through armor by %2$s",
+  "death.attack.interstice.spider_bite.item": "%1$s was torn through armor by %2$s",
+  "death.attack.interstice.spider_spit": "%1$s was dissolved by %2$s's corrosive spit",
+  "death.attack.interstice.spider_spit.item": "%1$s was dissolved by %2$s's corrosive spit",
   "block.interstice.light_sea": "Light toxic ocean",
   "subtitles.interstice.tide.warning": "The tide begins to rumble",
   "subtitles.interstice.tide.surge": "The tide surges violently",
@@ -356,5 +360,13 @@
   "message.interstice.winch.attached": "Tether connected: %s blocks.",
   "message.interstice.winch.broken": "Tether detached: obstruction or missing anchor.",
   "message.interstice.winch.release_warning": "Line releases in1s: find support!",
-  "message.interstice.winch.safety_release": "Tether released: prolonged unsupported suspension."
+  "message.interstice.winch.safety_release": "Tether released: prolonged unsupported suspension.",
+  "entity.interstice.cave_rift_spider": "Cave Rift Spider",
+  "entity.interstice.cave_rift_spider.skirmisher": "Cave Rift Skirmisher",
+  "entity.interstice.cave_rift_spider.lurker": "Cave Rift Lurker",
+  "entity.interstice.cave_rift_spider.spitter": "Cave Rift Spitter",
+  "entity.interstice.toxin_spit": "Toxic Spit",
+  "block.interstice.rift_cobweb": "Rift Cobweb",
+  "block.interstice.spider_egg_sac": "Spider Egg Sac",
+  "item.interstice.cave_rift_spider_spawn_egg": "Cave Rift Spider Spawn Egg"
 }
