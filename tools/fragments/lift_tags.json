@@ -1,0 +1,8 @@
+{
+  "minecraft:mineable/pickaxe": [
+    "interstice:field_anchor"
+  ],
+  "minecraft:needs_iron_tool": [
+    "interstice:field_anchor"
+  ]
+}

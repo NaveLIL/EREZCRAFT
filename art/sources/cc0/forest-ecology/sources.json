@@ -1,0 +1,26 @@
+{
+  "retrieved": "2026-10-09",
+  "operation": "Whole source files; only bijective palette substitution",
+  "sources": [
+    {
+      "file": "thistle.png",
+      "source_member": "blocks/plants/thistle.png",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "sha256": "f99dd134790c0584a6a18484ec46b9cb95a265056cc5a19f53ed5cabd5a5d7ed",
+      "archive": "research/cc0-20261008/blocks_2.zip",
+      "archive_sha256": "49560e2697cebd7019fec7fd9368120715fd796c88b66e403da3e870c4afa467"
+    },
+    {
+      "file": "poison_cap.png",
+      "source_member": "glow mushroom poisonous cap.png",
+      "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+      "author": "JoeEnderman",
+      "license": "CC0-1.0",
+      "sha256": "3c82073fe75d611f670d6233c877bd8a07156007f87b8c779b790faa394218d3",
+      "archive": "research/leaf-source-preview/assorted_2.zip",
+      "archive_sha256": "8082718fb1c5d4cca66f374c98a7d99e23532b48deb6a2db580c18dbd6f5b6cd"
+    }
+  ]
+}

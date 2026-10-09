@@ -1,0 +1,25 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "native": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsilver_mesh"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "native"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "interstice:rift_winch"
+    ]
+  }
+}

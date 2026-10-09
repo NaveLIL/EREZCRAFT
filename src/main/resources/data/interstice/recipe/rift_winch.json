@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "MLM",
+    "WSW",
+    "FPF"
+  ],
+  "key": {
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    },
+    "W": {
+      "item": "interstice:world_stick"
+    },
+    "S": {
+      "item": "interstice:riftsilver_ingot"
+    },
+    "F": {
+      "item": "interstice:plant_fiber"
+    },
+    "P": {
+      "tag": "interstice:world_planks"
+    }
+  },
+  "result": {
+    "id": "interstice:rift_winch",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "operation": "Existing whole project textures in new model geometry; no new or copied bitmap",
+  "sources": [
+    "block/garden/paleheart_planks",
+    "block/minerals/riftsilver",
+    "block/agriculture/plant_fiber"
+  ],
+  "rope": "References installed minecraft:textures/entity/lead_knot.png; no MojangPNG distributed",
+  "generator": "tools/generate_tether_resources.py"
+}

@@ -610,6 +610,147 @@
         },
         "terrain_revision": 4
       }
+    },
+    "interstice:islands_v5": {
+      "type": "interstice:islands_tall",
+      "generator": {
+        "type": "interstice:coupled_islands",
+        "biome_source": {
+          "type": "minecraft:multi_noise",
+          "biomes": [
+            {
+              "biome": "interstice:ash_islands",
+              "parameters": {
+                "temperature": [
+                  -2,
+                  2
+                ],
+                "humidity": [
+                  -2,
+                  2
+                ],
+                "continentalness": [
+                  -2,
+                  -0.275
+                ],
+                "erosion": [
+                  -2,
+                  2
+                ],
+                "depth": [
+                  -2,
+                  2
+                ],
+                "weirdness": [
+                  -2,
+                  2
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "interstice:pale_gardens",
+              "parameters": {
+                "temperature": [
+                  -2,
+                  2
+                ],
+                "humidity": [
+                  -0.15,
+                  2
+                ],
+                "continentalness": [
+                  -0.275,
+                  2
+                ],
+                "erosion": [
+                  -0.2,
+                  2
+                ],
+                "depth": [
+                  -2,
+                  2
+                ],
+                "weirdness": [
+                  -2,
+                  2
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "interstice:crimson_thickets",
+              "parameters": {
+                "temperature": [
+                  -2,
+                  2
+                ],
+                "humidity": [
+                  -2,
+                  -0.15
+                ],
+                "continentalness": [
+                  -0.275,
+                  2
+                ],
+                "erosion": [
+                  -0.2,
+                  2
+                ],
+                "depth": [
+                  -2,
+                  2
+                ],
+                "weirdness": [
+                  -2,
+                  2
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "interstice:stone_vaults",
+              "parameters": {
+                "temperature": [
+                  -2,
+                  2
+                ],
+                "humidity": [
+                  -2,
+                  2
+                ],
+                "continentalness": [
+                  -0.275,
+                  2
+                ],
+                "erosion": [
+                  -2,
+                  -0.2
+                ],
+                "depth": [
+                  -2,
+                  2
+                ],
+                "weirdness": [
+                  -2,
+                  2
+                ],
+                "offset": 0
+              }
+            }
+          ]
+        },
+        "settings": "interstice:vanilla_realm_v5",
+        "geometry": {
+          "version": 1,
+          "min_y": 0,
+          "height": 256,
+          "lower_sea_top": 34,
+          "upper_reference": 222,
+          "clearance": 6
+        },
+        "terrain_revision": 5
+      }
     }
   }
 }

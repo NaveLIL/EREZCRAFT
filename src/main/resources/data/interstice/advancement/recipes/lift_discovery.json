@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "processed_mesh": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsilver_mesh"
+          }
+        ]
+      }
+    },
+    "has_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "interstice:field_anchor"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "processed_mesh",
+      "has_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "interstice:field_anchor",
+      "interstice:lift_controller"
+    ]
+  }
+}

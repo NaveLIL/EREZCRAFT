@@ -1,0 +1,40 @@
+{
+  "ru_ru": {
+    "block.interstice.field_anchor": "Полевой якорь лифта",
+    "entity.interstice.field_lift": "Грузовая платформа",
+    "item.interstice.lift_controller": "Пульт полевого лифта",
+    "container.interstice.field_lift": "Груз платформы",
+    "tooltip.interstice.field_anchor": "9 ячеек груза, подъём до 48 блоков. Поставь якорь внизу маршрута, отступив от края чанка. Топливо: местный уголь или фосфорит.",
+    "tooltip.interstice.lift_controller": "Shift+ПКМ по якорю: связать. ПКМ: вверх → стоп → вниз → стоп. Shift на платформе — обычный выход; стоя снаружи, Shift+ПКМ отправляет вниз.",
+    "tooltip.interstice.lift_linked": "Пульт связан с якорем; работает в пределах 64 блоков в том же измерении.",
+    "message.interstice.lift.linked": "Пульт связан с этим полевым якорем.",
+    "message.interstice.lift.unavailable": "Лифт недоступен: проверь владельца, топливо, пространство и загрузку якоря.",
+    "message.interstice.lift.status": "Платформа: %s",
+    "message.interstice.lift.fuel": "Лифт: ещё %s секунд движения.",
+    "status.interstice.lift.stopped": "остановлена",
+    "status.interstice.lift.moving": "движется",
+    "status.interstice.lift.obstructed": "путь перекрыт",
+    "status.interstice.lift.empty": "нет топлива",
+    "status.interstice.lift.broken": "нужна чистая облицовка для ремонта",
+    "status.interstice.lift.waiting": "ожидается загрузка платформы"
+  },
+  "en_us": {
+    "block.interstice.field_anchor": "Field Lift Anchor",
+    "entity.interstice.field_lift": "Cargo Platform",
+    "item.interstice.lift_controller": "Field Lift Controller",
+    "container.interstice.field_lift": "Platform Cargo",
+    "tooltip.interstice.field_anchor": "9 cargo slots, up to 48 blocks of ascent. Place below the route, away from chunk edges. Fuel: native coal or phosphorite.",
+    "tooltip.interstice.lift_controller": "Sneak-use an anchor to link. Use cycles up → stop → down → stop. Sneak still dismounts; sneak-use while standing outside sends the platform down.",
+    "tooltip.interstice.lift_linked": "Linked controller; works within 64 blocks in the same dimension.",
+    "message.interstice.lift.linked": "Controller linked to this field anchor.",
+    "message.interstice.lift.unavailable": "Lift unavailable: check ownership, fuel, clearance and whether its anchor is loaded.",
+    "message.interstice.lift.status": "Platform: %s",
+    "message.interstice.lift.fuel": "%s seconds of powered movement remaining.",
+    "status.interstice.lift.stopped": "stopped",
+    "status.interstice.lift.moving": "moving",
+    "status.interstice.lift.obstructed": "route obstructed",
+    "status.interstice.lift.empty": "out of fuel",
+    "status.interstice.lift.broken": "repair requires purified lining",
+    "status.interstice.lift.waiting": "waiting for platform load"
+  }
+}

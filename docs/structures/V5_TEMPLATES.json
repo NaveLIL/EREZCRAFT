@@ -1,0 +1,97 @@
+{
+  "format": 1,
+  "author": "EREZCRAFT project",
+  "source": "tools/build_realm_structures_v5.py",
+  "minecraft": "1.21.1",
+  "original_geometry": true,
+  "templates": [
+    {
+      "id": "interstice:refuge/roofed",
+      "size": [
+        9,
+        6,
+        9
+      ],
+      "blocks": 196,
+      "loot_barrels": 1,
+      "sha256": "482c4d18d0073d1e6b8bf9243a3ace7faa919cc996ec8b9bc88576a8c061d4cb"
+    },
+    {
+      "id": "interstice:refuge/collapsed",
+      "size": [
+        9,
+        6,
+        9
+      ],
+      "blocks": 177,
+      "loot_barrels": 1,
+      "sha256": "e36fa5952515fd74e57d0ca9dec80ceaa503c9980f00066b40ec7acaed6cd7db"
+    },
+    {
+      "id": "interstice:cargo_station/covered_loading",
+      "size": [
+        13,
+        7,
+        11
+      ],
+      "blocks": 218,
+      "loot_barrels": 2,
+      "sha256": "48d2648ca9c33e325a7525d28f7a0e84ed932b055230ad91f127d0de2f016b05"
+    },
+    {
+      "id": "interstice:cargo_station/broken_gantry",
+      "size": [
+        13,
+        7,
+        11
+      ],
+      "blocks": 215,
+      "loot_barrels": 2,
+      "sha256": "fdea6b42f320e10140c460937cd00a29a03f8849e8603bd752e8a5854c9c8086"
+    },
+    {
+      "id": "interstice:laboratory/sample_hall",
+      "size": [
+        11,
+        7,
+        11
+      ],
+      "blocks": 295,
+      "loot_barrels": 1,
+      "sha256": "cbe4d6b5c63ef9e3882ca70924cc4973d82bb7c37fb8fc3aab7287568f3a1884"
+    },
+    {
+      "id": "interstice:laboratory/breached",
+      "size": [
+        11,
+        7,
+        11
+      ],
+      "blocks": 271,
+      "loot_barrels": 1,
+      "sha256": "5d7f06cdb46147df655728f9ede4ef22f4f25bca2293562c198fb29c8f1da203"
+    },
+    {
+      "id": "interstice:observation_post/sheltered",
+      "size": [
+        11,
+        10,
+        11
+      ],
+      "blocks": 205,
+      "loot_barrels": 1,
+      "sha256": "e57223832fc740d6c75a4932fae81805c9a1c12576faadf8631ee949898652ae"
+    },
+    {
+      "id": "interstice:observation_post/tilted_roof",
+      "size": [
+        11,
+        10,
+        11
+      ],
+      "blocks": 192,
+      "loot_barrels": 1,
+      "sha256": "11ae60164eda04986328e521cb1707757127732d55574cf38aab68247b9fc4e2"
+    }
+  ]
+}

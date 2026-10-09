@@ -1,0 +1,14 @@
+{
+  "format": 1,
+  "generator": "tools/build_realm_lift_resources.py",
+  "new_pngs": 0,
+  "existing_textures_unchanged": true,
+  "operation": "Original model geometry and native block-mesh vehicle renderer",
+  "textures": [
+    "interstice:block/garden/paleheart_log",
+    "interstice:block/stone/polished_vaultstone",
+    "interstice:block/tide_sprout_core",
+    "interstice:block/vitriolite"
+  ],
+  "source_registry": "docs/ASSET_LIBRARY.md"
+}

@@ -33,6 +33,10 @@ public final class Interstice {
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, ID);
     private static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(BuiltInRegistries.CREATIVE_MODE_TAB, ID);
     private static final DeferredRegister<MapCodec<? extends ChunkGenerator>> GENERATORS=DeferredRegister.create(BuiltInRegistries.CHUNK_GENERATOR,ID);
+    private static final DeferredRegister<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>> DENSITIES=DeferredRegister.create(BuiltInRegistries.DENSITY_FUNCTION_TYPE,ID);
+    private static final DeferredHolder<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>,MapCodec<pro.erez.interstice.worldgen.terrain.VanillaField>> VANILLA_FIELD=DENSITIES.register("vanilla_field",()->pro.erez.interstice.worldgen.terrain.VanillaField.CODEC);
+    private static final DeferredHolder<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>,MapCodec<pro.erez.interstice.worldgen.terrain.VanillaRealmDensity>> VANILLA_MIXER=DENSITIES.register("vanilla_realm",()->pro.erez.interstice.worldgen.terrain.VanillaRealmDensity.CODEC);
+    private static final DeferredHolder<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>,MapCodec<pro.erez.interstice.worldgen.terrain.NativeCache2D>> NATIVE_CACHE=DENSITIES.register("native_cache2d",()->pro.erez.interstice.worldgen.terrain.NativeCache2D.CODEC);
     private static final DeferredHolder<MapCodec<? extends ChunkGenerator>,MapCodec<IslandChunkGenerator>> ISLAND_GENERATOR=GENERATORS.register("coupled_islands",()->IslandChunkGenerator.CODEC);
 
     public static final DeferredHolder<FluidType, ToxicFluidType> LIGHT_TYPE = TYPES.register("light_toxin", () -> new ToxicFluidType(true));
@@ -114,6 +118,10 @@ public final class Interstice {
                 pro.erez.interstice.minerals.MineralEcology.displayItems(output);
                 pro.erez.interstice.agriculture.RealmAgriculture.displayItems(output);
                 pro.erez.interstice.equipment.ExpeditionEquipment.displayItems(output);
+                pro.erez.interstice.ecology.RealmEcology.displayItems(output);
+                pro.erez.interstice.gear.RealmGear.displayItems(output);
+                pro.erez.interstice.tether.RiftTethers.displayItems(output);
+                pro.erez.interstice.lift.RealmLift.displayItems(output);
                 output.accept(pro.erez.interstice.food.TideHeart.FRUIT.get());
                 output.accept(TIDE_SPROUT_ITEM.get());
                 output.accept(GLOOMCROWN_LOG_ITEM.get());
@@ -153,6 +161,11 @@ public final class Interstice {
         pro.erez.interstice.minerals.MineralEcology.register(bus);
         pro.erez.interstice.agriculture.RealmAgriculture.register(bus);
         pro.erez.interstice.equipment.ExpeditionEquipment.register(bus);
+        pro.erez.interstice.ecology.RealmEcology.register(bus);
+        pro.erez.interstice.gear.RealmGear.register(bus);
+        pro.erez.interstice.tether.RiftTethers.register(bus);
+        pro.erez.interstice.lift.RealmLift.register(bus);
+        DENSITIES.register(bus);
         NeoForge.EVENT_BUS.addListener(pro.erez.interstice.food.TideHeart::tick);
         NeoForge.EVENT_BUS.addListener(pro.erez.interstice.food.TideHeart::playerTick);
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.AddReloadListenerEvent event) -> event.addListener(new pro.erez.interstice.worldgen.GardenTreeDefinitions()));

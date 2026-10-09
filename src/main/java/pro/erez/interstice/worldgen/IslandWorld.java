@@ -20,13 +20,16 @@ public final class IslandWorld {
     public static final ResourceKey<Level> DRAFT_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v2"));
     public static final ResourceKey<Level> PREVIOUS_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v3"));
     public static final ResourceKey<Level> LIVING_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v4"));
+    public static final ResourceKey<Level> VANILLA_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v5"));
+    public static final ResourceKey<Level> CURRENT_WORLD=VANILLA_WORLD;
     private IslandWorld() {}
     public static boolean isIsland(ResourceKey<Level> dimension) {
-        return dimension.equals(WORLD) || dimension.equals(TALL_WORLD)||dimension.equals(DRAFT_WORLD)||dimension.equals(PREVIOUS_WORLD)||dimension.equals(LIVING_WORLD);
+        return dimension.equals(WORLD) || dimension.equals(TALL_WORLD)||dimension.equals(DRAFT_WORLD)||dimension.equals(PREVIOUS_WORLD)||dimension.equals(LIVING_WORLD)||dimension.equals(VANILLA_WORLD);
     }
     public static BlockPos findLanding(ServerLevel world) {
         if(!(world.getChunkSource().getGenerator() instanceof IslandChunkGenerator generator)) throw new IllegalStateException("Island generator unavailable");
         var random=world.getChunkSource().randomState();
+        if(generator.terrainRevision()==5)return findVanillaLanding(world,generator,random);
         if(generator.isLivingRealm())return findLivingLanding(world,generator,random);
         // Inspect density columns first; generate only the selected landing chunk.
         for(int radius=0;radius<=24;radius++) for(int dx=-radius;dx<=radius;dx++) for(int dz=-radius;dz<=radius;dz++) {
@@ -43,6 +46,65 @@ public final class IslandWorld {
             }
         }
         throw new IllegalStateException("No safe island landing within 96 blocks");
+    }
+    private static BlockPos findVanillaLanding(ServerLevel world,IslandChunkGenerator generator,net.minecraft.world.level.levelgen.RandomState random){
+        // A forest or an existing echo may occupy a chunk's centre. Inspect its actual interior,
+        // including coastal veneers, before spending another FULL-chunk generation allowance.
+        var inspected=new java.util.HashSet<Long>();
+        int generated=0,minimum=generator.geometry().lowerSeaTop()+1;
+        for(int pass=0;pass<2;pass++)for(int radius=0;radius<=48;radius++)for(int dx=-radius;dx<=radius;dx++)for(int dz=-radius;dz<=radius;dz++){
+            if(Math.max(Math.abs(dx),Math.abs(dz))!=radius)continue;
+            long key=net.minecraft.world.level.ChunkPos.asLong(dx,dz);
+            int ceiling=pass==0?Math.min(130,generator.geometry().maxLand()):generator.geometry().maxLand();
+            if(!inspected.contains(key)){
+                if(!rawVanillaClearing(world,generator,random,dx,dz,minimum,ceiling))continue;
+                if(!world.hasChunk(dx,dz)&&++generated>64)throw new IllegalStateException("No safe V5 clearing among 64 generated terrain chunks");
+                world.getChunk(dx,dz);
+                inspected.add(key);
+            }
+            // The 3x3 echo stays inside this loaded chunk; no neighbour load or terrain removal.
+            for(int localX=3;localX<=12;localX++)for(int localZ=3;localZ<=12;localZ++){
+                int x=dx*16+localX,z=dz*16+localZ;
+                var column=generator.getBaseColumn(x,z,world,random);
+                int expected=rawDryTop(generator,column,minimum);
+                if(expected<minimum||expected>ceiling)continue;
+                // Veneers and settled coast sand may change the surface by a block. An old echo's
+                // roof or a player's tower is not a new natural landing terrace.
+                for(int y=Math.min(ceiling,expected+1);y>=Math.max(minimum,expected-2);y--){
+                    var floor=new BlockPos(x,y,z);var state=world.getBlockState(floor);
+                    if(!StoneVaults.isGround(state)&&!state.is(pro.erez.interstice.minerals.MineralEcology.TOXIC_SAND.get()))continue;
+                    if(!world.getBlockState(floor.above()).isAir())continue;
+                    if(isSafeLandingPlatform(world,floor)&&hasDryExit(world,floor)
+                            &&pro.erez.interstice.rift.RiftSafety.canPrepareEcho(world,floor.above()))return floor.above();
+                    // A roof or a dangerous surface cannot be bypassed by selecting the same column underground.
+                    break;
+                }
+            }
+        }
+        throw new IllegalStateException("No safe V5 realm landing within 768 blocks");
+    }
+    private static boolean rawVanillaClearing(ServerLevel world,IslandChunkGenerator generator,net.minecraft.world.level.levelgen.RandomState random,int chunkX,int chunkZ,int minimum,int ceiling){
+        // Numeric 3x3 slope/headroom checks reject steep ridges and sea before requesting FULL terrain.
+        for(int localX:new int[]{4,11})for(int localZ:new int[]{4,11}){
+            int x=chunkX*16+localX,z=chunkZ*16+localZ;
+            var centre=generator.getBaseColumn(x,z,world,random);int top=rawDryTop(generator,centre,minimum);
+            if(top<minimum||top>ceiling)continue;
+            boolean safe=true;
+            for(int ox=-1;ox<=1&&safe;ox++)for(int oz=-1;oz<=1&&safe;oz++){
+                var column=ox==0&&oz==0?centre:generator.getBaseColumn(x+ox,z+oz,world,random);
+                var floor=column.getBlock(top);
+                boolean supported=!floor.isAir()&&floor.getFluidState().isEmpty()
+                        ||floor.isAir()&&!column.getBlock(top-1).isAir()&&column.getBlock(top-1).getFluidState().isEmpty();
+                if(!supported){safe=false;break;}
+                for(int head=1;head<=3;head++)if(!column.getBlock(top+head).isAir()){safe=false;break;}
+            }
+            if(safe)return true;
+        }
+        return false;
+    }
+    private static int rawDryTop(IslandChunkGenerator generator,NoiseColumn column,int minimum){
+        for(int y=generator.geometry().maxLand();y>=minimum;y--)if(!column.getBlock(y).isAir()&&column.getBlock(y).getFluidState().isEmpty())return y;
+        return -1;
     }
     private static BlockPos findLivingLanding(ServerLevel world,IslandChunkGenerator generator,net.minecraft.world.level.levelgen.RandomState random){
         // Large sparse islands need a wider search; prefer dry low terraces over exposed peaks.
@@ -98,8 +160,10 @@ public final class IslandWorld {
     public static void registerCommands(RegisterCommandsEvent event) {
         event.getDispatcher().register(Commands.literal("interstice").requires(source->source.hasPermission(2))
                 .then(Commands.literal("explore")
-                        .executes(context->enter(context.getSource(),LIVING_WORLD))
-                        .then(Commands.literal("living").executes(context->enter(context.getSource(),LIVING_WORLD)))
+                        .executes(context->enter(context.getSource(),CURRENT_WORLD))
+                        .then(Commands.literal("living").executes(context->enter(context.getSource(),CURRENT_WORLD)))
+                        .then(Commands.literal("vanilla").executes(context->enter(context.getSource(),CURRENT_WORLD)))
+                        .then(Commands.literal("v4").executes(context->enter(context.getSource(),LIVING_WORLD)))
                         .then(Commands.literal("draft").executes(context->enter(context.getSource(),DRAFT_WORLD)))
                         .then(Commands.literal("previous").executes(context->enter(context.getSource(),PREVIOUS_WORLD)))
                         .then(Commands.literal("tall").executes(context->enter(context.getSource(),TALL_WORLD)))

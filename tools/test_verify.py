@@ -291,7 +291,10 @@ class EquipmentVerificationTests(unittest.TestCase):
             def spawn(command, **kwargs):
                 kwargs["stdout"].write(log)
                 evidence = next((root / ".verification").iterdir())
-                profile = "wearBackpackSmoke" if task == "runWearBackpackSmoke" else "backpackSmoke" if task == "runBackpackSmoke" else "retortUiSmoke"
+                profile = {"runWearBackpackSmoke": "wearBackpackSmoke", "runBackpackSmoke": "backpackSmoke",
+                           "runRetortUiSmoke": "retortUiSmoke", "runVanillaTerrainSmoke": "vanillaTerrainSmoke",
+                           "runNativeFieldLiftSmoke": "fieldLiftSmoke", "runGearSmoke": "gearSmoke",
+                           "runWinchSmoke": "winchSmoke"}.get(task, "retortUiSmoke")
                 for name, value in (reports or {}).items():
                     path = evidence / "profiles" / profile / name
                     path.parent.mkdir(parents=True, exist_ok=True)
@@ -361,6 +364,53 @@ class EquipmentVerificationTests(unittest.TestCase):
                 self.assertEqual(code,0 if accepted else 1)
                 self.assertEqual(summary["passed"],accepted)
                 self.assertEqual(record["accepted"],accepted)
+
+    def test_new_gear_lift_and_tether_servers_require_positive_executed_groups(self):
+        cases = [("BUILD SUCCESSFUL\n", 0), ("All 0 required tests passed :)\n", 0),
+                 ("All -4 required tests passed :)\n", 0),
+                 ("All 0 required tests passed :)\nAll 0 required tests passed :)\n", 0),
+                 ("All 1 required tests passed :)\n", 1),
+                 ("All 3 required tests passed :)\nAll 9 required tests passed :)\n", 12)]
+        for task in ("runGearGameTestServer", "runLiftGameTestServer", "runTetherGameTestServer"):
+            for log, required_count in cases:
+                with self.subTest(task=task, log=log):
+                    code, summary, record = self.exercise(task, log=log)
+                    accepted = required_count > 0
+                    self.assertEqual(code, 0 if accepted else 1)
+                    self.assertEqual(summary["passed"], accepted)
+                    self.assertEqual(record["accepted"], accepted)
+                    self.assertEqual(record["required_tests_passed"], required_count)
+
+    def check_cold_pair(self, task, prefix):
+        create, reload = prefix + "-create-validation.json", prefix + "-reload-validation.json"
+        cases = [({}, False), ({create: {"passed": True}}, False), ({reload: {"passed": True}}, False),
+                 ({create: {"passed": False}, reload: {"passed": True}}, False),
+                 ({create: {"passed": True}, reload: {"passed": False}}, False),
+                 ({create: {"passed": 1}, reload: {"passed": True}}, False),
+                 ({create: {"passed": True}, reload: {"passed": "true"}}, False),
+                 ({create: {"passed": True}, reload: {}}, False),
+                 ({create: {"passed": True}, reload: {"passed": True}}, True)]
+        for reports, accepted in cases:
+            with self.subTest(task=task, reports=reports):
+                code, summary, record = self.exercise(task, reports=reports)
+                self.assertEqual(code, 0 if accepted else 1)
+                self.assertEqual(summary["passed"], accepted)
+                self.assertEqual(record["accepted"], accepted)
+                self.assertEqual(summary["completed_tasks"], [task])
+                if accepted:
+                    self.assertEqual(set(record["validations"]), {create, reload})
+
+    def test_vanilla_terrain_requires_its_actual_create_and_reload_reports(self):
+        self.check_cold_pair("runVanillaTerrainSmoke", "v5")
+
+    def test_native_field_lift_requires_its_actual_create_and_reload_reports(self):
+        self.check_cold_pair("runNativeFieldLiftSmoke", "lift")
+
+    def test_gear_requires_its_actual_create_and_reload_reports(self):
+        self.check_cold_pair("runGearSmoke", "gear")
+
+    def test_winch_requires_its_actual_create_and_reload_reports(self):
+        self.check_cold_pair("runWinchSmoke", "winch")
 
 
 if __name__ == "__main__":

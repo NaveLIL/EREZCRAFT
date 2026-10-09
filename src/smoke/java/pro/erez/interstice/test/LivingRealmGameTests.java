@@ -270,7 +270,7 @@ public final class LivingRealmGameTests {
             var a = old.getBaseColumn(x, 5, oldLevel, oldLevel.getChunkSource().randomState()); var b = preserved.getBaseColumn(x, 5, oldLevel, oldLevel.getChunkSource().randomState());
             for (int y = 0; y < 256; y++) h.assertTrue(a.getBlock(y).equals(b.getBlock(y)), "Old saved generator changed after adding the new revision");
         }
-        var invalid = encoded.deepCopy(); invalid.addProperty("terrain_revision", 5);
+        var invalid = encoded.deepCopy(); invalid.addProperty("terrain_revision", 6);
         h.assertTrue(IslandChunkGenerator.CODEC.codec().parse(ops, invalid).error().isPresent(), "Unknown future terrain revision was accepted");
         h.succeed();
     }
@@ -310,9 +310,10 @@ public final class LivingRealmGameTests {
             var source = new RiftLinks.Endpoint(h.getLevel().dimension(), origin, net.minecraft.core.Direction.Axis.X);
             h.assertTrue(RiftTravel.enter(player, source, RiftLinks.Kind.FISHING), "Production first-rift transfer failed on the new terrain");
             player.hasChangedDimension();
-            h.assertTrue(player.serverLevel() == level && ShelterDetector.isSheltered(level, player), "Unpaired production rift does not reach a sheltered living-realm landing");
+            var current=player.server.getLevel(IslandWorld.CURRENT_WORLD);
+            h.assertTrue(player.serverLevel() == current && ShelterDetector.isSheltered(current, player), "Unpaired production rift does not reach a sheltered current-realm landing");
             var link = RiftLinks.get(player.server).byId(player.getPersistentData().getUUID(RiftTravel.ACTIVE));
-            h.assertTrue(link != null && link.echo().dimension().equals(IslandWorld.LIVING_WORLD), "First-rift routing used a fake test destination or old island world");
+            h.assertTrue(link != null && link.echo().dimension().equals(IslandWorld.CURRENT_WORLD), "First-rift routing used a fake test destination or old island world");
             player.getPersistentData().remove(RiftTravel.COOLDOWN);
             h.assertTrue(RiftTravel.returnThroughEcho(player, link.echo().pos()), "Production living-realm echo cannot return to its original safe endpoint");
             player.hasChangedDimension();

@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "interstice:block/tether/rift_winch",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "interstice:block/tether/rift_winch",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "interstice:block/tether/rift_winch",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "interstice:block/tether/rift_winch",
+      "y": 270
+    }
+  }
+}

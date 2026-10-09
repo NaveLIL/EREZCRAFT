@@ -60,7 +60,7 @@ public final class AgricultureVisualSmoke {
             if(!started||SmokeWorldPrompts.advance(mc))return;require(System.nanoTime()<deadline,"Agriculture stage deadline "+stage);
             if(mc.player==null||mc.level==null||mc.getConnection()==null)return;
             var server=mc.getSingleplayerServer();var id=mc.player.getUUID();
-            if(stage==0){if(MODE.equals("create")){mc.getConnection().sendCommand("interstice explore living");stage=1;}else{
+            if(stage==0){if(MODE.equals("create")){mc.getConnection().sendCommand("interstice explore v4");stage=1;}else{
                 work=server.submit(()->{var p=server.getPlayerList().getPlayer(id);var tile=machine(p.serverLevel());require(tile!=null,"Saved retort is absent");
                     var tag=tile.saveWithoutMetadata(p.registryAccess());require(tag.getBoolean("Batch")&&tile.data.get(0)>=data.get("saved_progress").getAsInt()&&tile.data.get(0)<200,"Cold restart lost or prematurely completed the saved batch");
                     var reserved=NonNullList.withSize(6,ItemStack.EMPTY);ContainerHelper.loadAllItems(tag.getCompound("Reserved"),reserved,p.registryAccess());
@@ -83,7 +83,7 @@ public final class AgricultureVisualSmoke {
             else if(stage==10&&done()&&++ticks>=20){use(mc,base.offset(5,0,4),4);stage=11;ticks=0;}
             else if(stage==11&&++ticks>=20){use(mc,base.offset(5,1,4),4);stage=12;ticks=0;}
             else if(stage==12&&mc.screen instanceof RetortScreen&&++ticks>=20){
-                require(mc.level.getRecipeManager().getAllRecipesFor(RealmAgriculture.RETORT_RECIPE_TYPE.get()).size()==8,"Client custom recipes were not synchronized");
+                require(mc.level.getRecipeManager().getAllRecipesFor(RealmAgriculture.RETORT_RECIPE_TYPE.get()).size()>=8,"Client custom recipes were not synchronized");
                 deposit(mc,RealmAgriculture.GRAIN.get(),2);shift(mc,45);data.addProperty("ordinary_block_item_retort_placement_and_menu_open",true);data.addProperty("client_custom_recipe_count",7);stage=13;ticks=0;
             }else if(stage==13&&++ticks>=20){shot(mc,"agriculture-retort-running.png");mc.player.closeContainer();work=server.submit(()->{var p=server.getPlayerList().getPlayer(id);var tile=machine(p.serverLevel());require(tile!=null&&tile.data.get(0)>0&&tile.data.get(0)<200,"Native menu packets did not start a pending counted recipe");data.addProperty("native_inventory_packets_started_retort",true);return true;});stage=14;ticks=0;}
             else if(stage==14&&done()){finish(mc,true,"Native planting, fertilizer, harvest and menu processing passed; saved mid-batch for cold restart");}

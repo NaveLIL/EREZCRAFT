@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "MVM",
+    "LCL",
+    "PSP"
+  ],
+  "key": {
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    },
+    "V": {
+      "item": "interstice:vitriolite"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    },
+    "C": {
+      "item": "interstice:pressure_coupler"
+    },
+    "P": {
+      "item": "interstice:paleheart_planks"
+    },
+    "S": {
+      "item": "interstice:world_stick"
+    }
+  },
+  "result": {
+    "id": "interstice:field_anchor",
+    "count": 1
+  }
+}

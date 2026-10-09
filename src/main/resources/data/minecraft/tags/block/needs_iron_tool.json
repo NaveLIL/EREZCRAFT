@@ -3,6 +3,8 @@
   "values": [
     "interstice:pyrolith",
     "interstice:riftsilver_ore",
-    "#interstice:iron_mineral_ores"
+    "#interstice:iron_mineral_ores",
+    "interstice:route_beacon",
+    "interstice:field_anchor"
   ]
 }

@@ -8,6 +8,9 @@ import net.minecraft.client.Screenshot;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
@@ -40,6 +43,7 @@ public final class KeyPersistenceVisualSmoke {
     private static long deadline;
     private static volatile boolean ready;
     private static volatile Throwable failure;
+    private static ResourceKey<Level> destination=IslandWorld.CURRENT_WORLD;
     @SubscribeEvent public static void tick(ClientTickEvent.Post event) {
         if (MODE.isEmpty()) return;
         Minecraft mc = Minecraft.getInstance();
@@ -74,6 +78,10 @@ public final class KeyPersistenceVisualSmoke {
                 } else {
                     var ledger = ExpeditionLedger.get(server).journey(uuid); var meta = JsonParser.parseString(Files.readString(mc.gameDirectory.toPath().resolve("key-fixture.json"))).getAsJsonObject();
                     if (ledger == null || !ledger.spent() || !ledger.id().toString().equals(meta.get("journey").getAsString())) throw new IllegalStateException("Spent server entitlement did not survive restart");
+                    var link=player.getPersistentData().hasUUID(RiftTravel.ACTIVE)?RiftLinks.get(server).byId(player.getPersistentData().getUUID(RiftTravel.ACTIVE)):null;
+                    if(link==null)throw new IllegalStateException("Saved key fixture lost its actual persisted link");
+                    destination=meta.has("destination_dimension")?ResourceKey.create(Registries.DIMENSION,ResourceLocation.parse(meta.get("destination_dimension").getAsString())):link.echo().dimension();
+                    if(!destination.equals(link.echo().dimension())||!destination.equals(player.level().dimension()))throw new IllegalStateException("Saved key fixture destination changed after restart");
                     ItemStack copy = player.getMainHandItem().copy();
                     if (WayfarerKeyItem.binding(copy) == null) throw new IllegalStateException("Key binding did not survive restart");
                     player.setItemInHand(InteractionHand.MAIN_HAND, copy);
@@ -82,13 +90,13 @@ public final class KeyPersistenceVisualSmoke {
             } catch (Throwable error) { failure = error; } });
             return;
         }
-        if (!ready || !mc.level.dimension().equals(IslandWorld.TALL_WORLD) && stage == 1) return;
+        if (!ready || !mc.level.dimension().equals(destination) && stage == 1) return;
         if (stage == 1 && ++ticks >= 60) {
             mc.options.keyUse.setDown(true); mc.gameMode.useItem(mc.player, InteractionHand.MAIN_HAND); stage = 2; ticks = 0;
         } else if (stage == 2) {
             ticks++;
             if (MODE.equals("create")) {
-                if (ticks == 80 && !mc.level.dimension().equals(IslandWorld.TALL_WORLD)) throw new IllegalStateException("Recall happened before ten seconds");
+                if (ticks == 80 && !mc.level.dimension().equals(destination)) throw new IllegalStateException("Recall happened before ten seconds");
                 if (ticks == 100) Screenshot.grab(mc.gameDirectory, "key-concentration.png", mc.getMainRenderTarget(), message -> {});
                 if (mc.level.dimension().equals(Level.OVERWORLD)) {
                     mc.options.keyUse.setDown(false); stage = 3; ticks = 0;
@@ -96,12 +104,13 @@ public final class KeyPersistenceVisualSmoke {
                         var player = server.getPlayerList().getPlayer(uuid); var journey = ExpeditionLedger.get(server).journey(uuid);
                         if (journey == null || !journey.spent()) throw new IllegalStateException("Confirmed recall did not consume entitlement");
                         JsonObject meta = new JsonObject(); meta.addProperty("journey", journey.id().toString()); meta.addProperty("passed", true);
+                        meta.addProperty("destination_dimension",destination.location().toString());
                         Files.writeString(mc.gameDirectory.toPath().resolve("key-fixture.json"), meta.toString());
                     } catch (Throwable error) { failure = error; } });
                 }
             } else if (ticks >= 230) {
                 mc.options.keyUse.setDown(false); mc.gameMode.releaseUsingItem(mc.player);
-                if (!mc.level.dimension().equals(IslandWorld.TALL_WORLD)) throw new IllegalStateException("Copied key bypassed spent entitlement after restart");
+                if (!mc.level.dimension().equals(destination)) throw new IllegalStateException("Copied key bypassed spent entitlement after restart");
                 JsonObject result = new JsonObject(); result.addProperty("passed", true); result.addProperty("spent_after_jvm_restart", true); result.addProperty("copied_key_refused", true);
                 report(mc, "key-reload-validation.json", result); stage = 5; ticks = 0;
             }
@@ -112,7 +121,7 @@ public final class KeyPersistenceVisualSmoke {
                 if (!RiftTravel.enter(player, new RiftLinks.Endpoint(Level.OVERWORLD, journey.origin().feet(), Direction.Axis.X), RiftLinks.Kind.FISHING)) throw new IllegalStateException("Repeat entry failed");
                 if (!ExpeditionLedger.get(server).journey(uuid).spent()) throw new IllegalStateException("Repeat entry restored entitlement");
             } catch (Throwable error) { failure = error; } });
-        } else if (stage == 4 && mc.level.dimension().equals(IslandWorld.TALL_WORLD) && ++ticks >= 50) {
+        } else if (stage == 4 && mc.level.dimension().equals(destination) && ++ticks >= 50) {
             JsonObject result = new JsonObject(); result.addProperty("passed", true); result.addProperty("real_item_channel_ticks", 200); result.addProperty("spent_survives_repeat_entry", true);
             report(mc, "key-create-validation.json", result); stage = 5; ticks = 0;
         } else if (stage == 5 && ++ticks >= 40) { mc.options.keyUse.setDown(false); mc.stop(); }

@@ -1,0 +1,4 @@
+{
+  "minecraft:mineable/pickaxe": ["interstice:route_beacon"],
+  "minecraft:needs_iron_tool": ["interstice:route_beacon"]
+}

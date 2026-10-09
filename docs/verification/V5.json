@@ -1,0 +1,327 @@
+{
+  "passed": true,
+  "version": "0.6.0",
+  "recorded_utc": "2026-10-09T03:06:08.482058+00:00",
+  "base_commit": "968756ce5745daa23b1d3a9402930744c1bafa67",
+  "publication_status": "local verified release; GitHub publication is a separate action",
+  "closed_phases": {
+    "M16": "Four authored structure families with two variants, sparse atomic placement and real loot",
+    "M19": "Finite optional expedition gear",
+    "M20": "Bounded physical self-tether with persistent anchors",
+    "M21": "World-owned vertical passenger/cargo lift"
+  },
+  "excluded_phases": [
+    "M17",
+    "M18"
+  ],
+  "build": {
+    "accepted": true,
+    "required_tests_passed": 323,
+    "groups": [
+      31,
+      17,
+      17,
+      17,
+      7,
+      132,
+      12,
+      9,
+      10,
+      26,
+      10,
+      18,
+      9,
+      8
+    ],
+    "evidence": {
+      "path": ".verification/20261009T025318.040306Z-v5-final-verified/build.json",
+      "sha256": "fd35a830214d549ab6de604b72205fffba7b6fe2b7035b6bbda4de8416dfd883"
+    },
+    "run": {
+      "path": ".verification/20261009T025318.040306Z-v5-final-verified/summary.json",
+      "sha256": "b3f3e7159e42a2a310413588ced1182ca617246a849a72d1a0636d87c1c447ba"
+    }
+  },
+  "source": {
+    "snapshot": {
+      "path": ".verification/20261009T025318.040306Z-v5-final-verified/source-sha256.json",
+      "sha256": "8207886fa1168193f5ae0356b8929ce2556a4681a4c3d89dbb7bdd5fe1820b4c"
+    },
+    "current_src_and_cc0_tree_sha256": "8e1b94a2db8dba7f982f08a842de9126664634be72956e9694ffc35b0f50ba7f",
+    "files_checked": 1436
+  },
+  "artifact": {
+    "audit": {
+      "path": ".verification/release-artifact-0.6.0.json",
+      "sha256": "a8dc776362d3f32ef4bb832c55b5a18ccddaefe8e3430e3222dbb6452ad08041"
+    },
+    "jar": {
+      "path": "build/libs/interstice-0.6.0.jar",
+      "sha256": "67bac0d52acef4b0cd34f2562ed3bffe9455a8d4576303e35eaca3f6420a430a"
+    },
+    "sources_jar": {
+      "path": "build/libs/interstice-0.6.0-sources.jar",
+      "sha256": "eae2ff756fd778eb8f4925ce6089ec6977866ae307ba8016d5d60a27a72fec94"
+    },
+    "java_sources_compared": 169,
+    "compiled_classes_compared": 320,
+    "resources_compared": 1057,
+    "models_checked": 379
+  },
+  "python_verifier_tests": {
+    "passed": true,
+    "count": 42,
+    "source": {
+      "path": "tools/test_verify.py",
+      "sha256": "32a77030de3f38dde3c5f35a5d612fb768804a0124ad9e1f4c3a6e07c856e582"
+    }
+  },
+  "native": {
+    "passed": true,
+    "families": 5,
+    "distinct_client_jvms": 10,
+    "process_ids": [
+      23684,
+      27708,
+      29468,
+      24856,
+      22592,
+      13916,
+      31968,
+      24512,
+      25468,
+      12940
+    ],
+    "checks": {
+      "terrain": {
+        "passed": true,
+        "creator_pid": 23684,
+        "reload_pid": 27708,
+        "task": {
+          "path": ".verification/20261009T011933.096664Z-full-native-hillside-gallery/runVanillaTerrainSmoke.json",
+          "sha256": "b52682f5bed519896d7fe50de16c160873e9c278da9e9321c3cdb8ecb7f333c7"
+        },
+        "receipts": {
+          "create": {
+            "path": ".verification/20261009T011933.096664Z-full-native-hillside-gallery/profiles/vanillaTerrainSmoke/v5-create-validation.json",
+            "sha256": "55ded9febf096e1e07505a3b78ff2bfcf36d52ce7b21ce4704e1dc67706457a3"
+          },
+          "reload": {
+            "path": ".verification/20261009T011933.096664Z-full-native-hillside-gallery/profiles/vanillaTerrainSmoke/v5-reload-validation.json",
+            "sha256": "0c47de4fe30c55413b1cb7794a0026591a98327263b52b3b75e6f0da6029617b"
+          }
+        },
+        "capture_source_snapshot": {
+          "path": ".verification/20261009T011933.096664Z-full-native-hillside-gallery/source-sha256.json",
+          "sha256": "2ead2cd7b85080887368e37cbedbc455884bdaf6cdc6b45668ec5f1540b34f51"
+        },
+        "method": "Naturally generated V5 FULL chunks in a disposable Creative profile. Server camera teleports and optional night vision are prepared inspection, not autonomous Survival.",
+        "selection": "At most ten naturally generated FULL candidate centres per biome; forest interiors require >=55% actual canopy above dry soil, real undergrowth/hazards in a 3x3 chunk area. Mountain numeric screening requires Y>=110 and >=10 block height change over16 blocks. Selection changes no terrain or flora.",
+        "forests": [
+          {
+            "scene": "dangerous-forest",
+            "biome": "interstice:pale_gardens",
+            "chunk_x": 16,
+            "chunk_z": -36,
+            "dry_soil_columns": 2272,
+            "canopy_columns": 1681,
+            "canopy_fraction": 0.7398767605633803,
+            "ground_flora_blocks": 579,
+            "poisonous_understory_blocks": 54,
+            "leaf_blocks": 12586,
+            "expected_biome_columns": 2304
+          },
+          {
+            "scene": "crimson-thickets",
+            "biome": "interstice:crimson_thickets",
+            "chunk_x": 32,
+            "chunk_z": 12,
+            "dry_soil_columns": 2304,
+            "canopy_columns": 1801,
+            "canopy_fraction": 0.7816840277777778,
+            "ground_flora_blocks": 796,
+            "poisonous_understory_blocks": 170,
+            "leaf_blocks": 13565,
+            "expected_biome_columns": 2304
+          }
+        ],
+        "cold_snapshot_scope": "Exact naturally generated block states at Y0..30 in each selected FULL chunk; changing above-sea flora intentionally excluded.",
+        "cold_subsea_chunks_checked": 4,
+        "limitation": "Canopy figures describe these selected natural 3x3-chunk forest interiors, not world-wide average coverage. Camera moves and comparison night vision were prepared inspection."
+      },
+      "gear": {
+        "passed": true,
+        "creator_pid": 29468,
+        "reload_pid": 24856,
+        "task": {
+          "path": ".verification/20261009T004259.485514Z-native-equipment-gallery-fixed/runGearSmoke.json",
+          "sha256": "9a76c66e5e428c6e1b6ea0f491e07524a8bfb207641e097043699f3f8640f28f"
+        },
+        "receipts": {
+          "create": {
+            "path": ".verification/20261009T004259.485514Z-native-equipment-gallery-fixed/profiles/gearSmoke/gear-create-validation.json",
+            "sha256": "70dbdac7bc80524c09e88bac86c32e16de891144ead6fac1ada3558fea768daf"
+          },
+          "reload": {
+            "path": ".verification/20261009T004259.485514Z-native-equipment-gallery-fixed/profiles/gearSmoke/gear-reload-validation.json",
+            "sha256": "340bff6b24486a048fd36e8074e2bd80764c4e8766ecfb68f02c1a21fe79f4d8"
+          }
+        },
+        "capture_source_snapshot": {
+          "path": ".verification/20261009T004259.485514Z-native-equipment-gallery-fixed/source-sha256.json",
+          "sha256": "919ee9630ed1431d951deefa4f0bedbb6356369bd788f46b8c78521135d9a6e9"
+        },
+        "method": "Fresh disposable Overworld; prepared platform/items and comparative toxin resets. Native Survival RMB, inventory, movement and F-key packets. Operator SURGE and prepared V5 exposure pad. Prepared eight-template model gallery is not natural generation or autonomous Survival gathering.",
+        "cold_components_owner_and_fuel_preserved": true,
+        "belt_active_server_ticks": 100,
+        "structures": {
+          "template_count": 8,
+          "method": "All eight actual NBT templates placed through vanilla StructureTemplate.placeInWorld on prepared Overworld pads; this is not a natural frequency or survival loot demonstration."
+        }
+      },
+      "lift": {
+        "passed": true,
+        "creator_pid": 22592,
+        "reload_pid": 13916,
+        "task": {
+          "path": ".verification/20261009T010411.030849Z-expedition-motion-native-corrected/runNativeFieldLiftSmoke.json",
+          "sha256": "66fd980e0e9bad6c96948a128eafe5264f2867f77416df21e3ee65662ce82bbb"
+        },
+        "receipts": {
+          "create": {
+            "path": ".verification/20261009T010411.030849Z-expedition-motion-native-corrected/profiles/fieldLiftSmoke/lift-create-validation.json",
+            "sha256": "487dbeb6821157b57d973f2d08a6e552a5898697294a05118868517f898a995c"
+          },
+          "reload": {
+            "path": ".verification/20261009T010411.030849Z-expedition-motion-native-corrected/profiles/fieldLiftSmoke/lift-reload-validation.json",
+            "sha256": "f6193457c86c5534a94a6e18646a9267b9c59349c7b01158dca948b43611a71c"
+          }
+        },
+        "capture_source_snapshot": {
+          "path": ".verification/20261009T010411.030849Z-expedition-motion-native-corrected/source-sha256.json",
+          "sha256": "018fa19f2d685d9c0b09bbe393d7ec8ad290ef4a5dcf5501a9ad139adb9d4eea"
+        },
+        "method": "Prepared flat site and supplies; subsequent placement, fuel, controller, cargo and passenger actions use native Survival packets",
+        "ascent_passenger_ticks": 120,
+        "descent_passenger_ticks": 121,
+        "ascent_blocks": 7.140000000000271,
+        "descent_blocks": -7.140000000000271,
+        "cold_single_uuid_components_and_quantities_preserved": true
+      },
+      "winch": {
+        "passed": true,
+        "creator_pid": 31968,
+        "reload_pid": 24512,
+        "task": {
+          "path": ".verification/20261009T010411.030849Z-expedition-motion-native-corrected/runWinchSmoke.json",
+          "sha256": "fdc10744a0de8dee8ac14340d74e911fbe735d86bc46710d88b4aadb29ea8469"
+        },
+        "receipts": {
+          "create": {
+            "path": ".verification/20261009T010411.030849Z-expedition-motion-native-corrected/profiles/winchSmoke/winch-create-validation.json",
+            "sha256": "5fe37545d10f70851d9f90ce9200dcbe11d11aa98749e22265134b6bfcf8598f"
+          },
+          "reload": {
+            "path": ".verification/20261009T010411.030849Z-expedition-motion-native-corrected/profiles/winchSmoke/winch-reload-validation.json",
+            "sha256": "4ea868434d9544ab19d9c3c06bf06552c06a2e02525b24684acdf354e8d235f5"
+          }
+        },
+        "capture_source_snapshot": {
+          "path": ".verification/20261009T010411.030849Z-expedition-motion-native-corrected/source-sha256.json",
+          "sha256": "018fa19f2d685d9c0b09bbe393d7ec8ad290ef4a5dcf5501a9ad139adb9d4eea"
+        },
+        "method": "Prepared disposableSurvival platform/inventory/short8-block testline andResistanceIV protects fixture landing only; actualordinary use/movementpackets, noflight/noPhysics/teleportduringphysics episode; not a resource-gatheringSurvival expedition",
+        "ordinary_paid_line_blocks": 32,
+        "prepared_physics_line_blocks": 8,
+        "actual_motion_ticks": 162,
+        "owned_line_motion_ticks": 19,
+        "owned_taut_line_ticks": 2,
+        "max_acceleration": 0.12000000000000001,
+        "max_position_step": 3.5669260608996374,
+        "cold_identity_and_obstruction_release_preserved": true,
+        "limitation": "The 162-tick motion episode includes travel after detachment; 19 ticks retained the real line and 2 were taut. The legacy long_unsupported_release_observed label does not establish the 60-tick safety cause. That deadline is covered by GameTests, not this native trajectory."
+      },
+      "rift": {
+        "passed": true,
+        "creator_pid": 25468,
+        "reload_pid": 12940,
+        "task": {
+          "path": ".verification/20261009T021417.102686Z-v5-safe-clearings-transition/runRiftPersistenceSmoke.json",
+          "sha256": "859efe9233e552bf8a7f01506d2708d30baf38c61c9202fa11a4b8e9f98bf324"
+        },
+        "receipts": {
+          "create": {
+            "path": ".verification/20261009T021417.102686Z-v5-safe-clearings-transition/profiles/riftPersistence/rift-create-validation.json",
+            "sha256": "89d718b395082e9cae4bfe210e20f328e9cea36a2338481e939c621567b4ee4f"
+          },
+          "reload": {
+            "path": ".verification/20261009T021417.102686Z-v5-safe-clearings-transition/profiles/riftPersistence/rift-reload-validation.json",
+            "sha256": "f205f48694d60a67f2a4721946e92b5401bdc836e3e4249a448f3646a48f7f1c"
+          }
+        },
+        "capture_source_snapshot": {
+          "path": ".verification/20261009T021417.102686Z-v5-safe-clearings-transition/source-sha256.json",
+          "sha256": "ae89da0607ce8d8bdd5a0efd243da35f0927e64d0ae072e048d3de74363c9d1e"
+        },
+        "destination": "interstice:islands_v5",
+        "real_client_roundtrip_same_link_cold_echo": true,
+        "method": "Prepared fresh portal fixture; real client travel and echo-block use after a different-JVM cold restart."
+      }
+    }
+  },
+  "assets": {
+    "ready_palettes": 21,
+    "registry_counts": {
+      "cave-ready": 5,
+      "minerals": 9,
+      "realm-surfaces": 3,
+      "forest-ecology": 4
+    },
+    "palette_audit": {
+      "path": ".verification/ready-palette-audit.json",
+      "sha256": "b19974594d1309a1022172846ae1aa626d8d4d041700de41848df406617448b4"
+    },
+    "forest_audit": {
+      "path": ".verification/forest-ecology-release-audit.json",
+      "sha256": "955a3ea1e31061003513f3cd3de8c4d73b790514292220a08614eb8a6d7e927d"
+    },
+    "forest_palette_count": 4,
+    "forest_source_registry_sha256": "ad217173976d4e6170fc7dd53623415f24c23bad58fa1e4b46d45843ab35f08e",
+    "forest_license_copy_sha256": "b43732f4c1463b087cf10d4daf8d8766514b2bf8f21bc5ef50905f95be227726",
+    "native_whole_sprites_compared": 1568,
+    "all_10_retort_resource_links_valid": true
+  },
+  "screenshots": [
+    {
+      "copy": "docs/screenshots/v5/forest-clear.png",
+      "original": ".verification/20261009T011933.096664Z-full-native-hillside-gallery/profiles/vanillaTerrainSmoke/screenshots/v5-dangerous-forest-clear.png",
+      "sha256": "46eee0575f474ae6ec04a5b63912e2b5cc590b3aed3cff4541881236e1b9807b",
+      "bytes_unchanged": true
+    },
+    {
+      "copy": "docs/screenshots/v5/crimson-dark.png",
+      "original": ".verification/20261009T011933.096664Z-full-native-hillside-gallery/profiles/vanillaTerrainSmoke/screenshots/v5-crimson-thickets-dark.png",
+      "sha256": "8a36821b2a19857cb08d10f2163b7c13d11f47432295fcce36bb1e3f9606bdb9",
+      "bytes_unchanged": true
+    },
+    {
+      "copy": "docs/screenshots/v5/islands-clear.png",
+      "original": ".verification/20261009T011933.096664Z-full-native-hillside-gallery/profiles/vanillaTerrainSmoke/screenshots/v5-floating-archipelago-clear.png",
+      "sha256": "22688613895eda640f6e7be351eef4057b878bb4391e52a453b94eccf3b4d393",
+      "bytes_unchanged": true
+    },
+    {
+      "copy": "docs/screenshots/v5/mountains-clear.png",
+      "original": ".verification/20261009T011933.096664Z-full-native-hillside-gallery/profiles/vanillaTerrainSmoke/screenshots/v5-stone-mountains-clear.png",
+      "sha256": "cd3167e226bddf69b9a5f4d2a17272f98adda7267f9489d1216c6ebd15b90d40",
+      "bytes_unchanged": true
+    }
+  ],
+  "preservation": {
+    "user_worlds_unchanged": true,
+    "active_user_worlds": [],
+    "legacy_dimension_revisions_preserved": true,
+    "original_seas_tides_and_author_plants_retained": true
+  },
+  "scope": "Separate disposable profiles and prepared native interaction fixtures. Natural V5 terrain captures used selected FULL chunks; no claim of autonomous resource-gathering Survival or globally average forest coverage."
+}

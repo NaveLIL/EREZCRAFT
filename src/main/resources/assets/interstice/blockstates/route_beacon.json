@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "interstice:block/gear/beacon_false"
+    },
+    "lit=true": {
+      "model": "interstice:block/gear/beacon_true"
+    }
+  }
+}

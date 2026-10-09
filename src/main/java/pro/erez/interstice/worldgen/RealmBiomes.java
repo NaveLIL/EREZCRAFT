@@ -22,6 +22,7 @@ public final class RealmBiomes {
     public static final ResourceKey<Biome> ASH_ISLANDS = key("ash_islands");
     public static final ResourceKey<Biome> STONE_VAULTS = key("stone_vaults");
     public static final ResourceKey<Biome> PALE_GARDENS = key("pale_gardens");
+    public static final ResourceKey<Biome> CRIMSON_THICKETS=key("crimson_thickets");
     private RealmBiomes() {}
     private static ResourceKey<Biome> key(String name) {
         return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Interstice.ID, name));

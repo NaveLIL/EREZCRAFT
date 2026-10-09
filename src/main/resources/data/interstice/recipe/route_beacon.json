@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "PBP",
+    "MCM",
+    "LSL"
+  ],
+  "key": {
+    "P": {
+      "item": "interstice:phosphorite_crystal"
+    },
+    "B": {
+      "item": "interstice:luminous_bud"
+    },
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    },
+    "C": {
+      "item": "interstice:pressure_coupler"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    },
+    "S": {
+      "item": "interstice:world_stick"
+    }
+  },
+  "result": {
+    "id": "interstice:route_beacon",
+    "count": 1
+  }
+}

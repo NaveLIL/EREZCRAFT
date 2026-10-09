@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "interstice:plant_fiber"
+    },
+    {
+      "item": "interstice:plant_fiber"
+    },
+    {
+      "item": "interstice:plant_fiber"
+    },
+    {
+      "item": "interstice:plant_fiber"
+    },
+    {
+      "item": "interstice:riftsilver_wire"
+    },
+    {
+      "item": "interstice:riftsilver_wire"
+    },
+    {
+      "item": "interstice:world_stick"
+    }
+  ],
+  "result": {
+    "id": "interstice:tether_spool",
+    "count": 1
+  }
+}

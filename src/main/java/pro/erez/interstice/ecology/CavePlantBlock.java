@@ -69,6 +69,7 @@ public final class CavePlantBlock extends Block {
         CompoundTag data = victim.getPersistentData();
         if (data.getLong(STING_COOLDOWN_TAG) > now) return;
         data.putLong(STING_COOLDOWN_TAG, now + 40);
+        if(victim instanceof net.minecraft.server.level.ServerPlayer player&&pro.erez.interstice.gear.RealmGear.protect(player,pro.erez.interstice.gear.RealmGear.HazardKind.STINGING_PLANT))return;
         victim.hurt(level.damageSources().sweetBerryBush(), 2F);
         victim.addEffect(new MobEffectInstance(MobEffects.POISON, 100));
         victim.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60));

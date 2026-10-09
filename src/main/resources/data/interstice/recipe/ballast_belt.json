@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "MLM",
+    "FSF",
+    "III"
+  ],
+  "key": {
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    },
+    "F": {
+      "item": "interstice:chemotrophic_fabric"
+    },
+    "S": {
+      "item": "interstice:pressure_coupler"
+    },
+    "I": {
+      "item": "interstice:riftsilver_ingot"
+    }
+  },
+  "result": {
+    "id": "interstice:ballast_belt",
+    "count": 1
+  }
+}

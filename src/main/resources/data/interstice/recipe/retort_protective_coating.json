@@ -1,0 +1,30 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "interstice:pure_vitriolite_lining"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "interstice:phosphorite_paste"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "interstice:umbral_sorbent"
+      },
+      "count": 2
+    }
+  ],
+  "outputs": [
+    {
+      "id": "interstice:protective_coating",
+      "count": 1
+    }
+  ],
+  "ticks": 1000
+}

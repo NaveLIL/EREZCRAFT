@@ -40,5 +40,14 @@
         "pitch": 0.7
       }
     ]
+  },
+  "spore_pod_warning": {
+    "subtitle": "subtitles.interstice.spore_pod.warn",
+    "sounds": [
+      {
+        "name": "minecraft:block.brewing_stand.brew",
+        "type": "event"
+      }
+    ]
   }
 }

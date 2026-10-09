@@ -34,6 +34,9 @@
     "interstice:reinforced_fence",
     "interstice:reinforced_fence_gate",
     "interstice:nutrient_reservoir",
-    "interstice:bioluminescent_lantern"
+    "interstice:bioluminescent_lantern",
+    "interstice:route_beacon",
+    "interstice:field_anchor",
+    "interstice:rift_winch"
   ]
 }

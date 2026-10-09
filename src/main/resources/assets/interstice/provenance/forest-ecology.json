@@ -1,0 +1,37 @@
+{
+  "license": "CC0-1.0",
+  "sources": "art/sources/cc0/forest-ecology/sources.json",
+  "generator": "tools/generate_forest_ecology_resources.py",
+  "pattern_and_alpha_verified": true,
+  "operation": "Bijective palette substitution; full16x16 source coordinates and alpha preserved",
+  "outputs": [
+    {
+      "source": "thistle.png",
+      "output": "block/forest/venom_reed.png",
+      "source_sha256": "f99dd134790c0584a6a18484ec46b9cb95a265056cc5a19f53ed5cabd5a5d7ed",
+      "output_sha256": "270c0fac4d29c6b559a28d8692d8a73d66d229899d06cd950e889739f96add61",
+      "classes": 5
+    },
+    {
+      "source": "thistle.png",
+      "output": "block/forest/venom_fiber.png",
+      "source_sha256": "f99dd134790c0584a6a18484ec46b9cb95a265056cc5a19f53ed5cabd5a5d7ed",
+      "output_sha256": "0fd2f461e4cdcd523f5e7c8c406d1f5ddcc88467eec8251aaec698125dce8eb8",
+      "classes": 5
+    },
+    {
+      "source": "poison_cap.png",
+      "output": "block/forest/spore_pod_armed.png",
+      "source_sha256": "3c82073fe75d611f670d6233c877bd8a07156007f87b8c779b790faa394218d3",
+      "output_sha256": "caf23b50801817f29652db62b7e88caeae52ae47032bd7151ff289789d053ac5",
+      "classes": 9
+    },
+    {
+      "source": "poison_cap.png",
+      "output": "block/forest/spore_pod_spent.png",
+      "source_sha256": "3c82073fe75d611f670d6233c877bd8a07156007f87b8c779b790faa394218d3",
+      "output_sha256": "0a166c9624a3e055bb903aadf2f4104c68709678e09e2b30a3c6f14194d32737",
+      "classes": 9
+    }
+  ]
+}

@@ -18,7 +18,8 @@ public final class RiftSafety {
         if (level.isOutsideBuildHeight(feet) || level.isOutsideBuildHeight(feet.above())
                 || !level.getWorldBorder().isWithinBounds(feet)) return false;
         for(var cloud:level.getEntitiesOfClass(net.minecraft.world.entity.AreaEffectCloud.class,new AABB(feet).inflate(4),
-                entity->entity.isAlive()&&entity.getTags().contains(pro.erez.interstice.ecology.ClingweedGas.ENTITY_TAG)))
+                entity->entity.isAlive()&&(entity.getTags().contains(pro.erez.interstice.ecology.ClingweedGas.ENTITY_TAG)
+                        ||entity.getTags().contains(pro.erez.interstice.ecology.SporePodGas.ENTITY_TAG))))
             if(cloud.distanceToSqr(net.minecraft.world.phys.Vec3.atCenterOf(feet))<Math.pow(cloud.getRadius()+1,2))return false;
         var floor = level.getBlockState(feet.below());
         if (!floor.isFaceSturdy(level, feet.below(), Direction.UP) || !floor.getFluidState().isEmpty()
@@ -29,7 +30,8 @@ public final class RiftSafety {
             if (!state.getFluidState().isEmpty() || state.is(Blocks.FIRE) || state.is(Blocks.SOUL_FIRE)
                     || state.is(Blocks.SWEET_BERRY_BUSH) || state.is(Blocks.POWDER_SNOW) || state.is(Blocks.POINTED_DRIPSTONE)
                     || state.is(Blocks.NETHER_PORTAL) || state.is(Blocks.END_PORTAL) || state.is(Blocks.END_GATEWAY) || state.is(Interstice.RIFT_PORTAL.get())) return false;
-            if(state.is(pro.erez.interstice.ecology.CaveEcology.CLINGWEED.get())||state.is(pro.erez.interstice.ecology.CaveEcology.STING_FROND.get())
+            if(state.is(pro.erez.interstice.ecology.RealmEcology.VENOM_REED.get())||state.is(pro.erez.interstice.ecology.RealmEcology.SPORE_POD.get())
+                    ||state.is(pro.erez.interstice.ecology.CaveEcology.CLINGWEED.get())||state.is(pro.erez.interstice.ecology.CaveEcology.STING_FROND.get())
                     ||state.is(pro.erez.interstice.minerals.MineralEcology.MINERAL_POWDER.get())
                     ||state.is(pro.erez.interstice.worldgen.cave.CaveMaterials.ASH_SPIRE.get())||state.is(pro.erez.interstice.worldgen.cave.CaveMaterials.GARDEN_SPIRE.get())||state.is(pro.erez.interstice.worldgen.cave.CaveMaterials.VAULT_SPIRE.get()))return false;
         }
@@ -55,12 +57,13 @@ public final class RiftSafety {
             int x = hint.getX() + dx, z = hint.getZ() + dz;
             for (int offset : new int[]{0, 1, -1, 2, -2}) {
                 BlockPos feet = new BlockPos(x, hint.getY() + offset, z);
-                if (echoSpace(level, feet)) return buildEcho(level, feet);
+                if (canPrepareEcho(level, feet)) return buildEcho(level, feet);
             }
         }
         return null;
     }
-    private static boolean echoSpace(ServerLevel level, BlockPos feet) {
+    /** Read-only validation shared with V5 landing search, before any echo or terrain writes. */
+    public static boolean canPrepareEcho(ServerLevel level, BlockPos feet) {
         if (level.isOutsideBuildHeight(feet.above(2)) || !level.getWorldBorder().isWithinBounds(feet.offset(1, 0, 1))
                 || !level.getWorldBorder().isWithinBounds(feet.offset(-1, 0, -1))) return false;
         for (int dx = -1; dx <= 1; dx++) for (int dz = -1; dz <= 1; dz++) {

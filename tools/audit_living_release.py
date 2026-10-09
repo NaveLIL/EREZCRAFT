@@ -47,7 +47,23 @@ def main():
                          'data/interstice/dimension/islands_v4.json'):
             if required not in names:
                 errors.append(f'Missing release resource: {required}')
+        classes = list((ROOT / 'build/classes/java/main').rglob('*.class'))
+        for path in classes:
+            name = path.relative_to(ROOT / 'build/classes/java/main').as_posix()
+            if name not in names or jar.read(name) != path.read_bytes():
+                errors.append(f'JAR compiled class differs: {name}')
+        if args.version == '0.6.0' and 'data/interstice/dimension/islands_v5.json' not in names:
+            errors.append('Missing V5 dimension in release')
+    source_path = jar_path.with_name('interstice-'+args.version+'-sources.jar')
+    sources = list((ROOT / 'src/main/java').rglob('*.java'))
+    with zipfile.ZipFile(source_path) as source_jar:
+        for path in sources:
+            name = path.relative_to(ROOT / 'src/main/java').as_posix()
+            if name not in source_jar.namelist() or source_jar.read(name) != path.read_bytes():
+                errors.append(f'Sources JAR differs: {name}')
     report = {'passed': not errors, 'jar': str(jar_path), 'jar_sha256': sha(jar_path.read_bytes()),
+              'sources_jar_sha256': sha(source_path.read_bytes()), 'java_sources_compared': len(sources),
+              'compiled_classes_compared': len(classes),
               'models_checked': len(models), 'resources_compared': len(files), 'errors': errors}
     target = ROOT / ('.verification/living-release-artifact.json' if args.version=='0.3.1' else '.verification/release-artifact-'+args.version+'.json')
     target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

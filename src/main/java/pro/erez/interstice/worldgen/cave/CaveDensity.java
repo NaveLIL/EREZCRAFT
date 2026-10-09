@@ -101,7 +101,7 @@ public final class CaveDensity {
         private final Map<Long,Optional<Mouth>> plans=new HashMap<>();
         private final Map<Long,List<RoomPlan>> roomPlans=new HashMap<>();
         private Context(long seed,GeometryProfile profile,BiFunction<Integer,Integer,? extends TerrainColumn> columns,int revision) {
-            if(revision<2||revision>4)throw new IllegalArgumentException("Unsupported cave terrain revision "+revision);
+            if(revision<2||revision>5)throw new IllegalArgumentException("Unsupported cave terrain revision "+revision);
             this.seed=seed;this.profile=profile;this.columns=columns;this.revision=revision;
         }
         private Optional<Mouth> mouth(int cx,int cz) {

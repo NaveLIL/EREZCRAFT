@@ -1,0 +1,30 @@
+{
+  "block.interstice.rift_winch": [
+    "Рифтовая лебёдка",
+    "Rift winch"
+  ],
+  "item.interstice.tether_spool": [
+    "Страховочная катушка",
+    "Tether spool"
+  ],
+  "tooltip.interstice.tether_spool": [
+    "ПКМ по лебёдке: линия32бл. Присесть+ПКМ: отсоединить. Не является постоянной подвеской.",
+    "Use on winch:32-block line. Sneak-use: detach. Not a permanent suspension."
+  ],
+  "message.interstice.winch.attached": [
+    "Страховочная линия: %sбл.",
+    "Tether connected: %s blocks."
+  ],
+  "message.interstice.winch.broken": [
+    "Линия отсоединена: препятствие или потерянный узел.",
+    "Tether detached: obstruction or missing anchor."
+  ],
+  "message.interstice.winch.release_warning": [
+    "До освобождения линии1с: найдите опору!",
+    "Line releases in1s: find support!"
+  ],
+  "message.interstice.winch.safety_release": [
+    "Линия освобождена: длительная неподвижная подвеска.",
+    "Tether released: prolonged unsupported suspension."
+  ]
+}

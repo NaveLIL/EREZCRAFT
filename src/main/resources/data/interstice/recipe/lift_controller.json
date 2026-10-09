@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " M ",
+    "WCW",
+    " L "
+  ],
+  "key": {
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    },
+    "W": {
+      "item": "interstice:world_stick"
+    },
+    "C": {
+      "item": "interstice:pressure_coupler"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    }
+  },
+  "result": {
+    "id": "interstice:lift_controller",
+    "count": 1
+  }
+}

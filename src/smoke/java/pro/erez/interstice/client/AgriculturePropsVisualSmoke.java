@@ -72,7 +72,7 @@ public final class AgriculturePropsVisualSmoke {
             require(System.nanoTime()<deadline,"Agriculture prop deadline stage "+stage);
             if(mc.player==null||mc.level==null||mc.screen!=null||mc.getConnection()==null)return;
             var server=mc.getSingleplayerServer();var id=mc.player.getUUID();
-            if(stage==0){mc.getConnection().sendCommand("interstice explore living");stage=1;ticks=0;return;}
+            if(stage==0){mc.getConnection().sendCommand("interstice explore v4");stage=1;ticks=0;return;}
             if(stage==1&&mc.level.dimension().equals(IslandWorld.LIVING_WORLD)&&++ticks>=40){
                 work=server.submit(()->{prepare(server.getPlayerList().getPlayer(id));return true;});settling=new NativeChunkSettler.Session("agriculture_prop_preparation",2000);stage=2;ticks=0;
             }else if(stage==2&&done()&&settling.ready()){

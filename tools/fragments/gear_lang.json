@@ -1,0 +1,30 @@
+{
+  "ru_ru": {
+    "block.interstice.route_beacon": "Маршрутный маяк",
+    "item.interstice.ballast_belt": "Балластный пояс",
+    "item.interstice.protective_coating": "Защитное покрытие",
+    "tooltip.interstice.route_beacon": "Фосфорит: 2 минуты света за кристалл, до 8 минут. Метка владельцу в радиусе 48 блоков. При демонтаже топливо теряется.",
+    "tooltip.interstice.ballast_belt": "Держи в любой руке: ослабляет приливную тягу. Износ идёт только под открытой тягой; броня остаётся свободной.",
+    "tooltip.interstice.ballast_remaining": "Осталось %s секунд работы под приливом",
+    "tooltip.interstice.protective_coating": "ПКМ: покрой надетый нагрудник или нагрудник в другой руке. %s защит от наших токсинов; не защищает от обычного урона.",
+    "message.interstice.coating.target": "Нужен нагрудник без оставшегося покрытия — надетый или в другой руке.",
+    "message.interstice.coating.applied": "На нагруднике %s зарядов защиты от токсинов.",
+    "tooltip.interstice.coating_charges": "Защита от токсинов: %s зарядов покрытия",
+    "message.interstice.beacon.fuel": "Маяк: %s секунд света. Топливо — фосфоритовый кристалл.",
+    "message.interstice.beacon.position": "Маяк [%s, %s, %s] · свет ещё %s с"
+  },
+  "en_us": {
+    "block.interstice.route_beacon": "Route Beacon",
+    "item.interstice.ballast_belt": "Ballast Belt",
+    "item.interstice.protective_coating": "Protective Coating",
+    "tooltip.interstice.route_beacon": "Phosphorite: 2 minutes per crystal, up to 8 minutes. Owner receives a marker within 48 blocks. Breaking discards fuel.",
+    "tooltip.interstice.ballast_belt": "Hold in either hand to counter tidal lift. Wears only under exposed lift; your armour slot stays free.",
+    "tooltip.interstice.ballast_remaining": "%s seconds of exposed tidal use remaining",
+    "tooltip.interstice.protective_coating": "Use on an equipped chestplate or one in your other hand. %s protections from our toxins; no ordinary damage immunity.",
+    "message.interstice.coating.target": "An uncoated chestplate must be equipped or held in your other hand.",
+    "message.interstice.coating.applied": "Chestplate coated: %s toxin protections.",
+    "tooltip.interstice.coating_charges": "Toxin protection: %s coating charges",
+    "message.interstice.beacon.fuel": "Beacon: %s seconds of light. Fuel: phosphorite crystals.",
+    "message.interstice.beacon.position": "Beacon [%s, %s, %s] · %s seconds remaining"
+  }
+}

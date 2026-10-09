@@ -1,0 +1,26 @@
+{
+  "block.interstice.venom_reed": [
+    "Жалящий камыш",
+    "Venom reed"
+  ],
+  "block.interstice.spore_pod": [
+    "Споровый стручок",
+    "Spore pod"
+  ],
+  "item.interstice.venom_fiber": [
+    "Ядовитое волокно",
+    "Venom fiber"
+  ],
+  "item.interstice.spore_pod_shell": [
+    "Обезвреженная оболочка",
+    "Defused pod shell"
+  ],
+  "tooltip.interstice.spore_pod_shell": [
+    "Ставится безопасной. Биопаста вооружает; ножницы обезвреживают живой стручок.",
+    "Placed safely. Biopaste arms it; shears defuse a live pod."
+  ],
+  "subtitles.interstice.spore_pod.warn": [
+    "Стручок надувается",
+    "Spore pod swells"
+  ]
+}

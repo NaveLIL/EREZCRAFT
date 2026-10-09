@@ -293,6 +293,24 @@ neoForge {
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_equipment'
         }
+        gearGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/gear-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_gear'
+        }
+        liftGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/lift-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_lift'
+        }
+        tetherGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/tether-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_tethers'
+        }
         retortUiSmoke {
             client()
             gameDirectory = file('build/retort-ui-smoke')
@@ -333,6 +351,78 @@ neoForge {
             client()
             gameDirectory = file('build/wear-backpack-smoke')
             systemProperty 'interstice.wearBackpackSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        vanillaTerrainCreate {
+            client()
+            gameDirectory = file('build/vanilla-terrain-smoke')
+            systemProperty 'interstice.vanillaTerrainSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        vanillaTerrainReload {
+            client()
+            gameDirectory = file('build/vanilla-terrain-smoke')
+            systemProperty 'interstice.vanillaTerrainSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        nativeFieldLiftCreate {
+            client()
+            gameDirectory = file('build/field-lift-smoke')
+            systemProperty 'interstice.fieldLiftSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        nativeFieldLiftReload {
+            client()
+            gameDirectory = file('build/field-lift-smoke')
+            systemProperty 'interstice.fieldLiftSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        gearCreate {
+            client()
+            gameDirectory = file('build/gear-smoke')
+            systemProperty 'interstice.gearSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        gearReload {
+            client()
+            gameDirectory = file('build/gear-smoke')
+            systemProperty 'interstice.gearSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        winchCreate {
+            client()
+            gameDirectory = file('build/winch-smoke')
+            systemProperty 'interstice.winchSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        winchReload {
+            client()
+            gameDirectory = file('build/winch-smoke')
+            systemProperty 'interstice.winchSmoke', 'reload'
             programArgument '--width'
             programArgument '1280'
             programArgument '--height'
@@ -477,7 +567,7 @@ neoForge {
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+        def profileName = name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
                 name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
                 name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
@@ -536,10 +626,18 @@ tasks.named('runBackpackReload') { dependsOn tasks.named('runBackpackCreate') }
 tasks.register('runBackpackSmoke') { dependsOn tasks.named('runBackpackReload') }
 tasks.named('runWearBackpackReload') { dependsOn tasks.named('runWearBackpackCreate') }
 tasks.register('runWearBackpackSmoke') { dependsOn tasks.named('runWearBackpackReload') }
-tasks.matching { it.name in ['prepareWearBackpackCreateRun','prepareWearBackpackReloadRun','prepareBackpackCreateRun','prepareBackpackReloadRun','prepareRetortUiSmokeRun'] }.configureEach {
+tasks.named('runVanillaTerrainReload') { dependsOn tasks.named('runVanillaTerrainCreate') }
+tasks.register('runVanillaTerrainSmoke') { dependsOn tasks.named('runVanillaTerrainReload') }
+tasks.named('runNativeFieldLiftReload') { dependsOn tasks.named('runNativeFieldLiftCreate') }
+tasks.register('runNativeFieldLiftSmoke') { dependsOn tasks.named('runNativeFieldLiftReload') }
+tasks.named('runGearReload') { dependsOn tasks.named('runGearCreate') }
+tasks.register('runGearSmoke') { dependsOn tasks.named('runGearReload') }
+tasks.named('runWinchReload') { dependsOn tasks.named('runWinchCreate') }
+tasks.register('runWinchSmoke') { dependsOn tasks.named('runWinchReload') }
+tasks.matching { it.name in ['prepareWinchCreateRun','prepareWinchReloadRun','prepareGearCreateRun','prepareGearReloadRun','prepareNativeFieldLiftCreateRun','prepareNativeFieldLiftReloadRun','prepareVanillaTerrainCreateRun','prepareVanillaTerrainReloadRun','prepareWearBackpackCreateRun','prepareWearBackpackReloadRun','prepareBackpackCreateRun','prepareBackpackReloadRun','prepareRetortUiSmokeRun'] }.configureEach {
     outputs.upToDateWhen { false }
     doLast {
-        def runName=it.name.contains('Retort')?'retortUiSmoke':it.name.contains('Wear')?(it.name.contains('Reload')?'wearBackpackReload':'wearBackpackCreate'):it.name.contains('Reload')?'backpackReload':'backpackCreate'
+        def runName=it.name.contains('Winch')?(it.name.contains('Reload')?'winchReload':'winchCreate'):it.name.contains('Gear')?(it.name.contains('Reload')?'gearReload':'gearCreate'):it.name.contains('NativeFieldLift')?(it.name.contains('Reload')?'nativeFieldLiftReload':'nativeFieldLiftCreate'):it.name.contains('VanillaTerrain')?(it.name.contains('Reload')?'vanillaTerrainReload':'vanillaTerrainCreate'):it.name.contains('Retort')?'retortUiSmoke':it.name.contains('Wear')?(it.name.contains('Reload')?'wearBackpackReload':'wearBackpackCreate'):it.name.contains('Reload')?'backpackReload':'backpackCreate'
         def directory=neoForge.runs.getByName(runName).gameDirectory.get().asFile
         def config=new File(directory,'config/fml.toml');config.parentFile.mkdirs();config.text='earlyWindowControl = false\n'
         def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\n'
@@ -585,4 +683,4 @@ tasks.named('runSurvivalRouteEquipment') { dependsOn tasks.named('runSurvivalRou
 tasks.register('runSurvivalPreparationSmoke') { dependsOn tasks.named('runSurvivalRouteEquipment') }
 
 // A successful build includes the server's behavioral tests, in a disposable profile.
-tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer'),tasks.named('runAgricultureGameTestServer'),tasks.named('runEquipmentGameTestServer') }
+tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer'),tasks.named('runAgricultureGameTestServer'),tasks.named('runEquipmentGameTestServer'),tasks.named('runGearGameTestServer'),tasks.named('runTetherGameTestServer'),tasks.named('runLiftGameTestServer') }

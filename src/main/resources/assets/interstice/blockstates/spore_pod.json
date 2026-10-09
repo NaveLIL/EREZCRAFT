@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "phase": "armed"
+      },
+      "apply": {
+        "model": "interstice:block/forest/spore_pod_armed"
+      }
+    },
+    {
+      "when": {
+        "phase": "primed"
+      },
+      "apply": {
+        "model": "interstice:block/forest/spore_pod_primed"
+      }
+    },
+    {
+      "when": {
+        "phase": "spent"
+      },
+      "apply": {
+        "model": "interstice:block/forest/spore_pod_spent"
+      }
+    }
+  ]
+}

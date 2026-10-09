@@ -173,6 +173,7 @@ public final class TideManager {
             if (!IslandWorld.isIsland(level.dimension())) continue;
             for (var player : level.players()) {
                 BuoyancyController.applyEntityBuoyancy(player, intensity);
+                pro.erez.interstice.gear.RealmGear.tick(player);
             }
             if (activeNow || needsCleanup) {
                 List<Entity> nonPlayerEntities = new ArrayList<>();

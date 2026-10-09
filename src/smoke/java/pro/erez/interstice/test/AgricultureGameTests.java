@@ -75,7 +75,8 @@ public final class AgricultureGameTests {
         var recipe=new RetortRecipe(List.of(new RetortRecipe.Input(Ingredient.of(tag),1),new RetortRecipe.Input(Ingredient.of(plank),1)),List.of(new ItemStack(RealmAgriculture.WIRE.get())),20);
         var input=new RetortInput(List.of(new ItemStack(plank),new ItemStack(other),ItemStack.EMPTY,ItemStack.EMPTY,ItemStack.EMPTY,ItemStack.EMPTY));
         int[] take=recipe.allocation(input);h.assertTrue(take!=null&&take[0]==1&&take[1]==1,"Overlapping tags fail or duplicate ingredient counts");
-        h.assertTrue(level(h).getRecipeManager().getAllRecipesFor(RealmAgriculture.RETORT_RECIPE_TYPE.get()).size()==8,"Missing actual data-driven retort operations");
+        var real=level(h).getRecipeManager().getAllRecipesFor(RealmAgriculture.RETORT_RECIPE_TYPE.get());
+        h.assertTrue(real.size()>=8&&real.stream().anyMatch(r->r.id().getPath().equals("retort_chemotrophic_fabric"))&&real.stream().anyMatch(r->r.id().getPath().equals("retort_grain_separation")),"Missing actual data-driven retort operations");
         var ops=net.minecraft.resources.RegistryOps.create(com.mojang.serialization.JsonOps.INSTANCE,level(h).registryAccess());
         var decoded=RetortRecipe.CODEC.codec().parse(ops,RetortRecipe.CODEC.codec().encodeStart(ops,recipe).getOrThrow()).getOrThrow();
         h.assertTrue(decoded.matches(input,level(h)),"Native recipe codec lost counted inputs");h.succeed();

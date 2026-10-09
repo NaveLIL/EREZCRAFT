@@ -100,7 +100,7 @@ public final class MiningVisualSmoke {
             if(mc.player==null||mc.level==null||mc.screen!=null||mc.getConnection()==null)return;
             var server=mc.getSingleplayerServer();var uuid=mc.player.getUUID();
             if(stage==0) {
-                if(MODE.equals("create")){mc.getConnection().sendCommand("interstice explore living");stage=1;ticks=0;}
+                if(MODE.equals("create")){mc.getConnection().sendCommand("interstice explore v4");stage=1;ticks=0;}
                 else {work=server.submit(()->{reload(server.getPlayerList().getPlayer(uuid));return true;});stage=40;ticks=0;}return;
             }
             if(stage==1&&mc.level.dimension().equals(IslandWorld.LIVING_WORLD)&&++ticks>=40) {

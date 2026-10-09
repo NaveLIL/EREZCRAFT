@@ -1,0 +1,24 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "interstice:venom_fiber"
+      },
+      "count": 4
+    },
+    {
+      "ingredient": {
+        "item": "interstice:umbral_sorbent"
+      },
+      "count": 1
+    }
+  ],
+  "outputs": [
+    {
+      "id": "interstice:plant_fiber",
+      "count": 4
+    }
+  ],
+  "ticks": 600
+}

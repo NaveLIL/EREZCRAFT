@@ -28,15 +28,27 @@ public final class ExpeditionGameTests {
     private static ServerPlayer enter(GameTestHelper h) {
         for (int x = 1; x <= 13; x++) for (int z = 1; z <= 13; z++) h.setBlock(new BlockPos(x, 1, z), Blocks.STONE);
         ServerPlayer player = TestPlayers.create(h, new BlockPos(6, 2, 6), GameType.SURVIVAL);
-        var source = new RiftLinks.Endpoint(Level.OVERWORLD, player.blockPosition(), Direction.Axis.X);
-        if (!RiftTravel.enter(player, source, RiftLinks.Kind.FISHING)) throw new AssertionError("Fixture discovery failed");
-        player.hasChangedDimension(); // virtual client acknowledges the completed dimension switch
-        if (!player.level().dimension().equals(IslandWorld.LIVING_WORLD)
-                || !(player.serverLevel().getChunkSource().getGenerator() instanceof pro.erez.interstice.worldgen.IslandChunkGenerator generator)
-                || generator.terrainRevision()!=4) throw new AssertionError("First expedition must enter the current V4 realm");
-        if (ExpeditionLedger.get(player.server).journey(player.getUUID()) == null) throw new AssertionError("Real dimension event did not record the expedition");
-        player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Interstice.WAYFARER_KEY.get()));
-        return player;
+        try {
+            var source = new RiftLinks.Endpoint(Level.OVERWORLD, player.blockPosition(), Direction.Axis.X);
+            if (!RiftTravel.enter(player, source, RiftLinks.Kind.FISHING)) throw new AssertionError("Fixture discovery failed: "+riftFailure(player));
+            player.hasChangedDimension(); // virtual client acknowledges the completed dimension switch
+            if (!player.level().dimension().equals(IslandWorld.CURRENT_WORLD)
+                    || !(player.serverLevel().getChunkSource().getGenerator() instanceof pro.erez.interstice.worldgen.IslandChunkGenerator generator)
+                    || generator.terrainRevision()!=5) throw new AssertionError("First expedition must enter the current V5 realm");
+            if (ExpeditionLedger.get(player.server).journey(player.getUUID()) == null) throw new AssertionError("Real dimension event did not record the expedition");
+            player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Interstice.WAYFARER_KEY.get()));
+            return player;
+        } catch (RuntimeException | Error failure) { TestPlayers.remove(player); throw failure; }
+    }
+    private static String riftFailure(ServerPlayer player){
+        String result="no native rift failure packet";
+        if(player.connection.getConnection().channel() instanceof io.netty.channel.embedded.EmbeddedChannel channel){
+            channel.runPendingTasks();
+            for(Object packet:channel.outboundMessages())if(packet instanceof net.minecraft.network.protocol.game.ClientboundSystemChatPacket chat
+                    &&chat.content().getContents() instanceof net.minecraft.network.chat.contents.TranslatableContents text&&text.getKey().startsWith("message.interstice.rift."))result=text.getKey();
+        }
+        System.out.println("EXPEDITION_NATIVE_RIFT_FAILURE reason="+result+" sourceDimension="+player.level().dimension().location()+" source="+player.blockPosition()+" current="+IslandWorld.CURRENT_WORLD.location());
+        return result;
     }
     private static void use(GameTestHelper h, ServerPlayer player) {
         var result = player.getMainHandItem().use(player.serverLevel(), player, InteractionHand.MAIN_HAND);
@@ -46,7 +58,7 @@ public final class ExpeditionGameTests {
     public static void emergencyReturnRequiresFullChannelAndSpendsOnlyOnce(GameTestHelper h) {
         ServerPlayer player = enter(h); use(h, player);
         var keyCopy = player.getMainHandItem().copy(); var journey = ExpeditionLedger.get(player.server).journey(player.getUUID());
-        h.runAtTickTime(100, () -> h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD) && !journey.spent(), "Return cannot happen before ten seconds"));
+        h.runAtTickTime(100, () -> h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD) && !journey.spent(), "Return cannot happen before ten seconds"));
         h.runAtTickTime(225, () -> {
             try {
                 var ledger = ExpeditionLedger.get(player.server);
@@ -65,7 +77,7 @@ public final class ExpeditionGameTests {
         ServerPlayer player = enter(h); use(h, player);
         h.runAtTickTime(20, () -> player.teleportTo(player.getX() + .5, player.getY(), player.getZ()));
         h.runAtTickTime(225, () -> { try {
-            h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD) && !player.isUsingItem(), "Motion must cancel concentration");
+            h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD) && !player.isUsingItem(), "Motion must cancel concentration");
             h.assertTrue(!ExpeditionLedger.get(player.server).journey(player.getUUID()).spent(), "Interrupted concentration cannot consume the return"); h.succeed();
         } finally { TestPlayers.remove(player); } });
     }
@@ -74,7 +86,7 @@ public final class ExpeditionGameTests {
         ServerPlayer player = enter(h); use(h, player);
         h.runAtTickTime(80, () -> { player.invulnerableTime = 0; h.assertTrue(player.hurt(player.damageSources().generic(), 1), "Fixture must deal actual damage after arrival protection"); });
         h.runAtTickTime(225, () -> { try {
-            h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD) && !player.isUsingItem(), "Real damage must interrupt key use");
+            h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD) && !player.isUsingItem(), "Real damage must interrupt key use");
             h.assertTrue(!ExpeditionLedger.get(player.server).journey(player.getUUID()).spent(), "Damage cannot consume a failed return"); h.succeed();
         } finally { TestPlayers.remove(player); } });
     }
@@ -83,7 +95,7 @@ public final class ExpeditionGameTests {
         ServerPlayer player = enter(h); use(h, player);
         h.runAtTickTime(20, player::releaseUsingItem);
         h.runAtTickTime(225, () -> { try {
-            h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD) && !ExpeditionLedger.get(player.server).journey(player.getUUID()).spent(), "Releasing the key must abort the return"); h.succeed();
+            h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD) && !ExpeditionLedger.get(player.server).journey(player.getUUID()).spent(), "Releasing the key must abort the return"); h.succeed();
         } finally { TestPlayers.remove(player); } });
     }
     @GameTest(template = "empty", timeoutTicks = 330)
@@ -102,7 +114,7 @@ public final class ExpeditionGameTests {
         ledger.prepare(player.getUUID(), new ExpeditionLedger.Origin(unavailable, new BlockPos(0, 64, 0)));
         ledger.arrive(player.getUUID(), new ExpeditionLedger.Origin(unavailable, new BlockPos(0, 64, 0))); use(h, player);
         h.runAtTickTime(225, () -> { try {
-            h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD) && !ledger.journey(player.getUUID()).spent(), "Unavailable destination must fail without losing the entitlement"); h.succeed();
+            h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD) && !ledger.journey(player.getUUID()).spent(), "Unavailable destination must fail without losing the entitlement"); h.succeed();
         } finally { TestPlayers.remove(player); } });
     }
     @GameTest(template = "empty", timeoutTicks = 330)
@@ -112,7 +124,7 @@ public final class ExpeditionGameTests {
         for (int x = -5; x <= 5; x++) for (int z = -5; z <= 5; z++) for (int y = -2; y <= 3; y++) h.getLevel().setBlock(origin.offset(x, y, z), Blocks.STONE.defaultBlockState(), 3);
         use(h, player);
         h.runAtTickTime(225, () -> { try {
-            h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD) && !ExpeditionLedger.get(player.server).journey(player.getUUID()).spent(), "Blocked original region must not receive a player or consume their return"); h.succeed();
+            h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD) && !ExpeditionLedger.get(player.server).journey(player.getUUID()).spent(), "Blocked original region must not receive a player or consume their return"); h.succeed();
         } finally { TestPlayers.remove(player); } });
     }
     @GameTest(template = "empty", timeoutTicks = 100)
@@ -162,7 +174,7 @@ public final class ExpeditionGameTests {
         h.runAtTickTime(20, () -> { TestPlayers.remove(initial); current[0] = TestPlayers.reconnect(h, id); });
         h.runAtTickTime(225, () -> { try {
             var player = current[0]; var state = ExpeditionLedger.get(player.server).journey(id);
-            h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD) && !player.isUsingItem(), "Reconnect must not resume the prior concentration");
+            h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD) && !player.isUsingItem(), "Reconnect must not resume the prior concentration");
             h.assertTrue(state.id().equals(journey) && !state.spent(), "Reconnect must preserve the same unspent server entitlement"); h.succeed();
         } finally { TestPlayers.remove(current[0]); } });
     }
@@ -172,7 +184,7 @@ public final class ExpeditionGameTests {
         java.util.function.Consumer<net.neoforged.neoforge.event.entity.EntityTravelToDimensionEvent> deny = event -> { if (event.getEntity() == player) event.setCanceled(true); };
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(deny); use(h, player);
         h.runAtTickTime(225, () -> { try {
-            h.assertTrue(player.level().dimension().equals(IslandWorld.LIVING_WORLD) && !ExpeditionLedger.get(player.server).journey(player.getUUID()).spent(), "Denied server transfer must leave both player and entitlement unchanged"); h.succeed();
+            h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD) && !ExpeditionLedger.get(player.server).journey(player.getUUID()).spent(), "Denied server transfer must leave both player and entitlement unchanged"); h.succeed();
         } finally { net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(deny); TestPlayers.remove(player); } });
     }
 }

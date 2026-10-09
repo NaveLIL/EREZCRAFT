@@ -60,19 +60,20 @@ public final class ToxicLiquidBlock extends LiquidBlock {
         // Stored on each entity so crossing several liquid cells cannot multiply damage.
         if (data.contains("interstice:last_toxin_tick") && now - data.getLong("interstice:last_toxin_tick") < 20) return;
         var box = living.getBoundingBox().deflate(0.001);
-        boolean touching = false;
+        boolean touching = false,onlyLower=true;
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
-        for (int x=Mth.floor(box.minX); x<Mth.ceil(box.maxX) && !touching; x++)
-            for (int y=Mth.floor(box.minY); y<Mth.ceil(box.maxY) && !touching; y++)
+        for (int x=Mth.floor(box.minX); x<Mth.ceil(box.maxX); x++)
+            for (int y=Mth.floor(box.minY); y<Mth.ceil(box.maxY); y++)
                 for (int z=Mth.floor(box.minZ); z<Mth.ceil(box.maxZ); z++) {
                     pos.set(x,y,z);
                     var fluid = world.getFluidState(pos);
                     if (fluid.getFluidType() instanceof ToxicFluidType && FluidContact.overlap(world,pos,fluid,box)>0) {
-                        touching=true;break;
+                        touching=true;if(fluid.getFluidType()!=Interstice.HEAVY_TYPE.get())onlyLower=false;
                     }
                 }
         if (!touching) return;
         data.putLong("interstice:last_toxin_tick", now);
+        if(onlyLower&&living instanceof net.minecraft.server.level.ServerPlayer player&&pro.erez.interstice.gear.RealmGear.protect(player,pro.erez.interstice.gear.RealmGear.HazardKind.LOWER_SEA))return;
         living.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(TOXIN)), 6.0F);
         pro.erez.interstice.toxin.OverworldToxinHazard.applyVaporHazard(living, world);
     }
