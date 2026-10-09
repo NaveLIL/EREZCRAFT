@@ -9,7 +9,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 
 public final class BackpackMenu extends AbstractContainerMenu {
-    public static final int MODE = 0, SORT = 1, STASH = 2, REFILL = 3;
+    public static final int MODE = 0, SORT = 1, STASH = 2, REFILL = 3, TOGGLE_FEEDER = 4;
     public final int sourceSlot, capacity, columns, rows, width, moduleSlots;
     public final Container container;
     public final Container moduleContainer;
@@ -153,6 +153,24 @@ public final class BackpackMenu extends AbstractContainerMenu {
         if (button == SORT) { sort(live); return true; }
         if (button == STASH) { stash(live, player); return true; }
         if (button == REFILL) { refill(live, player); return true; }
+        if (button == TOGGLE_FEEDER) {
+            if (moduleContainer instanceof BackpackModuleInventory modInv && modInv.bound()) {
+                for (int i = 0; i < modInv.getContainerSize(); i++) {
+                    var m = modInv.getItem(i);
+                    if (!m.isEmpty() && m.getItem() instanceof BackpackModuleItem mod && mod.type == ModuleType.FEEDER) {
+                        int newMode = BackpackModuleItem.toggleFeederMode(m);
+                        modInv.setItem(i, m);
+                        modInv.setChanged();
+                        String key = newMode == BackpackModuleItem.FEEDER_FAST
+                                ? "message.interstice.feeder_mode.fast"
+                                : "message.interstice.feeder_mode.eco";
+                        player.displayClientMessage(net.minecraft.network.chat.Component.translatable(key), true);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
         return false;
     }
 

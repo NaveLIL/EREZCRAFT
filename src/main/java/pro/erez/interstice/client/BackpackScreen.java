@@ -6,12 +6,16 @@ import net.minecraft.client.gui.components.*;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.ItemStack;
 import pro.erez.interstice.equipment.BackpackMenu;
+import pro.erez.interstice.equipment.BackpackModuleItem;
+import pro.erez.interstice.equipment.ModuleType;
 
 public final class BackpackScreen extends AbstractContainerScreen<BackpackMenu> {
     private static final int TEXT = 0xffe3e9e1, MUTED = 0xffbbc6ba, ACCENT = 0xff91d0bd, AMBER = 0xffffc32d, RIFT_CYAN = 0xff54d8c6;
     private final List<ActionButton> controls = new ArrayList<>();
     private ActionButton mode;
+    private ActionButton feederBtn;
 
     public BackpackScreen(BackpackMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
@@ -48,6 +52,22 @@ public final class BackpackScreen extends AbstractContainerScreen<BackpackMenu> 
         curX += stashW + gap;
         addControl("refill", BackpackMenu.REFILL, curX, y, refillW, accent);
 
+        if (menu.moduleSlots > 0) {
+            int btnX = leftPos - 24;
+            int btnY = topPos + 19 + menu.moduleSlots * 22 + 1;
+            feederBtn = new ActionButton(btnX, btnY, 24, 16,
+                    Component.literal("ЭКО"),
+                    BackpackMenu.TOGGLE_FEEDER,
+                    AMBER,
+                    btn -> {
+                        if (minecraft != null && minecraft.gameMode != null) {
+                            minecraft.gameMode.handleInventoryButtonClick(menu.containerId, BackpackMenu.TOGGLE_FEEDER);
+                        }
+                    });
+            addRenderableWidget(feederBtn);
+            controls.add(feederBtn);
+        }
+
         updateControls();
     }
 
@@ -81,6 +101,22 @@ public final class BackpackScreen extends AbstractContainerScreen<BackpackMenu> 
         updateControls();
     }
 
+    private ItemStack findFeeder() {
+        for (int i = 0; i < menu.moduleSlots; i++) {
+            int slotIdx = menu.capacity + 36 + i;
+            if (slotIdx < menu.slots.size()) {
+                var slot = menu.slots.get(slotIdx);
+                if (slot.hasItem()) {
+                    var s = slot.getItem();
+                    if (s.getItem() instanceof BackpackModuleItem mod && mod.type == ModuleType.FEEDER) {
+                        return s;
+                    }
+                }
+            }
+        }
+        return ItemStack.EMPTY;
+    }
+
     private void updateControls() {
         boolean canAct = menu.getCarried().isEmpty();
         for (var b : controls) b.active = canAct;
@@ -88,6 +124,25 @@ public final class BackpackScreen extends AbstractContainerScreen<BackpackMenu> 
             int currentMode = menu.data.get(0);
             mode.setMessage(Component.translatable("menu.interstice.backpack.mode." + currentMode));
             mode.setTooltip(Tooltip.create(Component.translatable("tooltip.interstice.backpack.mode." + currentMode)));
+        }
+        var feeder = findFeeder();
+        if (feederBtn != null) {
+            if (feeder.isEmpty()) {
+                feederBtn.visible = false;
+            } else {
+                feederBtn.visible = true;
+                feederBtn.active = canAct;
+                int fMode = BackpackModuleItem.getFeederMode(feeder);
+                if (fMode == BackpackModuleItem.FEEDER_FAST) {
+                    feederBtn.setMessage(Component.literal("БЫСТ"));
+                    feederBtn.setAccent(RIFT_CYAN);
+                    feederBtn.setTooltip(Tooltip.create(Component.translatable("tooltip.interstice.module.feeder.mode.fast_desc")));
+                } else {
+                    feederBtn.setMessage(Component.literal("ЭКО"));
+                    feederBtn.setAccent(AMBER);
+                    feederBtn.setTooltip(Tooltip.create(Component.translatable("tooltip.interstice.module.feeder.mode.eco_desc")));
+                }
+            }
         }
     }
 
@@ -99,8 +154,9 @@ public final class BackpackScreen extends AbstractContainerScreen<BackpackMenu> 
 
         // Module Dock Rack (left side attached chassis)
         int moduleCount = menu.moduleSlots;
+        boolean hasFeeder = !findFeeder().isEmpty();
         int rackW = 28;
-        int rackH = 12 + moduleCount * 22;
+        int rackH = 12 + moduleCount * 22 + (hasFeeder ? 22 : 0);
         int rackX = leftPos - 26;
         int rackY = topPos + 12;
         GuiMaterials.panel(g, rackX, rackY, rackW, rackH, true, cornerAccent);
@@ -228,11 +284,15 @@ public final class BackpackScreen extends AbstractContainerScreen<BackpackMenu> 
 
     private final class ActionButton extends Button {
         private final int actionId;
-        private final int accent;
+        private int accent;
 
         ActionButton(int x, int y, int width, int height, Component title, int actionId, int accent, OnPress onPress) {
             super(x, y, width, height, title, onPress, DEFAULT_NARRATION);
             this.actionId = actionId;
+            this.accent = accent;
+        }
+
+        public void setAccent(int accent) {
             this.accent = accent;
         }
 
@@ -257,6 +317,8 @@ public final class BackpackScreen extends AbstractContainerScreen<BackpackMenu> 
             } else if (actionId == BackpackMenu.MODE) {
                 int modeVal = menu.data.get(0);
                 textColor = modeVal == 0 ? 0xff8b9e9b : modeVal == 1 ? ACCENT : AMBER;
+            } else if (actionId == BackpackMenu.TOGGLE_FEEDER) {
+                textColor = hovered ? 0xffffffff : accent;
             } else {
                 textColor = hovered ? 0xffffffff : 0xffdce5e2;
             }

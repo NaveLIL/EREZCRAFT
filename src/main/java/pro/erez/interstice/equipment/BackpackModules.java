@@ -106,25 +106,56 @@ public final class BackpackModules {
     }
 
     public static void tickFeeder(ServerPlayer player, ItemStack pack) {
-        if (!player.getFoodData().needsFood() || player.getFoodData().getFoodLevel() > 14) return;
+        var feederStack = BackpackStorage.getModule(pack, ModuleType.FEEDER);
+        if (feederStack.isEmpty()) return;
+
+        int mode = BackpackModuleItem.getFeederMode(feederStack);
+        int foodLevel = player.getFoodData().getFoodLevel();
+
+        // ECO mode: only eat when hunger drops by 3 drumsticks or more (<= 14)
+        // FAST mode: eat immediately upon any hunger drop (< 20) to sustain constant saturation/regeneration
+        boolean shouldEat = (mode == BackpackModuleItem.FEEDER_FAST)
+                ? player.getFoodData().needsFood()
+                : (foodLevel <= 14);
+        if (!shouldEat) return;
+
         var packItems = BackpackStorage.read(pack);
-        int bestNutrition = -1;
         int bestIndex = -1;
-        for (int i = 0; i < packItems.size(); i++) {
-            var item = packItems.get(i);
-            if (!item.isEmpty() && item.has(DataComponents.FOOD)) {
-                var food = item.get(DataComponents.FOOD);
-                if (item.is(Items.ROTTEN_FLESH) || item.is(Items.SPIDER_EYE)
-                        || item.is(Items.POISONOUS_POTATO) || item.is(Items.PUFFERFISH)) {
-                    continue;
+
+        if (mode == BackpackModuleItem.FEEDER_FAST) {
+            int deficit = 20 - foodLevel;
+            int bestNut = -1;
+            int closestDiff = Integer.MAX_VALUE;
+            for (int i = 0; i < packItems.size(); i++) {
+                var item = packItems.get(i);
+                if (!item.isEmpty() && item.has(DataComponents.FOOD)) {
+                    if (isDangerousFood(item)) continue;
+                    var food = item.get(DataComponents.FOOD);
+                    int nut = food.nutrition();
+                    int diff = Math.abs(nut - deficit);
+                    if (diff < closestDiff || (diff == closestDiff && nut > bestNut)) {
+                        closestDiff = diff;
+                        bestNut = nut;
+                        bestIndex = i;
+                    }
                 }
-                int nut = food.nutrition();
-                if (nut > bestNutrition) {
-                    bestNutrition = nut;
-                    bestIndex = i;
+            }
+        } else {
+            int bestNutrition = -1;
+            for (int i = 0; i < packItems.size(); i++) {
+                var item = packItems.get(i);
+                if (!item.isEmpty() && item.has(DataComponents.FOOD)) {
+                    if (isDangerousFood(item)) continue;
+                    var food = item.get(DataComponents.FOOD);
+                    int nut = food.nutrition();
+                    if (nut > bestNutrition) {
+                        bestNutrition = nut;
+                        bestIndex = i;
+                    }
                 }
             }
         }
+
         if (bestIndex >= 0) {
             var foodItem = packItems.get(bestIndex);
             var food = foodItem.get(DataComponents.FOOD);
@@ -135,6 +166,11 @@ public final class BackpackModules {
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
                     SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.8F, 1.0F);
         }
+    }
+
+    private static boolean isDangerousFood(ItemStack item) {
+        return item.is(Items.ROTTEN_FLESH) || item.is(Items.SPIDER_EYE)
+                || item.is(Items.POISONOUS_POTATO) || item.is(Items.PUFFERFISH);
     }
 
     public static void tickCompression(ServerPlayer player, ItemStack pack) {

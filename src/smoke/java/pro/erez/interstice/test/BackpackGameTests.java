@@ -366,8 +366,9 @@ public final class BackpackGameTests {
         var player = player(h);
         try {
             var bag = field();
+            var feederModule = new ItemStack(ExpeditionEquipment.FEEDER_MODULE_TIER1.get());
             var modules = BackpackStorage.readModules(bag);
-            modules.set(0, new ItemStack(ExpeditionEquipment.FEEDER_MODULE_TIER1.get()));
+            modules.set(0, feederModule);
             BackpackStorage.writeModules(bag, modules);
 
             var items = BackpackStorage.read(bag);
@@ -375,15 +376,41 @@ public final class BackpackGameTests {
             BackpackStorage.write(bag, items);
             BackpackHarness.set(player, bag);
 
-            player.getFoodData().setFoodLevel(10);
-            h.assertTrue(player.getFoodData().getFoodLevel() == 10, "Could not set test player food level");
-
+            // 1. ECO mode (default): at foodLevel 18, should NOT eat (threshold is <= 14)
+            player.getFoodData().setFoodLevel(18);
             BackpackModules.tickFeeder(player, bag);
+            h.assertTrue(player.getFoodData().getFoodLevel() == 18 && stored(bag, Items.COOKED_BEEF) == 3,
+                    "Feeder in ECO mode ate prematurely above threshold 14");
 
-            h.assertTrue(player.getFoodData().getFoodLevel() > 10, "Feeder module did not increase food level");
-            h.assertTrue(stored(bag, Items.COOKED_BEEF) == 2, "Feeder module did not consume 1 cooked beef from bag");
+            // 2. ECO mode: at foodLevel 14, should eat
+            player.getFoodData().setFoodLevel(14);
+            BackpackModules.tickFeeder(player, bag);
+            h.assertTrue(player.getFoodData().getFoodLevel() > 14 && stored(bag, Items.COOKED_BEEF) == 2,
+                    "Feeder in ECO mode did not eat at threshold 14");
+
+            // 3. FAST mode: toggle mode, at foodLevel 18 should eat immediately
+            var installedFeeder = BackpackStorage.getModule(bag, ModuleType.FEEDER);
+            BackpackModuleItem.toggleFeederMode(installedFeeder);
+            var modCopy = BackpackStorage.readModules(bag);
+            modCopy.set(0, installedFeeder);
+            BackpackStorage.writeModules(bag, modCopy);
+
+            player.getFoodData().setFoodLevel(18);
+            BackpackModules.tickFeeder(player, bag);
+            h.assertTrue(player.getFoodData().getFoodLevel() == 20 && stored(bag, Items.COOKED_BEEF) == 1,
+                    "Feeder in FAST mode did not eat on minor hunger drop");
+
+            // 4. Test menu TOGGLE_FEEDER button click
+            fillInventory(player, bag);
+            var menu = open(h, player, 0);
+            h.assertTrue(menu.clickMenuButton(player, BackpackMenu.TOGGLE_FEEDER), "Menu TOGGLE_FEEDER button failed");
+            var afterToggle = BackpackStorage.getModule(bag, ModuleType.FEEDER);
+            h.assertTrue(BackpackModuleItem.getFeederMode(afterToggle) == BackpackModuleItem.FEEDER_ECO,
+                    "TOGGLE_FEEDER button did not switch mode back to ECO");
+
             h.succeed();
         } finally {
+            player.closeContainer();
             BackpackHarness.set(player, ItemStack.EMPTY);
             TestPlayers.remove(player);
         }
