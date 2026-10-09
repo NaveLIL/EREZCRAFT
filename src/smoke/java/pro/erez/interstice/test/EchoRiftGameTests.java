@@ -147,4 +147,35 @@ public final class EchoRiftGameTests {
         TestPlayers.remove(player);
         h.succeed();
     }
+
+    @GameTest(template = "empty", timeoutTicks = 100)
+    public static void echoRiftArrestsFallVelocityAndRescuesFallingEntity(GameTestHelper h) {
+        var center = h.absolutePos(new BlockPos(3, 2, 3)).getBottomCenter();
+        var rift = new EchoRiftEntity(Interstice.ECHO_RIFT.get(), h.getLevel());
+        rift.setPos(center);
+        h.getLevel().addFreshEntity(rift);
+
+        var fallingZombie = new Zombie(EntityType.ZOMBIE, h.getLevel());
+        var highEntry = center.add(0, 1.5, 0);
+        fallingZombie.setPos(highEntry);
+        fallingZombie.setDeltaMovement(0, -1.8, 0); // Fast fall from cliff
+        fallingZombie.fallDistance = 14.0F;
+        h.getLevel().addFreshEntity(fallingZombie);
+
+        // Tick rift once: must arrest downward fall immediately
+        rift.tick();
+
+        h.assertTrue(fallingZombie.fallDistance == 0.0F, "Fall distance must be zeroed immediately upon entering anomaly");
+        h.assertTrue(fallingZombie.getDeltaMovement().y > -0.2, "Fall velocity must be damped in temporal stasis field");
+
+        // Tick 26 ticks to trigger cliff rescue rewind
+        for (int i = 0; i < 26; i++) {
+            rift.tick();
+        }
+
+        // Entity must be safely returned to high cliff entry
+        h.assertTrue(fallingZombie.distanceToSqr(highEntry) < 0.5, "Falling entity must be safely rewound back to cliff entry point");
+
+        h.succeed();
+    }
 }
