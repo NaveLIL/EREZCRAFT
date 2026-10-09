@@ -61,10 +61,6 @@ public final class HarnessScreen extends AbstractContainerScreen<HarnessMenu> {
         }
         g.fill(leftPos + 77, topPos + 31, leftPos + 99, topPos + 53, 0xff7bb9a5);
         g.fill(leftPos + 79, topPos + 33, leftPos + 97, topPos + 51, 0xff202727);
-        g.drawCenteredString(font, Component.translatable("menu.interstice.harness.slot"), leftPos + 88, topPos + 19, 0xffc5d4cf);
-        if (openPackButton == null || !openPackButton.visible) {
-            g.drawCenteredString(font, Component.translatable("menu.interstice.harness.hint"), leftPos + 88, topPos + 57, 0xffaab9b5);
-        }
     }
 
     @Override
