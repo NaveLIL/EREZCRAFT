@@ -41,6 +41,7 @@ import pro.erez.interstice.worldgen.IslandChunkGenerator;
 import pro.erez.interstice.worldgen.IslandWorld;
 import pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6;
 import pro.erez.interstice.worldgen.terrain.TensionTerrainV6;
+import pro.erez.interstice.worldgen.terrain.V6MouthPlanner;
 
 /** Fixed, unselected native samples. Synthetic seed fixtures are NOISE, never described as FULL worlds. */
 @GameTestHolder("interstice_living")
@@ -109,6 +110,41 @@ public final class NativeTerrainV6GameTests {
             hash=(hash^chunk.getNoiseBiome(QuartPos.fromBlock(chunk.getPos().getMinBlockX())+x,y,
                     QuartPos.fromBlock(chunk.getPos().getMinBlockZ())+z).unwrapKey().orElseThrow().location().toString().hashCode())*0x100000001B3L;
         return hash;
+    }
+
+    @GameTest(template="empty",batch="native_v6_mouth_routes",timeoutTicks=2400)
+    public static void sixSeedMouthRoutesHaveActualNativeFloorsAndHeadroomWithoutAddingTerrain(GameTestHelper h){
+        long began=System.nanoTime();var report=new JsonArray();
+        for(long seed:SEEDS){
+            var f=fixture(h,seed);var root=TensionTerrainV6.root(f.random);V6MouthPlanner.Mouth mouth=null;int searched=0;
+            // Fixed before execution: at most256 world cells in [-1024,1024), without radius growth.
+            outer:for(int cx=-8;cx<=7;cx++)for(int cz=-8;cz<=7;cz++){
+                searched++;var plans=root.mouthPlanner().plansInCell(cx,cz);if(!plans.isEmpty()){mouth=plans.getFirst();break outer;}
+            }
+            h.assertTrue(mouth!=null,"No accepted V6 mouth route on seed "+seed+" in fixed1024 window; computed="+root.mouthPlanner().computedCells()+", budget_exhausted="+root.mouthPlanner().exhaustedCells());
+            var positions=new java.util.TreeSet<ChunkPos>(java.util.Comparator.comparingLong(ChunkPos::toLong));
+            for(var p:mouth.route())positions.add(new ChunkPos(p));
+            var chunks=index(await(h,serial(h,f,List.copyOf(positions)),120));int steps=0;BlockPos previous=null;
+            for(var p:mouth.route()){
+                var chunk=chunks.get(new ChunkPos(p).toLong());
+                h.assertTrue(!chunk.getBlockState(p.below()).isAir()&&chunk.getBlockState(p).isAir()&&chunk.getBlockState(p.above()).isAir(),
+                        "An accepted entrance route differs from actual native NOISE floor/headroom: seed="+seed+" at="+p);
+                if(previous!=null){int horizontal=Math.abs(p.getX()-previous.getX())+Math.abs(p.getZ()-previous.getZ());int dy=p.getY()-previous.getY();
+                    h.assertTrue(horizontal==1&&Math.abs(dy)<=1,"Entrance route requires a diagonal jump or fabricated ladder");
+                    var extra=dy>0?previous:p;if(dy!=0)h.assertTrue(chunks.get(new ChunkPos(extra).toLong()).getBlockState(extra.above(2)).isAir(),"Native stair transition lacks player headroom");
+                }previous=p;steps++;
+            }
+            // Every actual raw rock cell in these chunks must already exist in the uncarved
+            // canonical field; mouth floor preservation cannot manufacture a platform.
+            var sampler=NativeColumnSamplerV6.of(f.random);
+            for(var chunk:chunks.values())for(int x=chunk.getPos().getMinBlockX();x<=chunk.getPos().getMaxBlockX();x++)for(int z=chunk.getPos().getMinBlockZ();z<=chunk.getPos().getMaxBlockZ();z++)for(int y=1;y<=PROFILE.maxLand();y++)
+                if(!chunk.getBlockState(new BlockPos(x,y,z)).isAir())h.assertTrue(sampler.density(x,y,z,true)>0,"Mouth planner added terrain outside the canonical original mass");
+            h.assertTrue(root.mouthPlanner().cachedCells()<=V6MouthPlanner.CACHE_LIMIT,"Seed-scoped entrance cache exceeds its finite budget");
+            var row=new JsonObject();row.addProperty("seed",seed);row.addProperty("searched_fixed_cells",searched);row.addProperty("computed_cells",root.mouthPlanner().computedCells());
+            row.addProperty("exhausted_cell_plans",root.mouthPlanner().exhaustedCells());row.addProperty("actual_noise_chunks",chunks.size());row.addProperty("actual_walk_route_nodes",steps);
+            row.addProperty("original_internal_component_nodes",mouth.originalInternalNodes());row.addProperty("surface",mouth.surface().toShortString());row.addProperty("interior",mouth.interior().toShortString());report.add(row);
+        }
+        System.out.println("NATIVE_V6_MOUTH_ROUTES wall_ms="+(System.nanoTime()-began)/1000000+" "+report);h.succeed();
     }
 
     @GameTest(template="empty",batch="native_v6_noise",timeoutTicks=2400)

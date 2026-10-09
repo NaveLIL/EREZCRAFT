@@ -41,7 +41,7 @@ public final class BackpackHarness {
             PacketDistributor.sendToPlayersTrackingEntity(server,new BackpackNetworking.WearSync(server.getId(),visual(get(server))));
         }
     }
-    private static ItemStack visual(ItemStack stack){var copy=stack.copy();copy.remove(DataComponents.CONTAINER);copy.remove(DataComponents.CUSTOM_DATA);return copy;}
+    private static ItemStack visual(ItemStack stack){var copy=stack.copy();copy.remove(DataComponents.CONTAINER);copy.remove(DataComponents.CUSTOM_DATA);copy.remove(ExpeditionEquipment.BACKPACK_MODULES.get());return copy;}
     public static void applyClient(Player player,ItemStack stack){
         if(!player.level().isClientSide||!valid(stack))return;
         player.setData(ExpeditionEquipment.WORN_BACKPACK.get(),stack.copy());

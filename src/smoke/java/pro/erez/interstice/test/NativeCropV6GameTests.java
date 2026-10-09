@@ -39,7 +39,7 @@ public final class NativeCropV6GameTests {
     }
     @GameTest(template="empty",timeoutTicks=100)
     public static void bothForestBanksHaveRareReproducibleSmallSeedColonies(GameTestHelper h){
-        for(var biome:new ResourceKey[]{RealmBiomes.PALE_GARDENS,RealmBiomes.CRIMSON_THICKETS}){
+        for(var biome:java.util.List.of(RealmBiomes.PALE_GARDENS,RealmBiomes.CRIMSON_THICKETS)){
             int found=0;
             for(long seed=0;seed<80&&found==0;seed++){
                 var position=new ChunkPos(-2,3);

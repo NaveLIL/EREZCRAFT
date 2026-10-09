@@ -40,7 +40,7 @@ public final class BackpackStorage {
         return isPack(stack)&&stack.getCount()==1&&contents.getSlots()<=capacity(stack)
                 &&contents.nonEmptyStream().allMatch(s->allowed(s)&&s.getCount()<=s.getMaxStackSize())
                 &&modules.getSlots()<=moduleSlots(stack)
-                &&modules.nonEmptyStream().allMatch(s->isModule(s)&&s.getCount()<=s.getMaxStackSize());
+                &&modules.nonEmptyStream().allMatch(s->isModule(s)&&allowed(s)&&s.getCount()==1);
     }
     public static NonNullList<ItemStack> read(ItemStack stack){if(!valid(stack))throw new IllegalArgumentException("Invalid backpack contents must not be truncated");var list=NonNullList.withSize(capacity(stack),ItemStack.EMPTY);stack.getOrDefault(DataComponents.CONTAINER,ItemContainerContents.EMPTY).copyInto(list);return list;}
     public static void write(ItemStack stack,List<ItemStack> items){if(items.size()!=capacity(stack)||items.stream().anyMatch(s->!allowed(s)||s.getCount()>s.getMaxStackSize()))throw new IllegalArgumentException("Invalid backpack contents");stack.set(DataComponents.CONTAINER,ItemContainerContents.fromItems(items));}
@@ -48,22 +48,23 @@ public final class BackpackStorage {
         int slots=moduleSlots(stack);
         var list=NonNullList.withSize(slots,ItemStack.EMPTY);
         if(!isPack(stack))return list;
+        if(!valid(stack))throw new IllegalArgumentException("Invalid backpack modules must not be truncated");
         stack.getOrDefault(ExpeditionEquipment.BACKPACK_MODULES.get(),ItemContainerContents.EMPTY).copyInto(list);
         return list;
     }
     public static void writeModules(ItemStack stack,List<ItemStack> items){
         int slots=moduleSlots(stack);
-        if(items.size()!=slots||items.stream().anyMatch(s->!s.isEmpty()&&(!isModule(s)||s.getCount()>1)))throw new IllegalArgumentException("Invalid backpack modules");
+        if(items.size()!=slots||items.stream().anyMatch(s->!s.isEmpty()&&(!isModule(s)||!allowed(s)||s.getCount()!=1)))throw new IllegalArgumentException("Invalid backpack modules");
         stack.set(ExpeditionEquipment.BACKPACK_MODULES.get(),ItemContainerContents.fromItems(items));
     }
     public static boolean hasModule(ItemStack stack,ModuleType type){
-        if(!isPack(stack))return false;
+        if(!valid(stack))return false;
         var modules=readModules(stack);
         for(var m:modules)if(!m.isEmpty()&&m.getItem() instanceof BackpackModuleItem mod&&mod.type==type)return true;
         return false;
     }
     public static ItemStack getModule(ItemStack stack,ModuleType type){
-        if(!isPack(stack))return ItemStack.EMPTY;
+        if(!valid(stack))return ItemStack.EMPTY;
         var modules=readModules(stack);
         for(var m:modules)if(!m.isEmpty()&&m.getItem() instanceof BackpackModuleItem mod&&mod.type==type)return m;
         return ItemStack.EMPTY;
@@ -74,6 +75,13 @@ public final class BackpackStorage {
         for(var at:target)if(!at.isEmpty()&&ItemStack.isSameItemSameComponents(at,source)){int take=Math.min(left,Math.max(0,at.getMaxStackSize()-at.getCount()));at.grow(take);left-=take;if(left==0)return source.getCount();}
         for(int i=0;i<target.size()&&left>0;i++)if(target.get(i).isEmpty()){int take=Math.min(left,source.getMaxStackSize());target.set(i,source.copyWithCount(take));left-=take;}
         return source.getCount()-left;
+    }
+    /** Module transactions must update the exact live menu lease before its next slot action. */
+    public static void writeOwned(Player player,ItemStack pack,List<ItemStack> items){
+        if(player.containerMenu instanceof BackpackMenu menu&&menu.container instanceof BackpackInventory live
+                &&live.bound()&&live.source()==pack){live.replace(items);return;}
+        write(pack,items);player.getInventory().setChanged();
+        if(BackpackHarness.get(player)==pack)BackpackHarness.changed(player);
     }
     public static int activeSlot(Player player){
         if(player.containerMenu instanceof BackpackMenu menu&&menu.stillValid(player))return menu.sourceSlot;

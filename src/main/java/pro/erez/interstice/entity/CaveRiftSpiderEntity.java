@@ -40,7 +40,9 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import javax.annotation.Nullable;
 import java.util.Comparator;
+import java.util.EnumSet;
 import pro.erez.interstice.Interstice;
+import pro.erez.interstice.worldgen.IslandChunkGenerator;
 
 public final class CaveRiftSpiderEntity extends Monster implements RangedAttackMob {
     public static final ResourceKey<DamageType> SPIDER_BITE =
@@ -109,11 +111,15 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
     }
 
     public void setVariant(Variant variant) {
-        this.entityData.set(DATA_VARIANT, (byte) variant.id);
-        this.reapplyAttributes();
+        applyVariant(variant, true);
     }
 
-    private void reapplyAttributes() {
+    private void applyVariant(Variant variant, boolean initializeHealth) {
+        this.entityData.set(DATA_VARIANT, (byte) variant.id);
+        this.reapplyAttributes(initializeHealth);
+    }
+
+    private void reapplyAttributes(boolean initializeHealth) {
         Variant v = getVariant();
         var healthAttr = this.getAttribute(Attributes.MAX_HEALTH);
         if (healthAttr != null) healthAttr.setBaseValue(v.maxHealth);
@@ -121,7 +127,8 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         if (speedAttr != null) speedAttr.setBaseValue(isBursting() ? v.speed * 2.7 : v.speed);
         var damageAttr = this.getAttribute(Attributes.ATTACK_DAMAGE);
         if (damageAttr != null) damageAttr.setBaseValue(v.attackDamage);
-        this.setHealth((float) v.maxHealth);
+        // New spawn variants start healthy; loading a wounded saved entity must not heal it.
+        this.setHealth(initializeHealth ? (float) v.maxHealth : Math.min(this.getHealth(), (float) v.maxHealth));
     }
 
     public boolean isClimbingWall() {
@@ -482,7 +489,10 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
 
     @Override
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
-        if (this.getVariant() != Variant.SPITTER) return;
+        if (!(this.level() instanceof ServerLevel) || this.getVariant() != Variant.SPITTER
+                || target == null || !target.isAlive() || target.isRemoved() || target.level() != this.level()
+                || target instanceof CaveRiftSpiderEntity || !this.canAttack(target)
+                || this.distanceToSqr(target) > 14.0 * 14.0 || !this.getSensing().hasLineOfSight(target)) return;
         Vec3 targetPos = target.position().add(0, target.getEyeHeight() * 0.5, 0);
         Vec3 origin = this.position().add(0, isClimbingCeiling() ? 0.2 : this.getEyeHeight(), 0);
         Vec3 dir = targetPos.subtract(origin).normalize().scale(0.85);
@@ -519,6 +529,10 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
             MobSpawnType spawnType,
             BlockPos pos,
             RandomSource random) {
+        // Shared biome IDs also exist in archived realms. Do not add a new natural population there.
+        if ((spawnType == MobSpawnType.NATURAL || spawnType == MobSpawnType.CHUNK_GENERATION)
+                && !(level.getLevel().getChunkSource().getGenerator() instanceof IslandChunkGenerator generator
+                && generator.terrainRevision() == 6)) return false;
         if (level.getDifficulty() == net.minecraft.world.Difficulty.PEACEFUL) return false;
         if (level.canSeeSky(pos)) return false;
         if (level.getBrightness(net.minecraft.world.level.LightLayer.SKY, pos) > 0) return false;
@@ -548,15 +562,21 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         super.addAdditionalSaveData(tag);
         tag.putByte("SpiderVariant", (byte) getVariant().id);
         tag.putInt("BurstTicks", this.burstTicks);
+        tag.putBoolean("SpiderBursting", this.isBursting());
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
         if (tag.contains("SpiderVariant")) {
-            setVariant(Variant.byId(tag.getByte("SpiderVariant")));
+            applyVariant(Variant.byId(tag.getByte("SpiderVariant")), false);
         }
-        this.burstTicks = tag.getInt("BurstTicks");
+        this.burstTicks = Mth.clamp(tag.getInt("BurstTicks"), 0, 160);
+        // Older saves stored only the positive timer. Restore that remaining burst without replaying its lunge.
+        boolean active = getVariant() == Variant.LURKER && burstTicks > 0
+                && (!tag.contains("SpiderBursting") || tag.getBoolean("SpiderBursting"));
+        if (!active) burstTicks = 0;
+        this.setBursting(active);
     }
 
     @Override
@@ -591,11 +611,20 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
             this.speedModifier = speed;
             this.attackInterval = interval;
             this.maxAttackDistance = maxDist * maxDist;
+            this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
         }
 
         @Override
         public boolean canUse() {
-            return spider.getVariant() == Variant.SPITTER && spider.getTarget() != null && spider.getTarget().isAlive();
+            LivingEntity target = spider.getTarget();
+            return spider.getVariant() == Variant.SPITTER && target != null && target.isAlive()
+                    && !target.isRemoved() && target.level() == spider.level() && spider.canAttack(target);
+        }
+
+        @Override
+        public void stop() {
+            spider.getNavigation().stop();
+            attackTime = -1;
         }
 
         @Override
@@ -609,13 +638,14 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
             if (distSq < 25.0) {
                 Vec3 away = spider.position().subtract(target.position()).normalize().scale(5.0);
                 spider.getNavigation().moveTo(spider.getX() + away.x, spider.getY() + away.y, spider.getZ() + away.z, speedModifier * 1.2);
-            } else if (distSq > maxAttackDistance) {
+            } else if (distSq > maxAttackDistance || !spider.getSensing().hasLineOfSight(target)) {
                 spider.getNavigation().moveTo(target, speedModifier);
             } else {
                 spider.getNavigation().stop();
             }
 
-            if (--this.attackTime <= 0) {
+            if (--this.attackTime <= 0 && distSq <= maxAttackDistance
+                    && spider.getSensing().hasLineOfSight(target)) {
                 this.attackTime = this.attackInterval;
                 spider.performRangedAttack(target, 1.0F);
             }

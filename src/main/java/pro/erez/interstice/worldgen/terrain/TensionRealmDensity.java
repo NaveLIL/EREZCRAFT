@@ -60,6 +60,8 @@ public final class TensionRealmDensity implements DensityFunction {
     private final NoiseSettings sampling;
     private final GeometryProfile geometry;
     private final boolean carved;
+    private final TensionRealmDensity mouthOwner;
+    private final V6MouthPlanner mouthPlanner;
     // A native interpolator revisits each X/Z at every Y corner. Immutable derived columns
     // are retained per worker and per seeded field, with a finite memory budget.
     private final ThreadLocal<LinkedHashMap<Long,ColumnShape>> columnCache=
@@ -69,11 +71,19 @@ public final class TensionRealmDensity implements DensityFunction {
             DensityFunction vegetation,DensityFunction ridges,NoiseHolder macroA,NoiseHolder macroB,
             NoiseHolder detail,NoiseHolder tunnelA,NoiseHolder tunnelB,NoiseHolder rooms,
             NoiseSettings sampling,GeometryProfile geometry,boolean carved) {
+        this(land,continents,erosion,vegetation,ridges,macroA,macroB,detail,tunnelA,tunnelB,rooms,sampling,geometry,carved,null);
+    }
+    private TensionRealmDensity(DensityFunction land,DensityFunction continents,DensityFunction erosion,
+            DensityFunction vegetation,DensityFunction ridges,NoiseHolder macroA,NoiseHolder macroB,
+            NoiseHolder detail,NoiseHolder tunnelA,NoiseHolder tunnelB,NoiseHolder rooms,
+            NoiseSettings sampling,GeometryProfile geometry,boolean carved,TensionRealmDensity seededOwner) {
         if(!geometry.equals(GeometryProfile.TALL)||sampling.minY()!=geometry.minY()||sampling.height()!=geometry.height())
             throw new IllegalArgumentException("V6 requires matching TALL256 geometry and sampling settings");
         this.land=land;this.continents=continents;this.erosion=erosion;this.vegetation=vegetation;this.ridges=ridges;
         this.macroA=macroA;this.macroB=macroB;this.detail=detail;this.tunnelA=tunnelA;this.tunnelB=tunnelB;this.rooms=rooms;
         this.sampling=sampling;this.geometry=geometry;this.carved=carved;
+        mouthOwner=seededOwner==null?this:seededOwner;
+        mouthPlanner=seededOwner==null?new V6MouthPlanner(this):seededOwner.mouthPlanner;
     }
     public DensityFunction land(){return land;}
     public DensityFunction continents(){return continents;}
@@ -89,6 +99,8 @@ public final class TensionRealmDensity implements DensityFunction {
     public NoiseSettings samplingSettings(){return sampling;}
     public GeometryProfile geometry(){return geometry;}
     public boolean carved(){return carved;}
+    public V6MouthPlanner mouthPlanner(){return mouthPlanner;}
+    public int dryCaveCorner(){return (int)Math.ceil((geometry.lowerSeaTop()+5)/(double)sampling.getCellHeight())*sampling.getCellHeight();}
     private static double clamp(double x,double a,double b){return Math.max(a,Math.min(b,x));}
     private static double smooth(double a,double b,double x){double t=clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);}
     private static double bounded(double x){return clamp(x,-48,48);}
@@ -152,8 +164,9 @@ public final class TensionRealmDensity implements DensityFunction {
         double gradient=Math.hypot(dx,dz);
         return gradient<.018?12:Math.abs(n)/Math.max(.025,gradient)-2.05;
     }
-    public double uncarvedDensity(int x,int y,int z){return value(x,y,z,false);}
-    private double value(int x,int y,int z,boolean carve){
+    public double uncarvedDensity(int x,int y,int z){return densityWithoutMouths(x,y,z,false);}
+    /** Pure corner function used by the planner. It never queries an entrance cache. */
+    public double densityWithoutMouths(int x,int y,int z,boolean carve){
         if(y<geometry.minY()||y>=geometry.maxYExclusive())return -4;
         var s=shape(x,z);var w=s.morphology();
         double lowerPlate=Math.min(s.ashThickness()-Math.abs(y-s.ashCenter()),s.ashMask());
@@ -172,7 +185,7 @@ public final class TensionRealmDensity implements DensityFunction {
         result=Math.min(result,s.upperLimit()-y+.5);
         // Keep both bounding native Y corners untouched below the dry-cave boundary.
         // This prevents interpolation from extending a carved corner down into the sea band.
-        int dryCorner=(int)Math.ceil((geometry.lowerSeaTop()+5)/(double)sampling.getCellHeight())*sampling.getCellHeight();
+        int dryCorner=dryCaveCorner();
         if(carve&&result>0&&y>dryCorner&&y<geometry.maxLand()-5){
             double passage=Math.max(s.tunnelDistanceA(),Math.abs(y-s.caveCenter())-2.25);
             double extraActivity=smooth(.22,.72,w.ash()+w.vaults());
@@ -188,13 +201,21 @@ public final class TensionRealmDensity implements DensityFunction {
         }
         return clamp(result/12,-4,4);
     }
-    @Override public double compute(FunctionContext context){return value(context.blockX(),context.blockY(),context.blockZ(),carved);}
+    @Override public double compute(FunctionContext context){
+        int x=context.blockX(),y=context.blockY(),z=context.blockZ();double value=densityWithoutMouths(x,y,z,carved);
+        return carved&&value>0?mouthPlanner.carve(x,y,z,value):value;
+    }
     @Override public void fillArray(double[] values,ContextProvider provider){provider.fillAllDirectly(values,this);}
     @Override public DensityFunction mapAll(Visitor visitor){
+        var a=visitor.visitNoise(macroA);var b=visitor.visitNoise(macroB);var d=visitor.visitNoise(detail);
+        var ca=visitor.visitNoise(tunnelA);var cb=visitor.visitNoise(tunnelB);var r=visitor.visitNoise(rooms);
+        // RandomState creates a fresh seed owner. Subsequent NoiseChunk visitors only wrap
+        // caches: share its immutable plan coordinates instead of recomputing each chunk.
+        boolean sameSeed=macroA.noise()!=null&&a.noise()==macroA.noise()&&b.noise()==macroB.noise()
+                &&d.noise()==detail.noise()&&ca.noise()==tunnelA.noise()&&cb.noise()==tunnelB.noise()&&r.noise()==rooms.noise();
         return visitor.apply(new TensionRealmDensity(land.mapAll(visitor),continents.mapAll(visitor),erosion.mapAll(visitor),
-                vegetation.mapAll(visitor),ridges.mapAll(visitor),visitor.visitNoise(macroA),visitor.visitNoise(macroB),
-                visitor.visitNoise(detail),visitor.visitNoise(tunnelA),visitor.visitNoise(tunnelB),visitor.visitNoise(rooms),
-                sampling,geometry,carved));
+                vegetation.mapAll(visitor),ridges.mapAll(visitor),a,b,d,ca,cb,r,
+                sampling,geometry,carved,sameSeed?mouthOwner:null));
     }
     @Override public double minValue(){return -4;}
     @Override public double maxValue(){return 4;}

@@ -352,6 +352,21 @@ neoForge {
             systemProperty 'interstice.v6NetworkEvidence', file(providers.gradleProperty('intersticeNetworkRoot').getOrElse('.verification/v6-network') + '/net-evidence').absolutePath
             programArgument '--nogui'
         }
+        v6ProgressionCreate {
+            client()
+            gameDirectory = file('build/v6-progression-smoke')
+            systemProperty 'interstice.v6ProgressionSmoke', 'create'
+        }
+        v6ProgressionReload {
+            client()
+            gameDirectory = file('build/v6-progression-smoke')
+            systemProperty 'interstice.v6ProgressionSmoke', 'reload'
+        }
+        v6Performance {
+            client()
+            gameDirectory = file('build/v6-performance-smoke')
+            systemProperty 'interstice.v6PerformanceSmoke', 'true'
+        }
         v6NetPeerOne {
             client()
             gameDirectory = file(providers.gradleProperty('intersticeNetworkRoot').getOrElse('.verification/v6-network') + '/peerOne')
@@ -623,7 +638,7 @@ neoForge {
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+        def profileName = name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
                 name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
                 name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
@@ -690,6 +705,18 @@ tasks.named('runGearReload') { dependsOn tasks.named('runGearCreate') }
 tasks.register('runGearSmoke') { dependsOn tasks.named('runGearReload') }
 tasks.named('runWinchReload') { dependsOn tasks.named('runWinchCreate') }
 tasks.register('runWinchSmoke') { dependsOn tasks.named('runWinchReload') }
+tasks.named('runV6ProgressionReload') { dependsOn tasks.named('runV6ProgressionCreate') }
+tasks.register('runV6ProgressionSmoke') { dependsOn tasks.named('runV6ProgressionReload') }
+tasks.withType(Jar).configureEach { from('LICENSE') { into('META-INF/licenses'); rename { 'interstice-apache-2.0.txt' } } }
+tasks.matching { it.name in ['prepareV6ProgressionCreateRun','prepareV6ProgressionReloadRun','prepareV6PerformanceRun'] }.configureEach {
+    outputs.upToDateWhen { false }
+    doLast {
+        def runName=it.name.contains('Performance')?'v6Performance':it.name.contains('Reload')?'v6ProgressionReload':'v6ProgressionCreate'
+        def directory=neoForge.runs.getByName(runName).gameDirectory.get().asFile
+        def config=new File(directory,'config/fml.toml');config.parentFile.mkdirs();config.text='earlyWindowControl = false\n'
+        def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\n'
+    }
+}
 tasks.named('preparePaletteGalleryRun') {
     outputs.upToDateWhen { false }
     doLast {

@@ -70,7 +70,8 @@ public final class BackpackModules {
         double r = 4.5;
         var box = new AABB(player.getX() - r, player.getY() - r, player.getZ() - r,
                 player.getX() + r, player.getY() + r, player.getZ() + r);
-        var entities = player.serverLevel().getEntitiesOfClass(ItemEntity.class, box, e -> e.isAlive() && !e.hasPickUpDelay());
+        var entities = player.serverLevel().getEntitiesOfClass(ItemEntity.class, box, e -> e.isAlive() && !e.hasPickUpDelay()
+                &&(e.getTarget()==null||e.getTarget().equals(player.getUUID())));
         boolean insertedAny = false;
         for (var entity : entities) {
             var stack = entity.getItem();
@@ -81,12 +82,12 @@ public final class BackpackModules {
                 var packItems = BackpackStorage.read(pack);
                 int inserted = BackpackStorage.insert(packItems, stack);
                 if (inserted > 0) {
+                    var picked=stack.getItem();
                     insertedAny = true;
                     stack.shrink(inserted);
-                    BackpackStorage.write(pack, packItems);
-                    if (player.serverLevel() instanceof ServerLevel level) {
-                        level.sendParticles(ParticleTypes.PORTAL, entity.getX(), entity.getY() + 0.2, entity.getZ(), 4, 0.1, 0.1, 0.1, 0.05);
-                    }
+                    BackpackStorage.writeOwned(player,pack,packItems);
+                    player.take(entity,inserted);player.awardStat(net.minecraft.stats.Stats.ITEM_PICKED_UP.get(picked),inserted);player.onItemPickup(entity);
+                    player.serverLevel().sendParticles(ParticleTypes.PORTAL, entity.getX(), entity.getY() + 0.2, entity.getZ(), 4, 0.1, 0.1, 0.1, 0.05);
                     if (stack.isEmpty()) {
                         entity.discard();
                     } else {
@@ -129,7 +130,7 @@ public final class BackpackModules {
             for (int i = 0; i < packItems.size(); i++) {
                 var item = packItems.get(i);
                 if (!item.isEmpty() && item.has(DataComponents.FOOD)) {
-                    if (isDangerousFood(item)) continue;
+                    if (isDangerousFood(player,item)) continue;
                     var food = item.get(DataComponents.FOOD);
                     int nut = food.nutrition();
                     int diff = Math.abs(nut - deficit);
@@ -145,7 +146,7 @@ public final class BackpackModules {
             for (int i = 0; i < packItems.size(); i++) {
                 var item = packItems.get(i);
                 if (!item.isEmpty() && item.has(DataComponents.FOOD)) {
-                    if (isDangerousFood(item)) continue;
+                    if (isDangerousFood(player,item)) continue;
                     var food = item.get(DataComponents.FOOD);
                     int nut = food.nutrition();
                     if (nut > bestNutrition) {
@@ -158,17 +159,28 @@ public final class BackpackModules {
 
         if (bestIndex >= 0) {
             var foodItem = packItems.get(bestIndex);
-            var food = foodItem.get(DataComponents.FOOD);
-            player.getFoodData().eat(food.nutrition(), food.saturation());
+            var consumed=foodItem.copyWithCount(1);
             foodItem.shrink(1);
-            BackpackStorage.write(pack, packItems);
+            BackpackStorage.writeOwned(player,pack,packItems);
+            var remainder=consumed.finishUsingItem(player.serverLevel(),player);
+            if(!remainder.isEmpty()){
+                var updated=BackpackStorage.read(pack);
+                int inserted=BackpackStorage.insert(updated,remainder);
+                if(inserted>0){remainder.shrink(inserted);BackpackStorage.writeOwned(player,pack,updated);}
+                if(!remainder.isEmpty()&&!player.getInventory().add(remainder))player.drop(remainder,false);
+            }
             player.getInventory().setChanged();
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
                     SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.8F, 1.0F);
         }
     }
 
-    private static boolean isDangerousFood(ItemStack item) {
+    private static boolean isDangerousFood(ServerPlayer player,ItemStack item) {
+        if(item.is(pro.erez.interstice.agriculture.RealmAgriculture.ROOT.get())
+                &&!pro.erez.interstice.agriculture.NativeFoodTolerance.canDigest(player,pro.erez.interstice.agriculture.NativeFoodTolerance.FoodKind.ROOT))return true;
+        if(item.is(pro.erez.interstice.food.TideHeart.FRUIT.get())||item.is(Items.CHORUS_FRUIT))return true;
+        var food=item.getFoodProperties(player);
+        if(food!=null&&food.effects().stream().anyMatch(effect->effect.effect().getEffect().value().getCategory()==net.minecraft.world.effect.MobEffectCategory.HARMFUL))return true;
         return item.is(Items.ROTTEN_FLESH) || item.is(Items.SPIDER_EYE)
                 || item.is(Items.POISONOUS_POTATO) || item.is(Items.PUFFERFISH);
     }
@@ -179,6 +191,7 @@ public final class BackpackModules {
         for (int i = 0; i < packItems.size(); i++) {
             var item = packItems.get(i);
             if (item.isEmpty() || item.getCount() < 9) continue;
+            if(!ItemStack.isSameItemSameComponents(item,new ItemStack(item.getItem())))continue;
             var targetItem = COMPACT_RECIPES.get(item.getItem());
             if (targetItem != null) {
                 var compressed = new ItemStack(targetItem, 1);
@@ -193,7 +206,7 @@ public final class BackpackModules {
             }
         }
         if (compressedAny) {
-            BackpackStorage.write(pack, packItems);
+            BackpackStorage.writeOwned(player,pack,packItems);
             player.getInventory().setChanged();
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
                     SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.PLAYERS, 0.5F, 0.8F);

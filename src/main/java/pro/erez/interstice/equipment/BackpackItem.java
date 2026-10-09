@@ -38,6 +38,11 @@ public final class BackpackItem extends Item {
         return false;
     }
 
+    @Override public boolean canBeHurtBy(ItemStack stack,net.minecraft.world.damagesource.DamageSource source){
+        return capacity<84||(!source.is(net.minecraft.tags.DamageTypeTags.IS_EXPLOSION)
+                &&!source.is(net.minecraft.world.damagesource.DamageTypes.FELL_OUT_OF_WORLD));
+    }
+
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if (player instanceof ServerPlayer server) {
@@ -101,10 +106,6 @@ public final class BackpackItem extends Item {
     public void onDestroyed(ItemEntity entity) {
         if (entity.level().isClientSide) return;
         var stack = entity.getItem();
-        if (capacity >= 84) {
-            // Rift backpack is blast/void resistant
-            return;
-        }
         var stored = stack.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY);
         var copies = new ArrayList<>(stored.nonEmptyStream().toList());
         var modules = stack.getOrDefault(ExpeditionEquipment.BACKPACK_MODULES.get(), ItemContainerContents.EMPTY);

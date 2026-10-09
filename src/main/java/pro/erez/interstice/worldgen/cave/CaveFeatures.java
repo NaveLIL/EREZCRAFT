@@ -136,7 +136,8 @@ public final class CaveFeatures {
                 }
 
                 boolean isNest = Math.floorMod(hash(seed ^ 0x9B14E7L, x >> 3, 0, z >> 3), 11) == 0;
-                if (isNest && !colony && space >= 3) {
+                // Archived revisions retain their original FULL decorations and future chunk edges.
+                if (revision == 6 && isNest && !colony && space >= 3) {
                     int nestRoll = choice(seed ^ 0x7E3F1A9L, floor, 100);
                     if (chunk.getBlockState(floor).isAir() && rock(chunk.getBlockState(floor.below()))) {
                         if (nestRoll < 12) {

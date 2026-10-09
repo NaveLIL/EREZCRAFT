@@ -22,6 +22,7 @@ ALLOWED.add("runGearGameTestServer")
 ALLOWED.add("runPaletteGallery")
 ALLOWED.add("runFaunaGameTestServer")
 ALLOWED.add("runTensionRealmSmoke")
+ALLOWED.update({"runV6ProgressionSmoke", "runV6Performance"})
 ALLOWED.add("runLiftGameTestServer")
 ALLOWED.add("runNativeFieldLiftSmoke")
 ALLOWED.update({"runTetherGameTestServer","runGearSmoke","runWinchSmoke"})
@@ -422,6 +423,20 @@ def main():
                 except (OSError, ValueError) as error:
                     record["validation_error"] = str(error)
                     accepted = False
+            if code == 0 and task in ("runV6ProgressionSmoke", "runV6Performance"):
+                record["validations"] = {}
+                profile = evidence / "profiles" / ("v6ProgressionSmoke" if task == "runV6ProgressionSmoke" else "v6Performance")
+                names = ("v6-progression-create-validation.json", "v6-progression-reload-validation.json") if task == "runV6ProgressionSmoke" else ("v6-performance-validation.json",)
+                for name in names:
+                    try:
+                        result = json.loads((profile / name).read_text(encoding="utf-8"))
+                        record["validations"][name] = result
+                        accepted = accepted and result.get("passed") is True
+                    except (OSError, ValueError) as error:
+                        record["validation_error"] = str(error); accepted = False
+                if task == "runV6ProgressionSmoke" and len(record["validations"]) == 2:
+                    first, second = (record["validations"][name] for name in names)
+                    accepted = accepted and first.get("creator_pid") != second.get("pid")
             if code == 0 and task == "runTensionRealmSmoke":
                 profile = evidence / "profiles" / "tensionRealmSmoke"
                 result_path = profile / "v6-full-matrix-validation.json"

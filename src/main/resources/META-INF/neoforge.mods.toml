@@ -5,8 +5,8 @@ license="Apache-2.0"
 [[mods]]
 modId="interstice"
 version="${version}"
-displayName="Interstice: Toxic Seas Prototype"
-description='''Light and heavy toxic fluids flowing in opposite directions.'''
+displayName="Interstice: Toxic Realm"
+description='''An alien realm between toxic seas: unusual terrain, tides, dangerous flora and cave spiders, mineral processing and expedition equipment. V6 geography is available as a preview.'''
 
 [[dependencies.interstice]]
 modId="neoforge"

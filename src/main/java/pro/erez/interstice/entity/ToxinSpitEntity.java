@@ -39,12 +39,18 @@ public final class ToxinSpitEntity extends Projectile {
     protected void defineSynchedData(SynchedEntityData.Builder builder) {}
 
     @Override
+    protected boolean canHitEntity(Entity entity) {
+        return !(entity instanceof CaveRiftSpiderEntity) && super.canHitEntity(entity);
+    }
+
+    @Override
     public void tick() {
         super.tick();
         Vec3 mov = this.getDeltaMovement();
-        HitResult hit = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
-        if (hit.getType() != HitResult.Type.MISS) {
-            this.onHit(hit);
+        if (this.level() instanceof ServerLevel) {
+            HitResult hit = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
+            if (hit.getType() != HitResult.Type.MISS) this.onHit(hit);
+            if (this.isRemoved()) return;
         }
 
         double nextX = this.getX() + mov.x;
@@ -67,6 +73,7 @@ public final class ToxinSpitEntity extends Projectile {
 
     @Override
     public void onHitEntity(EntityHitResult result) {
+        if (!(this.level() instanceof ServerLevel) || result.getEntity() instanceof CaveRiftSpiderEntity) return;
         super.onHitEntity(result);
         Entity target = result.getEntity();
         Entity owner = this.getOwner();
@@ -88,6 +95,7 @@ public final class ToxinSpitEntity extends Projectile {
 
     @Override
     protected void onHitBlock(BlockHitResult result) {
+        if (!(this.level() instanceof ServerLevel)) return;
         super.onHitBlock(result);
         splashSoundAndParticles();
         this.discard();

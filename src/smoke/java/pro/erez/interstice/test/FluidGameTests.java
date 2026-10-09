@@ -142,21 +142,32 @@ public final class FluidGameTests {
         }
         var golem=h.spawn(EntityType.IRON_GOLEM,isolatedSource);golem.setNoAi(true);golem.setNoGravity(true);
         golem.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR).setBaseValue(20);
-        int[] pulses={0};long[] previousPulse={Long.MIN_VALUE};boolean[] exact={true};
+        int[] pulses={0},applications={0};long[] previousPulse={Long.MIN_VALUE};boolean[] exact={true};
         java.util.function.Consumer<net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent> incoming = event -> {
-            if(event.getEntity()==golem)System.out.println("V6_TOXIN_INCOMING tick="+golem.tickCount+" time="+h.getLevel().getGameTime()
+            if(event.getEntity()!=golem)return;
+            if(event.getSource().is(pro.erez.interstice.ToxicLiquidBlock.TOXIN)){
+                long now=h.getLevel().getGameTime();
+                exact[0]&=event.getOriginalAmount()==6&&event.getAmount()==6
+                        &&event.getSource().is(net.minecraft.tags.DamageTypeTags.BYPASSES_ARMOR)
+                        &&(previousPulse[0]==Long.MIN_VALUE||now-previousPulse[0]>=20);
+                previousPulse[0]=now;pulses[0]++;
+            }
+            System.out.println("V6_TOXIN_INCOMING tick="+golem.tickCount+" time="+h.getLevel().getGameTime()
                     +" source="+event.getSource().getMsgId()+" original="+event.getOriginalAmount()+" new="+event.getAmount()
                     +" health="+golem.getHealth()+" invulnerability="+golem.invulnerableTime+" armor="+golem.getArmorValue()
                     +" bypassArmor="+event.getSource().is(net.minecraft.tags.DamageTypeTags.BYPASSES_ARMOR)+" pos="+golem.position()+" box="+golem.getBoundingBox());
         };
         java.util.function.Consumer<net.neoforged.neoforge.event.entity.living.LivingDamageEvent.Post> damaged = event -> {
             if(event.getEntity()!=golem)return;
-            long now=h.getLevel().getGameTime();
-            exact[0]&=event.getSource().is(pro.erez.interstice.ToxicLiquidBlock.TOXIN)&&event.getOriginalDamage()==6&&event.getNewDamage()==6
-                    &&event.getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.ARMOR)==0
-                    &&event.getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.INVULNERABILITY)==0
-                    &&(previousPulse[0]==Long.MIN_VALUE||now-previousPulse[0]>=20);
-            previousPulse[0]=now;pulses[0]++;
+            if(event.getSource().is(pro.erez.interstice.ToxicLiquidBlock.TOXIN)&&event.getNewDamage()>0){
+                float immunity=event.getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.INVULNERABILITY);
+                exact[0]&=event.getOriginalDamage()==6
+                        &&event.getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.ARMOR)==0
+                        &&Math.abs(event.getNewDamage()+immunity-6)<.0001F
+                        &&(applications[0]>0||event.getNewDamage()==6&&immunity==0);
+                applications[0]++;
+            }else exact[0]&=event.getSource().is(net.neoforged.neoforge.common.NeoForgeMod.POISON_DAMAGE)
+                    &&golem.hasEffect(net.minecraft.world.effect.MobEffects.POISON)&&event.getOriginalDamage()==1&&event.getNewDamage()==1;
             System.out.println("V6_TOXIN_APPLIED tick="+golem.tickCount+" source="+event.getSource().getMsgId()
                     +" original="+event.getOriginalDamage()+" dealt="+event.getNewDamage()+" health="+golem.getHealth()
                     +" armorReduction="+event.getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.ARMOR)
@@ -165,11 +176,11 @@ public final class FluidGameTests {
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(incoming);
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(damaged);
         h.runAtTickTime(10,() -> {
-            try{h.assertTrue(Math.abs(golem.getHealth()-94)<0.01&&pulses[0]==1&&exact[0],"One contact pulse must deal 6 damage through armor, regardless of occupied liquid cells; health="+golem.getHealth()+", pulses="+pulses[0]+", exact="+exact[0]);}
+            try{h.assertTrue(Math.abs(golem.getHealth()-94)<0.01&&pulses[0]==1&&applications[0]==1&&exact[0],"The first contact pulse must request and deal 6 damage through armor regardless of occupied cells; health="+golem.getHealth()+", pulses="+pulses[0]+", applied="+applications[0]+", exact="+exact[0]);}
             catch(RuntimeException|Error failure){net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(incoming);net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(damaged);throw failure;}
         });
         h.runAtTickTime(45,() -> {
-            try{h.assertTrue(Math.abs(golem.getHealth()-82)<0.01&&pulses[0]==3&&exact[0],"Continuous contact must deal three exact six-damage pulses at least 20 ticks apart; health="+golem.getHealth()+", pulses="+pulses[0]+", exact="+exact[0]);}
+            try{h.assertTrue(Math.abs(golem.getHealth()-82)<0.01&&pulses[0]==3&&applications[0]==3&&exact[0],"Continuous contact must request three armor-bypassing six-damage pulses at least20ticks apart, with accepted poison/native cooldown reflected in actual loss; health="+golem.getHealth()+", pulses="+pulses[0]+", applied="+applications[0]+", exact="+exact[0]);}
             finally{net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(incoming);net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(damaged);}
             h.succeed();
         });

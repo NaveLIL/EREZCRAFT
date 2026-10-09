@@ -59,11 +59,18 @@ def main():
         executable=Path(entry['argv'][0]).resolve()
         if not executable.is_file() or executable.name.lower() not in ('java','java.exe'): raise ValueError('Only explicit Java executables are accepted')
         confined(entry['log'])
+        environment=entry.get('env',{})
+        if set(environment)-{'MOD_CLASSES'}:raise ValueError('Only the explicit development MOD_CLASSES environment override is accepted')
+        if 'MOD_CLASSES' not in environment:raise ValueError('Direct development launch requires its explicit compiled mod folders')
+        for folder in environment['MOD_CLASSES'].split(os.pathsep):
+            mod_id,separator,location=folder.partition('%%')
+            if mod_id!='interstice' or not separator or not confined(location).is_dir():
+                raise ValueError('Development mod folders must be frozen interstice outputs under .verification')
     processes={};logs={};launch={'launcher_pid':os.getpid(),'manifest':str(manifest_path),'mode':mode,'processes':{},'no_force_kills':True}
     if mode=='cold':launch['cold_input']=str(cold_input)
     def start(key):
         entry=entries[key];log=confined(entry['log']);log.parent.mkdir(parents=True,exist_ok=True);logs[key]=log.open('wb')
-        child=subprocess.Popen(entry['argv'],cwd=confined(entry['cwd']),stdin=subprocess.PIPE,stdout=logs[key],stderr=subprocess.STDOUT,
+        child=subprocess.Popen(entry['argv'],cwd=confined(entry['cwd']),env=os.environ|entry['env'],stdin=subprocess.PIPE,stdout=logs[key],stderr=subprocess.STDOUT,
                                creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
         processes[key]=child;launch['processes'][key]={'pid':child.pid,'cwd':entry['cwd'],'log':str(log)};atomic(evidence/'launch.json',launch)
         print(json.dumps({'started':key,'pid':child.pid,'log':str(log)}),flush=True)

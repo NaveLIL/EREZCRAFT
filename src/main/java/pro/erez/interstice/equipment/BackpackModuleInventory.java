@@ -38,7 +38,7 @@ public final class BackpackModuleInventory extends SimpleContainer {
 
     @Override
     public boolean canPlaceItem(int slot, ItemStack stack) {
-        return BackpackStorage.isModule(stack);
+        return BackpackStorage.isModule(stack)&&BackpackStorage.allowed(stack);
     }
 
     @Override

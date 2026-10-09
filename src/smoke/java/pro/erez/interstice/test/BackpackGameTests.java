@@ -2,6 +2,7 @@ package pro.erez.interstice.test;
 
 import java.util.*;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.gametest.framework.GameTest;
@@ -329,9 +330,12 @@ public final class BackpackGameTests {
         stored.set(0, new ItemStack(Items.NETHERITE_INGOT, 2));
         BackpackStorage.write(r, stored);
 
-        // Test void/blast immunity in onDestroyed
-        r.onDestroyed(entity, level.damageSources().fellOutOfWorld());
-        h.assertTrue(BackpackStorage.read(r).get(0).getCount() == 2, "Void damage must not wipe or drop Rift pack contents");
+        // Damage resistance belongs to the actual item damage path, not its destruction callback.
+        h.assertTrue(!entity.hurt(level.damageSources().fellOutOfWorld(),99)&&!entity.isRemoved()
+                &&!entity.hurt(new net.minecraft.world.damagesource.DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
+                .getHolderOrThrow(net.minecraft.world.damagesource.DamageTypes.EXPLOSION)),99)&&!entity.isRemoved()
+                &&BackpackStorage.read(entity.getItem()).get(0).getCount()==2,
+                "Native void/explosion damage must leave the real Rift item entity and its contents intact");
 
         h.succeed();
     }
@@ -400,7 +404,8 @@ public final class BackpackGameTests {
             h.assertTrue(player.getFoodData().getFoodLevel() == 20 && stored(bag, Items.COOKED_BEEF) == 1,
                     "Feeder in FAST mode did not eat on minor hunger drop");
 
-            // 4. Test menu TOGGLE_FEEDER button click
+        // 4. Test menu TOGGLE_FEEDER button click
+            BackpackHarness.set(player,ItemStack.EMPTY); // Move ownership to inventory; never give the same object two owners.
             fillInventory(player, bag);
             var menu = open(h, player, 0);
             h.assertTrue(menu.clickMenuButton(player, BackpackMenu.TOGGLE_FEEDER), "Menu TOGGLE_FEEDER button failed");

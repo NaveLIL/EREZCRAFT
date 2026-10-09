@@ -11,7 +11,7 @@ public final class BackpackModuleSlot extends Slot {
 
     @Override
     public boolean mayPlace(ItemStack stack) {
-        return BackpackStorage.isModule(stack);
+        return BackpackStorage.isModule(stack)&&BackpackStorage.allowed(stack);
     }
 
     @Override
