@@ -13,7 +13,6 @@ import org.joml.Quaternionf;
 import pro.erez.interstice.entity.EchoRiftEntity;
 
 public final class EchoRiftRenderer extends EntityRenderer<EchoRiftEntity> {
-    private static final int FULL_BRIGHT = 0xF000F0; // 15728880
 
     public EchoRiftRenderer(EntityRendererProvider.Context context) {
         super(context);
@@ -37,7 +36,7 @@ public final class EchoRiftRenderer extends EntityRenderer<EchoRiftEntity> {
         float pulse = 0.35F + 0.05F * Mth.sin(time * 0.12F);
         pulse *= (0.5F + 0.5F * stability);
 
-        VertexConsumer consumer = buffer.getBuffer(RenderType.translucent());
+        VertexConsumer consumer = buffer.getBuffer(RenderType.debugQuads());
 
         // 1. Draw glowing inner core octahedron
         poseStack.pushPose();
@@ -125,10 +124,6 @@ public final class EchoRiftRenderer extends EntityRenderer<EchoRiftEntity> {
 
     private static void vertex(VertexConsumer out, PoseStack.Pose pose, float x, float y, float z, float r, float g, float b, float a) {
         out.addVertex(pose, x, y, z)
-                .setColor(r, g, b, a)
-                .setUv(0, 0)
-                .setOverlay(0)
-                .setLight(FULL_BRIGHT)
-                .setNormal(pose, 0.0F, 1.0F, 0.0F);
+                .setColor(r, g, b, a); // POSITION_COLOR: genuinely untextured, fullbright colored mesh.
     }
 }

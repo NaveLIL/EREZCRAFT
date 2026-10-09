@@ -33,7 +33,7 @@ public class EchoRiftAnchorItem extends Item {
 
         EchoRiftEntity rift = new EchoRiftEntity(Interstice.ECHO_RIFT.get(), level);
         rift.setPos(spawnPos.getX() + 0.5, spawnPos.getY() + 0.5, spawnPos.getZ() + 0.5);
-        level.addFreshEntity(rift);
+        if (!level.addFreshEntity(rift)) return InteractionResult.FAIL;
 
         Player player = context.getPlayer();
         ItemStack stack = context.getItemInHand();

@@ -1,6 +1,12 @@
 package pro.erez.interstice.entity;
 
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.Blocks;
+import pro.erez.interstice.SeaSurface;
+import pro.erez.interstice.geometry.GeometryProfiles;
+import pro.erez.interstice.worldgen.IslandWorld;
+import pro.erez.interstice.tether.WinchLinks;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -33,6 +39,7 @@ public class EchoRiftEntity extends Entity {
     private static final EntityDataAccessor<Float> DATA_STABILITY =
             SynchedEntityData.defineId(EchoRiftEntity.class, EntityDataSerializers.FLOAT);
 
+    public static final float MIN_RADIUS = 1.0F, MAX_RADIUS = 8.0F;
     public static final int BUFFER_SIZE = 60; // 3.0 seconds at 20 TPS
     public static final int IMMUNITY_TICKS = 45; // 2.25 seconds immunity after rewind
 
@@ -58,7 +65,7 @@ public class EchoRiftEntity extends Entity {
     }
 
     public void setRadius(float radius) {
-        this.entityData.set(DATA_RADIUS, radius);
+        this.entityData.set(DATA_RADIUS, Float.isFinite(radius) ? Mth.clamp(radius, MIN_RADIUS, MAX_RADIUS) : 4.5F);
     }
 
     public float getStability() {
@@ -66,7 +73,7 @@ public class EchoRiftEntity extends Entity {
     }
 
     public void setStability(float stability) {
-        this.entityData.set(DATA_STABILITY, stability);
+        this.entityData.set(DATA_STABILITY, Float.isFinite(stability) ? Mth.clamp(stability, 0.0F, 1.0F) : 1.0F);
     }
 
     @Override
@@ -79,7 +86,7 @@ public class EchoRiftEntity extends Entity {
         super.tick();
 
         float stability = getStability();
-        if (stability < 1.0F) {
+        if (!this.level().isClientSide && stability < 1.0F) {
             setStability(Math.min(1.0F, stability + 0.003F)); // Slowly regenerate over ~300 ticks
         }
 
@@ -179,6 +186,7 @@ public class EchoRiftEntity extends Entity {
 
             // Living entities handling
             if (entity instanceof LivingEntity living) {
+                if (!eligibleForRewind(living, serverLevel)) {trajectoryMap.remove(id);continue;}
                 // If entity is currently immune after a rewind, skip snapshotting and rewinding
                 if (immunityCooldownMap.containsKey(id)) {
                     continue;
@@ -204,9 +212,10 @@ public class EchoRiftEntity extends Entity {
                 boolean edgeBreach = history.size() >= 30 && distSq > (r - 0.75) * (r - 0.75) && living.getDeltaMovement().lengthSqr() > 0.15;
 
                 if (fullLoop || edgeBreach) {
-                    performRewind(living, history.peekFirst(), serverLevel);
+                    boolean rewound = false;
+                    for (TrajectoryPoint point : history) if (tryRewind(living, point, serverLevel)) {rewound = true;break;}
                     history.clear();
-                    immunityCooldownMap.put(id, IMMUNITY_TICKS);
+                    if (rewound) immunityCooldownMap.put(id, IMMUNITY_TICKS);
                 }
             }
         }
@@ -216,8 +225,45 @@ public class EchoRiftEntity extends Entity {
         deflectedProjectiles.removeIf(id -> !presentUuids.contains(id));
     }
 
+    private boolean eligibleForRewind(LivingEntity entity, ServerLevel level) {
+        return entity != null && level == this.level() && entity.level() == level && entity.isAlive() && !entity.isRemoved()
+                && !entity.isPassenger() && !entity.isVehicle()
+                && (!(entity instanceof ServerPlayer player) || (!player.isSpectator() && player.connection != null
+                    && player.connection.getConnection().isConnected() && WinchLinks.link(player) == null));
+    }
+
+    private boolean safeTarget(LivingEntity entity, TrajectoryPoint target, ServerLevel level) {
+        if (target == null || !finite(target.pos()) || !finite(target.deltaMovement())
+                || !Float.isFinite(target.yRot()) || !Float.isFinite(target.xRot())) return false;
+        AABB box = entity.getBoundingBox().move(target.pos().subtract(entity.position()));
+        if (box.minY < level.getMinBuildHeight() || box.maxY > level.getMaxBuildHeight()
+                || !level.getWorldBorder().isWithinBounds(box)) return false;
+        int minX = Mth.floor(box.minX), maxX = Mth.floor(box.maxX - 1.0E-7);
+        int minZ = Mth.floor(box.minZ), maxZ = Mth.floor(box.maxZ - 1.0E-7);
+        for (int x = minX; x <= maxX; x++) for (int z = minZ; z <= maxZ; z++) {
+            if (level.getChunkSource().getChunkNow(x >> 4, z >> 4) == null) return false;
+            if (IslandWorld.isIsland(level.dimension())) {
+                var profile = GeometryProfiles.get(level);
+                if (box.minY <= profile.lowerSeaTop() || box.maxY > SeaSurface.cellMinimum(profile, x, z, true) - profile.clearance()) return false;
+            }
+            for (int y = Mth.floor(box.minY); y <= Mth.floor(box.maxY - 1.0E-7); y++) {
+                var state = level.getBlockState(new BlockPos(x, y, z));
+                if (!state.getFluidState().isEmpty() || state.is(Blocks.FIRE) || state.is(Blocks.SOUL_FIRE)
+                        || state.is(Blocks.NETHER_PORTAL) || state.is(Blocks.END_PORTAL) || state.is(Blocks.END_GATEWAY)
+                        || state.is(Interstice.RIFT_PORTAL.get())) return false;
+            }
+        }
+        return level.noCollision(entity, box);
+    }
+
+    private static boolean finite(Vec3 vector) {return vector != null && Double.isFinite(vector.x) && Double.isFinite(vector.y) && Double.isFinite(vector.z);}
+
     public void performRewind(LivingEntity entity, TrajectoryPoint target, ServerLevel level) {
-        if (target == null) return;
+        tryRewind(entity, target, level);
+    }
+
+    private boolean tryRewind(LivingEntity entity, TrajectoryPoint target, ServerLevel level) {
+        if (!eligibleForRewind(entity, level) || !safeTarget(entity, target, level)) return false;
 
         Vec3 from = entity.position();
 
@@ -230,6 +276,8 @@ public class EchoRiftEntity extends Entity {
 
         // 2. Restore motion and save from fall damage
         entity.setDeltaMovement(target.deltaMovement);
+        entity.hasImpulse = true;
+        entity.hurtMarked = true; // Vanilla broadcasts this motion to a ServerPlayer owner too.
         entity.resetFallDistance();
 
         // 3. Audio & Visuals: Spatial implosion and sonic boom
@@ -242,6 +290,7 @@ public class EchoRiftEntity extends Entity {
 
         level.playSound(null, from.x, from.y, from.z, SoundEvents.PORTAL_TRAVEL, SoundSource.NEUTRAL, 0.8F, 1.8F);
         level.playSound(null, target.pos.x, target.pos.y, target.pos.z, SoundEvents.BEACON_DEACTIVATE, SoundSource.NEUTRAL, 1.3F, 1.6F);
+        return true;
     }
 
     @Override
@@ -278,6 +327,7 @@ public class EchoRiftEntity extends Entity {
 
     @Override
     protected void readAdditionalSaveData(CompoundTag tag) {
+        trajectoryMap.clear();immunityCooldownMap.clear();deflectedProjectiles.clear();
         if (tag.contains("Radius")) {
             setRadius(tag.getFloat("Radius"));
         }

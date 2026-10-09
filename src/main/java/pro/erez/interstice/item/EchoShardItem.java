@@ -30,6 +30,7 @@ public class EchoShardItem extends Item {
             Vec3 look = player.getLookAngle();
             player.setDeltaMovement(look.x * 0.5, 0.4, look.z * 0.5);
             player.hasImpulse = true;
+            player.hurtMarked = true; // Send the slip velocity to this actual player, not only observers.
 
             if (level instanceof ServerLevel sl) {
                 sl.sendParticles(ParticleTypes.REVERSE_PORTAL, player.getX(), player.getY() + 1.0, player.getZ(),

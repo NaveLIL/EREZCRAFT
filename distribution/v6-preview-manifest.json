@@ -1,0 +1,17 @@
+{
+  "name": "EREZCRAFT V6 Preview",
+  "version": "0.7.0-preview.1",
+  "minecraft": "1.21.1",
+  "java_major": 21,
+  "loader": {"id": "neoforge", "version": "21.1.252"},
+  "mods": [{"id": "interstice", "version": "0.7.0-preview.1", "file": "interstice-0.7.0-preview.1.jar", "required_on": ["client", "server"]}],
+  "external_mods": [],
+  "resource_packs": [],
+  "client_reference_settings": {"render_distance_chunks": 4, "simulation_distance_chunks": 5, "smooth_lighting": true, "framerate_limit": 60},
+  "server_reference_settings": {"view_distance": 4, "simulation_distance": 5, "allow_flight": false},
+  "preview_dimension": "interstice:islands_v6",
+  "ordinary_entry_dimension": "interstice:islands_v5",
+  "instructions": "docs/V6_PREVIEW.md",
+  "verification": "docs/verification/V6_PREVIEW.json",
+  "status": "preview; network, performance and human Survival acceptance continue"
+}

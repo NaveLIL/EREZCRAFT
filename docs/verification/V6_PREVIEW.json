@@ -3,7 +3,7 @@
   "scope": "Verified intermediate checkpoint. Positive task-scoped receipts from three runs cover all required groups; the earlier aggregate build failed on corrected test fixtures and is not relabelled as successful.",
   "full_local_build_success_claimed": false,
   "required_group_count": 15,
-  "required_tests_passed": 405,
+  "required_tests_passed": 418,
   "groups": {
     "runFaunaGameTestServer": {
       "required_tests_passed": 15,
@@ -76,19 +76,19 @@
       "receipt_sha256": "edc497364a29bac5afbbfe2bea06341b5f7d6c4464465e8dc0bde888f525b8e3"
     },
     "runGameTestServer": {
-      "required_tests_passed": 157,
-      "receipt_file": ".verification/20261009T095228.481482Z-v6-preview-core-poison-key/runGameTestServer.json",
-      "receipt_sha256": "4cb7ad58ce05e2d6ebcd1a8ef8b71da7b05871e6dc46220833dad64b4f2c952f"
+      "required_tests_passed": 170,
+      "receipt_file": ".verification/20261009T103701.988734Z-v6-preview-echo-integrated/runGameTestServer.json",
+      "receipt_sha256": "654265f37de21efdb61266cd9b52e4b984f7c9d704e8d73b3efd4192f43730b4"
     }
   },
   "python_tests_passed": 63,
   "runtime_jar": "interstice-0.7.0-preview.1.jar",
-  "runtime_sha256": "bfcf485f4091b02f5e9fd068f08c25745c64fd5b319b1a268c16ad50f8fc4716",
-  "sources_sha256": "dd2038297b458e2cf75c4eed5287cc17a00e3b364a6a44aa07d866ac0b57e59c",
-  "main_java_files_matched": 200,
-  "runtime_class_count": 387,
-  "runtime_entries": 1607,
-  "runtime_main_resources_matched": 1110,
+  "runtime_sha256": "1ef8519e2bb0f6bcaff57d3f01c53329aa10b7c31ba80a131ce24264a15260d9",
+  "sources_sha256": "ab790b0c93a4197477f0fdb57fc21b8e52eaad96f31e59785afd991bbfadea3f",
+  "main_java_files_matched": 204,
+  "runtime_class_count": 392,
+  "runtime_entries": 1614,
+  "runtime_main_resources_matched": 1112,
   "missing_model_refs": [],
   "source_java_sha256": {
     "src/main/java/pro/erez/interstice/AbyssalTurfBlock.java": "7fb4233fae21c6591c549618c2d5ed411ff92e89dd925a3decafa5e7381492c3",
@@ -96,7 +96,7 @@
     "src/main/java/pro/erez/interstice/FluidLab.java": "d2e789dc9d5ecd40df5590f6e043345322e8059f90e8269037565134624332ae",
     "src/main/java/pro/erez/interstice/FluidLightUpgrade.java": "dc413ffeef51298012c0e45531c1e95dfb2441827aefe3ebdc6f89c9f541ad6a",
     "src/main/java/pro/erez/interstice/GloomcrownSaplingBlock.java": "a8b6ce31534554e2f4900c448cc53746cca954fff64e39fd97a7153127d741f2",
-    "src/main/java/pro/erez/interstice/Interstice.java": "c52acc69480f21a9b9229748ad7e7bbc08891ced2e3c3adda59336d08d6f7fa0",
+    "src/main/java/pro/erez/interstice/Interstice.java": "91cd5e1e73247857b72341c1344ac6caee5b918523510ff516658ba287b01eb3",
     "src/main/java/pro/erez/interstice/LightBucketItem.java": "30ae39829de033e601c5aa34a9f2d923ec5aea79aeb19df974f22f68a77322d9",
     "src/main/java/pro/erez/interstice/LightFluid.java": "642c470d03a8826f8eaf184e0d2131387e2361e93b6d5b473cd07607d602d997",
     "src/main/java/pro/erez/interstice/OceanLiquidBlock.java": "aa041ed6d6605a2f43c65c6934a804bc125883d4bb8cc6c30c535f884d19f2a6",
@@ -137,7 +137,7 @@
     "src/main/java/pro/erez/interstice/client/HarnessScreen.java": "78cf577a19c13582dbda6e85a7c850f9b672580aa00f05adc195b128884e798f",
     "src/main/java/pro/erez/interstice/client/IslandAtmosphere.java": "dfe33551043cbb2e02d78a356aeb5b601229c2bba958debe29ab668b569d6495",
     "src/main/java/pro/erez/interstice/client/RetortScreen.java": "566301db3d669f63e2ad9d5cecf4f83cb2285b80cadea6b7ea0e8a037551cac7",
-    "src/main/java/pro/erez/interstice/client/SpiderClient.java": "a659633e622cebb06e87711d5cc41a41ab657521f668271aa18eb9b07c73e567",
+    "src/main/java/pro/erez/interstice/client/SpiderClient.java": "d94a32560ea6edd7acc6238379155bf37cc98e010afc78121a631ef66a9321b4",
     "src/main/java/pro/erez/interstice/client/TetherRenderer.java": "5bd1801ec07b47f5d242a2b3d06110cf0844e15faf3283f6601d63466cd88a57",
     "src/main/java/pro/erez/interstice/ecology/CaveEcology.java": "169d2bd1cd9ce8d2555c9c3909d4befbc758b3cb3bd75e2338c8588f15a17a34",
     "src/main/java/pro/erez/interstice/ecology/CavePlantBlock.java": "989d91ab1f83c5a1707418bed36b2d602085caa251fd680c190d6bd1afc25221",
@@ -150,6 +150,7 @@
     "src/main/java/pro/erez/interstice/ecology/SporePodGas.java": "42671f04fb56d1730d4686022618141d44ba974e479763627a67316fa573baae",
     "src/main/java/pro/erez/interstice/ecology/VenomReedBlock.java": "3832e78477bc65ec04006b8b771762001718d492f7d063fa89af543df32d6c41",
     "src/main/java/pro/erez/interstice/entity/CaveRiftSpiderEntity.java": "c567c8fe9e28b8419fc9fab441231b98b731e78099f356ae3a93fadd4c7cb66c",
+    "src/main/java/pro/erez/interstice/entity/EchoRiftEntity.java": "ff169a55efd9b06d8b319a724175b13b3e1e928019da6c3a0fd5367e6a2b4f50",
     "src/main/java/pro/erez/interstice/entity/ToxinSpitEntity.java": "f3c87f2cb2106e20c288a2894314e6972395005236f3bcb20086716f9ec58fe7",
     "src/main/java/pro/erez/interstice/equipment/BackpackHarness.java": "758b746844ae8d31e76aa52cf2af08ded4969479e9f70d650bf186a35f807137",
     "src/main/java/pro/erez/interstice/equipment/BackpackInventory.java": "84dd7c5cb9df7c039af1bcaf2bd6c0d742068027fccfdd5c9dcaedf3dc3ebd1f",
@@ -184,6 +185,8 @@
     "src/main/java/pro/erez/interstice/geometry/GeometrySync.java": "05b430c176a501c4d90474692a23a72ecd53eca233bb8ced08bee1a401c2b769",
     "src/main/java/pro/erez/interstice/geometry/GeometryView.java": "1d8b0f89f905d062733f6200b451179e4b2e4b95988b9194df1a90daab7166d9",
     "src/main/java/pro/erez/interstice/item/CorrosiveBucketHandler.java": "88a26bca3d5fad8336d97c9676a0c6e8614489806e2665c3d480135f088071d7",
+    "src/main/java/pro/erez/interstice/item/EchoRiftAnchorItem.java": "5bc112fd4ee88ae1b2ff9f1f5b784fff544eca56bf41b34656892c82f8724d51",
+    "src/main/java/pro/erez/interstice/item/EchoShardItem.java": "578ccf9353fc408716793fbd9d32bc8131264c63af27cec8cfad4bfaecd9322e",
     "src/main/java/pro/erez/interstice/item/HeavyBucketItem.java": "4c2a7ef68af7897e746a21d4b867fccac82cd6fe4e68645016f94f2a04df7426",
     "src/main/java/pro/erez/interstice/item/RiftsilverBucketInteractions.java": "31b1b47e90afab2e6ee83b0a85dac600785c5c8b4aec8ed56f795fe6a3a8b7e9",
     "src/main/java/pro/erez/interstice/item/RiftsilverBucketItem.java": "874a5a32515607e000a6a5b5918f17f8ccfd592245b21272444bb2288f26b403",
@@ -270,6 +273,7 @@
     "src/main/java/pro/erez/interstice/entity/client/CaveRiftSpiderAnimation.java": "80d3dd112af0722356589155c10576837b538804d88f0c268bb568f1046262de",
     "src/main/java/pro/erez/interstice/entity/client/CaveRiftSpiderModel.java": "a4414da21e725da3ec219464abc42f7297385848693ec51cdb6981f4d1dc07e5",
     "src/main/java/pro/erez/interstice/entity/client/CaveRiftSpiderRenderer.java": "aba948d733f08a1eaadd8c1ad63c7a268732c339a8be32507caac32f1d7986d0",
+    "src/main/java/pro/erez/interstice/entity/client/EchoRiftRenderer.java": "79a086144ab44ba9e39355c9747a913d71988581822d99ba5b6bef80b1e9b367",
     "src/main/java/pro/erez/interstice/entity/client/ToxinSpitRenderer.java": "06bde5da2fd6e966c6b6fee39f7f92133653241c5d8ab112bc51ff981680690d",
     "src/main/java/pro/erez/interstice/worldgen/cave/CaveDensity.java": "59a039dc06bd3984ba518ee05c8a4e6acb888ecbfe0b6b9841225cd208107ac2",
     "src/main/java/pro/erez/interstice/worldgen/cave/CaveFeatures.java": "a2e5c39186937340f598dc1e8ccc8a3415ceff94731e110046f68542fc9a2cc1",
@@ -292,11 +296,19 @@
     "src/main/java/pro/erez/interstice/worldgen/terrain/VanillaRealmDensity.java": "3a86ed3d5438b98fa9fe5100820bf188db9511831e5b2203f6c4e191f430548b",
     "src/main/java/pro/erez/interstice/worldgen/terrain/VanillaTerrainV5.java": "25ef456baf4dac418e9b4d7dbc63e480ba3bf08b01b66c516655b1df20878c2d"
   },
+  "native_progression": {
+    "passed": true,
+    "actual_jvm_pids": [
+      22060,
+      25952
+    ],
+    "receipt": ".verification/20261009T102650.517476Z-v6-progression-native-first/runV6ProgressionSmoke.json",
+    "scope": "Prepared supplies; actual paid crafting, cauldron entry, recipe rewards, anvil service, named marker and paid pending retort batch retained across two JVMs. Not autonomous Survival acquisition."
+  },
   "not_accepted_yet": [
     "six-seed FULL after new mouths/crop changes",
     "dedicated two-client phase matrix and cold restart",
     "same-hardware V5/V6 performance",
-    "native progression cold restart",
     "autonomous multi-seed Survival route",
     "independent human blind test"
   ],
