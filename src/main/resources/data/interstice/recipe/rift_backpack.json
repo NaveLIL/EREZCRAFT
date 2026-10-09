@@ -1,0 +1,29 @@
+{
+  "type": "interstice:backpack_upgrade",
+  "category": "equipment",
+  "pattern": [
+    "SRS",
+    "FBF",
+    "SMS"
+  ],
+  "key": {
+    "S": {
+      "item": "interstice:riftsilver_ingot"
+    },
+    "R": {
+      "item": "interstice:rift_frame"
+    },
+    "F": {
+      "item": "interstice:chemotrophic_fabric"
+    },
+    "M": {
+      "item": "interstice:riftsilver_mesh"
+    },
+    "B": {
+      "item": "interstice:expedition_backpack"
+    }
+  },
+  "result": {
+    "id": "interstice:rift_backpack"
+  }
+}

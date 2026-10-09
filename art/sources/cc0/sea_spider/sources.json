@@ -1,0 +1,27 @@
+{
+  "sources": [
+    {
+      "file": "sea_spider.bbmodel",
+      "author": "atcg",
+      "source_url": "https://blockbenchworkshop.com/model/atcg/sea-spider",
+      "pack_url": "https://blockbenchworkshop.com/pack/atcg/ocean-bed",
+      "download_url": "https://blockbenchworkshop.com/api/download/e550ac82-1d3a-4436-9fa1-284941ee4d94",
+      "source_sha256": "34465b3323fba2e4617561a9b157f79d363ffab292502e758b020801ce6ee901",
+      "license": "CC0-1.0",
+      "retrieved": "2026-10-09",
+      "format": "modded_entity",
+      "changes": "Model hierarchy and animations parsed by tools/convert_sea_spider.py into Java LayerDefinition and KeyframeAnimations."
+    },
+    {
+      "file": "sea_spider.png",
+      "author": "atcg",
+      "source_url": "https://blockbenchworkshop.com/model/atcg/sea-spider",
+      "source_sha256": "2645e820aaaa2a92ec7ad7f6df33e1c60afb9de7aa30841be2c72c1af0ad0708",
+      "license": "CC0-1.0",
+      "retrieved": "2026-10-09",
+      "width": 128,
+      "height": 128,
+      "changes": "Original texture extracted unchanged; palette variants generated deterministically via tools/GenerateSpiderTextures.java."
+    }
+  ]
+}

@@ -31,9 +31,43 @@ public final class BackpackStorage {
         // These ordinary buckets corrode through inventoryTick. Storage must not bypass silver containment.
         return !stack.is(Interstice.HEAVY_BUCKET.get())&&!stack.is(Interstice.LIGHT_BUCKET.get());
     }
-    public static boolean valid(ItemStack stack){var contents=stack.getOrDefault(DataComponents.CONTAINER,ItemContainerContents.EMPTY);return isPack(stack)&&stack.getCount()==1&&contents.getSlots()<=capacity(stack)&&contents.nonEmptyStream().allMatch(s->allowed(s)&&s.getCount()<=s.getMaxStackSize());}
+    public static int moduleSlots(ItemStack stack){return moduleSlots(capacity(stack));}
+    public static int moduleSlots(int capacity){return capacity>=84?4:capacity>54?2:capacity>0?1:0;}
+    public static boolean isModule(ItemStack stack){return !stack.isEmpty()&&stack.getItem() instanceof BackpackModuleItem;}
+    public static boolean valid(ItemStack stack){
+        var contents=stack.getOrDefault(DataComponents.CONTAINER,ItemContainerContents.EMPTY);
+        var modules=stack.getOrDefault(ExpeditionEquipment.BACKPACK_MODULES.get(),ItemContainerContents.EMPTY);
+        return isPack(stack)&&stack.getCount()==1&&contents.getSlots()<=capacity(stack)
+                &&contents.nonEmptyStream().allMatch(s->allowed(s)&&s.getCount()<=s.getMaxStackSize())
+                &&modules.getSlots()<=moduleSlots(stack)
+                &&modules.nonEmptyStream().allMatch(s->isModule(s)&&s.getCount()<=s.getMaxStackSize());
+    }
     public static NonNullList<ItemStack> read(ItemStack stack){if(!valid(stack))throw new IllegalArgumentException("Invalid backpack contents must not be truncated");var list=NonNullList.withSize(capacity(stack),ItemStack.EMPTY);stack.getOrDefault(DataComponents.CONTAINER,ItemContainerContents.EMPTY).copyInto(list);return list;}
     public static void write(ItemStack stack,List<ItemStack> items){if(items.size()!=capacity(stack)||items.stream().anyMatch(s->!allowed(s)||s.getCount()>s.getMaxStackSize()))throw new IllegalArgumentException("Invalid backpack contents");stack.set(DataComponents.CONTAINER,ItemContainerContents.fromItems(items));}
+    public static NonNullList<ItemStack> readModules(ItemStack stack){
+        int slots=moduleSlots(stack);
+        var list=NonNullList.withSize(slots,ItemStack.EMPTY);
+        if(!isPack(stack))return list;
+        stack.getOrDefault(ExpeditionEquipment.BACKPACK_MODULES.get(),ItemContainerContents.EMPTY).copyInto(list);
+        return list;
+    }
+    public static void writeModules(ItemStack stack,List<ItemStack> items){
+        int slots=moduleSlots(stack);
+        if(items.size()!=slots||items.stream().anyMatch(s->!s.isEmpty()&&(!isModule(s)||s.getCount()>1)))throw new IllegalArgumentException("Invalid backpack modules");
+        stack.set(ExpeditionEquipment.BACKPACK_MODULES.get(),ItemContainerContents.fromItems(items));
+    }
+    public static boolean hasModule(ItemStack stack,ModuleType type){
+        if(!isPack(stack))return false;
+        var modules=readModules(stack);
+        for(var m:modules)if(!m.isEmpty()&&m.getItem() instanceof BackpackModuleItem mod&&mod.type==type)return true;
+        return false;
+    }
+    public static ItemStack getModule(ItemStack stack,ModuleType type){
+        if(!isPack(stack))return ItemStack.EMPTY;
+        var modules=readModules(stack);
+        for(var m:modules)if(!m.isEmpty()&&m.getItem() instanceof BackpackModuleItem mod&&mod.type==type)return m;
+        return ItemStack.EMPTY;
+    }
     /** Inserts copies into a mutable transaction list. Does not alter the source item. */
     public static int insert(List<ItemStack> target,ItemStack source){
         if(source.isEmpty()||!allowed(source))return 0;int left=source.getCount();

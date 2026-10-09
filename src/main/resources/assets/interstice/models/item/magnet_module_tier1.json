@@ -1,0 +1,4 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {"layer0": "interstice:item/expedition/magnet_module_tier1"}
+}

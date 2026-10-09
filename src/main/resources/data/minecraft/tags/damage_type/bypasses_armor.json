@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "interstice:toxin"
+    "interstice:toxin",
+    "interstice:spider_bite",
+    "interstice:spider_spit"
   ]
 }

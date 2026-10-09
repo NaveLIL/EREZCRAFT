@@ -17,7 +17,7 @@ import pro.erez.interstice.equipment.*;
 
 @EventBusSubscriber(modid=Interstice.ID,value=Dist.CLIENT)
 public final class BackpackClient {
-    private static final KeyMapping OPEN=new KeyMapping("key.interstice.open_backpack",InputConstants.Type.KEYSYM,org.lwjgl.glfw.GLFW.GLFW_KEY_B,"key.categories.interstice");
+    public static final KeyMapping OPEN=new KeyMapping("key.interstice.open_backpack",InputConstants.Type.KEYSYM,org.lwjgl.glfw.GLFW.GLFW_KEY_B,"key.categories.interstice");
     @SubscribeEvent public static void screens(RegisterMenuScreensEvent event){event.register(ExpeditionEquipment.PACK_MENU.get(),BackpackScreen::new);event.register(ExpeditionEquipment.HARNESS_MENU.get(),HarnessScreen::new);}
     @SubscribeEvent public static void inventoryButton(ScreenEvent.Init.Post event){
         if(!(event.getScreen() instanceof AbstractContainerScreen<?> screen)||!(screen instanceof InventoryScreen||screen instanceof CreativeModeInventoryScreen))return;

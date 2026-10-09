@@ -1,0 +1,58 @@
+{
+  "textures": [
+    {
+      "target": "textures/entity/spider/cave_rift_spider_skirmisher.png",
+      "source_file": "art/sources/cc0/sea_spider/sea_spider.png",
+      "author": "atcg",
+      "license": "CC0-1.0",
+      "source_url": "https://blockbenchworkshop.com/model/atcg/sea-spider",
+      "generator": "tools/GenerateSpiderTextures.java",
+      "width": 128,
+      "height": 128,
+      "palette_role": "Ashen dark chitin with rust-amber joints for Skirmisher"
+    },
+    {
+      "target": "textures/entity/spider/cave_rift_spider_lurker.png",
+      "source_file": "art/sources/cc0/sea_spider/sea_spider.png",
+      "author": "atcg",
+      "license": "CC0-1.0",
+      "source_url": "https://blockbenchworkshop.com/model/atcg/sea-spider",
+      "generator": "tools/GenerateSpiderTextures.java",
+      "width": 128,
+      "height": 128,
+      "palette_role": "Vitriolite slate rocky camouflage for Ambush Lurker"
+    },
+    {
+      "target": "textures/entity/spider/cave_rift_spider_spitter.png",
+      "source_file": "art/sources/cc0/sea_spider/sea_spider.png",
+      "author": "atcg",
+      "license": "CC0-1.0",
+      "source_url": "https://blockbenchworkshop.com/model/atcg/sea-spider",
+      "generator": "tools/GenerateSpiderTextures.java",
+      "width": 128,
+      "height": 128,
+      "palette_role": "Rift violet body with bioluminescent cyan toxin glands for Spitter"
+    },
+    {
+      "target": "textures/block/spider_egg_sac.png",
+      "source_file": "art/sources/cc0/block-texture-set/schist.png",
+      "author": "ARoachIFoundOnMyPillow",
+      "license": "CC0-1.0",
+      "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+      "generator": "tools/GenerateSpiderTextures.java",
+      "width": 16,
+      "height": 16,
+      "palette_role": "Solid silken woven cocoon membrane with pearlescent weave and cyan embryo pulse"
+    },
+    {
+      "target": "textures/block/rift_cobweb.png",
+      "source_file": "Procedural original deterministic artwork",
+      "author": "Interstice project",
+      "license": "Apache-2.0",
+      "generator": "tools/GenerateSpiderTextures.java",
+      "width": 16,
+      "height": 16,
+      "palette_role": "Rift silk web with dark violet framing and bioluminescent dew"
+    }
+  ]
+}

@@ -67,6 +67,7 @@ public final class BackpackHarness {
     public static void drops(LivingDropsEvent event){
         if(!(event.getEntity() instanceof ServerPlayer player)||player.level().getGameRules().getBoolean(GameRules.RULE_KEEPINVENTORY))return;
         var stack=get(player);if(stack.isEmpty())return;
+        if(BackpackStorage.capacity(stack)>=84&&event.getSource().is(net.minecraft.world.damagesource.DamageTypes.FELL_OUT_OF_WORLD))return;
         set(player,ItemStack.EMPTY); // Detach before collection/clone: the same bag has exactly one owner.
         if(EnchantmentHelper.has(stack,net.minecraft.world.item.enchantment.EnchantmentEffectComponents.PREVENT_EQUIPMENT_DROP))return;
         var dropped=new ItemEntity(player.level(),player.getX(),player.getY()+.1,player.getZ(),stack);dropped.setDefaultPickUpDelay();event.getDrops().add(dropped);
