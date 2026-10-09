@@ -50,6 +50,7 @@ public final class CrownFruitBlock extends Block {
         if(!level.isClientSide){
             level.setBlock(pos,state.setValue(AGE,0),3);
             var fruit=new ItemStack(TideHeart.FRUIT.get());if(!player.addItem(fruit))player.drop(fruit,false);
+            pro.erez.interstice.fauna.RealmFauna.notifyFruitHarvest(player,pos);
         }return InteractionResult.sidedSuccess(level.isClientSide);
     }
 }

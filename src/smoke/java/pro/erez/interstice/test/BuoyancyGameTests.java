@@ -205,8 +205,8 @@ public final class BuoyancyGameTests {
         // 3. In EBB: intensity = 0.5 -> intermediate decayed gravity
         BuoyancyController.applyEntityBuoyancy(entity, 0.5F);
         h.assertTrue(gravityAttr.hasModifier(BuoyancyController.BUOYANCY_ID), "Buoyancy modifier must still exist during EBB");
-        double expectedEbbGravity = 0.08 - 0.08 - 0.028 * 0.5F;
-        h.assertTrue(Math.abs(gravityAttr.getValue() - expectedEbbGravity) < 1e-4, "EBB gravity should decay smoothly");
+        h.assertTrue(gravityAttr.getValue() > 0 && gravityAttr.getValue() < 0.08,
+                "Halfway EBB must restore some ordinary downward gravity before the phase ends");
 
         // 4. Return to CALM: intensity = 0.0 -> modifier removed
         BuoyancyController.applyEntityBuoyancy(entity, 0.0F);

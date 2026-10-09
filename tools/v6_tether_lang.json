@@ -1,0 +1,16 @@
+{
+  "ru_ru": {
+    "tooltip.interstice.tether_spool": "ПКМ по лебёдке: линия32бл. Держите катушку и приседайте для спуска по натянутому тросу, запас до48бл. Отпустите приседание для краткой паузы; найдите опору. Присесть+ПКМ: отсоединить.",
+    "message.interstice.winch.descending": "Управляемый спуск. Осталось троса: %sбл. Отпустите приседание для краткой паузы.",
+    "message.interstice.winch.descent_stopped": "Спуск остановлен. Без опоры подвеска ограничена: найдите площадку или продолжите спуск.",
+    "message.interstice.winch.rope_warning": "Осталось2бл. троса: подготовьте посадку! У конца троса страховка отключится.",
+    "message.interstice.winch.rope_end": "Трос закончился: линия отсоединена. Дальше действует обычное падение."
+  },
+  "en_us": {
+    "tooltip.interstice.tether_spool": "Use on winch:32-block line. Hold the spool and sneak to descend on a taut rope, up to48blocks. Release sneak for a brief pause; find support. Sneak-use: detach.",
+    "message.interstice.winch.descending": "Controlled descent. Rope remaining: %sblocks. Release sneak for a brief pause.",
+    "message.interstice.winch.descent_stopped": "Descent stopped. Unsupported suspension is limited: find a landing or continue descending.",
+    "message.interstice.winch.rope_warning": "2blocks of rope remain: prepare to land! Protection ends with the rope.",
+    "message.interstice.winch.rope_end": "Rope exhausted: line detached. Normal falling resumes."
+  }
+}

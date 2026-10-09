@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_riftsilver": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {"items": [{"items": "interstice:raw_riftsilver"}]}
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {"recipe": "interstice:structure_surveyor"}
+    }
+  },
+  "requirements": [["has_riftsilver", "has_the_recipe"]],
+  "rewards": {"recipes": ["interstice:structure_surveyor"]}
+}

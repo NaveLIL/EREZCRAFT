@@ -18,7 +18,6 @@ import net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.CustomData;
@@ -101,11 +100,17 @@ public final class NativeFieldLiftSmoke {
             else if (stage == 8) {
                 ticks++;
                 if(ticks==10&&done())work=diagnostic(mc,"cargo_after_ten_client_ticks",null);
-                if(cargoMenu(mc)&&ticks>=20&&done()){shift(mc,9);shift(mc,10);stage=9;ticks=0;}
+                if(cargoMenu(mc)&&ticks>=20&&done()){
+                    sneak(mc,false);
+                    pickup(mc,RealmLift.CARGO_SLOTS);pickup(mc,RealmLift.CARGO_SLOTS-1);
+                    shift(mc,RealmLift.CARGO_SLOTS+1);stage=9;ticks=0;
+                }
                 else if(ticks>=40){require(work==null||work.isDone(),"Native cargo diagnostic not completed within40clientticks");done();require(cargoMenu(mc),"Native cargo screen not acknowledged within40clientticks; see cargo interaction telemetry");}
             }
             else if (stage == 9 && cargoMenu(mc) && ++ticks >= 25) {
-                work = server.submit(() -> { var player = server.getPlayerList().getPlayer(uuid); checkCargo(anchor(player).lift()); require(player.getInventory().getItem(9).isEmpty() && player.getInventory().getItem(10).isEmpty(), "Native cargo transfer did not consume source slots"); data.addProperty("native_cargo_menu_transfer", true); return true; }); stage = 10; ticks = 0;
+                work = server.submit(() -> { var player = server.getPlayerList().getPlayer(uuid); checkCargo(anchor(player).lift()); require(player.getInventory().getItem(9).isEmpty() && player.getInventory().getItem(10).isEmpty(), "Native cargo transfer did not consume source slots");
+                    require(player.containerMenu instanceof FieldLiftMenu && player.containerMenu.slots.size()==63,"Server cargo must expose 27+36 native slots");
+                    data.addProperty("native_cargo_menu_transfer", true);data.addProperty("cargo_slots",27);data.addProperty("menu_slots",63);data.addProperty("native_cargo_last_slot",26);return true; }); stage = 10; ticks = 0;
             } else if (stage == 10 && done() && ++ticks >= 12) {
                 shot(mc, "field-lift-native-cargo.png"); mc.player.closeContainer(); sneak(mc, false); stage = 11; ticks = 0;
             } else if (stage == 11 && ++ticks >= 15 && clientLift(mc) != null) { nativeInteract(mc, false, "boarding_interaction_sent"); stage = 12; ticks = 0; }
@@ -169,14 +174,15 @@ public final class NativeFieldLiftSmoke {
     }
     private static FieldAnchorEntity anchor(ServerPlayer player) { return player.serverLevel().getBlockEntity(ANCHOR) instanceof FieldAnchorEntity anchor ? anchor : null; }
     private static void checkCargo(FieldLiftEntity lift) {
-        require(lift != null && lift.cargo().getContainerSize() == 9, "Missing real nine-slot cargo platform");
+        require(lift != null && lift.cargo().getContainerSize() == 27, "Missing real three-row cargo platform");
         int tools = 0, sticks = 0;
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 27; i++) {
             var item = lift.cargo().getItem(i);
             if (item.is(Items.DIAMOND_PICKAXE)) { require(ItemStack.matches(item, cargoTool()), "Native cargo lost custom name, data, damage or count"); tools += item.getCount(); }
             if (item.is(MineralEcology.WORLD_STICK.get())) sticks += item.getCount();
         }
         require(tools == 1 && sticks == 12, "Native cargo quantities changed or duplicated");
+        require(ItemStack.matches(lift.cargo().getItem(26),cargoTool()),"Native pickup into the final cargo slot or its cold reload lost the tool components");
     }
     private static boolean beginMotion(ServerPlayer player) {
         var anchor = anchor(player); var lift = anchor.lift();
@@ -209,10 +215,14 @@ public final class NativeFieldLiftSmoke {
         var anchor = anchor(player); if (anchor == null || anchor.lift() == null) return false;
         var lift = anchor.lift(); require(anchor.anchorId().toString().equals(data.get("anchor_uuid").getAsString()) && lift.getUUID().toString().equals(data.get("lift_uuid").getAsString()), "Different-JVM reload changed anchor/vehicle identities");
         require(anchor.fuel() == data.get("saved_fuel").getAsInt() && Math.abs(lift.getY() - data.get("saved_lift_y").getAsDouble()) < .001, "Paused cold transport moved or refilled fuel");
+        require(player.getInventory().countItem(Items.DIAMOND_PICKAXE)==0&&player.getInventory().countItem(MineralEcology.WORLD_STICK.get())==0
+                &&player.getInventory().getItem(1).is(RealmLift.CONTROLLER.get())&&player.getInventory().getItem(1).getCount()==1
+                &&player.getInventory().getItem(2).is(MineralEcology.UMBRAL_COAL.get())&&player.getInventory().getItem(2).getCount()==1,
+                "Different-JVM cargo restoration changed or duplicated the player's remaining equipment and fuel");
         checkCargo(lift); data.addProperty("reload_pid", ProcessHandle.current().pid()); data.addProperty("cold_fuel_paused_exact", true); return true;
     }
     private static FieldLiftEntity clientLift(Minecraft mc) { return mc.level.getEntitiesOfClass(FieldLiftEntity.class, new AABB(ANCHOR).inflate(2, 52, 2)).stream().findFirst().orElse(null); }
-    private static boolean cargoMenu(Minecraft mc) { return mc.player.containerMenu instanceof ChestMenu chest && chest.getContainer().getContainerSize() == 9 && mc.screen != null; }
+    private static boolean cargoMenu(Minecraft mc) { return mc.player.containerMenu instanceof FieldLiftMenu cargo && cargo.getContainer().getContainerSize() == 27 && cargo.slots.size()==63 && mc.screen instanceof FieldLiftScreen; }
     private static void select(Minecraft mc, int slot) { mc.player.getInventory().selected = slot; mc.getConnection().send(new ServerboundSetCarriedItemPacket(slot)); }
     private static void click(Minecraft mc, BlockPos pos) { mc.gameMode.useItemOn(mc.player, InteractionHand.MAIN_HAND, new BlockHitResult(new Vec3(pos.getX() + .5, pos.getY() + 1, pos.getZ() + .5), net.minecraft.core.Direction.UP, pos, false)); }
     private static void sneak(Minecraft mc, boolean value) {
@@ -244,6 +254,7 @@ public final class NativeFieldLiftSmoke {
         });
     }
     private static void shift(Minecraft mc, int slot) { mc.gameMode.handleInventoryMouseClick(mc.player.containerMenu.containerId, slot, 0, ClickType.QUICK_MOVE, mc.player); }
+    private static void pickup(Minecraft mc,int slot){mc.gameMode.handleInventoryMouseClick(mc.player.containerMenu.containerId,slot,0,ClickType.PICKUP,mc.player);}
     private static boolean done() { if (work == null || !work.isDone()) return false; work.join(); return true; }
     private static void shot(Minecraft mc, String filename) { Screenshot.grab(mc.gameDirectory, filename, mc.getMainRenderTarget(), message -> System.out.println("FIELD_LIFT_SCREENSHOT " + filename)); }
     private static void require(boolean value, String message) { if (!value) throw new IllegalStateException(message); }

@@ -128,10 +128,11 @@ public final class RealmLiftGameTests {
         try {
             var tool = new ItemStack(Items.DIAMOND_PICKAXE); tool.setDamageValue(88); tool.set(DataComponents.CUSTOM_NAME, Component.literal("Saved mine tool"));
             var expected = tool.copy(); fixture.lift.cargo().setItem(8, tool); fixture.owner.setShiftKeyDown(true);
-            h.assertTrue(fixture.lift.interact(fixture.owner, InteractionHand.MAIN_HAND).consumesAction() && fixture.owner.containerMenu instanceof ChestMenu,
-                    "Shift+RMB must open a real nine-slot native cargo menu");
+            h.assertTrue(fixture.lift.interact(fixture.owner, InteractionHand.MAIN_HAND).consumesAction() && fixture.owner.containerMenu instanceof FieldLiftMenu,
+                    "Shift+RMB must open the real three-row owned cargo menu");
             var menu = (ChestMenu)fixture.owner.containerMenu;
-            h.assertTrue(menu.getContainer().getContainerSize() == RealmLift.CARGO_SLOTS && menu.stillValid(fixture.owner), "Cargo slots and ownership must be validated server-side");
+            h.assertTrue(menu.getContainer().getContainerSize() == RealmLift.CARGO_SLOTS && menu.slots.size() == 63
+                    && menu.stillValid(fixture.owner), "All 27 cargo plus 36 player slots and ownership must be validated server-side");
             var moved = menu.quickMoveStack(fixture.owner, 8);
             h.assertTrue(moved.is(Items.DIAMOND_PICKAXE) && fixture.lift.cargo().getItem(8).isEmpty()
                     && fixture.owner.getInventory().items.stream().anyMatch(stack -> ItemStack.isSameItemSameComponents(stack, expected)),

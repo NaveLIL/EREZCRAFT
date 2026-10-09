@@ -24,11 +24,14 @@ import pro.erez.interstice.Interstice;
 public final class WinchLinks {
     public static final String KEY="interstice_winch_link";
     public static final double MAX_ACCELERATION=.12;
+    public static final int MAX_ROPE_LENGTH=48;
+    public static final double DESCENT_SPEED=.10;
+    public static final double MAX_DESCENT_BRAKE=.28;
     public record Link(ResourceLocation dimension,BlockPos anchor,UUID anchorId,int length){}
     private WinchLinks(){}
     public static Link link(Player player){
         var tag=player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG).getCompound(KEY);String dimension=tag.getString("Dimension");var id=dimension.isBlank()?null:ResourceLocation.tryParse(dimension);int length=tag.getInt("Length");
-        return id==null||!tag.hasUUID("AnchorId")||length<8||length>32?null:new Link(id,BlockPos.of(tag.getLong("Anchor")),tag.getUUID("AnchorId"),length);
+        return id==null||!tag.hasUUID("AnchorId")||length<8||length>MAX_ROPE_LENGTH?null:new Link(id,BlockPos.of(tag.getLong("Anchor")),tag.getUUID("AnchorId"),length);
     }
     private static void save(Player player,Link link){var persistent=player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG);
         if(link==null)persistent.remove(KEY);else{var tag=new CompoundTag();tag.putString("Dimension",link.dimension.toString());tag.putLong("Anchor",link.anchor.asLong());tag.putUUID("AnchorId",link.anchorId);tag.putInt("Length",link.length);persistent.put(KEY,tag);}
@@ -61,19 +64,58 @@ public final class WinchLinks {
         var outward=endpoint.subtract(source);double distance=outward.length();if(distance<=length+.05||distance<.001)return Vec3.ZERO;
         var direction=outward.scale(1/distance);double force=Math.min(MAX_ACCELERATION,Math.max(0,(distance-length)*.04+Math.max(0,velocity.dot(direction))*.35));return direction.scale(-force);
     }
+    public static boolean requestedDescent(ServerPlayer player){
+        return player.isShiftKeyDown()&&(player.getMainHandItem().is(RiftTethers.TETHER_SPOOL.get())||player.getOffhandItem().is(RiftTethers.TETHER_SPOOL.get()));
+    }
+    private static void controlledState(ServerPlayer player,WinchBlockEntity node,double length,boolean descending){
+        node.control(player.getUUID(),length,descending);
+        var old=link(player);if(old!=null&&old.length!=(int)Math.ceil(length))save(player,new Link(old.dimension,old.anchor,old.anchorId,(int)Math.ceil(length)));
+    }
     /** Returns the saved safety count; -1 means this hook was removed. */
     static int apply(WinchBlockEntity node,ServerPlayer player,WinchBlockEntity.Hook hook){
         if(!(node.getLevel() instanceof ServerLevel level))return -1;
         if(!matches(player,node)){node.remove(player.getUUID());return -1;}
+        if(loaded(level,node.getBlockPos())!=node){detach(player);return -1;}
         if(player.serverLevel()!=level||!player.isAlive()||player.isSpectator()||player.isPassenger()||player.isFallFlying()){detach(player);return -1;}
-        var end=endpoint(player);var start=source(node);if(start.distanceTo(end)>hook.length()+16||!clear(level,start,end,player)){detach(player);player.displayClientMessage(Component.translatable("message.interstice.winch.broken"),true);return -1;}
+        var end=endpoint(player);var start=source(node);double distance=start.distanceTo(end);
+        if(distance>hook.paidLength()+16||!clear(level,start,end,player)){detach(player);player.displayClientMessage(Component.translatable("message.interstice.winch.broken"),true);return -1;}
         var before=player.getKnownMovement();var acceleration=acceleration(start,end,before,hook.length());
-        boolean noSupport=level.getBlockStatesIfLoaded(player.getBoundingBox().inflate(.0625).expandTowards(0,-.55,0)).allMatch(s->s.isAir());
+        var support=level.getBlockStatesIfLoaded(player.getBoundingBox().inflate(.0625).expandTowards(0,-.55,0)).iterator();
+        boolean inspected=false,noSupport=true;
+        while(support.hasNext()){inspected=true;if(!support.next().isAir()){noSupport=false;break;}}
+        noSupport&=inspected;
+        boolean requested=requestedDescent(player);
+        boolean vertical=distance>0&&start.y-end.y>2&&(start.y-end.y)/distance>=.80;
+        boolean controlled=requested&&noSupport&&vertical&&distance>=hook.paidLength()-.30
+                &&!player.onGround()&&!player.horizontalCollision&&!player.verticalCollision
+                &&!player.onClimbable()&&!player.isInWater()&&!player.isInFluidType()&&before.y<=.15;
+        if(controlled){
+            if(hook.paidLength()>=MAX_ROPE_LENGTH-.001){detach(player);player.displayClientMessage(Component.translatable("message.interstice.winch.rope_end"),true);return -1;}
+            // Tension can brake a fall, never push the player downward or create a platform.
+            // A bounded radial brake also catches a normal initial fall before settling near .10/tick.
+            var inward=start.subtract(end).normalize();double brake=Math.min(MAX_DESCENT_BRAKE,Math.max(0,(-DESCENT_SPEED-before.y)/inward.y));
+            var after=before.add(inward.scale(brake));
+            double payout=Math.max(.08,Math.min(DESCENT_SPEED,-after.y));
+            double paid=Math.min(MAX_ROPE_LENGTH,hook.paidLength()+payout);
+            controlledState(player,node,paid,true);
+            if(brake>0){player.setDeltaMovement(after);player.hurtMarked=true;player.hasImpulse=true;}
+            // Only this proven loaded, unobstructed, taut owned rope pays for fall protection.
+            player.resetFallDistance();
+            if(!hook.descending()||level.getGameTime()%20==0){
+                player.displayClientMessage(Component.translatable("message.interstice.winch.descending",Math.max(0,(int)Math.floor(MAX_ROPE_LENGTH-paid))),true);sync(player,node,true);
+            }
+            if(hook.paidLength()<MAX_ROPE_LENGTH-2&&paid>=MAX_ROPE_LENGTH-2)
+                player.displayClientMessage(Component.translatable("message.interstice.winch.rope_warning"),true);
+            return 0;
+        }
+        if(hook.descending()){
+            controlledState(player,node,hook.paidLength(),false);
+            player.displayClientMessage(Component.translatable("message.interstice.winch.descent_stopped"),true);
+        }
         int air=noSupport&&!player.onClimbable()&&!player.isInWater()&&!player.isInFluidType()&&before.y>=-.03125?hook.airTicks()+1:0;
         if(air==40){player.displayClientMessage(Component.translatable("message.interstice.winch.release_warning"),true);level.playSound(null,player.blockPosition(),SoundEvents.CHAIN_STEP,SoundSource.PLAYERS,.7F,.7F);}
         if(air>=60){detach(player);player.displayClientMessage(Component.translatable("message.interstice.winch.safety_release"),true);level.playSound(null,player.blockPosition(),SoundEvents.CHAIN_BREAK,SoundSource.PLAYERS,.8F,.6F);return -1;}
         if(acceleration.lengthSqr()>0){var after=before.add(acceleration);player.setDeltaMovement(after);player.hurtMarked=true;player.hasImpulse=true;
-            if(before.y<0&&after.y>=0&&start.y>end.y)player.resetFallDistance();
         }
         if(level.getGameTime()%20==0)sync(player,node,true);return air;
     }

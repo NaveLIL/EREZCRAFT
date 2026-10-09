@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:story/root",
+  "display": {
+    "icon": { "id": "interstice:unstable_rift_initiator" },
+    "title": { "translate": "advancements.interstice.rift_preparation.title" },
+    "description": { "translate": "advancements.interstice.rift_preparation.description" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "found_amethyst": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": "minecraft:amethyst_shard" } ] }
+    }
+  },
+  "rewards": { "recipes": [ "interstice:unstable_rift_initiator" ] }
+}

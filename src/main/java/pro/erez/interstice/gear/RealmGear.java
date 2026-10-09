@@ -32,7 +32,7 @@ public final class RealmGear {
     public static final int BELT_MAX_DAMAGE = 240;
     public static final int COATING_CHARGES = 12;
     public static final int COATING_WINDOW_TICKS = 20;
-    public static final int BEACON_FUEL_TICKS = 2400;
+    public static final int BEACON_FUEL_TICKS = 12000;
     public static final int BEACON_MAX_FUEL = BEACON_FUEL_TICKS * 4;
     public enum HazardKind { LOWER_SEA, CAVE_GAS, STINGING_PLANT, SPORE_POD }
     private static final String COATING = "interstice_coating_charges";
@@ -92,9 +92,9 @@ public final class RealmGear {
         stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag)); player.getInventory().setChanged();
         if (active < 20) return;
         int wear = stack.getDamageValue() + 1;
-        if (wear >= BELT_MAX_DAMAGE) {
-            Item broken = stack.getItem(); stack.shrink(1); player.onEquippedItemBroken(broken, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-        } else stack.setDamageValue(wear);
+        stack.setDamageValue(Math.min(wear, BELT_MAX_DAMAGE));
+        if (wear >= BELT_MAX_DAMAGE)
+            player.displayClientMessage(Component.translatable("message.interstice.ballast.exhausted"), true);
         player.getInventory().setChanged();
     }
     private static boolean chestArmor(ItemStack stack) {
@@ -126,9 +126,14 @@ public final class RealmGear {
     }
     public static final class BallastBelt extends Item {
         public BallastBelt() { super(new Item.Properties().durability(BELT_MAX_DAMAGE)); }
+        @Override public boolean isValidRepairItem(ItemStack belt, ItemStack material) {
+            return material.is(pro.erez.interstice.agriculture.RealmAgriculture.PURE_LINING.get());
+        }
         @Override public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> text, TooltipFlag flags) {
             text.add(Component.translatable("tooltip.interstice.ballast_belt"));
             text.add(Component.translatable("tooltip.interstice.ballast_remaining", Math.max(0, BELT_MAX_DAMAGE - stack.getDamageValue())));
+            if (stack.getDamageValue() >= BELT_MAX_DAMAGE)
+                text.add(Component.translatable("tooltip.interstice.ballast_exhausted"));
         }
     }
     public static final class ProtectiveCoating extends Item {

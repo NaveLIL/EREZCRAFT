@@ -14,10 +14,14 @@ import net.minecraft.world.level.block.state.BlockState;
 /** Fuel advances only through loaded server ticks. A demolished marker drops an unfuelled item. */
 public final class RouteBeaconEntity extends BlockEntity {
     private int fuelTicks, pulseTicks, hintTicks;
-    private UUID owner;
+    private UUID owner, markerId = UUID.randomUUID();
+    private String markerName = "";
     public RouteBeaconEntity(BlockPos pos, BlockState state) { super(RealmGear.BEACON_ENTITY.get(), pos, state); }
     public int fuelTicks() { return fuelTicks; }
     public UUID owner() { return owner; }
+    public UUID markerId() { return markerId; }
+    public String markerName() { return markerName; }
+    public void setMarkerName(String name) { markerName = RouteMarkers.boundedName(name); setChanged(); }
     public void setOwner(UUID id) { owner = id; setChanged(); }
     public boolean addFuel() {
         if (fuelTicks > RealmGear.BEACON_MAX_FUEL - RealmGear.BEACON_FUEL_TICKS) return false;
@@ -52,11 +56,14 @@ public final class RouteBeaconEntity extends BlockEntity {
     @Override protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries); tag.putInt("FuelTicks", fuelTicks); tag.putInt("PulseTicks", pulseTicks); tag.putInt("HintTicks", hintTicks);
         if (owner != null) tag.putUUID("Owner", owner);
+        tag.putUUID("MarkerId", markerId); tag.putString("MarkerName", markerName);
     }
     @Override protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries); fuelTicks = Math.clamp(tag.getInt("FuelTicks"), 0, RealmGear.BEACON_MAX_FUEL);
         pulseTicks = Math.clamp(tag.getInt("PulseTicks"), 0, 19); hintTicks = Math.clamp(tag.getInt("HintTicks"), 0, 99);
         owner = tag.hasUUID("Owner") ? tag.getUUID("Owner") : null;
+        markerId = tag.hasUUID("MarkerId") ? tag.getUUID("MarkerId") : UUID.randomUUID();
+        markerName = RouteMarkers.boundedName(tag.getString("MarkerName"));
     }
     @Override public CompoundTag getUpdateTag(HolderLookup.Provider registries) { return saveWithoutMetadata(registries); }
     @Override public ClientboundBlockEntityDataPacket getUpdatePacket() { return ClientboundBlockEntityDataPacket.create(this); }

@@ -133,14 +133,46 @@ public final class FluidGameTests {
     }
     @GameTest(template="empty",timeoutTicks=100)
     public static void toxinBypassesArmorAndDoesNotStackPerCell(GameTestHelper h) {
+        // Adjacent reaction GameTests contain a real power14 explosion (entity reach28).
+        // Keep this dose/armor fixture in the same ticking chunk but well above their blast volumes.
+        BlockPos isolatedSource = SOURCE.above(64);
         for(int x=4;x<=8;x++) for(int z=4;z<=8;z++) {
-            h.setBlock(new BlockPos(x,5,z),Blocks.STONE);
-            for(int y=6;y<=8;y++) h.setBlock(new BlockPos(x,y,z),Interstice.HEAVY_BLOCK.get());
+            h.setBlock(new BlockPos(x,69,z),Blocks.STONE);
+            for(int y=70;y<=72;y++) h.setBlock(new BlockPos(x,y,z),Interstice.HEAVY_BLOCK.get());
         }
-        var golem=h.spawn(EntityType.IRON_GOLEM,SOURCE);golem.setNoAi(true);golem.setNoGravity(true);
+        var golem=h.spawn(EntityType.IRON_GOLEM,isolatedSource);golem.setNoAi(true);golem.setNoGravity(true);
         golem.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR).setBaseValue(20);
-        h.runAtTickTime(10,() -> h.assertTrue(Math.abs(golem.getHealth()-94)<0.01,"One contact pulse must deal 6 damage through armor, regardless of occupied liquid cells; health="+golem.getHealth()));
-        h.runAtTickTime(45,() -> {h.assertTrue(Math.abs(golem.getHealth()-82)<0.01,"Continuous contact must deal one pulse per 20 ticks; health="+golem.getHealth());h.succeed();});
+        int[] pulses={0};long[] previousPulse={Long.MIN_VALUE};boolean[] exact={true};
+        java.util.function.Consumer<net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent> incoming = event -> {
+            if(event.getEntity()==golem)System.out.println("V6_TOXIN_INCOMING tick="+golem.tickCount+" time="+h.getLevel().getGameTime()
+                    +" source="+event.getSource().getMsgId()+" original="+event.getOriginalAmount()+" new="+event.getAmount()
+                    +" health="+golem.getHealth()+" invulnerability="+golem.invulnerableTime+" armor="+golem.getArmorValue()
+                    +" bypassArmor="+event.getSource().is(net.minecraft.tags.DamageTypeTags.BYPASSES_ARMOR)+" pos="+golem.position()+" box="+golem.getBoundingBox());
+        };
+        java.util.function.Consumer<net.neoforged.neoforge.event.entity.living.LivingDamageEvent.Post> damaged = event -> {
+            if(event.getEntity()!=golem)return;
+            long now=h.getLevel().getGameTime();
+            exact[0]&=event.getSource().is(pro.erez.interstice.ToxicLiquidBlock.TOXIN)&&event.getOriginalDamage()==6&&event.getNewDamage()==6
+                    &&event.getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.ARMOR)==0
+                    &&event.getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.INVULNERABILITY)==0
+                    &&(previousPulse[0]==Long.MIN_VALUE||now-previousPulse[0]>=20);
+            previousPulse[0]=now;pulses[0]++;
+            System.out.println("V6_TOXIN_APPLIED tick="+golem.tickCount+" source="+event.getSource().getMsgId()
+                    +" original="+event.getOriginalDamage()+" dealt="+event.getNewDamage()+" health="+golem.getHealth()
+                    +" armorReduction="+event.getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.ARMOR)
+                    +" immunityReduction="+event.getReduction(net.neoforged.neoforge.common.damagesource.DamageContainer.Reduction.INVULNERABILITY));
+        };
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(incoming);
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(damaged);
+        h.runAtTickTime(10,() -> {
+            try{h.assertTrue(Math.abs(golem.getHealth()-94)<0.01&&pulses[0]==1&&exact[0],"One contact pulse must deal 6 damage through armor, regardless of occupied liquid cells; health="+golem.getHealth()+", pulses="+pulses[0]+", exact="+exact[0]);}
+            catch(RuntimeException|Error failure){net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(incoming);net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(damaged);throw failure;}
+        });
+        h.runAtTickTime(45,() -> {
+            try{h.assertTrue(Math.abs(golem.getHealth()-82)<0.01&&pulses[0]==3&&exact[0],"Continuous contact must deal three exact six-damage pulses at least 20 ticks apart; health="+golem.getHealth()+", pulses="+pulses[0]+", exact="+exact[0]);}
+            finally{net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(incoming);net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(damaged);}
+            h.succeed();
+        });
     }
     @GameTest(template="empty",timeoutTicks=100)
     public static void airBelowThinLiquidDoesNotDamage(GameTestHelper h) {

@@ -34,13 +34,48 @@
       "conditions": {
         "to": "interstice:fluid_lab"
       }
+    },
+    "entered_v2": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v2"
+      }
+    },
+    "entered_v3": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v3"
+      }
+    },
+    "entered_v4": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v4"
+      }
+    },
+    "entered_v5": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v5"
+      }
+    },
+    "entered_v6": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v6"
+      }
     }
   },
   "requirements": [
     [
       "entered_islands",
       "entered_tall",
-      "entered_lab"
+      "entered_lab",
+      "entered_v2",
+      "entered_v3",
+      "entered_v4",
+      "entered_v5",
+      "entered_v6"
     ]
   ]
 }

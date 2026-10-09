@@ -14,6 +14,7 @@ public final class NativeCropPatches {
     private NativeCropPatches(){}
     public static int generate(GeometryProfile p,ChunkAccess chunk,long seed,int revision){
         if(revision<4)return 0;
+        if(revision==6)return generateV6(p,chunk,seed);
         long key=FreeTerraNoise.mix(seed^chunk.getPos().x*0x9E3779B97F4A7C15L^chunk.getPos().z*0xC2B2AE3D27D4EB4FL^0x4147524950415443L);
         if(Math.floorMod(key,12)!=0)return 0;
         var random=RandomSource.create(key);int baseX=chunk.getPos().getMinBlockX(),baseZ=chunk.getPos().getMinBlockZ(),y=p.lowerSeaTop();
@@ -35,6 +36,38 @@ public final class NativeCropPatches {
                 chunk.setBlockState(at.above(),crop.getStateForAge(crop.getMaxAge()),false);placed++;
             }return placed;
         }return 0;
+    }
+    /** V6 has shorter banks: examine the rare eligible chunk completely instead of missing
+     * its narrow shore with ten random darts. Both forest biomes share these seed colonies.
+     * The sea, real hydration test and two-to-five-plant budget remain unchanged. */
+    private static int generateV6(GeometryProfile p,ChunkAccess chunk,long seed){
+        long key=FreeTerraNoise.mix(seed^chunk.getPos().x*0x9E3779B97F4A7C15L^chunk.getPos().z*0xC2B2AE3D27D4EB4FL^0x4147524950415443L);
+        if(Math.floorMod(key,8)!=0)return 0;
+        var random=RandomSource.create(key);
+        int[] order=new int[144];for(int i=0;i<order.length;i++)order[i]=i;
+        for(int i=order.length-1;i>0;i--){int j=random.nextInt(i+1),v=order[i];order[i]=order[j];order[j]=v;}
+        int minX=chunk.getPos().getMinBlockX(),minZ=chunk.getPos().getMinBlockZ(),y=p.lowerSeaTop();
+        for(int cell:order){
+            var soil=new BlockPos(minX+2+cell%12,y,minZ+2+cell/12);
+            var biome=chunk.getNoiseBiome(net.minecraft.core.QuartPos.fromBlock(soil.getX()),net.minecraft.core.QuartPos.fromBlock(y),net.minecraft.core.QuartPos.fromBlock(soil.getZ()));
+            if(!biome.is(RealmBiomes.PALE_GARDENS)&&!biome.is(RealmBiomes.CRIMSON_THICKETS))continue;
+            if(!natural(chunk.getBlockState(soil))||!chunk.getBlockState(soil.above()).isAir()||!water(chunk,soil.getX(),y,soil.getZ()))continue;
+            var positions=new java.util.ArrayList<BlockPos>();
+            for(int dz=-1;dz<=1;dz++)for(int dx=-1;dx<=1;dx++){
+                var at=soil.offset(dx,0,dz);
+                if(natural(chunk.getBlockState(at))&&chunk.getBlockState(at.above()).isAir()&&water(chunk,at.getX(),y,at.getZ()))positions.add(at);
+            }
+            if(positions.size()<2)continue;
+            for(int i=positions.size()-1;i>0;i--){int j=random.nextInt(i+1);var v=positions.get(i);positions.set(i,positions.get(j));positions.set(j,v);}
+            int target=Math.min(positions.size(),2+random.nextInt(4));
+            for(int i=0;i<target;i++){
+                var at=positions.get(i);var crop=i%2==0?RealmAgriculture.GRAIN_CROP.get():RealmAgriculture.ROOT_CROP.get();
+                chunk.setBlockState(at,RealmAgriculture.FARMLAND.get().defaultBlockState().setValue(ToxicFarmlandBlock.MOISTURE,7),false);
+                chunk.setBlockState(at.above(),crop.getStateForAge(crop.getMaxAge()),false);
+            }
+            return target;
+        }
+        return 0;
     }
     private static boolean natural(net.minecraft.world.level.block.state.BlockState state){return state.is(Interstice.ABYSSAL_TURF.get())||state.is(MineralEcology.ROOT_LOAM.get())||state.is(MineralEcology.TOXIC_SAND.get())||RiftOreBlock.Host.from(state)!=null;}
     private static boolean water(ChunkAccess chunk,int x,int y,int z){

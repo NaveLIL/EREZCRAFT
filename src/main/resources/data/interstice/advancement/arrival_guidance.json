@@ -1,0 +1,22 @@
+{
+  "parent": "interstice:rift_discovery",
+  "display": {
+    "icon": { "id": "interstice:wayfarer_key" },
+    "title": { "translate": "advancements.interstice.arrival_guidance.title" },
+    "description": { "translate": "advancements.interstice.arrival_guidance.description" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "legacy": { "trigger": "minecraft:changed_dimension", "conditions": { "to": "interstice:islands" } },
+    "tall": { "trigger": "minecraft:changed_dimension", "conditions": { "to": "interstice:islands_tall" } },
+    "v2": { "trigger": "minecraft:changed_dimension", "conditions": { "to": "interstice:islands_v2" } },
+    "v3": { "trigger": "minecraft:changed_dimension", "conditions": { "to": "interstice:islands_v3" } },
+    "v4": { "trigger": "minecraft:changed_dimension", "conditions": { "to": "interstice:islands_v4" } },
+    "v5": { "trigger": "minecraft:changed_dimension", "conditions": { "to": "interstice:islands_v5" } },
+    "v6": { "trigger": "minecraft:changed_dimension", "conditions": { "to": "interstice:islands_v6" } }
+  },
+  "requirements": [ [ "legacy", "tall", "v2", "v3", "v4", "v5", "v6" ] ]
+}

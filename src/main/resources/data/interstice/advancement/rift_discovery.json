@@ -27,12 +27,47 @@
       "conditions": {
         "to": "interstice:islands"
       }
+    },
+    "v2": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v2"
+      }
+    },
+    "v3": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v3"
+      }
+    },
+    "v4": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v4"
+      }
+    },
+    "v5": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v5"
+      }
+    },
+    "v6": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "interstice:islands_v6"
+      }
     }
   },
   "requirements": [
     [
       "tall",
-      "legacy"
+      "legacy",
+      "v2",
+      "v3",
+      "v4",
+      "v5",
+      "v6"
     ]
   ],
   "rewards": {

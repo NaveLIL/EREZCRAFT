@@ -1,0 +1,179 @@
+package pro.erez.interstice.test;
+
+import com.google.gson.*;
+import com.mojang.brigadier.arguments.*;
+import java.lang.reflect.Field;
+import java.net.InetSocketAddress;
+import java.nio.file.Files;
+import java.util.*;
+import net.minecraft.commands.Commands;
+import net.minecraft.core.*;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.*;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.*;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.chunk.*;
+import net.minecraft.world.phys.*;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.server.ServerStartedEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import pro.erez.interstice.Interstice;
+import pro.erez.interstice.fauna.CanopySentinel;
+import pro.erez.interstice.expedition.ExpeditionLedger;
+import pro.erez.interstice.gear.*;
+import pro.erez.interstice.lift.*;
+import pro.erez.interstice.rift.*;
+import pro.erez.interstice.smoke.net.V6NetworkFiles;
+import pro.erez.interstice.tether.*;
+import pro.erez.interstice.tide.*;
+import pro.erez.interstice.worldgen.*;
+
+/** Two actual remote clients on an explicitly isolated dedicated server. Prepared mechanics only. */
+@EventBusSubscriber(modid=Interstice.ID)
+public final class V6DedicatedScenario {
+    private static final boolean ENABLED=Boolean.getBoolean("interstice.v6NetworkScenario");
+    private static final BlockPos BASE=new BlockPos(2304,72,2304),V6BASE=new BlockPos(1792,100,1792);
+    private static final BlockPos PORTAL=BASE.offset(1,1,0),ECHO=V6BASE.offset(8,1,0),BEACON=BASE.offset(16,1,0),LIFT=BASE.offset(33,1,1),HOME=BASE.offset(50,3,0);
+    private static final String[] PHASES={"two_real_clients","surge_entry_under_roofs","ordinary_roof_mining","ordinary_lens_activation","simultaneous_saved_portal_entry","ordinary_echo_return","shared_beacon_indicators","ordinary_paid_spool_attachment","moving_controlled_winch_200ticks","physical_rope_obstruction","native_lift_cargo26_and_boarding","native_lift_motion","native_lift_stop","guardian_first_target","guardian_crouch_and_second_target","real_death_and_native_respawn","actual_disconnect_reconnect","actual_chunk_unload","actual_chunk_reload","final_receipts"};
+    private static MinecraftServer server;
+    private static final String SESSION=UUID.randomUUID().toString();
+    private static int phase,token,tick,phaseBegan;
+    private static boolean started,finished,minimum,failed,obstaclePlaced,deathIssued;
+    private static final long[] pids=new long[3],login=new long[3],logout=new long[3],respawn=new long[3],moving=new long[3],owned=new long[3],taut=new long[3];
+    private static final boolean[] acks=new boolean[3],receipts=new boolean[3];
+    private static final UUID[] uuids=new UUID[3],anchorIds=new UUID[3];
+    private static final Vec3[] previous=new Vec3[3];
+    private static final double[] maxStep=new double[3],maxForce=new double[3];
+    private static UUID portalLink,liftUuid;private static double liftStartY;private static int liftStartFuel;
+    private static final UUID[] journeys=new UUID[3];private static boolean deathDropChecked;
+    private static CanopySentinel guardian;
+    private static JsonObject instructions=new JsonObject(),result=new JsonObject();
+    private static final JsonArray events=new JsonArray(),phaseRows=new JsonArray(),samples=new JsonArray();
+    private static Quiescence quiescence;
+
+    @SubscribeEvent public static void commands(RegisterCommandsEvent event){if(!ENABLED)return;
+        event.getDispatcher().register(Commands.literal("v6net").requires(s->s.getEntity() instanceof ServerPlayer p&&peer(p)>0)
+            .then(Commands.literal("hello").then(Commands.argument("pid",LongArgumentType.longArg(1)).executes(c->{var p=c.getSource().getPlayerOrException();int id=peer(p);pids[id]=LongArgumentType.getLong(c,"pid");require(p.connection.getConnection().getRemoteAddress() instanceof InetSocketAddress address&&address.getAddress().isLoopbackAddress(),"A real loopback TCP connection is required");record("hello",p);write();return 1;})))
+            .then(Commands.literal("ack").then(Commands.argument("token",IntegerArgumentType.integer(0)).executes(c->{var p=c.getSource().getPlayerOrException();require(IntegerArgumentType.getInteger(c,"token")==token,"Stale network phase acknowledgment");acks[peer(p)]=true;record("ack",p);return 1;})))
+            .then(Commands.literal("receipt").then(Commands.argument("token",IntegerArgumentType.integer(0)).executes(c->{var p=c.getSource().getPlayerOrException();receipts[peer(p)]=true;record("receipt",p);return 1;}))));
+    }
+    @SubscribeEvent public static void start(ServerStartedEvent event){if(!ENABLED)return;server=event.getServer();try{
+        V6NetworkFiles.validate();require(server.isDedicatedServer()&&server.getPort()==V6NetworkFiles.PORT,"Network scenario requires its dedicated port26593");require(!server.isFlightAllowed(),"Server allow-flight must remain false");
+        require(server.getServerDirectory().toAbsolutePath().normalize().toString().replace('\\','/').contains("/.verification/"),"Dedicated fixture must use its isolated profile directory");
+        server.overworld().getGameRules().getRule(GameRules.RULE_SPAWN_CHUNK_RADIUS).set(0,server);server.overworld().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).set(false,server);
+        result.addProperty("server_pid",ProcessHandle.current().pid());result.addProperty("session_id",SESSION);result.addProperty("dedicated_server",true);result.addProperty("port",server.getPort());result.addProperty("allow_flight",server.isFlightAllowed());result.addProperty("mock_connections",false);result.addProperty("scope","Prepared disposable two-client dedicated mechanics; supplied materials/platforms/short8 rope and operator tide, not natural Survival or latency simulation");result.addProperty("cold_server_restart_checked",false);result.addProperty("simulated_latency_checked",false);result.add("events",events);result.add("phases",phaseRows);result.add("position_samples",samples);
+        started=true;setPhase(0);write();
+    }catch(Throwable error){fail(error);}}
+    @SubscribeEvent public static void login(PlayerEvent.PlayerLoggedInEvent event){if(ENABLED&&event.getEntity() instanceof ServerPlayer p&&peer(p)>0){int id=peer(p);login[id]++;if(uuids[id]!=null)require(uuids[id].equals(p.getUUID()),"Reconnect changed its real offline player UUID");uuids[id]=p.getUUID();record("actual_login",p);}}
+    @SubscribeEvent public static void logout(PlayerEvent.PlayerLoggedOutEvent event){if(ENABLED&&event.getEntity() instanceof ServerPlayer p&&peer(p)>0){logout[peer(p)]++;record("actual_logout",p);}}
+    @SubscribeEvent public static void respawn(PlayerEvent.PlayerRespawnEvent event){if(ENABLED&&event.getEntity() instanceof ServerPlayer p&&peer(p)>0){respawn[peer(p)]++;record("actual_respawn",p);}}
+    @SubscribeEvent public static void tick(ServerTickEvent.Post event){if(!ENABLED||(!started&&!finished)||server!=event.getServer())return;tick++;
+        try{
+            if(!finished&&Files.isRegularFile(V6NetworkFiles.EVIDENCE.resolve("runner-request.json"))){var request=V6NetworkFiles.read("runner-request.json");if(request.get("session_id").getAsString().equals(SESSION))throw new IllegalStateException("Own purpose-built runner requested cooperative stop");}
+            if(finished){if(quiescence!=null)quiescence.tick(server);if(tick%20==0)write();if(quiescence!=null&&quiescence.ready()&&terminalPeers()){result.addProperty("generation_quiescent_before_halt",true);result.add("quiescence",quiescence.json());write();server.halt(false);}return;}
+            if(tick%200==0)System.out.println("V6_NETWORK_PROGRESS phase="+PHASES[phase]+" elapsed="+(tick-phaseBegan)+" peers="+server.getPlayerList().getPlayerCount());
+            require(server.getPlayerList().getPlayers().stream().allMatch(p->peer(p)>0),"Isolated scenario found an unrelated player");
+            if(phase>0){require(player(1)!=null&&player(2)!=null||phase==16,"Unexpected actual peer disconnect");if(tick%20==0){sample();write();}}
+            if(tick-phaseBegan>(phase==0?6000:phase==8?1600:phase==17?1200:2400))throw new IllegalStateException("Phase deadline "+PHASES[phase]);
+            switch(phase){
+                case 0 -> {if(player(1)!=null&&player(2)!=null&&pids[1]>0&&pids[2]>0){require(pids[1]!=pids[2]&&pids[1]!=ProcessHandle.current().pid()&&pids[2]!=ProcessHandle.current().pid()&&!uuids[1].equals(uuids[2]),"Three physical JVMs and distinct player UUIDs are required");pass("Actual dedicated TCP peers/PIDs/UUIDs");setPhase(1);}}
+                case 1 -> {if(age()>30&&bothAck()){require(sheltered(1)&&sheltered(2),"Prepared roofs did not shelter real SURGE entrants");pass("Both actual players entered V6 during real SURGE under solid roofs");setPhase(2);}}
+                case 2 -> {if(server.getLevel(IslandWorld.TENSION_WORLD).getBlockState(V6BASE.above(4)).isAir()&&age()>25){require(!sheltered(1)&&sheltered(2),"Ordinary mined roof did not change only its exposed player");pass("Native mining packet removed one roof; shelter changed");tide(TidePhase.CALM);setPhase(3);}}
+                case 3 -> {if(RiftGeometry.valid(server.overworld(),new RiftGeometry.Frame(PORTAL,Direction.Axis.X),true)){pass("Lens activated a prepared real frame via client use");setPhase(4);}}
+                case 4 -> {if(player(1).serverLevel().dimension().equals(IslandWorld.TENSION_WORLD)&&player(2).serverLevel().dimension().equals(IslandWorld.TENSION_WORLD)){
+                    require(player(1).getPersistentData().hasUUID(RiftTravel.ACTIVE)&&player(2).getPersistentData().hasUUID(RiftTravel.ACTIVE)&&player(1).getPersistentData().getUUID(RiftTravel.ACTIVE).equals(portalLink)&&player(2).getPersistentData().getUUID(RiftTravel.ACTIVE).equals(portalLink),"Simultaneous transfer did not preserve the one saved portal link");
+                    for(int id=1;id<=2;id++){var journey=ExpeditionLedger.get(server).journey(player(id).getUUID());require(journey!=null&&journey.entered(),"Real portal entry failed to create its server-owned journey");journeys[id]=journey.id();}require(!journeys[1].equals(journeys[2]),"Two independent emergency entitlements must not share one journey UUID");pass("Both ordinary portal contacts arrived through the same saved link and independent server-owned journeys");setPhase(5);}}
+                case 5 -> {if(age()>70&&player(1).serverLevel()==server.overworld()&&player(2).serverLevel()==server.overworld()){pass("Both real echo use packets returned through the saved link");setPhase(6);}}
+                case 6 -> {var a=RouteMarkers.marker(player(1).getMainHandItem());var b=RouteMarkers.marker(player(2).getMainHandItem());if(a!=null&&b!=null){require(a.id().equals(b.id())&&a.pos().equals(BEACON)&&b.pos().equals(BEACON),"Shared indicator markers did not bind the same real beacon");pass("Two separate ordinary indicator stack uses copied the public marker UUID");setPhase(7);}}
+                case 7 -> {if(linked(1)&&linked(2)){require(player(1).getMainHandItem().getDamageValue()==1&&player(2).getMainHandItem().getDamageValue()==1,"Each ordinary32 rope attachment must pay once");pass("Two ordinary paid32-block own ropes");setPhase(8);}}
+                case 8 -> {measureRopes();if(moving[1]>=200&&moving[2]>=200){require(maxForce[1]<=.1200001&&maxForce[2]<=.1200001&&maxStep[1]<5&&maxStep[2]<5,"Physical rope acceleration or step exceeded its bound");require(!player(1).getAbilities().mayfly&&!player(2).getAbilities().mayfly&&!player(1).noPhysics&&!player(2).noPhysics,"A flying/noPhysics bypass appeared");pass("At least200 real moving controlled rope ticks for each Survival TCP player; no floating-counter writes");minimum=true;setPhase(9);}}
+                case 9 -> {if(!obstaclePlaced&&linked(1)&&linked(2)){for(int id=1;id<=2;id++){var p=player(id);var node=WinchLinks.loaded(server.overworld(),anchor(id));server.overworld().setBlock(BlockPos.containing(WinchLinks.source(node).lerp(WinchLinks.endpoint(p),.5)),Blocks.STONE.defaultBlockState(),3);}obstaclePlaced=true;}if(obstaclePlaced&&!linked(1)&&!linked(2)){pass("Real prepared obstacles released both owned links through production physics");setPhase(10);}}
+                case 10 -> {var lift=lift();if(lift!=null&&lift.cargo().countItem(Items.STONE)==26&&player(2).getVehicle()==lift){require(player(1).getInventory().countItem(Items.STONE)==0,"Cargo transfer duplicated its26 items");pass("Native27-row cargo menu transferred26 items and another real client boarded");setPhase(11);}}
+                case 11 -> {var lift=lift();if(lift!=null&&lift.getY()-liftStartY>=10){require(player(2).getVehicle()==lift&&lift.cargo().countItem(Items.STONE)==26&&anchorEntity().fuel()<liftStartFuel,"Real passenger/cargo/fuel did not move together");pass("Native client command moved actual tracked passenger/cargo at least10 blocks");setPhase(12);}}
+                case 12 -> {if(acks[1]&&!anchorEntity().commanded()&&anchorEntity().status()==FieldAnchorEntity.Status.STOPPED&&age()>20){pass("Second ordinary anchor-use packet stopped motion");setPhase(13);}}
+                case 13 -> {if(guardian==null){skip("Canopy sentinel entity not registered yet; no decorative substitute");setPhase(15);}else if(age()>45&&guardian.getTarget()==player(1)){require(!player(2).isAlive()||player(2).isShiftKeyDown(),"Quiet second visitor must actually crouch");pass("Real first client warned/targeted while crouching second client remained unselected");setPhase(14);}}
+                case 14 -> {if(guardian.getTarget()==player(2)&&guardian.phase()==CanopySentinel.Phase.WARNING){require(player(1).isShiftKeyDown(),"First client did not use the peaceful crouch alternative");pass("Actual crouch released target; cooldown ended into a new warning for real second client");setPhase(15);}}
+                case 15 -> {if(deathIssued&&!deathDropChecked){int drops=server.overworld().getEntitiesOfClass(ItemEntity.class,new AABB(HOME).inflate(16),e->e.getItem().is(Items.DIAMOND)).stream().mapToInt(e->e.getItem().getCount()).sum();require(drops==3,"Actual death must drop its three marked diamonds exactly once");deathDropChecked=true;}if(deathIssued&&respawn[2]>0&&player(2).isAlive()){var j=ExpeditionLedger.get(server).journey(player(2).getUUID());require(j!=null&&j.spent()&&j.id().equals(journeys[2]),"Death restored or replaced the finite emergency entitlement");pass("Actual death/drops generated native respawn and kept its spent server entitlement");setPhase(16);}}
+                case 16 -> {if(logout[2]>0&&login[2]>=2&&player(2)!=null&&pids[2]>0){var j=ExpeditionLedger.get(server).journey(player(2).getUUID());require(j!=null&&j.spent()&&j.id().equals(journeys[2]),"Reconnect restored a spent emergency entitlement");pass("Actual TCP reconnect retained player/journey UUID and spent entitlement");setPhase(17);}}
+                case 17 -> {if(server.overworld().getChunkSource().getChunkNow(LIFT.getX()>>4,LIFT.getZ()>>4)==null){pass("Watched lift/anchor chunk actually unloaded with both clients remote");setPhase(18);}}
+                case 18 -> {if(age()>30&&lift()!=null){require(lift().getUUID().equals(liftUuid)&&lift().cargo().countItem(Items.STONE)==26,"Chunk reload duplicated/lost world-owned lift cargo or UUID");pass("Real chunk reload retained one vehicle UUID and26 cargo items");finish(false);}}
+            }
+        }catch(Throwable error){fail(error);}
+    }
+    private static void setPhase(int next)throws Exception{phase=next;token++;phaseBegan=tick;Arrays.fill(acks,false);instructions=new JsonObject();for(int id=1;id<=2;id++)instructions.add(Integer.toString(id),action("wait"));
+        switch(next){
+            case 1 -> {var world=server.getLevel(IslandWorld.TENSION_WORLD);require(world!=null,"V6 test dimension missing");pad(world,V6BASE,12,12);for(int id=1;id<=2;id++){int offset=(id-1)*6;for(int dx=-1;dx<=1;dx++)for(int dz=-1;dz<=1;dz++)world.setBlock(V6BASE.offset(offset+dx,4,dz),Blocks.STONE_BRICKS.defaultBlockState(),3);teleport(player(id),world,V6BASE.getX()+offset+.5,V6BASE.getY()+1,V6BASE.getZ()+.5,0);slot(player(id),0,new ItemStack(Items.DIAMOND_PICKAXE));}tide(TidePhase.SURGE);}
+            case 2 -> instructions.add("1",blockAction("mine",V6BASE.above(4),0,false));
+            case 3 -> {pad(server.overworld(),BASE,64,14);buildFrame();pad(server.getLevel(IslandWorld.TENSION_WORLD),ECHO.below(),5,8);server.getLevel(IslandWorld.TENSION_WORLD).setBlock(ECHO,Interstice.RIFT_ECHO.get().defaultBlockState(),3);
+                portalLink=RiftLinks.get(server).add(RiftLinks.Kind.PORTAL,new RiftGeometry.Frame(PORTAL,Direction.Axis.X).endpoint(server.overworld()),new RiftLinks.Endpoint(IslandWorld.TENSION_WORLD,ECHO,Direction.Axis.X)).id();
+                for(int id=1;id<=2;id++)teleport(player(id),server.overworld(),PORTAL.getX()+id-.5,PORTAL.getY(),PORTAL.getZ()-2.5,0);slot(player(1),0,new ItemStack(Interstice.RIFT_LENS.get()));instructions.add("1",blockAction("use_block",PORTAL.offset(-1,1,0),0,false));}
+            case 4 -> {for(int id=1;id<=2;id++){teleport(player(id),server.overworld(),PORTAL.getX()+id-.5,PORTAL.getY(),PORTAL.getZ()-2.5,0);var a=action("portal_walk");a.addProperty("expected_dimension",IslandWorld.TENSION_WORLD.location().toString());instructions.add(Integer.toString(id),a);}}
+            case 5 -> {for(int id=1;id<=2;id++){teleport(player(id),server.getLevel(IslandWorld.TENSION_WORLD),ECHO.getX()-1.5,ECHO.getY(),ECHO.getZ()+.5,0);var a=blockAction("use_block",ECHO,0,false);a.addProperty("delay_ticks",80);instructions.add(Integer.toString(id),a);}}
+            case 6 -> {server.overworld().setBlock(BEACON,RealmGear.BEACON.get().defaultBlockState(),3);var beacon=(RouteBeaconEntity)server.overworld().getBlockEntity(BEACON);beacon.setOwner(player(1).getUUID());beacon.setMarkerName("Two native peers");beacon.addFuel();for(int id=1;id<=2;id++){teleport(player(id),server.overworld(),BEACON.getX()+(id==1?-2:2)+.5,BEACON.getY(),BEACON.getZ()+.5,0);slot(player(id),0,new ItemStack(Interstice.TIDE_INDICATOR.get()));instructions.add(Integer.toString(id),blockAction("use_block",BEACON,0,true));}}
+            case 7 -> {prepareWinches();for(int id=1;id<=2;id++){slot(player(id),0,new ItemStack(RiftTethers.TETHER_SPOOL.get()));instructions.add(Integer.toString(id),blockAction("use_block",anchor(id),0,false));}}
+            case 8 -> {for(int id=1;id<=2;id++){var p=player(id);WinchLinks.detach(p);require(WinchLinks.attach(p,server.overworld(),anchor(id),8),"Prepared8 physics line could not attach before motion");moving[id]=owned[id]=taut[id]=0;previous[id]=null;maxForce[id]=maxStep[id]=0;instructions.add(Integer.toString(id),action("winch_motion"));}}
+            case 9 -> {for(int id=1;id<=2;id++){WinchLinks.detach(player(id));approachWinch(id);instructions.add(Integer.toString(id),blockAction("use_block",anchor(id),0,false));}}
+            case 10 -> {for(int id=1;id<=2;id++){WinchLinks.detach(player(id));player(id).stopRiding();}pad(server.overworld(),LIFT.below(),4,56);server.overworld().setBlock(LIFT,RealmLift.ANCHOR.get().defaultBlockState(),3);var a=anchorEntity();a.setOwner(player(1).getUUID());a.addFuel(6400);teleport(player(1),server.overworld(),LIFT.getX()-1.5,LIFT.getY()+1,LIFT.getZ()+.5,0);teleport(player(2),server.overworld(),LIFT.getX()+2.5,LIFT.getY()+1,LIFT.getZ()+.5,0);require(a.deploy(player(1)),"Prepared owned lift deployment failed");liftUuid=a.liftId();slot(player(1),4,new ItemStack(Items.STONE,26));slot(player(1),0,ItemStack.EMPTY);var one=action("lift_menu");one.addProperty("lift_id",lift().getId());instructions.add("1",one);var two=action("lift_board");two.addProperty("lift_id",lift().getId());instructions.add("2",two);}
+            case 11 -> {liftStartY=lift().getY();liftStartFuel=anchorEntity().fuel();slot(player(1),0,ItemStack.EMPTY);instructions.add("1",blockAction("lift_control",LIFT,0,false));}
+            case 12 -> instructions.add("1",blockAction("lift_control",LIFT,0,false));
+            case 13 -> {prepareGuardian();if(guardian!=null){instructions.add("2",action("crouch"));}}
+            case 14 -> {instructions.add("1",action("crouch"));instructions.add("2",action("wait"));}
+            case 15 -> {player(2).stopRiding();slot(player(2),8,new ItemStack(Items.DIAMOND,3));deathIssued=true;player(2).hurt(player(2).damageSources().genericKill(),Float.MAX_VALUE);instructions.add("2",action("respawn"));}
+            case 16 -> instructions.add("2",action("reconnect"));
+            case 17 -> {var away=BASE.offset(1024,0,1024);pad(server.overworld(),away,4,4);for(int id=1;id<=2;id++){player(id).stopRiding();teleport(player(id),server.overworld(),away.getX()+id+.5,away.getY()+1,away.getZ()+.5,0);}}
+            case 18 -> {server.overworld().getChunk(LIFT.getX()>>4,LIFT.getZ()>>4);for(int id=1;id<=2;id++)teleport(player(id),server.overworld(),LIFT.getX()+(id==1?-2:2)+.5,LIFT.getY()+1,LIFT.getZ()+.5,0);}
+        }
+        System.out.println("V6_NETWORK_PHASE token="+token+" phase="+PHASES[next]);write();
+    }
+    private static void prepareWinches(){for(int id=1;id<=2;id++){var root=BASE.offset((id-1)*12,0,8);pad(server.overworld(),root,6,44);for(int x=-2;x<=2;x++)for(int z=-5;z<=-1;z++)server.overworld().setBlock(root.offset(x,34,z),Blocks.STONE.defaultBlockState(),3);server.overworld().setBlock(anchor(id),RiftTethers.WINCH.get().defaultBlockState(),3);anchorIds[id]=WinchLinks.loaded(server.overworld(),anchor(id)).anchorId();player(id).addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,12000,3,false,false));approachWinch(id);}}
+    private static void approachWinch(int id){var root=BASE.offset((id-1)*12,0,8);player(id).setHealth(20);teleport(player(id),server.overworld(),root.getX()-1.5,root.getY()+35,root.getZ()-3.5,180);}
+    private static BlockPos anchor(int id){return BASE.offset((id-1)*12,38,6);}
+    private static void measureRopes(){for(int id=1;id<=2;id++){var p=player(id);if(previous[id]!=null)maxStep[id]=Math.max(maxStep[id],p.position().distanceTo(previous[id]));previous[id]=p.position();var node=WinchLinks.loaded(server.overworld(),anchor(id));if(node==null||!WinchLinks.matches(p,node)||node.hook(p.getUUID())==null)continue;owned[id]++;var hook=node.hook(p.getUUID());var force=WinchLinks.acceleration(WinchLinks.source(node),WinchLinks.endpoint(p),p.getKnownMovement(),hook.length());maxForce[id]=Math.max(maxForce[id],force.length());if(force.length()>0)taut[id]++;if(hook.descending()&&p.getKnownMovement().y<-.03125)moving[id]++;}}
+    private static void buildFrame(){for(int w=-1;w<=2;w++)for(int h=-1;h<=3;h++){if((w==-1||w==2)&&(h==-1||h==3))continue;server.overworld().setBlock(PORTAL.offset(w,h,0),w==-1||w==2||h==-1||h==3?Interstice.RIFT_FRAME.get().defaultBlockState():Blocks.AIR.defaultBlockState(),3);}}
+    private static void prepareGuardian(){for(int id=1;id<=2;id++){player(id).stopRiding();teleport(player(id),server.overworld(),HOME.getX()+(id==1?3:7)+.5,HOME.getY(),HOME.getZ()+.5,0);}var key=ResourceLocation.fromNamespaceAndPath(Interstice.ID,"canopy_sentinel");if(!BuiltInRegistries.ENTITY_TYPE.containsKey(key))return;
+        server.overworld().setBlock(HOME.below(2),GardenMaterials.CROWN_LOG.get().defaultBlockState(),3);
+        for(int x=-5;x<=9;x++)for(int z=-5;z<=5;z++)server.overworld().setBlock(HOME.offset(x,-1,z),GardenMaterials.CROWN_LEAVES.get().defaultBlockState().setValue(LeavesBlock.DISTANCE,1).setValue(LeavesBlock.PERSISTENT,true),3);
+        var entity=BuiltInRegistries.ENTITY_TYPE.get(key).create(server.overworld());if(!(entity instanceof CanopySentinel sentinel))return;guardian=sentinel;guardian.moveTo(HOME.getX()+.5,HOME.getY(),HOME.getZ()+.5,0,0);guardian.initializeHome(HOME);require(server.overworld().addFreshEntity(guardian),"Prepared registered guardian failed to join");}
+    private static void pad(ServerLevel level,BlockPos base,int radius,int height){for(int cx=(base.getX()-radius)>>4;cx<=(base.getX()+radius)>>4;cx++)for(int cz=(base.getZ()-radius)>>4;cz<=(base.getZ()+radius)>>4;cz++)level.getChunk(cx,cz);for(int x=-radius;x<=radius;x++)for(int z=-radius;z<=radius;z++){level.setBlock(base.offset(x,0,z),Blocks.STONE.defaultBlockState(),3);for(int y=1;y<=height;y++)level.setBlock(base.offset(x,y,z),Blocks.AIR.defaultBlockState(),3);}}
+    private static void teleport(ServerPlayer p,ServerLevel level,double x,double y,double z,float yaw){p.setGameMode(GameType.SURVIVAL);p.teleportTo(level,x,y,z,Set.of(),yaw,0);p.hasChangedDimension();}
+    private static void slot(ServerPlayer p,int slot,ItemStack value){p.getInventory().items.set(slot,value);p.getInventory().selected=slot;p.getInventory().setChanged();p.containerMenu.broadcastChanges();p.inventoryMenu.broadcastChanges();}
+    private static void tide(TidePhase phase){TideManager.getSavedData(server).setPhase(phase,24000);TideSync.broadcast(TideManager.getState(server));}
+    private static FieldAnchorEntity anchorEntity(){return (FieldAnchorEntity)server.overworld().getBlockEntity(LIFT);}
+    private static FieldLiftEntity lift(){var anchor=anchorEntity();return anchor==null?null:anchor.lift();}
+    private static boolean linked(int id){var p=player(id);var node=WinchLinks.loaded(server.overworld(),anchor(id));return p!=null&&node!=null&&WinchLinks.matches(p,node)&&node.hook(p.getUUID())!=null;}
+    private static boolean sheltered(int id){var p=player(id);return p!=null&&ShelterDetector.isSheltered(p.level(),p);}
+    private static int peer(ServerPlayer p){return V6NetworkFiles.id(p.getGameProfile().getName());}
+    private static ServerPlayer player(int id){return uuids[id]==null?null:server.getPlayerList().getPlayer(uuids[id]);}
+    private static int age(){return tick-phaseBegan;}
+    private static boolean bothAck(){return acks[1]&&acks[2];}
+    private static JsonObject action(String action){var a=new JsonObject();a.addProperty("action",action);return a;}
+    private static JsonObject blockAction(String action,BlockPos target,int slot,boolean sneak){var a=action(action);a.add("target",V6NetworkFiles.point(target));a.addProperty("slot",slot);a.addProperty("sneak",sneak);a.addProperty("face","up");return a;}
+    private static void pass(String detail){var p=new JsonObject();p.addProperty("phase",PHASES[phase]);p.addProperty("token",token);p.addProperty("status","passed");p.addProperty("actual_server_ticks",age());p.addProperty("detail",detail);phaseRows.add(p);}
+    private static void skip(String detail){var p=new JsonObject();p.addProperty("phase",PHASES[phase]);p.addProperty("status","open");p.addProperty("detail",detail);phaseRows.add(p);}
+    private static void record(String kind,ServerPlayer p){var o=new JsonObject();o.addProperty("kind",kind);o.addProperty("peer",peer(p));o.addProperty("uuid",p.getUUID().toString());o.addProperty("server_tick",tick);o.addProperty("remote_address",String.valueOf(p.connection.getConnection().getRemoteAddress()));events.add(o);}
+    private static JsonObject playerSnapshot(int id){var p=player(id);var o=new JsonObject();o.addProperty("client_pid",pids[id]);o.addProperty("login_count",login[id]);o.addProperty("logout_count",logout[id]);o.addProperty("respawn_count",respawn[id]);o.addProperty("controlled_moving_ticks",moving[id]);o.addProperty("owned_rope_ticks",owned[id]);o.addProperty("taut_rope_ticks",taut[id]);o.addProperty("max_acceleration",maxForce[id]);o.addProperty("max_position_step",maxStep[id]);if(p==null){o.addProperty("connected",false);return o;}o.addProperty("connected",p.connection.getConnection().isConnected());o.addProperty("uuid",p.getUUID().toString());o.addProperty("x",p.getX());o.addProperty("y",p.getY());o.addProperty("z",p.getZ());o.addProperty("dimension",p.level().dimension().location().toString());o.addProperty("mayfly",p.getAbilities().mayfly);o.addProperty("flying",p.getAbilities().flying);o.addProperty("health",p.getHealth());o.addProperty("server_known_dy",p.getKnownMovement().y);o.addProperty("passenger",p.isPassenger());o.addProperty("shift",p.isShiftKeyDown());try{var f=p.connection.getClass().getDeclaredField("aboveGroundTickCount");f.setAccessible(true);o.addProperty("vanilla_above_ground_counter_readonly",f.getInt(p.connection));}catch(Exception unsupported){o.addProperty("floating_counter_telemetry_unavailable",true);}return o;}
+    private static void sample(){var row=new JsonObject();row.addProperty("server_tick",tick);row.addProperty("phase",PHASES[phase]);for(int id=1;id<=2;id++){var actual=playerSnapshot(id);try{var peer=V6NetworkFiles.read("peer-"+id+".json");if(peer.has("last_client")&&player(id)!=null){var client=peer.getAsJsonObject("last_client");if(client.get("dimension").getAsString().equals(player(id).level().dimension().location().toString())){double dx=client.get("x").getAsDouble()-player(id).getX(),dy=client.get("y").getAsDouble()-player(id).getY(),dz=client.get("z").getAsDouble()-player(id).getZ();actual.addProperty("asynchronous_client_server_position_error",Math.sqrt(dx*dx+dy*dy+dz*dz));}else actual.addProperty("position_error_not_comparable_across_dimension",true);actual.addProperty("client_snapshot_tick",peer.get("client_tick").getAsInt());}}catch(Exception notYet){}row.add("peer_"+id,actual);}samples.add(row);}
+    private static void write(){try{var state=new JsonObject();state.addProperty("session_id",SESSION);state.addProperty("server_pid",ProcessHandle.current().pid());state.addProperty("server_ready",started);state.addProperty("token",token);state.addProperty("phase",PHASES[Math.min(phase,PHASES.length-1)]);state.addProperty("server_tick",tick);state.addProperty("finished",finished);state.addProperty("minimum_network_passed",minimum);state.add("peers",instructions);V6NetworkFiles.write("state.json",state);result.addProperty("finished",finished);result.addProperty("passed",finished&&!failed&&phaseRows.asList().stream().noneMatch(e->e.getAsJsonObject().get("status").getAsString().equals("open")));result.addProperty("minimum_network_passed",minimum);result.addProperty("minimum_network_scope","Two physically independent TCP clients and>=200 moving controlled winch ticks each; later failed/open phases remain separately visible");result.addProperty("phase",PHASES[Math.min(phase,PHASES.length-1)]);result.addProperty("server_tick",tick);var peers=new JsonObject();for(int id=1;id<=2;id++)peers.add(Integer.toString(id),playerSnapshot(id));result.add("actual_peers",peers);V6NetworkFiles.write("v6-network-server.json",result);}catch(Exception failure){failure.printStackTrace();}}
+    private static void fail(Throwable error){error.printStackTrace();failed=true;result.addProperty("error",error.toString());finish(true);}
+    private static void finish(boolean failure){failed|=failure;finished=true;phase=19;token++;phaseBegan=tick;for(int id=1;id<=2;id++)instructions.add(Integer.toString(id),action("finish"));quiescence=new Quiescence();write();}
+    private static boolean terminalPeers(){for(int id=1;id<=2;id++){if(receipts[id])continue;try{var peer=V6NetworkFiles.read("peer-"+id+".json");if(peer.has("own_client_clean_disconnect")&&peer.get("own_client_clean_disconnect").getAsBoolean()&&peer.get("session_id").getAsString().equals(SESSION))continue;}catch(Exception absent){}return false;}return true;}
+    private static void require(boolean b,String text){if(!b)throw new IllegalStateException(text);}
+    /** Read-only counterpart of the client smoke quiescence inspector; normal lifecycle does all work. */
+    private static final class Quiescence {
+        int stable;JsonObject current=new JsonObject();
+        void tick(MinecraftServer server)throws Exception{int refs=0,pending=0,tasks=0,notReady=0;for(var level:server.getAllLevels()){for(int i=0;i<4;i++)if(!level.getChunkSource().pollTask())break;var map=level.getChunkSource().chunkMap;var updating=ChunkMap.class.getDeclaredField("updatingChunkMap");updating.setAccessible(true);var unloads=ChunkMap.class.getDeclaredField("pendingUnloads");unloads.setAccessible(true);var jobs=ChunkMap.class.getDeclaredField("pendingGenerationTasks");jobs.setAccessible(true);Set<ChunkHolder> holders=Collections.newSetFromMap(new IdentityHashMap<>());for(Object value:((Map<?,?>)updating.get(map)).values())holders.add((ChunkHolder)value);for(Object value:((Map<?,?>)unloads.get(map)).values())holders.add((ChunkHolder)value);tasks+=((List<?>)jobs.get(map)).size();for(var holder:holders){refs+=holder.getGenerationRefCount();if(!holder.getSaveSyncFuture().isDone())pending++;if(!holder.isReadyForSaving()||holder.getSaveSyncFuture().isCompletedExceptionally())notReady++;}}boolean quiet=refs==0&&pending==0&&tasks==0&&notReady==0;stable=quiet?stable+1:0;current.addProperty("generation_refs",refs);current.addProperty("pending_saves",pending);current.addProperty("pending_generation_tasks",tasks);current.addProperty("holders_not_ready",notReady);current.addProperty("stable_actual_server_ticks",stable);}
+        boolean ready(){return stable>=20;}JsonObject json(){return current.deepCopy();}
+    }
+    private V6DedicatedScenario(){}
+}

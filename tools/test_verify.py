@@ -1,21 +1,32 @@
 #!/usr/bin/env python3
 """Exercise failure accounting without starting Java or touching game profiles."""
 import contextlib
+import copy
 import io
 import json
 import os
+import hashlib
 from pathlib import Path
 import tempfile
+import struct
 import unittest
+import zlib
 from unittest.mock import patch
 
 import verify
 
+FIXTURE_CHECK = "tasks.named('check') { dependsOn tasks.named('runGameTestServer') }\n" \
+                "tasks.named('check') { dependsOn tasks.named('runRiftGameTestServer') }\n"
+BUILD_SUCCESS_LOG = "> Task :runGameTestServer\nAll 31 required tests passed :)\n" \
+                    "> Task :runRiftGameTestServer\nAll 49 required tests passed :)\n> Task :check\n> Task :build\nBUILD SUCCESSFUL\n"
+
 
 class VerificationResultTests(unittest.TestCase):
-    def exercise(self, task, log="", result=None, spawn_error=None, before=None, after=None, active=()):
+    def exercise(self, task, log="", result=None, spawn_error=None, before=None, after=None, active=(), build_text=FIXTURE_CHECK):
         with tempfile.TemporaryDirectory(prefix="interstice-verifier-test-") as directory:
             root = Path(directory)
+            if build_text is not None:
+                (root / "build.gradle").write_text(build_text, encoding="utf-8")
 
             class Process:
                 pid = 123
@@ -28,6 +39,8 @@ class VerificationResultTests(unittest.TestCase):
                 self.environment = kwargs["env"]
                 if spawn_error is not None:
                     raise spawn_error
+                if verify.GAME_TEST_TASK.fullmatch(task) and "> Task :" not in log:
+                    kwargs["stdout"].write("> Task :" + task + "\n")
                 kwargs["stdout"].write(log)
                 if result is not None:
                     evidence = next((root / ".verification").iterdir())
@@ -70,25 +83,25 @@ class VerificationResultTests(unittest.TestCase):
 
     def test_active_user_world_is_reported_without_false_unchanged_claim(self):
         key='build/playtest/saves/owned/level.dat'
-        code,_,summary=self.exercise('build',log='All 80 required tests passed :)\n',before={key:1},after={key:2},active=['build/playtest/saves/owned'])
+        code,_,summary=self.exercise('build',log=BUILD_SUCCESS_LOG,before={key:1},after={key:2},active=['build/playtest/saves/owned'])
         self.assertEqual(code,0)
         self.assertIsNone(summary['saves_unchanged'])
         self.assertTrue(summary['inactive_saves_unchanged'])
 
     def test_active_world_does_not_exempt_another_protected_save(self):
         key='build/playtest/saves/other/level.dat'
-        code,_,summary=self.exercise('build',log='All 80 required tests passed :)\n',before={key:1},after={key:2},active=['build/playtest/saves/owned'])
+        code,_,summary=self.exercise('build',log=BUILD_SUCCESS_LOG,before={key:1},after={key:2},active=['build/playtest/saves/owned'])
         self.assertEqual(code,1)
         self.assertFalse(summary['inactive_saves_unchanged'])
 
     def test_inactive_save_change_still_rejects_checks(self):
-        code,_,summary=self.exercise('build',log='All 80 required tests passed :)\n',before={'run/world/level.dat':1},after={'run/world/level.dat':2})
+        code,_,summary=self.exercise('build',log=BUILD_SUCCESS_LOG,before={'run/world/level.dat':1},after={'run/world/level.dat':2})
         self.assertEqual(code,1)
         self.assertFalse(summary['saves_unchanged'])
 
     def test_windows_uses_direct_java_wrapper(self):
         with patch.object(verify.sys, "platform", "win32"):
-            code, _, _ = self.exercise("build", log="All 80 required tests passed :)\n")
+            code, _, _ = self.exercise("build", log=BUILD_SUCCESS_LOG)
         self.assertEqual(code, 0)
         self.assertEqual(Path(self.command[0]).name, "java.exe")
         self.assertIn("org.gradle.wrapper.GradleWrapperMain", self.command)
@@ -149,7 +162,7 @@ class VerificationResultTests(unittest.TestCase):
 
     def test_unix_uses_shell_wrapper(self):
         with patch.object(verify.sys, "platform", "linux"):
-            code, _, _ = self.exercise("build", log="All 80 required tests passed :)\n")
+            code, _, _ = self.exercise("build", log=BUILD_SUCCESS_LOG)
         self.assertEqual(code, 0)
         self.assertEqual(Path(self.command[0]).name, "gradlew")
 
@@ -178,6 +191,11 @@ class VerificationResultTests(unittest.TestCase):
 
     def test_build_without_required_gametests_is_rejected(self):
         code, _, summary = self.exercise("build", log="BUILD SUCCESSFUL\n")
+        self.assertEqual(code, 1)
+        self.assertFalse(summary["passed"])
+
+    def test_missing_build_source_never_infers_completed_required_groups(self):
+        code, _, summary = self.exercise("build", log=BUILD_SUCCESS_LOG, build_text=None)
         self.assertEqual(code, 1)
         self.assertFalse(summary["passed"])
 
@@ -282,6 +300,7 @@ class EquipmentVerificationTests(unittest.TestCase):
     def exercise(self, task, log="", reports=None):
         with tempfile.TemporaryDirectory(prefix="interstice-equipment-verifier-") as directory:
             root = Path(directory)
+            (root / "build.gradle").write_text(FIXTURE_CHECK, encoding="utf-8")
 
             class Process:
                 pid = 456
@@ -289,12 +308,14 @@ class EquipmentVerificationTests(unittest.TestCase):
                     return 0
 
             def spawn(command, **kwargs):
+                if verify.GAME_TEST_TASK.fullmatch(task) and "> Task :" not in log:
+                    kwargs["stdout"].write("> Task :" + task + "\n")
                 kwargs["stdout"].write(log)
                 evidence = next((root / ".verification").iterdir())
                 profile = {"runWearBackpackSmoke": "wearBackpackSmoke", "runBackpackSmoke": "backpackSmoke",
                            "runRetortUiSmoke": "retortUiSmoke", "runVanillaTerrainSmoke": "vanillaTerrainSmoke",
                            "runNativeFieldLiftSmoke": "fieldLiftSmoke", "runGearSmoke": "gearSmoke",
-                           "runWinchSmoke": "winchSmoke"}.get(task, "retortUiSmoke")
+                           "runWinchSmoke": "winchSmoke", "runPaletteGallery": "paletteGallery", "runTensionRealmSmoke": "tensionRealmSmoke"}.get(task, "retortUiSmoke")
                 for name, value in (reports or {}).items():
                     path = evidence / "profiles" / profile / name
                     path.parent.mkdir(parents=True, exist_ok=True)
@@ -366,16 +387,15 @@ class EquipmentVerificationTests(unittest.TestCase):
                 self.assertEqual(record["accepted"],accepted)
 
     def test_new_gear_lift_and_tether_servers_require_positive_executed_groups(self):
-        cases = [("BUILD SUCCESSFUL\n", 0), ("All 0 required tests passed :)\n", 0),
-                 ("All -4 required tests passed :)\n", 0),
-                 ("All 0 required tests passed :)\nAll 0 required tests passed :)\n", 0),
-                 ("All 1 required tests passed :)\n", 1),
-                 ("All 3 required tests passed :)\nAll 9 required tests passed :)\n", 12)]
-        for task in ("runGearGameTestServer", "runLiftGameTestServer", "runTetherGameTestServer"):
-            for log, required_count in cases:
+        cases = [("BUILD SUCCESSFUL\n", 0, False), ("All 0 required tests passed :)\n", 0, False),
+                 ("All -4 required tests passed :)\n", 0, False),
+                 ("All 0 required tests passed :)\nAll 0 required tests passed :)\n", 0, False),
+                 ("All 1 required tests passed :)\n", 1, True),
+                 ("All 3 required tests passed :)\nAll 9 required tests passed :)\n", 12, False)]
+        for task in ("runGearGameTestServer", "runLiftGameTestServer", "runTetherGameTestServer", "runFaunaGameTestServer"):
+            for log, required_count, accepted in cases:
                 with self.subTest(task=task, log=log):
                     code, summary, record = self.exercise(task, log=log)
-                    accepted = required_count > 0
                     self.assertEqual(code, 0 if accepted else 1)
                     self.assertEqual(summary["passed"], accepted)
                     self.assertEqual(record["accepted"], accepted)
@@ -411,6 +431,230 @@ class EquipmentVerificationTests(unittest.TestCase):
 
     def test_winch_requires_its_actual_create_and_reload_reports(self):
         self.check_cold_pair("runWinchSmoke", "winch")
+
+
+class GameTestReceiptTests(unittest.TestCase):
+    def receipt(self, log, source=FIXTURE_CHECK, task="build"):
+        with tempfile.TemporaryDirectory(prefix="interstice-groups-") as directory:
+            root = Path(directory)
+            (root / "build.gradle").write_text(source, encoding="utf-8")
+            return verify.game_test_receipt(task, log, root)
+
+    def test_all_check_closures_define_the_required_task_set(self):
+        source = FIXTURE_CHECK + "// tasks.named('check') { dependsOn tasks.named('runIgnoredGameTestServer') }\n" \
+                 "/* tasks.named('check') { dependsOn tasks.named('runIgnoredTooGameTestServer') } */\n" \
+                 "tasks.named(\"check\") { dependsOn tasks.named(\"runFaunaGameTestServer\") }\n"
+        log = BUILD_SUCCESS_LOG + "> Task :runFaunaGameTestServer\nAll 3 required tests passed :)\n"
+        record, accepted = self.receipt(log, source)
+        self.assertTrue(accepted)
+        self.assertEqual(record["expected_game_test_tasks"], ["runGameTestServer", "runRiftGameTestServer", "runFaunaGameTestServer"])
+        self.assertEqual(record["required_tests_passed"], 83)
+        self.assertEqual(record["game_test_tasks"]["runFaunaGameTestServer"]["completion_counts"], [3])
+
+    def test_one_positive_line_cannot_replace_all_required_groups(self):
+        record, accepted = self.receipt("> Task :runGameTestServer\nAll 80 required tests passed :)\nBUILD SUCCESSFUL\n")
+        self.assertFalse(accepted)
+        self.assertEqual(record["game_test_tasks"]["runRiftGameTestServer"]["executions"], [])
+
+    def test_unexpected_positive_task_does_not_prove_required_tasks(self):
+        record, accepted = self.receipt("> Task :runFaunaGameTestServer\nAll 100 required tests passed :)\n")
+        self.assertFalse(accepted)
+        self.assertEqual(record["unexpected_game_test_tasks"], ["runFaunaGameTestServer"])
+
+    def test_build_rejects_skipped_cached_failed_and_no_source_tasks(self):
+        for status in ("SKIPPED", "UP-TO-DATE", "FROM-CACHE", "NO-SOURCE", "FAILED"):
+            with self.subTest(status=status):
+                record, accepted = self.receipt(BUILD_SUCCESS_LOG.replace(":runRiftGameTestServer\n", ":runRiftGameTestServer " + status + "\n"))
+                self.assertFalse(accepted)
+                self.assertTrue(record["game_test_errors"])
+
+    def test_duplicate_sections_or_completions_are_rejected(self):
+        logs = [BUILD_SUCCESS_LOG + "> Task :runRiftGameTestServer\nAll 49 required tests passed :)\n",
+                BUILD_SUCCESS_LOG.replace("All 49 required tests passed :)\n", "All 49 required tests passed :)\nAll 49 required tests passed :)\n")]
+        for log in logs:
+            with self.subTest(log=log):
+                self.assertFalse(self.receipt(log)[1])
+
+    def test_zero_negative_missing_and_failed_groups_are_rejected(self):
+        for replacement in ("All 0 required tests passed :)", "All -2 required tests passed :)",
+                            "BUILD SUCCESSFUL", "1 required tests failed\nAll 49 required tests passed :)"):
+            with self.subTest(replacement=replacement):
+                self.assertFalse(self.receipt(BUILD_SUCCESS_LOG.replace("All 49 required tests passed :)", replacement))[1])
+
+    def test_completion_outside_its_task_cannot_be_reassigned(self):
+        for log in ("All 80 required tests passed :)\n", BUILD_SUCCESS_LOG + "All 1 required tests passed :)\n"):
+            with self.subTest(log=log):
+                self.assertFalse(self.receipt(log)[1])
+
+    def test_single_server_also_requires_its_own_exact_task_section(self):
+        self.assertFalse(self.receipt("All 7 required tests passed :)\n", task="runFaunaGameTestServer")[1])
+        self.assertFalse(self.receipt("> Task :runGearGameTestServer\nAll 7 required tests passed :)\n", task="runFaunaGameTestServer")[1])
+        self.assertTrue(self.receipt("> Task :runFaunaGameTestServer\nAll 7 required tests passed :)\n", task="runFaunaGameTestServer")[1])
+
+    def test_initial_missing_properties_is_not_a_failed_required_test(self):
+        log = "> Task :runFaunaGameTestServer\n[main/ERROR] [minecraft/Settings]: Failed to load properties from file: server.properties\nAll 7 required tests passed :)\n"
+        self.assertTrue(self.receipt(log, task="runFaunaGameTestServer")[1])
+
+    def test_failed_gradle_build_cannot_pass_with_stale_positive_receipts(self):
+        self.assertFalse(self.receipt(BUILD_SUCCESS_LOG + "FAILURE: Build failed with an exception.\nBUILD FAILED\n")[1])
+
+
+def fixture_png(red, green, blue):
+    def chunk(tag, payload):
+        return struct.pack(">I", len(payload)) + tag + payload + struct.pack(">I", zlib.crc32(tag + payload) & 0xffffffff)
+    pixels = (b"\0" + bytes((red, green, blue)) * 1280) * 720
+    return b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", 1280, 720, 8, 2, 0, 0, 0)) \
+        + chunk(b"IDAT", zlib.compress(pixels)) + chunk(b"IEND", b"")
+
+
+class PaletteReceiptTests(unittest.TestCase):
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory(prefix="interstice-palette-receipt-")
+        self.addCleanup(self.directory.cleanup)
+        self.profile = Path(self.directory.name)
+        (self.profile / "screenshots").mkdir()
+        self.report = {"passed": True, "shutdown_pending": False, "clean_generation_before_mc_stop": True,
+                       "same_geometry_all_palettes": True, "actual_resource_reload_count": 3,
+                       "width": 1280, "height": 720, "scenes": [], "captures": [], "pack_reloads": []}
+        for index, identifier in enumerate(sorted(verify.PALETTE_SCENES)):
+            scene = {"id": identifier, "target_x": index, "target_y": 64, "target_z": 3,
+                     "camera_x": index + .5, "camera_y": 65, "camera_z": 4.5,
+                     "look_at_x": index + 2.5, "look_at_y": 65, "look_at_z": 4.5, "prepared": index < 3}
+            self.report["scenes"].append(scene)
+        for palette_index, palette in enumerate(("A", "B", "C")):
+            texture = fixture_png(30 + palette_index * 20, 50, 70)
+            texture_path = self.profile / "resourcepacks" / ("v6-palette-" + palette) / "assets/interstice/textures/block/riftstone.png"
+            texture_path.parent.mkdir(parents=True)
+            texture_path.write_bytes(texture)
+            self.report["pack_reloads"].append({"palette": palette, "pack_id": "file/v6-palette-" + palette,
+                                                 "active_riftstone_sha256": hashlib.sha256(texture).hexdigest(), "reload_completed": True})
+            for scene in self.report["scenes"]:
+                for nv in (False, True):
+                    content = fixture_png(30 + palette_index * 20, 50 + (20 if nv else 0), 70)
+                    filename = "v6-palette-" + palette + "-" + scene["id"] + ("-nv.png" if nv else "-dark.png")
+                    (self.profile / "screenshots" / filename).write_bytes(content)
+                    self.report["captures"].append({**scene, "palette": palette, "night_vision": nv, "file": filename,
+                                                     "png_sha256": hashlib.sha256(content).hexdigest(),
+                                                     "geometry_state_sha256": hashlib.sha256(scene["id"].encode()).hexdigest(),
+                                                     "atlas_phase_mod384": 192 if nv else 96, "stable_client_ticks": 80,
+                                                     "actual_yaw": 1.0, "actual_pitch": 2.0, "eye_y": 66.62})
+
+    def test_complete_native_palette_matrix_is_accepted(self):
+        record, accepted = verify.palette_gallery_receipt(self.report, self.profile)
+        self.assertTrue(accepted, record)
+        self.assertEqual(record["palette_screenshots_checked"], 48)
+
+    def test_positive_flag_cannot_replace_capture_matrix_or_true_booleans(self):
+        cases = [dict(self.report, passed="true"), dict(self.report, shutdown_pending=True),
+                 dict(self.report, captures=self.report["captures"][:-1]),
+                 dict(self.report, captures=[self.report["captures"][0]] * 48),
+                 dict(self.report, scenes=self.report["scenes"][:-1]), dict(self.report, pack_reloads=self.report["pack_reloads"][:-1])]
+        for result in cases:
+            with self.subTest(result_keys=result.keys()):
+                self.assertFalse(verify.palette_gallery_receipt(result, self.profile)[1])
+
+    def test_camera_geometry_phase_and_resource_trace_tampering_is_rejected(self):
+        changes = [("camera_x", 900), ("actual_yaw", 90), ("geometry_state_sha256", "0" * 64),
+                   ("atlas_phase_mod384", 0), ("night_vision", 1), ("stable_client_ticks", 1)]
+        for key, value in changes:
+            report = copy.deepcopy(self.report)
+            report["captures"][16][key] = value
+            with self.subTest(key=key):
+                self.assertFalse(verify.palette_gallery_receipt(report, self.profile)[1])
+        report = copy.deepcopy(self.report)
+        report["pack_reloads"][1]["active_riftstone_sha256"] = report["pack_reloads"][0]["active_riftstone_sha256"]
+        self.assertFalse(verify.palette_gallery_receipt(report, self.profile)[1])
+
+    def test_missing_or_changed_png_bytes_are_rejected(self):
+        shot = self.profile / "screenshots" / self.report["captures"][0]["file"]
+        shot.write_bytes(shot.read_bytes() + b"changed")
+        self.assertFalse(verify.palette_gallery_receipt(self.report, self.profile)[1])
+        shot.unlink()
+        self.assertFalse(verify.palette_gallery_receipt(self.report, self.profile)[1])
+
+    def test_main_task_gate_rejects_merely_positive_palette_report(self):
+        code, summary, record = EquipmentVerificationTests.exercise(self, "runPaletteGallery", reports={"palette-gallery-validation.json": {"passed": True}})
+        self.assertEqual(code, 1)
+        self.assertFalse(summary["passed"])
+        self.assertTrue(record["palette_errors"])
+
+
+class TensionMatrixReceiptTests(unittest.TestCase):
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory(prefix="interstice-full-matrix-receipt-")
+        self.addCleanup(self.directory.cleanup)
+        self.profile = Path(self.directory.name)
+        (self.profile / "screenshots").mkdir()
+        self.report = {"passed": True, "finished": True, "six_distinct_real_worlds_created": True,
+                       "fixed_origin_full_hashes_distinguish_six_seeds": True, "worlds": []}
+        png = fixture_png(40, 80, 100)
+        png_hash = hashlib.sha256(png).hexdigest()
+        for seed in (0, 1, -1, 20261006, 76198123, 4294967297):
+            name = "v6-full-seed-" + str(seed)
+            save = self.profile / "saves" / name / "level.dat"
+            save.parent.mkdir(parents=True)
+            save.write_bytes(("unit fixture " + str(seed)).encode())
+            def chunk(x, z):
+                return {"chunk_x": x, "chunk_z": z, "canonical_cells_compared_after_surface": 65536,
+                        "actual_FULL_state_and_biome_sha256": hashlib.sha256((str(seed) + ":" + str(x) + ":" + str(z)).encode()).hexdigest(),
+                        "static_geology_fluid_sha256": hashlib.sha256((name + " static").encode()).hexdigest()}
+            cameras = [{"id": identifier} for identifier in ("ash-eye", "garden-eye", "vault-eye", "crimson-eye")]
+            natural = {"actual_server_seed": seed, "terrain_revision": 6, "dimension": "interstice:islands_v6", "missing_in_declared_windows": [],
+                       "fixed_origin_full_2x2": [chunk(x, z) for x in (-1, 0) for z in (-1, 0)],
+                       "fixed_distant_full_neighbor_pairs": [chunk(x, z) for x, z in ((47, -32), (48, -32), (-48, 31), (-47, 31))],
+                       "natural_full_neighbor_pairs": [chunk(x, 7) for x in range(8)],
+                       "four_natural_plots": [{"biome": biome} for biome in ("ash_islands", "pale_gardens", "stone_vaults", "crimson_thickets")],
+                       "natural_cameras": cameras}
+            captures = []
+            for camera in cameras:
+                for nv in (False, True):
+                    filename = name + "-" + camera["id"] + ("-nv.png" if nv else "-dark.png")
+                    (self.profile / "screenshots" / filename).write_bytes(png)
+                    captures.append({**camera, "file": filename, "png_sha256": png_hash, "night_vision": nv, "seed": seed, "natural_blocks_edited": 0})
+            self.report["worlds"].append({"requested_seed": seed, "save_name": name, "passed": True, "criteria_met": True,
+                                           "clean_generation_before_world_disconnect": True, "old_integrated_server_stopped": True,
+                                           "natural_full": natural, "captures": captures, "native_capture_count": len(captures)})
+
+    def test_complete_actual_full_seed_receipt_is_accepted(self):
+        record, accepted = verify.tension_matrix_receipt(self.report, self.profile)
+        self.assertTrue(accepted, record)
+
+    def test_partial_duplicate_or_synthetic_seed_scope_is_rejected(self):
+        partial = copy.deepcopy(self.report)
+        partial["worlds"].pop()
+        duplicate = copy.deepcopy(self.report)
+        duplicate["worlds"][5] = duplicate["worlds"][0]
+        synthetic = copy.deepcopy(self.report)
+        synthetic["worlds"][0]["natural_full"]["actual_server_seed"] = 100
+        incomplete_full = copy.deepcopy(self.report)
+        incomplete_full["worlds"][0]["natural_full"]["fixed_origin_full_2x2"][0]["canonical_cells_compared_after_surface"] = 100
+        for report in (partial, duplicate, synthetic, incomplete_full):
+            self.assertFalse(verify.tension_matrix_receipt(report, self.profile)[1])
+
+    def test_failed_world_missing_biome_or_dirty_stop_is_rejected(self):
+        for key, value in (("passed", False), ("passed", 1), ("criteria_met", False),
+                           ("old_integrated_server_stopped", False), ("clean_generation_before_world_disconnect", False)):
+            report = copy.deepcopy(self.report)
+            report["worlds"][0][key] = value
+            with self.subTest(key=key, value=value):
+                self.assertFalse(verify.tension_matrix_receipt(report, self.profile)[1])
+        report = copy.deepcopy(self.report)
+        report["worlds"][0]["natural_full"]["four_natural_plots"][0]["biome"] = "pale_gardens"
+        self.assertFalse(verify.tension_matrix_receipt(report, self.profile)[1])
+
+    def test_native_world_and_screenshot_files_are_required(self):
+        save = self.profile / "saves" / self.report["worlds"][0]["save_name"] / "level.dat"
+        save.unlink()
+        self.assertFalse(verify.tension_matrix_receipt(self.report, self.profile)[1])
+        save.write_bytes(b"unit fixture")
+        (self.profile / "screenshots" / self.report["worlds"][0]["captures"][0]["file"]).unlink()
+        self.assertFalse(verify.tension_matrix_receipt(self.report, self.profile)[1])
+
+    def test_main_task_gate_rejects_positive_flag_without_six_full_worlds(self):
+        code, summary, record = EquipmentVerificationTests.exercise(self, "runTensionRealmSmoke", reports={"v6-full-matrix-validation.json": {"passed": True}})
+        self.assertEqual(code, 1)
+        self.assertFalse(summary["passed"])
+        self.assertTrue(record["tension_matrix_errors"])
 
 
 if __name__ == "__main__":

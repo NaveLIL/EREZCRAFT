@@ -59,9 +59,9 @@ public final class BuoyancyController {
             }
 
             if (eligible) {
-                // Vanilla base gravity is 0.08. We offset base gravity and add upward lift.
-                // At full intensity (1.0), effective gravity = -0.028 (gentle ~0.35 blocks/tick terminal float).
-                double modAmount = (-0.08 - 0.028 * intensity)*pro.erez.interstice.gear.RealmGear.buoyancyFactor(living);
+                // The entire force approaches zero with intensity, so phase boundaries retain normal gravity.
+                // Preserve the accepted full-intensity effective gravity of -0.028 at the vanilla base of 0.08.
+                double modAmount = -0.108 * intensity * pro.erez.interstice.gear.RealmGear.buoyancyFactor(living);
                 AttributeModifier modifier = new AttributeModifier(BUOYANCY_ID, modAmount, AttributeModifier.Operation.ADD_VALUE);
                 gravityAttr.addOrUpdateTransientModifier(modifier);
 

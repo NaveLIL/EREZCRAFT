@@ -1,0 +1,33 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": { "item": "interstice:pressure_coupler" },
+      "count": 1
+    },
+    {
+      "ingredient": { "item": "interstice:riftsilver_ingot" },
+      "count": 4
+    },
+    {
+      "ingredient": { "item": "interstice:pure_vitriolite_lining" },
+      "count": 4
+    },
+    {
+      "ingredient": { "item": "interstice:phosphorite_paste" },
+      "count": 4
+    },
+    {
+      "ingredient": { "item": "interstice:umbral_sorbent" },
+      "count": 4
+    },
+    {
+      "ingredient": { "item": "interstice:chemotrophic_fabric" },
+      "count": 4
+    }
+  ],
+  "outputs": [
+    { "id": "interstice:pressure_coupler", "count": 2 }
+  ],
+  "ticks": 3200
+}

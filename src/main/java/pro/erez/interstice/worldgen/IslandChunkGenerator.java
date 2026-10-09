@@ -63,7 +63,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
             NoiseGeneratorSettings.CODEC.fieldOf("settings").forGetter(Definition::settings),
             GeometryProfile.CODEC.optionalFieldOf("geometry")
                     .xmap(value -> value.orElse(GeometryProfile.LEGACY),java.util.Optional::of).forGetter(Definition::geometry),
-            com.mojang.serialization.Codec.intRange(1,5).optionalFieldOf("terrain_revision",1).forGetter(Definition::revision),
+            com.mojang.serialization.Codec.intRange(1,6).optionalFieldOf("terrain_revision",1).forGetter(Definition::revision),
             RegistryOps.retrieveGetter(Registries.BIOME)
     ).apply(instance,Definition::new)).flatXmap(Definition::decode,generator -> DataResult.success(
             new Definition(generator.getBiomeSource(),generator.generatorSettings(),generator.geometry,generator.terrainRevision,null)));
@@ -80,11 +80,16 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     public IslandChunkGenerator(BiomeSource biome,Holder<NoiseGeneratorSettings> settings,GeometryProfile geometry,int revision) {
         super(biome,settings);
         this.geometry=java.util.Objects.requireNonNull(geometry);
-        if(revision<1||revision>5||revision>=2&&!geometry.equals(GeometryProfile.TALL))throw new IllegalArgumentException("Unsupported terrain revision/profile");
+        if(revision<1||revision>6||revision>=2&&!geometry.equals(GeometryProfile.TALL))throw new IllegalArgumentException("Unsupported terrain revision/profile");
         this.terrainRevision=revision;
         var noise=settings.value().noiseSettings();
         if(noise.minY()!=geometry.minY() || noise.height()!=geometry.height())
             throw new IllegalArgumentException("Island noise settings and geometry bounds must match");
+        if(revision==6){
+            var root=settings.value().noiseRouter().finalDensity();
+            while(root instanceof net.minecraft.world.level.levelgen.DensityFunctions.MarkerOrMarked||root instanceof net.minecraft.world.level.levelgen.DensityFunctions.HolderHolder){if(root instanceof net.minecraft.world.level.levelgen.DensityFunctions.MarkerOrMarked marker)root=marker.wrapped();else root=((net.minecraft.world.level.levelgen.DensityFunctions.HolderHolder)root).function().value();}
+            if(!(root instanceof pro.erez.interstice.worldgen.terrain.TensionRealmDensity tension)||!tension.samplingSettings().equals(noise)||!tension.geometry().equals(geometry))throw new IllegalArgumentException("V6 requires its matching native density, geometry and interpolation cells");
+        }
     }
     public GeometryProfile geometry() {return geometry;}
     public int terrainRevision(){return terrainRevision;}
@@ -112,6 +117,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         return CompletableFuture.supplyAsync(()->{chunk.fillBiomesFromNoise(getBiomeSource(),random.sampler());return chunk;},net.minecraft.Util.backgroundExecutor());
     }
     public TerrainColumn terrainColumn(RandomState random,int x,int z){
+        if(terrainRevision==6)return pro.erez.interstice.worldgen.terrain.TensionTerrainV6.at(x,z,random,terrainSeed());
         if(terrainRevision==5)return pro.erez.interstice.worldgen.terrain.VanillaTerrainV5.column(random,geometry,x,z);
         if(terrainRevision>=4)return hydrology(random).column(x,z);
         var point=new DensityFunction.SinglePointContext(x,0,z);
@@ -197,7 +203,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     }
     @Override public CompletableFuture<ChunkAccess> fillFromNoise(Blender blender,RandomState random,StructureManager structures,ChunkAccess chunk) {
         geometry.checkHeight(chunk);
-        if(terrainRevision==5)return super.fillFromNoise(blender,random,structures,chunk);
+        if(terrainRevision>=5)return super.fillFromNoise(blender,random,structures,chunk);
         if(isLivingRealm())return CompletableFuture.supplyAsync(()->{
             var sections=new java.util.ArrayList<net.minecraft.world.level.chunk.LevelChunkSection>();
             for(var section:chunk.getSections()){section.acquire();sections.add(section);}
@@ -246,12 +252,12 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         if(terrainRevision<5&&FeatureDistribution.stoneVaultAllowed(terrainRevision,region.getSeed(),chunk.getPos().x,chunk.getPos().z,garden))
             StoneVaults.generate(geometry,chunk,region.getSeed(),minimum);
         if(isLivingRealm())CaveFeatures.decorate(geometry,chunk,region.getSeed(),region,terrainRevision);
-        if(terrainRevision==5){
+        if(terrainRevision>=5){
             RealmStructuresV5.generate(geometry,chunk,region.getSeed(),region,minimum);
             var columns=new java.util.HashMap<Long,NoiseColumn>();
             var reservations=RealmStructuresV5.forestReservation(region.getSeed());
             ForestV5.generate(geometry,chunk,region.getSeed(),region,new ForestV5.GroundProbe(){
-                private NoiseColumn column(int x,int z){long key=((long)x<<32)^(z&0xffffffffL);return columns.computeIfAbsent(key,k->rawV5Column(random,x,z));}
+                private NoiseColumn column(int x,int z){long key=((long)x<<32)^(z&0xffffffffL);return columns.computeIfAbsent(key,k->rawNativeColumn(random,x,z));}
                 public int surface(int x,int z){var c=column(x,z);for(int y=geometry.maxLand();y>geometry.lowerSeaTop();y--)if(!c.getBlock(y).isAir())return y;return geometry.lowerSeaTop();}
                 public boolean solid(int x,int y,int z){return y<=geometry.lowerSeaTop()||!column(x,z).getBlock(y).isAir();}
                 public boolean reserved(int x,int y,int z){return reservations.test(x,z);}
@@ -262,7 +268,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
             GardenTrees.generate(geometry,chunk,region.getSeed(),region);
         }
         PaleGardens.undergrowth(geometry,chunk,region.getSeed(),minimum);
-        if(terrainRevision==5)ForestFlora.decorate(geometry,chunk,region.getSeed(),region,terrainRevision);
+        if(terrainRevision>=5)ForestFlora.decorate(geometry,chunk,region.getSeed(),region,5);
         if(FeatureDistribution.tideSproutsAllowed(terrainRevision,region.getSeed(),chunk.getPos().x,chunk.getPos().z))
             generateTideSprouts(geometry,chunk,region.getSeed(),minimum);
         NativeCropPatches.generate(geometry,chunk,region.getSeed(),terrainRevision);
@@ -380,7 +386,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     }
     @Override public NoiseColumn getBaseColumn(int x,int z,LevelHeightAccessor height,RandomState random) {
         geometry.checkHeight(height);
-        if(terrainRevision==5){var base=rawV5Column(random,x,z);var array=new BlockState[geometry.height()];var uncarved=terrainColumn(random,x,z);double upper=SeaSurface.cellMinimum(geometry,x,z,true);for(int y=geometry.minY();y<geometry.maxYExclusive();y++)array[y-geometry.minY()]=terrainMaterialAt(y,base.getBlock(y),upper,uncarved);return new NoiseColumn(geometry.minY(),array);}
+        if(terrainRevision>=5){var base=rawNativeColumn(random,x,z);var array=new BlockState[geometry.height()];var uncarved=terrainColumn(random,x,z);double upper=SeaSurface.cellMinimum(geometry,x,z,true);for(int y=geometry.minY();y<geometry.maxYExclusive();y++)array[y-geometry.minY()]=terrainMaterialAt(y,base.getBlock(y),upper,uncarved);return new NoiseColumn(geometry.minY(),array);}
         if(isLivingRealm()){
             var column=rawLivingColumn(random,x,z);double upper=SeaSurface.cellMinimum(geometry,x,z,true);
             var uncarved=terrainColumn(random,x,z);
@@ -394,6 +400,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         return new NoiseColumn(geometry.minY(),column);
     }
     private NoiseColumn rawV5Column(RandomState random,int x,int z){return pro.erez.interstice.worldgen.terrain.NativeColumnSampler.of(random).column(x,z);}
+    private NoiseColumn rawNativeColumn(RandomState random,int x,int z){return terrainRevision==6?pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random,generatorSettings().value().noiseSettings()).column(x,z):rawV5Column(random,x,z);}
     @Override public int getBaseHeight(int x,int z,Heightmap.Types type,LevelHeightAccessor height,RandomState random) {
         NoiseColumn column=getBaseColumn(x,z,height,random);
         for(int y=geometry.roof();y>=geometry.minY();y--) if(type.isOpaque().test(column.getBlock(y))) return y+1;

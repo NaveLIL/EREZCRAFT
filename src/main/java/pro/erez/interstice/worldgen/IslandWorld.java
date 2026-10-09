@@ -21,15 +21,16 @@ public final class IslandWorld {
     public static final ResourceKey<Level> PREVIOUS_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v3"));
     public static final ResourceKey<Level> LIVING_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v4"));
     public static final ResourceKey<Level> VANILLA_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v5"));
+    public static final ResourceKey<Level> TENSION_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v6"));
     public static final ResourceKey<Level> CURRENT_WORLD=VANILLA_WORLD;
     private IslandWorld() {}
     public static boolean isIsland(ResourceKey<Level> dimension) {
-        return dimension.equals(WORLD) || dimension.equals(TALL_WORLD)||dimension.equals(DRAFT_WORLD)||dimension.equals(PREVIOUS_WORLD)||dimension.equals(LIVING_WORLD)||dimension.equals(VANILLA_WORLD);
+        return dimension.equals(WORLD) || dimension.equals(TALL_WORLD)||dimension.equals(DRAFT_WORLD)||dimension.equals(PREVIOUS_WORLD)||dimension.equals(LIVING_WORLD)||dimension.equals(VANILLA_WORLD)||dimension.equals(TENSION_WORLD);
     }
     public static BlockPos findLanding(ServerLevel world) {
         if(!(world.getChunkSource().getGenerator() instanceof IslandChunkGenerator generator)) throw new IllegalStateException("Island generator unavailable");
         var random=world.getChunkSource().randomState();
-        if(generator.terrainRevision()==5)return findVanillaLanding(world,generator,random);
+        if(generator.terrainRevision()>=5)return findVanillaLanding(world,generator,random);
         if(generator.isLivingRealm())return findLivingLanding(world,generator,random);
         // Inspect density columns first; generate only the selected landing chunk.
         for(int radius=0;radius<=24;radius++) for(int dx=-radius;dx<=radius;dx++) for(int dz=-radius;dz<=radius;dz++) {
@@ -163,6 +164,8 @@ public final class IslandWorld {
                         .executes(context->enter(context.getSource(),CURRENT_WORLD))
                         .then(Commands.literal("living").executes(context->enter(context.getSource(),CURRENT_WORLD)))
                         .then(Commands.literal("vanilla").executes(context->enter(context.getSource(),CURRENT_WORLD)))
+                        .then(Commands.literal("v6").executes(context->enter(context.getSource(),TENSION_WORLD)))
+                        .then(Commands.literal("v5").executes(context->enter(context.getSource(),VANILLA_WORLD)))
                         .then(Commands.literal("v4").executes(context->enter(context.getSource(),LIVING_WORLD)))
                         .then(Commands.literal("draft").executes(context->enter(context.getSource(),DRAFT_WORLD)))
                         .then(Commands.literal("previous").executes(context->enter(context.getSource(),PREVIOUS_WORLD)))

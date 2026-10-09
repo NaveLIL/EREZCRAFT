@@ -26,7 +26,7 @@ import pro.erez.interstice.Interstice;
 
 /** Anchored world-owned transport. No client flight permission or mandatory slot mod. */
 public final class RealmLift {
-    public static final int MAX_TRAVEL = 48, CARGO_SLOTS = 9, MAX_FUEL = 9600;
+    public static final int MAX_TRAVEL = 48, CARGO_SLOTS = 27, MAX_FUEL = 9600;
     public static final double SPEED = .06;
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, Interstice.ID);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, Interstice.ID);
@@ -42,7 +42,7 @@ public final class RealmLift {
     public static final DeferredHolder<EntityType<?>, EntityType<FieldLiftEntity>> LIFT = ENTITIES.register("field_lift", () ->
             EntityType.Builder.<FieldLiftEntity>of(FieldLiftEntity::new, MobCategory.MISC).sized(1.5F, .35F).clientTrackingRange(8).updateInterval(1).build("interstice:field_lift"));
     private RealmLift() {}
-    public static void register(IEventBus bus) { BLOCKS.register(bus); ITEMS.register(bus); BLOCK_ENTITIES.register(bus); ENTITIES.register(bus); }
+    public static void register(IEventBus bus) { BLOCKS.register(bus); ITEMS.register(bus); BLOCK_ENTITIES.register(bus); ENTITIES.register(bus); FieldLiftMenu.register(bus); }
     public static void displayItems(CreativeModeTab.Output output) { output.accept(ANCHOR_ITEM.get()); output.accept(CONTROLLER.get()); }
     public static final class LiftControllerItem extends Item {
         public LiftControllerItem() { super(new Item.Properties().stacksTo(1)); }

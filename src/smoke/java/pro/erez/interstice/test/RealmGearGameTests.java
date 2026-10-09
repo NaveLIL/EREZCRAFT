@@ -85,7 +85,9 @@ public final class RealmGearGameTests {
                 tag.putInt("interstice_ballast_active_ticks", 19); tag.remove("interstice_ballast_wear_tick");
                 main.set(DataComponents.CUSTOM_DATA, CustomData.of(tag)); main.setDamageValue(RealmGear.BELT_MAX_DAMAGE - 1);
                 BuoyancyController.applyEntityBuoyancy(player, 1); RealmGear.tick(player, surge);
-                h.assertTrue(main.isEmpty() && !off.isEmpty(), "The final wear unit must break only the selected belt");
+                h.assertTrue(main.getCount() == 1 && main.getDamageValue() == RealmGear.BELT_MAX_DAMAGE
+                        && off.getCount() == 1 && off.getDamageValue() == 0,
+                        "The final wear unit must retain the exhausted selected core without consuming or wearing the other hand");
                 player.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
                 h.assertTrue(RealmGear.buoyancyFactor(player) == 1, "An exhausted belt cannot leave permanent counterweight behind");
             } finally { TestPlayers.remove(player); }

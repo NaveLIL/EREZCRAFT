@@ -1,0 +1,614 @@
+{
+  "passed": true,
+  "variant": "A",
+  "baseline_commit": "d01c9f2d627ab2d00127613ded5e85d5e9f5936b",
+  "native_report_sha256": "9cf6b1ba67fc98e91d93f5674b4125826d598e5f5b81c8c59a5103dae26ccae6",
+  "native_scenes": 8,
+  "native_captures": 48,
+  "shared_assets_change_old_world_appearance": true,
+  "pattern_alpha_dimensions_classes_preserved": true,
+  "oceans_and_other_excluded_resources_unchanged": true,
+  "changed_png_count": 99,
+  "outputs": [
+    {
+      "path": "block/abyssal_turf_side.png",
+      "baseline_sha256": "a97996c086328dcfdf47fe2a779bb53d76ad30413ba917df5a70d3cb9e10a8e6",
+      "output_sha256": "b995f1ba66a359504a7addb5ceb1c31f81606abdc01fff76fc558fed0297d751",
+      "classes": 75
+    },
+    {
+      "path": "block/abyssal_turf_top.png",
+      "baseline_sha256": "f25771375a9e285f500d544e3225877fdbe4f725cbd32da93b7c2b219abcec75",
+      "output_sha256": "177f28f52eb8917383d55803a9e3293d5017868efea0c1c73913e5f2998b5da3",
+      "classes": 64
+    },
+    {
+      "path": "block/aerolite.png",
+      "baseline_sha256": "409592c255d8b246979e4f28fa5ba44242ceedb0acceed43f7fae9537927e6cf",
+      "output_sha256": "ea4e05e0fdca0863b9d00482eec8577164ae45875011209ed5eafb0656093ef0",
+      "classes": 4
+    },
+    {
+      "path": "block/agriculture/ash_flour.png",
+      "baseline_sha256": "d00c020bcefe40ade21bc0b5ac4ef11951c02e405375a600a0575b698932330a",
+      "output_sha256": "a471d0b13bdaf3f26e6c942a19207954bd118e7274b61d4e6815142d4871b71c",
+      "classes": 7
+    },
+    {
+      "path": "block/agriculture/ash_grain.png",
+      "baseline_sha256": "d9316103541e726ef369fa59a424d8ca2c07b81454154e4f1497f8c14c00cec0",
+      "output_sha256": "9eed6370c13607dab813c10e6fa592671878b6a6022a0cdba37239ab268dab45",
+      "classes": 9
+    },
+    {
+      "path": "block/agriculture/crimson_root.png",
+      "baseline_sha256": "86ad121ed3de0ad9a33f8120cda188066a6f98930d2eb07510be39e51e8c83e6",
+      "output_sha256": "bcde54a708b18719bdf0f59643334b6f50b81d804234657e7dc5b29cbc07726e",
+      "classes": 11
+    },
+    {
+      "path": "block/agriculture/farmland_dry.png",
+      "baseline_sha256": "dfffed4e987a5e63cb31490b156ec3079dffa393822ed0e66faca77db892c0c9",
+      "output_sha256": "217347f79461357f97f09d76df11018f2ed6de43d03403b8989c1ebbbff6ddac",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/farmland_wet.png",
+      "baseline_sha256": "2a88cb62e10762c1597f1b973142ef2c8277eaaeb2f46eb08a2a2610fd7a9162",
+      "output_sha256": "423f81adead072a3b71c96638a9e7854d1e70450681055d169425fbf18549ab7",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/grain_stage_0.png",
+      "baseline_sha256": "39c17aea47e8523e3ee2f3fc67cfff813a88ff223caee4d6913a3fad01a19eb9",
+      "output_sha256": "a33af76772f90eda7e63d496a36384d5c2f320d915043de1ae5180d5976cf9df",
+      "classes": 3
+    },
+    {
+      "path": "block/agriculture/grain_stage_1.png",
+      "baseline_sha256": "3485140207d7c941b560be39f60c18e662d109a3a7a999a67e3444ec4e8fda84",
+      "output_sha256": "23c9e049a42fc0c9830fcd6d26adc6ab46b381c1e2dace130e269279e235e880",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/grain_stage_2.png",
+      "baseline_sha256": "6dca117fd38b863e0e20cc264e9517214c417f530805990d516bce2ec7222d21",
+      "output_sha256": "0f998a215e434679f741f0e51d2878ed410c4176cd924142fe5a256268d05b2f",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/grain_stage_3.png",
+      "baseline_sha256": "6e5985943a8c57b9e60c238f8266cec7825badfcbca5e7adfbdc321ec99faa58",
+      "output_sha256": "2a05adf33f3a1a5431097285ebd3bd82cfb7077f0afb606f5f0df075db8b1f9f",
+      "classes": 6
+    },
+    {
+      "path": "block/agriculture/grain_stage_4.png",
+      "baseline_sha256": "b0cca4073875f2874748d22a339a061adc0293eb5da1f94b7d9a99cc5a5fca59",
+      "output_sha256": "3ef6ce41ec36a7c5c82157e262a36a06a6870e4d591b49a4ac1395f73be8497a",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/mineral_fertilizer.png",
+      "baseline_sha256": "e124f3089aa725b5004970d521e8e16cfe3b989caa1ebd5cfbae611294ba8dd0",
+      "output_sha256": "d383af617a38a0b0d97800b8d8c85593cfa5e00165ee181751c5e65c08e6a6ce",
+      "classes": 7
+    },
+    {
+      "path": "block/agriculture/phosphorite_paste.png",
+      "baseline_sha256": "72d857d565db2ee22a01b224a33d3eecd4b2bffdf21560e19a13d7c2b148824b",
+      "output_sha256": "7061c87e78d0050f9b395a92d343abe014ebb14ac70dc4776c2c597fba56f9cf",
+      "classes": 13
+    },
+    {
+      "path": "block/agriculture/plant_fiber.png",
+      "baseline_sha256": "7a7b994dd78ddab00103ec0576c2368e59933e7bf3ad6b5694f2745083cd03f3",
+      "output_sha256": "9dd51270eea7aa83223f66f32b6e2aaa029f7521e5fd70743ebab41eab0f43bc",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/pure_vitriolite_lining.png",
+      "baseline_sha256": "46780a67454a62d96a430563038d93810f0c9cb78660a5b54460ac5265afb69c",
+      "output_sha256": "00790892d314be0c5da71e9f797fa6c315100ee6a90360649f88ec9f960a2eee",
+      "classes": 15
+    },
+    {
+      "path": "block/agriculture/purified_bread.png",
+      "baseline_sha256": "54856613a286f5c50aa3401db9c8fbc7c9ae30a5f6aeb9a36e802c93061f5056",
+      "output_sha256": "31dbe352741bbda8a89918c5797aadf7f06138ac989f29cfdf36f50a8962f9f3",
+      "classes": 7
+    },
+    {
+      "path": "block/agriculture/purified_root.png",
+      "baseline_sha256": "125d61413cb485c22584bed267f1aa991fb73726eda5cd9cf76e8640c68921f9",
+      "output_sha256": "a39235e99719154150207ab87220a512ad224362a5fcc3a7d5b0f21e28ad7b59",
+      "classes": 11
+    },
+    {
+      "path": "block/agriculture/riftsilver_mesh.png",
+      "baseline_sha256": "8146db252fff170151df2b115dad434d3c46122e3384c4bcb79e5d53415835d3",
+      "output_sha256": "e63c789d1e994528e52c4d49c2d40520edbb0621cc9c348893e4a762da281c6c",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/riftsilver_wire.png",
+      "baseline_sha256": "76f5562be6f7fba550cf63861add09d2a8071ca3c6402e441cb9882a855a23b4",
+      "output_sha256": "74f5d3bd77cf869c7467b79598606c5d6b80dfad781607528b02ec7e7e7902f9",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/root_stage_0.png",
+      "baseline_sha256": "ea2fc78a9a10fccee5c7094281aa101063f5d2c080acac43daa3707de93b6595",
+      "output_sha256": "8b04945c794f8596f6629246330cd5e272df1112f21efa872e327a8a8cdfdd00",
+      "classes": 3
+    },
+    {
+      "path": "block/agriculture/root_stage_1.png",
+      "baseline_sha256": "bc7b0f44963ebf86b0ea66766b579ffe0cfa7f0a429876eeed02bc7a94a76370",
+      "output_sha256": "6e37922e291aae558547558f44ce0d454e370d91bbe75d95ac7b14325de59c93",
+      "classes": 3
+    },
+    {
+      "path": "block/agriculture/root_stage_2.png",
+      "baseline_sha256": "adcfe0fd1fd554e32cdedaa64db8ee3e79a03ca955f3dcc3812370d753f64b54",
+      "output_sha256": "a1f443315c57e5d25cea7fea4af26717c497fd3c7688201a51ccc5ffffac9185",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/root_stage_3.png",
+      "baseline_sha256": "0a41b67fffef7012e13a9cd592c7d8a3aa98d5d549db8310a078e47df43f8815",
+      "output_sha256": "f184a6216f437f7a872506cf58fbdf5df0bfada50ce157b84908d14bd1b97f51",
+      "classes": 5
+    },
+    {
+      "path": "block/agriculture/umbral_sorbent.png",
+      "baseline_sha256": "65e16b396608139b27facf2adcec219d2a3442bc01c11bedf5fa3cbeca2c3332",
+      "output_sha256": "ae950cf797af566e4ae107180b32d93c2f20ce879e38119a4533a513ec3283d7",
+      "classes": 7
+    },
+    {
+      "path": "block/agriculture/vitriolite_lining.png",
+      "baseline_sha256": "d8704a5602484460c5d0e2dfad771ebf4891947af5b9972dfbdddb1879e1af71",
+      "output_sha256": "6bd552c9491394d8913ae3db8a70820d3ebe78978fdfaa7ff18535ae917a44aa",
+      "classes": 15
+    },
+    {
+      "path": "block/cave/ash_spire.png",
+      "baseline_sha256": "d9c5c7dc854ae2a3c0d82b3bd8943fbe467fd60bf1b2306cddff3a3e9693cdc7",
+      "output_sha256": "6364d49e4aa5f0b29e5bf5263a854fc65a3a3d122b645d0d5b2b57d03eeeac94",
+      "classes": 5
+    },
+    {
+      "path": "block/cave/clingweed.png",
+      "baseline_sha256": "3ba15c91b689aa0e05e05c574a82ae49d76e41218435cb8b6cb1ab7d21adddf7",
+      "output_sha256": "76bf7841eb2ca75ff715b93f73c5e9971b1380970ef3dedfce2cc3a020a72ff1",
+      "classes": 191
+    },
+    {
+      "path": "block/cave/garden_spire.png",
+      "baseline_sha256": "6303c1142d246a521d356dc4beef323ed05108e840a2228835ab8f9ece35e3be",
+      "output_sha256": "7eeef7e4fbdd66ed245dffefb69ea5dfac552675ce760dee79d758b1210fd1c3",
+      "classes": 5
+    },
+    {
+      "path": "block/cave/glow_bloom.png",
+      "baseline_sha256": "b3efdc642a2daacfe6f9dc57fafbca452747506a4d708e1eaec85a41ef76cf14",
+      "output_sha256": "e8c532e1aa31a68edfc7f4bc66cef169d14106105ac55ab38da843ef8eb12a63",
+      "classes": 9
+    },
+    {
+      "path": "block/cave/sting_frond.png",
+      "baseline_sha256": "71ceb30381f7876ecc870b92ee01687a5a9592a188e5c044ddc250d7fa2a58a5",
+      "output_sha256": "04f132c5178e7617ce57b0596eb3c0e0c2d1873427c7943d9b9ea11dc25baef8",
+      "classes": 6
+    },
+    {
+      "path": "block/cave/vault_spire.png",
+      "baseline_sha256": "39b280b33802b51cc0090b5b6dd52c5411005797a15b0ef8154751449cd33dff",
+      "output_sha256": "6364d49e4aa5f0b29e5bf5263a854fc65a3a3d122b645d0d5b2b57d03eeeac94",
+      "classes": 5
+    },
+    {
+      "path": "block/forest/spore_pod_armed.png",
+      "baseline_sha256": "caf23b50801817f29652db62b7e88caeae52ae47032bd7151ff289789d053ac5",
+      "output_sha256": "75b8dd931ff7d2a868554e81e9c01f8d9596d25f83fe86372fe633a934937022",
+      "classes": 9
+    },
+    {
+      "path": "block/forest/spore_pod_spent.png",
+      "baseline_sha256": "0a166c9624a3e055bb903aadf2f4104c68709678e09e2b30a3c6f14194d32737",
+      "output_sha256": "4d89888c01ac567087fd5daee5fc4990be562a06a27d779fd2452c9b1a0139fa",
+      "classes": 9
+    },
+    {
+      "path": "block/forest/venom_fiber.png",
+      "baseline_sha256": "0fd2f461e4cdcd523f5e7c8c406d1f5ddcc88467eec8251aaec698125dce8eb8",
+      "output_sha256": "12ced6409a4b83da9fbbd6ac16a162a99ca77140bc7b133e9dedefa00acaee13",
+      "classes": 5
+    },
+    {
+      "path": "block/forest/venom_reed.png",
+      "baseline_sha256": "270c0fac4d29c6b559a28d8692d8a73d66d229899d06cd950e889739f96add61",
+      "output_sha256": "38ebec485f240ab1984cec636db7e64246277cee1bceaa5457aad8145139abda",
+      "classes": 5
+    },
+    {
+      "path": "block/garden/crown_leaves.png",
+      "baseline_sha256": "af3702d2c2535659b8abb1c72725ac98c3236bd4b1f0f564449eab1a1ec397b3",
+      "output_sha256": "9209ee2473394ea930b5e5d623f872488d1b7be090815879c019def3a4a06c28",
+      "classes": 6
+    },
+    {
+      "path": "block/garden/crown_leaves_2.png",
+      "baseline_sha256": "087e56a1b8b88889ced0c3ef35c7f3dcb9b31f2645f6e670eb2351b893ad4410",
+      "output_sha256": "173a57dfdaca73beea915cb26e39e99f74deead2adef9d8e342cc41341be3a33",
+      "classes": 6
+    },
+    {
+      "path": "block/garden/crown_log.png",
+      "baseline_sha256": "a9b0eb1b2a370371e32b56f34d4994d900c36828add68968db3765ef24312925",
+      "output_sha256": "efe931e4505cf2845627cde1964935c1a3c0c7dd509128db242647c668e514a9",
+      "classes": 3
+    },
+    {
+      "path": "block/garden/crown_log_top.png",
+      "baseline_sha256": "94156afb7cb9a6cee97282c4ebbd39af7b28848f8216db03020d5a881f406027",
+      "output_sha256": "3a4fe3b9d8f31b99aefa8b8f6351c7635e11d033b93bd14bbd2c87d57c389964",
+      "classes": 4
+    },
+    {
+      "path": "block/garden/crown_planks.png",
+      "baseline_sha256": "456ad196d87b71e6d89b2e4ef5b0219b94bf3a4193f9917cecdcb281ff633310",
+      "output_sha256": "a31086274540e5fdea39730d6c6d47134e4f5a0373a0af8c366a76efd50953cb",
+      "classes": 4
+    },
+    {
+      "path": "block/garden/crown_sapling.png",
+      "baseline_sha256": "a2c691a6841b4e3957c8bad8a7460b78a98bb780685df8c08a82bead88d53f4f",
+      "output_sha256": "179ec1a40d6eb8e83bf50a4dd3ccbee23fdd55635a9d0373592815e56d1ae345",
+      "classes": 7
+    },
+    {
+      "path": "block/garden/pale_fern.png",
+      "baseline_sha256": "bfea0d12772cac173e6c8ba7404f69e9ab5b59a57729045294873c4c1418c681",
+      "output_sha256": "9bf402754bae9d4e07ce4196bc414900972726f49edea608040bda49e0e39e83",
+      "classes": 4
+    },
+    {
+      "path": "block/garden/pale_litter.png",
+      "baseline_sha256": "34d0afc6c6530862f3ec2a48573f15afe1afdf32a5e95e31b0fc1379c97f9657",
+      "output_sha256": "461e790ce2c96d8fac328990a22933e860042b69dc2552490ab0146288657333",
+      "classes": 4
+    },
+    {
+      "path": "block/garden/pale_vine.png",
+      "baseline_sha256": "fae48fad7c2d8582896c83b99e6077b760fbfba9ace4b0d0ca8c2641aed4cb99",
+      "output_sha256": "87e91ff4643de02d787bfdd6f256ac15874b0482aed1e39520a594c89cedfe48",
+      "classes": 6
+    },
+    {
+      "path": "block/garden/pale_vine_tip.png",
+      "baseline_sha256": "c87b1882536c2d492fd6e7c3a8a55e5e5306d44d75f725589c555b2cf814dd43",
+      "output_sha256": "2cc8edcfd7b620b89d8db9c8e2160b309ce1f792e9fcfc73d8154ca3731a77e3",
+      "classes": 6
+    },
+    {
+      "path": "block/garden/paleheart_leaves.png",
+      "baseline_sha256": "4f920b9a2101773006bf5a58610940c94f1869df791c3ea97fc878ee138fdc3e",
+      "output_sha256": "fd4ff54c4e554170de7a5064dd89c00a9316b6044c63ebd686c7d99e7be9d47c",
+      "classes": 5
+    },
+    {
+      "path": "block/garden/paleheart_log.png",
+      "baseline_sha256": "89f5e4201ab5bd5621a39991cf555e99db91b33ef8b140bfc9de60e02e505f5e",
+      "output_sha256": "c1a8a52c57b35760409212d0c72569cc5609fcc6230b623cd9fcae146b4e7d8d",
+      "classes": 4
+    },
+    {
+      "path": "block/garden/paleheart_log_top.png",
+      "baseline_sha256": "4c286662e4c7845b23bc4f1c436a309d457bd7686f9d5364feb743a07e69ed4a",
+      "output_sha256": "72c77aa375f172c2cc18cb63ab6aab9d8c647ed06e962d2054f6b16f06f443d1",
+      "classes": 6
+    },
+    {
+      "path": "block/garden/paleheart_planks.png",
+      "baseline_sha256": "ed66e9a2860d53d967ad306c11a72c9a9b29775580b1fe749f5cf7b1a6d9ec77",
+      "output_sha256": "7faae59c652b68f3aabd8efc6d007198776264a716d785be0579a2ae2427ee59",
+      "classes": 4
+    },
+    {
+      "path": "block/garden/paleheart_sapling.png",
+      "baseline_sha256": "389116751686f30703e35fee1fe9ca8424850eabaa06b2525de594c73dfd400e",
+      "output_sha256": "1948e3b9ad435a00a03e12b1fe30bd40453adededf6af1581623df06ac136113",
+      "classes": 6
+    },
+    {
+      "path": "block/garden/palestone.png",
+      "baseline_sha256": "8e885beb8e42e5e770849046cd201bc6f95586298c64287ab4c241af0063e662",
+      "output_sha256": "c226a97cec17cc143ce909494a42ef2a5cf58e5bdb97ad811684adff5d10aaef",
+      "classes": 5
+    },
+    {
+      "path": "block/garden/palestone_bricks.png",
+      "baseline_sha256": "a26563f0ce062ea431aaf3fd92dc81d2ccba34da6733be0518ed523b12569b19",
+      "output_sha256": "7883386256b6a4a595c6b9a1d4387384f2089127dd273405f183172f10e674c6",
+      "classes": 5
+    },
+    {
+      "path": "block/garden/stripped_crown_log.png",
+      "baseline_sha256": "8235be53e4493e3561893076f072f415385b03bd851e708f7bdaf6c2b46b6dd7",
+      "output_sha256": "ba3d96f5097b299e6de0ce8e88f5eb226db2ea5a81efdc03333a755d23dc24eb",
+      "classes": 3
+    },
+    {
+      "path": "block/garden/stripped_crown_log_top.png",
+      "baseline_sha256": "b6cdd7fd16b7572b75591500bd35d4e51a53a4b7a54b122f819b3ab191b68e28",
+      "output_sha256": "0868dd1aa9f97d876b9c5d034678e80f0108c0de7698040b8a44e5a4ef456b1c",
+      "classes": 4
+    },
+    {
+      "path": "block/garden/stripped_paleheart_log.png",
+      "baseline_sha256": "ea8f580cb50e1296be26424a619f59f069e5aa215750a123b9875488b349a43a",
+      "output_sha256": "5a14cddd5bc83f101bb95dbd10779c657a4de7d45873c729f9767162b0bdc8f7",
+      "classes": 4
+    },
+    {
+      "path": "block/garden/stripped_paleheart_log_top.png",
+      "baseline_sha256": "415df0f0f5b16d86639602487c7e8b0401c01d2a8e953607e4d9261c8e60e674",
+      "output_sha256": "12e1bdc84feb38ce0f23f7f0d68635cfa28c104a145d50dd2c8f51abdd6717b6",
+      "classes": 6
+    },
+    {
+      "path": "block/garden/tide_heart.png",
+      "baseline_sha256": "d4df150d9d63de8adf992f6c2dea22f543ea442ff92df147194b57ca77370dda",
+      "output_sha256": "f529940e54de066f9ad44e24e1d69aec6f06136914d02bc1087e9327d3d1b3e5",
+      "classes": 5
+    },
+    {
+      "path": "block/garden/tide_heart_unripe.png",
+      "baseline_sha256": "0cac23b98436d97dfd793b79b8eed397e682f83fafbc50fe7e85ae1e8c31ef74",
+      "output_sha256": "4edf614980e10a8be3231e731515988aca74d1cb395c6a000f260280d35099ae",
+      "classes": 5
+    },
+    {
+      "path": "block/gloomcrown_leaves.png",
+      "baseline_sha256": "b565ad7d2eba14ed49b3b006e3d204d3967a22be9c4c42db260e124405275d2c",
+      "output_sha256": "4dd2e0393d4246b6fc4f4d211346be7949c65eee72a674c125fad83f23c66ffe",
+      "classes": 70
+    },
+    {
+      "path": "block/gloomcrown_log.png",
+      "baseline_sha256": "39b9fdfe353cc0e52fb7ad08977da475c9b6b8e6e4c4f00d7241d10ba8c4f79d",
+      "output_sha256": "2a76205d51cd1e6984c68a365b1dd76c40def5cc88fb212f8c1823575211eb35",
+      "classes": 63
+    },
+    {
+      "path": "block/gloomcrown_log_top.png",
+      "baseline_sha256": "d40e8909a9ecffb8d8663a0392443a75db2a213f73c06837ba1c13325fca249e",
+      "output_sha256": "cd11c1b2fb8033556cd788f071f465345c01232b513da12d7549470c0a2ef953",
+      "classes": 76
+    },
+    {
+      "path": "block/gloomcrown_planks.png",
+      "baseline_sha256": "d6788e1e2eb18a86c640a53215c4699f3540c265732f0291e140fe4545901980",
+      "output_sha256": "aa1f7cc0622db53070e6e78d70d45d90542ab4e30ca97172567c53907bae77d0",
+      "classes": 27
+    },
+    {
+      "path": "block/minerals/coal_torch.png",
+      "baseline_sha256": "9771bf006494f96a24c3ae4ab8bfd8f7ae47dca07902f138ecde5aaa6844b533",
+      "output_sha256": "9771bf006494f96a24c3ae4ab8bfd8f7ae47dca07902f138ecde5aaa6844b533",
+      "classes": 10
+    },
+    {
+      "path": "block/minerals/luminous_bud.png",
+      "baseline_sha256": "848ad341e66545656eb675414637f99cf51306dfb1f3759d9d8688a01a765d46",
+      "output_sha256": "62f58c1f291977a859d04bc327f5eaffe8b98bca369674c2cf803ad1710e07ee",
+      "classes": 11
+    },
+    {
+      "path": "block/minerals/mineral_frost.png",
+      "baseline_sha256": "96b9652aaba20f2090635b0bbefa67e5c8f2e6549c425cf642661ce1fc82c9dc",
+      "output_sha256": "194471ba038016253def45d6ddea66b0ffcaddfaf217be46382a2eefd114db13",
+      "classes": 2
+    },
+    {
+      "path": "block/minerals/mineral_powder.png",
+      "baseline_sha256": "6951ec7f12f6d4679f015f66bcbc7ea4a324df64b0b30eea4b1155778081be04",
+      "output_sha256": "b8d1fef3e60e9d8c65d66fe4f8051dec00fe3baba69ff77d3d68adbf8a7e3a50",
+      "classes": 5
+    },
+    {
+      "path": "block/minerals/phosphorite.png",
+      "baseline_sha256": "a6781f43dd8f52bd6a6fde91bf467c9deadc2e66e46ffe06f15388cf78f0ced2",
+      "output_sha256": "dfa2da949b9b18c961b211ad077c6aa83c6e1a78c0f8dbd4ce5117b64c4a7ecf",
+      "classes": 13
+    },
+    {
+      "path": "block/minerals/rift_shale.png",
+      "baseline_sha256": "2a50be8122f924ddd656149d2531efb172d7e426a6cc58d419aa0979fcc3c8bb",
+      "output_sha256": "119471a2385fbaa449aea8519d87d51f243b633faebd9c5d21c0a66c29e6c1a3",
+      "classes": 5
+    },
+    {
+      "path": "block/minerals/riftsilver.png",
+      "baseline_sha256": "3359998f2d173a4a86577f6dd0917b7c3737108716cf4f41ac4f48e73fd8005f",
+      "output_sha256": "31569b337d9b9160151e964efdcb36feebd0c1bc72ecfb4662d857ad5b755182",
+      "classes": 7
+    },
+    {
+      "path": "block/minerals/root_loam.png",
+      "baseline_sha256": "7d90af41c63252c3e4d6a5f806b9c4a97d25e43c1e6545f5357d40979e35d4ba",
+      "output_sha256": "502171d86511062491b8d95bc87d42450ef4af52d58563ed16d288e3fc28787e",
+      "classes": 5
+    },
+    {
+      "path": "block/minerals/toxic_sand.png",
+      "baseline_sha256": "5a31acdf9e6f3a4f9ef04268be8277d0d7e26d5593d17512a042b2cd153bd7b5",
+      "output_sha256": "f64f724d110d3dfe151785a7f59a279e8d79cbdd13ce0db6555422352dfed76d",
+      "classes": 4
+    },
+    {
+      "path": "block/minerals/umbral_coal.png",
+      "baseline_sha256": "bd3776edf0560d4ab67b4e28d91575c40440f4d3b8b54d6d729ab2b79ec64f32",
+      "output_sha256": "fbd6e84174d6a9e18b5feb1e6f523b608d15e69d1cb611c50c674f7c80653956",
+      "classes": 7
+    },
+    {
+      "path": "block/minerals/vitriolite.png",
+      "baseline_sha256": "704d4fd0485a6cf0e0a7cdb3078ac04a4127be87f12c4fbd717fe37a97cdef10",
+      "output_sha256": "54072d0bdd6f0d2b1908c18ef305cd26207057da928330c827e1f6c3676a3b18",
+      "classes": 15
+    },
+    {
+      "path": "block/minerals/world_stick.png",
+      "baseline_sha256": "5e4a2875a49d13289f1751d5cbbc85aed81ac739e9860f58e82020ca2b8793da",
+      "output_sha256": "df66e01dec19a5c8327b145c0c82adfaac27b408c905255e5de4003c4447709f",
+      "classes": 5
+    },
+    {
+      "path": "block/phosphorite.png",
+      "baseline_sha256": "b524e92ba9701a524627f62538892a39831004477358f0139099a6f48aa8af72",
+      "output_sha256": "8ed78f216c9ce0204867630ff0896305d8c9c904d3ff075edd5e89b2439c0c2e",
+      "classes": 4
+    },
+    {
+      "path": "block/pyrolith.png",
+      "baseline_sha256": "34eaa34b1150d5cbc162f8afef57f0844eb9feedf6dce9979b7acd50c3318673",
+      "output_sha256": "ae4d76ce29e894a2c6e55914cd559c3544ea2ef1f80aca26cdbc83b483a73af2",
+      "classes": 5
+    },
+    {
+      "path": "block/rift_frame.png",
+      "baseline_sha256": "ee6e93d11b65a1d48693bf54724755e4adc61e14c31e481882823612b2b2588c",
+      "output_sha256": "756cf5e170ff43eefb0d472606fc7d2992b8ae7016b95e1608bc77c3672b7985",
+      "classes": 30
+    },
+    {
+      "path": "block/riftsilver_ore.png",
+      "baseline_sha256": "5a3689864120c00711d2dcca39a722209ed080a30471b3faedaf8234f4b99ae8",
+      "output_sha256": "46c7b978e50f2c0783082397d5616b83566330e2ccde31b1a5800581e7702de4",
+      "classes": 31
+    },
+    {
+      "path": "block/riftstone.png",
+      "baseline_sha256": "f9ae8a2f5668d9fbc0af713c5fdf6bc7e726f70272262fb79fc18468c9e80d44",
+      "output_sha256": "65c140b4d556fddb78c306a14ba3daa4e2c1137b793302205487e92a3527ac54",
+      "classes": 25
+    },
+    {
+      "path": "block/stone/polished_vaultstone.png",
+      "baseline_sha256": "9c4a930069273099f6397bdd3c73e7566a90992a805084f54368a1ee3ee4726a",
+      "output_sha256": "cba63c94dd08b11d9014b872afd2d54f4bb9c75561f6c08957a4f43b4c3df8cd",
+      "classes": 4
+    },
+    {
+      "path": "block/stone/vaultstone.png",
+      "baseline_sha256": "3d1fded258e3c338c45d75522ba5475055f709d6a2516f3fd05975d774061812",
+      "output_sha256": "016af768ef98234fb2adeaf332d6573f7f1563ad5228fb74fd9c79807e787595",
+      "classes": 5
+    },
+    {
+      "path": "block/stone/vaultstone_1.png",
+      "baseline_sha256": "101f532352d679d92545bc3fcf607dda58f71f63998bcc91fd047300d982fc95",
+      "output_sha256": "bce7cf918a1996fa1e2774aa3458b1f1f9aa18ba4196b015d51475bed9db9e72",
+      "classes": 5
+    },
+    {
+      "path": "block/stone/vaultstone_2.png",
+      "baseline_sha256": "639cb25dbf5c56c24472e7ae671245557e03b56f78bc48e8f5677f73ccee9263",
+      "output_sha256": "2c694200c83755091ed1873b8f72a29329d0f27206ddc94a7dd63a34eab598a4",
+      "classes": 5
+    },
+    {
+      "path": "block/stone/vaultstone_bricks.png",
+      "baseline_sha256": "92a63d0de202d02410a82f41a62a9e2982dd7ef46cfa6bf125744ad493ef3ce3",
+      "output_sha256": "e90fc36e983e1ff68a8bb4169fc57dee4c315f6259276ce5d2c7fd0ae0af12c4",
+      "classes": 5
+    },
+    {
+      "path": "block/stone/weathered_vaultstone.png",
+      "baseline_sha256": "beb07efe440b8a1778612a74353dc6969c0f549688040553b2f78b60a33c457e",
+      "output_sha256": "0a70f441f5eb4671f7ad1247c64db9374380b05f9e50c6bc0a9409689ca61686",
+      "classes": 5
+    },
+    {
+      "path": "block/stone/weathered_vaultstone_1.png",
+      "baseline_sha256": "9273cc918f38a05e5e8ea29052c1fe8d61092c586231cb5c7aa3778fe9219466",
+      "output_sha256": "39fc7c808f596c92d734d9cd0ff2940d9821ffdd5093c106a14a7a87d2f69bca",
+      "classes": 5
+    },
+    {
+      "path": "block/stone/weathered_vaultstone_2.png",
+      "baseline_sha256": "ca79de955483e5d977a97792fde2e21d7718d96946e5af260a7430637bc3c12c",
+      "output_sha256": "a5d89dc0a629cdb7aa97c97c1af9c843d6c588b27b4606c627d7c4581f04a097",
+      "classes": 5
+    },
+    {
+      "path": "block/stripped_gloomcrown_log.png",
+      "baseline_sha256": "e30f755b19fe9fd04c80f8c39713a5c481abf41a117fb9f2c43b022a53d87abf",
+      "output_sha256": "44a201fc777b430691e1f8805f446fba2cdee21981ca5bc228489cf6b96e8294",
+      "classes": 67
+    },
+    {
+      "path": "block/stripped_gloomcrown_log_top.png",
+      "baseline_sha256": "d1351194f0f6a30effc1fd64406d5172dea2bb5fe2c8a16f223742c6e809ba4f",
+      "output_sha256": "a4ffde147a6d7d8d77c461be5a24c7e17f3c4510cd90abafc8cb3742108353d1",
+      "classes": 90
+    },
+    {
+      "path": "block/tide_sprout_bud.png",
+      "baseline_sha256": "000521b78857d9e098f2320cac3366af3c5829cdd471a9549eba2b324ade36f0",
+      "output_sha256": "342c7ced7862414d983db0969152c3004bb8925f346171abbf0703c8d6e4d0cf",
+      "classes": 5
+    },
+    {
+      "path": "block/tide_sprout_core.png",
+      "baseline_sha256": "4e986584ac0156c492bd4564932ebde963057f7c197b8220c3cf10d265b10c17",
+      "output_sha256": "086021729d1f830390abc46cbe9fb8f1d2bc0fa0373ec1e1154cf72dfc83dd73",
+      "classes": 55
+    },
+    {
+      "path": "block/tide_sprout_flower.png",
+      "baseline_sha256": "c2c3da962f72c5254c9c682b6f9f4a2aede6de99e9300128e11d88c518f71cfb",
+      "output_sha256": "5f3a121a3404a6c1cc88d4a800fe765ec5b7b641c87194c4ff31264f038d886d",
+      "classes": 11
+    },
+    {
+      "path": "block/tide_sprout_petal.png",
+      "baseline_sha256": "fe1ee91eba227b2f847b64e35f0a67006432de1c196c796da7ed60a53185386f",
+      "output_sha256": "75119d40b4cbc3f4f153333051a7a8821f4abbf15b8ea1869205b4c3159d2ad6",
+      "classes": 54
+    },
+    {
+      "path": "block/tide_sprout_root.png",
+      "baseline_sha256": "f37a71737e6a6727a1a4d0be44ef87b10dc7a0e8aa7c7f68febf81698990de9f",
+      "output_sha256": "85cf8e33aa8717ac1f825f379a3a655f4e6d17a22d682ceb148343823869437c",
+      "classes": 6
+    },
+    {
+      "path": "block/tide_sprout_stalk.png",
+      "baseline_sha256": "e30f755b19fe9fd04c80f8c39713a5c481abf41a117fb9f2c43b022a53d87abf",
+      "output_sha256": "bf2e2d89fe098b7d3f102abf07250fabdd5b72955fe8acad2d55baea0b1b2060",
+      "classes": 67
+    },
+    {
+      "path": "block/tide_sprout_stem.png",
+      "baseline_sha256": "6ca2e5a0e7d2c120963f54a0529bf2d82a6eda5f41d7702596d0dd66ad53317a",
+      "output_sha256": "b5713f1c860a777971c1104c1ed3ec4c1a825a08e779310e31b55313c0abb0de",
+      "classes": 6
+    },
+    {
+      "path": "block/tide_sprout_stem_leaf.png",
+      "baseline_sha256": "5daebf0c69f55071dd6d2bf3206cf164c7ed8ba63b048a7c623fcf0f129a70bd",
+      "output_sha256": "d48ab13f391e068ff7acfece14d2475f8ff3c8638c6422e41d118bc8e5c69773",
+      "classes": 6
+    },
+    {
+      "path": "block/vitriolite.png",
+      "baseline_sha256": "8ff9a35ea2f96a8f6b525095bdb33bbe75ddccd39a9e37a9ba369b02509a26b7",
+      "output_sha256": "ec23de407fcd27e87ed4c7cbc1a9e310564dd2766d0deffcbbe66caf4d7d6f63",
+      "classes": 4
+    }
+  ]
+}

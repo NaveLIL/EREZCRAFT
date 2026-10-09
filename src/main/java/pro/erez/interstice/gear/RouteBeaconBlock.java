@@ -2,7 +2,9 @@ package pro.erez.interstice.gear;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -17,6 +19,7 @@ import net.minecraft.world.level.block.state.*;
 import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.*;
+import pro.erez.interstice.Interstice;
 import pro.erez.interstice.minerals.MineralEcology;
 
 public final class RouteBeaconBlock extends BaseEntityBlock {
@@ -33,6 +36,12 @@ public final class RouteBeaconBlock extends BaseEntityBlock {
         return level.isClientSide ? null : createTickerHelper(type, RealmGear.BEACON_ENTITY.get(), (world, pos, block, beacon) -> beacon.tick());
     }
     @Override protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (stack.is(Interstice.TIDE_INDICATOR.get()) && player.isShiftKeyDown()
+                && level.getBlockEntity(pos) instanceof RouteBeaconEntity beacon) {
+            if (level.isClientSide) return ItemInteractionResult.SUCCESS;
+            return player instanceof ServerPlayer server && RouteMarkers.bind(server, stack, beacon)
+                    ? ItemInteractionResult.CONSUME : ItemInteractionResult.FAIL;
+        }
         if (!stack.is(MineralEcology.PHOSPHORITE_CRYSTAL.get()) || !(level.getBlockEntity(pos) instanceof RouteBeaconEntity beacon))
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         if (beacon.fuelTicks() > RealmGear.BEACON_MAX_FUEL - RealmGear.BEACON_FUEL_TICKS) return ItemInteractionResult.FAIL;
@@ -48,6 +57,9 @@ public final class RouteBeaconBlock extends BaseEntityBlock {
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
     @Override public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity owner, ItemStack stack) {
-        if (!level.isClientSide && level.getBlockEntity(pos) instanceof RouteBeaconEntity beacon) beacon.setOwner(owner == null ? null : owner.getUUID());
+        if (!level.isClientSide && level.getBlockEntity(pos) instanceof RouteBeaconEntity beacon) {
+            beacon.setOwner(owner == null ? null : owner.getUUID());
+            beacon.setMarkerName(stack.has(DataComponents.CUSTOM_NAME) ? stack.getHoverName().getString() : "");
+        }
     }
 }

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [" A ", "ASA", " W "],
+  "key": {
+    "A": {"item": "minecraft:amethyst_shard"},
+    "S": {"item": "interstice:raw_riftsilver"},
+    "W": {"item": "interstice:world_stick"}
+  },
+  "result": {"id": "interstice:structure_surveyor", "count": 1}
+}

@@ -6,6 +6,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TransparentBlock;
@@ -26,13 +27,14 @@ public final class ShelterDetector {
     /**
      * Determines whether a given block state acts as a shelter roof against the tide.
      * Solid blocks, transparent barriers (glass), slabs, stairs, and foliage (leaves) count.
-     * Fluids, air, technical bedrock, and the upper toxic sea do NOT count as shelter.
+     * Waterlogged solid roofs retain their shelter; the water itself never provides it.
+     * Liquid blocks, air, technical bedrock, and either toxic sea do NOT count as shelter.
      */
     public static boolean isShelteringBlock(BlockState state) {
         if (state == null || state.isAir()) return false;
-        if (!state.getFluidState().isEmpty()) return false;
         if (state.is(Blocks.BEDROCK)) return false;
         if (state.is(Interstice.LIGHT_SEA.get()) || state.is(Interstice.HEAVY_BLOCK.get())) return false;
+        if (state.getBlock() instanceof LiquidBlock) return false;
 
         if (state.blocksMotion()) return true;
         var block = state.getBlock();

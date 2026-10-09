@@ -5,6 +5,8 @@ import java.util.UUID;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.*;
 import net.minecraft.server.level.ServerLevel;
@@ -19,9 +21,12 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** A real passenger vehicle, moved only by its loaded anchor. Players never control its network motion. */
 public final class FieldLiftEntity extends VehicleEntity {
+    private static final Logger LOGGER = LoggerFactory.getLogger(FieldLiftEntity.class);
     private static final EntityDataAccessor<BlockPos> ANCHOR_POS = SynchedEntityData.defineId(FieldLiftEntity.class, EntityDataSerializers.BLOCK_POS);
     private static final EntityDataAccessor<Optional<UUID>> ANCHOR_ID = SynchedEntityData.defineId(FieldLiftEntity.class, EntityDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Boolean> MOVING = SynchedEntityData.defineId(FieldLiftEntity.class, EntityDataSerializers.BOOLEAN);
@@ -39,6 +44,7 @@ public final class FieldLiftEntity extends VehicleEntity {
     public boolean moving() { return entityData.get(MOVING); }
     public int fuel() { return entityData.get(FUEL); }
     public SimpleContainer cargo() { return cargo; }
+    public int quarantinedCargoRecords() { return cargo.quarantinedRecords(); }
     public void bind(FieldAnchorEntity anchor) {
         entityData.set(ANCHOR_POS, anchor.getBlockPos()); entityData.set(ANCHOR_ID, Optional.of(anchor.anchorId())); entityData.set(FUEL, anchor.fuel());
     }
@@ -112,7 +118,7 @@ public final class FieldLiftEntity extends VehicleEntity {
         FieldAnchorEntity anchor = anchor(); if (anchor == null) return InteractionResult.FAIL;
         if (player.isShiftKeyDown()) {
             if (!anchor.authorized(player) || player.distanceToSqr(this) > 64) return InteractionResult.FAIL;
-            server.openMenu(new SimpleMenuProvider((id, inventory, owner) -> new ChestMenu(MenuType.GENERIC_9x1, id, inventory, cargo, 1), Component.translatable("container.interstice.field_lift")));
+            server.openMenu(new SimpleMenuProvider((id, inventory, owner) -> new FieldLiftMenu(id, inventory, this), Component.translatable("container.interstice.field_lift")));
             return InteractionResult.CONSUME;
         }
         return player.startRiding(this) ? InteractionResult.CONSUME : InteractionResult.FAIL;
@@ -133,8 +139,11 @@ public final class FieldLiftEntity extends VehicleEntity {
         var drops = new SimpleContainer(RealmLift.CARGO_SLOTS);
         for (int slot = 0; slot < RealmLift.CARGO_SLOTS; slot++) { drops.setItem(slot, cargo.getItem(slot).copy()); cargo.setItem(slot, ItemStack.EMPTY); }
         // Reject unregistered duplicate-UUID decode objects; only the actual world-owned entity may drop cargo.
-        if (level() instanceof ServerLevel server && server.getEntity(getUUID()) == this && level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS))
-            Containers.dropContents(level(), this, drops);
+        if (level() instanceof ServerLevel server && server.getEntity(getUUID()) == this) {
+            boolean drop = level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS);
+            if (drop) Containers.dropContents(level(), this, drops);
+            cargo.releaseOverflow(drop);
+        }
     }
     @Override protected void addAdditionalSaveData(CompoundTag tag) {
         tag.putLong("AnchorPos", anchorPos().asLong()); if (anchorId() != null) tag.putUUID("AnchorId", anchorId()); tag.putBoolean("CargoReleased", released);
@@ -143,23 +152,45 @@ public final class FieldLiftEntity extends VehicleEntity {
     @Override protected void readAdditionalSaveData(CompoundTag tag) {
         entityData.set(ANCHOR_POS, BlockPos.of(tag.getLong("AnchorPos")));
         entityData.set(ANCHOR_ID, tag.hasUUID("AnchorId") ? Optional.of(tag.getUUID("AnchorId")) : Optional.empty());
-        cargo.clearContent(); released = tag.getBoolean("CargoReleased"); if (!released) cargo.load(tag);
+        cargo.clearContent(); cargo.overflow = new ListTag(); released = tag.getBoolean("CargoReleased");
+        if (!released) cargo.load(tag); else cargo.overflow = tag.getList("OverflowCargo", Tag.TAG_COMPOUND).copy();
         setNoGravity(true); setDeltaMovement(Vec3.ZERO); entityData.set(MOVING, false);
     }
     @Override public ItemStack getPickResult() { return new ItemStack(RealmLift.ANCHOR_ITEM.get()); }
     private final class LiftCargo extends SimpleContainer {
         private boolean loading;
+        private ListTag overflow = new ListTag();
         private LiftCargo() { super(RealmLift.CARGO_SLOTS); }
+        private int quarantinedRecords() { return overflow.size(); }
         @Override public boolean stillValid(Player player) { var anchor = anchor(); return !released && isAlive() && player.level() == level() && player.distanceToSqr(FieldLiftEntity.this) <= 64 && anchor != null && anchor.authorized(player); }
         private void save(CompoundTag tag) {
             var stacks = net.minecraft.core.NonNullList.withSize(RealmLift.CARGO_SLOTS, ItemStack.EMPTY);
             for (int i = 0; i < stacks.size(); i++) stacks.set(i, getItem(i).copy());
             net.minecraft.world.ContainerHelper.saveAllItems(tag, stacks, registryAccess());
+            if (!overflow.isEmpty()) tag.put("OverflowCargo", overflow.copy()); else tag.remove("OverflowCargo");
         }
         private void load(CompoundTag tag) {
-            var stacks = net.minecraft.core.NonNullList.withSize(RealmLift.CARGO_SLOTS, ItemStack.EMPTY);
-            net.minecraft.world.ContainerHelper.loadAllItems(tag, stacks, registryAccess());
-            loading = true; for (int i = 0; i < stacks.size(); i++) setItem(i, stacks.get(i)); loading = false;
+            overflow = tag.getList("OverflowCargo", Tag.TAG_COMPOUND).copy();
+            loading = true;
+            for (Tag raw : tag.getList("Items", Tag.TAG_COMPOUND)) {
+                var saved = (CompoundTag) raw;
+                int slot = saved.getByte("Slot") & 255;
+                var stack = ItemStack.parseOptional(registryAccess(), saved);
+                if (saved.contains("Slot", Tag.TAG_BYTE) && slot < RealmLift.CARGO_SLOTS && getItem(slot).isEmpty()
+                        && !stack.isEmpty() && stack.getCount() <= Math.min(stack.getMaxStackSize(), getMaxStackSize())) setItem(slot, stack);
+                else overflow.add(saved.copy());
+            }
+            loading = false;
+        }
+        private void releaseOverflow(boolean drop) {
+            var unreadable = new ListTag();
+            for (Tag raw : overflow) {
+                var stack = ItemStack.parseOptional(registryAccess(), (CompoundTag) raw);
+                if (stack.isEmpty()) unreadable.add(raw.copy());
+                else if (drop) Containers.dropItemStack(level(), getX(), getY(), getZ(), stack.copy());
+            }
+            overflow = unreadable;
+            if (!unreadable.isEmpty()) LOGGER.warn("Unsupported cargo records on destroyed field lift {}: {}", getUUID(), unreadable);
         }
     }
 }

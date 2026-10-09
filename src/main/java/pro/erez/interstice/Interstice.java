@@ -36,6 +36,7 @@ public final class Interstice {
     private static final DeferredRegister<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>> DENSITIES=DeferredRegister.create(BuiltInRegistries.DENSITY_FUNCTION_TYPE,ID);
     private static final DeferredHolder<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>,MapCodec<pro.erez.interstice.worldgen.terrain.VanillaField>> VANILLA_FIELD=DENSITIES.register("vanilla_field",()->pro.erez.interstice.worldgen.terrain.VanillaField.CODEC);
     private static final DeferredHolder<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>,MapCodec<pro.erez.interstice.worldgen.terrain.VanillaRealmDensity>> VANILLA_MIXER=DENSITIES.register("vanilla_realm",()->pro.erez.interstice.worldgen.terrain.VanillaRealmDensity.CODEC);
+    private static final DeferredHolder<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>,MapCodec<pro.erez.interstice.worldgen.terrain.TensionRealmDensity>> TENSION_MIXER=DENSITIES.register("tension_realm",()->pro.erez.interstice.worldgen.terrain.TensionRealmDensity.CODEC);
     private static final DeferredHolder<MapCodec<? extends net.minecraft.world.level.levelgen.DensityFunction>,MapCodec<pro.erez.interstice.worldgen.terrain.NativeCache2D>> NATIVE_CACHE=DENSITIES.register("native_cache2d",()->pro.erez.interstice.worldgen.terrain.NativeCache2D.CODEC);
     private static final DeferredHolder<MapCodec<? extends ChunkGenerator>,MapCodec<IslandChunkGenerator>> ISLAND_GENERATOR=GENERATORS.register("coupled_islands",()->IslandChunkGenerator.CODEC);
 
@@ -122,6 +123,8 @@ public final class Interstice {
                 pro.erez.interstice.gear.RealmGear.displayItems(output);
                 pro.erez.interstice.tether.RiftTethers.displayItems(output);
                 pro.erez.interstice.lift.RealmLift.displayItems(output);
+                pro.erez.interstice.rift.RiftInitiation.displayItems(output);
+                pro.erez.interstice.navigation.RealmNavigation.displayItems(output);
                 output.accept(pro.erez.interstice.food.TideHeart.FRUIT.get());
                 output.accept(TIDE_SPROUT_ITEM.get());
                 output.accept(GLOOMCROWN_LOG_ITEM.get());
@@ -161,6 +164,9 @@ public final class Interstice {
         pro.erez.interstice.minerals.MineralEcology.register(bus);
         pro.erez.interstice.agriculture.RealmAgriculture.register(bus);
         pro.erez.interstice.equipment.ExpeditionEquipment.register(bus);
+        pro.erez.interstice.rift.RiftInitiation.register(bus);
+        pro.erez.interstice.navigation.RealmNavigation.register(bus);
+        pro.erez.interstice.fauna.RealmFauna.register(bus);
         pro.erez.interstice.ecology.RealmEcology.register(bus);
         pro.erez.interstice.gear.RealmGear.register(bus);
         pro.erez.interstice.tether.RiftTethers.register(bus);

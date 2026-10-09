@@ -18,6 +18,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import pro.erez.interstice.gear.RouteBeaconEntity;
+import pro.erez.interstice.gear.RouteMarkers;
 import pro.erez.interstice.tide.ClientTideState;
 import pro.erez.interstice.tide.ShelterDetector;
 import pro.erez.interstice.tide.TideManager;
@@ -49,6 +51,13 @@ public final class TideIndicatorItem extends Item {
         BlockPos clickedPos = context.getClickedPos();
         Direction face = context.getClickedFace();
         ItemStack stack = context.getItemInHand();
+
+        // A beacon binding takes precedence over the existing vertical-wall frame mount.
+        if (player != null && player.isShiftKeyDown() && level.getBlockEntity(clickedPos) instanceof RouteBeaconEntity beacon) {
+            if (level.isClientSide()) return InteractionResult.SUCCESS;
+            return player instanceof net.minecraft.server.level.ServerPlayer server && RouteMarkers.bind(server, stack, beacon)
+                    ? InteractionResult.CONSUME : InteractionResult.FAIL;
+        }
 
         // Shift-right-click on a vertical wall face mounts the barometer directly on the wall!
         if (player != null && player.isShiftKeyDown() && face.getAxis().isHorizontal()) {
@@ -103,6 +112,9 @@ public final class TideIndicatorItem extends Item {
                 .append(Component.literal(" | ").withStyle(ChatFormatting.GRAY))
                 .append(shelterText);
 
+        var navigation = RouteMarkers.describe(level, player, stack);
+        if (navigation != null) message = message.copy().append(Component.literal(" | ").withStyle(ChatFormatting.GRAY)).append(navigation);
+
         player.displayClientMessage(message, true);
         player.playSound(SoundEvents.LEVER_CLICK, 0.4F, 1.4F);
 
@@ -112,6 +124,7 @@ public final class TideIndicatorItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("item.interstice.tide_indicator.desc").withStyle(ChatFormatting.GRAY));
+        RouteMarkers.appendTooltip(stack, tooltip);
 
         TideState state = ClientTideState.get();
         ChatFormatting phaseColor = switch (state.phase()) {

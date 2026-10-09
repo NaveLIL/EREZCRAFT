@@ -299,6 +299,12 @@ neoForge {
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_gear'
         }
+        faunaGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/fauna-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_fauna'
+        }
         liftGameTestServer {
             type = 'gameTestServer'
             gameDirectory = file('build/lift-gametests')
@@ -319,6 +325,56 @@ neoForge {
             programArgument '1280'
             programArgument '--height'
             programArgument '720'
+        }
+        paletteGallery {
+            client()
+            gameDirectory = file('build/palette-gallery')
+            systemProperty 'interstice.paletteGallerySmoke', 'true'
+            systemProperty 'interstice.paletteCandidates', file('.verification/v6-palette-candidates').absolutePath
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        tensionRealmSmoke {
+            client()
+            gameDirectory = file('build/tension-realm-smoke')
+            systemProperty 'interstice.tensionRealmSmoke', 'true'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '720'
+        }
+        v6Dedicated {
+            server()
+            gameDirectory = file(providers.gradleProperty('intersticeNetworkRoot').getOrElse('.verification/v6-network') + '/server')
+            systemProperty 'interstice.v6NetworkScenario', 'true'
+            systemProperty 'interstice.v6NetworkEvidence', file(providers.gradleProperty('intersticeNetworkRoot').getOrElse('.verification/v6-network') + '/net-evidence').absolutePath
+            programArgument '--nogui'
+        }
+        v6NetPeerOne {
+            client()
+            gameDirectory = file(providers.gradleProperty('intersticeNetworkRoot').getOrElse('.verification/v6-network') + '/peerOne')
+            systemProperty 'interstice.v6NetworkPeer', '1'
+            systemProperty 'interstice.v6NetworkEvidence', file(providers.gradleProperty('intersticeNetworkRoot').getOrElse('.verification/v6-network') + '/net-evidence').absolutePath
+            programArgument '--username'
+            programArgument 'V6PeerOne'
+            programArgument '--width'
+            programArgument '960'
+            programArgument '--height'
+            programArgument '540'
+        }
+        v6NetPeerTwo {
+            client()
+            gameDirectory = file(providers.gradleProperty('intersticeNetworkRoot').getOrElse('.verification/v6-network') + '/peerTwo')
+            systemProperty 'interstice.v6NetworkPeer', '2'
+            systemProperty 'interstice.v6NetworkEvidence', file(providers.gradleProperty('intersticeNetworkRoot').getOrElse('.verification/v6-network') + '/net-evidence').absolutePath
+            programArgument '--username'
+            programArgument 'V6PeerTwo'
+            programArgument '--width'
+            programArgument '960'
+            programArgument '--height'
+            programArgument '540'
         }
         backpackCreate {
             client()
@@ -634,6 +690,22 @@ tasks.named('runGearReload') { dependsOn tasks.named('runGearCreate') }
 tasks.register('runGearSmoke') { dependsOn tasks.named('runGearReload') }
 tasks.named('runWinchReload') { dependsOn tasks.named('runWinchCreate') }
 tasks.register('runWinchSmoke') { dependsOn tasks.named('runWinchReload') }
+tasks.named('preparePaletteGalleryRun') {
+    outputs.upToDateWhen { false }
+    doLast {
+        def directory=neoForge.runs.getByName('paletteGallery').gameDirectory.get().asFile
+        def config=new File(directory,'config/fml.toml');config.parentFile.mkdirs();config.text='earlyWindowControl = false\n'
+        def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\n'
+    }
+}
+tasks.named('prepareTensionRealmSmokeRun') {
+    outputs.upToDateWhen { false }
+    doLast {
+        def directory=neoForge.runs.getByName('tensionRealmSmoke').gameDirectory.get().asFile
+        def config=new File(directory,'config/fml.toml');config.parentFile.mkdirs();config.text='earlyWindowControl = false\n'
+        def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\n'
+    }
+}
 tasks.matching { it.name in ['prepareWinchCreateRun','prepareWinchReloadRun','prepareGearCreateRun','prepareGearReloadRun','prepareNativeFieldLiftCreateRun','prepareNativeFieldLiftReloadRun','prepareVanillaTerrainCreateRun','prepareVanillaTerrainReloadRun','prepareWearBackpackCreateRun','prepareWearBackpackReloadRun','prepareBackpackCreateRun','prepareBackpackReloadRun','prepareRetortUiSmokeRun'] }.configureEach {
     outputs.upToDateWhen { false }
     doLast {
@@ -683,4 +755,5 @@ tasks.named('runSurvivalRouteEquipment') { dependsOn tasks.named('runSurvivalRou
 tasks.register('runSurvivalPreparationSmoke') { dependsOn tasks.named('runSurvivalRouteEquipment') }
 
 // A successful build includes the server's behavioral tests, in a disposable profile.
+tasks.named('check') { dependsOn tasks.named('runFaunaGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer'),tasks.named('runAgricultureGameTestServer'),tasks.named('runEquipmentGameTestServer'),tasks.named('runGearGameTestServer'),tasks.named('runTetherGameTestServer'),tasks.named('runLiftGameTestServer') }
