@@ -1,0 +1,4 @@
+-Xms2G
+-Xmx10G
+-XX:+UseZGC
+-XX:+ZGenerational

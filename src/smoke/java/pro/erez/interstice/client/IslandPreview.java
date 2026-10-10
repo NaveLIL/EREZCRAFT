@@ -27,6 +27,8 @@ import pro.erez.interstice.worldgen.IslandWorld;
 public final class IslandPreview {
     private static final long SEED = 20261006L;
     private static final boolean PLAYTEST = Boolean.getBoolean("interstice.playtest");
+    private static final boolean V6 = Boolean.getBoolean("interstice.previewV6");
+    private static final net.minecraft.resources.ResourceKey<net.minecraft.world.level.Level> TARGET = V6 ? IslandWorld.TENSION_WORLD : IslandWorld.TALL_WORLD;
     private static boolean started;
     private static boolean finished;
     private static long deadline;
@@ -49,11 +51,12 @@ public final class IslandPreview {
             mc.options.cloudStatus().set(CloudStatus.FANCY);
             mc.options.hideGui = false;
             mc.options.fov().set(85);
+            if (V6) mc.getWindow().setTitle("EREZCRAFT — V6 visual preview");
             System.out.println("ISLAND_PREVIEW_CREATING " + mc.gameDirectory.toPath().resolve("saves").resolve(worldName));
             mc.createWorldOpenFlows().createFreshLevel(worldName,
                     new LevelSettings(PLAYTEST ? "Interstice - physics playtest" : "Interstice - island preview",
                             PLAYTEST ? GameType.SURVIVAL : GameType.CREATIVE, false,
-                            PLAYTEST ? Difficulty.NORMAL : Difficulty.PEACEFUL, true,
+                            V6 || PLAYTEST ? Difficulty.NORMAL : Difficulty.PEACEFUL, true,
                             new GameRules(), WorldDataConfiguration.DEFAULT),
                     new WorldOptions(SEED, false, false), WorldPresets::createNormalWorldDimensions, mc.screen);
             return;
@@ -66,18 +69,18 @@ public final class IslandPreview {
         }
         if (mc.player == null || mc.level == null || mc.getConnection() == null || mc.screen != null) return;
         if (stage == 0) {
-            mc.getConnection().sendCommand("interstice explore tall");
+            mc.getConnection().sendCommand(V6 ? "interstice explore v6" : "interstice explore tall");
             stage = 1;
             return;
         }
-        if (!mc.level.dimension().equals(IslandWorld.TALL_WORLD) || !mc.level.hasChunkAt(mc.player.blockPosition())) return;
+        if (!mc.level.dimension().equals(TARGET) || !mc.level.hasChunkAt(mc.player.blockPosition())) return;
         if (stage == 1 && ++ticks >= 40) {
             var server = mc.getSingleplayerServer();
             if (server == null) return;
             var uuid = mc.player.getUUID();
             server.execute(() -> {
                 var player = server.getPlayerList().getPlayer(uuid);
-                if (player == null || !player.level().dimension().equals(IslandWorld.TALL_WORLD)) return;
+                if (player == null || !player.level().dimension().equals(TARGET)) return;
                 if (PLAYTEST) {
                     player.setGameMode(GameType.SURVIVAL);
                     player.serverLevel().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).set(true, server);
@@ -100,6 +103,7 @@ public final class IslandPreview {
                     player.displayClientMessage(net.minecraft.network.chat.Component.literal(
                             "/interstice tide set surge — test the tide; /interstice leave — return"), false);
                 } else {
+                    if (V6) player.setRespawnPosition(TARGET, player.blockPosition(), -35, true, false);
                     player.setGameMode(GameType.CREATIVE);
                     player.getAbilities().flying = true;
                     player.onUpdateAbilities();
@@ -116,6 +120,18 @@ public final class IslandPreview {
                     message -> System.out.println("ISLAND_PREVIEW_SCREENSHOT " + message.getString()));
             report(mc, true, "ready-for-owner");
         }
+    }
+
+    /** Only this explicit preview profile redirects the bare re-entry command. */
+    @SubscribeEvent
+    public static void command(net.neoforged.neoforge.event.CommandEvent event) {
+        if (!V6) return;
+        var parse = event.getParseResults();
+        var text = parse.getReader().getString().strip();
+        if (!text.equals("interstice explore")) return;
+        var source = parse.getContext().getSource();
+        if (!(source.getEntity() instanceof net.minecraft.server.level.ServerPlayer)) return;
+        event.setParseResults(source.getServer().getCommands().getDispatcher().parse("interstice explore v6", source));
     }
 
     private static void report(Minecraft mc, boolean ready, String reason) {

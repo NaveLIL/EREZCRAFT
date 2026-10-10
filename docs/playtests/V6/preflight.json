@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "series_id": null,
+  "moderator_id": null,
+  "checked_utc": null,
+  "candidate_commit": null,
+  "candidate_jar_sha256": null,
+  "runtime": {
+    "minecraft": null,
+    "neoforge": null,
+    "java_version_output": null,
+    "os": null,
+    "cpu": null,
+    "ram_mib": null,
+    "jvm_max_heap_mib": null,
+    "mod_list_evidence": null,
+    "client_options_evidence": null,
+    "server_properties_evidence": null,
+    "mod_configs_evidence": null
+  },
+  "observed": {
+    "first_entry_source": null,
+    "dimension_id": null,
+    "player_save_dimension": null,
+    "generator_type": null,
+    "terrain_revision": null,
+    "noise_settings": null,
+    "advancement_ids": [],
+    "recipe_ids": [],
+    "return_dimension": null
+  },
+  "checks": {
+    "runtime_hash_matches_candidate": {
+      "passed": null,
+      "evidence": null
+    },
+    "versions_and_settings_match": {
+      "passed": null,
+      "evidence": null
+    },
+    "fresh_preflight_world": {
+      "passed": null,
+      "evidence": null
+    },
+    "native_first_entry_without_commands_or_edited_links": {
+      "passed": null,
+      "evidence": null
+    },
+    "actual_dimension_is_islands_v6": {
+      "passed": null,
+      "evidence": null
+    },
+    "terrain_revision_is_6": {
+      "passed": null,
+      "evidence": null
+    },
+    "generator_and_noise_settings_match": {
+      "passed": null,
+      "evidence": null
+    },
+    "advancement_and_recipes_opened": {
+      "passed": null,
+      "evidence": null
+    },
+    "ordinary_return_succeeded": {
+      "passed": null,
+      "evidence": null
+    },
+    "six_measured_worlds_remain_fresh": {
+      "passed": null,
+      "evidence": null
+    }
+  },
+  "all_checks_passed": null,
+  "blocking_reason": null,
+  "human_sessions_started": false,
+  "note": "Blank template. Fill actual candidate evidence; current preview baseline ordinary entry is V5 and cannot satisfy the V6 natural route gate."
+}

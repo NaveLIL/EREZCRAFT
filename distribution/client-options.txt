@@ -1,0 +1,7 @@
+onboardAccessibility:false
+tutorialStep:none
+lang:ru_ru
+renderDistance:8
+simulationDistance:5
+maxFps:60
+pauseOnLostFocus:false

@@ -1,0 +1,1 @@
+session_id,event_id,event_type_death_loss_recovery,active_elapsed_seconds,utc,milestone_id,dimension_id,x,y,z,game_cause,item_id,known_quantity_before,quantity_recovered,confirmed_quantity_lost,components_or_container_contents_evidence,recovery_attempt_seconds,evidence,notes

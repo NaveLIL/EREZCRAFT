@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "source": "D:\\repos\\erezcraft\\.local\\verification\\ocean-chunky-final-20261010\\saves\\chunky-ocean-v6-fresh",
+  "destination": "D:\\EREZCRAFT\\data\\stable\\instances\\archipelago\\saves\\EREZCRAFT-V6-DH-Chunky",
+  "world_name": "EREZCRAFT V6 - Chunky + DH",
+  "only_own_closed_world_copied": true,
+  "source_files": 153,
+  "copy_files": 153,
+  "files_changed_after_byte_identical_copy": [
+    "level.dat",
+    "level.dat_old"
+  ],
+  "change_reason": "Only LevelName in two NBT metadata files, in a new own-test-world destination; all region/entity/player/DH files remain byte-identical to completed source.",
+  "existing_owner_world_files_preserved": 319,
+  "owner_preferences_preserved": [
+    "options.txt",
+    "config/DistantHorizons.toml",
+    "config/iris.properties"
+  ],
+  "existing_owner_save_folders_preserved": [
+    "Новый мир",
+    "Новый мир (1)"
+  ],
+  "stored_state_biome_sha256": "99b37f7f5df52054c29df649dad46b950c5d2097a1f469e49443a11a61029fbd",
+  "worlds_overwritten": false,
+  "diagnostic_mods_installed_in_owner_client": false,
+  "client_release": "techmagic-0-1-0-alpha-6-luminous",
+  "game_started_by_copy": false,
+  "repeat_installer": {
+    "files_checked": 70,
+    "game_server_contacted": false,
+    "game_started": false,
+    "instance": "D:/EREZCRAFT/data/stable\\instances/archipelago",
+    "passed": true,
+    "release": "techmagic-0-1-0-alpha-6-luminous",
+    "repaired": 0,
+    "runtime": {
+      "java_executable": "D:\\EREZCRAFT\\data\\stable\\runtime\\jvm\\java-runtime-delta\\bin\\javaw.exe",
+      "java_major": 21,
+      "minecraft": "1.21.1",
+      "neoforge": "21.1.252"
+    }
+  },
+  "live_signature_and_managed_hash_validation_passed": true,
+  "core_sha256": "2460028541664f519f1ffa5dfac1a5db1f562a3f123c81b40bb85f997eff21dd",
+  "launcher_exe_sha256": "b0604c73f142e622dea42fb96c60e33b8c99dfddf5d9986d9300171dcc4268f7",
+  "native_desktop_launch_this_turn_verified": false,
+  "native_ui_limit": "User Escape stopped Computer Use; no further UI control in this turn. Native isolated final full-client run passed; actual installed client synchronized twice.",
+  "actual_owner_dh_renderer_mode": "DEFAULT",
+  "actual_owner_dh_lod_radius": 32
+}

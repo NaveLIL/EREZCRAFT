@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "shader_candidate_status": "Rejected for the current Sable2.0.6/Veil4.3.2 dependency contract: Iris1.8.12 requires Sodium0.6.13, while the accepted Sable requires Sodium>=0.8.12-alpha.2+mc1.21.1. Historical pins retained for evidence, not installation.",
+  "checked_current_renderer_contract_utc": "2026-10-10",
+  "replacement_shader_research": "Iris1.8.14-beta.1 targets Sodium0.8, but is not accepted or installed; requires a separate DH/Aeronautics/V6 visual gate.",
+  "client_only_shader_candidate": [
+    {
+      "project": "iris",
+      "version": "1.8.12+1.21.1-neoforge",
+      "project_id": "YL57xq9U",
+      "version_id": "t3ruzodq",
+      "filename": "iris-neoforge-1.8.12+mc1.21.1.jar",
+      "download_url": "https://cdn.modrinth.com/data/YL57xq9U/versions/t3ruzodq/iris-neoforge-1.8.12%2Bmc1.21.1.jar",
+      "sha512": "57b8026a3c3c433cf6123d63dc6ce7e11f6d480a72926370db1fc7f2b06059bc16a753ecd7e7af659c19e90b592103196b0e89585ce4f0744a4ca433f59bcf1a",
+      "bytes": 2438548,
+      "api_dependencies": [
+        {
+          "version_id": "Pb3OXVqC",
+          "project_id": "AANobbMI",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "runtime_verified": false
+    },
+    {
+      "project": "sodium",
+      "version": "mc1.21.1-0.6.13-neoforge",
+      "project_id": "AANobbMI",
+      "version_id": "Pb3OXVqC",
+      "filename": "sodium-neoforge-0.6.13+mc1.21.1.jar",
+      "download_url": "https://cdn.modrinth.com/data/AANobbMI/versions/Pb3OXVqC/sodium-neoforge-0.6.13%2Bmc1.21.1.jar",
+      "sha512": "ce58f34d05d96c0a109a5cea23c741f6bdb2e6be31fc087c5989274cefca5f10ba0c08c62083cf554a51f2c7667bf46e4164383f675c844e77633aef2659996b",
+      "bytes": 1162994,
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "complementary-reimagined",
+      "version": "r5.9.3",
+      "project_id": "HVnmMxH1",
+      "version_id": "Bqen1mJX",
+      "filename": "ComplementaryReimagined_r5.9.3.zip",
+      "download_url": "https://cdn.modrinth.com/data/HVnmMxH1/versions/Bqen1mJX/ComplementaryReimagined_r5.9.3.zip",
+      "sha512": "45304b1d7862afdb2177b7e6226fc9c6737911d17a4ad46cc9c519ca4deb935f05072cd337cd8b19a15bb8062b57b54eceec7bdee4cd572d94858e2946d37d85",
+      "bytes": 553397,
+      "api_dependencies": [],
+      "license": {
+        "id": "LicenseRef-Custom",
+        "name": "",
+        "url": "https://github.com/ComplementaryDevelopment/ComplementaryReimagined/blob/main/License.txt"
+      },
+      "runtime_verified": false
+    }
+  ],
+  "server_pregen_candidate": {
+    "project": "chunky",
+    "version": "1.4.23",
+    "project_id": "fALzjamp",
+    "version_id": "LuFhm4eU",
+    "filename": "Chunky-NeoForge-1.4.23.jar",
+    "download_url": "https://cdn.modrinth.com/data/fALzjamp/versions/LuFhm4eU/Chunky-NeoForge-1.4.23.jar",
+    "sha512": "2db769dd723f243a21e1881e7c9f825e9c193da6f2bed454b70cb6fa9e51c57f63fdcf017c0657bbd26f7bba30815413e27c74d3c7be0783390a96ee9baa4bf7",
+    "bytes": 340572,
+    "api_dependencies": [],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "runtime_verified": false
+  },
+  "shader_verified_with_DH_Aeronautics_V6": false,
+  "production_pregen_started": false,
+  "required_client_checks": [
+    "Actual V6 dark sky and toxic sea colors/geometry",
+    "DH LOD seam/reflections",
+    "Create/Flywheel and moving Sable craft"
+  ],
+  "pregen_requirement": "Freeze final worldgen pack/seed first; no forced chunks, no trim/delete, actual islands_v6 selection; finish saving and cold check before players"
+}

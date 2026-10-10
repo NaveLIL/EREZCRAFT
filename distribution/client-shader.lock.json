@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "purpose": "candidate only; real render checks pending",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "projects": [
+    {
+      "project": "iris",
+      "projectId": "YL57xq9U",
+      "versionId": "KduFYu4t",
+      "version": "1.8.14-beta.1+1.21.1-neoforge",
+      "releaseType": "beta",
+      "date": "2026-06-13T15:57:14.116693Z",
+      "filename": "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/KduFYu4t/iris-neoforge-1.8.14-beta.1%2Bmc1.21.1.jar",
+      "size": 2540723,
+      "sha512": "33fddb430e16222902eac75b8b3d57c381b0f3cc729f3b56c4628df12ca108f23a0b11e2feb167923d6d14d1fc7e8ee1a977ec421b19d1951bdca74c4092b9c5",
+      "sha256": "60d5f8bf52f25e9986440f4a4270a6bd986d9cff994510e1108ac1547063b314",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "dependencies": [],
+      "localPath": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+      "description": "A modern shader pack loader for Minecraft intended to be compatible with existing OptiFine shader packs",
+      "clientSide": "required",
+      "serverSide": "unsupported",
+      "metadata": {
+        "modLoader": "javafml",
+        "loaderVersion": "*",
+        "license": "LGPL-3.0-only",
+        "mods": [
+          {
+            "modId": "iris",
+            "version": "1.8.14-beta.1+mc1.21.1",
+            "displayName": "Iris",
+            "logoFile": "iris-logo.png",
+            "authors": "coderbot, IMS212",
+            "description": "Iris is a modern shaders mod for Minecraft intended to be compatible with existing OptiFine shader packs.\n",
+            "sodium:options": {
+              "mixin.features.render.world.sky": false
+            }
+          }
+        ],
+        "dependencies": {
+          "iris": [
+            {
+              "modId": "minecraft",
+              "type": "required",
+              "versionRange": "[1.21,1.21.1)",
+              "ordering": "NONE",
+              "side": "CLIENT"
+            },
+            {
+              "modId": "embeddium",
+              "type": "incompatible",
+              "reason": "Iris and Embeddium cannot be used together. Please use Sodium 0.8 instead.",
+              "versionRange": "[0.0.1,)",
+              "ordering": "NONE",
+              "side": "CLIENT"
+            }
+          ]
+        },
+        "mixins": [
+          {
+            "config": "mixins.iris.json"
+          },
+          {
+            "config": "mixins.iris.fantastic.json"
+          },
+          {
+            "config": "mixins.iris.vertexformat.json"
+          },
+          {
+            "config": "iris-batched-entity-rendering.mixins.json"
+          },
+          {
+            "config": "mixins.iris.compat.sodium.json"
+          },
+          {
+            "config": "mixins.iris.compat.dh.json"
+          },
+          {
+            "config": "mixins.iris.forge.json"
+          }
+        ],
+        "modproperties": {
+          "iris": {
+            "sodium:config_api_user": "net.irisshaders.iris.compat.sodium.config.IrisConfig"
+          }
+        }
+      }
+    },
+    {
+      "project": "complementary-reimagined",
+      "projectId": "HVnmMxH1",
+      "versionId": "Bqen1mJX",
+      "version": "r5.9.3",
+      "releaseType": "release",
+      "date": "2026-09-15T06:35:41.918796Z",
+      "filename": "ComplementaryReimagined_r5.9.3.zip",
+      "url": "https://cdn.modrinth.com/data/HVnmMxH1/versions/Bqen1mJX/ComplementaryReimagined_r5.9.3.zip",
+      "size": 553397,
+      "sha512": "45304b1d7862afdb2177b7e6226fc9c6737911d17a4ad46cc9c519ca4deb935f05072cd337cd8b19a15bb8062b57b54eceec7bdee4cd572d94858e2946d37d85",
+      "sha256": "fed6c879e732cf7fc7bc6570ebb1def43235aa7e96f62859fbdbdbfa0b484b38",
+      "license": {
+        "id": "LicenseRef-Custom",
+        "name": "",
+        "url": "https://github.com/ComplementaryDevelopment/ComplementaryReimagined/blob/main/License.txt"
+      },
+      "dependencies": [],
+      "localPath": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\ComplementaryReimagined_r5.9.3.zip",
+      "description": "Preserving the elements of Minecraft with exceptional quality, detail, and performance.",
+      "clientSide": "required",
+      "serverSide": "unsupported",
+      "licenseFiles": [
+        "License.txt"
+      ],
+      "modpackLicenseText": "Complementary License Agreement 1.7\n===================================\n\n0. Terminology\n--------------\n  0.1. \"The Pack\" and/or \"This Pack\" means the software package that this\n       specific license file you are reading from is found in.\n\n  0.2. \"Normal Usage\" means usage of The Pack as intended for the general\n       public. This includes most usage, but the following usages are\n       definitely NOT considered Normal Usage:\n         a. Redistributing (parts of) The Pack\n         b. Modifying code of The Pack\n\n  0.3. \"User\" and/or \"Users\" means people that are using The Pack under our\n       definition of Normal Usage.\n\n  0.4. \"Modpack\" means a modification package made for the video\n       game \"Minecraft: Java Edition\".\n\n  0.5. \"Modified Pack\" means a software package that consists of The Pack but\n       with the code intentionally being changed to differ from The Pack.\n\n  0.6. \"Original Pack\" means one of two things:\n         a. If \"This Pack\" is an original Complementary Development product,\n            meaning that this specific license file you are reading from is\n            found inside an original Complementary Development product, then\n            \"Original Pack\" directly means the same thing as \"This Pack\".\n         b. But if \"This Pack\" is not an original Complementary Development\n            product, meaning that this specific license file you are reading\n            from is found inside a pack that was created using the grant\n            detailed at section \"1.3\", then \"Original Pack\" refers to the\n            pack created by Complementary Development that must be mentioned\n            in the description page(s) of This Pack.\n\n1. Grants\n---------\n  1.1. All Users are free to use This Pack for Normal Usage. This isn't\n       limited to, but includes:\n         a. Using The Pack for gameplay\n         b. Using The Pack for content creation\n\n  1.2. This Pack is allowed to be added to a Modpack as long as the following\n       conditions are met:\n         a. This Pack must be visibly credited in the Modpack's description\n            page(s) if This Pack is enabled by default for new users of the\n            Modpack.\n         b. The author of the Modpack must acknowledge that any problems that\n            may arise from using This Pack in their Modpack is entirely under\n            the responsibility of the author of the Modpack.\n         c. The contents of This Pack must not be modified in any way,\n            including simple variable changes or block property additions.\n         d. This Pack must be added to the Modpack by using Modrinth or\n            CurseForge's existing systems, similar to how Modpack developers\n            add any other mods to their Modpacks. It is not allowed to\n            redistribute This Pack using a direct file upload.\n\n  1.3. This Pack is allowed to be redistributed as a Modified Pack as long as\n       the following conditions are met:\n         a. The Original Pack must be visibly credited in the description\n            page(s) of the Modified Pack, with a link to the official\n            Complementary Development website.\n         b. This license file must still be left inside the Modified Pack\n            without any changes being made to it, and it must be updated to\n            the latest one found in the latest version of the Original Pack\n            every time the Modified Pack gets updated to make more use of the\n            code from the Original Pack.\n         c. The Modified Pack must not have the word \"Complementary\" in its\n            name, and there should be at least 3 character difference between\n            the name of the Modified Pack and the Original Pack. Adding or\n            removing non-alphabetic characters or the removal of\n            \"Complementary\" does not count as a character difference.\n         d. The Modified Pack must look noticeably different from the\n            Original Pack in multiple common gameplay scenarios that must\n            include daytime overworld visuals, regardless of the setting or\n            variable changes in the Modified Pack and/or the Original Pack.\n         e. The Modified Pack must not have any other license agreements\n            or terms other than this agreement, regardless of how much new\n            code has been added to the Modified Pack.\n         f. The Modified Pack must have a significant amount of human-written\n            code additions that noticeably contribute to the final visuals in\n            multiple common gameplay scenarios\n\n2. Denied Cases\n---------------\n  2.1. Any usage or redistribution of any part of This Pack that isn't\n       explicitly covered in the \"Grants\" section of this license should be\n       treated as \"All Rights Reserved\". Only exceptions are the files that\n       contain a notice that they are covered by a different license.\n\n  2.2. This agreement only applies to the version of This Pack that this exact\n       file can be found in. This agreement is not valid for future or past\n       versions of The Pack unless they contain the exact same agreement.\n\n3. License Infringement\n-----------------------\n  3.1. By using This Pack for any purpose, you agree that Complementary\n       Development has the right to take action against you in the case of a\n       license infringement, regardless of This Pack being the Original Pack\n       or not.\n\n  3.2. Complementary Development reserves its rights to not take action\n       against cases that it deems harmless or not harmful enough to matter.\n       For this reason, cases that Complementary Development did not take\n       action against in the past cannot be used as an excuse to ignore this\n       agreement.\n"
+    }
+  ],
+  "deliveryPolicy": "All third-party shader files from exact original author Modrinth CDN URLs, no EREZCRAFT ZIP hosting; no content edits; optional/disabled for new profiles; licensing is author custom 1.7",
+  "irisRuntimeContracts": {
+    "officialChangelog": "https://modrinth.com/mod/iris/version/KduFYu4t: Updates to Sodium0.8; still Beta, latest NF1.21.1",
+    "dhMinimumFromOriginalBytecode": "DH2.0.4 or DH API1.1.0 or newer; uses originalDH classmethods",
+    "neoforgeModsMetadata": "No explicit hard NeoForge or Sodiumrange; Minecraftrange[1.21,1.21.1) must be testedinactualFMLlikepriorJEI; incompatibleEmbeddium[0.0.1,)",
+    "currentSodiumUnchanged": "0.8.13+mc1.21.1",
+    "shaderProgramEntries": [
+      "world0/dh_terrain.fsh",
+      "world0/dh_water.fsh",
+      "world-1/dh_terrain.fsh",
+      "world1/dh_terrain.fsh"
+    ]
+  },
+  "knownAuthorWarning": "https://modrinth.com/mod/create-aeronautics: Aeronautics currently has visual issues when used with Iris Shaders.",
+  "probeJavaCompiledAgainstActualRuntime": true,
+  "compileOnlyProfile": "D:/repos/erezcraft/.local/verification/shader-compile-only-20261010",
+  "nativeGameLaunchedByResearchAgent": false,
+  "diagnosticSources": {
+    "NativeChunkSettler.java": "36bcc2a9b603be5fd48c2efe443cd635120fbeb55e0232400852a3be8c0c9db5",
+    "ShaderProbe.java": "f8f06193f8a94bf1f337ba78816b8f63d28d91dad68de9e660db5ea1fa3f3cc1",
+    "ShaderRenderCheck.java": "e9ce5f608e6e35a399dabe90c1ad26fcef406c195f7deecdef60d86a7dd3a256"
+  },
+  "runtime_verified": true,
+  "optional": true,
+  "default_enabled": false,
+  "scope": "One fresh actual V6 world: DH depth, sea/sky, moving Sable/Create, cold DE models and glowing Ars Gecko armor; no active reactor or Survival flight claim"
+}

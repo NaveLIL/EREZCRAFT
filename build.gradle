@@ -19,8 +19,17 @@ sourceSets {
         compileClasspath += sourceSets.main.compileClasspath
         runtimeClasspath += sourceSets.main.runtimeClasspath
     }
+    componentGameTests {
+        // Only the upstream renderer is excluded from the artificial GameTestServer.
+        // All compiled Interstice tests and NeoForge dependencies remain available.
+        runtimeClasspath = sourceSets.smoke.runtimeClasspath.filter { it.name != 'uCdwusMi-9w34y8ai.jar' }
+    }
+    componentInfectionGameTests {
+        runtimeClasspath = sourceSets.infection.runtimeClasspath.filter { it.name != 'uCdwusMi-9w34y8ai.jar' }
+    }
 }
 configurations {
+    distantHorizonsArtifact
     smokeImplementation.extendsFrom implementation
     smokeCompileOnly.extendsFrom compileOnly
     smokeRuntimeOnly.extendsFrom runtimeOnly
@@ -28,12 +37,36 @@ configurations {
     infectionCompileOnly.extendsFrom compileOnly
     infectionRuntimeOnly.extendsFrom runtimeOnly
 }
+repositories {
+    exclusiveContent {
+        forRepository { maven { name = 'Modrinth'; url = 'https://api.modrinth.com/maven' } }
+        filter { includeGroup 'maven.modrinth' }
+    }
+}
 def sporeArtifact = file(providers.gradleProperty('sporeJar').getOrElse('research/spore/spore_1.21.1_2.2.0j_neo-original.jar'))
 dependencies {
+    // Required pack renderer. An external upstream mod, never shaded or reimplemented.
+    distantHorizonsArtifact('maven.modrinth:uCdwusMi:9w34y8ai') { transitive = false }
+    runtimeOnly('maven.modrinth:uCdwusMi:9w34y8ai') { transitive = false }
+    smokeCompileOnly('maven.modrinth:uCdwusMi:9w34y8ai') { transitive = false }
     // The original third-party binary belongs only to the isolated probe classpath.
     infectionCompileOnly files(sporeArtifact)
     infectionRuntimeOnly files(sporeArtifact)
 }
+def verifyDistantHorizonsArtifact = tasks.register('verifyDistantHorizonsArtifact') {
+    doLast {
+        def artifact = configurations.distantHorizonsArtifact.singleFile
+        def digest = java.security.MessageDigest.getInstance('SHA-512')
+        artifact.withInputStream { input ->
+            byte[] buffer = new byte[1024 * 1024]; int length
+            while ((length = input.read(buffer)) > 0) digest.update(buffer, 0, length)
+        }
+        def expected = 'd14b32d3fd143a06514d6ad388eee11e9d657c84e1a937aaf8d033b1137fb43ef8b05cff1011a994cc42f3106823c51234f8bc18d72bb05bc317a20ea83c50ed'
+        if (digest.digest().encodeHex().toString() != expected) throw new GradleException('Distant Horizons 3.3.3 upstream SHA-512 mismatch')
+        logger.lifecycle('Verified mandatory Distant Horizons 3.3.3 / MC1.21.1 / NeoForge: ' + artifact.name)
+    }
+}
+tasks.named('assemble') { dependsOn verifyDistantHorizonsArtifact }
 def verifySporeArtifact = tasks.register('verifySporeArtifact') {
     doLast {
         if (!sporeArtifact.isFile()) throw new GradleException('Obtain the original Spore 2.2.0j NeoForge JAR; see docs/progress/M01.md or use -PsporeJar=/path/to/original.jar')
@@ -60,6 +93,8 @@ neoForge {
         configureEach {
             logLevel = org.slf4j.event.Level.INFO
             loadedMods = [mods.interstice]
+            systemProperty 'interstice.expectedModVersion', project.version.toString()
+            taskBefore verifyDistantHorizonsArtifact
         }
         client { client() }
         clientSmoke {
@@ -274,6 +309,49 @@ neoForge {
             gameDirectory = file('build/ecology-gametests')
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_ecology'
+        }
+        forestCaveGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/forest-cave-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_forest_caves'
+        }
+        forestCaveCreate {
+            client()
+            gameDirectory = file('build/forest-cave-smoke')
+            systemProperty 'interstice.forestCaveSmoke', 'create'
+        }
+        forestCaveReload {
+            client()
+            gameDirectory = file('build/forest-cave-smoke')
+            systemProperty 'interstice.forestCaveSmoke', 'reload'
+        }
+        techmagicSpineSmoke {
+            client()
+            gameDirectory = file('.verification/techmagic-spine-smoke')
+            systemProperty 'interstice.techmagicSpineSmoke', 'true'
+        }
+        techmagicFoundationSmoke {
+            client()
+            gameDirectory = file('.verification/techmagic-foundation-smoke')
+            systemProperty 'interstice.techmagicSpineSmoke', 'true'
+            systemProperty 'interstice.techmagicFoundationLock', file('distribution/server-foundation.lock.json').absolutePath
+        }
+        techmagicFoundationServer {
+            server()
+            gameDirectory = file('.verification/techmagic-foundation-server')
+            systemProperty 'interstice.techmagicFoundationServer', 'true'
+            systemProperty 'interstice.techmagicFoundationLock', file('distribution/server-foundation.lock.json').absolutePath
+        }
+        techmagicPregenCreate {
+            server()
+            gameDirectory = file('.verification/techmagic-pregen')
+            systemProperty 'interstice.techmagicPregen', 'create'
+        }
+        techmagicPregenReload {
+            server()
+            gameDirectory = file('.verification/techmagic-pregen')
+            systemProperty 'interstice.techmagicPregen', 'reload'
         }
         miningGameTestServer {
             type = 'gameTestServer'
@@ -635,10 +713,26 @@ neoForge {
         }
     }
 }
+// DH3.3.3 casts NeoForge's GameTestServer to DedicatedServer. Component tests must use
+// their own classpath; EVERY real client/dedicated run and assembled modpack includes DH.
+neoForge.runs.each { run ->
+    if (run.type.get() == 'gameTestServer') {
+        run.sourceSet = run.name == 'infectionGameTestServer' ? sourceSets.componentInfectionGameTests : sourceSets.componentGameTests
+    } else {
+        if (run.type.get() == 'client') {
+            run.jvmArgument '-XX:+UseZGC'
+            run.jvmArgument '-XX:+ZGenerational'
+            if (run.name.startsWith('techmagic')) {
+                run.jvmArgument '-Xms2G'
+                run.jvmArgument '-Xmx10G'
+            }
+        }
+    }
+}
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+        def profileName = name in ['techmagicPregenCreate','techmagicPregenReload'] ? 'techmagicPregen' : name in ['forestCaveCreate','forestCaveReload'] ? 'forestCaveSmoke' : name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
                 name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
                 name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
@@ -707,7 +801,86 @@ tasks.named('runWinchReload') { dependsOn tasks.named('runWinchCreate') }
 tasks.register('runWinchSmoke') { dependsOn tasks.named('runWinchReload') }
 tasks.named('runV6ProgressionReload') { dependsOn tasks.named('runV6ProgressionCreate') }
 tasks.register('runV6ProgressionSmoke') { dependsOn tasks.named('runV6ProgressionReload') }
+tasks.named('runForestCaveReload') { dependsOn tasks.named('runForestCaveCreate') }
+tasks.register('runForestCaveSmoke') { dependsOn tasks.named('runForestCaveReload') }
+tasks.matching { it.name in ['prepareForestCaveCreateRun','prepareForestCaveReloadRun'] }.configureEach {
+    outputs.upToDateWhen { false }
+    doLast {
+        def runName=it.name.contains('Reload')?'forestCaveReload':'forestCaveCreate'
+        def directory=neoForge.runs.getByName(runName).gameDirectory.get().asFile
+        def config=new File(directory,'config/fml.toml');config.parentFile.mkdirs();config.text='earlyWindowControl = false\n'
+        def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\n'
+    }
+}
 tasks.withType(Jar).configureEach { from('LICENSE') { into('META-INF/licenses'); rename { 'interstice-apache-2.0.txt' } } }
+def modpackZip = tasks.register('modpackZip', Zip) {
+    dependsOn tasks.named('jar'), verifyDistantHorizonsArtifact
+    archiveFileName = 'erezcraft-' + project.version + '-neoforge-modpack.zip'
+    destinationDirectory = layout.buildDirectory.dir('distributions')
+    from(tasks.named('jar')) { into 'mods' }
+    from(configurations.distantHorizonsArtifact) {
+        into 'mods'
+        rename { 'DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar' }
+    }
+    from('distribution/v6-preview-manifest.json')
+    from('distribution/INSTALL.txt')
+    from('distribution/client-options.txt') { rename { 'options.txt' } }
+    from('distribution/client-jvm-args.txt')
+    from('distribution/DistantHorizons.toml') { into 'config' }
+    from('docs/V6_FOREST_CAVES.md') { into 'docs' }
+    from('docs/LAUNCHER_INTEGRATION.md') { into 'docs' }
+    from('docs/OCEAN_DH_RENDER_FIX.md') { into 'docs' }
+    from('docs/FLUID_FLIGHT_CRASH_FIX.md') { into 'docs' }
+    from('docs/verification/V6_FOREST_CAVES.json') { into 'docs/verification' }
+    from('docs/verification/TECHMAGIC_FOUNDATION.json') { into 'docs/verification' }
+    from('docs/verification/OCEAN_DH_RENDER_FIX.json') { into 'docs/verification' }
+    from('docs/verification/OCEAN_DH_WORKSTATION_INSTALL.json') { into 'docs/verification' }
+    from('docs/verification/FLUID_FLIGHT_CRASH_FIX.json') { into 'docs/verification' }
+    from('LICENSE') { into 'licenses/interstice' }
+    from({ zipTree(configurations.distantHorizonsArtifact.singleFile) }) {
+        include 'LICENSE.txt', 'LICENSE.LESSER.txt', 'LICENSE-LOGOS.txt'
+        into 'licenses/distant-horizons'
+    }
+}
+tasks.named('assemble') { dependsOn modpackZip }
+tasks.matching { it.name in ['prepareTechmagicSpineSmokeRun','prepareTechmagicFoundationSmokeRun','prepareTechmagicFoundationServerRun','prepareTechmagicPregenCreateRun','prepareTechmagicPregenReloadRun'] }.configureEach {
+    outputs.upToDateWhen { false }
+    doLast {
+        def pregen=it.name.contains('Pregen')
+        def runName=pregen?(it.name.contains('Reload')?'techmagicPregenReload':'techmagicPregenCreate'):it.name.contains('FoundationServer')?'techmagicFoundationServer':it.name.contains('Foundation')?'techmagicFoundationSmoke':'techmagicSpineSmoke'
+        def dedicated=pregen||runName=='techmagicFoundationServer'
+        def directory=neoForge.runs.getByName(runName).gameDirectory.get().asFile
+        if (!directory.toPath().toAbsolutePath().toString().replace('\\','/').contains('/.verification/')) throw new GradleException('Spine verification profile must be isolated')
+        def lock=new groovy.json.JsonSlurper().parse(file('distribution/techmagic-spine.lock.json'))
+        lock.required_spine.findAll { it.project in ['create','create-aeronautics','sable'] }.each { mod ->
+            def input=file('research/dependencies/'+mod.filename)
+            if (!input.isFile()) throw new GradleException('First resolve pinned spine artifact: '+mod.filename)
+            def actual=java.security.MessageDigest.getInstance('SHA-512').digest(input.bytes).encodeHex().toString()
+            if(actual!=mod.sha512)throw new GradleException('Spine SHA-512 mismatch: '+mod.filename)
+            copy { from input; into new File(directory,'mods') }
+        }
+        if(runName.startsWith('techmagicFoundation')||pregen){
+            def foundation=new groovy.json.JsonSlurper().parse(file('distribution/server-foundation.lock.json'))
+            foundation.mods.each { mod ->
+                if(dedicated&&mod.role in ['minimap','worldmap'])return
+                def input=file('research/dependencies/'+mod.filename)
+                if(!input.isFile())throw new GradleException('Missing foundation artifact: '+mod.filename)
+                if(java.security.MessageDigest.getInstance('SHA-512').digest(input.bytes).encodeHex().toString()!=mod.sha512)throw new GradleException('Foundation SHA-512 mismatch: '+mod.filename)
+                copy { from input; into new File(directory,'mods') }
+            }
+        }
+        def config=new File(directory,'config/fml.toml');config.parentFile.mkdirs();config.text='earlyWindowControl = false\n'
+        copy { from 'distribution/DistantHorizons.toml'; into new File(directory,'config') }
+        def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\n'
+        if(dedicated){
+            def world=new File(directory,'foundation-check/level.dat')
+            if(runName=='techmagicPregenReload'){if(!world.exists())throw new GradleException('Pregen reload requires the earlier saved world')}
+            else if(world.exists())throw new GradleException('Foundation/pregen create requires a NEW verification root')
+            new File(directory,'eula.txt').text='eula=true\n'
+            new File(directory,'server.properties').text='server-ip=127.0.0.1\nserver-port=26605\nonline-mode=false\nallow-flight=false\nview-distance=4\nsimulation-distance=4\nlevel-name=foundation-check\nlevel-seed=20261006\nmax-players=10\nwhite-list=true\n'
+        }
+    }
+}
 tasks.matching { it.name in ['prepareV6ProgressionCreateRun','prepareV6ProgressionReloadRun','prepareV6PerformanceRun'] }.configureEach {
     outputs.upToDateWhen { false }
     doLast {
@@ -783,4 +956,5 @@ tasks.register('runSurvivalPreparationSmoke') { dependsOn tasks.named('runSurviv
 
 // A successful build includes the server's behavioral tests, in a disposable profile.
 tasks.named('check') { dependsOn tasks.named('runFaunaGameTestServer') }
+tasks.named('check') { dependsOn tasks.named('runForestCaveGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer'),tasks.named('runAgricultureGameTestServer'),tasks.named('runEquipmentGameTestServer'),tasks.named('runGearGameTestServer'),tasks.named('runTetherGameTestServer'),tasks.named('runLiftGameTestServer') }

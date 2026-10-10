@@ -39,6 +39,7 @@ import pro.erez.interstice.minerals.*;
 import pro.erez.interstice.tide.*;
 import pro.erez.interstice.worldgen.*;
 import pro.erez.interstice.worldgen.terrain.TensionTerrainV6;
+import pro.erez.interstice.worldgen.terrain.V6MouthPlanner;
 
 /** Six real integrated worlds in one native client JVM. No seed mutation or synthetic FULL claims. */
 @EventBusSubscriber(modid=Interstice.ID,value=Dist.CLIENT)
@@ -160,6 +161,14 @@ public final class TensionRealmVisualSmoke {
     private static Prepared prepare(ServerLevel level,Path profile)throws Exception{
         require(level!=null,"V6 dimension missing");var generator=(IslandChunkGenerator)level.getChunkSource().getGenerator();require(generator.terrainRevision()==6,"Inspected archived generator");require(level.getSeed()==SEEDS[seedIndex],"Actual ServerLevel seed differs from requested seed");
         var metrics=new JsonObject();metrics.addProperty("actual_server_seed",level.getSeed());metrics.addProperty("terrain_revision",6);metrics.addProperty("dimension",level.dimension().location().toString());metrics.addProperty("numeric_search_radius",2048);metrics.addProperty("numeric_search_spacing",64);
+        // Preselect the first natural canonical mouth before ANY additional FULL site choice.
+        // Its window/order match the independent native route GT and are never expanded.
+        var mouthSearch=new JsonObject();mouthSearch.addProperty("cell_size_blocks",V6MouthPlanner.CELL_SIZE);mouthSearch.addProperty("min_cell_inclusive",-8);mouthSearch.addProperty("max_cell_inclusive",7);
+        mouthSearch.addProperty("fixed_cell_budget",256);mouthSearch.addProperty("order","lexicographic cell_x then cell_z");mouthSearch.addProperty("selected_before_full_inspection",true);
+        var planner=TensionTerrainV6.root(level.getChunkSource().randomState()).mouthPlanner();V6MouthPlanner.Mouth selectedMouth=null;int mouthCells=0;
+        mouthSelection:for(int x=-8;x<=7;x++)for(int z=-8;z<=7;z++){mouthCells++;var plans=planner.plansInCell(x,z);if(!plans.isEmpty()){selectedMouth=plans.getFirst();break mouthSelection;}}
+        mouthSearch.addProperty("cells_examined",mouthCells);mouthSearch.addProperty("accepted_plan_found",selectedMouth!=null);mouthSearch.addProperty("budget_exhausted_cell_plans",planner.exhaustedCells());
+        if(selectedMouth!=null)mouthSearch.add("first_preselected_plan",V6CaveSurvey.plannedMouth(selectedMouth));metrics.add("planned_mouth_search",mouthSearch);
         var random=level.getChunkSource().randomState();var candidates=new TreeMap<String,List<Candidate>>();for(String id:BIOMES)candidates.put(id,new ArrayList<>());int screened=0,columns=0;
         for(int radius=0;radius<=32;radius++){
             for(int dx=-radius;dx<=radius;dx++)for(int dz=-radius;dz<=radius;dz++){
@@ -207,7 +216,38 @@ public final class TensionRealmVisualSmoke {
         if(scenes.get(5).id.contains("unavailable"))missing.add("No clear natural player-height under-canopy route in the fixed49x49 garden plot");
         scenes.add(cave.get("accessible_cave_found").getAsBoolean()&&cave.get("camera_internal_tunnel_view_found").getAsBoolean()?caveScene(cave):eye(level,"tunnel-interior-view-unavailable-vault-surface",chosen.get("stone_vaults")));
         scenes.add(coast.getY()<=40?coastScene(level,coast):eye(level,"coast-unavailable-garden-surface",coast));
-        for(var scene:scenes){loadPlot(level,scene.target,18,inspected);loadPlot(level,BlockPos.containing(scene.x,scene.y,scene.z),18,inspected);require(clear(level,scene.x,scene.y,scene.z),"Natural camera blocked "+scene.id);}
+        // The original first49x49 graph, missing list and pass logic above stay authoritative
+        // for their original inspection scope. This is a separate, explicitly named criterion.
+        var routeReport=new JsonObject();routeReport.addProperty("explicit_full_chunk_budget",8);routeReport.addProperty("geometry_edits",0);
+        routeReport.addProperty("initial_resource_window_excludes_additional_mouth_route_chunks",true);
+        routeReport.addProperty("world_cave_route_criterion",false);routeReport.addProperty("alternative_mouth_selected_after_full_failure",false);
+        routeReport.addProperty("normal_native_client_streaming_not_in_explicit_route_budget",true);
+        if(selectedMouth!=null){
+            var routeChunks=new TreeSet<ChunkPos>(Comparator.comparingLong(ChunkPos::toLong));for(var p:selectedMouth.route())routeChunks.add(new ChunkPos(p));
+            routeReport.addProperty("preselected_route_chunk_count",routeChunks.size());
+            if(routeChunks.size()>8)routeReport.addProperty("route_inspection_error","First preselected route exceeds the declared8-chunk budget; no alternative selected");
+            else try{
+                var requested=new JsonArray();for(var p:routeChunks){var c=full(level,p.x,p.z,inspected);requested.add(chunkStats(level,c,false));}
+                var actual=V6CaveSurvey.actualPlannedRoute(level,selectedMouth);routeReport.add("explicit_route_full_chunks",requested);routeReport.add("actual_full_route",actual.report());
+                boolean verified=actual.report().get("world_cave_route_criterion").getAsBoolean();routeReport.addProperty("world_cave_route_criterion",verified);
+                // Retain the fixed eight scene slots. The alternate cave is honestly labelled
+                // as its own bounded mouth route, never presented as the first vault plot.
+                if(verified&&(!cave.get("accessible_cave_found").getAsBoolean()||!cave.get("camera_internal_tunnel_view_found").getAsBoolean())){
+                    var p=actual.camera();var target=actual.target();
+                    scenes.set(6,new Scene("verified-planned-mouth-cave",p,p.getX()+.5,p.getY(),p.getZ()+.5,target.getX()+.5,target.getY()+.2,target.getZ()+.5,
+                            "Actual FULL interior on the first preselected natural mouth route in fixed256cell/1024 window. Static dry collision walking proof; not the first49x49 vault plot, human Survival, or mob/web immunity."));
+                    routeReport.addProperty("cave_capture_slot_source","verified_preselected_planned_mouth_route");
+                }else routeReport.addProperty("cave_capture_slot_source","original_first_vault_plot_or_explicit_unavailable_view");
+            }catch(RuntimeException failedInspection){routeReport.addProperty("route_inspection_error",failedInspection.toString());}
+        }
+        metrics.add("planned_mouth_actual_full",routeReport);metrics.addProperty("world_cave_route_criterion",routeReport.get("world_cave_route_criterion").getAsBoolean());
+        metrics.addProperty("legacy_first_plot_criteria_unchanged",true);
+        for(var scene:scenes){
+            // The new mouth camera already lies on its explicit <=8-FULL route. Do not
+            // silently add the generic18-block inspection halo to that bounded proof.
+            if(!scene.id.equals("verified-planned-mouth-cave")){loadPlot(level,scene.target,18,inspected);loadPlot(level,BlockPos.containing(scene.x,scene.y,scene.z),18,inspected);}
+            require(sceneClear(level,scene),"Natural camera blocked "+scene.id);
+        }
         var cameras=new JsonArray();for(var scene:scenes)cameras.add(sceneJson(scene));metrics.add("natural_cameras",cameras);metrics.add("missing_in_declared_windows",missing);metrics.addProperty("requested_actual_full_chunks",inspected.size());
         metrics.addProperty("geometry_edits",0);metrics.addProperty("inspection_world_random_ticks",0);metrics.addProperty("selected_plots_are_not_unbiased_global_distribution",true);
         var sections=new JsonArray();sections.add(exportSection(level,chosen.get("ash_islands"),profile,"ash"));sections.add(exportSection(level,chosen.get("stone_vaults"),profile,"vault"));metrics.add("actual_FULL_voxel_sections",sections);
@@ -330,7 +370,8 @@ public final class TensionRealmVisualSmoke {
     private static Scene coastScene(ServerLevel level,BlockPos ground){var sea=seaNeighbor(level,ground);if(sea==null)return eye(level,"coast-view-unavailable",ground);return new Scene("lower-coast",ground,ground.getX()+.5,ground.getY()+1,ground.getZ()+.5,sea.getX()+.5,sea.getY()+.8,sea.getZ()+.5,"Natural dry garden coast looking at actually observed lower heavy sea, standard player eye height.");}
     private static Scene caveScene(JsonObject report){var p=V6CaveSurvey.point(report.getAsJsonObject("camera_feet"));var target=V6CaveSurvey.point(report.getAsJsonObject("camera_target"));return new Scene("accessible-compact-tunnel-interior",p,p.getX()+.5,p.getY(),p.getZ()+.5,target.getX()+.5,report.get("camera_look_y").getAsDouble(),target.getZ()+.5,"Actual FULL interior view along at least3 consecutive dry standing subtractive nodes inside uncarved rock, actual ceiling3..5 blocks; recorded surface walking route, no exterior arch caption.");}
     private static boolean clear(ServerLevel level,double x,double y,double z){var p=BlockPos.containing(x,y,z);return level.getBlockState(p).isAir()&&level.getBlockState(p.above()).isAir();}
-    private static void pose(ServerPlayer player,ServerLevel level,Scene s,boolean nv){require(clear(level,s.x,s.y,s.z),"Natural camera changed "+s.id);double dx=s.tx-s.x,dz=s.tz-s.z,dy=s.ty-s.y-player.getEyeHeight();player.teleportTo(level,s.x,s.y,s.z,Set.of(),(float)(Math.toDegrees(Math.atan2(dz,dx))-90),(float)-Math.toDegrees(Math.atan2(dy,Math.hypot(dx,dz))));player.setDeltaMovement(0,0,0);player.getAbilities().flying=true;player.onUpdateAbilities();player.removeAllEffects();if(nv)player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,12000,0,false,false));}
+    private static boolean sceneClear(ServerLevel level,Scene scene){return scene.id.equals("verified-planned-mouth-cave")?V6CaveSurvey.collisionCameraClear(level,BlockPos.containing(scene.x,scene.y,scene.z)):clear(level,scene.x,scene.y,scene.z);}
+    private static void pose(ServerPlayer player,ServerLevel level,Scene s,boolean nv){require(sceneClear(level,s),"Natural camera changed "+s.id);double dx=s.tx-s.x,dz=s.tz-s.z,dy=s.ty-s.y-player.getEyeHeight();player.teleportTo(level,s.x,s.y,s.z,Set.of(),(float)(Math.toDegrees(Math.atan2(dz,dx))-90),(float)-Math.toDegrees(Math.atan2(dy,Math.hypot(dx,dz))));player.setDeltaMovement(0,0,0);player.getAbilities().flying=true;player.onUpdateAbilities();player.removeAllEffects();if(nv)player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,12000,0,false,false));}
     private static boolean ready(Minecraft mc,Scene scene,boolean nv){return mc.level.dimension().equals(IslandWorld.TENSION_WORLD)&&mc.player.position().distanceToSqr(scene.x,scene.y,scene.z)<.1&&mc.player.hasEffect(MobEffects.NIGHT_VISION)==nv&&mc.level.hasChunkAt(scene.target)&&mc.levelRenderer.isSectionCompiled(scene.target)&&mc.getWindow().getWidth()==1280&&mc.getWindow().getHeight()==720;}
     private static JsonObject sceneJson(Scene s){var o=V6CaveSurvey.json(s.target);o.addProperty("id",s.id);o.addProperty("camera_x",s.x);o.addProperty("camera_y",s.y);o.addProperty("camera_z",s.z);o.addProperty("look_at_x",s.tx);o.addProperty("look_at_y",s.ty);o.addProperty("look_at_z",s.tz);o.addProperty("scope",s.scope);o.addProperty("natural_blocks_edited",0);return o;}
     private static String filename(Scene scene,boolean nv){return "v6-seed-"+SEEDS[seedIndex]+"-"+scene.id+"-"+(nv?"nv":"dark")+".png";}

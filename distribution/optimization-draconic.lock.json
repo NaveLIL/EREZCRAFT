@@ -1,0 +1,1928 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "java": 21,
+  "scope": "Pinned original bytes, native V6 hand lights, DE cold models, moving Sable/Create render and flushed ship data; real dedicated startup. Not full progression or multiplayer capacity.",
+  "runtime_verified": true,
+  "mods": [
+    {
+      "project": "lambdynamiclights",
+      "project_id": "yBW8D80W",
+      "role": "client_dynamic_hand_lighting",
+      "version": "4.8.11+1.21.1",
+      "version_id": "ksaGCvSu",
+      "filename": "lambdynamiclights-4.8.11+1.21.1.jar",
+      "bytes": 2023375,
+      "sha512": "0286076e8b2922dfbe90cd4544a0d16e6d07d7249c732a37479ea4281e9cf96c86dd2e1ce5261489bd5553ceba33044bc550a04b9eb582645eb97f15c9c6a64c",
+      "sha256": "913b0358b1031828f1e060ea0ee361232dc2a1c82464f488a0a920739ce7c763",
+      "download_url": "https://cdn.modrinth.com/data/yBW8D80W/versions/ksaGCvSu/lambdynamiclights-4.8.11%2B1.21.1.jar",
+      "license": {
+        "id": "LicenseRef-Lambda-License",
+        "name": "",
+        "url": "https://github.com/LambdAurora/LambDynamicLights/blob/1.21.5/LICENSE"
+      },
+      "source_url": "https://github.com/LambdAurora/LambDynamicLights",
+      "issues_url": "https://github.com/LambdAurora/LambDynamicLights/issues",
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "reCfnRvJ",
+          "file_name": null,
+          "dependency_type": "incompatible"
+        },
+        {
+          "version_id": null,
+          "project_id": "PxQSWIcD",
+          "file_name": null,
+          "dependency_type": "incompatible"
+        },
+        {
+          "version_id": null,
+          "project_id": "P7dR8mSH",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "mod_ids": {
+        "lambdynlights": "4.8.11+1.21.1",
+        "lambdynlights_runtime": "4.8.11+1.21.1",
+        "lambdynlights_api": "4.8.11+1.21.1",
+        "pride": "1.2.4+1.21.1",
+        "spruceui": "6.2.5+1.21.1",
+        "yumi_mc_core": "1.0.0-beta.1+1.21.1"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "lambdynlights_runtime",
+          "type": "required",
+          "versionRange": "[4.8.11+1.21.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "lambdynlights",
+          "origin": "root"
+        },
+        {
+          "modId": "lambdynlights_api",
+          "type": "required",
+          "versionRange": "[4.8.11+1.21.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "lambdynlights_runtime",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "lambdynlights_runtime",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar"
+        },
+        {
+          "modId": "spruceui",
+          "type": "required",
+          "versionRange": "[6.2.5+1.21.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "lambdynlights_runtime",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar"
+        },
+        {
+          "modId": "yumi_mc_core",
+          "type": "required",
+          "versionRange": "[1.0.0-beta.1+1.21.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "lambdynlights_runtime",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar"
+        },
+        {
+          "modId": "sodiumdynamiclights",
+          "type": "incompatible",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "lambdynlights_runtime",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar"
+        },
+        {
+          "modId": "ryoamiclights",
+          "type": "incompatible",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "lambdynlights_runtime",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "lambdynlights_api",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar/META-INF/jars/lambdynamiclights-api-4.8.11+1.21.1-mojmap.jar"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "pride",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar/META-INF/jars/pridelib-1.2.4+1.21.1-mojmap.jar"
+        },
+        {
+          "modId": "yumi_mc_core",
+          "type": "required",
+          "versionRange": "[1.0.0-alpha.13+1.21.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "pride",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar/META-INF/jars/pridelib-1.2.4+1.21.1-mojmap.jar"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "spruceui",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar/META-INF/jars/spruceui-6.2.5+1.21.1-mojmap.jar"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,1.21.8]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "yumi_mc_core",
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar/META-INF/jars/yumi-mc-foundation-1.0.0-beta.1+1.21.1-mojmap.jar"
+        }
+      ],
+      "metadata_records": [
+        {
+          "origin": "root",
+          "manifest": {
+            "Manifest-Version": "1.0"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[2,)",
+            "license": "Lambda License",
+            "issueTrackerURL": "https://github.com/LambdAurora/LambDynamicLights/issues",
+            "mods": [
+              {
+                "modId": "lambdynlights",
+                "version": "4.8.11+1.21.1",
+                "displayName": "LambDynamicLights",
+                "description": "The most feature-complete dynamic lighting mod.",
+                "authors": "LambdAurora",
+                "credits": "Akarys",
+                "logoFile": "assets/lambdynlights/icon.png",
+                "logoBlur": true,
+                "displayURL": "https://lambdaurora.dev/projects/lambdynamiclights",
+                "issueTrackerURL": "https://github.com/LambdAurora/LambDynamicLights/issues"
+              }
+            ],
+            "dependencies": {
+              "lambdynlights": [
+                {
+                  "modId": "lambdynlights_runtime",
+                  "type": "required",
+                  "versionRange": "[4.8.11+1.21.1,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                }
+              ]
+            },
+            "modproperties": {
+              "lambdynlights": {
+                "catalogueImageIcon": "assets/lambdynlights/icon.png"
+              }
+            }
+          }
+        },
+        {
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Fabric-Jar-Type": "classes",
+            "Fabric-Loom-Mixin-Remap-Type": "static",
+            "Fabric-Gradle-Version": "9.5.1",
+            "Fabric-Loom-Version": "1.16.3",
+            "Fabric-Mixin-Compile-Extensions-Version": "0.6.0",
+            "Fabric-Minecraft-Version": "1.21.1",
+            "Fabric-Tiny-Remapper-Version": "0.13.0",
+            "Fabric-Loader-Version": "0.18.4",
+            "Fabric-Mixin-Version": "0.17.0+mixin.0.8.7",
+            "Fabric-Mixin-Group": "net.fabricmc",
+            "Fabric-Mapping-Namespace": "named"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[2,)",
+            "license": "Lambda License",
+            "issueTrackerURL": "https://github.com/LambdAurora/LambDynamicLights/issues",
+            "mods": [
+              {
+                "modId": "lambdynlights_runtime",
+                "version": "4.8.11+1.21.1",
+                "displayName": "LambDynamicLights (Runtime)",
+                "description": "The runtime of the most feature-complete dynamic lighting mod.",
+                "authors": "LambdAurora",
+                "credits": "Akarys",
+                "logoFile": "assets/lambdynlights/icon.png",
+                "logoBlur": true,
+                "displayURL": "https://lambdaurora.dev/projects/lambdynamiclights",
+                "issueTrackerURL": "https://github.com/LambdAurora/LambDynamicLights/issues"
+              }
+            ],
+            "accessTransformers": [
+              {
+                "file": "META-INF/accesstransformer.cfg"
+              }
+            ],
+            "mixins": [
+              {
+                "config": "lambdynlights.mixins.json"
+              },
+              {
+                "config": "lambdynlights.lightsource.mixins.json"
+              }
+            ],
+            "dependencies": {
+              "lambdynlights_runtime": [
+                {
+                  "modId": "lambdynlights_api",
+                  "type": "required",
+                  "versionRange": "[4.8.11+1.21.1,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21,1.21.1]",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "spruceui",
+                  "type": "required",
+                  "versionRange": "[6.2.5+1.21.1,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "yumi_mc_core",
+                  "type": "required",
+                  "versionRange": "[1.0.0-beta.1+1.21.1,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "sodiumdynamiclights",
+                  "type": "incompatible",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "ryoamiclights",
+                  "type": "incompatible",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                }
+              ]
+            },
+            "modproperties": {
+              "lambdynlights_runtime": {
+                "catalogueImageIcon": "assets/lambdynlights/icon.png",
+                "sodium:config_api_user": "dev.lambdaurora.lambdynlights.compat.SodiumCompat",
+                "yumi:entrypoints": {
+                  "yumi:client_init": [
+                    {
+                      "value": "dev.lambdaurora.lambdynlights.LambDynLights::INSTANCE"
+                    }
+                  ],
+                  "lambdynlights:platform": [
+                    {
+                      "value": "dev.lambdaurora.lambdynlights.platform.neoforge.NeoForgePlatform::INSTANCE"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar/META-INF/jars/lambdynamiclights-api-4.8.11+1.21.1-mojmap.jar",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Fabric-Jar-Type": "classes",
+            "Fabric-Loom-Mixin-Remap-Type": "static",
+            "Fabric-Gradle-Version": "9.5.1",
+            "Fabric-Loom-Version": "1.16.3",
+            "Fabric-Mixin-Compile-Extensions-Version": "0.6.0",
+            "Fabric-Minecraft-Version": "1.21.1",
+            "Fabric-Tiny-Remapper-Version": "0.13.0",
+            "Fabric-Loader-Version": "unknown",
+            "Fabric-Mixin-Version": "unknown",
+            "Fabric-Mixin-Group": "unknown",
+            "Fabric-Mapping-Namespace": "named"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[2,)",
+            "license": "Lambda License",
+            "issueTrackerURL": "https://github.com/LambdAurora/LambDynamicLights/issues",
+            "mods": [
+              {
+                "modId": "lambdynlights_api",
+                "version": "4.8.11+1.21.1",
+                "displayName": "LambDynamicLights (API)",
+                "description": "Library to provide dynamic lighting to Minecraft through LambDynamicLights.",
+                "authors": "LambdAurora",
+                "credits": "Akarys",
+                "logoFile": "assets/lambdynlights/icon.png",
+                "logoBlur": true,
+                "displayURL": "https://lambdaurora.dev/projects/lambdynamiclights",
+                "issueTrackerURL": "https://github.com/LambdAurora/LambDynamicLights/issues"
+              }
+            ],
+            "dependencies": {
+              "lambdynlights_api": [
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21,1.21.1]",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            },
+            "modproperties": {
+              "lambdynlights_api": {
+                "catalogueImageIcon": "assets/lambdynlights/icon.png"
+              }
+            }
+          }
+        },
+        {
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar/META-INF/jars/pridelib-1.2.4+1.21.1-mojmap.jar",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Fabric-Jar-Type": "classes",
+            "Fabric-Loom-Mixin-Remap-Type": "mixin",
+            "Fabric-Gradle-Version": "9.1.0",
+            "Fabric-Loom-Version": "1.11.8",
+            "Fabric-Mixin-Compile-Extensions-Version": "0.6.0",
+            "Fabric-Minecraft-Version": "1.21.1",
+            "Fabric-Tiny-Remapper-Version": "0.11.1",
+            "Fabric-Loader-Version": "0.16.14",
+            "Fabric-Mixin-Version": "0.15.5+mixin.0.8.7",
+            "Fabric-Mixin-Group": "net.fabricmc",
+            "Fabric-Mapping-Namespace": "named"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[2,)",
+            "license": "MIT",
+            "issueTrackerURL": "https://github.com/Queerbric/pridelib/issues",
+            "mods": [
+              {
+                "modId": "pride",
+                "version": "1.2.4+1.21.1",
+                "displayName": "Pride Lib",
+                "description": "A unified library for data-driven flags.",
+                "authors": "Emi",
+                "credits": "unascribed, LambdAurora",
+                "logoFile": "assets/pride/icon.png",
+                "logoBlur": false,
+                "displayURL": "https://github.com/Queerbric/pridelib",
+                "issueTrackerURL": "https://github.com/Queerbric/pridelib/issues"
+              }
+            ],
+            "accessTransformers": [
+              {
+                "file": "META-INF/accesstransformer.cfg"
+              }
+            ],
+            "dependencies": {
+              "pride": [
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21,1.21.1]",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "yumi_mc_core",
+                  "type": "required",
+                  "versionRange": "[1.0.0-alpha.13+1.21.1,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                }
+              ]
+            },
+            "modproperties": {
+              "pride": {
+                "catalogueImageIcon": "assets/pride/icon.png",
+                "yumi:entrypoints": {
+                  "yumi:client_init": [
+                    {
+                      "value": "io.github.queerbric.pride.impl.PrideClientInitializer"
+                    }
+                  ],
+                  "pride:platform_provider": [
+                    {
+                      "value": "io.github.queerbric.pride.impl.platform.neoforge.NeoForgePlatform::INSTANCE"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar/META-INF/jars/spruceui-6.2.5+1.21.1-mojmap.jar",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Fabric-Jar-Type": "classes",
+            "Fabric-Loom-Mixin-Remap-Type": "mixin",
+            "Fabric-Gradle-Version": "8.14.3",
+            "Fabric-Loom-Version": "1.11.8",
+            "Fabric-Mixin-Compile-Extensions-Version": "0.6.0",
+            "Fabric-Minecraft-Version": "1.21.1",
+            "Fabric-Tiny-Remapper-Version": "0.11.1",
+            "Fabric-Loader-Version": "0.16.10",
+            "Fabric-Mixin-Version": "0.15.4+mixin.0.8.7",
+            "Fabric-Mixin-Group": "net.fabricmc",
+            "Fabric-Mapping-Namespace": "named"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[2,)",
+            "license": "MIT",
+            "issueTrackerURL": "https://github.com/LambdAurora/SpruceUI/issues",
+            "mods": [
+              {
+                "modId": "spruceui",
+                "version": "6.2.5+1.21.1",
+                "displayName": "SpruceUI",
+                "description": "Just a Minecraft GUI library.",
+                "authors": "LambdAurora",
+                "logoFile": "assets/spruceui/icon.png",
+                "logoBlur": false,
+                "displayURL": "https://github.com/LambdAurora/SpruceUI",
+                "issueTrackerURL": "https://github.com/LambdAurora/SpruceUI/issues"
+              }
+            ],
+            "dependencies": {
+              "spruceui": [
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            },
+            "modproperties": {
+              "spruceui": {
+                "catalogueImageIcon": "assets/spruceui/icon.png"
+              }
+            }
+          }
+        },
+        {
+          "origin": "root/META-INF/jars/lambdynamiclights-4.8.11+1.21.1-neoforge.jar/META-INF/jars/yumi-mc-foundation-1.0.0-beta.1+1.21.1-mojmap.jar",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Fabric-Jar-Type": "classes",
+            "Fabric-Loom-Mixin-Remap-Type": "static",
+            "Fabric-Gradle-Version": "9.1.0",
+            "Fabric-Loom-Version": "1.13.3",
+            "Fabric-Mixin-Compile-Extensions-Version": "0.6.0",
+            "Fabric-Minecraft-Version": "1.21.1",
+            "Fabric-Tiny-Remapper-Version": "0.12.0",
+            "Fabric-Loader-Version": "0.16.14",
+            "Fabric-Mixin-Version": "0.15.5+mixin.0.8.7",
+            "Fabric-Mixin-Group": "net.fabricmc",
+            "Fabric-Mapping-Namespace": "named"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[2,)",
+            "license": "Mozilla Public License Version 2.0",
+            "issueTrackerURL": "https://github.com/YumiProject/yumi-minecraft-foundation-library/issues",
+            "mods": [
+              {
+                "modId": "yumi_mc_core",
+                "version": "1.0.0-beta.1+1.21.1",
+                "displayName": "Yumi Minecraft Libraries: Foundation",
+                "description": "A core library offering entrypoints and environment-related utilities to Minecraft mods.",
+                "authors": "Yumi Project Minecraft Libraries Development Team, LambdAurora",
+                "displayURL": "https://github.com/YumiProject/yumi-minecraft-foundation-library",
+                "issueTrackerURL": "https://github.com/YumiProject/yumi-minecraft-foundation-library/issues"
+              }
+            ],
+            "mixins": [
+              {
+                "config": "yumi_mc_core.mixins.json"
+              },
+              {
+                "config": "yumi_mc_core.neoforge.mixins.json"
+              }
+            ],
+            "dependencies": {
+              "yumi_mc_core": [
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1,1.21.8]",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            },
+            "modproperties": {
+              "yumi_mc_core": {
+                "yumi:entrypoints": {
+                  "yumi:init": "dev.yumi.mc.core.impl.YumiFoundationMod"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "observed_runtime_versions": {
+        "lambdynlights": "4.8.11+1.21.1",
+        "lambdynlights_runtime": "4.8.11+1.21.1",
+        "lambdynlights_api": "4.8.11+1.21.1",
+        "pride": "1.2.4+1.21.1",
+        "spruceui": "6.2.5+1.21.1",
+        "yumi_mc_core": "1.0.0-beta.1+1.21.1"
+      }
+    },
+    {
+      "project": "ferrite-core",
+      "project_id": "uXXizFIs",
+      "role": "both_memory_optimization",
+      "version": "7.0.3-neoforge",
+      "version_id": "x7kQWVju",
+      "filename": "ferritecore-7.0.3-neoforge.jar",
+      "bytes": 121559,
+      "sha512": "19af89a2075bb10a63884fa853ebf84b02c79dc3242430ecdad056fd764fdcde367a7303276b329df01b0736e2ef264c5d80c7dc92c6aebd244f556a230bb417",
+      "sha256": "d87ea28262715ebff45b8a82d493e6b468e7a4521bc021df5d88302196d030a8",
+      "download_url": "https://cdn.modrinth.com/data/uXXizFIs/versions/x7kQWVju/ferritecore-7.0.3-neoforge.jar",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "source_url": "https://github.com/malte0811/FerriteCore",
+      "issues_url": "https://github.com/malte0811/FerriteCore/issues",
+      "api_dependencies": [],
+      "mod_ids": {
+        "ferritecore": "7.0.3"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.218,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "ferritecore",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "ferritecore",
+          "origin": "root"
+        }
+      ],
+      "metadata_records": [
+        {
+          "origin": "root",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Specification-Title": "FerriteCore",
+            "Specification-Vendor": "malte0811",
+            "Implementation-Title": "NeoForge",
+            "Implementation-Vendor": "malte0811",
+            "Implementation-Timestamp": "2026-01-25T13:59:39+0100",
+            "Timestampe": "1769345979924",
+            "Built-On-Java": "21.0.9+10 (Red Hat, Inc.)",
+            "Build-On-Minecraft": "1.21.1",
+            "Name": "ferritecore.predicates.mixin.json",
+            "SHA-384-Digest": "tZ6wLL+K9vUP1AmxeNOeH3cUFvXHHBffPrBzyXkljnqcOeyf6QABofLF"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[1,)",
+            "license": "MIT",
+            "mods": [
+              {
+                "modId": "ferritecore",
+                "version": "7.0.3",
+                "displayName": "Ferrite Core",
+                "authors": "malte0811",
+                "description": "Reduces memory usage.\n",
+                "logoFile": "logo.png"
+              }
+            ],
+            "dependencies": {
+              "ferritecore": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.218,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1,1.22)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            },
+            "mixins": [
+              {
+                "config": "ferritecore.predicates.mixin.json"
+              },
+              {
+                "config": "ferritecore.fastmap.mixin.json"
+              },
+              {
+                "config": "ferritecore.mrl.mixin.json"
+              },
+              {
+                "config": "ferritecore.dedupmultipart.mixin.json"
+              },
+              {
+                "config": "ferritecore.blockstatecache.mixin.json"
+              },
+              {
+                "config": "ferritecore.dedupbakedquad.mixin.json"
+              },
+              {
+                "config": "ferritecore.threaddetec.mixin.json"
+              },
+              {
+                "config": "ferritecore.modelsides.mixin.json"
+              },
+              {
+                "config": "ferritecore.datacomponents.mixin.json"
+              },
+              {
+                "config": "ferritecore.accessors.mixin.json"
+              }
+            ]
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "observed_runtime_versions": {
+        "ferritecore": "7.0.3"
+      }
+    },
+    {
+      "project": "modernfix",
+      "project_id": "nmDcB62a",
+      "role": "both_startup_and_memory_optimization",
+      "version": "5.27.26+mc1.21.1",
+      "version_id": "7Jy58lnT",
+      "filename": "modernfix-neoforge-5.27.26+mc1.21.1.jar",
+      "bytes": 611043,
+      "sha512": "37c76fc5bc72cfc1035260f891ffeb45b4f32651d2e490c5eb8c60f3b5686deca3145b32d4fab9036f65f5277b0ac66f4ad3855e52cd973e791b09e9c4b896d8",
+      "sha256": "09f6842c63d14b3f1707f1f4a6f4602052f237f7efa9be135e41d3d97acf2a13",
+      "download_url": "https://cdn.modrinth.com/data/nmDcB62a/versions/7Jy58lnT/modernfix-neoforge-5.27.26%2Bmc1.21.1.jar",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "source_url": "https://github.com/embeddedt/ModernFix",
+      "issues_url": "https://github.com/embeddedt/ModernFix/issues",
+      "api_dependencies": [],
+      "mod_ids": {
+        "modernfix": "5.27.26+mc1.21.1"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.111-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "modernfix",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21, 1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "modernfix",
+          "origin": "root"
+        },
+        {
+          "modId": "jei",
+          "type": "optional",
+          "versionRange": "[15.8.0.11,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "modernfix",
+          "origin": "root"
+        }
+      ],
+      "metadata_records": [
+        {
+          "origin": "root",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Specification-Version": "1",
+            "Implementation-Title": "modernfix",
+            "Implementation-Version": "5.27.26+mc1.21.1"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[1,)",
+            "license": "GNU LGPL 3.0",
+            "issueTrackerURL": "https://github.com/embeddedt/ModernFix/issues",
+            "mixins": [
+              {
+                "config": "modernfix-modernfix.mixins.json"
+              }
+            ],
+            "mods": [
+              {
+                "modId": "modernfix",
+                "version": "5.27.26+mc1.21.1",
+                "displayName": "ModernFix",
+                "displayURL": "https://modrinth.com/mod/modernfix",
+                "logoFile": "icon.png",
+                "authors": "embeddedt",
+                "description": "Egregious, yet effective performance improvements for modern Minecraft\n"
+              }
+            ],
+            "dependencies": {
+              "modernfix": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.0.111-beta,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21, 1.22)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "jei",
+                  "type": "optional",
+                  "versionRange": "[15.8.0.11,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "observed_runtime_versions": {
+        "modernfix": "5.27.26+mc1.21.1"
+      }
+    },
+    {
+      "project": "immediatelyfast",
+      "project_id": "5ZwdcRci",
+      "role": "client_immediate_rendering_optimization",
+      "version": "1.6.14+1.21.1-neoforge",
+      "version_id": "OUpXxw4n",
+      "filename": "ImmediatelyFast-NeoForge-1.6.14+1.21.1.jar",
+      "bytes": 365195,
+      "sha512": "7d1c2e6ce306f4bb9aa155f64ba87732dc2443d57fde249467a99e0ed90fec89a706252888b97f882efbc55d6044971519db704125f27ae53cd9ae40424f9b2c",
+      "sha256": "15bf9bd6d8e3ae8ad35c5a4d90680424b534d9762d698c0a466965afcab5dd78",
+      "download_url": "https://cdn.modrinth.com/data/5ZwdcRci/versions/OUpXxw4n/ImmediatelyFast-NeoForge-1.6.14%2B1.21.1.jar",
+      "license": {
+        "id": "LGPL-3.0-or-later",
+        "name": "GNU Lesser General Public License v3.0 or later",
+        "url": null
+      },
+      "source_url": "https://github.com/RaphiMC/ImmediatelyFast",
+      "issues_url": "https://github.com/RaphiMC/ImmediatelyFast/issues",
+      "api_dependencies": [],
+      "mod_ids": {
+        "immediatelyfast": "1.6.14+1.21.1"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "minecraft",
+          "versionRange": "[1.21,1.21.1]",
+          "side": "CLIENT",
+          "owner": "immediatelyfast",
+          "origin": "root"
+        },
+        {
+          "modId": "neoforge",
+          "versionRange": "[21.0.0,)",
+          "side": "CLIENT",
+          "owner": "immediatelyfast",
+          "origin": "root"
+        }
+      ],
+      "metadata_records": [
+        {
+          "origin": "root",
+          "manifest": {
+            "Manifest-Version": "1.0"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[1,)",
+            "license": "LGPL-3.0-or-later",
+            "issueTrackerURL": "https://github.com/RaphiMC/ImmediatelyFast/issues",
+            "mods": [
+              {
+                "modId": "immediatelyfast",
+                "version": "1.6.14+1.21.1",
+                "displayName": "ImmediatelyFast",
+                "description": "Speed up and optimize immediate mode rendering in Minecraft",
+                "authors": "RK_01",
+                "logoFile": "immediatelyfast-icon.png",
+                "displayURL": "https://github.com/RaphiMC/ImmediatelyFast"
+              }
+            ],
+            "mixins": [
+              {
+                "config": "immediatelyfast-common.mixins.json"
+              },
+              {
+                "config": "immediatelyfast-neoforge.mixins.json"
+              }
+            ],
+            "dependencies": {
+              "immediatelyfast": [
+                {
+                  "modId": "minecraft",
+                  "versionRange": "[1.21,1.21.1]",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "neoforge",
+                  "versionRange": "[21.0.0,)",
+                  "side": "CLIENT"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "observed_runtime_versions": {
+        "immediatelyfast": "1.6.14+1.21.1"
+      }
+    },
+    {
+      "project": "sodium",
+      "project_id": "AANobbMI",
+      "role": "client_chunk_rendering_optimization",
+      "version": "mc1.21.1-0.8.13-neoforge",
+      "version_id": "uMOpc5uV",
+      "filename": "sodium-neoforge-0.8.13+mc1.21.1.jar",
+      "bytes": 1292934,
+      "sha512": "4f537696af95411e9daf15795fb5fcbc49913d488a96fa912fa8f1d7db408710995e8a1461190f3cd0f8217bf9e35e9539176592428ed587ca2d7aa84450a390",
+      "sha256": "575d187b15328d7bddd8a9b1bee64333c22c14735f5780ec49eac0cd5503c08d",
+      "download_url": "https://cdn.modrinth.com/data/AANobbMI/versions/uMOpc5uV/sodium-neoforge-0.8.13%2Bmc1.21.1.jar",
+      "license": {
+        "id": "LicenseRef-Polyform-Shield-1.0.0",
+        "name": "",
+        "url": "https://github.com/CaffeineMC/sodium/blob/dev/LICENSE.md"
+      },
+      "source_url": "https://github.com/CaffeineMC/sodium",
+      "issues_url": "https://github.com/CaffeineMC/sodium/issues",
+      "api_dependencies": [],
+      "mod_ids": {
+        "sodium": "0.8.13+mc1.21.1",
+        "fabric_api_base": "0.4.42+d1308ded19",
+        "fabric_block_view_api_v2": "1.0.10+9afaaf8c19",
+        "fabric_renderer_api_v1": "3.4.1+9125b6dc19",
+        "fabric_rendering_data_attachment_v1": "0.3.48+73761d2e19"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "1.21.1",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "sodium",
+          "origin": "root"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.82,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "sodium",
+          "origin": "root"
+        },
+        {
+          "modId": "embeddium",
+          "type": "incompatible",
+          "reason": "Sodium and Embeddium cannot be used together. Please remove Embeddium.",
+          "versionRange": "[0.0.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "sodium",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "1.21.1",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "sodium",
+          "origin": "root/META-INF/jarjar/net.caffeinemc.sodium-neoforge-0.8.13+mc1.21.1-mod.jar"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.82,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "sodium",
+          "origin": "root/META-INF/jarjar/net.caffeinemc.sodium-neoforge-0.8.13+mc1.21.1-mod.jar"
+        },
+        {
+          "modId": "embeddium",
+          "type": "incompatible",
+          "reason": "Sodium and Embeddium cannot be used together. Please remove Embeddium.",
+          "versionRange": "[0.0.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "sodium",
+          "origin": "root/META-INF/jarjar/net.caffeinemc.sodium-neoforge-0.8.13+mc1.21.1-mod.jar"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.219,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_api_base",
+          "origin": "root/META-INF/jarjar/fabric-api-base-0.4.42+d1308ded19.jar"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_api_base",
+          "origin": "root/META-INF/jarjar/fabric-api-base-0.4.42+d1308ded19.jar"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.115,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_block_view_api_v2",
+          "origin": "root/META-INF/jarjar/fabric-block-view-api-v2-1.0.10+9afaaf8c19.jar"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_block_view_api_v2",
+          "origin": "root/META-INF/jarjar/fabric-block-view-api-v2-1.0.10+9afaaf8c19.jar"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.219,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_renderer_api_v1",
+          "origin": "root/META-INF/jarjar/fabric-renderer-api-v1-3.4.1+9125b6dc19.jar"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_renderer_api_v1",
+          "origin": "root/META-INF/jarjar/fabric-renderer-api-v1-3.4.1+9125b6dc19.jar"
+        },
+        {
+          "modId": "fabric_api_base",
+          "type": "required",
+          "versionRange": "*",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_renderer_api_v1",
+          "origin": "root/META-INF/jarjar/fabric-renderer-api-v1-3.4.1+9125b6dc19.jar"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.115,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_rendering_data_attachment_v1",
+          "origin": "root/META-INF/jarjar/fabric-rendering-data-attachment-v1-0.3.48+73761d2e19.jar"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_rendering_data_attachment_v1",
+          "origin": "root/META-INF/jarjar/fabric-rendering-data-attachment-v1-0.3.48+73761d2e19.jar"
+        },
+        {
+          "modId": "fabric_block_view_api_v2",
+          "type": "required",
+          "versionRange": "*",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fabric_rendering_data_attachment_v1",
+          "origin": "root/META-INF/jarjar/fabric-rendering-data-attachment-v1-0.3.48+73761d2e19.jar"
+        }
+      ],
+      "metadata_records": [
+        {
+          "origin": "root",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Main-Class": "net.caffeinemc.mods.sodium.desktop.LaunchWarn",
+            "FMLModType": "LIBRARY",
+            "Automatic-Module-Name": "sodium_service"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[4,)",
+            "license": "Polyform-Shield-1.0.0",
+            "mods": [
+              {
+                "modId": "sodium",
+                "version": "0.8.13+mc1.21.1",
+                "displayName": "Sodium",
+                "logoFile": "sodium-icon.png",
+                "authors": "JellySquid (jellysquid3), IMS212",
+                "credits": "bytzo, PepperCode1, FlashyReese, altrisi, Grayray75, Madis0, Johni0702, comp500, coderbot16, Moulberry, MCRcortex, Altirix, embeddedt, pajicadvance, Kroppeb, douira, burgerindividual, TwistedZero, Leo40Git, haykam821, muzikbike",
+                "description": "Sodium is a powerful rendering engine for Minecraft which improves frame rates and reduces lag spikes.\n",
+                "provides": [
+                  "indium"
+                ]
+              }
+            ],
+            "modproperties": {
+              "sodium": {
+                "fabric-renderer-api-v1:contains_renderer": true
+              }
+            },
+            "dependencies": {
+              "sodium": [
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "1.21.1",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.82,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "embeddium",
+                  "type": "incompatible",
+                  "reason": "Sodium and Embeddium cannot be used together. Please remove Embeddium.",
+                  "versionRange": "[0.0.1,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                }
+              ]
+            },
+            "mixins": [
+              {
+                "config": "sodium-common.mixins.json"
+              },
+              {
+                "config": "sodium-neoforge.mixins.json"
+              }
+            ]
+          }
+        },
+        {
+          "origin": "root/META-INF/jarjar/net.caffeinemc.sodium-neoforge-0.8.13+mc1.21.1-mod.jar",
+          "manifest": {
+            "Manifest-Version": "1.0"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[4,)",
+            "license": "Polyform-Shield-1.0.0",
+            "mods": [
+              {
+                "modId": "sodium",
+                "version": "0.8.13+mc1.21.1",
+                "displayName": "Sodium",
+                "logoFile": "sodium-icon.png",
+                "authors": "JellySquid (jellysquid3), IMS212",
+                "credits": "bytzo, PepperCode1, FlashyReese, altrisi, Grayray75, Madis0, Johni0702, comp500, coderbot16, Moulberry, MCRcortex, Altirix, embeddedt, pajicadvance, Kroppeb, douira, burgerindividual, TwistedZero, Leo40Git, haykam821, muzikbike",
+                "description": "Sodium is a powerful rendering engine for Minecraft which improves frame rates and reduces lag spikes.\n",
+                "provides": [
+                  "indium"
+                ]
+              }
+            ],
+            "modproperties": {
+              "sodium": {
+                "fabric-renderer-api-v1:contains_renderer": true
+              }
+            },
+            "dependencies": {
+              "sodium": [
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "1.21.1",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.82,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "embeddium",
+                  "type": "incompatible",
+                  "reason": "Sodium and Embeddium cannot be used together. Please remove Embeddium.",
+                  "versionRange": "[0.0.1,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                }
+              ]
+            },
+            "mixins": [
+              {
+                "config": "sodium-common.mixins.json"
+              },
+              {
+                "config": "sodium-neoforge.mixins.json"
+              }
+            ]
+          }
+        },
+        {
+          "origin": "root/META-INF/jarjar/fabric-api-base-0.4.42+d1308ded19.jar",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Implementation-Version": "0.4.42+d1308ded19"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[1,)",
+            "license": "Apache-2.0",
+            "issueTrackerURL": "https://github.com/Sinytra/ForgifiedFabricAPI/issues",
+            "mods": [
+              {
+                "modId": "fabric_api_base",
+                "version": "${file.jarVersion}",
+                "displayName": "Forgified Fabric API Base",
+                "logoFile": "assets/fabric-api-base/icon.png",
+                "authors": "Sinytra, FabricMC",
+                "description": "Contains the essentials for Fabric API modules.",
+                "provides": [
+                  "fabric-api-base"
+                ],
+                "displayURL": "https://github.com/Sinytra/ForgifiedFabricAPI"
+              }
+            ],
+            "dependencies": {
+              "fabric_api_base": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.219,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1,1.22)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "origin": "root/META-INF/jarjar/fabric-block-view-api-v2-1.0.10+9afaaf8c19.jar",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Implementation-Version": "1.0.10+9afaaf8c19"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[1,)",
+            "license": "Apache-2.0",
+            "issueTrackerURL": "https://github.com/Sinytra/ForgifiedFabricAPI/issues",
+            "mods": [
+              {
+                "modId": "fabric_block_view_api_v2",
+                "version": "${file.jarVersion}",
+                "displayName": "Forgified Fabric BlockView API (v2)",
+                "logoFile": "assets/fabric-block-view-api-v2/icon.png",
+                "authors": "Sinytra, FabricMC",
+                "description": "Hooks for block views",
+                "provides": [
+                  "fabric-block-view-api-v2"
+                ],
+                "displayURL": "https://github.com/Sinytra/ForgifiedFabricAPI"
+              }
+            ],
+            "dependencies": {
+              "fabric_block_view_api_v2": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.115,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1,1.22)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            },
+            "mixins": [
+              {
+                "config": "fabric-block-view-api-v2.mixins.json"
+              },
+              {
+                "config": "fabric-block-view-api-v2.client.mixins.json"
+              }
+            ]
+          }
+        },
+        {
+          "origin": "root/META-INF/jarjar/fabric-renderer-api-v1-3.4.1+9125b6dc19.jar",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Implementation-Version": "3.4.1+9125b6dc19"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[1,)",
+            "license": "Apache-2.0",
+            "displayTest": "IGNORE_ALL_VERSION",
+            "issueTrackerURL": "https://github.com/Sinytra/ForgifiedFabricAPI/issues",
+            "mods": [
+              {
+                "modId": "fabric_renderer_api_v1",
+                "version": "${file.jarVersion}",
+                "displayName": "Forgified Fabric Renderer API (v1)",
+                "logoFile": "assets/fabric-renderer-api-v1/icon.png",
+                "authors": "Sinytra, FabricMC",
+                "description": "Defines rendering extensions for dynamic/fancy block and item models.",
+                "provides": [
+                  "fabric-renderer-api-v1"
+                ],
+                "displayURL": "https://github.com/Sinytra/ForgifiedFabricAPI"
+              }
+            ],
+            "dependencies": {
+              "fabric_renderer_api_v1": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.219,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1,1.22)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "fabric_api_base",
+                  "type": "required",
+                  "versionRange": "*",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            },
+            "mixins": [
+              {
+                "config": "fabric-renderer-api-v1.mixins.json"
+              },
+              {
+                "config": "fabric-renderer-api-v1.debughud.mixins.json"
+              }
+            ]
+          }
+        },
+        {
+          "origin": "root/META-INF/jarjar/fabric-rendering-data-attachment-v1-0.3.48+73761d2e19.jar",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Implementation-Version": "0.3.48+73761d2e19"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[1,)",
+            "license": "Apache-2.0",
+            "issueTrackerURL": "https://github.com/Sinytra/ForgifiedFabricAPI/issues",
+            "mods": [
+              {
+                "modId": "fabric_rendering_data_attachment_v1",
+                "version": "${file.jarVersion}",
+                "displayName": "Forgified Fabric Rendering Data Attachment (v1)",
+                "logoFile": "assets/fabric-rendering-data-attachment-v1/icon.png",
+                "authors": "Sinytra, FabricMC",
+                "description": "Thread-safe hooks for block entity data use during terrain rendering.",
+                "provides": [
+                  "fabric-rendering-data-attachment-v1"
+                ],
+                "displayURL": "https://github.com/Sinytra/ForgifiedFabricAPI"
+              }
+            ],
+            "dependencies": {
+              "fabric_rendering_data_attachment_v1": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.115,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1,1.22)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "fabric_block_view_api_v2",
+                  "type": "required",
+                  "versionRange": "*",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            },
+            "mixins": [
+              {
+                "config": "fabric-rendering-data-attachment-v1.mixins.json"
+              },
+              {
+                "config": "fabric-rendering-data-attachment-v1.client.mixins.json"
+              }
+            ]
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "observed_runtime_versions": {
+        "sodium": "0.8.13+mc1.21.1",
+        "fabric_api_base": "0.4.42+d1308ded19",
+        "fabric_block_view_api_v2": "1.0.10+9afaaf8c19",
+        "fabric_renderer_api_v1": "3.4.1+9125b6dc19",
+        "fabric_rendering_data_attachment_v1": "0.3.48+73761d2e19"
+      }
+    },
+    {
+      "project": "draconic-evolution",
+      "project_id": "nBqivi8H",
+      "version": "3.1.4.633",
+      "version_id": "84xwXpNh",
+      "release_type": "beta",
+      "published": "2026-09-03T02:53:07.893131Z",
+      "filename": "Draconic-Evolution-1.21.1-3.1.4.633.jar",
+      "download_url": "https://cdn.modrinth.com/data/nBqivi8H/versions/84xwXpNh/Draconic-Evolution-1.21.1-3.1.4.633.jar",
+      "bytes": 6046229,
+      "sha256": "e89f3a23a5478e35099905d7c08f9f6a2ff70289e964904e91f06a7ceeed39b5",
+      "sha512": "9740f5750a916db8927d8051430b49eba9ebc37e5545aef09b83872a561a721e7eb8fed82e6ed2aad15ba016d6f8ea2ce566a5cafacc4a2879239119cdbaff31",
+      "license": {
+        "id": "LicenseRef-CoFH-Dont-Be-a-Jerk-License",
+        "name": "",
+        "url": "https://github.com/Draconic-Inc/Draconic-Evolution/blob/master/LICENSE.md"
+      },
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "iFDWVIFV",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "2gq0ALnz",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "role": "late_game_draconic",
+      "mod_ids": {
+        "draconicevolution": "3.1.4.633"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.72,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "draconicevolution"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "draconicevolution"
+        },
+        {
+          "modId": "computercraft",
+          "type": "optional",
+          "versionRange": "[1.113.1,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "draconicevolution"
+        },
+        {
+          "modId": "codechickenlib",
+          "type": "required",
+          "versionRange": "[4.6.1,5.0.0)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "draconicevolution"
+        },
+        {
+          "modId": "brandonscore",
+          "type": "required",
+          "versionRange": "[3.2.1.+,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "draconicevolution"
+        }
+      ],
+      "runtime_verified": true,
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\Draconic-Evolution-1.21.1-3.1.4.633.jar",
+      "observed_runtime_versions": {
+        "draconicevolution": "3.1.4.633"
+      }
+    },
+    {
+      "project": "brandons-core",
+      "project_id": "iFDWVIFV",
+      "version": "3.2.1.309",
+      "version_id": "56nwe5IX",
+      "release_type": "release",
+      "published": "2025-10-20T20:49:29.976318Z",
+      "filename": "BrandonsCore-1.21.1-3.2.1.309.jar",
+      "download_url": "https://cdn.modrinth.com/data/iFDWVIFV/versions/56nwe5IX/BrandonsCore-1.21.1-3.2.1.309.jar",
+      "bytes": 1385131,
+      "sha256": "076b44de51c606e6cdd89694ac0a879fc028d4f0103880ef44f47dbcc69f1d23",
+      "sha512": "c7ce3d22cca5555aa0a41afd0d6ca4b9f11b9d49f7bfda7595db60ba68b2a96377318bfaf27747ed24d356e79ca796fe0239b5825363110b1a654d26eb2774ad",
+      "license": {
+        "id": "LicenseRef-CoFH-Dont-Be-a-Jerk-License",
+        "name": "",
+        "url": "https://github.com/Draconic-Inc/BrandonsCore/blob/master/LICENSE.md"
+      },
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "2gq0ALnz",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "role": "draconic_dependency",
+      "mod_ids": {
+        "brandonscore": "3.2.1.309"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.72,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "brandonscore"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "brandonscore"
+        },
+        {
+          "modId": "codechickenlib",
+          "type": "required",
+          "versionRange": "[4.6.1,5.0.0)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "brandonscore"
+        },
+        {
+          "modId": "projectintelligence",
+          "type": "optional",
+          "versionRange": "[1.1.0.+,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "brandonscore"
+        }
+      ],
+      "runtime_verified": true,
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\BrandonsCore-1.21.1-3.2.1.309.jar",
+      "observed_runtime_versions": {
+        "brandonscore": "3.2.1.309"
+      }
+    },
+    {
+      "project": "codechicken-lib",
+      "project_id": "2gq0ALnz",
+      "version": "4.6.1.529",
+      "version_id": "vLDGhjNJ",
+      "release_type": "release",
+      "published": "2026-07-23T05:19:19.117706Z",
+      "filename": "CodeChickenLib-1.21.1-4.6.1.529.jar",
+      "download_url": "https://cdn.modrinth.com/data/2gq0ALnz/versions/vLDGhjNJ/CodeChickenLib-1.21.1-4.6.1.529.jar",
+      "bytes": 1538382,
+      "sha256": "8c453d5c49092860e9d7a692eb858ea54c15d0f9598daae524f9590f8edf276f",
+      "sha512": "acc300da463672a4091e0f48266df4a5b0704bc23e044e71ca47c3d56390d09eef3690baad8f8744d657bac8d5e02a2b4a2bb77ed0478dba9ad9b8c35901645f",
+      "license": {
+        "id": "LGPL-2.1-or-later",
+        "name": "GNU Lesser General Public License v2.1 or later",
+        "url": null
+      },
+      "api_dependencies": [],
+      "role": "draconic_dependency",
+      "mod_ids": {
+        "codechickenlib": "4.6.1.529"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.72,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "codechickenlib"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "codechickenlib"
+        }
+      ],
+      "runtime_verified": true,
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\CodeChickenLib-1.21.1-4.6.1.529.jar",
+      "observed_runtime_versions": {
+        "codechickenlib": "4.6.1.529"
+      }
+    },
+    {
+      "project": "draconicadditions",
+      "project_id": 314515,
+      "version": "2.6.0.4",
+      "file_id": 8771137,
+      "release_type": "release",
+      "filename": "Draconic-Additions-1.21.1-2.6.0.4.jar",
+      "download_url": "https://mediafilez.forgecdn.net/files/8771/137/Draconic-Additions-1.21.1-2.6.0.4.jar",
+      "official_page": "https://www.curseforge.com/minecraft/mc-mods/draconicadditions/files/8771137",
+      "bytes": 1085440,
+      "sha256": "e803fa61de434cd8fe65601e7fd9db77ad18e93ad8f275eb4edfdc548fc5e9ea",
+      "sha512": "b4349072aea9ac6b79a36bd0cecdb858673f74a9c24e8589cbbbfd0f170a30f7270d197081709cb5aac81b7edeea9070730c7f040ce6a407b2e0ee77d5210027",
+      "license_url": "https://www.curseforge.com/minecraft/mc-mods/draconicadditions/license",
+      "role": "draconic_equipment_addon",
+      "mod_ids": {
+        "draconicadditions": "2.6.0.4"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "mandatory": true,
+          "versionRange": "[21.1.72,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "draconicadditions"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "draconicadditions"
+        },
+        {
+          "modId": "curios",
+          "mandatory": true,
+          "versionRange": "[1.21.1-9.5.1+1.21.1,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "draconicadditions"
+        },
+        {
+          "modId": "codechickenlib",
+          "mandatory": true,
+          "versionRange": "[4.6.1,4.7.0)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "draconicadditions"
+        },
+        {
+          "modId": "brandonscore",
+          "mandatory": true,
+          "versionRange": "[3.2.1.+,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "draconicadditions"
+        },
+        {
+          "modId": "draconicevolution",
+          "mandatory": true,
+          "versionRange": "[3.1.4.632,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "draconicadditions"
+        }
+      ],
+      "runtime_verified": true,
+      "version_id": "curseforge:8771137",
+      "license": {
+        "id": "LicenseRef-CoFH-Dont-Be-A-Jerk",
+        "name": "CoFH Dont Be a Jerk License (modpacks redistribution exception)",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/draconicadditions/license"
+      },
+      "api_dependencies": [],
+      "publication_method": "self_hosted_unchanged_jar_as_modpack_with_license_and_attribution",
+      "redistribution_allowed_in_modpacks": true,
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/draconicadditions/files/8771137",
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\Draconic-Additions-1.21.1-2.6.0.4.jar",
+      "observed_runtime_versions": {
+        "draconicadditions": "2.6.0.4"
+      }
+    },
+    {
+      "project": "draconic-evolution-render-patcher",
+      "project_id": "BNhriTkm",
+      "role": "conditional_client_draconic_renderer_compatibility",
+      "version": "2.0.0",
+      "version_id": "qVGpp8dZ",
+      "filename": "derenderpatcher-2.0.0.jar",
+      "bytes": 31329,
+      "sha512": "95182186f1efc81339c6ddba9e0098aa52d49433ebe97cddaa45d68109bb75edb1c18ec1c9c2aa9a60edf1f3cf0d2983f697b07733256683481322cab0df50d8",
+      "sha256": "59d230dc3314e60cd1d875b435e2feec07b40f6bb25da1dadb8a0bfbd925472e",
+      "download_url": "https://cdn.modrinth.com/data/BNhriTkm/versions/qVGpp8dZ/derenderpatcher-2.0.0.jar",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "source_url": "https://github.com/enzobocalon/draconic-evolution-render-patcher",
+      "issues_url": "https://github.com/enzobocalon/draconic-evolution-render-patcher/issues",
+      "author_page": "# Draconic Evolution Render Patcher\n## About\n\nA fix for Draconic Evolution and Embeddium/Sodium Render issues.\n\n**If you find any bugs or crashes, whether for 1.20.1 or 1.21.1, please report them on [Github](https://github.com/enzobocalon/draconic-evolution-render-patcher/issues)**\n\n## How it works?\n\nIt changes the render of Brandons Core to use  Embeddium's or Sodium's entity system.\n\n## Features\n- Fixes rendering issues with Draconic Evolution when using Embeddium/Soddium.\n- Has compatibility code to change Iris and ImmediatelyFast configurations to force Draconic's items and entities to be rended.\n- You can check each compatible mod settings by using \"/derender status\" command.\n\n## Important Information\n- Draconic Evolution Render Patcher is a Client-side mod.\n- Remember to use either Sodium or Embeddium\n- If Iris is installed, the mod will force \"allowUnknownShaders\" setting to be \"true\" at runtime.\n- If ImmediatelyFast is installed, the mod will force \"hud_batching\" setting to be \"false\" at runtime.\n- **Some shader packs have issues when used with mods - please ensure you're using a compatible pack (Complementary is one of those with good support for mods).**\n\n>You can disable these changes in the config file located at config/derenderpatcher-client.toml. By disabling it, each mod will use its own configuration settings.\n\n## Credits\n[Draconic Evolution](https://modrinth.com/mod/draconic-evolution) by brandon3055 </br>\n[Brandon's Core](https://modrinth.com/mod/brandons-core) by brandon3055 </br>\n[Embeddium](https://modrinth.com/mod/embeddium) by FiniteReality </br>\n[Sodium](https://modrinth.com/mod/sodium) by JellySquid",
+      "api_dependencies": [],
+      "mod_ids": {
+        "derenderpatcher": "2.0.0"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.203,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "derenderpatcher",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "derenderpatcher",
+          "origin": "root"
+        },
+        {
+          "modId": "brandonscore",
+          "type": "required",
+          "versionRange": "[1.21.1-3.2.1.307,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "derenderpatcher",
+          "origin": "root"
+        },
+        {
+          "modId": "codechickenlib",
+          "type": "required",
+          "versionRange": "[1.21.1-4.6.1.526,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "derenderpatcher",
+          "origin": "root"
+        },
+        {
+          "modId": "draconicevolution",
+          "type": "required",
+          "versionRange": "[1.21.1-3.1.3.625,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "derenderpatcher",
+          "origin": "root"
+        },
+        {
+          "modId": "embeddium",
+          "type": "optional",
+          "versionRange": "[1.0.15+mc1.21.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "derenderpatcher",
+          "origin": "root"
+        },
+        {
+          "modId": "immediatelyfast",
+          "type": "optional",
+          "versionRange": "[1.6.10+1.21.1,)",
+          "ordering": "AFTER",
+          "side": "CLIENT",
+          "owner": "derenderpatcher",
+          "origin": "root"
+        },
+        {
+          "modId": "iris",
+          "type": "optional",
+          "versionRange": "[1.8.12+1.21.1-neoforge,)",
+          "ordering": "AFTER",
+          "side": "CLIENT",
+          "owner": "derenderpatcher",
+          "origin": "root"
+        },
+        {
+          "modId": "sodium",
+          "type": "optional",
+          "versionRange": "[mc1.21.1-0.6.13,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "derenderpatcher",
+          "origin": "root"
+        }
+      ],
+      "metadata_records": [
+        {
+          "origin": "root",
+          "manifest": {
+            "Manifest-Version": "1.0"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[1,)",
+            "license": "MIT",
+            "mods": [
+              {
+                "modId": "derenderpatcher",
+                "version": "2.0.0",
+                "displayName": "Draconic Evolution Render Patcher",
+                "authors": "Yrley",
+                "description": "Fixes render issues with Draconic Evolution and newer performance mods in Minecraft 1.21.1."
+              }
+            ],
+            "mixins": [
+              {
+                "config": "derenderpatcher.mixins.json"
+              }
+            ],
+            "dependencies": {
+              "derenderpatcher": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.203,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1]",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "brandonscore",
+                  "type": "required",
+                  "versionRange": "[1.21.1-3.2.1.307,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "codechickenlib",
+                  "type": "required",
+                  "versionRange": "[1.21.1-4.6.1.526,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "draconicevolution",
+                  "type": "required",
+                  "versionRange": "[1.21.1-3.1.3.625,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "embeddium",
+                  "type": "optional",
+                  "versionRange": "[1.0.15+mc1.21.1,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "immediatelyfast",
+                  "type": "optional",
+                  "versionRange": "[1.6.10+1.21.1,)",
+                  "ordering": "AFTER",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "iris",
+                  "type": "optional",
+                  "versionRange": "[1.8.12+1.21.1-neoforge,)",
+                  "ordering": "AFTER",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "sodium",
+                  "type": "optional",
+                  "versionRange": "[mc1.21.1-0.6.13,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "changelog": "### **DE Render Patcher 2.0.0**\n\n*   Reworked the ImmediatelyFast and Iris compatibility layers to apply values at runtime.\n*   Reworked `/derender status` to show clearer and more detailed compatibility information.\n*   Removed direct mutations to Iris and ImmediatelyFast config files.\n*   Added legacy config cleanup for comments and markers generated by version 1.1.3 and older.\n*   Updated the minimum supported ImmediatelyFast version to 1.6.10.\n\n**If you encounter any issues, please report them on [Github](https://github.com/enzobocalon/draconic-evolution-render-patcher/issues).**",
+      "observed_runtime_versions": {
+        "derenderpatcher": "2.0.0"
+      }
+    }
+  ]
+}

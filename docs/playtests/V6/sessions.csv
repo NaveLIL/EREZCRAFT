@@ -1,0 +1,7 @@
+session_id,seed_decimal,tester_id,prior_minecraft_experience,prior_interstice_knowledge,run_classification,candidate_commit,candidate_version,jar_sha256,mode_integrated_or_dedicated,started_utc,ended_utc,active_elapsed_seconds,external_pause_seconds,technical_downtime_seconds,deaths,confirmed_items_lost,total_wait_seconds,completed_recipe_or_batch_operations,placed_blocks,mined_blocks,entry_return_attempts,external_hint_count,cold_restart_result,final_outcome,stop_reason,settings_evidence,world_archive_evidence,recording_evidence,notes
+S01,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+S02,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+S03,-1,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+S04,20261006,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+S05,76198123,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+S06,4294967297,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,1034 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "checked_utc": "2026-10-10T05:36:19.712692+00:00",
+  "scope": "Authorized comfort/building/farming additions; no quests, recipe progression or worldgen replacement",
+  "baseline_client_jars": 54,
+  "mods": [
+    {
+      "project": "controlling",
+      "project_id": "xv94TkTM",
+      "role": "client_key_conflicts",
+      "client": true,
+      "server": false,
+      "version": "19.0.5",
+      "version_id": "FaNppCJJ",
+      "release_type": "release",
+      "published": "2025-03-30T23:44:43.868835Z",
+      "filename": "Controlling-neoforge-1.21.1-19.0.5.jar",
+      "download_url": "https://cdn.modrinth.com/data/xv94TkTM/versions/FaNppCJJ/Controlling-neoforge-1.21.1-19.0.5.jar",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "source_url": "https://github.com/jaredlll08/Controlling",
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "fuuu3xnx",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "bytes": 77555,
+      "sha256": "cc525fb6b030d9e4d33176983f278919e17b33935e2ca568929bdfa98f2b44a0",
+      "sha512": "bd01b2a38a869ea38e5f2a8fcd601e67ea9b132b9883c6ae752bc35dff6e94f6d47b965e31c1ee5c2f6a1221653549680da779fcb5319d199aec261d221d179e",
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\Controlling-neoforge-1.21.1-19.0.5.jar",
+      "metadata_records": [
+        {
+          "origin": "root",
+          "metadata_path": "META-INF/neoforge.mods.toml",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Specification-Title": "Controlling",
+            "Specification-Vendor": "Jaredlll08",
+            "Specification-Version": "19.0.5",
+            "Implementation-Title": "neoforge",
+            "Implementation-Version": "19.0.5",
+            "Implementation-Vendor": "Jaredlll08",
+            "Built-On-Java": "21.0.3+9-LTS (Eclipse Adoptium)",
+            "Build-On-Minecraft": "1.21.1"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[4,)",
+            "issueTrackerURL": "https://github.com/jaredlll08/controlling/issues",
+            "license": "MIT",
+            "mods": [
+              {
+                "modId": "controlling",
+                "updateJSONURL": "https://updates.blamejared.com/get?n=controlling&gv=1.21.1&ml=neoforge",
+                "version": "19.0.5",
+                "displayName": "Controlling",
+                "displayURL": "https://www.curseforge.com/minecraft/mc-mods/controlling",
+                "authors": "Jaredlll08",
+                "logoFile": "icon.png",
+                "description": "Adds the ability to search for keybinds using their name in the KeyBinding menu, this allows players to easily find a key binding in the menu.",
+                "itemIcon": "minecraft:compass"
+              }
+            ],
+            "mixins": [
+              {
+                "config": "controlling.mixins.json"
+              },
+              {
+                "config": "controlling.neoforge.mixins.json"
+              }
+            ],
+            "dependencies": {
+              "controlling": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.94,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1]",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                },
+                {
+                  "modId": "searchables",
+                  "type": "required",
+                  "versionRange": "[1.0.1,)",
+                  "ordering": "NONE",
+                  "side": "CLIENT"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "mod_ids": {
+        "controlling": "19.0.5"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.94,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "controlling",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "controlling",
+          "origin": "root"
+        },
+        {
+          "modId": "searchables",
+          "type": "required",
+          "versionRange": "[1.0.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "controlling",
+          "origin": "root"
+        }
+      ],
+      "observed_runtime_versions": {
+        "controlling": "19.0.5"
+      }
+    },
+    {
+      "project": "inventory-profiles-next",
+      "project_id": "O7RBXm3n",
+      "role": "client_inventory_sort",
+      "client": true,
+      "server": false,
+      "version": "neoforge-1.21.1-2.2.5",
+      "version_id": "vjuNnHLv",
+      "release_type": "release",
+      "published": "2026-03-25T11:32:35.997294Z",
+      "filename": "InventoryProfilesNext-neoforge-1.21.1-2.2.5.jar",
+      "download_url": "https://cdn.modrinth.com/data/O7RBXm3n/versions/vjuNnHLv/InventoryProfilesNext-neoforge-1.21.1-2.2.5.jar",
+      "license": {
+        "id": "AGPL-3.0-or-later",
+        "name": "GNU Affero General Public License v3.0 or later",
+        "url": null
+      },
+      "source_url": "https://codeberg.org/Inventory-Profiles-Next-Mod/IPN",
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "ordsPcFz",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "onSQdWhM",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "bytes": 1295466,
+      "sha256": "05f1b8660f74f543fba61d4ce7cf8632d4c69a95b7c15b1a6fd442be2e397ca6",
+      "sha512": "521296cc7e4fa48e06eb0c00d430968c7b879946db5b02e632cc724672759ac152e11bd9d320bd09f7418edd6fe4ece521a1a2cac49d7f5687519c69a0bcbf12",
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\InventoryProfilesNext-neoforge-1.21.1-2.2.5.jar",
+      "metadata_records": [
+        {
+          "origin": "root",
+          "metadata_path": "META-INF/neoforge.mods.toml",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Implementation-Title": "\"Inventory Profiles Next\"",
+            "Implementation-Version": "2.2.5+fe9eeb12",
+            "Implementation-Timestamp": "2026-03-25T11:27:50.506730034Z",
+            "X-easyModGitHash": "fe9eeb12",
+            "X-easyModVersion": "2.2.5+fe9eeb12",
+            "X-easyModModLoader": "neoforge",
+            "MixinConfigs": "mixins.ipnext.json"
+          },
+          "metadata": {
+            "modLoader": "kotlinforforge",
+            "loaderVersion": "[5.7,)",
+            "issueTrackerURL": "https://discord.gg/23YCxmveUM",
+            "license": "AGPL-3",
+            "mods": [
+              {
+                "modId": "inventoryprofilesnext",
+                "version": "2.2.5",
+                "displayName": "Inventory Profiles Next",
+                "displayURL": "https://inventory-profiles-next.github.io/",
+                "logoFile": "assets/inventoryprofilesnext/mod icon.png",
+                "credits": "\n",
+                "authors": "Mirinimi\n",
+                "description": "\"Inventory Profiles Next\"\n"
+              }
+            ],
+            "accessTransformers": [
+              {
+                "file": "META-INF/accesstransformer.cfg"
+              }
+            ],
+            "mixins": [
+              {
+                "config": "mixins.ipnext.json"
+              }
+            ],
+            "dependencies": {
+              "inventoryprofilesnext": [
+                {
+                  "modId": "neoforge",
+                  "mandatory": true,
+                  "versionRange": "[21, 22.2)"
+                },
+                {
+                  "modId": "minecraft",
+                  "mandatory": true,
+                  "versionRange": "[1.21.1, 1.21.2)"
+                },
+                {
+                  "modId": "libipn",
+                  "mandatory": true,
+                  "versionRange": "[6.6.3, 6.7)"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "mod_ids": {
+        "inventoryprofilesnext": "2.2.5"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "mandatory": true,
+          "versionRange": "[21, 22.2)",
+          "owner": "inventoryprofilesnext",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.21.1, 1.21.2)",
+          "owner": "inventoryprofilesnext",
+          "origin": "root"
+        },
+        {
+          "modId": "libipn",
+          "mandatory": true,
+          "versionRange": "[6.6.3, 6.7)",
+          "owner": "inventoryprofilesnext",
+          "origin": "root"
+        }
+      ],
+      "observed_runtime_versions": {
+        "inventoryprofilesnext": "2.2.5"
+      }
+    },
+    {
+      "project": "farmers-delight",
+      "project_id": "R2OftAxM",
+      "role": "farming_cooking",
+      "client": true,
+      "server": true,
+      "version": "1.21.1-1.3.4",
+      "version_id": "XTVZDOol",
+      "release_type": "release",
+      "published": "2026-08-29T23:21:15.190939Z",
+      "filename": "FarmersDelight-1.21.1-1.3.4.jar",
+      "download_url": "https://cdn.modrinth.com/data/R2OftAxM/versions/XTVZDOol/FarmersDelight-1.21.1-1.3.4.jar",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "source_url": "https://github.com/vectorwing/FarmersDelight",
+      "api_dependencies": [],
+      "bytes": 3160490,
+      "sha256": "139ad7696462c89c03eea463f805abffa552526c5dadaadae221dd9624cb197c",
+      "sha512": "1f6f8796469f747cff36f477b4f589a3d69613882399f9ee7f86db36c7bca9aa4828731f43db15dc6c7f5a4c1bbe3d4092a232e8cef010b09cec0581848fda90",
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\FarmersDelight-1.21.1-1.3.4.jar",
+      "metadata_records": [
+        {
+          "origin": "root",
+          "metadata_path": "META-INF/neoforge.mods.toml",
+          "manifest": {
+            "Manifest-Version": "1.0"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[4,)",
+            "issueTrackerURL": "https://github.com/vectorwing/FarmersDelight/issues",
+            "license": "MIT License",
+            "mods": [
+              {
+                "modId": "farmersdelight",
+                "version": "1.3.4",
+                "displayName": "Farmer's Delight",
+                "displayURL": "https://github.com/vectorwing/FarmersDelight",
+                "logoFile": "logo.png",
+                "logoBlur": false,
+                "credits": "Chloe Dawn, Grimmauld, CDAGaming, TelepathicGrunt, XFactHD, GizmoThemoonPig, ConductiveFoam, simibubi, MerchantPug, Jozufozu, bagel, Silk, SkySom, Eutro, RaymondBlaze and many others!",
+                "authors": "vectorwing",
+                "description": "A cozy farming and cooking expansion for Minecraft!",
+                "enumExtensions": "META-INF/enumextensions.json",
+                "itemIcon": "farmersdelight:stove",
+                "configBackground": "minecraft:textures/block/bricks.png"
+              }
+            ],
+            "mixins": [
+              {
+                "config": "farmersdelight.mixins.json"
+              }
+            ],
+            "dependencies": {
+              "farmersdelight": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.1.219,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1]",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "crafttweaker",
+                  "type": "optional",
+                  "versionRange": "[14.0.6,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "mod_ids": {
+        "farmersdelight": "1.3.4"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.219,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "farmersdelight",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "farmersdelight",
+          "origin": "root"
+        },
+        {
+          "modId": "crafttweaker",
+          "type": "optional",
+          "versionRange": "[14.0.6,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "farmersdelight",
+          "origin": "root"
+        }
+      ],
+      "observed_runtime_versions": {
+        "farmersdelight": "1.3.4"
+      }
+    },
+    {
+      "project": "searchables",
+      "project_id": "fuuu3xnx",
+      "role": "client_library",
+      "client": true,
+      "server": false,
+      "version": "1.0.2",
+      "version_id": "iEE85X0w",
+      "release_type": "release",
+      "published": "2024-10-21T20:44:51.147209Z",
+      "filename": "Searchables-neoforge-1.21.1-1.0.2.jar",
+      "download_url": "https://cdn.modrinth.com/data/fuuu3xnx/versions/iEE85X0w/Searchables-neoforge-1.21.1-1.0.2.jar",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "source_url": "https://github.com/jaredlll08/searchables",
+      "api_dependencies": [],
+      "bytes": 77326,
+      "sha256": "ca193f0c69033d8f709f9e073a7c1ef4ea46714e5c2f94eb23ace12781c6aa68",
+      "sha512": "d0824bac1900142ac9a53e68f7ec3b4c0d33d9366bbd3f1d0d93eed860e5eb6b5e6f5a215a69bfffa70bcb48573ff49b5a12bbaa96096ceac6636000d506027a",
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\Searchables-neoforge-1.21.1-1.0.2.jar",
+      "metadata_records": [
+        {
+          "origin": "root",
+          "metadata_path": "META-INF/neoforge.mods.toml",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Specification-Title": "Searchables",
+            "Specification-Vendor": "Jaredlll08",
+            "Specification-Version": "1.0.2",
+            "Implementation-Title": "neoforge",
+            "Implementation-Version": "1.0.2",
+            "Implementation-Vendor": "Jaredlll08",
+            "Built-On-Java": "21.0.3+9-LTS (Eclipse Adoptium)",
+            "Build-On-Minecraft": "1.21.1"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[4,)",
+            "issueTrackerURL": "https://github.com/jaredlll08/searchables/issues",
+            "license": "MIT",
+            "mods": [
+              {
+                "modId": "searchables",
+                "updateJSONURL": "https://updates.blamejared.com/get?n=searchables&gv=1.21.1&ml=neoforge",
+                "version": "1.0.2",
+                "displayName": "Searchables",
+                "displayURL": "https://www.curseforge.com/minecraft/mc-mods/searchables",
+                "authors": "Jaredlll08",
+                "logoFile": "icon.png",
+                "description": "A library mod to facilitate adding search bars with auto complete and search types.",
+                "itemIcon": "minecraft:compass"
+              }
+            ],
+            "mixins": [
+              {
+                "config": "searchables.mixins.json"
+              },
+              {
+                "config": "searchables.neoforge.mixins.json"
+              }
+            ],
+            "dependencies": {
+              "searchables": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[4,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21.1]",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "mod_ids": {
+        "searchables": "1.0.2"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[4,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "searchables",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "searchables",
+          "origin": "root"
+        }
+      ],
+      "observed_runtime_versions": {
+        "searchables": "1.0.2"
+      }
+    },
+    {
+      "project": "kotlin-for-forge",
+      "project_id": "ordsPcFz",
+      "role": "client_library",
+      "client": true,
+      "server": false,
+      "version": "5.12.0",
+      "version_id": "uhJhCT7X",
+      "release_type": "release",
+      "published": "2026-06-28T16:33:47.870642Z",
+      "filename": "kotlinforforge-5.12.0-all.jar",
+      "download_url": "https://cdn.modrinth.com/data/ordsPcFz/versions/uhJhCT7X/kotlinforforge-5.12.0-all.jar",
+      "license": {
+        "id": "LGPL-2.1-only",
+        "name": "GNU Lesser General Public License v2.1 only",
+        "url": null
+      },
+      "source_url": "https://github.com/thedarkcolour/KotlinForForge",
+      "api_dependencies": [],
+      "bytes": 7279264,
+      "sha256": "2785a4dd6de5c6c56065fd8eb789c82771bd2ee773c30794c23160a3b2c39139",
+      "sha512": "b8c3942f4d33179edf3f102f3d870b99dd436f8b8236dbbd31aa51b888162c692cfd88927295f24dc8b4375232f4c6c17360c5d6c4823f93cbcd7cf4bdc8bd14",
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\kotlinforforge-5.12.0-all.jar",
+      "metadata_records": [
+        {
+          "origin": "root/META-INF/jarjar/thedarkcolour.kffmod-5.12.0.jar",
+          "metadata_path": "META-INF/neoforge.mods.toml",
+          "manifest": {
+            "Manifest-Version": "1.0"
+          },
+          "metadata": {
+            "modLoader": "kotlinforforge",
+            "loaderVersion": "[5,)",
+            "license": "LGPL",
+            "mods": [
+              {
+                "modId": "kotlinforforge",
+                "version": "5.12.0",
+                "displayName": "Kotlin For Forge",
+                "logoFile": "kotlinforforge_icon.png",
+                "credits": "thedarkcolour and his \"minions\"",
+                "authors": "thedarkcolour",
+                "description": "Makes Kotlin forge-friendly\n"
+              }
+            ],
+            "dependencies": {
+              "kotlinforforge": [
+                {
+                  "modId": "minecraft",
+                  "mandatory": true,
+                  "type": "required",
+                  "versionRange": "[1.20.6,1.21.9)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            },
+            "modproperties": {
+              "kotlinforforge": {
+                "catalogueImageIcon": "kotlinforforge_icon.png"
+              }
+            }
+          }
+        },
+        {
+          "origin": "root/META-INF/jarjar/thedarkcolour.kffmod-5.12.0.jar",
+          "metadata_path": "META-INF/mods.toml",
+          "manifest": {
+            "Manifest-Version": "1.0"
+          },
+          "metadata": {
+            "modLoader": "kotlinforforge",
+            "loaderVersion": "[5,)",
+            "license": "LGPL",
+            "mods": [
+              {
+                "modId": "kotlinforforge",
+                "version": "5.12.0",
+                "displayName": "Kotlin For Forge",
+                "logoFile": "kotlinforforge_icon.png",
+                "credits": "thedarkcolour and his \"minions\"",
+                "authors": "thedarkcolour",
+                "description": "Makes Kotlin forge-friendly\n"
+              }
+            ],
+            "dependencies": {
+              "kotlinforforge": [
+                {
+                  "modId": "minecraft",
+                  "mandatory": true,
+                  "type": "required",
+                  "versionRange": "[1.20.6,1.21.9)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            },
+            "modproperties": {
+              "kotlinforforge": {
+                "catalogueImageIcon": "kotlinforforge_icon.png"
+              }
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "mod_ids": {
+        "kotlinforforge": "5.12.0"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "type": "required",
+          "versionRange": "[1.20.6,1.21.9)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "kotlinforforge",
+          "origin": "root/META-INF/jarjar/thedarkcolour.kffmod-5.12.0.jar"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "type": "required",
+          "versionRange": "[1.20.6,1.21.9)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "kotlinforforge",
+          "origin": "root/META-INF/jarjar/thedarkcolour.kffmod-5.12.0.jar"
+        }
+      ],
+      "observed_runtime_versions": {
+        "kotlinforforge": "5.12.0"
+      }
+    },
+    {
+      "project": "libipn",
+      "project_id": "onSQdWhM",
+      "role": "client_library",
+      "client": true,
+      "server": false,
+      "version": "neoforge-1.21.1-6.6.3",
+      "version_id": "BGe4KMlE",
+      "release_type": "release",
+      "published": "2026-03-25T11:26:18.704020Z",
+      "filename": "libIPN-neoforge-1.21.1-6.6.3.jar",
+      "download_url": "https://cdn.modrinth.com/data/onSQdWhM/versions/BGe4KMlE/libIPN-neoforge-1.21.1-6.6.3.jar",
+      "license": {
+        "id": "AGPL-3.0-or-later",
+        "name": "GNU Affero General Public License v3.0 or later",
+        "url": null
+      },
+      "source_url": "https://github.com/blackd/libIPN",
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "ordsPcFz",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "bytes": 626146,
+      "sha256": "98f061ba69d31764fa10ab7810ca49062633e107a6b261ba3b66dc25ba5fef7b",
+      "sha512": "89383465eb8dfa296e7518dd0e6ddc1a242f4537a3183425f2319c79a3e97843ded0f5e13f86b095f2f09beacd2a1f249f554e0f4e18291209720826031a8b93",
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\libIPN-neoforge-1.21.1-6.6.3.jar",
+      "metadata_records": [
+        {
+          "origin": "root",
+          "metadata_path": "META-INF/neoforge.mods.toml",
+          "manifest": {
+            "Manifest-Version": "1.0",
+            "Implementation-Title": "\"libIPN\"",
+            "Implementation-Version": "6.6.3+27b3e8f",
+            "Implementation-Timestamp": "2026-03-25T11:24:49.757383462Z",
+            "X-easyModGitHash": "27b3e8f",
+            "X-easyModVersion": "6.6.3+27b3e8f",
+            "X-easyModModLoader": "neoforge",
+            "MixinConfigs": ""
+          },
+          "metadata": {
+            "modLoader": "kotlinforforge",
+            "loaderVersion": "[5.7.0,)",
+            "issueTrackerURL": "https://discord.gg/23YCxmveUM",
+            "license": "AGPL-3",
+            "mods": [
+              {
+                "modId": "libipn",
+                "version": "6.6.3",
+                "displayName": "libIPN",
+                "displayURL": "https://github.com/blackd/libIPN",
+                "logoFile": "assets/libipn/libIPN-logo.png",
+                "credits": "\n",
+                "authors": "Mirinimi\n",
+                "description": "\"Inventory Profiles Next Settings and GUI Library\"\n"
+              }
+            ],
+            "accessTransformers": [
+              {
+                "file": "META-INF/accesstransformer.cfg"
+              }
+            ],
+            "dependencies": {
+              "libipn": [
+                {
+                  "modId": "neoforge",
+                  "mandatory": true,
+                  "versionRange": "[21.1,)"
+                },
+                {
+                  "modId": "minecraft",
+                  "mandatory": true,
+                  "versionRange": "[1.21.1, 1.21.2)"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "mod_ids": {
+        "libipn": "6.6.3"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "mandatory": true,
+          "versionRange": "[21.1,)",
+          "owner": "libipn",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.21.1, 1.21.2)",
+          "owner": "libipn",
+          "origin": "root"
+        }
+      ],
+      "observed_runtime_versions": {
+        "libipn": "6.6.3"
+      }
+    },
+    {
+      "project": "building-gadgets",
+      "project_id": 298187,
+      "file_id": 6850515,
+      "version": "1.3.9",
+      "version_id": "curseforge:6850515",
+      "role": "large_building_tools",
+      "client": true,
+      "server": true,
+      "release_type": "release",
+      "filename": "buildinggadgets2-1.3.9.jar",
+      "download_url": "https://mediafilez.forgecdn.net/files/6850/515/buildinggadgets2-1.3.9.jar",
+      "official_page": "https://www.curseforge.com/minecraft/mc-mods/building-gadgets/files/6850515",
+      "source_url": "https://github.com/Direwolf20-MC/BuildingGadgets2",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": "https://github.com/Direwolf20-MC/BuildingGadgets2/blob/main/LICENSE"
+      },
+      "publication_method": "self_hosted_unchanged_jar_as_modpack_with_license_and_attribution",
+      "redistribution_allowed_in_modpacks": true,
+      "api_dependencies": [],
+      "bytes": 3858597,
+      "sha256": "acae3b628fa60ae8d34059b40c696ea282c01d20b14d32a506c4f85dd357b114",
+      "sha512": "41e61011371da600c2883fcf55e5e589af973a8d4c444479e1a6ce1686ecc9e63d6bb7f2fe20389e4aa79a47826dd2239db78788ad511cf02df1dbe698eeef0e",
+      "local_path": "D:\\repos\\Minecraft\\EREZCRAFT\\research\\dependencies\\buildinggadgets2-1.3.9.jar",
+      "metadata_records": [
+        {
+          "origin": "root",
+          "metadata_path": "META-INF/neoforge.mods.toml",
+          "manifest": {
+            "Manifest-Version": "1.0"
+          },
+          "metadata": {
+            "modLoader": "javafml",
+            "loaderVersion": "[2,)",
+            "license": "MIT (https://github.com/Direwolf20-MC/BuildingGadgets2/blob/main/LICENSE)",
+            "mods": [
+              {
+                "modId": "buildinggadgets2",
+                "version": "1.3.9",
+                "displayName": "Building Gadgets 2",
+                "displayURL": "https://github.com/Direwolf20-MC/BuildingGadgets2",
+                "logoFile": "examplemod.png",
+                "credits": "The NeoForge team for making the best API ever!!",
+                "authors": "Direwolf20",
+                "description": "We can build it better, stronger, faster.\n"
+              }
+            ],
+            "accessTransformers": [
+              {
+                "file": "META-INF/accesstransformer.cfg"
+              }
+            ],
+            "dependencies": {
+              "buildinggadgets2": [
+                {
+                  "modId": "neoforge",
+                  "type": "required",
+                  "versionRange": "[21.0,)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                },
+                {
+                  "modId": "minecraft",
+                  "type": "required",
+                  "versionRange": "[1.21,1.22)",
+                  "ordering": "NONE",
+                  "side": "BOTH"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "runtime_verified": true,
+      "mod_ids": {
+        "buildinggadgets2": "1.3.9"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "buildinggadgets2",
+          "origin": "root"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "buildinggadgets2",
+          "origin": "root"
+        }
+      ],
+      "observed_runtime_versions": {
+        "buildinggadgets2": "1.3.9"
+      }
+    }
+  ],
+  "runtime_verified": true,
+  "metadata_verified": true,
+  "dependency_closure_verified": true,
+  "required_dependency_checks": [
+    {
+      "modId": "neoforge",
+      "type": "required",
+      "versionRange": "[21.1.94,)",
+      "ordering": "NONE",
+      "side": "CLIENT",
+      "owner": "controlling",
+      "origin": "root",
+      "present_version": "21.1.252",
+      "passed": true
+    },
+    {
+      "modId": "minecraft",
+      "type": "required",
+      "versionRange": "[1.21.1]",
+      "ordering": "NONE",
+      "side": "CLIENT",
+      "owner": "controlling",
+      "origin": "root",
+      "present_version": "1.21.1",
+      "passed": true
+    },
+    {
+      "modId": "searchables",
+      "type": "required",
+      "versionRange": "[1.0.1,)",
+      "ordering": "NONE",
+      "side": "CLIENT",
+      "owner": "controlling",
+      "origin": "root",
+      "present_version": "1.0.2",
+      "passed": true
+    },
+    {
+      "modId": "neoforge",
+      "mandatory": true,
+      "versionRange": "[21, 22.2)",
+      "owner": "inventoryprofilesnext",
+      "origin": "root",
+      "present_version": "21.1.252",
+      "passed": true
+    },
+    {
+      "modId": "minecraft",
+      "mandatory": true,
+      "versionRange": "[1.21.1, 1.21.2)",
+      "owner": "inventoryprofilesnext",
+      "origin": "root",
+      "present_version": "1.21.1",
+      "passed": true
+    },
+    {
+      "modId": "libipn",
+      "mandatory": true,
+      "versionRange": "[6.6.3, 6.7)",
+      "owner": "inventoryprofilesnext",
+      "origin": "root",
+      "present_version": "6.6.3",
+      "passed": true
+    },
+    {
+      "modId": "neoforge",
+      "type": "required",
+      "versionRange": "[21.1.219,)",
+      "ordering": "NONE",
+      "side": "BOTH",
+      "owner": "farmersdelight",
+      "origin": "root",
+      "present_version": "21.1.252",
+      "passed": true
+    },
+    {
+      "modId": "minecraft",
+      "type": "required",
+      "versionRange": "[1.21.1]",
+      "ordering": "NONE",
+      "side": "BOTH",
+      "owner": "farmersdelight",
+      "origin": "root",
+      "present_version": "1.21.1",
+      "passed": true
+    },
+    {
+      "modId": "neoforge",
+      "type": "required",
+      "versionRange": "[4,)",
+      "ordering": "NONE",
+      "side": "BOTH",
+      "owner": "searchables",
+      "origin": "root",
+      "present_version": "21.1.252",
+      "passed": true
+    },
+    {
+      "modId": "minecraft",
+      "type": "required",
+      "versionRange": "[1.21.1]",
+      "ordering": "NONE",
+      "side": "BOTH",
+      "owner": "searchables",
+      "origin": "root",
+      "present_version": "1.21.1",
+      "passed": true
+    },
+    {
+      "modId": "minecraft",
+      "mandatory": true,
+      "type": "required",
+      "versionRange": "[1.20.6,1.21.9)",
+      "ordering": "NONE",
+      "side": "BOTH",
+      "owner": "kotlinforforge",
+      "origin": "root/META-INF/jarjar/thedarkcolour.kffmod-5.12.0.jar",
+      "present_version": "1.21.1",
+      "passed": true
+    },
+    {
+      "modId": "minecraft",
+      "mandatory": true,
+      "type": "required",
+      "versionRange": "[1.20.6,1.21.9)",
+      "ordering": "NONE",
+      "side": "BOTH",
+      "owner": "kotlinforforge",
+      "origin": "root/META-INF/jarjar/thedarkcolour.kffmod-5.12.0.jar",
+      "present_version": "1.21.1",
+      "passed": true
+    },
+    {
+      "modId": "neoforge",
+      "mandatory": true,
+      "versionRange": "[21.1,)",
+      "owner": "libipn",
+      "origin": "root",
+      "present_version": "21.1.252",
+      "passed": true
+    },
+    {
+      "modId": "minecraft",
+      "mandatory": true,
+      "versionRange": "[1.21.1, 1.21.2)",
+      "owner": "libipn",
+      "origin": "root",
+      "present_version": "1.21.1",
+      "passed": true
+    },
+    {
+      "modId": "neoforge",
+      "type": "required",
+      "versionRange": "[21.0,)",
+      "ordering": "NONE",
+      "side": "BOTH",
+      "owner": "buildinggadgets2",
+      "origin": "root",
+      "present_version": "21.1.252",
+      "passed": true
+    },
+    {
+      "modId": "minecraft",
+      "type": "required",
+      "versionRange": "[1.21,1.22)",
+      "ordering": "NONE",
+      "side": "BOTH",
+      "owner": "buildinggadgets2",
+      "origin": "root",
+      "present_version": "1.21.1",
+      "passed": true
+    }
+  ],
+  "recommended_client_config": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\client-comfort-research\\config\\inventoryprofilesnext\\integrationHints\\erezcraft-safe-containers.json",
+  "client_jars": 62,
+  "server_jars": 49,
+  "delivery_sequence": 7,
+  "quests_added": false,
+  "custom_recipe_changes": false
+}

@@ -1,0 +1,1966 @@
+{
+  "schema": 1,
+  "name": "EREZCRAFT server foundation staged batch",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "target": {
+    "simultaneous_players": 10,
+    "cpu_cores": 4,
+    "ram_gb": 20,
+    "capacity_verified": false
+  },
+  "scope": "Pinned stable release/hash/actual NeoForge metadata; dependency closure and runtime compatibility require further validation",
+  "checked_utc": "2026-10-09T16:02:21.586653+00:00",
+  "mods": [
+    {
+      "project": "ae2",
+      "project_id": "XxWD5pD3",
+      "version": "19.2.18",
+      "version_id": "KDnFUmMm",
+      "filename": "appliedenergistics2-19.2.18.jar",
+      "bytes": 8236552,
+      "download_url": "https://cdn.modrinth.com/data/XxWD5pD3/versions/KDnFUmMm/appliedenergistics2-19.2.18.jar",
+      "sha512": "39bc4cf733a4321631e2637a1a6dfd3527135fdac1b572534e6fd1f9eab7a6dd92d56c5fa066263c95149c9b20cabdd1fd3dff80bea515381b1d2d754cad26c3",
+      "sha256": "df15a07f86ca1ca93aa66373f9d5d84dd3d4586631fceb38f4fbc85dad591e39",
+      "license": {
+        "id": "LicenseRef-Multiple",
+        "name": "",
+        "url": "https://github.com/AppliedEnergistics/Applied-Energistics-2#license"
+      },
+      "role": "me_storage",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "ae2": "19.2.18"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "REQUIRED",
+          "versionRange": "[21.1.169,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "ae2"
+        },
+        {
+          "modId": "minecraft",
+          "type": "REQUIRED",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "ae2"
+        },
+        {
+          "modId": "guideme",
+          "type": "REQUIRED",
+          "versionRange": "[21.1.1,)",
+          "side": "BOTH",
+          "owner": "ae2"
+        },
+        {
+          "modId": "emi",
+          "type": "OPTIONAL",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "ae2"
+        },
+        {
+          "modId": "theoneprobe",
+          "type": "OPTIONAL",
+          "versionRange": "[1.20.0,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "ae2"
+        },
+        {
+          "modId": "jade",
+          "type": "OPTIONAL",
+          "versionRange": "[15.0.0,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "ae2"
+        },
+        {
+          "modId": "vanillafix",
+          "type": "discouraged",
+          "reason": "VanillaFix breaks some NeoForge features that AE2 depends on. Do not report AE2 bugs if VanillaFix is present.",
+          "owner": "ae2"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "nfn13YXA",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "fRiHVvU7",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "Ck4E7v7R",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "nvQzSEkH",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "tq47Uqpn",
+          "file_name": null,
+          "dependency_type": "incompatible"
+        },
+        {
+          "version_id": null,
+          "project_id": "6AQIaxuO",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "Eyw0UxEx",
+          "file_name": null,
+          "dependency_type": "optional"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "modern-industrialization",
+      "project_id": "Gov5Dboq",
+      "version": "2.5.10",
+      "version_id": "HOR1tVas",
+      "filename": "Modern-Industrialization-2.5.10.jar",
+      "bytes": 7292458,
+      "download_url": "https://cdn.modrinth.com/data/Gov5Dboq/versions/HOR1tVas/Modern-Industrialization-2.5.10.jar",
+      "sha512": "18bd9c11da22e7f7fd3c54aa77d925c6a3a7bfac80b4aae86ed5fbb939d3bac0b88dca4f8f0100983d101c5522803ee3733a72e80858d503e525d3155d4ea4f6",
+      "sha256": "94e391b5a4432ec6e391a44e162e32a0475b8c0c3f101944a93297c6dfc068ca",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "role": "industrial",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "modern_industrialization": "2.5.10",
+        "grandpower": "3.0.0"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.238, 22-)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "modern_industrialization"
+        },
+        {
+          "modId": "grandpower",
+          "type": "required",
+          "versionRange": "[3.0.0, 4)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "modern_industrialization"
+        },
+        {
+          "modId": "guideme",
+          "type": "required",
+          "versionRange": "[21.1.19, 21.2)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "modern_industrialization"
+        },
+        {
+          "modId": "ae2",
+          "type": "optional",
+          "versionRange": "[19.0.12-alpha, 20)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "modern_industrialization"
+        },
+        {
+          "modId": "kubejs",
+          "type": "optional",
+          "versionRange": "[2101.7.2-build.290,]",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "modern_industrialization"
+        },
+        {
+          "modId": "jei",
+          "type": "optional",
+          "versionRange": "[19.19.0,]",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "modern_industrialization"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.0-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "grandpower"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "grandpower"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "nfn13YXA",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "fRiHVvU7",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "u6dRKJwZ",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "nvQzSEkH",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "Ck4E7v7R",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "mekanism",
+      "project_id": "Ce6I4WUE",
+      "version": "10.7.19.85",
+      "version_id": "5KzzycBT",
+      "filename": "Mekanism-1.21.1-10.7.19.85.jar",
+      "bytes": 11976009,
+      "download_url": "https://cdn.modrinth.com/data/Ce6I4WUE/versions/5KzzycBT/Mekanism-1.21.1-10.7.19.85.jar",
+      "sha512": "66745825330a98f3e4a5ea3a44aff8b00870f715c144edc38dd2f61b4240589600b58ae89efac3b54dbb5aa430b1059dac1a28fd71cac5cc9002bbeb5ba3f22b",
+      "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "role": "industrial",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "mekanism": "10.7.19"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "side": "BOTH",
+          "owner": "mekanism"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.194,)",
+          "side": "BOTH",
+          "owner": "mekanism"
+        },
+        {
+          "modId": "jei",
+          "type": "optional",
+          "versionRange": "[19.19.0.219,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "mekanism"
+        },
+        {
+          "modId": "appmek",
+          "type": "incompatible",
+          "reason": "Requires an update to support changes to Mekanism's Chemical API",
+          "versionRange": "[,1.6.0-alpha.2]",
+          "side": "BOTH",
+          "owner": "mekanism"
+        },
+        {
+          "modId": "enderio_conduits_modded",
+          "type": "incompatible",
+          "reason": "Requires an update to support changes to Mekanism's Chemical API",
+          "versionRange": "[,6.0.24.351-nightly+d8261275]",
+          "side": "BOTH",
+          "owner": "mekanism"
+        },
+        {
+          "modId": "laserio",
+          "type": "incompatible",
+          "reason": "Requires an update to support changes to Mekanism's Chemical API",
+          "versionRange": "[,1.9.9]",
+          "side": "BOTH",
+          "owner": "mekanism"
+        },
+        {
+          "modId": "jaopca",
+          "type": "incompatible",
+          "reason": "Requires an update to support changes to Mekanism's Chemical API",
+          "versionRange": "[,5.0.1.2]",
+          "side": "BOTH",
+          "owner": "mekanism"
+        },
+        {
+          "modId": "fissionrecipe",
+          "type": "incompatible",
+          "reason": "Requires an update to support changes to Mekanism's Chemical API",
+          "versionRange": "[,3.0.7]",
+          "side": "BOTH",
+          "owner": "mekanism"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "R2OftAxM",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "nvQzSEkH",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "NTi7d3Xc",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "qXkLFB0L",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "EiEOyeoL",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "u6dRKJwZ",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "Xg35A4rS",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "6AQIaxuO",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "fRiHVvU7",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "gu7yAYhd",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "XxWD5pD3",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "bcOsQHnC",
+          "file_name": null,
+          "dependency_type": "optional"
+        },
+        {
+          "version_id": null,
+          "project_id": "Eyw0UxEx",
+          "file_name": null,
+          "dependency_type": "optional"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "ars-nouveau",
+      "project_id": "TKB6INcv",
+      "version": "5.13.3",
+      "version_id": "yWDnir1o",
+      "filename": "ars_nouveau-1.21.1-5.13.3.jar",
+      "bytes": 19841105,
+      "download_url": "https://cdn.modrinth.com/data/TKB6INcv/versions/yWDnir1o/ars_nouveau-1.21.1-5.13.3.jar",
+      "sha512": "30f188cfc932bd58c95740488732df7e92d98e7345e271b1a223e41a43fc3dd52284d0ff07fc3e8a95e914082f899394eff3a0f37c174d317e6e37fb68b083df",
+      "sha256": "45c1b6022d8e63464177c1f822bda22c3d6fb66970857fd7677e4e3ccffd259f",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "magic",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "ars_nouveau": "${file.jarVersion}",
+        "lambdynlights_api": "4.5.1+1.21.1",
+        "nuggets": "1.1.0.48",
+        "infiniverse": "${file.jarVersion}"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "mandatory": true,
+          "versionRange": "[21.0.86-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "ars_nouveau"
+        },
+        {
+          "modId": "curios",
+          "mandatory": true,
+          "versionRange": "[1.19-5.0.7.1,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "ars_nouveau"
+        },
+        {
+          "modId": "geckolib",
+          "mandatory": true,
+          "versionRange": "[4.2.1,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "ars_nouveau"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "lambdynlights_api"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.205,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "nuggets"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21, 1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "nuggets"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.40-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "infiniverse"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21, 1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "infiniverse"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "chipped",
+      "project_id": "BAscRYKm",
+      "version": "4.0.2",
+      "version_id": "eqVowbGc",
+      "filename": "chipped-neoforge-1.21.1-4.0.2.jar",
+      "bytes": 15020578,
+      "download_url": "https://cdn.modrinth.com/data/BAscRYKm/versions/eqVowbGc/chipped-neoforge-1.21.1-4.0.2.jar",
+      "sha512": "f3083b01267e7c674c4b42f45a317c93ee7723443cba2051fe5bc593638b533b0fe90699e2101661c934dff458eab693cce4e188533bfe977778c249563a2fa5",
+      "sha256": "18ac6fd6b30db4922ccc6ee8bea5b113f69587505b7529834f37ace506427291",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "building",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "chipped": "4.0.2"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "chipped"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "chipped"
+        },
+        {
+          "modId": "resourcefullib",
+          "type": "required",
+          "versionRange": "[3.0.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "chipped"
+        },
+        {
+          "modId": "athena",
+          "type": "required",
+          "versionRange": "[4.0.0,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "chipped"
+        },
+        {
+          "modId": "jei",
+          "type": "optional",
+          "versionRange": "[19.19.3,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "chipped"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "b1ZV3DIJ",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "G1hIVOrD",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "framedblocks",
+      "project_id": "wbgfS34j",
+      "version": "10.6.1",
+      "version_id": "FBXGqSP5",
+      "filename": "FramedBlocks-10.6.1.jar",
+      "bytes": 4306703,
+      "download_url": "https://cdn.modrinth.com/data/wbgfS34j/versions/FBXGqSP5/FramedBlocks-10.6.1.jar",
+      "sha512": "051d07cb372bfafd746ff658ef2ad3485606328e445099c17b499b14df6844a0c75e8c6decaff1267934fbd6dfaa0eb1938906b0dbeaa20500c1789b4175e3b6",
+      "sha256": "3337f29e1fa3331e8740eef9c20b0750d81fd86d1057fb81012a5c4792aa3369",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "role": "building",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "framedblocks": "10.6.1"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.205,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "athena",
+          "type": "optional",
+          "versionRange": "[4.0.0,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "atlasviewer",
+          "type": "optional",
+          "versionRange": "[9.1.0,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "buildinggadgets",
+          "type": "optional",
+          "versionRange": "[3.14.0,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "create",
+          "type": "optional",
+          "versionRange": "[6.0.2,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "diagonalblocks",
+          "type": "optional",
+          "versionRange": "[21.1.0,)",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "emi",
+          "type": "optional",
+          "versionRange": "[1.1.22,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "jei",
+          "type": "optional",
+          "versionRange": "[19.21.0.247,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "rei",
+          "type": "optional",
+          "versionRange": "[16.0.744,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "amendments",
+          "type": "optional",
+          "versionRange": "[1.21-1.2.24,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "ae2",
+          "type": "optional",
+          "versionRange": "[19.0.19-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "searchables",
+          "type": "optional",
+          "versionRange": "[1.0.2,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "framedblocks"
+        },
+        {
+          "modId": "additionalplacements",
+          "type": "optional",
+          "versionRange": "[2.3.1,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "framedblocks"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "handcrafted",
+      "project_id": "pJmCFF0p",
+      "version": "4.0.3",
+      "version_id": "JfqnpP2Z",
+      "filename": "handcrafted-neoforge-1.21.1-4.0.3.jar",
+      "bytes": 7132842,
+      "download_url": "https://cdn.modrinth.com/data/pJmCFF0p/versions/JfqnpP2Z/handcrafted-neoforge-1.21.1-4.0.3.jar",
+      "sha512": "4ff5fb2aa9582b886d03f647fe9b8c12a828d29a1787e9c9b463be18192ea798e6a4ac83479623042791bce0bacbf6e3e2c2e9ef086640aeeb6970d3404e7ee4",
+      "sha256": "6f2a776fb28ed07d370899814e5e711fbeebe31396097d78a3b550439b364948",
+      "license": {
+        "id": "LicenseRef-Terrarium-Licence",
+        "name": "",
+        "url": "https://github.com/terrarium-earth/Handcrafted/blob/1.19.2/LICENSE"
+      },
+      "role": "interiors",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "handcrafted": "4.0.3"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "handcrafted"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "handcrafted"
+        },
+        {
+          "modId": "resourcefullib",
+          "type": "required",
+          "versionRange": "[3.0.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "handcrafted"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "G1hIVOrD",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "another-furniture",
+      "project_id": "ulloLmqG",
+      "version": "4.0.3",
+      "version_id": "cugGiMKt",
+      "filename": "another_furniture-neoforge-4.0.3.jar",
+      "bytes": 2422436,
+      "download_url": "https://cdn.modrinth.com/data/ulloLmqG/versions/cugGiMKt/another_furniture-neoforge-4.0.3.jar",
+      "sha512": "790a07c354b4e729553150cdc8e7129ca7ab1260d5db5b46ced852edf284789ab69e125071bf78a3214d05c09909bea4a780a5b5b477598af78eca37c4c6c033",
+      "sha256": "a416cb33333d7a489c7a7314e918f564787838630b014c281b83adde014457d0",
+      "license": {
+        "id": "LicenseRef-Custom",
+        "name": "",
+        "url": "https://github.com/starfish-studios/AnotherFurniture/blob/1.19/LICENSE"
+      },
+      "role": "interiors",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "another_furniture": "4.0.3"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "another_furniture"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "another_furniture"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "macaws-furniture",
+      "project_id": "dtWC90iB",
+      "version": "3.4.1",
+      "version_id": "Z5V3Ps7S",
+      "filename": "mcw-furniture-3.4.1-mc1.21.1neoforge.jar",
+      "bytes": 2080436,
+      "download_url": "https://cdn.modrinth.com/data/dtWC90iB/versions/Z5V3Ps7S/mcw-furniture-3.4.1-mc1.21.1neoforge.jar",
+      "sha512": "93103f868a6a7b4fa613dbe908bcf83c4aaabf4719057d484d1636c98e6e3defa00d550a8988ff91d4d0a090463c25b898336e675da52c19bd3bd0ce37e053e4",
+      "sha256": "819fda8059b210e9de8b9275c8b8e0d931054af5a5ad47771c72d9fd4ab85e88",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "interiors",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "mcwfurnitures": "3.4.1"
+      },
+      "actual_dependencies": [],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "macaws-doors",
+      "project_id": "kNxa8z3e",
+      "version": "1.1.5",
+      "version_id": "u7BRX44F",
+      "filename": "mcw-doors-1.1.5-mc1.21.1neoforge.jar",
+      "bytes": 1190404,
+      "download_url": "https://cdn.modrinth.com/data/kNxa8z3e/versions/u7BRX44F/mcw-doors-1.1.5-mc1.21.1neoforge.jar",
+      "sha512": "43ddf00be46af91c009a95392a094f05017155214c46c7980042cbcf871864dc792416497019e688eb558897c87848bd70c282ec4a6d7b268e1ba30389ba987a",
+      "sha256": "87261e309f5e10c9910169d5acbba613cab3a2d2270698b0bd47e657a45b0518",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "role": "building",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "mcwdoors": "1.1.5"
+      },
+      "actual_dependencies": [],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "macaws-windows",
+      "project_id": "C7I0BCni",
+      "version": "2.4.2",
+      "version_id": "rQUE4LCz",
+      "filename": "mcw-mcwwindows-2.4.2-mc1.21.1neoforge.jar",
+      "bytes": 1261268,
+      "download_url": "https://cdn.modrinth.com/data/C7I0BCni/versions/rQUE4LCz/mcw-mcwwindows-2.4.2-mc1.21.1neoforge.jar",
+      "sha512": "7628aa390a689a211013e5856cca1c695729b1faa7e20da16fa1f8a3822d5b569631829e91222caa8f1b27c4a7d28ab49110502551551216de2fb471b6f2549f",
+      "sha256": "8970c40ec622edd34c9b055226b403af08ab441c77303a6dc625ae18005f8184",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "building",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "mcwwindows": "2.4.2"
+      },
+      "actual_dependencies": [],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "macaws-roofs",
+      "project_id": "B8jaH3P1",
+      "version": "2.3.2",
+      "version_id": "jiXRXiSt",
+      "filename": "mcw-roofs-2.3.2-mc1.21.1neoforge.jar",
+      "bytes": 1784829,
+      "download_url": "https://cdn.modrinth.com/data/B8jaH3P1/versions/jiXRXiSt/mcw-roofs-2.3.2-mc1.21.1neoforge.jar",
+      "sha512": "c0e82a3d0a3ab2f2fac5fb0bdd7c7c228f084feaa816540d3d9524f341c8b108c3bb1afecadae2e8118e6c93f0e73280c62da1af4349aca87b6aa337e5e22ae4",
+      "sha256": "25c79def993a24b05b0f8494ee9417717d469bc000d5ed7c219b47dcc3b3e9c8",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "building",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "mcwroofs": "2.3.2"
+      },
+      "actual_dependencies": [],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "macaws-lights-and-lamps",
+      "project_id": "w4an97C2",
+      "version": "1.1.5",
+      "version_id": "5U2kQZIL",
+      "filename": "mcw-lights-1.1.5-mc1.21.1neoforge.jar",
+      "bytes": 525744,
+      "download_url": "https://cdn.modrinth.com/data/w4an97C2/versions/5U2kQZIL/mcw-lights-1.1.5-mc1.21.1neoforge.jar",
+      "sha512": "a6e1c4419b70a3f9225ad03daafca22c8a7da432ec4939b8029455927e3b44683a20e89a3299da78f124d0438e188dad3735d2018a931ad4d553ec9d3b83a9ca",
+      "sha256": "b27cd68a7673874b0f6d765bdef2a022666cc07ca0e5057209a16d1a535da9e4",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "interiors",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "mcwlights": "1.1.5"
+      },
+      "actual_dependencies": [],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "rechiseled",
+      "project_id": "B0g2vT6l",
+      "version": "1.2.6-neoforge-mc1.21",
+      "version_id": "6muGRqvu",
+      "filename": "rechiseled-1.2.6-neoforge-mc1.21.jar",
+      "bytes": 11526036,
+      "download_url": "https://cdn.modrinth.com/data/B0g2vT6l/versions/6muGRqvu/rechiseled-1.2.6-neoforge-mc1.21.jar",
+      "sha512": "fc7556e42439e526edddafdbde108cd1326fd5742d75ae73fe9519f57af18b75cd2861053247b65fa3acd9c58e186bc540496d1e7095a3206b401d9459958e34",
+      "sha256": "cd638bb122d7e1afce4f38b1c7da3af99be7b9f523869cfbc15e5347db5f8d9a",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "building",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "rechiseled": "1.2.6"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.78-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "rechiseled"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.21.2)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "rechiseled"
+        },
+        {
+          "modId": "supermartijn642corelib",
+          "type": "required",
+          "versionRange": "[1.1.20,1.2.0)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "rechiseled"
+        },
+        {
+          "modId": "supermartijn642configlib",
+          "type": "required",
+          "versionRange": "[1.1.6,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "rechiseled"
+        },
+        {
+          "modId": "fusion",
+          "type": "required",
+          "versionRange": "[1.2.12,)",
+          "ordering": "NONE",
+          "side": "CLIENT",
+          "owner": "rechiseled"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "rOUBggPv",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "p19vrgc2",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "LN9BxssP",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "rechiseled-create",
+      "project_id": "E6867niZ",
+      "version": "1.1.1-neoforge-mc1.21",
+      "version_id": "VnOezhJR",
+      "filename": "rechiseledcreate-1.1.1-neoforge-mc1.21.jar",
+      "bytes": 983177,
+      "download_url": "https://cdn.modrinth.com/data/E6867niZ/versions/VnOezhJR/rechiseledcreate-1.1.1-neoforge-mc1.21.jar",
+      "sha512": "ca77dea4dd3276105176578855b0ffd9f48256bed58701a86171b05db1116a29592871ca7d6d5acc9a023270a45654feb4ab7153026eb751d567e7bf892ca560",
+      "sha256": "ba89cd5d1221621ed226cc7f1c26dc84a660cc4f6d122753052429f96d71248d",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "create_building",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "rechiseledcreate": "1.1.1"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.78-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "rechiseledcreate"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "1.21.1",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "rechiseledcreate"
+        },
+        {
+          "modId": "supermartijn642corelib",
+          "type": "required",
+          "versionRange": ">=1.1.20 <1.2.0",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "rechiseledcreate"
+        },
+        {
+          "modId": "rechiseled",
+          "type": "required",
+          "versionRange": ">=1.2.0",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "rechiseledcreate"
+        },
+        {
+          "modId": "create",
+          "type": "required",
+          "versionRange": ">=6.0.4",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "rechiseledcreate"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "LNytGWDc",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "B0g2vT6l",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "supplementaries",
+      "project_id": "fFEIiSDQ",
+      "version": "1.21.1-3.9.9",
+      "version_id": "WrZWfRjP",
+      "filename": "supplementaries-1.21.1-3.9.9-neoforge.jar",
+      "bytes": 13548968,
+      "download_url": "https://cdn.modrinth.com/data/fFEIiSDQ/versions/WrZWfRjP/supplementaries-1.21.1-3.9.9-neoforge.jar",
+      "sha512": "f341d0971e644255c063f0cb363bb93e312f4f005304f8af76d7249c3cbc0c258f415cf6e7bddcdf02115ade9ba9a205ec6d062e2626b414afaef5725667f079",
+      "sha256": "d6876ad959d0da4bab0ba182839a0af0e38ef3571345e5e7aea0be572f958e05",
+      "license": {
+        "id": "LicenseRef-Supplementaries-Team-License",
+        "name": "",
+        "url": "https://github.com/MehVahdJukaar/Supplementaries-Team-License/blob/main/LICENSE.md"
+      },
+      "role": "interiors",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "supplementaries": "1.21.1-3.9.9",
+        "sablecompanion": "1.6.0"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.247,]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supplementaries"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "1.21.1",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supplementaries"
+        },
+        {
+          "modId": "moonlight",
+          "type": "required",
+          "referralUrl": "https://www.curseforge.com/minecraft/mc-mods/selene",
+          "versionRange": "[1.21-3.6.4,]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supplementaries"
+        },
+        {
+          "modId": "create",
+          "type": "optional",
+          "versionRange": "[6.0.0,]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supplementaries"
+        },
+        {
+          "modId": "amendments",
+          "type": "optional",
+          "versionRange": "[1.21-2.0.0,]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supplementaries"
+        },
+        {
+          "modId": "farmersdelight",
+          "type": "incompatible",
+          "versionRange": "[0,1.3.0)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supplementaries"
+        },
+        {
+          "modId": "sodium",
+          "type": "incompatible",
+          "versionRange": "[0,0.8.12-beta.1)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supplementaries"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.80,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "sablecompanion"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "sablecompanion"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "twkfQtEc",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "amendments",
+      "project_id": "6iTJugQR",
+      "version": "1.21-2.1.10",
+      "version_id": "OYfMeeUK",
+      "filename": "amendments-1.21-2.1.10-neoforge.jar",
+      "bytes": 1168211,
+      "download_url": "https://cdn.modrinth.com/data/6iTJugQR/versions/OYfMeeUK/amendments-1.21-2.1.10-neoforge.jar",
+      "sha512": "9ba1ccec513e93dbac615901885bdecef80989494f3e745daf41809a4522e40609fcd30fdae74568c8ae98f52a8169d2fac98a263d2d3bfde55e3ac3272f20e9",
+      "sha256": "a2cbc46342c5f466f3b6e244f8820aa01f9d8381586b2c008b72fb77ae56045e",
+      "license": {
+        "id": "LicenseRef-Supplementaries-Team-License-1.1",
+        "name": "",
+        "url": "https://github.com/MehVahdJukaar/Supplementaries-Team-License/blob/main/LICENSE.md"
+      },
+      "role": "interiors",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "amendments": "1.21-2.1.10"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "*",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "amendments"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "amendments"
+        },
+        {
+          "modId": "moonlight",
+          "type": "required",
+          "versionRange": "[1.21-3.1.0c,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "amendments"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "twkfQtEc",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "xaeros-minimap",
+      "project_id": "1bokaNcj",
+      "version": "neoforge-1.21.1-26.6.0",
+      "version_id": "irjR7dHk",
+      "filename": "xaerominimap-neoforge-1.21.1-26.6.0.jar",
+      "bytes": 2186351,
+      "download_url": "https://cdn.modrinth.com/data/1bokaNcj/versions/irjR7dHk/xaerominimap-neoforge-1.21.1-26.6.0.jar",
+      "sha512": "d56b93ddb921285624b491d6a85aba23748bec9974867399c881c257eb25a746df92a735473adf3a6875e0928a56ff78245d5238eb9207b0e45c3fec20c896dc",
+      "sha256": "d3398221b2262abfe2d394b588122e5b3fd2e4d8c4bf66a5fd357352fcf51b2e",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "minimap",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "xaerominimap": "26.6.0",
+        "xaerolib": "1.7.3"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.110-beta,21.2.0)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaerominimap"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "1.21.1",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaerominimap"
+        },
+        {
+          "modId": "openpartiesandclaims",
+          "type": "optional",
+          "versionRange": "[0.32.4,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaerominimap"
+        },
+        {
+          "modId": "xaeroworldmap",
+          "type": "optional",
+          "versionRange": "[1.44.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaerominimap"
+        },
+        {
+          "modId": "xaerolib",
+          "type": "required",
+          "versionRange": "[1.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaerobetterpvp"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.110-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaerolib"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21, 1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaerolib"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "gF3BGWvG",
+          "file_name": null,
+          "dependency_type": "optional"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "xaeros-world-map",
+      "project_id": "NcUtCpym",
+      "version": "neoforge-1.21.1-1.47.0",
+      "version_id": "SnQ4SoDe",
+      "filename": "xaeroworldmap-neoforge-1.21.1-1.47.0.jar",
+      "bytes": 1427078,
+      "download_url": "https://cdn.modrinth.com/data/NcUtCpym/versions/SnQ4SoDe/xaeroworldmap-neoforge-1.21.1-1.47.0.jar",
+      "sha512": "4d2d78bc85afa002f682ef344b7284cf1baa4903cc5a11cd1d7bd260ac63952580ae717bab47079540ead633cdd5d8e4fdf230dc99a68bcb7a269500e7dada13",
+      "sha256": "6a42b6f01bd96b496e5fcc07d4541bad1a699d9ec8ad58ad40d5dcfe23a7d4c7",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "worldmap",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "xaeroworldmap": "1.47.0",
+        "xaerolib": "1.7.3"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.110-beta, 21.2.0)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaeroworldmap"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21, 1.21.2)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaeroworldmap"
+        },
+        {
+          "modId": "openpartiesandclaims",
+          "type": "optional",
+          "versionRange": "[0.32.4,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaeroworldmap"
+        },
+        {
+          "modId": "xaerominimap",
+          "type": "optional",
+          "versionRange": "[26.4.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaeroworldmap"
+        },
+        {
+          "modId": "xaerobetterpvp",
+          "type": "optional",
+          "versionRange": "[26.4.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaeroworldmap"
+        },
+        {
+          "modId": "xaerolib",
+          "type": "required",
+          "versionRange": "[1.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaeroworldmap"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.110-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaerolib"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21, 1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "xaerolib"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "gF3BGWvG",
+          "file_name": null,
+          "dependency_type": "optional"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "yigd",
+      "project_id": "HnD1GX6e",
+      "version": "2.0.13",
+      "version_id": "Axk4bfXT",
+      "filename": "youre-in-grave-danger-neoforge-2.0.13.jar",
+      "bytes": 448888,
+      "download_url": "https://cdn.modrinth.com/data/HnD1GX6e/versions/Axk4bfXT/youre-in-grave-danger-neoforge-2.0.13.jar",
+      "sha512": "562ea8d82184139e361db5f959ad5a993bbd76d34532248e0f89dd5ef7e2555f2a79e12d353fd389a7508bc34b6e1b654616c67e975ea7cb8a43f1e972284f61",
+      "sha256": "dd2142a3c6a9d5b990ab36220be482f7aa9f528755f93b8fef8996f509ddcda2",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "role": "graves",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "yigd": "2.0.13"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "yigd"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.21.1)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "yigd"
+        }
+      ],
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "9s6osm5g",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "runtime_verified": false
+    },
+    {
+      "project": "curios",
+      "project_id": "vvuO3ImH",
+      "version": "9.5.1+1.21.1",
+      "version_id": "yohfFbgD",
+      "filename": "curios-neoforge-9.5.1+1.21.1.jar",
+      "bytes": 410690,
+      "download_url": "https://cdn.modrinth.com/data/vvuO3ImH/versions/yohfFbgD/curios-neoforge-9.5.1%2B1.21.1.jar",
+      "sha512": "5981a267686b744e7e3c227f78cbcd5267c14ac6979a28e814695f4589273998563147207fef4a5cdb7cdbdc39797cd95d9e4abadb55869f18e02a38d0654ae5",
+      "sha256": "a45df2125c26219974aba7507ffc9afe7b83acc941a386af3faacb1cc0056fde",
+      "license": {
+        "id": "LGPL-3.0-or-later",
+        "name": "GNU Lesser General Public License v3.0 or later",
+        "url": null
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "curios": "9.5.1+1.21.1"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.60,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "curios"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21, 1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "curios"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "geckolib",
+      "project_id": "8BmcQJ2H",
+      "version": "4.9.3",
+      "version_id": "Grwn5rUB",
+      "filename": "geckolib-neoforge-1.21.1-4.9.3.jar",
+      "bytes": 634531,
+      "download_url": "https://cdn.modrinth.com/data/8BmcQJ2H/versions/Grwn5rUB/geckolib-neoforge-1.21.1-4.9.3.jar",
+      "sha512": "8dfa5f8c57224a5e34e5098367ea9819ca6dc9c11357cd3062c16da3455c8bd1a483098af7383debc4b9ce8e4d7ab3fdc799b415644eb829da83eb72a7335dfd",
+      "sha256": "20a1995e4074f387ff549e2c57ea79dd7d41ee83c6afb9dd6a6e840e592d1c47",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "geckolib": "4.9.3"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.150,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "geckolib"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "geckolib"
+        },
+        {
+          "modId": "geckoanimfix",
+          "type": "incompatible",
+          "side": "BOTH",
+          "owner": "geckolib"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "chunky",
+      "project_id": "fALzjamp",
+      "version": "1.4.23",
+      "version_id": "LuFhm4eU",
+      "filename": "Chunky-NeoForge-1.4.23.jar",
+      "bytes": 340572,
+      "download_url": "https://cdn.modrinth.com/data/fALzjamp/versions/LuFhm4eU/Chunky-NeoForge-1.4.23.jar",
+      "sha512": "2db769dd723f243a21e1881e7c9f825e9c193da6f2bed454b70cb6fa9e51c57f63fdcf017c0657bbd26f7bba30815413e27c74d3c7be0783390a96ee9baa4bf7",
+      "sha256": "d72f235cf1f56f2c374f52c00bdda5034524b28142305a84cfc123a3f92ad274",
+      "license": {
+        "id": "GPL-3.0-only",
+        "name": "GNU General Public License v3.0 only",
+        "url": null
+      },
+      "role": "server_pregeneration",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "chunky": "1.4.23"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "chunky"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "chunky"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "guideme",
+      "project_id": "Ck4E7v7R",
+      "version": "21.1.19",
+      "version_id": "hFpGwC6q",
+      "filename": "guideme-21.1.19.jar",
+      "bytes": 9311992,
+      "download_url": "https://cdn.modrinth.com/data/Ck4E7v7R/versions/hFpGwC6q/guideme-21.1.19.jar",
+      "sha512": "4dfa132e5cfd69a86c958867067f1c5ab39bb69ae35b2a62c24bb9924e9c688f1a4930ab75d335b22378d9f98cd7fceae8d030812b8f90c9aa282de8ea129f5a",
+      "sha256": "2ce254edb931c3c3cf81d69abaf8f4ce5b871bf85e64984f366bf044173bd66a",
+      "license": {
+        "id": "LicenseRef-Multiple-OSS-Licenses",
+        "name": "",
+        "url": "https://github.com/AppliedEnergistics/GuideME/blob/main/LICENSE.MD"
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "guideme": "21.1.19"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "REQUIRED",
+          "versionRange": "[21.1.1,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "guideme"
+        },
+        {
+          "modId": "minecraft",
+          "type": "REQUIRED",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "guideme"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "athena-ctm",
+      "project_id": "b1ZV3DIJ",
+      "version": "4.0.6",
+      "version_id": "dJgL278E",
+      "filename": "athena-neoforge-1.21.1-4.0.6.jar",
+      "bytes": 99944,
+      "download_url": "https://cdn.modrinth.com/data/b1ZV3DIJ/versions/dJgL278E/athena-neoforge-1.21.1-4.0.6.jar",
+      "sha512": "ab40a306a26ce834daae921a1e87768cd2538a4bfe27a4480f97af854084cc334e7416b1bd0b7583834a32a86951283f29fd4b1df7b98a967a6b26a3ec05e2cf",
+      "sha256": "43699885bbce3343916d4c5c4940cf0e3f9f6f02fdeb46e8655e121b42282ec5",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "athena": "4.0.6"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.0-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "athena"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "athena"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "resourceful-lib",
+      "project_id": "G1hIVOrD",
+      "version": "3.0.12",
+      "version_id": "x99nCLTm",
+      "filename": "resourcefullib-neoforge-1.21-3.0.12.jar",
+      "bytes": 484332,
+      "download_url": "https://cdn.modrinth.com/data/G1hIVOrD/versions/x99nCLTm/resourcefullib-neoforge-1.21-3.0.12.jar",
+      "sha512": "a9d20e345faa9bcb297bd95ac9524205834804d1bb13518397dd4f7f62b352b08c3339ee7f7870d3669078ceeb33d5c31ea527aecce4b31d62ec1ff7d8b562c8",
+      "sha256": "5e36f2c69de008dc5795f730c84ab767688f15c810944b585485349a0c911261",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "resourcefullib": "3.0.12"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.0-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "resourcefullib"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "resourcefullib"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "supermartijn642s-core-lib",
+      "project_id": "rOUBggPv",
+      "version": "1.1.25-neoforge-mc1.21",
+      "version_id": "OG6Edgmm",
+      "filename": "supermartijn642corelib-1.1.25-neoforge-mc1.21.jar",
+      "bytes": 562683,
+      "download_url": "https://cdn.modrinth.com/data/rOUBggPv/versions/OG6Edgmm/supermartijn642corelib-1.1.25-neoforge-mc1.21.jar",
+      "sha512": "c9c4f22ed1657da646331f519e5d40495cc7e92a6683800691823dfcaf858973c8f202285322c095ebeca245c6a512aa8edf83a97c8a65be0080f9b176f5c2e2",
+      "sha256": "0824bdd7cd5b5654eeb05dc9b62b42003b081b781009c38dc83ee1e106ca4ce2",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "supermartijn642corelib": "1.1.25"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.102-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supermartijn642corelib"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.21.2)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supermartijn642corelib"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "fusion-connected-textures",
+      "project_id": "p19vrgc2",
+      "version": "1.3.16-neoforge-mc1.21.1",
+      "version_id": "AYDaLPK8",
+      "filename": "fusion-1.3.16-neoforge-mc1.21.1.jar",
+      "bytes": 947335,
+      "download_url": "https://cdn.modrinth.com/data/p19vrgc2/versions/AYDaLPK8/fusion-1.3.16-neoforge-mc1.21.1.jar",
+      "sha512": "0b65c3a78db5785c76a222639a56da0cd09fc8445e02cdfb84e4bb7c88dc2c5622ccb468291a12df30440205a881db2023d9857fdb7252e7d21238876fcc8608",
+      "sha256": "29920a6838f4f942947d208349480d7f5737f9fac6411c6eac5f3e824a438048",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "fusion": "1.3.16"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.78-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fusion"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.21.2)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "fusion"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "supermartijn642s-config-lib",
+      "project_id": "LN9BxssP",
+      "version": "1.1.8-neoforge-mc1.21",
+      "version_id": "qKL9jM75",
+      "filename": "supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+      "bytes": 207514,
+      "download_url": "https://cdn.modrinth.com/data/LN9BxssP/versions/qKL9jM75/supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+      "sha512": "768d8ca178c5e653986f5131b7aeb7fa57ce7d32c16ed399ced01b273565a2b640130c55c7092747efeff40dbb0348876b18b415f59b0d16dd2c7f32f1798ce2",
+      "sha256": "d2ba7b839a2268e4e223457e813d11aa2476c3bf708a7bba691d8fc851778a4b",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "supermartijn642configlib": "1.1.8"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.78-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supermartijn642configlib"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.22)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "supermartijn642configlib"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "moonlight",
+      "project_id": "twkfQtEc",
+      "version": "1.21.1-3.7.1",
+      "version_id": "YfHkk7hg",
+      "filename": "moonlight-1.21.1-3.7.1-neoforge.jar",
+      "bytes": 2303727,
+      "download_url": "https://cdn.modrinth.com/data/twkfQtEc/versions/YfHkk7hg/moonlight-1.21.1-3.7.1-neoforge.jar",
+      "sha512": "871c0d176465f3d0e17a8de0992c8c5cb8c589501b8c480b38e7372f3a79fea3f23c2998f9b1ddeec1281e05927787a511638a11bcde25271ac73bed92852432",
+      "sha256": "0a755b1f5bfc40e1553c55471ebe42096eb537d5c7fa5fb6b5a5f145656604db",
+      "license": {
+        "id": "LicenseRef-LGPL-with-additional-dependency-clause",
+        "name": "",
+        "url": "https://github.com/MehVahdJukaar/Moonlight/blob/1.20/license.md"
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "moonlight": "1.21.1-3.7.1",
+        "codecui": "1.21.1-1.4.7"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "moonlight"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "codecui"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1, 1.21.2)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "codecui"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    },
+    {
+      "project": "cloth-config",
+      "project_id": "9s6osm5g",
+      "version": "15.0.140+neoforge",
+      "version_id": "izKINKFg",
+      "filename": "cloth-config-15.0.140-neoforge.jar",
+      "bytes": 1163890,
+      "download_url": "https://cdn.modrinth.com/data/9s6osm5g/versions/izKINKFg/cloth-config-15.0.140-neoforge.jar",
+      "sha512": "aaf9b010955b8cd294e5a92f069985b18729fd5e2cf22d351f1dff9680f15488688803ec41e77e941cbde130ceb535014ca4c868047d80ab69c2d508e216654d",
+      "sha256": "65e722e0d98431a07c45f8bdd8d529a217cc8c175fde1740248bd5c1b4f3c0d4",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "role": "library_dependency",
+      "status": "downloaded_hash_verified",
+      "mod_ids": {
+        "cloth_config": "15.0.140"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.110-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "cloth_config"
+        }
+      ],
+      "api_dependencies": [],
+      "runtime_verified": false
+    }
+  ],
+  "resolution_errors": [],
+  "shader_profile": "Separate client-only Iris/Sodium/Complementary candidate; not included in baseline batch",
+  "complete_pack": false,
+  "runtime_verified": false
+}

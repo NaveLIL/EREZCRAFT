@@ -19,7 +19,14 @@ def read(path):
 def atomic(path,data):
     temporary=path.with_suffix(path.suffix+'.tmp')
     temporary.write_text(json.dumps(data,indent=2)+'\n',encoding='utf-8')
-    temporary.replace(path)
+    for attempt in range(20):
+        try:
+            temporary.replace(path)
+            return
+        except PermissionError:
+            if attempt == 19:
+                raise
+            time.sleep(.005)
 
 
 def properties(path):

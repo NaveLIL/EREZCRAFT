@@ -1,0 +1,10 @@
+_version = 5
+
+[common.multiThreading]
+numberOfThreads = 1
+
+[client.advanced.graphics.quality]
+lodChunkRenderDistanceRadius = 32
+
+[client.advanced.autoUpdater]
+enableAutoUpdater = false

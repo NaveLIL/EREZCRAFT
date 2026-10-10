@@ -4,19 +4,110 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import java.util.Arrays;
 import java.util.BitSet;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.chunk.status.ChunkStatus;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import pro.erez.interstice.minerals.MineralEcology;
 import pro.erez.interstice.minerals.RiftOreBlock;
 import pro.erez.interstice.worldgen.StoneVaults;
 import pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6;
+import pro.erez.interstice.worldgen.terrain.V6MouthPlanner;
 
 /** Conservative walking graph on actual FULL blocks. No terrain generation or edits. */
 final class V6CaveSurvey {
     private V6CaveSurvey() {}
+    record PlannedRoute(JsonObject report,BlockPos camera,BlockPos target) {}
+    static JsonObject plannedMouth(V6MouthPlanner.Mouth mouth){
+        var report=new JsonObject();report.addProperty("cell_x",mouth.cellX());report.addProperty("cell_z",mouth.cellZ());
+        report.add("surface",json(mouth.surface()));report.add("entry",json(mouth.entry()));report.add("interior",json(mouth.interior()));
+        report.addProperty("original_internal_no_mouth_nodes",mouth.originalInternalNodes());report.addProperty("connector_steps",mouth.connector().size()-1);
+        var route=new JsonArray();for(var p:mouth.route())route.add(json(p));report.add("planned_canonical_route",route);
+        report.addProperty("selection_scope","First accepted canonical plan in the fixed world-cell window, chosen before any additional FULL inspection");
+        return report;
+    }
+    /** Validates the preselected route using only already requested actual FULL chunks. */
+    static PlannedRoute actualPlannedRoute(ServerLevel level,V6MouthPlanner.Mouth mouth){
+        var report=new JsonObject();var nodes=new JsonArray();var blocked=new JsonArray();var fluids=new JsonArray();var hazards=new JsonArray();
+        boolean physical=true,airOnly=true;BlockPos previous=null;
+        for(var p:mouth.route()){
+            requireFull(level,p);var feet=level.getBlockState(p);var head=level.getBlockState(p.above());var floor=level.getBlockState(p.below());
+            boolean dry=feet.getFluidState().isEmpty()&&head.getFluidState().isEmpty()&&floor.getFluidState().isEmpty();
+            boolean support=!floor.is(Blocks.BEDROCK)&&floor.isFaceSturdy(level,p.below(),Direction.UP);
+            boolean clear=passable(level,p)&&passable(level,p.above());boolean step=true;JsonObject extraHead=null;
+            if(previous!=null){int horizontal=Math.abs(p.getX()-previous.getX())+Math.abs(p.getZ()-previous.getZ());int dy=p.getY()-previous.getY();
+                step=horizontal==1&&Math.abs(dy)<=1;
+                if(dy!=0){var extra=(dy>0?previous:p).above(2);requireFull(level,extra);var state=level.getBlockState(extra);boolean extraClear=passable(level,extra),extraDry=state.getFluidState().isEmpty();step&=extraClear&&extraDry;airOnly&=state.isAir();
+                    extraHead=json(extra);extraHead.addProperty("role","step_extra_headroom");extraHead.addProperty("block",BuiltInRegistries.BLOCK.getKey(state.getBlock()).toString());extraHead.addProperty("dry",extraDry);extraHead.addProperty("collision_clear",extraClear);
+                    if(!extraDry)fluids.add(extraHead.deepCopy());if(!extraClear)blocked.add(extraHead.deepCopy());hazard(level,hazards,extra,state,"step_extra_headroom");
+                }
+            }
+            var node=json(p);node.addProperty("floor",BuiltInRegistries.BLOCK.getKey(floor.getBlock()).toString());node.addProperty("feet",BuiltInRegistries.BLOCK.getKey(feet.getBlock()).toString());node.addProperty("head",BuiltInRegistries.BLOCK.getKey(head.getBlock()).toString());
+            node.addProperty("dry",dry);node.addProperty("sturdy_floor",support);node.addProperty("collision_clear",clear);node.addProperty("cardinal_step_and_extra_headroom",step);if(extraHead!=null)node.add("step_extra_head_cell",extraHead);nodes.add(node);
+            if(!dry)fluids.add(node.deepCopy());if(!support||!clear||!step)blocked.add(node.deepCopy());
+            hazard(level,hazards,p,feet,"feet");hazard(level,hazards,p.above(),head,"head");hazard(level,hazards,p.below(),floor,"floor");
+            physical&=dry&&support&&clear&&step;airOnly&=feet.isAir()&&head.isAir();previous=p;
+        }
+        var sampler=NativeColumnSamplerV6.of(level.getChunkSource().randomState());BlockPos camera=null,target=null;int roofHeight=0,view=0;
+        if(physical){
+            // Preserve selection: never seek a different mouth after decoration blocked it.
+            // Choose the longest readable segment of this same verified route, with the
+            // deepest node breaking ties. A bend or a single step remains useful; there
+            // is no minimum-three-straight requirement in the independent world criterion.
+            var route=mouth.route();
+            for(int i=route.size()-1;i>=0;i--){var p=route.get(i);
+                if(sampler.density(p.getX(),p.getY(),p.getZ(),true)<=0||sampler.density(p.getX(),p.getY(),p.getZ())>0)continue;
+                int ceiling=actualRoof(level,p,16);if(ceiling<2)continue;
+                for(int sign:new int[]{1,-1}){
+                    int first=i+sign;if(first<0||first>=route.size())continue;
+                    var delta=route.get(first).subtract(p);BlockPos furthest=null;int run=0;
+                    for(int length=1;length<=6;length++){
+                        int index=i+sign*length;if(index<0||index>=route.size())break;
+                        var next=route.get(index);
+                        if(!next.equals(p.offset(delta.getX()*length,delta.getY()*length,delta.getZ()*length))||!cameraVisible(level,p,next))break;
+                        furthest=next;run=length;
+                    }
+                    if(run>view){camera=p;target=furthest.above();roofHeight=ceiling;view=run;}
+                }
+            }
+        }
+        report.addProperty("scope","Actual FULL route: dry sturdy floor and two whole-cell collision-free body cells; cardinal steps +/-1. Static geometry inspection, not human traversal or entity-safe Survival.");
+        report.addProperty("geometry_edits",0);report.addProperty("physical_collision_route_verified",physical);report.addProperty("legacy_air_only_route_verified",airOnly&&physical);
+        report.addProperty("route_nodes",mouth.route().size());report.add("actual_route_nodes",nodes);report.add("blocking_material_cells",blocked);report.add("fluid_cells",fluids);report.add("hazard_cells",hazards);
+        report.addProperty("spider_or_gas_entity_safety_claimed",false);report.addProperty("actual_roofed_internal_camera_found",camera!=null);
+        report.addProperty("world_cave_route_criterion",physical&&camera!=null);report.addProperty("voluntary_three_straight_view_required",false);
+        if(camera!=null){report.add("camera_feet",json(camera));report.add("camera_target",json(target));report.addProperty("camera_actual_roof_height",roofHeight);report.addProperty("camera_forward_readable_cells",view);report.addProperty("camera_eye_y",camera.getY()+1.62);report.addProperty("camera_target_y",target.getY()+.2);report.addProperty("camera_collider_ray_clear",true);}
+        return new PlannedRoute(report,camera,target);
+    }
+    private static boolean loadedFull(ServerLevel level,BlockPos p){var c=level.getChunkSource().getChunkNow(p.getX()>>4,p.getZ()>>4);return c!=null&&c.getPersistedStatus().isOrAfter(ChunkStatus.FULL);}
+    private static void requireFull(ServerLevel level,BlockPos p){if(!loadedFull(level,p))throw new IllegalStateException("Planned-route inspection would implicitly load an undeclared chunk: "+p);}
+    private static boolean passable(ServerLevel level,BlockPos p){return level.getBlockState(p).getCollisionShape(level,p,CollisionContext.empty()).isEmpty();}
+    static boolean collisionCameraClear(ServerLevel level,BlockPos p){
+        if(!loadedFull(level,p))return false;var floor=level.getBlockState(p.below());
+        return !floor.is(Blocks.BEDROCK)&&floor.getFluidState().isEmpty()&&floor.isFaceSturdy(level,p.below(),Direction.UP)
+                &&passable(level,p)&&passable(level,p.above())&&level.getBlockState(p).getFluidState().isEmpty()&&level.getBlockState(p.above()).getFluidState().isEmpty();
+    }
+    private static boolean cameraVisible(ServerLevel level,BlockPos feet,BlockPos targetFeet){
+        var from=new Vec3(feet.getX()+.5,feet.getY()+1.62,feet.getZ()+.5);
+        var to=new Vec3(targetFeet.getX()+.5,targetFeet.getY()+1.2,targetFeet.getZ()+.5);
+        return level.clip(new ClipContext(from,to,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,CollisionContext.empty())).getType()==HitResult.Type.MISS;
+    }
+    private static int actualRoof(ServerLevel level,BlockPos p,int maximum){for(int dy=2;dy<=maximum;dy++){
+        var at=p.above(dy);if(!loadedFull(level,at))return 0;var s=level.getBlockState(at);if(mass(s))return dy;if(!s.getFluidState().isEmpty())return 0;
+    }return 0;}
+    private static void hazard(ServerLevel level,JsonArray hazards,BlockPos p,BlockState state,String role){
+        String id=BuiltInRegistries.BLOCK.getKey(state.getBlock()).toString();
+        if(state.is(Blocks.COBWEB)||id.contains("cobweb")||id.contains("spider_egg_sac")||id.contains("venom_reed")||id.contains("spore_pod")||id.contains("sting_frond")||id.contains("clingweed")){
+            var row=json(p);row.addProperty("role",role);row.addProperty("block",id);row.addProperty("kind",id.contains("cobweb")?"spider_web":id.contains("spider_egg_sac")?"spider_egg_sac":"dangerous_flora");row.addProperty("collision_blocking",!state.getCollisionShape(level,p,CollisionContext.empty()).isEmpty());hazards.add(row);
+        }
+    }
     static boolean mass(BlockState state){return StoneVaults.isGround(state)||state.getBlock() instanceof RiftOreBlock
         ||state.is(MineralEcology.ROOT_LOAM.get())||state.is(MineralEcology.TOXIC_SAND.get())
         ||state.is(MineralEcology.MINERAL_POWDER.get())||state.is(MineralEcology.MINERAL_FROST.get());}

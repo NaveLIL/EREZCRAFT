@@ -1,0 +1,340 @@
+{
+  "schema": 1,
+  "interstice_version": "0.7.0-preview.3",
+  "foundation_release": "techmagic-0.1.0-alpha.2-foundation",
+  "passed": true,
+  "scope": "Current artifact audit, real loader startup, bounded Chunky/DH functional/cold proof and private launcher publisher delivery; not full gameplay/server release",
+  "artifact": {
+    "passed": true,
+    "jar": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\libs\\interstice-0.7.0-preview.3.jar",
+    "jar_sha256": "de27615f00a6851d7b8de87e244c0263f4305de14e9b5d80f91fbb7a0c6d9635",
+    "sources_jar_sha256": "68b554972701c74b518f7c86ea89540600042efc6cf5adcbc1a0f2ae85b37655",
+    "java_sources_compared": 206,
+    "compiled_classes_compared": 396,
+    "models_checked": 393,
+    "resources_compared": 1111,
+    "errors": []
+  },
+  "package": {
+    "passed": true,
+    "release": "techmagic-0.1.0-alpha.2-foundation",
+    "own_mod_version": "0.7.0-preview.3",
+    "own_mod_sha256": "de27615f00a6851d7b8de87e244c0263f4305de14e9b5d80f91fbb7a0c6d9635",
+    "directory": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\distributions\\erezcraft-techmagic-0.1.0-alpha.2-foundation-launcher",
+    "client_mod_jars": 36,
+    "server_mod_jars": 34,
+    "worlds_included": false,
+    "published": false,
+    "players_admitted": false,
+    "inventory_sha256": "48d68dab590562a0dd5cfd30c474cdd916368e2b70033d6f909edd7e942f711d"
+  },
+  "launcher_delivery": {
+    "passed": true,
+    "fixture": "D:\\repos\\erezcraft\\.local\\verification\\interstice-BskiXW",
+    "source": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\distributions\\erezcraft-techmagic-0.1.0-alpha.2-foundation-launcher",
+    "files": 37,
+    "modJars": 36,
+    "signaturesAndBlobHashesVerified": true,
+    "playable": false,
+    "productionPublished": false
+  },
+  "launcher": {
+    "path": "D:\\repos\\erezcraft\\apps\\launcher",
+    "native_preview_binary": "D:\\repos\\erezcraft\\target\\debug\\erezcraft-launcher.exe",
+    "binary_sha256": "81fd1d976ea663ecf58ee0736104a68e3a65ce2eca6ad344c0b8c8fecf200074",
+    "source_sha256": {
+      "crates/launcher-core/src/game.rs": "42ceec8f5978d03afbbeb45df5b032ddddce771653915aac2479bd4a96a90dc7",
+      "apps/launcher/src-tauri/src/main.rs": "d8b8312a56df937ff32d314ad22c589b5ff2dd14df9da085d2afe9658a64b796",
+      "apps/launcher/src/App.svelte": "c5150f77abecb21bc8e8c24e2976267eb0aab167610644b11ba44552f78a9ae3",
+      "apps/launcher/src/bridge.ts": "118651ae63bcdb5efb989c40aa9bd0c6342a43db30401bcdf3548ab4237cd94a",
+      "tools/verify-interstice-pack.mjs": "179eae4e7c6d2f82e79085900fd86b2228c49ba598fbad494697e993d3ecaf0e"
+    },
+    "observed_checks": {
+      "cargo_test_core_locked": "15 passed",
+      "node_publisher_tests": "4 passed",
+      "svelte_check": "0 errors/0 warnings",
+      "vite_build": "passed",
+      "cargo_check_launcher_locked": "passed",
+      "cargo_build_custom_protocol_locked": "passed"
+    },
+    "existing_user_memory_preferences_preserved": true
+  },
+  "real_client_startup": {
+    "foundation_components": 31,
+    "loaded_versions": {
+      "distanthorizons": "3.3.3",
+      "create": "6.0.10",
+      "sable": "2.0.6",
+      "interstice": "0.7.0-preview.3",
+      "offroad": "1.3.2",
+      "simulated": "1.3.2",
+      "aeronautics": "1.3.2",
+      "flywheel": "1.0.6",
+      "ae2": "19.2.18",
+      "modern_industrialization": "2.5.10",
+      "grandpower": "3.0.0",
+      "mekanism": "10.7.19",
+      "ars_nouveau": "5.13.3",
+      "lambdynlights_api": "4.5.1+1.21.1",
+      "nuggets": "1.1.0.48",
+      "infiniverse": "2.0.1.0",
+      "chipped": "4.0.2",
+      "framedblocks": "10.6.1",
+      "handcrafted": "4.0.3",
+      "another_furniture": "4.0.3",
+      "mcwfurnitures": "3.4.1",
+      "mcwdoors": "1.1.5",
+      "mcwwindows": "2.4.2",
+      "mcwroofs": "2.3.2",
+      "mcwlights": "1.1.5",
+      "rechiseled": "1.2.6",
+      "rechiseledcreate": "1.1.1",
+      "supplementaries": "1.21.1-3.9.9",
+      "sablecompanion": "1.6.0",
+      "amendments": "1.21-2.1.10",
+      "xaerominimap": "26.6.0",
+      "xaerolib": "1.7.3",
+      "xaeroworldmap": "1.47.0",
+      "yigd": "2.0.13",
+      "curios": "9.5.1+1.21.1",
+      "geckolib": "4.9.3",
+      "chunky": "1.4.23",
+      "guideme": "21.1.19",
+      "athena": "4.0.6",
+      "resourcefullib": "3.0.12",
+      "supermartijn642corelib": "1.1.25",
+      "fusion": "1.3.16",
+      "supermartijn642configlib": "1.1.8",
+      "moonlight": "1.21.1-3.7.1",
+      "codecui": "1.21.1-1.4.7",
+      "cloth_config": "15.0.140"
+    },
+    "passed": true,
+    "pid": 30020,
+    "world_created": false,
+    "max_heap_bytes": 10737418240,
+    "jvm_arguments": "-XX:+UseZGC -XX:+ZGenerational -Xms2G -Xmx10G",
+    "scope": "Actual NeoForge client reached native title screen with Create, bundled Aeronautics, Sable and DH. Ship physics, magic, recipes, dimensions and performance remain unverified."
+  },
+  "real_dedicated_startup": {
+    "loaded_foundation_versions": {
+      "ae2": "19.2.18",
+      "modern_industrialization": "2.5.10",
+      "grandpower": "3.0.0",
+      "mekanism": "10.7.19",
+      "ars_nouveau": "5.13.3",
+      "lambdynlights_api": "4.5.1+1.21.1",
+      "nuggets": "1.1.0.48",
+      "infiniverse": "2.0.1.0",
+      "chipped": "4.0.2",
+      "framedblocks": "10.6.1",
+      "handcrafted": "4.0.3",
+      "another_furniture": "4.0.3",
+      "mcwfurnitures": "3.4.1",
+      "mcwdoors": "1.1.5",
+      "mcwwindows": "2.4.2",
+      "mcwroofs": "2.3.2",
+      "mcwlights": "1.1.5",
+      "rechiseled": "1.2.6",
+      "rechiseledcreate": "1.1.1",
+      "supplementaries": "1.21.1-3.9.9",
+      "sablecompanion": "1.6.0",
+      "amendments": "1.21-2.1.10",
+      "yigd": "2.0.13",
+      "curios": "9.5.1+1.21.1",
+      "geckolib": "4.9.3",
+      "chunky": "1.4.23",
+      "guideme": "21.1.19",
+      "athena": "4.0.6",
+      "resourcefullib": "3.0.12",
+      "supermartijn642corelib": "1.1.25",
+      "fusion": "1.3.16",
+      "supermartijn642configlib": "1.1.8",
+      "moonlight": "1.21.1-3.7.1",
+      "codecui": "1.21.1-1.4.7",
+      "cloth_config": "15.0.140"
+    },
+    "passed": true,
+    "server_pid": 13104,
+    "actual_v6_dimension": "interstice:islands_v6",
+    "actual_seed": 20261006,
+    "scope": "Real dedicated startup and actual dimension registration only;10-player load, machines, ship physics, graves, recipes, pregeneration and cold persistence are NOT validated by this gate."
+  },
+  "pregen": {
+    "processed_chunks": {
+      "minecraft:overworld": 25,
+      "interstice:islands_v6": 25
+    },
+    "selected_saved_FULL_chunks_cold_checked": 18,
+    "creator_pid": 26404,
+    "reload_pid": 7036,
+    "seed": 20261006,
+    "samples": [
+      {
+        "dimension": "minecraft:overworld",
+        "chunks": [
+          {
+            "x": 191,
+            "z": 191,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "9909523c7227d0da2547d5fef93a4b681226d764c030338ace3cbfc1c642bba1"
+          },
+          {
+            "x": 191,
+            "z": 192,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "77a30407558f973369b7133088f059d3bf9c36e09aaff1b4fffda208e902c2cb"
+          },
+          {
+            "x": 191,
+            "z": 193,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "2a911f02852395578b74b7082d245e92a9aaceb420925b700157ee3da606c9b3"
+          },
+          {
+            "x": 192,
+            "z": 191,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "b2220eda2423d1e12454a6c0d986a8eaa8477c93be554f6191bcff1938cf51d8"
+          },
+          {
+            "x": 192,
+            "z": 192,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "d591cf997a4622c6e2237896dbc57bdeac098569c6f160608a4c9dfb078380eb"
+          },
+          {
+            "x": 192,
+            "z": 193,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "d400230e10e17ca1066593f2ae34f54b216ef27122e0410f6e764b01282d9ef5"
+          },
+          {
+            "x": 193,
+            "z": 191,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "b7ffbc5b8859852dfef0073c558a97b5569f277289630d5c04d3a4699be5bce4"
+          },
+          {
+            "x": 193,
+            "z": 192,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "8c6abf8d3b1a8babf1e6865ee8a752aec54b839c684d2f5565a23a0219fc9894"
+          },
+          {
+            "x": 193,
+            "z": 193,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "b8c935645dec39e01406eaea1b3024dc25fece8e9b7c8caa199f68ddfe5ac728"
+          }
+        ]
+      },
+      {
+        "dimension": "interstice:islands_v6",
+        "chunks": [
+          {
+            "x": 191,
+            "z": 191,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "0ef5d5bc491289f84d54a7dbf2467b6550b99547bc67059a08a1240a6b0563e9"
+          },
+          {
+            "x": 191,
+            "z": 192,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "ed6b7b400ca46c225329ed3dfd2b57c08bc711ec33bd955c26e75bc02e1be681"
+          },
+          {
+            "x": 191,
+            "z": 193,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "8aab7f08c8856c09fe35e619a937e34ddd45da0235a001d66701ee0b63c0c8ad"
+          },
+          {
+            "x": 192,
+            "z": 191,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "9bd978ee0eb941507b626e404826fed52a32ea1ce1d5f30ff49e98cfdca70db3"
+          },
+          {
+            "x": 192,
+            "z": 192,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "b393f58c980817a771bd0f6e438dbee90233d77e4bd88391a9c4c466e92ffee4"
+          },
+          {
+            "x": 192,
+            "z": 193,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "75f1987f64b420cc79e7d2eb08883232266262e27276107e487a2f0dd8082611"
+          },
+          {
+            "x": 193,
+            "z": 191,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "cb95713bbfb2a9a63c3d2db9db64269a8f851c751238a6b46d8293e93746638e"
+          },
+          {
+            "x": 193,
+            "z": 192,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "cc486d4060abde9a7c35f6456d4649ebcb5db16f05bf9365001519460401ee94"
+          },
+          {
+            "x": 193,
+            "z": 193,
+            "saved_status": "minecraft:full",
+            "stable_geometry_biomes_y0_80_sha256": "90c3d1964e1c53a2f2586d20720a8655c1bfb86141242292715e87d9d27a53fe"
+          }
+        ]
+      }
+    ],
+    "dh_pause_resume_events_verified": true,
+    "quiescence": {
+      "minecraft:overworld": {
+        "generation_refs": 0,
+        "pending_saves": 0,
+        "pending_generation_tasks": 0,
+        "holders_not_ready": 0,
+        "stable_actual_server_ticks": 20
+      },
+      "interstice:islands_v6": {
+        "generation_refs": 0,
+        "pending_saves": 0,
+        "pending_generation_tasks": 0,
+        "holders_not_ready": 0,
+        "stable_actual_server_ticks": 20
+      }
+    },
+    "production_pregen_started": false,
+    "dh_lod_coverage_verified": false
+  },
+  "current_forest_component_tests": 4,
+  "python_verifier_tests_observed": 63,
+  "historical_full_cave_matrix": {
+    "version": "0.7.0-preview.2",
+    "report": "docs/verification/V6_FOREST_CAVES.json",
+    "current_full_build_claim": false
+  },
+  "evidence": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\20261009T162747.508850Z-techmagic-bounded-pregen-cold",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\20261009T161540.401142Z-techmagic-dh-chunky-provider-order",
+    "D:\\repos\\erezcraft\\.local\\verification\\interstice-BskiXW\\validation.json"
+  ],
+  "saves_unchanged": true,
+  "players_admitted": false,
+  "production_published": false,
+  "open_gates": [
+    "target-server 1/4/10-player machine/ship/ME load and tuning",
+    "interconnected recipes/quests without bypasses",
+    "ship physics/roof/seas/SURGE gameplay",
+    "graves with attached backpacks54/72/84 and void/cold/reconnect",
+    "Xaero V6 cave layers and separate V5/V6 markers",
+    "Iris/Sodium/Complementary actual DH/Flywheel/Veil/Sable/V6 rendering",
+    "Create addon catalog conflict/runtime selection",
+    "unresolved real TCP winch anti-flight and 200 ticks/cold",
+    "final production worldgen/seed/radius lock and pregen/cold/LOD admission",
+    "public release and upstream redistribution review",
+    "human Survival acceptance"
+  ]
+}

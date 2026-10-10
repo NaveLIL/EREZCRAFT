@@ -19,7 +19,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--version',default='0.3.1')
     args=parser.parse_args()
-    if not __import__('re').fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+',args.version):parser.error('Use a semantic version')
+    if not __import__('re').fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?',args.version):parser.error('Use a semantic version')
     errors = []
     models = list((ASSETS / 'models').rglob('*.json'))
     for path in models:
@@ -39,7 +39,7 @@ def main():
             if name not in names or jar.read(name) != path.read_bytes():
                 errors.append(f'JAR resource differs: {name}')
         for name in names:
-            if any(word in name for word in ('VisualSmoke', 'GameTests', 'NativeChunkSettler', 'geometry_fixture')):
+            if name.startswith(('pro/erez/interstice/test/', 'pro/erez/interstice/smoke/')) or any(word in name for word in ('VisualSmoke', 'GameTests', 'NativeChunkSettler', 'geometry_fixture')):
                 errors.append(f'Test artifact packaged: {name}')
         for required in ('assets/interstice/provenance/clingweed-original.json',
                          'assets/interstice/provenance/minerals.json',
@@ -54,6 +54,8 @@ def main():
                 errors.append(f'JAR compiled class differs: {name}')
         if args.version == '0.6.0' and 'data/interstice/dimension/islands_v5.json' not in names:
             errors.append('Missing V5 dimension in release')
+        if args.version.startswith('0.7.') and 'data/interstice/dimension/islands_v6.json' not in names:
+            errors.append('Missing V6 dimension in release')
     source_path = jar_path.with_name('interstice-'+args.version+'-sources.jar')
     sources = list((ROOT / 'src/main/java').rglob('*.java'))
     with zipfile.ZipFile(source_path) as source_jar:

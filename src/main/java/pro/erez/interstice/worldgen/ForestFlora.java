@@ -55,6 +55,9 @@ public final class ForestFlora {
             &&eligibleBiome(c,p)&&c.getBlockState(p).isAir()&&c.getBlockState(p.above()).isAir()&&c.getBlockState(p.below()).getFluidState().isEmpty();}
     public static Counts decorate(GeometryProfile profile,ChunkAccess chunk,long seed,WorldGenRegion region,int revision){return decorate(profile,chunk,seed,(LevelReader)region,revision);}
     public static Counts decorate(GeometryProfile profile,ChunkAccess chunk,long seed,LevelReader region,int revision){
+        return decorate(profile,chunk,seed,region,revision,p->false);
+    }
+    public static Counts decorate(GeometryProfile profile,ChunkAccess chunk,long seed,LevelReader region,int revision,java.util.function.Predicate<BlockPos> walkway){
         if(revision!=5)return new Counts(0,0);int reeds=0,pods=0,minX=chunk.getPos().getMinBlockX(),minZ=chunk.getPos().getMinBlockZ();
         var visiblePods=new HashSet<Long>();
         // Expanded anchor search writes only current cells; clusters do not become empty border stripes.
@@ -67,13 +70,13 @@ public final class ForestFlora {
                 // reading an already-decorated neighbor or hiding its mine under tall cover.
                 for(int dx=-1;dx<=1;dx++)for(int dz=-1;dz<=1;dz++)visiblePods.add(pack(px+dx,pz+dz));
                 if(!inside(chunk,px,pz))continue;var p=surface(profile,chunk,px,pz);
-                if(!space(profile,chunk,p)||!canopy(profile,chunk,p)||!forest(chunk,p)&&Math.floorMod(key(seed,x,z,0x47415244454EL),3)!=0)continue;
+                if(!space(profile,chunk,p)||walkway.test(p)||!canopy(profile,chunk,p)||!forest(chunk,p)&&Math.floorMod(key(seed,x,z,0x47415244454EL),3)!=0)continue;
                 chunk.setBlockState(p,RealmEcology.SPORE_POD.get().defaultBlockState(),false);pods++;
             }
         }
         for(int x=minX;x<minX+16;x++)for(int z=minZ;z<minZ+16;z++){
             var p=surface(profile,chunk,x,z);
-            if(!space(profile,chunk,p)||!canopy(profile,chunk,p))continue;
+            if(!space(profile,chunk,p)||walkway.test(p)||!canopy(profile,chunk,p))continue;
             if(visiblePods.contains(pack(x,z)))continue;
             if(Math.floorMod(key(seed,x,z,0x52454544504C414EL),forest(chunk,p)?7:11)!=0)continue;
             double field=FreeTerraNoise.fractal(seed,0x554E44455253544FL,x,z,31,3);if(field<(forest(chunk,p)?.49:.52))continue;
@@ -83,7 +86,7 @@ public final class ForestFlora {
         // patches and empty intervals replace sparse, canopy-blind random single stems.
         for(int x=minX;x<minX+16;x++)for(int z=minZ;z<minZ+16;z++){
             if(visiblePods.contains(pack(x,z)))continue;var p=surface(profile,chunk,x,z);
-            if(!space(profile,chunk,p)||!chunk.getBlockState(p.below()).is(Interstice.ABYSSAL_TURF.get()))continue;
+            if(!space(profile,chunk,p)||walkway.test(p)||!chunk.getBlockState(p.below()).is(Interstice.ABYSSAL_TURF.get()))continue;
             boolean shade=canopy(profile,chunk,p);double patch=FreeTerraNoise.fractal(seed,0x434F564552504154L,x,z,37,3);
             double chance=shade?.22+.33*patch:.05+.12*patch;
             double roll=(key(seed,x,z,0x434F564552524F4CL)>>>11)*0x1.0p-53;if(roll>=chance)continue;

@@ -53,28 +53,28 @@ public final class NativeTerrainV6GameTests {
     // Four adjacent origin chunks plus predetermined positive/negative distant samples.
     private static final List<ChunkPos> POSITIONS=List.of(new ChunkPos(-1,-1),new ChunkPos(0,-1),
             new ChunkPos(-1,0),new ChunkPos(0,0),new ChunkPos(47,-32),new ChunkPos(-48,31));
-    private record Fixture(IslandChunkGenerator generator,RandomState random,long seed) {}
+    record Fixture(IslandChunkGenerator generator,RandomState random,long seed) {}
     private record Orders(Fixture fixture,List<ProtoChunk> canonical,List<ProtoChunk> reverse,
                           List<ProtoChunk> shuffled,List<ProtoChunk> parallel) {}
     private NativeTerrainV6GameTests() {}
     private static ServerLevel world(GameTestHelper h){
         return Objects.requireNonNull(h.getLevel().getServer().getLevel(IslandWorld.TENSION_WORLD),"V6 dimension is absent");
     }
-    private static Fixture fixture(GameTestHelper h,long seed){
+    static Fixture fixture(GameTestHelper h,long seed){
         var template=(IslandChunkGenerator)world(h).getChunkSource().getGenerator();
         var generator=new IslandChunkGenerator(template.getBiomeSource(),template.generatorSettings(),PROFILE,6);
         var random=RandomState.create(template.generatorSettings().value(),h.getLevel().registryAccess().registryOrThrow(Registries.NOISE).asLookup(),seed);
         generator.createState(h.getLevel().registryAccess().registryOrThrow(Registries.STRUCTURE_SET).asLookup(),random,seed);
         return new Fixture(generator,random,seed);
     }
-    private static CompletableFuture<ProtoChunk> noise(GameTestHelper h,Fixture f,ChunkPos position){
+    static CompletableFuture<ProtoChunk> noise(GameTestHelper h,Fixture f,ChunkPos position){
         var chunk=new ProtoChunk(position,UpgradeData.EMPTY,HEIGHT,h.getLevel().registryAccess().registryOrThrow(Registries.BIOME),null);
         return f.generator.createBiomes(f.random,Blender.empty(),world(h).structureManager(),chunk)
                 .thenApply(c->{((ProtoChunk)c).setPersistedStatus(ChunkStatus.BIOMES);return c;})
                 .thenCompose(c->f.generator.fillFromNoise(Blender.empty(),f.random,world(h).structureManager(),c))
                 .thenApply(c->{((ProtoChunk)c).setPersistedStatus(ChunkStatus.NOISE);return (ProtoChunk)c;});
     }
-    private static CompletableFuture<List<ProtoChunk>> serial(GameTestHelper h,Fixture f,List<ChunkPos> order){
+    static CompletableFuture<List<ProtoChunk>> serial(GameTestHelper h,Fixture f,List<ChunkPos> order){
         CompletableFuture<List<ProtoChunk>> result=CompletableFuture.completedFuture(new ArrayList<>());
         for(var p:order)result=result.thenCompose(chunks->noise(h,f,p).thenApply(c->{chunks.add(c);return chunks;}));
         return result;
@@ -83,7 +83,7 @@ public final class NativeTerrainV6GameTests {
         var pending=POSITIONS.stream().map(p->noise(h,f,p)).toList();
         return CompletableFuture.allOf(pending.toArray(CompletableFuture[]::new)).thenApply(ignored->pending.stream().map(CompletableFuture::join).toList());
     }
-    private static <T> T await(GameTestHelper h,CompletableFuture<T> future,int seconds){
+    static <T> T await(GameTestHelper h,CompletableFuture<T> future,int seconds){
         long began=System.nanoTime();var pending=future.orTimeout(seconds,TimeUnit.SECONDS);var live=world(h);boolean[] diagnosed={false};
         // A fast GameTestServer can exhaust simulated ticks before async worldgen runs.
         // Pump both public queues; retain a separate bounded wall-clock deadline.
@@ -98,10 +98,10 @@ public final class NativeTerrainV6GameTests {
             return pending.isDone();
         });return pending.join();
     }
-    private static Map<Long,ProtoChunk> index(List<ProtoChunk> chunks){
+    static Map<Long,ProtoChunk> index(List<ProtoChunk> chunks){
         var map=new LinkedHashMap<Long,ProtoChunk>();for(var c:chunks)map.put(c.getPos().toLong(),c);return map;
     }
-    private static long hash(ProtoChunk chunk){
+    static long hash(ProtoChunk chunk){
         long hash=0xCBF29CE484222325L;var p=new BlockPos.MutableBlockPos();
         for(int x=chunk.getPos().getMinBlockX();x<=chunk.getPos().getMaxBlockX();x++)
             for(int z=chunk.getPos().getMinBlockZ();z<=chunk.getPos().getMaxBlockZ();z++)for(int y=PROFILE.minY();y<PROFILE.maxYExclusive();y++)

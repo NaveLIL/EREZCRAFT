@@ -203,7 +203,15 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     }
     @Override public CompletableFuture<ChunkAccess> fillFromNoise(Blender blender,RandomState random,StructureManager structures,ChunkAccess chunk) {
         geometry.checkHeight(chunk);
-        if(terrainRevision>=5)return super.fillFromNoise(blender,random,structures,chunk);
+        if(terrainRevision>=5){
+            var nativeFill=super.fillFromNoise(blender,random,structures,chunk);
+            if(terrainRevision!=6)return nativeFill;
+            return nativeFill.thenApply(result->{
+                pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random,generatorSettings().value().noiseSettings()).forestCaves().carve(result);
+                Heightmap.primeHeightmaps(result,EnumSet.of(Heightmap.Types.WORLD_SURFACE_WG,Heightmap.Types.OCEAN_FLOOR_WG));
+                return result;
+            });
+        }
         if(isLivingRealm())return CompletableFuture.supplyAsync(()->{
             var sections=new java.util.ArrayList<net.minecraft.world.level.chunk.LevelChunkSection>();
             for(var section:chunk.getSections()){section.acquire();sections.add(section);}
@@ -251,24 +259,34 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
             WatchpostRuins.generate(geometry, chunk, region.getSeed(), region.getLevel().getStructureManager(), region.registryAccess(),minimum);
         if(terrainRevision<5&&FeatureDistribution.stoneVaultAllowed(terrainRevision,region.getSeed(),chunk.getPos().x,chunk.getPos().z,garden))
             StoneVaults.generate(geometry,chunk,region.getSeed(),minimum);
-        if(isLivingRealm())CaveFeatures.decorate(geometry,chunk,region.getSeed(),region,terrainRevision);
+        if(isLivingRealm()){
+            if(terrainRevision==6)CaveFeatures.decorate(geometry,chunk,region.getSeed(),region,terrainRevision,
+                    pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).forestCaves()::reservedWalkway);
+            else CaveFeatures.decorate(geometry,chunk,region.getSeed(),region,terrainRevision);
+        }
         if(terrainRevision>=5){
             RealmStructuresV5.generate(geometry,chunk,region.getSeed(),region,minimum);
             var columns=new java.util.HashMap<Long,NoiseColumn>();
             var reservations=RealmStructuresV5.forestReservation(region.getSeed());
             ForestV5.generate(geometry,chunk,region.getSeed(),region,new ForestV5.GroundProbe(){
-                private NoiseColumn column(int x,int z){long key=((long)x<<32)^(z&0xffffffffL);return columns.computeIfAbsent(key,k->rawNativeColumn(random,x,z));}
+                private NoiseColumn column(int x,int z){long key=((long)x<<32)^(z&0xffffffffL);return columns.computeIfAbsent(key,k->terrainRevision==6?
+                        pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).columnBeforeForestCaves(x,z):rawNativeColumn(random,x,z));}
                 public int surface(int x,int z){var c=column(x,z);for(int y=geometry.maxLand();y>geometry.lowerSeaTop();y--)if(!c.getBlock(y).isAir())return y;return geometry.lowerSeaTop();}
                 public boolean solid(int x,int y,int z){return y<=geometry.lowerSeaTop()||!column(x,z).getBlock(y).isAir();}
-                public boolean reserved(int x,int y,int z){return reservations.test(x,z);}
+                public boolean reserved(int x,int y,int z){return reservations.test(x,z)||terrainRevision==6&&
+                        pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).forestCaves().entranceColumn(x,z);}
             });
         }else{
             GardenTrees.generate(geometry,chunk,region.getSeed(),region,GardenTreeDefinitions.CROWN);
             if(isRevisedRealm())GloomcrownTree.generate(geometry,chunk,region.getSeed(),region);else GloomcrownTree.generate(geometry,chunk,region.getSeed());
             GardenTrees.generate(geometry,chunk,region.getSeed(),region);
         }
-        PaleGardens.undergrowth(geometry,chunk,region.getSeed(),minimum);
-        if(terrainRevision>=5)ForestFlora.decorate(geometry,chunk,region.getSeed(),region,5);
+        if(terrainRevision==6)PaleGardens.undergrowth(geometry,chunk,region.getSeed(),minimum,
+                pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).forestCaves()::reservedWalkway);
+        else PaleGardens.undergrowth(geometry,chunk,region.getSeed(),minimum);
+        if(terrainRevision==6)ForestFlora.decorate(geometry,chunk,region.getSeed(),region,5,
+                pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).forestCaves()::reservedWalkway);
+        else if(terrainRevision>=5)ForestFlora.decorate(geometry,chunk,region.getSeed(),region,5);
         if(FeatureDistribution.tideSproutsAllowed(terrainRevision,region.getSeed(),chunk.getPos().x,chunk.getPos().z))
             generateTideSprouts(geometry,chunk,region.getSeed(),minimum);
         NativeCropPatches.generate(geometry,chunk,region.getSeed(),terrainRevision);

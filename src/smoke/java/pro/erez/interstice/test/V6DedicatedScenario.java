@@ -117,7 +117,7 @@ public final class V6DedicatedScenario {
     }
     private static void setPhase(int next)throws Exception{phase=next;token++;phaseBegan=tick;Arrays.fill(acks,false);instructions=new JsonObject();for(int id=1;id<=2;id++)instructions.add(Integer.toString(id),action("wait"));
         switch(next){
-            case 1 -> {var world=server.getLevel(IslandWorld.TENSION_WORLD);require(world!=null,"V6 test dimension missing");pad(world,V6BASE,12,12);for(int id=1;id<=2;id++){int offset=(id-1)*6;for(int dx=-1;dx<=1;dx++)for(int dz=-1;dz<=1;dz++)world.setBlock(V6BASE.offset(offset+dx,4,dz),Blocks.STONE_BRICKS.defaultBlockState(),3);teleport(player(id),world,V6BASE.getX()+offset+.5,V6BASE.getY()+1,V6BASE.getZ()+.5,0);slot(player(id),0,new ItemStack(Items.DIAMOND_PICKAXE));}tide(TidePhase.SURGE);}
+            case 1 -> {var world=server.getLevel(IslandWorld.TENSION_WORLD);require(world!=null,"V6 test dimension missing");pad(world,V6BASE,12,12);prepareRoofShafts(world);for(int id=1;id<=2;id++){int offset=(id-1)*6;for(int dx=-1;dx<=1;dx++)for(int dz=-1;dz<=1;dz++)world.setBlock(V6BASE.offset(offset+dx,4,dz),Blocks.STONE_BRICKS.defaultBlockState(),3);teleport(player(id),world,V6BASE.getX()+offset+.5,V6BASE.getY()+1,V6BASE.getZ()+.5,0);slot(player(id),0,new ItemStack(Items.DIAMOND_PICKAXE));}tide(TidePhase.SURGE);}
             case 2 -> instructions.add("1",blockAction("mine",V6BASE.above(4),0,false));
             case 3 -> {pad(server.overworld(),BASE,64,14);buildFrame();pad(server.getLevel(IslandWorld.TENSION_WORLD),ECHO.below(),5,8);server.getLevel(IslandWorld.TENSION_WORLD).setBlock(ECHO,Interstice.RIFT_ECHO.get().defaultBlockState(),3);
                 portalLink=RiftLinks.get(server).add(RiftLinks.Kind.PORTAL,new RiftGeometry.Frame(PORTAL,Direction.Axis.X).endpoint(server.overworld()),new RiftLinks.Endpoint(IslandWorld.TENSION_WORLD,ECHO,Direction.Axis.X)).id();
@@ -191,6 +191,26 @@ public final class V6DedicatedScenario {
     private static void finish(boolean failure){failed|=failure;finished=true;phase=19;token++;phaseBegan=tick;for(int id=1;id<=2;id++)instructions.add(Integer.toString(id),action("finish"));quiescence=new Quiescence();write();}
     private static boolean terminalPeers(){for(int id=1;id<=2;id++){if(receipts[id])continue;try{var peer=V6NetworkFiles.read("peer-"+id+".json");if(peer.has("own_client_clean_disconnect")&&peer.get("own_client_clean_disconnect").getAsBoolean()&&peer.get("session_id").getAsString().equals(SESSION))continue;}catch(Exception absent){}return false;}return true;}
     private static void require(boolean b,String text){if(!b)throw new IllegalStateException(text);}
+    /** Explicitly prepared shafts isolate the mined roof from naturally higher rock. */
+    private static void prepareRoofShafts(ServerLevel level){
+        int cleared=0;
+        var profile=pro.erez.interstice.geometry.GeometryProfiles.get(level);
+        for(int id=1;id<=2;id++)for(int dx=-1;dx<=1;dx++)for(int dz=-1;dz<=1;dz++){
+            int x=V6BASE.getX()+(id-1)*6+dx,z=V6BASE.getZ()+dz;
+            int cap=(int)Math.floor(pro.erez.interstice.SeaSurface.cellMinimum(profile,x,z,true))-profile.clearance();
+            for(int y=V6BASE.getY()+2;y<=cap;y++){
+                var pos=new BlockPos(x,y,z);var state=level.getBlockState(pos);
+                if(ShelterDetector.isShelteringBlock(state)){
+                    require(state.getFluidState().isEmpty()&&!state.is(Blocks.BEDROCK),"Prepared shaft must retain fluids and technical bedrock");
+                    level.setBlock(pos,Blocks.AIR.defaultBlockState(),3);cleared++;
+                }
+            }
+            require(!ShelterDetector.hasRoofAt(level,profile,x,V6BASE.getY()+2,z),"Prepared shaft still has another natural roof");
+        }
+        result.addProperty("prepared_roof_shaft_columns",18);
+        result.addProperty("prepared_natural_sheltering_cells_removed",cleared);
+        result.addProperty("roof_fixture_scope","Eighteen explicit cleared shaft columns in a disposable fixture; registered seas and bedrock retained, then native mine removes only the player roof.");
+    }
     /** Read-only counterpart of the client smoke quiescence inspector; normal lifecycle does all work. */
     static final class Quiescence {
         int stable;JsonObject current=new JsonObject();

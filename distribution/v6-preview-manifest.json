@@ -1,17 +1,74 @@
 {
   "name": "EREZCRAFT V6 Preview",
-  "version": "0.7.0-preview.1",
+  "version": "0.7.0-preview.5",
   "minecraft": "1.21.1",
   "java_major": 21,
-  "loader": {"id": "neoforge", "version": "21.1.252"},
-  "mods": [{"id": "interstice", "version": "0.7.0-preview.1", "file": "interstice-0.7.0-preview.1.jar", "required_on": ["client", "server"]}],
-  "external_mods": [],
+  "loader": {
+    "id": "neoforge",
+    "version": "21.1.252"
+  },
+  "mods": [
+    {
+      "id": "interstice",
+      "version": "0.7.0-preview.5",
+      "file": "interstice-0.7.0-preview.5.jar",
+      "sha256": "85425bd89242f44a077903e9794d16ac2d43819a4a366eccd0b2efa8114f9e83",
+      "required_on": [
+        "client",
+        "server"
+      ]
+    }
+  ],
+  "external_mods": [
+    {
+      "id": "distanthorizons",
+      "version": "3.3.3",
+      "file": "DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar",
+      "required_on": [
+        "client",
+        "server"
+      ],
+      "minecraft": "1.21.1",
+      "loader": "neoforge",
+      "license": "LGPL-3.0-only",
+      "modrinth_project_id": "uCdwusMi",
+      "modrinth_version_id": "9w34y8ai",
+      "release_url": "https://modrinth.com/mod/distanthorizons/version/3.3.3-1.21.1",
+      "source_url": "https://gitlab.com/distant-horizons-team/distant-horizons",
+      "download_url": "https://cdn.modrinth.com/data/uCdwusMi/versions/9w34y8ai/DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar",
+      "bytes": 28289212,
+      "sha256": "864e70def5b0d54d619b940b66bb2784e91d3f3fc253064fdc1b3fc5786cbfab",
+      "sha512": "d14b32d3fd143a06514d6ad388eee11e9d657c84e1a937aaf8d033b1137fb43ef8b05cff1011a994cc42f3106823c51234f8bc18d72bb05bc317a20ea83c50ed"
+    }
+  ],
   "resource_packs": [],
-  "client_reference_settings": {"render_distance_chunks": 4, "simulation_distance_chunks": 5, "smooth_lighting": true, "framerate_limit": 60},
-  "server_reference_settings": {"view_distance": 4, "simulation_distance": 5, "allow_flight": false},
+  "distant_horizons_reference_settings": {
+    "lod_radius_chunks": 32,
+    "worker_threads": 1,
+    "upstream_automatic_updates": false,
+    "config_file": "config/DistantHorizons.toml"
+  },
+  "client_reference_settings": {
+    "render_distance_chunks": 8,
+    "simulation_distance_chunks": 5,
+    "smooth_lighting": true,
+    "framerate_limit": 60,
+    "java_gc": "Generational ZGC",
+    "java_arguments": [
+      "-XX:+UseZGC",
+      "-XX:+ZGenerational"
+    ],
+    "heap_max_gb": 10,
+    "heap_initial_gb": 2
+  },
+  "server_reference_settings": {
+    "view_distance": 4,
+    "simulation_distance": 5,
+    "allow_flight": false
+  },
   "preview_dimension": "interstice:islands_v6",
   "ordinary_entry_dimension": "interstice:islands_v5",
   "instructions": "docs/V6_PREVIEW.md",
-  "verification": "docs/verification/V6_PREVIEW.json",
-  "status": "preview; network, performance and human Survival acceptance continue"
+  "verification": "docs/verification/FLUID_FLIGHT_CRASH_FIX.json",
+  "status": "preview.5 float-precision fluid vertex guard verified in native V6 flight; published alpha.7/sequence7; historical DH proof preview.4, caves preview.2; capacity and gameplay gates remain open"
 }

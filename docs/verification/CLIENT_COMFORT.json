@@ -1,0 +1,916 @@
+{
+  "passed": true,
+  "sequence": 5,
+  "client_jars": 62,
+  "server_jars": 49,
+  "comfort": {
+    "actual_dimension": "interstice:islands_v6",
+    "building_gadgets": {
+      "creative_bypass": false,
+      "energy_after": 99850,
+      "energy_before": 100000,
+      "energy_cost_per_block": 50,
+      "native_build_queue_uuid": "f3be6a30-bfc8-483b-9ae4-fb74c83759e3",
+      "native_final_placed_blocks": 3,
+      "oak_planks_after": 13,
+      "oak_planks_before": 16
+    },
+    "controlling": {
+      "conflict_filter_entries": 85,
+      "filtered_entries": 1,
+      "query": "ÐŸÑ€Ñ‹Ð¶Ð¾Ðº",
+      "screen_class": "com.blamejared.controlling.client.NewKeyBindsScreen",
+      "search_widget_class": "com.blamejared.searchables.api.autcomplete.AutoCompletingEditBox",
+      "unfiltered_entries": 226
+    },
+    "creator_pid": 20384,
+    "custom_quests_added": false,
+    "custom_recipe_changes_added": false,
+    "dh_lod_distance": 32,
+    "dh_world_attached": true,
+    "farmers_delight": {
+      "heat_source_id": "minecraft:campfire",
+      "heated": true,
+      "ingredients_consumed": true,
+      "native_block_entity_class": "vectorwing.farmersdelight.common.block.entity.CookingPotBlockEntity",
+      "output_count": 1,
+      "output_id": "minecraft:mushroom_stew",
+      "real_native_block_ticks": true,
+      "recipe_id": "farmersdelight:cooking/mushroom_stew"
+    },
+    "finished": true,
+    "generation_quiescence_before_disconnect": {
+      "elapsed_actual_server_ticks": 256,
+      "generation_ref_count": 0,
+      "holders_checked": 1849,
+      "holders_not_ready_for_saving": 0,
+      "non_quiet_examples": [],
+      "pending_generation_tasks": 0,
+      "purpose": "client_comfort_shutdown",
+      "save_futures_failed": 0,
+      "save_futures_pending": 0,
+      "server_tick": 1007,
+      "stable_actual_server_ticks": 20,
+      "timed_out": false
+    },
+    "graphics_settings_preserved": {
+      "gamma": 0.5,
+      "graphics_mode": "fancy",
+      "render_distance": 8,
+      "simulation_distance": 5
+    },
+    "inventory_profiles": {
+      "after_slots": [
+        {
+          "count": 8,
+          "item": "minecraft:oak_planks",
+          "slot": 9
+        },
+        {
+          "count": 64,
+          "item": "minecraft:cobblestone",
+          "slot": 10
+        },
+        {
+          "count": 6,
+          "item": "minecraft:cobblestone",
+          "slot": 11
+        },
+        {
+          "count": 14,
+          "item": "minecraft:wheat",
+          "slot": 12
+        }
+      ],
+      "after_totals": {
+        "minecraft:cobblestone": 70,
+        "minecraft:oak_planks": 8,
+        "minecraft:wheat": 14
+      },
+      "authoritative_server_totals": {
+        "minecraft:cobblestone": 70,
+        "minecraft:oak_planks": 8,
+        "minecraft:wheat": 14
+      },
+      "before_slots": [
+        {
+          "count": 20,
+          "item": "minecraft:cobblestone",
+          "slot": 9
+        },
+        {
+          "count": 10,
+          "item": "minecraft:wheat",
+          "slot": 12
+        },
+        {
+          "count": 50,
+          "item": "minecraft:cobblestone",
+          "slot": 15
+        },
+        {
+          "count": 8,
+          "item": "minecraft:oak_planks",
+          "slot": 17
+        },
+        {
+          "count": 4,
+          "item": "minecraft:wheat",
+          "slot": 20
+        }
+      ],
+      "before_totals": {
+        "minecraft:cobblestone": 70,
+        "minecraft:oak_planks": 8,
+        "minecraft:wheat": 14
+      },
+      "configured_manual_sort_key": "Ðº",
+      "machine_container_opened": false,
+      "manual_native_action": "GeneralInventoryActions.doSort(current player inventory menu, false, false)",
+      "server_conservation_verified": true
+    },
+    "launcher_managed_hash_ms": 1068,
+    "launcher_runtime_prepare_ms": 3743,
+    "max_heap_bytes": 10737418240,
+    "mods": {
+      "aeronautics": "1.3.2",
+      "buildinggadgets2": "1.3.9",
+      "controlling": "19.0.5",
+      "create": "6.0.10",
+      "distanthorizons": "3.3.3",
+      "draconicevolution": "3.1.4.633",
+      "farmersdelight": "1.3.4",
+      "interstice": "0.7.0-preview.3",
+      "inventoryprofilesnext": "2.2.5",
+      "kotlinforforge": "5.12.0",
+      "lambdynlights": "4.8.11+1.21.1",
+      "libipn": "6.6.3",
+      "sable": "2.0.6",
+      "searchables": "1.0.2"
+    },
+    "native_machine_container_hints": [
+      {
+        "class": "appeng.client.gui.me.common.MEStorageScreen",
+        "ignore": false,
+        "player_side_only": true
+      },
+      {
+        "class": "appeng.client.gui.me.items.CraftingTermScreen",
+        "ignore": false,
+        "player_side_only": true
+      },
+      {
+        "class": "appeng.client.gui.me.items.PatternEncodingTermScreen",
+        "ignore": false,
+        "player_side_only": true
+      },
+      {
+        "class": "vectorwing.farmersdelight.client.gui.CookingPotScreen",
+        "ignore": false,
+        "player_side_only": true
+      },
+      {
+        "class": "aztech.modern_industrialization.client.machines.gui.MachineScreen",
+        "ignore": false,
+        "player_side_only": true
+      },
+      {
+        "class": "pro.erez.interstice.client.RetortScreen",
+        "ignore": false,
+        "player_side_only": true
+      },
+      {
+        "class": "pro.erez.interstice.client.FieldLiftScreen",
+        "ignore": false,
+        "player_side_only": true
+      }
+    ],
+    "native_screenshots": [
+      "controlling-key-search.png",
+      "controlling-conflicts.png",
+      "ipn-manual-player-sort.png",
+      "bg2-building-farmers-kitchen-v6.png"
+    ],
+    "own_integrated_server_stopped": true,
+    "passed": true,
+    "reason": "Native client comfort operations completed; screenshot visual review and dedicated-server/capacity checks remain separate",
+    "requested_seed": 20261010,
+    "scope": "One fresh actual V6 client: native Controlling search/filter; IPN manual native player-storage action with server inventory conservation; three BG2 tick-queue placements with survival FE/material consumption; real heated Farmer's Delight pot cooking. This fixture does not prove server capacity, Survival progression, arbitrary machine-slot sorting, or every building mode. Screenshots require separate visual review.",
+    "stage": 14
+  },
+  "shader": {
+    "actual_dimension": "interstice:islands_v6",
+    "ars_armor_entity_uuid": "e1d610f7-01c3-4c61-a68b-59b6751e6b01",
+    "ars_armor_glowing": true,
+    "ars_armor_tier": "battlemage",
+    "assembled_blocks": 49,
+    "camera_pitch": 8.0,
+    "camera_x": 0.5,
+    "camera_y": 163.0,
+    "camera_yaw": 0.0,
+    "camera_z": -12.5,
+    "captures": [
+      {
+        "actual_heavy_sea": true,
+        "screenshot": "shader-natural-v6-sea-sky.png",
+        "shader_state": {
+          "dh_compat_present": true,
+          "dh_depth_pixels": {
+            "allocated": true,
+            "finite_pixels": 921600,
+            "gl_error_after_read": 0,
+            "height": 720,
+            "max_depth": 1.0,
+            "min_depth": 1.0,
+            "non_clear_depth_pixels": 0,
+            "texture": 111,
+            "width": 1280
+          },
+          "dh_depth_texture": 111,
+          "dh_incompatible_pack": false,
+          "dh_internal_present": true,
+          "dh_last_pack_incompatible": false,
+          "dh_override": true,
+          "dh_render_distance_chunks": 512,
+          "dh_rendering_frame": true,
+          "dh_solid_shader_class": "net.irisshaders.iris.compat.dh.IrisLodRenderProgram",
+          "fallback": false,
+          "iris_version": "1.8.14-beta.1+mc1.21.1",
+          "pack_name": "ComplementaryReimagined_r5.9.3.zip",
+          "pipeline_class": "net.irisshaders.iris.pipeline.IrisRenderingPipeline",
+          "shader_pack_in_use": true,
+          "stored_error": ""
+        },
+        "terrain_edited": false
+      },
+      {
+        "client_pose": "Pose3d{position=(3,487 161,025 1,164), orientation=(0 0,266 0 0,964), rotationPoint=(20Â 481Â 032,5 129,025 20Â 481Â 032,75), scale=(1 1 1)}",
+        "craft_uuid": "622c69f0-ee6d-49ed-8f4c-6fbc61e4bf33",
+        "dimension": "interstice:islands_v6",
+        "movement_server_tick": 40,
+        "native_cogwheel_rpm": -64.0,
+        "screenshot": "shader-moving-craft-0.png",
+        "shader_state": {
+          "dh_compat_present": true,
+          "dh_depth_pixels": {
+            "allocated": true,
+            "finite_pixels": 921600,
+            "gl_error_after_read": 0,
+            "height": 720,
+            "max_depth": 1.0,
+            "min_depth": 0.9477416,
+            "non_clear_depth_pixels": 26794,
+            "texture": 111,
+            "width": 1280
+          },
+          "dh_depth_texture": 111,
+          "dh_incompatible_pack": false,
+          "dh_internal_present": true,
+          "dh_last_pack_incompatible": false,
+          "dh_override": true,
+          "dh_render_distance_chunks": 512,
+          "dh_rendering_frame": true,
+          "dh_solid_shader_class": "net.irisshaders.iris.compat.dh.IrisLodRenderProgram",
+          "fallback": false,
+          "iris_version": "1.8.14-beta.1+mc1.21.1",
+          "pack_name": "ComplementaryReimagined_r5.9.3.zip",
+          "pipeline_class": "net.irisshaders.iris.pipeline.IrisRenderingPipeline",
+          "shader_pack_in_use": true,
+          "stored_error": ""
+        },
+        "visible_sections": 1
+      },
+      {
+        "client_pose": "Pose3d{position=(2,3 161,025 0,468), orientation=(0 0,117 0 0,993), rotationPoint=(20Â 481Â 032,5 129,025 20Â 481Â 032,75), scale=(1 1 1)}",
+        "craft_uuid": "622c69f0-ee6d-49ed-8f4c-6fbc61e4bf33",
+        "dimension": "interstice:islands_v6",
+        "movement_server_tick": 100,
+        "native_cogwheel_rpm": -64.0,
+        "screenshot": "shader-moving-craft-1.png",
+        "shader_state": {
+          "dh_compat_present": true,
+          "dh_depth_pixels": {
+            "allocated": true,
+            "finite_pixels": 921600,
+            "gl_error_after_read": 0,
+            "height": 720,
+            "max_depth": 1.0,
+            "min_depth": 0.021288248,
+            "non_clear_depth_pixels": 26864,
+            "texture": 111,
+            "width": 1280
+          },
+          "dh_depth_texture": 111,
+          "dh_incompatible_pack": false,
+          "dh_internal_present": true,
+          "dh_last_pack_incompatible": false,
+          "dh_override": true,
+          "dh_render_distance_chunks": 512,
+          "dh_rendering_frame": true,
+          "dh_solid_shader_class": "net.irisshaders.iris.compat.dh.IrisLodRenderProgram",
+          "fallback": false,
+          "iris_version": "1.8.14-beta.1+mc1.21.1",
+          "pack_name": "ComplementaryReimagined_r5.9.3.zip",
+          "pipeline_class": "net.irisshaders.iris.pipeline.IrisRenderingPipeline",
+          "shader_pack_in_use": true,
+          "stored_error": ""
+        },
+        "visible_sections": 1
+      },
+      {
+        "client_pose": "Pose3d{position=(-2,525 161,025 0,159), orientation=(0 -0,288 0 0,958), rotationPoint=(20Â 481Â 032,5 129,025 20Â 481Â 032,75), scale=(1 1 1)}",
+        "craft_uuid": "622c69f0-ee6d-49ed-8f4c-6fbc61e4bf33",
+        "dimension": "interstice:islands_v6",
+        "movement_server_tick": 160,
+        "native_cogwheel_rpm": -64.0,
+        "screenshot": "shader-moving-craft-2.png",
+        "shader_state": {
+          "dh_compat_present": true,
+          "dh_depth_pixels": {
+            "allocated": true,
+            "finite_pixels": 921600,
+            "gl_error_after_read": 0,
+            "height": 720,
+            "max_depth": 1.0,
+            "min_depth": 0.06211571,
+            "non_clear_depth_pixels": 26884,
+            "texture": 111,
+            "width": 1280
+          },
+          "dh_depth_texture": 111,
+          "dh_incompatible_pack": false,
+          "dh_internal_present": true,
+          "dh_last_pack_incompatible": false,
+          "dh_override": true,
+          "dh_render_distance_chunks": 512,
+          "dh_rendering_frame": true,
+          "dh_solid_shader_class": "net.irisshaders.iris.compat.dh.IrisLodRenderProgram",
+          "fallback": false,
+          "iris_version": "1.8.14-beta.1+mc1.21.1",
+          "pack_name": "ComplementaryReimagined_r5.9.3.zip",
+          "pipeline_class": "net.irisshaders.iris.pipeline.IrisRenderingPipeline",
+          "shader_pack_in_use": true,
+          "stored_error": ""
+        },
+        "visible_sections": 1
+      }
+    ],
+    "client_subjects_received": true,
+    "cold_reactor_diameter": 0.5,
+    "cold_reactor_pos": "5, 161, 0",
+    "craft_uuid": "622c69f0-ee6d-49ed-8f4c-6fbc61e4bf33",
+    "creator_pid": 15500,
+    "dh_depth_non_clear_pixels_max": 461896,
+    "dh_distant_full_input_chunks": 9,
+    "dh_lod_distance": 32,
+    "dh_worker_threads": 1,
+    "dh_world_attached": true,
+    "finished": true,
+    "gamma": 0.5,
+    "generation_quiescence_before_disconnect": {
+      "elapsed_actual_server_ticks": 296,
+      "generation_ref_count": 0,
+      "holders_checked": 1850,
+      "holders_not_ready_for_saving": 0,
+      "non_quiet_examples": [],
+      "owned_plot_save_path": "Sable holding-map saveAll plus explicit flush and independent storage read before vanilla disconnect",
+      "owned_sable_plot_holders_checked": 1,
+      "pending_generation_tasks": 0,
+      "purpose": "moving_render_shutdown",
+      "save_futures_failed": 0,
+      "save_futures_pending": 0,
+      "server_tick": 1057,
+      "stable_actual_server_ticks": 20,
+      "timed_out": false
+    },
+    "graphics_mode": "fancy",
+    "launcher_managed_hash_ms": 1035,
+    "launcher_runtime_prepare_ms": 33515,
+    "max_heap_bytes": 10737418240,
+    "mods": {
+      "aeronautics": "1.3.2",
+      "ars_nouveau": "5.13.3",
+      "create": "6.0.10",
+      "derenderpatcher": "2.0.0",
+      "distanthorizons": "3.3.3",
+      "draconicevolution": "3.1.4.633",
+      "flywheel": "1.0.6",
+      "geckolib": "4.9.3",
+      "interstice": "0.7.0-preview.3",
+      "iris": "1.8.14-beta.1+mc1.21.1",
+      "sable": "2.0.6",
+      "simulated": "1.3.2",
+      "sodium": "0.8.13+mc1.21.1"
+    },
+    "native_cogwheel_rpm_before_motion": -64.0,
+    "natural_sea_focus": "0, 34, 0",
+    "natural_sea_no_terrain_edits": true,
+    "natural_sea_numeric_search_radius_limit": 512,
+    "night_vision": false,
+    "own_integrated_server_stopped": true,
+    "passed": true,
+    "physics_paused_for_render_fixture": true,
+    "reactor_activated": false,
+    "reason": "Actual V6 natural toxic sea/sky and moving Sable/Create, cold DE reactor/sword, Ars Gecko armor captures with active shaders and non-clear DH depth pixels. Visual inspection remains separate.",
+    "render_distance": 8,
+    "requested_seed": 20261010,
+    "sable_native_save_before_disconnect": {
+      "cold_data_matches_live_tag": true,
+      "craft_present": true,
+      "craft_uuid": "622c69f0-ee6d-49ed-8f4c-6fbc61e4bf33",
+      "explicit_flush_completed": true,
+      "persisted_pointer": "global->[chunkPos=[-1, 0], storageIndex=0, subLevelIndex=0]",
+      "serialized_tag_sha256": "38e8b114a514961ffc9abeeca561edc80a554bced796f9ec551419cb968228ac",
+      "storage_folder": "D:\\repos\\erezcraft\\.local\\verification\\shader-full-20261010-c\\saves\\shader-render-v6-fresh\\dimensions\\interstice\\islands_v6\\sublevels",
+      "upstream_save_all_called": true
+    },
+    "scope": "Native Sable kinematic render fixture with real Aeronautics envelope and powered Create motor/shaft/cogwheel. Physics is paused only in this fresh disposable V6 dimension; public pipeline drives deterministic translation/rotation. This does not prove Survival airship flight, physics balance, collision correctness, or multiplayer capacity. Screenshot visibility/quality is reviewed separately.",
+    "server_plot_anchor": "20481032, 128, 20481032",
+    "simulation_distance": 5,
+    "sodium_present": true,
+    "stage": 15,
+    "sublevel_render_data_class": "dev.ryanhcode.sable.sublevel.render.vanilla.VanillaChunkedSubLevelRenderData",
+    "visual_assertion_performed": false
+  },
+  "server": {
+    "completed_utc": "2026-10-10T05:53:46.318742+00:00",
+    "passed": true,
+    "server_jar_count": 49,
+    "all_49_artifacts_sha256_verified_after_shutdown": true,
+    "source_scripts_unchanged": true,
+    "launcher_receipt": {
+      "started_utc": "2026-10-10T05:51:24.257229+00:00",
+      "owned_pid": 21152,
+      "argv": [
+        "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+        "-Xms512m",
+        "-Xmx6G",
+        "-XX:+UseZGC",
+        "-XX:+ZGenerational",
+        "@D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\client-comfort-dedicated-20261010\\runtime\\classpath-args.txt",
+        "@D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\client-comfort-dedicated-20261010\\runtime\\vm-args.txt",
+        "@D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\client-comfort-dedicated-20261010\\runtime\\program-args.txt"
+      ],
+      "cwd": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\client-comfort-dedicated-20261010\\profile",
+      "no_force_kills": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "validation": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\client-comfort-dedicated-20261010\\profile\\client-comfort-server-validation.json",
+      "passed": true
+    },
+    "functional_receipt": {
+      "critical_mod_versions": {
+        "minecraft": "1.21.1",
+        "neoforge": "21.1.252",
+        "interstice": "0.7.0-preview.3",
+        "create": "6.0.10",
+        "aeronautics": "1.3.2",
+        "sable": "2.0.6",
+        "distanthorizons": "3.3.3",
+        "ae2": "19.2.18",
+        "ars_nouveau": "5.13.3",
+        "modern_industrialization": "2.5.10",
+        "mekanism": "10.7.19",
+        "mekanismgenerators": "10.7.19",
+        "createaddition": "1.6.0",
+        "storagedrawers": "13.11.4",
+        "jade": "15.10.6+neoforge",
+        "jei": "19.51.0.418",
+        "yigd": "2.0.13",
+        "chunky": "1.4.23",
+        "draconicevolution": "3.1.4.633",
+        "brandonscore": "3.2.1.309",
+        "codechickenlib": "4.6.1.529",
+        "draconicadditions": "2.6.0.4",
+        "ferritecore": "7.0.3",
+        "modernfix": "5.27.26+mc1.21.1",
+        "buildinggadgets2": "1.3.9",
+        "farmersdelight": "1.3.4"
+      },
+      "server_class": "net.minecraft.server.dedicated.DedicatedServer",
+      "actual_v6_dimension": "interstice:islands_v6",
+      "actual_v6_generator_revision": 6,
+      "actual_seed": 20261010,
+      "fusion_recipe_count": 47,
+      "farmersdelight_cooking_recipe_count": 28,
+      "buildinggadgets_recipe_count": 6,
+      "building_gadget_original_craft_matches": true,
+      "building_gadget_original_craft_output": "buildinggadgets2:gadget_building",
+      "cooking_world": "minecraft:overworld",
+      "cooking_native_processing_calls": 300,
+      "cooking_pot_heated": true,
+      "cooking_ingredients_consumed": true,
+      "cooking_output": "farmersdelight:vegetable_soup",
+      "cooking_output_count": 1,
+      "java": "21.0.12.1",
+      "passed": true,
+      "server_pid": 21152,
+      "scope": "Real isolated dedicated startup, critical mod versions, original recipe registrations, original Building Gadget crafting match/assembly, native Cooking Pot processing on placed blocks, actual V6 dimension/revision. No 10-player capacity, target hardware performance, Survival progression or multiplayer Building Gadget claim."
+    },
+    "copied_artifacts": [
+      {
+        "filename": "amendments-1.21-2.1.10-neoforge.jar",
+        "sha256": "a2cbc46342c5f466f3b6e244f8820aa01f9d8381586b2c008b72fb77ae56045e",
+        "bytes": 1168211,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\amendments-1.21-2.1.10-neoforge.jar"
+      },
+      {
+        "filename": "another_furniture-neoforge-4.0.3.jar",
+        "sha256": "a416cb33333d7a489c7a7314e918f564787838630b014c281b83adde014457d0",
+        "bytes": 2422436,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\another_furniture-neoforge-4.0.3.jar"
+      },
+      {
+        "filename": "appliedenergistics2-19.2.18.jar",
+        "sha256": "df15a07f86ca1ca93aa66373f9d5d84dd3d4586631fceb38f4fbc85dad591e39",
+        "bytes": 8236552,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\appliedenergistics2-19.2.18.jar"
+      },
+      {
+        "filename": "ars_nouveau-1.21.1-5.13.3.jar",
+        "sha256": "45c1b6022d8e63464177c1f822bda22c3d6fb66970857fd7677e4e3ccffd259f",
+        "bytes": 19841105,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\ars_nouveau-1.21.1-5.13.3.jar"
+      },
+      {
+        "filename": "athena-neoforge-1.21.1-4.0.6.jar",
+        "sha256": "43699885bbce3343916d4c5c4940cf0e3f9f6f02fdeb46e8655e121b42282ec5",
+        "bytes": 99944,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\athena-neoforge-1.21.1-4.0.6.jar"
+      },
+      {
+        "filename": "balm-neoforge-1.21.1-21.0.66.jar",
+        "sha256": "6be660e1f6d169553bf44f66d4f78bb9e96a1d66ce108d9608819e3ce6bfba34",
+        "bytes": 783793,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\balm-neoforge-1.21.1-21.0.66.jar"
+      },
+      {
+        "filename": "BrandonsCore-1.21.1-3.2.1.309.jar",
+        "sha256": "076b44de51c606e6cdd89694ac0a879fc028d4f0103880ef44f47dbcc69f1d23",
+        "bytes": 1385131,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\BrandonsCore-1.21.1-3.2.1.309.jar"
+      },
+      {
+        "filename": "buildinggadgets2-1.3.9.jar",
+        "sha256": "acae3b628fa60ae8d34059b40c696ea282c01d20b14d32a506c4f85dd357b114",
+        "bytes": 3858597,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\buildinggadgets2-1.3.9.jar"
+      },
+      {
+        "filename": "chipped-neoforge-1.21.1-4.0.2.jar",
+        "sha256": "18ac6fd6b30db4922ccc6ee8bea5b113f69587505b7529834f37ace506427291",
+        "bytes": 15020578,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\chipped-neoforge-1.21.1-4.0.2.jar"
+      },
+      {
+        "filename": "Chunky-NeoForge-1.4.23.jar",
+        "sha256": "d72f235cf1f56f2c374f52c00bdda5034524b28142305a84cfc123a3f92ad274",
+        "bytes": 340572,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\Chunky-NeoForge-1.4.23.jar"
+      },
+      {
+        "filename": "cloth-config-15.0.140-neoforge.jar",
+        "sha256": "65e722e0d98431a07c45f8bdd8d529a217cc8c175fde1740248bd5c1b4f3c0d4",
+        "bytes": 1163890,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\cloth-config-15.0.140-neoforge.jar"
+      },
+      {
+        "filename": "CodeChickenLib-1.21.1-4.6.1.529.jar",
+        "sha256": "8c453d5c49092860e9d7a692eb858ea54c15d0f9598daae524f9590f8edf276f",
+        "bytes": 1538382,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\CodeChickenLib-1.21.1-4.6.1.529.jar"
+      },
+      {
+        "filename": "craftingtweaks-neoforge-1.21.1-21.1.11.jar",
+        "sha256": "0964fefc4a07120a53232b2d934fac4baf15fdaa99b69add30a18a642bc1cf98",
+        "bytes": 256086,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\craftingtweaks-neoforge-1.21.1-21.1.11.jar"
+      },
+      {
+        "filename": "create-1.21.1-6.0.10.jar",
+        "sha256": "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a",
+        "bytes": 19123767,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\create-1.21.1-6.0.10.jar"
+      },
+      {
+        "filename": "create-aeronautics-bundled-1.21.1-1.3.2.jar",
+        "sha256": "a3f330d4757640f8715d991a43eedb826e4d0e51558d859c843ae6693bd35f1e",
+        "bytes": 33123131,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\create-aeronautics-bundled-1.21.1-1.3.2.jar"
+      },
+      {
+        "filename": "createaddition-1.6.0.jar",
+        "sha256": "41876c3780b70365a1848994d146a73423cc19fbe86485885795d9e7d855e7e9",
+        "bytes": 1661802,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\createaddition-1.6.0.jar"
+      },
+      {
+        "filename": "curios-neoforge-9.5.1-1.21.1.jar",
+        "sha256": "a45df2125c26219974aba7507ffc9afe7b83acc941a386af3faacb1cc0056fde",
+        "bytes": 410690,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\curios-neoforge-9.5.1-1.21.1.jar"
+      },
+      {
+        "filename": "DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar",
+        "sha256": "864e70def5b0d54d619b940b66bb2784e91d3f3fc253064fdc1b3fc5786cbfab",
+        "bytes": 28289212,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar"
+      },
+      {
+        "filename": "Draconic-Additions-1.21.1-2.6.0.4.jar",
+        "sha256": "e803fa61de434cd8fe65601e7fd9db77ad18e93ad8f275eb4edfdc548fc5e9ea",
+        "bytes": 1085440,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\Draconic-Additions-1.21.1-2.6.0.4.jar"
+      },
+      {
+        "filename": "Draconic-Evolution-1.21.1-3.1.4.633.jar",
+        "sha256": "e89f3a23a5478e35099905d7c08f9f6a2ff70289e964904e91f06a7ceeed39b5",
+        "bytes": 6046229,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\Draconic-Evolution-1.21.1-3.1.4.633.jar"
+      },
+      {
+        "filename": "FarmersDelight-1.21.1-1.3.4.jar",
+        "sha256": "139ad7696462c89c03eea463f805abffa552526c5dadaadae221dd9624cb197c",
+        "bytes": 3160490,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\FarmersDelight-1.21.1-1.3.4.jar"
+      },
+      {
+        "filename": "ferritecore-7.0.3-neoforge.jar",
+        "sha256": "d87ea28262715ebff45b8a82d493e6b468e7a4521bc021df5d88302196d030a8",
+        "bytes": 121559,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\ferritecore-7.0.3-neoforge.jar"
+      },
+      {
+        "filename": "FramedBlocks-10.6.1.jar",
+        "sha256": "3337f29e1fa3331e8740eef9c20b0750d81fd86d1057fb81012a5c4792aa3369",
+        "bytes": 4306703,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\FramedBlocks-10.6.1.jar"
+      },
+      {
+        "filename": "fusion-1.3.16-neoforge-mc1.21.1.jar",
+        "sha256": "29920a6838f4f942947d208349480d7f5737f9fac6411c6eac5f3e824a438048",
+        "bytes": 947335,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\fusion-1.3.16-neoforge-mc1.21.1.jar"
+      },
+      {
+        "filename": "geckolib-neoforge-1.21.1-4.9.3.jar",
+        "sha256": "20a1995e4074f387ff549e2c57ea79dd7d41ee83c6afb9dd6a6e840e592d1c47",
+        "bytes": 634531,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\geckolib-neoforge-1.21.1-4.9.3.jar"
+      },
+      {
+        "filename": "guideme-21.1.19.jar",
+        "sha256": "2ce254edb931c3c3cf81d69abaf8f4ce5b871bf85e64984f366bf044173bd66a",
+        "bytes": 9311992,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\guideme-21.1.19.jar"
+      },
+      {
+        "filename": "handcrafted-neoforge-1.21.1-4.0.3.jar",
+        "sha256": "6f2a776fb28ed07d370899814e5e711fbeebe31396097d78a3b550439b364948",
+        "bytes": 7132842,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\handcrafted-neoforge-1.21.1-4.0.3.jar"
+      },
+      {
+        "filename": "interstice-0.7.0-preview.3.jar",
+        "sha256": "de27615f00a6851d7b8de87e244c0263f4305de14e9b5d80f91fbb7a0c6d9635",
+        "bytes": 2047018,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\interstice-0.7.0-preview.3.jar"
+      },
+      {
+        "filename": "Jade-1.21.1-NeoForge-15.10.6.jar",
+        "sha256": "276f1f65a20d04f536989c4f311949d770b52c440c23c2b904a08860f3c93810",
+        "bytes": 726853,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\Jade-1.21.1-NeoForge-15.10.6.jar"
+      },
+      {
+        "filename": "jei-1.21.1-neoforge-19.51.0.418.jar",
+        "sha256": "8bc3936d869e4040a5649c58b7e8be1c78c82a245c0dc07bdd68ab49121a222c",
+        "bytes": 1804792,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\jei-1.21.1-neoforge-19.51.0.418.jar"
+      },
+      {
+        "filename": "mcw-doors-1.1.5-mc1.21.1neoforge.jar",
+        "sha256": "87261e309f5e10c9910169d5acbba613cab3a2d2270698b0bd47e657a45b0518",
+        "bytes": 1190404,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\mcw-doors-1.1.5-mc1.21.1neoforge.jar"
+      },
+      {
+        "filename": "mcw-furniture-3.4.1-mc1.21.1neoforge.jar",
+        "sha256": "819fda8059b210e9de8b9275c8b8e0d931054af5a5ad47771c72d9fd4ab85e88",
+        "bytes": 2080436,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\mcw-furniture-3.4.1-mc1.21.1neoforge.jar"
+      },
+      {
+        "filename": "mcw-lights-1.1.5-mc1.21.1neoforge.jar",
+        "sha256": "b27cd68a7673874b0f6d765bdef2a022666cc07ca0e5057209a16d1a535da9e4",
+        "bytes": 525744,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\mcw-lights-1.1.5-mc1.21.1neoforge.jar"
+      },
+      {
+        "filename": "mcw-mcwwindows-2.4.2-mc1.21.1neoforge.jar",
+        "sha256": "8970c40ec622edd34c9b055226b403af08ab441c77303a6dc625ae18005f8184",
+        "bytes": 1261268,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\mcw-mcwwindows-2.4.2-mc1.21.1neoforge.jar"
+      },
+      {
+        "filename": "mcw-roofs-2.3.2-mc1.21.1neoforge.jar",
+        "sha256": "25c79def993a24b05b0f8494ee9417717d469bc000d5ed7c219b47dcc3b3e9c8",
+        "bytes": 1784829,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\mcw-roofs-2.3.2-mc1.21.1neoforge.jar"
+      },
+      {
+        "filename": "Mekanism-1.21.1-10.7.19.85.jar",
+        "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+        "bytes": 11976009,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\Mekanism-1.21.1-10.7.19.85.jar"
+      },
+      {
+        "filename": "MekanismGenerators-1.21.1-10.7.19.85.jar",
+        "sha256": "0e5783b111e756f27b48c62b2f0e02fff750c77f7985ff809bfadc5f444ba4ac",
+        "bytes": 1114598,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\MekanismGenerators-1.21.1-10.7.19.85.jar"
+      },
+      {
+        "filename": "Modern-Industrialization-2.5.10.jar",
+        "sha256": "94e391b5a4432ec6e391a44e162e32a0475b8c0c3f101944a93297c6dfc068ca",
+        "bytes": 7292458,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\Modern-Industrialization-2.5.10.jar"
+      },
+      {
+        "filename": "modernfix-neoforge-5.27.26-mc1.21.1.jar",
+        "sha256": "09f6842c63d14b3f1707f1f4a6f4602052f237f7efa9be135e41d3d97acf2a13",
+        "bytes": 611043,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\modernfix-neoforge-5.27.26-mc1.21.1.jar"
+      },
+      {
+        "filename": "moonlight-1.21.1-3.7.1-neoforge.jar",
+        "sha256": "0a755b1f5bfc40e1553c55471ebe42096eb537d5c7fa5fb6b5a5f145656604db",
+        "bytes": 2303727,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\moonlight-1.21.1-3.7.1-neoforge.jar"
+      },
+      {
+        "filename": "rechiseled-1.2.6-neoforge-mc1.21.jar",
+        "sha256": "cd638bb122d7e1afce4f38b1c7da3af99be7b9f523869cfbc15e5347db5f8d9a",
+        "bytes": 11526036,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\rechiseled-1.2.6-neoforge-mc1.21.jar"
+      },
+      {
+        "filename": "rechiseledcreate-1.1.1-neoforge-mc1.21.jar",
+        "sha256": "ba89cd5d1221621ed226cc7f1c26dc84a660cc4f6d122753052429f96d71248d",
+        "bytes": 983177,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\rechiseledcreate-1.1.1-neoforge-mc1.21.jar"
+      },
+      {
+        "filename": "resourcefullib-neoforge-1.21-3.0.12.jar",
+        "sha256": "5e36f2c69de008dc5795f730c84ab767688f15c810944b585485349a0c911261",
+        "bytes": 484332,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\resourcefullib-neoforge-1.21-3.0.12.jar"
+      },
+      {
+        "filename": "sable-neoforge-1.21.1-2.0.6.jar",
+        "sha256": "9c199157843bf953a47dff625fc5bb41c01a90538d35ad18e6996bbcb8a617c2",
+        "bytes": 12986135,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\sable-neoforge-1.21.1-2.0.6.jar"
+      },
+      {
+        "filename": "StorageDrawers-neoforge-1.21.1-13.11.4.jar",
+        "sha256": "7d768aaaecbd0228c57d3a3c1fcee0c04469a42ea218925f93763ed33afe566c",
+        "bytes": 1131420,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\StorageDrawers-neoforge-1.21.1-13.11.4.jar"
+      },
+      {
+        "filename": "supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+        "sha256": "d2ba7b839a2268e4e223457e813d11aa2476c3bf708a7bba691d8fc851778a4b",
+        "bytes": 207514,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\supermartijn642configlib-1.1.8-neoforge-mc1.21.jar"
+      },
+      {
+        "filename": "supermartijn642corelib-1.1.25-neoforge-mc1.21.jar",
+        "sha256": "0824bdd7cd5b5654eeb05dc9b62b42003b081b781009c38dc83ee1e106ca4ce2",
+        "bytes": 562683,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\supermartijn642corelib-1.1.25-neoforge-mc1.21.jar"
+      },
+      {
+        "filename": "supplementaries-1.21.1-3.9.9-neoforge.jar",
+        "sha256": "d6876ad959d0da4bab0ba182839a0af0e38ef3571345e5e7aea0be572f958e05",
+        "bytes": 13548968,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\supplementaries-1.21.1-3.9.9-neoforge.jar"
+      },
+      {
+        "filename": "youre-in-grave-danger-neoforge-2.0.13.jar",
+        "sha256": "dd2142a3c6a9d5b990ab36220be482f7aa9f528755f93b8fef8996f509ddcda2",
+        "bytes": 448888,
+        "source": "D:\\repos\\erezcraft\\.local\\client-comfort\\shader-source\\mods\\youre-in-grave-danger-neoforge-2.0.13.jar"
+      }
+    ],
+    "excluded_client_artifacts": [
+      {
+        "filename": "Controlling-neoforge-1.21.1-19.0.5.jar",
+        "sha256": "cc525fb6b030d9e4d33176983f278919e17b33935e2ca568929bdfa98f2b44a0"
+      },
+      {
+        "filename": "derenderpatcher-2.0.0.jar",
+        "sha256": "59d230dc3314e60cd1d875b435e2feec07b40f6bb25da1dadb8a0bfbd925472e"
+      },
+      {
+        "filename": "ImmediatelyFast-NeoForge-1.6.14-1.21.1.jar",
+        "sha256": "15bf9bd6d8e3ae8ad35c5a4d90680424b534d9762d698c0a466965afcab5dd78"
+      },
+      {
+        "filename": "InventoryProfilesNext-neoforge-1.21.1-2.2.5.jar",
+        "sha256": "05f1b8660f74f543fba61d4ce7cf8632d4c69a95b7c15b1a6fd442be2e397ca6"
+      },
+      {
+        "filename": "iris-neoforge-1.8.14-beta.1-mc1.21.1.jar",
+        "sha256": "60d5f8bf52f25e9986440f4a4270a6bd986d9cff994510e1108ac1547063b314"
+      },
+      {
+        "filename": "kotlinforforge-5.12.0-all.jar",
+        "sha256": "2785a4dd6de5c6c56065fd8eb789c82771bd2ee773c30794c23160a3b2c39139"
+      },
+      {
+        "filename": "lambdynamiclights-4.8.11-1.21.1.jar",
+        "sha256": "913b0358b1031828f1e060ea0ee361232dc2a1c82464f488a0a920739ce7c763"
+      },
+      {
+        "filename": "libIPN-neoforge-1.21.1-6.6.3.jar",
+        "sha256": "98f061ba69d31764fa10ab7810ca49062633e107a6b261ba3b66dc25ba5fef7b"
+      },
+      {
+        "filename": "MouseTweaks-neoforge-mc1.21-2.26.1.jar",
+        "sha256": "68e6f4201c5de97b77929a7215c9552495696ca6a3bf3ae4eacc34e135f6cc8b"
+      },
+      {
+        "filename": "Searchables-neoforge-1.21.1-1.0.2.jar",
+        "sha256": "ca193f0c69033d8f709f9e073a7c1ef4ea46714e5c2f94eb23ace12781c6aa68"
+      },
+      {
+        "filename": "sodium-neoforge-0.8.13-mc1.21.1.jar",
+        "sha256": "575d187b15328d7bddd8a9b1bee64333c22c14735f5780ec49eac0cd5503c08d"
+      },
+      {
+        "filename": "xaerominimap-neoforge-1.21.1-26.6.0.jar",
+        "sha256": "d3398221b2262abfe2d394b588122e5b3fd2e4d8c4bf66a5fd357352fcf51b2e"
+      },
+      {
+        "filename": "xaeroworldmap-neoforge-1.21.1-1.47.0.jar",
+        "sha256": "6a42b6f01bd96b496e5fcc07d4541bad1a699d9ec8ad58ad40d5dcfe23a7d4c7"
+      }
+    ],
+    "server_log_sha256": "c1d3145168754e59dddb4804abc25fee606c7f259723be09d1022e45015fa180",
+    "manifest_sha256": "9ae0d26ee5ad458763d30f0072e67eb4c7c9b3ba63e02529876195122bd2011a",
+    "known_log_note": "A caught Supplementaries TextureSheetParticle dedicated-dist error is also present in the prior accepted 47-jar startup. No new JFR attribution or ten-player capacity claim is made."
+  },
+  "visual_review": {
+    "reviewer": "root",
+    "controlling_search_visible": true,
+    "sorted_inventory_visible": true,
+    "gadgets_placed_blocks_and_cooking_pot_visible": true,
+    "shader_sea_sky_visible": true,
+    "moving_craft_cogwheel_de_core_sword_and_glowing_ars_armor_visible": true,
+    "comfort_screenshot_sha256": {
+      "controlling-key-search.png": "d6a9a18a5df475aff16827d27174dd190b5325c508f2822b51e451d5476f22de",
+      "controlling-conflicts.png": "dbbd5460d74561d8c1abd0f0d693be39e44e344050727095e18ba0d66c693df9",
+      "ipn-manual-player-sort.png": "5dc78593097b2af98cf7eb4d8194ac6c51f02bec2a03d2ab65b91973cd031ff8",
+      "bg2-building-farmers-kitchen-v6.png": "ac476d1cacf1300a0850edc033af39c8c34776d712cfa1b82d6f5462aee71970"
+    },
+    "shader_screenshot_sha256": {
+      "shader-natural-v6-sea-sky.png": "45a71ddeca99040b419057deb2f4601e5d42f8cd3fab5dad80c6b4e7ca044e98",
+      "shader-moving-craft-0.png": "a17a603fd268f136db84fbf042092c3e7326a01165305731c094afddde30c562",
+      "shader-moving-craft-1.png": "bc7a47df47124defdfe93883f8388c02a2119fe5f842ce32c2d1ff12e0934a0d",
+      "shader-moving-craft-2.png": "553b0137a822abaedce222d5eb632f14e3bb0f0078a99eaaedc9340cc313da0c"
+    }
+  },
+  "shader_default_enabled": false,
+  "strict_file_checks_preserved": true,
+  "quests_added": false,
+  "custom_recipe_changes": false,
+  "baseline_54_jars_preserved": true,
+  "owner_worlds_copied": false,
+  "worldgen_surface_replaced": false,
+  "scope": "Bounded functional operations/render/saving. Not every gadget mode, arbitrary machine sort, ten-player server load, or shader performance across GPUs.",
+  "distribution": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\distributions\\erezcraft-techmagic-0.1.0-alpha.5-comfort",
+  "first_shader_test_failure": "Windows native commit exhaustion with concurrent owned dedicated test; standalone rerun passed at same10GiB/Fancy settings",
+  "installed_client": {
+    "files_checked": 70,
+    "game_server_contacted": false,
+    "game_started": false,
+    "instance": "D:/EREZCRAFT/data/stable\\instances/archipelago",
+    "passed": true,
+    "release": "techmagic-0-1-0-alpha-5-shader",
+    "repaired": 14,
+    "runtime": {
+      "java_executable": "D:\\EREZCRAFT\\data\\stable\\runtime\\jvm\\java-runtime-delta\\bin\\javaw.exe",
+      "java_major": 21,
+      "minecraft": "1.21.1",
+      "neoforge": "21.1.252"
+    }
+  },
+  "installed_launcher": {
+    "path": "D:/EREZCRAFT/EREZCRAFT.exe",
+    "sha256": "bcad35cd0089f1c92ea3940bab4c5b5f9555108b7ec525ec1cfed80562aff199",
+    "desktop_shortcut_exists": true,
+    "build_profile": "release"
+  },
+  "installed_shaders_disabled_default": true
+}

@@ -2,7 +2,7 @@
   "required": true,
   "package": "pro.erez.interstice.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["EntityFluidContactMixin", "NavigationRegionGeometryMixin", "BucketItemMixin", "FlowingFluidMixin", "IceBlockMixin"],
-  "client": ["ClientLevelGeometryMixin", "RenderRegionGeometryMixin"],
+  "mixins": ["EntityFluidContactMixin", "NavigationRegionGeometryMixin", "BucketItemMixin", "FlowingFluidMixin", "IceBlockMixin", "DhChunkyInitializationMixin", "DhIslandGeneratorMixin", "DhTaskPickerRejectionMixin"],
+  "client": ["ClientLevelGeometryMixin", "RenderRegionGeometryMixin", "SodiumLevelSliceGeometryMixin", "DhIslandCaveCullingMixin", "DhIslandOceanLightingMixin", "DhIslandVerticalSlicesMixin"],
   "injectors": {"defaultRequire": 1}
 }

@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "name": "EREZCRAFT server admission and pregeneration gates",
+  "target": {
+    "simultaneous_players": 10,
+    "cpu_cores": 4,
+    "ram_gb": 20,
+    "capacity_verified": false
+  },
+  "hardware_status": "Player/core/RAM targets provided by owner; CPU model, storage and actual deployment address are not confirmed by this manifest",
+  "runtime": {
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.252",
+    "java_major": 21
+  },
+  "production_worlds_modified": false,
+  "production_pregeneration_started": false,
+  "players_admitted": false,
+  "initial_tuning_candidates": {
+    "view_distance": 6,
+    "simulation_distance": 4,
+    "dh_worker_threads": 1,
+    "parallel_pregen_worlds": 1,
+    "heap_gb": 12,
+    "benchmark_required": true
+  },
+  "pregen": {
+    "tool": "Chunky",
+    "candidate_version": "1.4.23",
+    "freeze_before_run": [
+      "final_mod_lock",
+      "server_configs",
+      "recipes_and_worldgen_datapacks",
+      "actual_existing_seed",
+      "dimension_ids",
+      "backup_and_disk_budget"
+    ],
+    "dimension_selection": [
+      "minecraft:overworld",
+      "interstice:islands_v6"
+    ],
+    "optional_gameplay_dimensions": [
+      "minecraft:the_nether",
+      "minecraft:the_end"
+    ],
+    "exclude_without_explicit_need": [
+      "interstice:islands_v5",
+      "archived_V1_V4",
+      "virtual_Sable_ship_storage",
+      "smoke_lab_dimensions",
+      "ae2:spatial_storage"
+    ],
+    "radius_blocks": null,
+    "radius_status": "Fix after a bounded throughput/disk sample and confirmation of final gameplay area; no arbitrary huge production region",
+    "delete_or_trim": false,
+    "forced_chunks": false,
+    "dh_lod_status": "Separate validation; pre-generated FULL chunks do not alone prove complete LOD coverage",
+    "completion_checks": [
+      "Chunky report completed",
+      "FULL/save evidence",
+      "all writes quiescent",
+      "normal stop",
+      "separate cold start",
+      "block/biome/structure checks",
+      "DH LOD gap check"
+    ]
+  },
+  "launch_gates": [
+    "client and real dedicated boot with exact pinned artifacts",
+    "recipe graph without cycles/cheap bypasses",
+    "V6 atmosphere, seas, flora and real cave routes retained",
+    "Create machines and AE2 item/fluid autocrafting conservation",
+    "Sable ship assembly, moving roof, SURGE and toxic sea contact",
+    "backpacks54_72_84 with graves/death/void/reconnect/cold",
+    "minimap layer selection and dimension-separated markers",
+    "optional shader profile with DH/Flywheel/Veil/Sable/V6",
+    "two actual clients and unresolved winch anti-flight fixed",
+    "load1_4_10 with machine_ship_ME work and p50_p95_p99_GC_memory",
+    "final pregeneration and cold recovery before players"
+  ],
+  "quality_rule": "Complete addon catalog is a research pool; only compatible, non-conflicting and validated combinations enter the server release",
+  "benchmark_location": "Actual deployment server; local startup/pregen smoke is functional evidence only",
+  "client": {
+    "heap_initial_gb": 2,
+    "heap_max_gb": 10,
+    "gc": "Generational ZGC",
+    "launcher_path": "D:\\repos\\erezcraft\\apps\\launcher",
+    "persisted_user_memory_settings_preserved": true
+  }
+}

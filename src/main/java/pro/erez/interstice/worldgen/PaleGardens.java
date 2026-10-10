@@ -32,6 +32,9 @@ public final class PaleGardens {
         undergrowth(profile,chunk,seed,profile.minLand());
     }
     public static void undergrowth(GeometryProfile profile,ChunkAccess chunk,long seed,int minimum) {
+        undergrowth(profile,chunk,seed,minimum,p->false);
+    }
+    public static void undergrowth(GeometryProfile profile,ChunkAccess chunk,long seed,int minimum,java.util.function.Predicate<BlockPos> walkway) {
         var random=RandomSource.create(seed^chunk.getPos().toLong()^0x14CA5L);
         for(int attempt=0;attempt<14;attempt++) {
             int x=chunk.getPos().getMinBlockX()+random.nextInt(16),z=chunk.getPos().getMinBlockZ()+random.nextInt(16);
@@ -40,8 +43,10 @@ public final class PaleGardens {
                 if(state.isAir())continue;
                 var target=ground.above();
                 if(state.is(Interstice.ABYSSAL_TURF.get()) && RealmBiomes.isGarden(chunk,ground)
-                        && chunk.getBlockState(target).isAir() && IslandChunkGenerator.featureAllowed(profile,x,y+1,z,minimum))
-                    chunk.setBlockState(target,(random.nextBoolean()?GardenMaterials.PALE_FERN:GardenMaterials.PALE_LITTER).get().defaultBlockState(),false);
+                        && chunk.getBlockState(target).isAir() && IslandChunkGenerator.featureAllowed(profile,x,y+1,z,minimum)){
+                    var plant=(random.nextBoolean()?GardenMaterials.PALE_FERN:GardenMaterials.PALE_LITTER).get().defaultBlockState();
+                    if(!walkway.test(target))chunk.setBlockState(target,plant,false);
+                }
                 break;
             }
         }

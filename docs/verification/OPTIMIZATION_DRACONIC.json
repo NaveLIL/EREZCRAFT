@@ -1,0 +1,1118 @@
+{
+  "passed": true,
+  "delivery_sequence": 4,
+  "client_jar_count": 54,
+  "server_jar_count": 47,
+  "client": {
+    "actual_dimension": "interstice:islands_v6",
+    "available_processors": 16,
+    "boot_to_integrated_player_seconds": 91.528,
+    "boot_to_title_seconds": 58.837,
+    "camera_pitch": 0.0,
+    "camera_x": 0.5,
+    "camera_y": 140.0,
+    "camera_yaw": 0.0,
+    "camera_z": 0.5,
+    "creator_pid": 4608,
+    "de_fusion_recipes_loaded": 47,
+    "de_native_render_capture": {
+      "dimension": "interstice:islands_v6",
+      "inactive_core_diameter": 0.5,
+      "main_hand_id": "draconicevolution:draconic_sword",
+      "reactor_activated": false,
+      "reactor_block_id": "draconicevolution:reactor_core",
+      "render_patcher_loaded": true,
+      "screenshot": "de-reactor-core-draconic-sword.png",
+      "visual_assertion_performed": false
+    },
+    "de_render_stage_present": true,
+    "dh_depth_texture_available": true,
+    "dh_distant_generation_enabled": true,
+    "dh_lod_distance": 32,
+    "dh_rendering_enabled": true,
+    "dh_worker_threads": 1,
+    "dh_world_attached": true,
+    "finished": true,
+    "garbage_collectors": [
+      "ZGC Minor Cycles",
+      "ZGC Minor Pauses",
+      "ZGC Major Cycles",
+      "ZGC Major Pauses"
+    ],
+    "generation_quiescence_before_disconnect": {
+      "elapsed_actual_server_ticks": 19,
+      "generation_ref_count": 0,
+      "holders_checked": 1849,
+      "holders_not_ready_for_saving": 0,
+      "non_quiet_examples": [],
+      "pending_generation_tasks": 0,
+      "purpose": "optimization_terminal_shutdown",
+      "save_futures_failed": 0,
+      "save_futures_pending": 0,
+      "server_tick": 1588,
+      "stable_actual_server_ticks": 20,
+      "timed_out": false
+    },
+    "graphics_settings": {
+      "ambient_occlusion": true,
+      "biome_blend_radius": 2,
+      "clouds": "FANCY",
+      "entity_distance": 1.0,
+      "entity_shadows": true,
+      "fov": 70,
+      "fps_limit": 60,
+      "framebuffer_height": 720,
+      "framebuffer_width": 1280,
+      "gamma": 0.5,
+      "graphics_mode": "fancy",
+      "mipmap_levels": 4,
+      "particles": "ALL",
+      "render_distance": 8,
+      "simulation_distance": 5,
+      "vsync": true
+    },
+    "java_version": "21.0.7",
+    "launcher_managed_hash_ms": 17700,
+    "launcher_runtime_prepare_ms": 64338,
+    "max_heap_bytes": 10737418240,
+    "mods": {
+      "ae2": "19.2.18",
+      "aeronautics": "1.3.2",
+      "aeronautics_bundled": "1.3.2",
+      "amendments": "1.21-2.1.10",
+      "another_furniture": "4.0.3",
+      "ars_nouveau": "5.13.3",
+      "athena": "4.0.6",
+      "balm": "21.0.66",
+      "brandonscore": "3.2.1.309",
+      "chipped": "4.0.2",
+      "chunky": "1.4.23",
+      "cloth_config": "15.0.140",
+      "codechickenlib": "4.6.1.529",
+      "codecui": "1.21.1-1.4.7",
+      "craftingtweaks": "21.1.11",
+      "create": "6.0.10",
+      "createaddition": "1.6.0",
+      "curios": "9.5.1+1.21.1",
+      "derenderpatcher": "2.0.0",
+      "distanthorizons": "3.3.3",
+      "draconicadditions": "2.6.0.4",
+      "draconicevolution": "3.1.4.633",
+      "erez_optimization_check": "1",
+      "fabric_api_base": "0.4.42+d1308ded19",
+      "fabric_block_view_api_v2": "1.0.10+9afaaf8c19",
+      "fabric_renderer_api_v1": "3.4.1+9125b6dc19",
+      "fabric_rendering_data_attachment_v1": "0.3.48+73761d2e19",
+      "ferritecore": "7.0.3",
+      "flywheel": "1.0.6",
+      "framedblocks": "10.6.1",
+      "fusion": "1.3.16",
+      "geckolib": "4.9.3",
+      "grandpower": "3.0.0",
+      "guideme": "21.1.19",
+      "handcrafted": "4.0.3",
+      "immediatelyfast": "1.6.14+1.21.1",
+      "infiniverse": "2.0.1.0",
+      "interstice": "0.7.0-preview.3",
+      "jade": "15.10.6+neoforge",
+      "jei": "19.51.0.418",
+      "kuma_api": "21.0.8",
+      "lambdynlights": "4.8.11+1.21.1",
+      "lambdynlights_api": "4.8.11+1.21.1",
+      "lambdynlights_runtime": "4.8.11+1.21.1",
+      "mcwdoors": "1.1.5",
+      "mcwfurnitures": "3.4.1",
+      "mcwlights": "1.1.5",
+      "mcwroofs": "2.3.2",
+      "mcwwindows": "2.4.2",
+      "mekanism": "10.7.19",
+      "mekanismgenerators": "10.7.19",
+      "minecraft": "1.21.1",
+      "modern_industrialization": "2.5.10",
+      "modernfix": "5.27.26+mc1.21.1",
+      "moonlight": "1.21.1-3.7.1",
+      "mousetweaks": "2.26.1",
+      "neoforge": "21.1.252",
+      "nuggets": "1.1.0.48",
+      "offroad": "1.3.2",
+      "ponder": "1.0.82+mc1.21.1",
+      "pride": "1.2.4+1.21.1",
+      "rechiseled": "1.2.6",
+      "rechiseledcreate": "1.1.1",
+      "resourcefullib": "3.0.12",
+      "sable": "2.0.6",
+      "sablecompanion": "1.6.0",
+      "simulated": "1.3.2",
+      "sodium": "0.8.13+mc1.21.1",
+      "spruceui": "6.2.5+1.21.1",
+      "storagedrawers": "13.11.4",
+      "supermartijn642configlib": "1.1.8",
+      "supermartijn642corelib": "1.1.25",
+      "supplementaries": "1.21.1-3.9.9",
+      "veil": "4.3.2",
+      "xaerolib": "1.7.3",
+      "xaerominimap": "26.6.0",
+      "xaeroworldmap": "1.47.0",
+      "yigd": "2.0.13",
+      "yumi_mc_core": "1.0.0-beta.1+1.21.1"
+    },
+    "own_integrated_server_stopped": true,
+    "passed": true,
+    "phases": [
+      {
+        "client_vanilla_block_light_at_eye": 0,
+        "client_vanilla_sky_light_at_eye": 0,
+        "duration_seconds": 10.0080912,
+        "dynamic_lights_api": {
+          "api_present": true,
+          "light_level_at_camera": 0.0,
+          "light_source_count": 0,
+          "main_hand_item_luminance": 0,
+          "off_hand_item_luminance": 0
+        },
+        "frame_interval_ms": {
+          "max": 56.7983,
+          "p50": 16.8078,
+          "p95": 20.9788,
+          "p99": 25.6302,
+          "samples": 590
+        },
+        "gc_collection_ms": 2435,
+        "gc_collections": 28,
+        "gc_forced": false,
+        "heap_used_bytes_end": 7476346880,
+        "heap_used_bytes_peak": 9112125440,
+        "main_hand": "minecraft:air",
+        "off_hand": "minecraft:air",
+        "phase": "empty-before",
+        "render_active_ms": {
+          "max": 45.9928,
+          "p50": 2.2653,
+          "p95": 5.0605,
+          "p99": 8.1714,
+          "samples": 591
+        },
+        "screenshot": "empty-before.png",
+        "server_tick_active_ms": {
+          "max": 29.395,
+          "p50": 7.9593,
+          "p95": 15.7797,
+          "p99": 19.7844,
+          "samples": 200
+        }
+      },
+      {
+        "client_vanilla_block_light_at_eye": 0,
+        "client_vanilla_sky_light_at_eye": 0,
+        "duration_seconds": 9.9964869,
+        "dynamic_lights_api": {
+          "api_present": true,
+          "light_level_at_camera": 13.767741926254764,
+          "light_source_count": 1,
+          "main_hand_item_luminance": 14,
+          "off_hand_item_luminance": 0
+        },
+        "frame_interval_ms": {
+          "max": 31.3354,
+          "p50": 16.7166,
+          "p95": 20.8006,
+          "p99": 24.4339,
+          "samples": 594
+        },
+        "gc_collection_ms": 2243,
+        "gc_collections": 28,
+        "gc_forced": false,
+        "heap_used_bytes_end": 4984930304,
+        "heap_used_bytes_peak": 9057599488,
+        "main_hand": "minecraft:torch",
+        "off_hand": "minecraft:air",
+        "phase": "torch-main-hand",
+        "render_active_ms": {
+          "max": 11.8247,
+          "p50": 2.1237,
+          "p95": 5.2373,
+          "p99": 7.8435,
+          "samples": 595
+        },
+        "screenshot": "torch-main-hand.png",
+        "server_tick_active_ms": {
+          "max": 22.8929,
+          "p50": 10.5168,
+          "p95": 16.5229,
+          "p99": 19.8234,
+          "samples": 200
+        }
+      },
+      {
+        "client_vanilla_block_light_at_eye": 0,
+        "client_vanilla_sky_light_at_eye": 0,
+        "duration_seconds": 9.9974363,
+        "dynamic_lights_api": {
+          "api_present": true,
+          "light_level_at_camera": 13.767741926254764,
+          "light_source_count": 1,
+          "main_hand_item_luminance": 0,
+          "off_hand_item_luminance": 14
+        },
+        "frame_interval_ms": {
+          "max": 21.6419,
+          "p50": 16.6745,
+          "p95": 19.369,
+          "p99": 20.2831,
+          "samples": 594
+        },
+        "gc_collection_ms": 267,
+        "gc_collections": 16,
+        "gc_forced": false,
+        "heap_used_bytes_end": 9640607744,
+        "heap_used_bytes_peak": 10192158720,
+        "main_hand": "minecraft:air",
+        "off_hand": "minecraft:torch",
+        "phase": "torch-off-hand",
+        "render_active_ms": {
+          "max": 4.7097,
+          "p50": 1.601,
+          "p95": 2.2623,
+          "p99": 4.0655,
+          "samples": 595
+        },
+        "screenshot": "torch-off-hand.png",
+        "server_tick_active_ms": {
+          "max": 15.981,
+          "p50": 7.5966,
+          "p95": 9.6142,
+          "p99": 11.9976,
+          "samples": 200
+        }
+      },
+      {
+        "client_vanilla_block_light_at_eye": 0,
+        "client_vanilla_sky_light_at_eye": 0,
+        "duration_seconds": 10.004208,
+        "dynamic_lights_api": {
+          "api_present": true,
+          "light_level_at_camera": 0.0,
+          "light_source_count": 0,
+          "main_hand_item_luminance": 0,
+          "off_hand_item_luminance": 0
+        },
+        "frame_interval_ms": {
+          "max": 24.4461,
+          "p50": 16.6843,
+          "p95": 19.2698,
+          "p99": 20.7173,
+          "samples": 596
+        },
+        "gc_collection_ms": 262,
+        "gc_collections": 16,
+        "gc_forced": false,
+        "heap_used_bytes_end": 8522825728,
+        "heap_used_bytes_peak": 10324279296,
+        "main_hand": "minecraft:air",
+        "off_hand": "minecraft:air",
+        "phase": "empty-after",
+        "render_active_ms": {
+          "max": 4.9675,
+          "p50": 1.5337,
+          "p95": 2.1792,
+          "p99": 3.704,
+          "samples": 597
+        },
+        "screenshot": "empty-after.png",
+        "server_tick_active_ms": {
+          "max": 12.4455,
+          "p50": 7.3833,
+          "p95": 9.7297,
+          "p99": 11.3512,
+          "samples": 200
+        }
+      }
+    ],
+    "reason": "Native full quality V6 torch phases and measurements completed; screenshot pixel/DE render analysis remains separate",
+    "requested_seed": 20261010,
+    "scope": "One native integrated client in a fresh disposable actual V6 world, synthetic sealed stone room. Pixel light assertions are evaluated separately. No dedicated server or multiplayer capacity claim.",
+    "stage": 7,
+    "test_label": "final-renderfix"
+  },
+  "moving": {
+    "actual_dimension": "interstice:islands_v6",
+    "assembled_blocks": 49,
+    "camera_pitch": 8.0,
+    "camera_x": 0.5,
+    "camera_y": 163.0,
+    "camera_yaw": 0.0,
+    "camera_z": -12.5,
+    "captures": [
+      {
+        "client_pose": "Pose3d{position=(3,449 161,025 1,171), orientation=(0 0,263 0 0,965), rotationPoint=(20Â 481Â 032,5 129,025 20Â 481Â 032,75), scale=(1 1 1)}",
+        "craft_uuid": "854998f3-cb2f-4f60-837b-bf886ecca4d4",
+        "dimension": "interstice:islands_v6",
+        "movement_server_tick": 40,
+        "native_cogwheel_rpm": -64.0,
+        "screenshot": "moving-craft-0.png",
+        "visible_sections": 1
+      },
+      {
+        "client_pose": "Pose3d{position=(2,342 161,025 0,474), orientation=(0 0,122 0 0,993), rotationPoint=(20Â 481Â 032,5 129,025 20Â 481Â 032,75), scale=(1 1 1)}",
+        "craft_uuid": "854998f3-cb2f-4f60-837b-bf886ecca4d4",
+        "dimension": "interstice:islands_v6",
+        "movement_server_tick": 100,
+        "native_cogwheel_rpm": -64.0,
+        "screenshot": "moving-craft-1.png",
+        "visible_sections": 1
+      },
+      {
+        "client_pose": "Pose3d{position=(-2,487 161,025 0,157), orientation=(0 -0,286 0 0,958), rotationPoint=(20Â 481Â 032,5 129,025 20Â 481Â 032,75), scale=(1 1 1)}",
+        "craft_uuid": "854998f3-cb2f-4f60-837b-bf886ecca4d4",
+        "dimension": "interstice:islands_v6",
+        "movement_server_tick": 160,
+        "native_cogwheel_rpm": -64.0,
+        "screenshot": "moving-craft-2.png",
+        "visible_sections": 1
+      }
+    ],
+    "craft_uuid": "854998f3-cb2f-4f60-837b-bf886ecca4d4",
+    "creator_pid": 32956,
+    "dh_lod_distance": 32,
+    "dh_worker_threads": 1,
+    "dh_world_attached": true,
+    "finished": true,
+    "gamma": 0.5,
+    "generation_quiescence_before_disconnect": {
+      "elapsed_actual_server_ticks": 405,
+      "generation_ref_count": 0,
+      "holders_checked": 1850,
+      "holders_not_ready_for_saving": 0,
+      "non_quiet_examples": [],
+      "owned_plot_save_path": "Sable holding-map saveAll plus explicit flush and independent storage read before vanilla disconnect",
+      "owned_sable_plot_holders_checked": 1,
+      "pending_generation_tasks": 0,
+      "purpose": "moving_render_shutdown",
+      "save_futures_failed": 0,
+      "save_futures_pending": 0,
+      "server_tick": 827,
+      "stable_actual_server_ticks": 20,
+      "timed_out": false
+    },
+    "graphics_mode": "fancy",
+    "launcher_managed_hash_ms": 916,
+    "launcher_runtime_prepare_ms": 28500,
+    "max_heap_bytes": 10737418240,
+    "mods": {
+      "aeronautics": "1.3.2",
+      "create": "6.0.10",
+      "distanthorizons": "3.3.3",
+      "flywheel": "1.0.6",
+      "interstice": "0.7.0-preview.3",
+      "sable": "2.0.6",
+      "simulated": "1.3.2"
+    },
+    "native_cogwheel_rpm_before_motion": -64.0,
+    "night_vision": false,
+    "own_integrated_server_stopped": true,
+    "passed": true,
+    "physics_paused_for_render_fixture": true,
+    "reason": "Three actual finalized moving Sable craft captures with native powered Create cogwheel. Visibility/quality inspection remains separate.",
+    "render_distance": 8,
+    "requested_seed": 20261010,
+    "sable_native_save_before_disconnect": {
+      "cold_data_matches_live_tag": true,
+      "craft_present": true,
+      "craft_uuid": "854998f3-cb2f-4f60-837b-bf886ecca4d4",
+      "explicit_flush_completed": true,
+      "persisted_pointer": "global->[chunkPos=[-1, 0], storageIndex=0, subLevelIndex=0]",
+      "serialized_tag_sha256": "d5e4659ff5a63d757d5e3694da3718f5493f7fcbec3c6a236ee48b8162c4bc9c",
+      "storage_folder": "D:\\repos\\erezcraft\\.local\\verification\\optimization-moving-renderfix-20261010-b\\saves\\moving-render-v6-fresh\\dimensions\\interstice\\islands_v6\\sublevels",
+      "upstream_save_all_called": true
+    },
+    "scope": "Native Sable kinematic render fixture with real Aeronautics envelope and powered Create motor/shaft/cogwheel. Physics is paused only in this fresh disposable V6 dimension; public pipeline drives deterministic translation/rotation. This does not prove Survival airship flight, physics balance, collision correctness, or multiplayer capacity. Screenshot visibility/quality is reviewed separately.",
+    "server_plot_anchor": "20481032, 128, 20481032",
+    "simulation_distance": 5,
+    "sodium_present": true,
+    "stage": 5,
+    "sublevel_render_data_class": "dev.ryanhcode.sable.sublevel.render.vanilla.VanillaChunkedSubLevelRenderData",
+    "visual_assertion_performed": false
+  },
+  "server": {
+    "critical_mod_versions": {
+      "minecraft": "1.21.1",
+      "neoforge": "21.1.252",
+      "interstice": "0.7.0-preview.3",
+      "create": "6.0.10",
+      "aeronautics": "1.3.2",
+      "sable": "2.0.6",
+      "distanthorizons": "3.3.3",
+      "ae2": "19.2.18",
+      "ars_nouveau": "5.13.3",
+      "modern_industrialization": "2.5.10",
+      "mekanism": "10.7.19",
+      "mekanismgenerators": "10.7.19",
+      "createaddition": "1.6.0",
+      "storagedrawers": "13.11.4",
+      "jade": "15.10.6+neoforge",
+      "jei": "19.51.0.418",
+      "yigd": "2.0.13",
+      "chunky": "1.4.23",
+      "draconicevolution": "3.1.4.633",
+      "brandonscore": "3.2.1.309",
+      "codechickenlib": "4.6.1.529",
+      "draconicadditions": "2.6.0.4",
+      "ferritecore": "7.0.3",
+      "modernfix": "5.27.26+mc1.21.1"
+    },
+    "server_class": "net.minecraft.server.dedicated.DedicatedServer",
+    "actual_v6_dimension": "interstice:islands_v6",
+    "actual_v6_generator_revision": 6,
+    "actual_seed": 20261010,
+    "fusion_recipe_count": 47,
+    "draconic_sword_registered": true,
+    "reactor_core_registered": true,
+    "java": "21.0.12.1",
+    "passed": true,
+    "server_pid": 24500,
+    "scope": "Real isolated dedicated startup, critical mod versions, registered DE content/recipe types and actual V6 dimension/revision only. No full fusion craft, ten-player capacity, server performance or Survival progression claim."
+  },
+  "comparison": {
+    "scope": "Single integrated fresh V6 fixture observations. Frame intervals include vsync/FPS cap; render active span is reported separately. Not multiplayer or dedicated-server throughput.",
+    "runs": [
+      {
+        "profile": ".local\\verification\\optimization-baseline-20261010-b",
+        "boot_to_title_seconds": 69.581,
+        "graphics_settings": {
+          "render_distance": 8,
+          "simulation_distance": 5,
+          "graphics_mode": "fancy",
+          "clouds": "FANCY",
+          "particles": "ALL",
+          "ambient_occlusion": true,
+          "entity_shadows": true,
+          "mipmap_levels": 4,
+          "entity_distance": 1.0,
+          "biome_blend_radius": 2,
+          "gamma": 0.5,
+          "fov": 70,
+          "vsync": true,
+          "fps_limit": 60,
+          "framebuffer_width": 1280,
+          "framebuffer_height": 720
+        },
+        "phases": [
+          {
+            "phase": "empty-before",
+            "screenshot": ".local\\verification\\optimization-baseline-20261010-b\\screenshots\\empty-before.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 16.465659399001535,
+            "wall_luminance_median_srgb_0_255": 17.493399999999998,
+            "dynamic_lights_api": {
+              "api_present": false
+            },
+            "server_tick_active_ms": {
+              "samples": 200,
+              "p50": 6.7753,
+              "p95": 13.1758,
+              "p99": 18.576,
+              "max": 22.6956
+            },
+            "render_active_ms": {
+              "samples": 575,
+              "p50": 2.8703,
+              "p95": 6.017,
+              "p99": 12.2306,
+              "max": 15.6008
+            },
+            "frame_interval_ms": {
+              "samples": 574,
+              "p50": 16.4611,
+              "p95": 27.4114,
+              "p99": 35.2719,
+              "max": 41.1862
+            },
+            "heap_used_bytes_peak": 9506390016,
+            "gc_collections": 41,
+            "gc_collection_ms": 2173
+          },
+          {
+            "phase": "torch-main-hand",
+            "screenshot": ".local\\verification\\optimization-baseline-20261010-b\\screenshots\\torch-main-hand.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 16.465659399001535,
+            "wall_luminance_median_srgb_0_255": 17.493399999999998,
+            "dynamic_lights_api": {
+              "api_present": false
+            },
+            "server_tick_active_ms": {
+              "samples": 200,
+              "p50": 9.108,
+              "p95": 17.3304,
+              "p99": 25.9653,
+              "max": 29.0616
+            },
+            "render_active_ms": {
+              "samples": 570,
+              "p50": 3.9483,
+              "p95": 8.6334,
+              "p99": 12.7127,
+              "max": 17.5172
+            },
+            "frame_interval_ms": {
+              "samples": 569,
+              "p50": 16.6769,
+              "p95": 27.0558,
+              "p99": 32.3235,
+              "max": 47.3836
+            },
+            "heap_used_bytes_peak": 9321840640,
+            "gc_collections": 52,
+            "gc_collection_ms": 2911
+          },
+          {
+            "phase": "torch-off-hand",
+            "screenshot": ".local\\verification\\optimization-baseline-20261010-b\\screenshots\\torch-off-hand.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 16.465659399001535,
+            "wall_luminance_median_srgb_0_255": 17.493399999999998,
+            "dynamic_lights_api": {
+              "api_present": false
+            },
+            "server_tick_active_ms": {
+              "samples": 200,
+              "p50": 7.469,
+              "p95": 9.9132,
+              "p99": 12.2184,
+              "max": 12.9309
+            },
+            "render_active_ms": {
+              "samples": 593,
+              "p50": 3.7242,
+              "p95": 5.3089,
+              "p99": 6.6953,
+              "max": 8.1505
+            },
+            "frame_interval_ms": {
+              "samples": 592,
+              "p50": 16.6638,
+              "p95": 24.653,
+              "p99": 27.0059,
+              "max": 31.2801
+            },
+            "heap_used_bytes_peak": 10370416640,
+            "gc_collections": 24,
+            "gc_collection_ms": 435
+          },
+          {
+            "phase": "empty-after",
+            "screenshot": ".local\\verification\\optimization-baseline-20261010-b\\screenshots\\empty-after.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 16.681211587941625,
+            "wall_luminance_median_srgb_0_255": 17.493399999999998,
+            "dynamic_lights_api": {
+              "api_present": false
+            },
+            "server_tick_active_ms": {
+              "samples": 200,
+              "p50": 7.2904,
+              "p95": 9.93,
+              "p99": 11.1567,
+              "max": 13.3979
+            },
+            "render_active_ms": {
+              "samples": 596,
+              "p50": 3.5652,
+              "p95": 5.2509,
+              "p99": 6.4705,
+              "max": 7.4283
+            },
+            "frame_interval_ms": {
+              "samples": 595,
+              "p50": 16.6982,
+              "p95": 23.9828,
+              "p99": 25.7298,
+              "max": 26.8324
+            },
+            "heap_used_bytes_peak": 10326376448,
+            "gc_collections": 24,
+            "gc_collection_ms": 411
+          }
+        ],
+        "torch_pixel_observation": {
+          "main_hand_gain_srgb_0_255": 0.0,
+          "off_hand_gain_srgb_0_255": 0.0,
+          "empty_after_return_error_srgb_0_255": 0.21555218894009087,
+          "both_hands_illuminate_and_return_to_dark": false
+        }
+      },
+      {
+        "profile": ".local\\verification\\optimization-lighting-20261010",
+        "boot_to_title_seconds": 55.813,
+        "graphics_settings": {
+          "render_distance": 8,
+          "simulation_distance": 5,
+          "graphics_mode": "fancy",
+          "clouds": "FANCY",
+          "particles": "ALL",
+          "ambient_occlusion": true,
+          "entity_shadows": true,
+          "mipmap_levels": 4,
+          "entity_distance": 1.0,
+          "biome_blend_radius": 2,
+          "gamma": 0.5,
+          "fov": 70,
+          "vsync": true,
+          "fps_limit": 60,
+          "framebuffer_width": 1280,
+          "framebuffer_height": 720
+        },
+        "phases": [
+          {
+            "phase": "empty-before",
+            "screenshot": ".local\\verification\\optimization-lighting-20261010\\screenshots\\empty-before.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 16.681211587941625,
+            "wall_luminance_median_srgb_0_255": 17.493399999999998,
+            "dynamic_lights_api": {
+              "api_present": true,
+              "light_level_at_camera": 0.0,
+              "light_source_count": 0,
+              "main_hand_item_luminance": 0,
+              "off_hand_item_luminance": 0
+            },
+            "server_tick_active_ms": {
+              "samples": 200,
+              "p50": 7.8386,
+              "p95": 15.9939,
+              "p99": 24.9035,
+              "max": 31.2316
+            },
+            "render_active_ms": {
+              "samples": 593,
+              "p50": 3.27,
+              "p95": 6.3743,
+              "p99": 10.0399,
+              "max": 19.1925
+            },
+            "frame_interval_ms": {
+              "samples": 592,
+              "p50": 16.6934,
+              "p95": 20.9076,
+              "p99": 24.0119,
+              "max": 34.6404
+            },
+            "heap_used_bytes_peak": 8336179200,
+            "gc_collections": 24,
+            "gc_collection_ms": 2142
+          },
+          {
+            "phase": "torch-main-hand",
+            "screenshot": ".local\\verification\\optimization-lighting-20261010\\screenshots\\torch-main-hand.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 26.579749159946235,
+            "wall_luminance_median_srgb_0_255": 26.9146,
+            "dynamic_lights_api": {
+              "api_present": true,
+              "light_level_at_camera": 13.767741926254764,
+              "light_source_count": 1,
+              "main_hand_item_luminance": 14,
+              "off_hand_item_luminance": 0
+            },
+            "server_tick_active_ms": {
+              "samples": 200,
+              "p50": 10.7561,
+              "p95": 21.4442,
+              "p99": 28.3317,
+              "max": 44.0148
+            },
+            "render_active_ms": {
+              "samples": 595,
+              "p50": 3.842,
+              "p95": 7.2874,
+              "p99": 9.5647,
+              "max": 11.1789
+            },
+            "frame_interval_ms": {
+              "samples": 594,
+              "p50": 16.7111,
+              "p95": 21.1463,
+              "p99": 24.8177,
+              "max": 29.66
+            },
+            "heap_used_bytes_peak": 8646557696,
+            "gc_collections": 28,
+            "gc_collection_ms": 2274
+          },
+          {
+            "phase": "torch-off-hand",
+            "screenshot": ".local\\verification\\optimization-lighting-20261010\\screenshots\\torch-off-hand.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 26.532074949596772,
+            "wall_luminance_median_srgb_0_255": 26.842399999999998,
+            "dynamic_lights_api": {
+              "api_present": true,
+              "light_level_at_camera": 13.767741926254764,
+              "light_source_count": 1,
+              "main_hand_item_luminance": 0,
+              "off_hand_item_luminance": 14
+            },
+            "server_tick_active_ms": {
+              "samples": 200,
+              "p50": 7.6081,
+              "p95": 12.6187,
+              "p99": 14.9575,
+              "max": 23.6562
+            },
+            "render_active_ms": {
+              "samples": 592,
+              "p50": 2.8893,
+              "p95": 4.8533,
+              "p99": 5.9205,
+              "max": 10.7201
+            },
+            "frame_interval_ms": {
+              "samples": 591,
+              "p50": 16.6422,
+              "p95": 19.852,
+              "p99": 22.7932,
+              "max": 50.3908
+            },
+            "heap_used_bytes_peak": 10223616000,
+            "gc_collections": 16,
+            "gc_collection_ms": 296
+          },
+          {
+            "phase": "empty-after",
+            "screenshot": ".local\\verification\\optimization-lighting-20261010\\screenshots\\empty-after.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 16.465659399001535,
+            "wall_luminance_median_srgb_0_255": 17.493399999999998,
+            "dynamic_lights_api": {
+              "api_present": true,
+              "light_level_at_camera": 0.0,
+              "light_source_count": 0,
+              "main_hand_item_luminance": 0,
+              "off_hand_item_luminance": 0
+            },
+            "server_tick_active_ms": {
+              "samples": 200,
+              "p50": 7.1801,
+              "p95": 9.1214,
+              "p99": 10.2636,
+              "max": 10.9347
+            },
+            "render_active_ms": {
+              "samples": 595,
+              "p50": 2.6049,
+              "p95": 3.2943,
+              "p99": 4.7934,
+              "max": 5.3159
+            },
+            "frame_interval_ms": {
+              "samples": 594,
+              "p50": 16.6762,
+              "p95": 19.0466,
+              "p99": 21.2696,
+              "max": 23.5476
+            },
+            "heap_used_bytes_peak": 10297016320,
+            "gc_collections": 16,
+            "gc_collection_ms": 236
+          }
+        ],
+        "torch_pixel_observation": {
+          "main_hand_gain_srgb_0_255": 9.89853757200461,
+          "off_hand_gain_srgb_0_255": 9.850863361655147,
+          "empty_after_return_error_srgb_0_255": 0.21555218894009087,
+          "both_hands_illuminate_and_return_to_dark": true
+        }
+      },
+      {
+        "profile": ".local\\verification\\optimization-renderfix-20261010-b",
+        "boot_to_title_seconds": 58.837,
+        "graphics_settings": {
+          "ambient_occlusion": true,
+          "biome_blend_radius": 2,
+          "clouds": "FANCY",
+          "entity_distance": 1.0,
+          "entity_shadows": true,
+          "fov": 70,
+          "fps_limit": 60,
+          "framebuffer_height": 720,
+          "framebuffer_width": 1280,
+          "gamma": 0.5,
+          "graphics_mode": "fancy",
+          "mipmap_levels": 4,
+          "particles": "ALL",
+          "render_distance": 8,
+          "simulation_distance": 5,
+          "vsync": true
+        },
+        "phases": [
+          {
+            "phase": "empty-before",
+            "screenshot": ".local\\verification\\optimization-renderfix-20261010-b\\screenshots\\empty-before.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 16.465659399001535,
+            "wall_luminance_median_srgb_0_255": 17.493399999999998,
+            "dynamic_lights_api": {
+              "api_present": true,
+              "light_level_at_camera": 0.0,
+              "light_source_count": 0,
+              "main_hand_item_luminance": 0,
+              "off_hand_item_luminance": 0
+            },
+            "server_tick_active_ms": {
+              "max": 29.395,
+              "p50": 7.9593,
+              "p95": 15.7797,
+              "p99": 19.7844,
+              "samples": 200
+            },
+            "render_active_ms": {
+              "max": 45.9928,
+              "p50": 2.2653,
+              "p95": 5.0605,
+              "p99": 8.1714,
+              "samples": 591
+            },
+            "frame_interval_ms": {
+              "max": 56.7983,
+              "p50": 16.8078,
+              "p95": 20.9788,
+              "p99": 25.6302,
+              "samples": 590
+            },
+            "heap_used_bytes_peak": 9112125440,
+            "gc_collections": 28,
+            "gc_collection_ms": 2435
+          },
+          {
+            "phase": "torch-main-hand",
+            "screenshot": ".local\\verification\\optimization-renderfix-20261010-b\\screenshots\\torch-main-hand.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 26.5227446140553,
+            "wall_luminance_median_srgb_0_255": 26.842399999999998,
+            "dynamic_lights_api": {
+              "api_present": true,
+              "light_level_at_camera": 13.767741926254764,
+              "light_source_count": 1,
+              "main_hand_item_luminance": 14,
+              "off_hand_item_luminance": 0
+            },
+            "server_tick_active_ms": {
+              "max": 22.8929,
+              "p50": 10.5168,
+              "p95": 16.5229,
+              "p99": 19.8234,
+              "samples": 200
+            },
+            "render_active_ms": {
+              "max": 11.8247,
+              "p50": 2.1237,
+              "p95": 5.2373,
+              "p99": 7.8435,
+              "samples": 595
+            },
+            "frame_interval_ms": {
+              "max": 31.3354,
+              "p50": 16.7166,
+              "p95": 20.8006,
+              "p99": 24.4339,
+              "samples": 594
+            },
+            "heap_used_bytes_peak": 9057599488,
+            "gc_collections": 28,
+            "gc_collection_ms": 2243
+          },
+          {
+            "phase": "torch-off-hand",
+            "screenshot": ".local\\verification\\optimization-renderfix-20261010-b\\screenshots\\torch-off-hand.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 26.5466790562596,
+            "wall_luminance_median_srgb_0_255": 26.9146,
+            "dynamic_lights_api": {
+              "api_present": true,
+              "light_level_at_camera": 13.767741926254764,
+              "light_source_count": 1,
+              "main_hand_item_luminance": 0,
+              "off_hand_item_luminance": 14
+            },
+            "server_tick_active_ms": {
+              "max": 15.981,
+              "p50": 7.5966,
+              "p95": 9.6142,
+              "p99": 11.9976,
+              "samples": 200
+            },
+            "render_active_ms": {
+              "max": 4.7097,
+              "p50": 1.601,
+              "p95": 2.2623,
+              "p99": 4.0655,
+              "samples": 595
+            },
+            "frame_interval_ms": {
+              "max": 21.6419,
+              "p50": 16.6745,
+              "p95": 19.369,
+              "p99": 20.2831,
+              "samples": 594
+            },
+            "heap_used_bytes_peak": 10192158720,
+            "gc_collections": 16,
+            "gc_collection_ms": 267
+          },
+          {
+            "phase": "empty-after",
+            "screenshot": ".local\\verification\\optimization-renderfix-20261010-b\\screenshots\\empty-after.png",
+            "wall_crop": [
+              448,
+              251,
+              832,
+              468
+            ],
+            "wall_luminance_mean_srgb_0_255": 16.465659399001535,
+            "wall_luminance_median_srgb_0_255": 17.493399999999998,
+            "dynamic_lights_api": {
+              "api_present": true,
+              "light_level_at_camera": 0.0,
+              "light_source_count": 0,
+              "main_hand_item_luminance": 0,
+              "off_hand_item_luminance": 0
+            },
+            "server_tick_active_ms": {
+              "max": 12.4455,
+              "p50": 7.3833,
+              "p95": 9.7297,
+              "p99": 11.3512,
+              "samples": 200
+            },
+            "render_active_ms": {
+              "max": 4.9675,
+              "p50": 1.5337,
+              "p95": 2.1792,
+              "p99": 3.704,
+              "samples": 597
+            },
+            "frame_interval_ms": {
+              "max": 24.4461,
+              "p50": 16.6843,
+              "p95": 19.2698,
+              "p99": 20.7173,
+              "samples": 596
+            },
+            "heap_used_bytes_peak": 10324279296,
+            "gc_collections": 16,
+            "gc_collection_ms": 262
+          }
+        ],
+        "torch_pixel_observation": {
+          "main_hand_gain_srgb_0_255": 10.057085215053764,
+          "off_hand_gain_srgb_0_255": 10.081019657258064,
+          "empty_after_return_error_srgb_0_255": 0.0,
+          "both_hands_illuminate_and_return_to_dark": true
+        }
+      }
+    ]
+  },
+  "visual_review": {
+    "reviewer": "root",
+    "de_hand_model_visible": true,
+    "de_hotbar_icon_visible": true,
+    "de_inactive_core_sphere_visible": true,
+    "moving_planks_glass_envelope_cogwheel_visible": true,
+    "inactive_core_capture_sha256": "48ec238ee4b0a9443457baa18a168e8e5a889135b0e4f07c5af2b90f601fd4cb",
+    "moving_capture_sha256": [
+      "4e6b25245418cd5e661756263bd6f41396667e8fdd4a86bf42631a2514f5462a",
+      "a95d88ca18e53dc9b6a5ed2b2625ebe2d2c81748a7f775bd60f431ef20dbab4f",
+      "a8b42005e4f1f4ff8b61fea824f646f9f508936e850458ed7df4186a60a29cf6"
+    ]
+  },
+  "strict_file_checks_preserved": true,
+  "production_shaders_installed": false,
+  "scope": "Bounded local functional/render proof. Real server hardware load, ten players, active reactor operation, full fusion automation/progression and Survival flight remain separate gates.",
+  "known_previous_diagnostic": "Supplementaries3.9.9 CannonFireParticle.Options nested client class emits a caught dedicated initialization diagnostic, also present before this batch; cannon firing not tested.",
+  "assembled_distribution": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\distributions\\erezcraft-techmagic-0.1.0-alpha.4-optimized",
+  "installed_client": {
+    "files_checked": 57,
+    "game_server_contacted": false,
+    "game_started": false,
+    "instance": "D:/EREZCRAFT/data/stable\\instances/archipelago",
+    "passed": true,
+    "release": "techmagic-0-1-0-alpha-4-final-renderfix",
+    "repaired": 12,
+    "runtime": {
+      "java_executable": "D:\\EREZCRAFT\\data\\stable\\runtime\\jvm\\java-runtime-delta\\bin\\javaw.exe",
+      "java_major": 21,
+      "minecraft": "1.21.1",
+      "neoforge": "21.1.252"
+    }
+  },
+  "installed_launcher": {
+    "passed": true,
+    "installed_exe": "D:\\EREZCRAFT\\EREZCRAFT.exe",
+    "build_profile": "release",
+    "sha256": "daa8274cf7371b48efab151d357ee82b6c243f5b1c000e88b0df3f1e5f3885ef",
+    "previous_sha256": "7811fb13c12cd8197f20df68dd0f6867a6f6015beaea7c0a983a23da38ce68f2",
+    "backup": "D:\\EREZCRAFT\\.backups\\EREZCRAFT-7811fb13c12cd819.exe",
+    "desktop_shortcut": "C:\\Users\\Dimon\\Desktop\\EREZCRAFT.lnk",
+    "client_release": "techmagic-0-1-0-alpha-4-final-renderfix",
+    "managed_files_checked": 57,
+    "client_jars": 54,
+    "worlds_copied": false,
+    "worlds_deleted": false,
+    "strict_file_checks_preserved": true
+  }
+}

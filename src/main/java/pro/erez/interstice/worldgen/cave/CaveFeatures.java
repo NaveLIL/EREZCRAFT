@@ -74,6 +74,9 @@ public final class CaveFeatures {
     }
     /** Explicit revision opt-in; the old overload keeps exactly the pre-V4 population. */
     public static Counts decorate(GeometryProfile profile,ChunkAccess chunk,long seed,LevelReader region,int revision) {
+        return decorate(profile,chunk,seed,region,revision,p->false);
+    }
+    public static Counts decorate(GeometryProfile profile,ChunkAccess chunk,long seed,LevelReader region,int revision,java.util.function.Predicate<BlockPos> walkway) {
         int plants=0,hanging=0,spires=0,clings=0;
         int startX=chunk.getPos().getMinBlockX(),startZ=chunk.getPos().getMinBlockZ();
         // Every position is eligible: no artificial decoration-free stripe at chunk borders.
@@ -84,6 +87,7 @@ public final class CaveFeatures {
             for(int y=profile.minY()+7;y<profile.maxLand()-5;y++) {
                 var floor=new BlockPos(x,y,z);
                 if(!chunk.getBlockState(floor).isAir()||!rock(chunk.getBlockState(floor.below())))continue;
+                if(walkway.test(floor))continue;
                 int ceiling=roof(profile,chunk,floor,64);
                 if(ceiling<0)continue;
                 int space=ceiling-y;

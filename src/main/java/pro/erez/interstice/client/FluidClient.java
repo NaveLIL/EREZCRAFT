@@ -214,7 +214,24 @@ public final class FluidClient {
     private static void quad(VertexConsumer out, TextureAtlasSprite sprite, int color, int light, BlockPos pos, float nx, float ny, float nz, float... xyz) {
         emitQuad(out,sprite,color,light,pos,nx,ny,nz,xyz,false,false,GeometryProfile.LEGACY);
     }
+    private static boolean renderableQuad(float[] xyz) {
+        int collapsedEdges=0;
+        for(int i=0;i<4;i++) {
+            int current=i*3,previous=((i+3)&3)*3;
+            for(int axis=0;axis<3;axis++)if(!Float.isFinite(xyz[current+axis]))return false;
+            // Sodium 0.8.13 treats adjacent vertices within 1e-5 on every axis as
+            // identical. A triangle has one repeated vertex already; clipping can
+            // produce a second tiny edge even when its double-precision area is nonzero.
+            // Reject that invisible quad before any vertex reaches the consumer.
+            if(Math.abs(xyz[current]-xyz[previous])<1e-5F
+                    &&Math.abs(xyz[current+1]-xyz[previous+1])<1e-5F
+                    &&Math.abs(xyz[current+2]-xyz[previous+2])<1e-5F
+                    &&++collapsedEdges>1)return false;
+        }
+        return true;
+    }
     private static void emitQuad(VertexConsumer out,TextureAtlasSprite sprite,int color,int light,BlockPos pos,float nx,float ny,float nz,float[] xyz,boolean oceanSurface,boolean chaotic,GeometryProfile profile) {
+        if(!renderableQuad(xyz))return;
         // 64px across four blocks, or 128px across eight: still 16 texels per block.
         int period=ny==0 ? 8 : 4;
         float insetU=0.5F/sprite.contents().width();

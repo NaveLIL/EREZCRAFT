@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "package_id": "interstice-v6-blind-survival-20261009",
+  "prepared_on": "2026-10-09",
+  "purpose": "Independent human natural Survival route; not a prepared supplies demonstration",
+  "human_acceptance_status": "not_run",
+  "package_readiness": "protocol_prepared_candidate_preflight_pending",
+  "baseline": {
+    "commit": "df8e70af2ba9a41c7b5d1901ca63e95fb9852611",
+    "version": "0.7.0-preview.1",
+    "runtime_jar": "interstice-0.7.0-preview.1.jar",
+    "hash_algorithm": "SHA256",
+    "sha256": "1ef8519e2bb0f6bcaff57d3f01c53329aa10b7c31ba80a131ce24264a15260d9",
+    "release_url": "https://github.com/NaveLIL/EREZCRAFT/releases/tag/v0.7.0-preview.1",
+    "ordinary_entry_dimension": "interstice:islands_v5",
+    "v6_natural_first_entry_gate": "blocked",
+    "human_blind_route_result": "not_run",
+    "limitations": [
+      "Existing portal links retain their original dimension",
+      "Manual explore v6 is not natural first entry",
+      "Experimental EchoRiftEntity has no natural placement or Survival anchor recipe and no defined lifetime"
+    ]
+  },
+  "candidate": {
+    "commit": null,
+    "version": null,
+    "runtime_jar": null,
+    "sha256": null,
+    "jar_path": null,
+    "recorded_utc": null,
+    "actual_ordinary_entry_dimension": null,
+    "actual_terrain_revision": null,
+    "preflight_passed": null
+  },
+  "required_runtime": {
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.252",
+    "java_feature": 21,
+    "reference_java_vendor": "Microsoft OpenJDK",
+    "reference_java_version": "21.0.12.1+1-LTS",
+    "jvm_max_heap_mib": 4096,
+    "additional_mods": [],
+    "external_datapacks": [],
+    "resource_packs": [
+      "minecraft:default"
+    ],
+    "shaders": false
+  },
+  "client_settings": {
+    "language": "ru_ru",
+    "render_distance_chunks": 6,
+    "simulation_distance_chunks": 5,
+    "fov_degrees": 70,
+    "brightness_percent": 50,
+    "gui_scale": 3,
+    "max_fps": 60,
+    "window_width": 1280,
+    "window_height": 720,
+    "fullscreen": false,
+    "sounds_enabled": true,
+    "night_vision": false,
+    "creative_flight": false
+  },
+  "server_settings": {
+    "view_distance": 6,
+    "simulation_distance": 5,
+    "allow_flight": false
+  },
+  "world_settings": {
+    "world_preset": "minecraft:normal",
+    "initial_dimension": "minecraft:overworld",
+    "game_mode": "survival",
+    "difficulty": "normal",
+    "hardcore": false,
+    "commands": false,
+    "bonus_chest": false,
+    "generate_structures": true,
+    "initial_inventory": "empty",
+    "prepared_materials": false,
+    "prepared_experience": false,
+    "preopened_mod_recipes": false,
+    "spawn": "natural_unmodified",
+    "gamerules": {
+      "keepInventory": false,
+      "doMobSpawning": true,
+      "doDaylightCycle": true,
+      "doWeatherCycle": true,
+      "randomTickSpeed": 3
+    },
+    "all_other_gamerules": "Minecraft defaults"
+  },
+  "gate": {
+    "required_arrival_dimension": "interstice:islands_v6",
+    "required_generator_type": "interstice:coupled_islands",
+    "required_terrain_revision": 6,
+    "required_noise_settings": "interstice:islands_v6",
+    "required_evidence": [
+      "SHA256 of launched JAR",
+      "New ordinary anomaly entry from Overworld in separate disposable preflight world",
+      "F3 actual dimension screenshot",
+      "Stopped-save player Dimension and level.dat dimension generator fields",
+      "Native advancement and recipe unlock evidence",
+      "Ordinary return evidence"
+    ],
+    "forbidden_substitutions": [
+      "explore command",
+      "teleport",
+      "edited save or RiftLinks",
+      "preexisting portal",
+      "creative tour",
+      "owner preview world",
+      "mock/native prepared-supplies smoke"
+    ],
+    "unknown_is_pass": false
+  },
+  "sampling": {
+    "seed_replacement_allowed": false,
+    "minimum_seed_assignments": 6,
+    "preferred_independent_first_time_testers": 6,
+    "repeated_tester_runs_classification": "experienced_repeat",
+    "active_minutes_budget_per_seed": 240,
+    "session_minutes_target": 60,
+    "external_hint_contaminates_remaining_blind_run": true,
+    "counts": "completed recipes/batches, placed/mined blocks and attempted entries/returns counted separately"
+  },
+  "seeds": [
+    {
+      "session_id": "S01",
+      "seed_decimal": "0",
+      "world_name": "v6-blind-S01-seed-0",
+      "tester_id": null,
+      "status": "not_run",
+      "result": null
+    },
+    {
+      "session_id": "S02",
+      "seed_decimal": "1",
+      "world_name": "v6-blind-S02-seed-1",
+      "tester_id": null,
+      "status": "not_run",
+      "result": null
+    },
+    {
+      "session_id": "S03",
+      "seed_decimal": "-1",
+      "world_name": "v6-blind-S03-seed--1",
+      "tester_id": null,
+      "status": "not_run",
+      "result": null
+    },
+    {
+      "session_id": "S04",
+      "seed_decimal": "20261006",
+      "world_name": "v6-blind-S04-seed-20261006",
+      "tester_id": null,
+      "status": "not_run",
+      "result": null
+    },
+    {
+      "session_id": "S05",
+      "seed_decimal": "76198123",
+      "world_name": "v6-blind-S05-seed-76198123",
+      "tester_id": null,
+      "status": "not_run",
+      "result": null
+    },
+    {
+      "session_id": "S06",
+      "seed_decimal": "4294967297",
+      "world_name": "v6-blind-S06-seed-4294967297",
+      "tester_id": null,
+      "status": "not_run",
+      "result": null
+    }
+  ],
+  "milestones": [
+    {
+      "id": "entry_discovery",
+      "label": "Самостоятельное обнаружение входа"
+    },
+    {
+      "id": "first_anomaly",
+      "label": "Первый штатный вход в V6"
+    },
+    {
+      "id": "natural_tide_survival",
+      "label": "Настоящий прилив"
+    },
+    {
+      "id": "silver_and_coupler",
+      "label": "Добыча серебра и первой мембраны"
+    },
+    {
+      "id": "safe_return",
+      "label": "Безопасный возврат с добычей"
+    },
+    {
+      "id": "permanent_portal",
+      "label": "Постоянный портал"
+    },
+    {
+      "id": "retort",
+      "label": "Оплаченная партия реторты"
+    },
+    {
+      "id": "local_food_farm",
+      "label": "Местная еда и ферма"
+    },
+    {
+      "id": "backpack",
+      "label": "Полезный рюкзак и cold сохранение"
+    },
+    {
+      "id": "useful_transport",
+      "label": "Полезный транспорт"
+    },
+    {
+      "id": "independent_repeat",
+      "label": "Самостоятельная повторная экспедиция"
+    }
+  ],
+  "logs": {
+    "sessions": "sessions.csv",
+    "timings": "timings.csv",
+    "events": "events.csv",
+    "deaths_losses": "deaths_losses.csv",
+    "external_hints": "external_hints.csv",
+    "encoding": "UTF-8",
+    "delimiter": ",",
+    "blank_semantics": "not measured, never an implied zero"
+  },
+  "separate_acceptance": [
+    "dedicated server with two actual clients",
+    "server and client cold network restart",
+    "same-hardware V5/V6 performance",
+    "natural ecology acceptance"
+  ],
+  "source_references": [
+    "../../V6_REQUEST.txt sections 19-21",
+    "../../V6_PREVIEW.md",
+    "../../verification/V6_PREVIEW.json",
+    "../../V6_FULL_MATRIX.md"
+  ]
+}

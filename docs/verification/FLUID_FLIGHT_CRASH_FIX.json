@@ -1,0 +1,329 @@
+{
+  "passed": true,
+  "date": "2026-10-10",
+  "core_version": "0.7.0-preview.5",
+  "mod_sha256": "85425bd89242f44a077903e9794d16ac2d43819a4a366eccd0b2efa8114f9e83",
+  "release": "techmagic-0-1-0-alpha-7-flight",
+  "sequence": 7,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "java_major": 21,
+  "client_jars": 62,
+  "server_jars": 49,
+  "manifest_files": 70,
+  "actual_dimension": "interstice:islands_v6",
+  "user_crash": {
+    "time": "2026-10-10 16:10:29 Asia/Yekaterinburg",
+    "exception": "ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4",
+    "site": "Sodium0.8.13 ChunkVertexConsumer.addVertex via FluidClient.emitQuad/oceanPolygon/renderOcean",
+    "block": [
+      -110,
+      217,
+      549
+    ],
+    "state": "interstice:light_sea[chaotic=true,level=0]",
+    "player_position": [
+      -170.12,
+      165.61,
+      571.28
+    ],
+    "private_raw_report_committed": false
+  },
+  "cause": "A second float-near-duplicate edge in a clipped triangle is rejected by Sodium0.8.13, which leaves vertexIndex4; the next vertex crashes. New emitter rejects the invisible quad before writing any vertex.",
+  "native_regression": {
+    "actual_dimension": "interstice:islands_v6",
+    "actual_sodium_api_contract": {
+      "actual_mesh_vertex_type": "foundry.veil.forge.compat.sodium.VeilChunkVertex",
+      "buffer_constructor": "public net.caffeinemc.mods.sodium.client.render.chunk.vertex.builder.ChunkMeshBufferBuilder(net.caffeinemc.mods.sodium.client.render.chunk.vertex.format.ChunkVertexType,int)",
+      "collector_class": "net.caffeinemc.mods.sodium.client.render.chunk.translucent_sorting.TranslucentGeometryCollector",
+      "collector_constructor": "public net.caffeinemc.mods.sodium.client.render.chunk.translucent_sorting.TranslucentGeometryCollector(net.minecraft.core.SectionPos,net.caffeinemc.mods.sodium.client.render.chunk.translucent_sorting.SortBehavior)",
+      "consumer_class": "net.caffeinemc.mods.sodium.client.render.chunk.compile.buffers.ChunkVertexConsumer",
+      "consumer_constructor": "public net.caffeinemc.mods.sodium.client.render.chunk.compile.buffers.ChunkVertexConsumer(net.caffeinemc.mods.sodium.client.render.chunk.compile.buffers.ChunkModelBuilder)",
+      "material": "DefaultMaterials.TRANSLUCENT",
+      "mesh_buffer_class": "net.caffeinemc.mods.sodium.client.render.chunk.vertex.builder.ChunkMeshBufferBuilder",
+      "model_destination_proxy_only": true,
+      "real_collector_required_and_non_null": true,
+      "sort_behavior": "DYNAMIC_DEFER_NEARBY_ZERO_FRAMES"
+    },
+    "all_owned_native_buffers_destroyed": true,
+    "cases": [
+      {
+        "expected_exception": "java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4",
+        "name": "native_unfiltered_witness_reproduces_index4",
+        "native_mesh_vertex_count": 0,
+        "native_quad_splitting_enabled": true,
+        "passed": true,
+        "vertex_index_after_rejected_quad": 4,
+        "written_attributes_after_rejected_quad": 0
+      },
+      {
+        "expected_native_mesh_vertex_count": 0,
+        "name": "patched_witness_skipped_before_any_partial_write",
+        "native_mesh_vertex_count": 0,
+        "native_quad_splitting_enabled": true,
+        "passed": true,
+        "vertex_index_after": 0,
+        "written_attributes_after": 0
+      },
+      {
+        "expected_native_mesh_vertex_count": 8,
+        "name": "skipped_witness_then_valid_quad_same_consumer",
+        "native_mesh_vertex_count": 8,
+        "native_quad_splitting_enabled": true,
+        "passed": true,
+        "vertex_index_after": 0,
+        "written_attributes_after": 0
+      },
+      {
+        "expected_native_mesh_vertex_count": 8,
+        "name": "normal_quad_both_windings_retained",
+        "native_mesh_vertex_count": 8,
+        "native_quad_splitting_enabled": true,
+        "passed": true,
+        "vertex_index_after": 0,
+        "written_attributes_after": 0
+      },
+      {
+        "expected_native_mesh_vertex_count": 8,
+        "name": "triangle_one_repeated_vertex_both_windings_retained",
+        "native_mesh_vertex_count": 8,
+        "native_quad_splitting_enabled": true,
+        "passed": true,
+        "vertex_index_after": 0,
+        "written_attributes_after": 0
+      },
+      {
+        "expected_native_mesh_vertex_count": 8,
+        "name": "edge_exactly_pinned_epsilon_is_retained",
+        "native_mesh_vertex_count": 8,
+        "native_quad_splitting_enabled": true,
+        "passed": true,
+        "vertex_index_after": 0,
+        "written_attributes_after": 0
+      },
+      {
+        "expected_native_mesh_vertex_count": 0,
+        "name": "nonfinite_nan_is_skipped_before_any_write",
+        "native_mesh_vertex_count": 0,
+        "native_quad_splitting_enabled": true,
+        "passed": true,
+        "vertex_index_after": 0,
+        "written_attributes_after": 0
+      },
+      {
+        "expected_native_mesh_vertex_count": 0,
+        "name": "nonfinite_infinity_is_skipped_before_any_write",
+        "native_mesh_vertex_count": 0,
+        "native_quad_splitting_enabled": true,
+        "passed": true,
+        "vertex_index_after": 0,
+        "written_attributes_after": 0
+      },
+      {
+        "expected_native_mesh_vertex_count": 24,
+        "name": "actual_ocean_polygon_crash_block_clipping_retains_three_triangles",
+        "native_mesh_vertex_count": 24,
+        "native_quad_splitting_enabled": true,
+        "passed": true,
+        "vertex_index_after": 0,
+        "written_attributes_after": 0
+      }
+    ],
+    "client_geometry_equals_tall": true,
+    "crash_block": "-110, 217, 549",
+    "global_options_modified": false,
+    "interstice_version": "0.7.0-preview.5",
+    "iris_version": "1.8.14-beta.1+mc1.21.1",
+    "native_client_height": 256,
+    "native_crash_block_corner_heights": [
+      217.41330307761075,
+      217.81613547813896,
+      218.2763512254492,
+      217.9999978678956
+    ],
+    "native_level_slice_geometry_equals_client": true,
+    "owned_native_buffers_created": 9,
+    "owned_native_buffers_destroyed": 9,
+    "passed": true,
+    "production_client_jar_count": 62,
+    "profile": "D:\\repos\\erezcraft\\.local\\verification\\fluid-flight-20261010",
+    "sodium_version": "0.8.13+mc1.21.1",
+    "synthetic_vertex_consumer_used": false,
+    "veil_version": "4.3.2",
+    "witness_float_vertices": [
+      [
+        2.0,
+        9.413303,
+        5.0
+      ],
+      [
+        2.0000076,
+        10.0,
+        6.0
+      ],
+      [
+        2.0,
+        9.999998,
+        6.0
+      ],
+      [
+        2.0,
+        9.999998,
+        6.0
+      ]
+    ],
+    "world_blocks_modified": false
+  },
+  "native_flight_frames": [
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "index": 0,
+      "loaded_native_client_chunks": 335,
+      "player_x": -210.0,
+      "player_y": 172.0,
+      "player_z": 256.0
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "index": 1,
+      "loaded_native_client_chunks": 346,
+      "player_x": -195.0,
+      "player_y": 172.0,
+      "player_z": 352.0
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "index": 2,
+      "loaded_native_client_chunks": 337,
+      "player_x": -180.0,
+      "player_y": 172.0,
+      "player_z": 448.0
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "crash_block_state": "Block{interstice:light_sea}[chaotic=true,level=0]",
+      "index": 3,
+      "loaded_native_client_chunks": 309,
+      "player_x": -170.12,
+      "player_y": 165.61,
+      "player_z": 571.28
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "crash_block_state": "Block{interstice:light_sea}[chaotic=true,level=0]",
+      "index": 4,
+      "loaded_native_client_chunks": 359,
+      "player_x": -110.0,
+      "player_y": 172.0,
+      "player_z": 549.0
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "crash_block_state": "Block{interstice:light_sea}[chaotic=true,level=0]",
+      "index": 5,
+      "loaded_native_client_chunks": 373,
+      "player_x": -95.0,
+      "player_y": 172.0,
+      "player_z": 560.0
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "crash_block_state": "Block{interstice:light_sea}[chaotic=true,level=0]",
+      "index": 6,
+      "loaded_native_client_chunks": 384,
+      "player_x": -112.0,
+      "player_y": 172.0,
+      "player_z": 544.0
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "crash_block_state": "Block{interstice:light_sea}[chaotic=true,level=0]",
+      "index": 7,
+      "loaded_native_client_chunks": 381,
+      "player_x": -96.0,
+      "player_y": 172.0,
+      "player_z": 528.0
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "index": 8,
+      "loaded_native_client_chunks": 365,
+      "player_x": -160.0,
+      "player_y": 172.0,
+      "player_z": 608.0
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "index": 9,
+      "loaded_native_client_chunks": 394,
+      "player_x": -220.0,
+      "player_y": 172.0,
+      "player_z": 448.0
+    },
+    {
+      "actual_client_ticks_at_pose": 120,
+      "actual_dimension": "interstice:islands_v6",
+      "index": 10,
+      "loaded_native_client_chunks": 430,
+      "player_x": -220.5,
+      "player_y": 172.0,
+      "player_z": 192.5
+    }
+  ],
+  "native_receipt": "D:\\repos\\erezcraft\\.local\\verification\\fluid-flight-20261010\\ocean-validation.json",
+  "source_world_used": "Only closed own completed verification world, never a user world",
+  "worldgen_classes_byte_identical": 117,
+  "jar_entries_changed_since_preview4": [
+    "META-INF/neoforge.mods.toml",
+    "pro/erez/interstice/client/FluidClient.class"
+  ],
+  "third_party_mods_changed": false,
+  "shaders_changed": false,
+  "unchanged_pack_files": 68,
+  "dh_regression_preserved": {
+    "native_mesh_probe_valid": true,
+    "critical_air_band_quads": 0,
+    "far_depth_pixels": 10486,
+    "upper_sea_source_full_bright": true,
+    "upper_sea_mesh_emitted_light": true,
+    "global_cave_culling": true,
+    "global_quality": "MEDIUM",
+    "workers": 1
+  },
+  "shaders_enabled_in_native_flight": false,
+  "server_capacity_verified": false,
+  "installed_on_owner_pc": true,
+  "owner_existing_world_files_preserved": 480,
+  "owner_preferences_preserved": [
+    "options.txt",
+    "config/DistantHorizons.toml",
+    "config/iris.properties"
+  ],
+  "installed_changed_files": 2,
+  "repeat_installer": {
+    "files_checked": 70,
+    "game_server_contacted": false,
+    "game_started": false,
+    "instance": "D:/EREZCRAFT/data/stable\\instances/archipelago",
+    "passed": true,
+    "release": "techmagic-0-1-0-alpha-7-flight",
+    "repaired": 0,
+    "runtime": {
+      "java_executable": "D:\\EREZCRAFT\\data\\stable\\runtime\\jvm\\java-runtime-delta\\bin\\javaw.exe",
+      "java_major": 21,
+      "minecraft": "1.21.1",
+      "neoforge": "21.1.252"
+    }
+  },
+  "installed_core_sha256": "85425bd89242f44a077903e9794d16ac2d43819a4a366eccd0b2efa8114f9e83"
+}

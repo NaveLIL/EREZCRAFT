@@ -1,0 +1,390 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "checked_utc": "2026-10-10T03:45:55.194438+00:00",
+  "scope": "Pinned artifact hashes, actual metadata and combined native client startup verified",
+  "mods": [
+    {
+      "project": "jei",
+      "project_id": "u6dRKJwZ",
+      "role": "recipes",
+      "version": "19.51.0.418",
+      "version_id": "ufHUqt9b",
+      "filename": "jei-1.21.1-neoforge-19.51.0.418.jar",
+      "bytes": 1804792,
+      "sha512": "a6ca3abc3080f6f41033a77cb955fefe9f9ebae795c33546227f555b2d31e8d4131cc705126d14a3fbabb31097fc0e876dc0bbeb05ad907a1b796f21e57527bf",
+      "sha256": "8bc3936d869e4040a5649c58b7e8be1c78c82a245c0dc07bdd68ab49121a222c",
+      "download_url": "https://cdn.modrinth.com/data/u6dRKJwZ/versions/ufHUqt9b/jei-1.21.1-neoforge-19.51.0.418.jar",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "api_dependencies": [],
+      "mod_ids": {
+        "jei": "19.51.0.418"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.238,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "jei"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21, 1.21.1)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "jei"
+        }
+      ],
+      "runtime_verified": true
+    },
+    {
+      "project": "jade",
+      "project_id": "nvQzSEkH",
+      "role": "inspection",
+      "version": "15.10.6+neoforge",
+      "version_id": "eYz2YBGT",
+      "filename": "Jade-1.21.1-NeoForge-15.10.6.jar",
+      "bytes": 726853,
+      "sha512": "dad9755dce8d85d914fc4df2baa0211f13e5839a71c1925fdd01f69081a95e30a2934e6273f8b01f0169adebe7a9dae57a8d904de0c4cb36dc17369bb474f0f2",
+      "sha256": "276f1f65a20d04f536989c4f311949d770b52c440c23c2b904a08860f3c93810",
+      "download_url": "https://cdn.modrinth.com/data/nvQzSEkH/versions/eYz2YBGT/Jade-1.21.1-NeoForge-15.10.6.jar",
+      "license": {
+        "id": "CC-BY-NC-SA-4.0",
+        "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+        "url": null
+      },
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "u6dRKJwZ",
+          "file_name": null,
+          "dependency_type": "optional"
+        }
+      ],
+      "mod_ids": {
+        "jade": "${file.jarVersion}"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.143, )",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "jade"
+        }
+      ],
+      "runtime_verified": true
+    },
+    {
+      "project": "mekanism-generators",
+      "project_id": "OFVYKsAk",
+      "role": "power_generation",
+      "version": "10.7.19.85",
+      "version_id": "a6gl7srE",
+      "filename": "MekanismGenerators-1.21.1-10.7.19.85.jar",
+      "bytes": 1114598,
+      "sha512": "6c3d5b7ea2f67f43c3d169c97de2855a7085f38019cf426e015ccc8ca9bc4f66e96b1cdf4a9afdc92bef7b2e236f16c81415ed5e48736805d5961d29525316d6",
+      "sha256": "0e5783b111e756f27b48c62b2f0e02fff750c77f7985ff809bfadc5f444ba4ac",
+      "download_url": "https://cdn.modrinth.com/data/OFVYKsAk/versions/a6gl7srE/MekanismGenerators-1.21.1-10.7.19.85.jar",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "api_dependencies": [
+        {
+          "version_id": "5KzzycBT",
+          "project_id": "Ce6I4WUE",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "mod_ids": {
+        "mekanismgenerators": "10.7.19"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "mekanism",
+          "type": "required",
+          "versionRange": "[10.7.19]",
+          "ordering": "AFTER",
+          "side": "BOTH",
+          "owner": "mekanismgenerators"
+        }
+      ],
+      "runtime_verified": true
+    },
+    {
+      "project": "createaddition",
+      "project_id": "kU1G12Nn",
+      "role": "create_electric_bridge",
+      "version": "neoforge-1.21.1-1.6.0",
+      "version_id": "qPr8V4G2",
+      "filename": "createaddition-1.6.0.jar",
+      "bytes": 1661802,
+      "sha512": "e3a31eefb15d37bd1a2ba9012d0c00ec92f7c9e57b7a35c993676ea0cc85ba4f35a055a9f98d57636f24a0562d6da18b4e90713f4f46d47959666a097a6a5cea",
+      "sha256": "41876c3780b70365a1848994d146a73423cc19fbe86485885795d9e7d855e7e9",
+      "download_url": "https://cdn.modrinth.com/data/kU1G12Nn/versions/qPr8V4G2/createaddition-1.6.0.jar",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": "https://tldrlegal.com/license/mit-license"
+      },
+      "api_dependencies": [],
+      "mod_ids": {
+        "createaddition": "1.6.0",
+        "sablecompanion": "1.6.0"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.219,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "createaddition"
+        },
+        {
+          "modId": "create",
+          "type": "required",
+          "versionRange": "[6.0.7,6.1.0)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "createaddition"
+        },
+        {
+          "modId": "jei",
+          "type": "optional",
+          "versionRange": "[15.0.0.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "createaddition"
+        },
+        {
+          "modId": "computercraft",
+          "type": "optional",
+          "versionRange": "[0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "createaddition"
+        },
+        {
+          "modId": "simulated",
+          "type": "optional",
+          "ordering": "AFTER",
+          "owner": "createaddition"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1]",
+          "ordering": "NONE",
+          "owner": "createaddition"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.1.80,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "sablecompanion"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "sablecompanion"
+        }
+      ],
+      "runtime_verified": true
+    },
+    {
+      "project": "storagedrawers",
+      "project_id": "guitPqEi",
+      "role": "early_storage",
+      "version": "1.21.1-13.11.4",
+      "version_id": "px0CCB06",
+      "filename": "StorageDrawers-neoforge-1.21.1-13.11.4.jar",
+      "bytes": 1131420,
+      "sha512": "df97b8b5053a902264a236a71e7585b78d9d48a0bce585033aa8b169896d775f6fda462cfc77431af79cc596ab356eb9642e0c69a205a46b02d4d6f7ab3e74e9",
+      "sha256": "7d768aaaecbd0228c57d3a3c1fcee0c04469a42ea218925f93763ed33afe566c",
+      "download_url": "https://cdn.modrinth.com/data/guitPqEi/versions/px0CCB06/StorageDrawers-neoforge-1.21.1-13.11.4.jar",
+      "license": {
+        "id": "MIT",
+        "name": "MIT License",
+        "url": null
+      },
+      "api_dependencies": [],
+      "mod_ids": {
+        "storagedrawers": "13.11.4"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,1.21.1]",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "storagedrawers"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.0,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "storagedrawers"
+        }
+      ],
+      "runtime_verified": true
+    },
+    {
+      "project": "mouse-tweaks",
+      "project_id": "aC3cM3Vq",
+      "role": "client_inventory",
+      "version": "1.21-2.26.1-neoforge",
+      "version_id": "9I21YYxf",
+      "filename": "MouseTweaks-neoforge-mc1.21-2.26.1.jar",
+      "bytes": 73938,
+      "sha512": "f95c0cc881211ee0442434976775e07aae40b4a2ba4e3a85455bc57ca9d3c991e239cd98374a8abd442dc9c378dcd9001e2caa1bf69991d424b5652dd7f3483b",
+      "sha256": "68e6f4201c5de97b77929a7215c9552495696ca6a3bf3ae4eacc34e135f6cc8b",
+      "download_url": "https://cdn.modrinth.com/data/aC3cM3Vq/versions/9I21YYxf/MouseTweaks-neoforge-mc1.21-2.26.1.jar",
+      "license": {
+        "id": "BSD-3-Clause",
+        "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+        "url": null
+      },
+      "api_dependencies": [],
+      "mod_ids": {
+        "mousetweaks": "2.26.1"
+      },
+      "actual_dependencies": [],
+      "runtime_verified": true
+    },
+    {
+      "project": "crafting-tweaks",
+      "project_id": "DMu0oBKf",
+      "role": "crafting_qol",
+      "version": "21.1.11+neoforge-1.21.1",
+      "version_id": "IhkQpEve",
+      "filename": "craftingtweaks-neoforge-1.21.1-21.1.11.jar",
+      "bytes": 256086,
+      "sha512": "e1869211c2e037bdaadbe9b9f592d4ccfb7ab94d7ba6803629d6525945edc05db973db6bd7568f2af4550ae4616ae6cbb832e1684412ba439d37f523b564d9a7",
+      "sha256": "0964fefc4a07120a53232b2d934fac4baf15fdaa99b69add30a18a642bc1cf98",
+      "download_url": "https://cdn.modrinth.com/data/DMu0oBKf/versions/IhkQpEve/craftingtweaks-neoforge-1.21.1-21.1.11.jar",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": "https://mods.twelveiterations.com/permissions"
+      },
+      "api_dependencies": [
+        {
+          "version_id": null,
+          "project_id": "MBAkmtvl",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "mod_ids": {
+        "craftingtweaks": "21.1.11"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "craftingtweaks"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "craftingtweaks"
+        },
+        {
+          "modId": "balm",
+          "type": "required",
+          "versionRange": "[21.0.48,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "craftingtweaks"
+        }
+      ],
+      "runtime_verified": true
+    },
+    {
+      "project": "balm",
+      "project_id": "MBAkmtvl",
+      "role": "library",
+      "version": "21.0.66+neoforge-1.21.1",
+      "version_id": "CquiaiDj",
+      "filename": "balm-neoforge-1.21.1-21.0.66.jar",
+      "bytes": 783793,
+      "sha512": "0262d51c0e931d10c3dccefb3b5426a1622edecab243d4b15dce07a23309641370184776739765067d292d808242d088c6fbf249762689824eff9ba42c2d1e63",
+      "sha256": "6be660e1f6d169553bf44f66d4f78bb9e96a1d66ce108d9608819e3ce6bfba34",
+      "download_url": "https://cdn.modrinth.com/data/MBAkmtvl/versions/CquiaiDj/balm-neoforge-1.21.1-21.0.66.jar",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": "https://mods.twelveiterations.com/permissions"
+      },
+      "api_dependencies": [],
+      "mod_ids": {
+        "balm": "21.0.66",
+        "kuma_api": "21.0.8"
+      },
+      "actual_dependencies": [
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21.0.82-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "balm"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21.1,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "balm"
+        },
+        {
+          "modId": "neoforge",
+          "type": "required",
+          "versionRange": "[21-beta,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "kuma_api"
+        },
+        {
+          "modId": "minecraft",
+          "type": "required",
+          "versionRange": "[1.21,)",
+          "ordering": "NONE",
+          "side": "BOTH",
+          "owner": "kuma_api"
+        }
+      ],
+      "runtime_verified": true
+    }
+  ],
+  "runtime_verified": true,
+  "verification_scope": "Native client title screen with baseline and new mods; machine/gameplay/server load still pending"
+}

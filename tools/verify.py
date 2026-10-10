@@ -22,6 +22,12 @@ ALLOWED.add("runGearGameTestServer")
 ALLOWED.add("runPaletteGallery")
 ALLOWED.add("runFaunaGameTestServer")
 ALLOWED.add("runTensionRealmSmoke")
+ALLOWED.add("runForestCaveGameTestServer")
+ALLOWED.add("runForestCaveSmoke")
+ALLOWED.add("runTechmagicSpineSmoke")
+ALLOWED.add("runTechmagicFoundationSmoke")
+ALLOWED.add("runTechmagicFoundationServer")
+ALLOWED.update(("runTechmagicPregenCreate", "runTechmagicPregenReload"))
 ALLOWED.update({"runV6ProgressionSmoke", "runV6Performance"})
 ALLOWED.add("runLiftGameTestServer")
 ALLOWED.add("runNativeFieldLiftSmoke")
@@ -29,7 +35,9 @@ ALLOWED.update({"runTetherGameTestServer","runGearSmoke","runWinchSmoke"})
 SAVED_ROOTS = ("run/world", "build/playtest/saves", "build/island-smoke/saves/seeded-island-check",
                "build/client-smoke/saves/fluid-chaotic-check",
                "build/client-smoke/saves/fluid-relief-check",
-               "build/client-smoke/saves/fluid-visual-check")
+               "build/client-smoke/saves/fluid-visual-check",
+               ".verification/v6-owner-preview/profile/saves",
+               ".verification/v6-owner-preview-normal/profile/saves")
 
 
 def checksum(path):
@@ -448,7 +456,67 @@ def main():
                 except (OSError, ValueError) as error:
                     record["validation_error"] = str(error)
                     accepted = False
+            if code == 0 and task in ("runTechmagicSpineSmoke", "runTechmagicFoundationSmoke"):
+                profile = evidence / "profiles" / ("techmagicSpineSmoke" if task == "runTechmagicSpineSmoke" else "techmagicFoundationSmoke")
+                try:
+                    result = json.loads((profile / "techmagic-spine-validation.json").read_text(encoding="utf-8"))
+                    record["validation"] = result
+                    expected = {"create": "6.0.10", "sable": "2.0.6", "aeronautics": "1.3.2", "distanthorizons": "3.3.3"}
+                    accepted = accepted and result.get("passed") is True and result.get("world_created") is False
+                    accepted = accepted and all(result.get("loaded_versions", {}).get(mod) == version for mod, version in expected.items())
+                    if task == "runTechmagicFoundationSmoke":
+                        accepted = accepted and result.get("foundation_components", 0) >= 20
+                        accepted = accepted and result.get("max_heap_bytes") == 10 * 1024 ** 3
+                        accepted = accepted and "-XX:+UseZGC" in result.get("jvm_arguments", "") and "-XX:+ZGenerational" in result.get("jvm_arguments", "")
+                except (OSError, ValueError) as error:
+                    record["validation_error"] = str(error); accepted = False
             record["accepted"] = accepted
+            if code == 0 and task == "runTechmagicFoundationServer":
+                try:
+                    result = json.loads((evidence / "profiles" / "techmagicFoundationServer" / "techmagic-foundation-server-validation.json").read_text(encoding="utf-8"))
+                    record["validation"] = result
+                    accepted = accepted and result.get("passed") is True and result.get("actual_v6_dimension") == "interstice:islands_v6"
+                    record["accepted"] = accepted
+                except (OSError, ValueError) as error:
+                    record["validation_error"] = str(error); accepted = False; record["accepted"] = False
+            if code == 0 and task in ("runTechmagicPregenCreate", "runTechmagicPregenReload"):
+                phase = "create" if task.endswith("Create") else "reload"
+                try:
+                    result = json.loads((evidence / "profiles" / "techmagicPregen" / ("techmagic-pregen-" + phase + "-validation.json")).read_text(encoding="utf-8"))
+                    record["validation"] = result
+                    accepted = accepted and result.get("passed") is True and result.get("actual_v6_dimension") == "interstice:islands_v6"
+                    accepted = accepted and [row.get("dimension") for row in result.get("samples", [])] == ["minecraft:overworld", "interstice:islands_v6"]
+                    accepted = accepted and all(len(row.get("chunks", [])) == 9 and all(chunk.get("saved_status") == "minecraft:full" for chunk in row["chunks"]) for row in result.get("samples", []))
+                    accepted = accepted and result.get("production_worlds_modified") is False and result.get("radius_blocks") == 32
+                    if phase == "reload":
+                        accepted = accepted and result.get("creator_pid") != result.get("pid")
+                    else:
+                        accepted = accepted and result.get("completed_chunky_worlds") == ["minecraft:overworld", "interstice:islands_v6"]
+                except (OSError, ValueError) as error:
+                    record["validation_error"] = str(error); accepted = False
+                record["accepted"] = accepted
+            if code == 0 and task == "runForestCaveSmoke":
+                profile = evidence / "profiles" / "forestCaveSmoke"
+                record["validations"] = {}
+                try:
+                    for phase in ("create", "reload"):
+                        result = json.loads((profile / ("forest-caves-" + phase + "-validation.json")).read_text(encoding="utf-8"))
+                        record["validations"][phase] = result
+                        accepted = accepted and result.get("passed") is True and result.get("finished") is True
+                        rows = result.get("worlds", [])
+                        accepted = accepted and [r.get("seed") for r in rows] == [0, 1, -1, 20261006, 76198123, 4294967297]
+                        for row in rows:
+                            metrics = row.get("natural_full" if phase == "create" else "cold_full", {})
+                            accepted = accepted and metrics.get("passed") is True and metrics.get("dimension") == "interstice:islands_v6" and metrics.get("surface_reached") is True
+                            accepted = accepted and metrics.get("distant_horizons_loaded") is True and metrics.get("distant_horizons_version") == "3.3.3"
+                            accepted = accepted and row.get(phase + "_passed") is True and metrics.get("branch_endpoints_reached", 0) >= 2
+                            for frame in row.get("captures", []):
+                                accepted = accepted and (profile / "screenshots" / frame["file"]).is_file()
+                            if phase == "reload":
+                                accepted = accepted and row.get("reload_pid") != result.get("creator_pid")
+                except (OSError, ValueError, KeyError) as error:
+                    record["validation_error"] = str(error); accepted = False
+                record["accepted"] = accepted
             write(evidence / (task + ".json"), record)
             completed.append(task)
             print(task + " exit=" + str(code) + " accepted=" + str(accepted) + " seconds=" + str(record["duration_seconds"]), flush=True)
