@@ -1,0 +1,21 @@
+{
+  "craftingtweaks.configuration.client": "Клиент",
+  "craftingtweaks.configuration.client.disabledAddons": "Отключённые дополнения",
+  "craftingtweaks.configuration.client.disabledAddons.tooltip": "ID модов, для которых нужно отключить поддержку Crafting Tweaks.",
+  "craftingtweaks.configuration.client.hideVanillaCraftingGuide": "Скрыть ванильную книгу рецептов",
+  "craftingtweaks.configuration.client.hideVanillaCraftingGuide.tooltip": "Мы оба знаем, что JEI удобнее. Эта настройка скрывает кнопку ванильной книги рецептов вместо её перемещения.",
+  "craftingtweaks.configuration.client.mode": "Режим",
+  "craftingtweaks.configuration.client.mode.tooltip": "DEFAULT — кнопки и горячие клавиши; BUTTONS — только кнопки; HOTKEYS — только горячие клавиши; DISABLED — полностью отключено.",
+  "craftingtweaks.configuration.client.rightClickCraftsStack": "ПКМ создаёт стопку",
+  "craftingtweaks.configuration.client.rightClickCraftsStack.tooltip": "Нажатие ПКМ по результату крафта на верстаке создаёт полную стопку.",
+  "craftingtweaks.configuration.client.vanillaCraftingGuideOffsetX": "Смещение книги рецептов по X",
+  "craftingtweaks.configuration.client.vanillaCraftingGuideOffsetX.tooltip": "Отступ справа при перемещении кнопки ванильной книги рецептов.",
+  "craftingtweaks.configuration.client.vanillaCraftingGuideOffsetY": "Смещение книги рецептов по Y",
+  "craftingtweaks.configuration.client.vanillaCraftingGuideOffsetY.tooltip": "Отступ сверху при перемещении кнопки ванильной книги рецептов.",
+  "craftingtweaks.configuration.common": "Общее",
+  "craftingtweaks.configuration.common.compressDenylist": "Запрет сжатия",
+  "craftingtweaks.configuration.common.compressDenylist.tooltip": "Список идентификаторов modid:name, которые не будут создаваться клавишей сжатия.",
+  "craftingtweaks.configuration.common.compressRequiresCraftingGrid": "Для сжатия нужна сетка крафта",
+  "craftingtweaks.configuration.common.compressRequiresCraftingGrid.tooltip": "Отключите, чтобы сжатие и распаковка работали вне интерфейсов крафта. В инвентаре игрока это возможно только при установленном на сервере моде.",
+  "key.craftingtweaks.transfer_stack": "Переместить в сетку крафта"
+}

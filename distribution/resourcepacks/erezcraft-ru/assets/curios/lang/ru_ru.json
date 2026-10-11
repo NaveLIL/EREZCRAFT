@@ -1,0 +1,6 @@
+{
+  "curios.networking.failed": "Сбой синхронизации Curios",
+  "curios.tooltip.inactive": "Неактивный слот",
+  "gui.curios.page": "Страница %d / %d",
+  "gui.curios.toggle.cosmetics": "Переключить косметику"
+}

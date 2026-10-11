@@ -1,0 +1,1250 @@
+{
+  "schema": 1,
+  "name": "EREZCRAFT installed client / Interstice 0.7.0-preview.9 / Minecraft 1.21.1 / NeoForge 21.1.252",
+  "checked_date": "2026-10-11",
+  "jars": [
+    {
+      "file": "BrandonsCore-1.21.1-3.2.1.309.jar",
+      "bytes": 1385131,
+      "sha256": "076b44de51c606e6cdd89694ac0a879fc028d4f0103880ef44f47dbcc69f1d23"
+    },
+    {
+      "file": "Chunky-NeoForge-1.4.23.jar",
+      "bytes": 340572,
+      "sha256": "d72f235cf1f56f2c374f52c00bdda5034524b28142305a84cfc123a3f92ad274"
+    },
+    {
+      "file": "CodeChickenLib-1.21.1-4.6.1.529.jar",
+      "bytes": 1538382,
+      "sha256": "8c453d5c49092860e9d7a692eb858ea54c15d0f9598daae524f9590f8edf276f"
+    },
+    {
+      "file": "Controlling-neoforge-1.21.1-19.0.5.jar",
+      "bytes": 77555,
+      "sha256": "cc525fb6b030d9e4d33176983f278919e17b33935e2ca568929bdfa98f2b44a0"
+    },
+    {
+      "file": "DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar",
+      "bytes": 28289212,
+      "sha256": "864e70def5b0d54d619b940b66bb2784e91d3f3fc253064fdc1b3fc5786cbfab"
+    },
+    {
+      "file": "Draconic-Additions-1.21.1-2.6.0.4.jar",
+      "bytes": 1085440,
+      "sha256": "e803fa61de434cd8fe65601e7fd9db77ad18e93ad8f275eb4edfdc548fc5e9ea"
+    },
+    {
+      "file": "Draconic-Evolution-1.21.1-3.1.4.633.jar",
+      "bytes": 6046229,
+      "sha256": "e89f3a23a5478e35099905d7c08f9f6a2ff70289e964904e91f06a7ceeed39b5"
+    },
+    {
+      "file": "FarmersDelight-1.21.1-1.3.4.jar",
+      "bytes": 3160490,
+      "sha256": "139ad7696462c89c03eea463f805abffa552526c5dadaadae221dd9624cb197c"
+    },
+    {
+      "file": "FramedBlocks-10.6.1.jar",
+      "bytes": 4306703,
+      "sha256": "3337f29e1fa3331e8740eef9c20b0750d81fd86d1057fb81012a5c4792aa3369"
+    },
+    {
+      "file": "ImmediatelyFast-NeoForge-1.6.14-1.21.1.jar",
+      "bytes": 365195,
+      "sha256": "15bf9bd6d8e3ae8ad35c5a4d90680424b534d9762d698c0a466965afcab5dd78"
+    },
+    {
+      "file": "InventoryProfilesNext-neoforge-1.21.1-2.2.5.jar",
+      "bytes": 1295466,
+      "sha256": "05f1b8660f74f543fba61d4ce7cf8632d4c69a95b7c15b1a6fd442be2e397ca6"
+    },
+    {
+      "file": "Jade-1.21.1-NeoForge-15.10.6.jar",
+      "bytes": 726853,
+      "sha256": "276f1f65a20d04f536989c4f311949d770b52c440c23c2b904a08860f3c93810"
+    },
+    {
+      "file": "Mekanism-1.21.1-10.7.19.85.jar",
+      "bytes": 11976009,
+      "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43"
+    },
+    {
+      "file": "MekanismGenerators-1.21.1-10.7.19.85.jar",
+      "bytes": 1114598,
+      "sha256": "0e5783b111e756f27b48c62b2f0e02fff750c77f7985ff809bfadc5f444ba4ac"
+    },
+    {
+      "file": "Modern-Industrialization-2.5.10.jar",
+      "bytes": 7292458,
+      "sha256": "94e391b5a4432ec6e391a44e162e32a0475b8c0c3f101944a93297c6dfc068ca"
+    },
+    {
+      "file": "MouseTweaks-neoforge-mc1.21-2.26.1.jar",
+      "bytes": 73938,
+      "sha256": "68e6f4201c5de97b77929a7215c9552495696ca6a3bf3ae4eacc34e135f6cc8b"
+    },
+    {
+      "file": "Searchables-neoforge-1.21.1-1.0.2.jar",
+      "bytes": 77326,
+      "sha256": "ca193f0c69033d8f709f9e073a7c1ef4ea46714e5c2f94eb23ace12781c6aa68"
+    },
+    {
+      "file": "StorageDrawers-neoforge-1.21.1-13.11.4.jar",
+      "bytes": 1131420,
+      "sha256": "7d768aaaecbd0228c57d3a3c1fcee0c04469a42ea218925f93763ed33afe566c"
+    },
+    {
+      "file": "amendments-1.21-2.1.10-neoforge.jar",
+      "bytes": 1168211,
+      "sha256": "a2cbc46342c5f466f3b6e244f8820aa01f9d8381586b2c008b72fb77ae56045e"
+    },
+    {
+      "file": "another_furniture-neoforge-4.0.3.jar",
+      "bytes": 2422436,
+      "sha256": "a416cb33333d7a489c7a7314e918f564787838630b014c281b83adde014457d0"
+    },
+    {
+      "file": "appliedenergistics2-19.2.18.jar",
+      "bytes": 8236552,
+      "sha256": "df15a07f86ca1ca93aa66373f9d5d84dd3d4586631fceb38f4fbc85dad591e39"
+    },
+    {
+      "file": "ars_nouveau-1.21.1-5.13.3.jar",
+      "bytes": 19841105,
+      "sha256": "45c1b6022d8e63464177c1f822bda22c3d6fb66970857fd7677e4e3ccffd259f"
+    },
+    {
+      "file": "athena-neoforge-1.21.1-4.0.6.jar",
+      "bytes": 99944,
+      "sha256": "43699885bbce3343916d4c5c4940cf0e3f9f6f02fdeb46e8655e121b42282ec5"
+    },
+    {
+      "file": "balm-neoforge-1.21.1-21.0.66.jar",
+      "bytes": 783793,
+      "sha256": "6be660e1f6d169553bf44f66d4f78bb9e96a1d66ce108d9608819e3ce6bfba34"
+    },
+    {
+      "file": "buildinggadgets2-1.3.9.jar",
+      "bytes": 3858597,
+      "sha256": "acae3b628fa60ae8d34059b40c696ea282c01d20b14d32a506c4f85dd357b114"
+    },
+    {
+      "file": "chipped-neoforge-1.21.1-4.0.2.jar",
+      "bytes": 15020578,
+      "sha256": "18ac6fd6b30db4922ccc6ee8bea5b113f69587505b7529834f37ace506427291"
+    },
+    {
+      "file": "cloth-config-15.0.140-neoforge.jar",
+      "bytes": 1163890,
+      "sha256": "65e722e0d98431a07c45f8bdd8d529a217cc8c175fde1740248bd5c1b4f3c0d4"
+    },
+    {
+      "file": "craftingtweaks-neoforge-1.21.1-21.1.11.jar",
+      "bytes": 256086,
+      "sha256": "0964fefc4a07120a53232b2d934fac4baf15fdaa99b69add30a18a642bc1cf98"
+    },
+    {
+      "file": "create-1.21.1-6.0.10.jar",
+      "bytes": 19123767,
+      "sha256": "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a"
+    },
+    {
+      "file": "create-aeronautics-bundled-1.21.1-1.3.2.jar",
+      "bytes": 33123131,
+      "sha256": "a3f330d4757640f8715d991a43eedb826e4d0e51558d859c843ae6693bd35f1e"
+    },
+    {
+      "file": "createaddition-1.6.0.jar",
+      "bytes": 1661802,
+      "sha256": "41876c3780b70365a1848994d146a73423cc19fbe86485885795d9e7d855e7e9"
+    },
+    {
+      "file": "curios-neoforge-9.5.1-1.21.1.jar",
+      "bytes": 410690,
+      "sha256": "a45df2125c26219974aba7507ffc9afe7b83acc941a386af3faacb1cc0056fde"
+    },
+    {
+      "file": "derenderpatcher-2.0.0.jar",
+      "bytes": 31329,
+      "sha256": "59d230dc3314e60cd1d875b435e2feec07b40f6bb25da1dadb8a0bfbd925472e"
+    },
+    {
+      "file": "ferritecore-7.0.3-neoforge.jar",
+      "bytes": 121559,
+      "sha256": "d87ea28262715ebff45b8a82d493e6b468e7a4521bc021df5d88302196d030a8"
+    },
+    {
+      "file": "fusion-1.3.16-neoforge-mc1.21.1.jar",
+      "bytes": 947335,
+      "sha256": "29920a6838f4f942947d208349480d7f5737f9fac6411c6eac5f3e824a438048"
+    },
+    {
+      "file": "geckolib-neoforge-1.21.1-4.9.3.jar",
+      "bytes": 634531,
+      "sha256": "20a1995e4074f387ff549e2c57ea79dd7d41ee83c6afb9dd6a6e840e592d1c47"
+    },
+    {
+      "file": "guideme-21.1.19.jar",
+      "bytes": 9311992,
+      "sha256": "2ce254edb931c3c3cf81d69abaf8f4ce5b871bf85e64984f366bf044173bd66a"
+    },
+    {
+      "file": "handcrafted-neoforge-1.21.1-4.0.3.jar",
+      "bytes": 7132842,
+      "sha256": "6f2a776fb28ed07d370899814e5e711fbeebe31396097d78a3b550439b364948"
+    },
+    {
+      "file": "interstice-0.7.0-preview.9.jar",
+      "bytes": 2208800,
+      "sha256": "becc16b4d36348d30be243b0411b338258efed96acc9809b82f55ebc02ecd6aa"
+    },
+    {
+      "file": "iris-neoforge-1.8.14-beta.1-mc1.21.1.jar",
+      "bytes": 2540723,
+      "sha256": "60d5f8bf52f25e9986440f4a4270a6bd986d9cff994510e1108ac1547063b314"
+    },
+    {
+      "file": "jei-1.21.1-neoforge-19.51.0.418.jar",
+      "bytes": 1804792,
+      "sha256": "8bc3936d869e4040a5649c58b7e8be1c78c82a245c0dc07bdd68ab49121a222c"
+    },
+    {
+      "file": "kotlinforforge-5.12.0-all.jar",
+      "bytes": 7279264,
+      "sha256": "2785a4dd6de5c6c56065fd8eb789c82771bd2ee773c30794c23160a3b2c39139"
+    },
+    {
+      "file": "lambdynamiclights-4.8.11-1.21.1.jar",
+      "bytes": 2023375,
+      "sha256": "913b0358b1031828f1e060ea0ee361232dc2a1c82464f488a0a920739ce7c763"
+    },
+    {
+      "file": "libIPN-neoforge-1.21.1-6.6.3.jar",
+      "bytes": 626146,
+      "sha256": "98f061ba69d31764fa10ab7810ca49062633e107a6b261ba3b66dc25ba5fef7b"
+    },
+    {
+      "file": "mcw-doors-1.1.5-mc1.21.1neoforge.jar",
+      "bytes": 1190404,
+      "sha256": "87261e309f5e10c9910169d5acbba613cab3a2d2270698b0bd47e657a45b0518"
+    },
+    {
+      "file": "mcw-furniture-3.4.1-mc1.21.1neoforge.jar",
+      "bytes": 2080436,
+      "sha256": "819fda8059b210e9de8b9275c8b8e0d931054af5a5ad47771c72d9fd4ab85e88"
+    },
+    {
+      "file": "mcw-lights-1.1.5-mc1.21.1neoforge.jar",
+      "bytes": 525744,
+      "sha256": "b27cd68a7673874b0f6d765bdef2a022666cc07ca0e5057209a16d1a535da9e4"
+    },
+    {
+      "file": "mcw-mcwwindows-2.4.2-mc1.21.1neoforge.jar",
+      "bytes": 1261268,
+      "sha256": "8970c40ec622edd34c9b055226b403af08ab441c77303a6dc625ae18005f8184"
+    },
+    {
+      "file": "mcw-roofs-2.3.2-mc1.21.1neoforge.jar",
+      "bytes": 1784829,
+      "sha256": "25c79def993a24b05b0f8494ee9417717d469bc000d5ed7c219b47dcc3b3e9c8"
+    },
+    {
+      "file": "modernfix-neoforge-5.27.26-mc1.21.1.jar",
+      "bytes": 611043,
+      "sha256": "09f6842c63d14b3f1707f1f4a6f4602052f237f7efa9be135e41d3d97acf2a13"
+    },
+    {
+      "file": "moonlight-1.21.1-3.7.1-neoforge.jar",
+      "bytes": 2303727,
+      "sha256": "0a755b1f5bfc40e1553c55471ebe42096eb537d5c7fa5fb6b5a5f145656604db"
+    },
+    {
+      "file": "rechiseled-1.2.6-neoforge-mc1.21.jar",
+      "bytes": 11526036,
+      "sha256": "cd638bb122d7e1afce4f38b1c7da3af99be7b9f523869cfbc15e5347db5f8d9a"
+    },
+    {
+      "file": "rechiseledcreate-1.1.1-neoforge-mc1.21.jar",
+      "bytes": 983177,
+      "sha256": "ba89cd5d1221621ed226cc7f1c26dc84a660cc4f6d122753052429f96d71248d"
+    },
+    {
+      "file": "resourcefullib-neoforge-1.21-3.0.12.jar",
+      "bytes": 484332,
+      "sha256": "5e36f2c69de008dc5795f730c84ab767688f15c810944b585485349a0c911261"
+    },
+    {
+      "file": "sable-neoforge-1.21.1-2.0.6.jar",
+      "bytes": 12986135,
+      "sha256": "9c199157843bf953a47dff625fc5bb41c01a90538d35ad18e6996bbcb8a617c2"
+    },
+    {
+      "file": "sodium-neoforge-0.8.13-mc1.21.1.jar",
+      "bytes": 1292934,
+      "sha256": "575d187b15328d7bddd8a9b1bee64333c22c14735f5780ec49eac0cd5503c08d"
+    },
+    {
+      "file": "supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+      "bytes": 207514,
+      "sha256": "d2ba7b839a2268e4e223457e813d11aa2476c3bf708a7bba691d8fc851778a4b"
+    },
+    {
+      "file": "supermartijn642corelib-1.1.25-neoforge-mc1.21.jar",
+      "bytes": 562683,
+      "sha256": "0824bdd7cd5b5654eeb05dc9b62b42003b081b781009c38dc83ee1e106ca4ce2"
+    },
+    {
+      "file": "supplementaries-1.21.1-3.9.9-neoforge.jar",
+      "bytes": 13548968,
+      "sha256": "d6876ad959d0da4bab0ba182839a0af0e38ef3571345e5e7aea0be572f958e05"
+    },
+    {
+      "file": "xaerominimap-neoforge-1.21.1-26.6.0.jar",
+      "bytes": 2186351,
+      "sha256": "d3398221b2262abfe2d394b588122e5b3fd2e4d8c4bf66a5fd357352fcf51b2e"
+    },
+    {
+      "file": "xaeroworldmap-neoforge-1.21.1-1.47.0.jar",
+      "bytes": 1427078,
+      "sha256": "6a42b6f01bd96b496e5fcc07d4541bad1a699d9ec8ad58ad40d5dcfe23a7d4c7"
+    },
+    {
+      "file": "youre-in-grave-danger-neoforge-2.0.13.jar",
+      "bytes": 448888,
+      "sha256": "dd2142a3c6a9d5b990ab36220be482f7aa9f528755f93b8fef8996f509ddcda2"
+    }
+  ],
+  "languages": {
+    "ae2": {
+      "english_sha256": "9358544473709fb96140a4c0c1fb2c225f1d7b994a2eb0d1d55d7861a82051da",
+      "origins": [
+        "appliedenergistics2-19.2.18.jar"
+      ]
+    },
+    "aeronautics": {
+      "english_sha256": "f4bd7cc4717c4b6b2a2341b50fb88a2521ac53ba85f909f2c220e2477b6bd501",
+      "origins": [
+        "create-aeronautics-bundled-1.21.1-1.3.2.jar!META-INF/jarjar/dev.eriksonn.aeronautics.aeronautics-neoforge-1.21.1-1.3.2.jar"
+      ]
+    },
+    "amendments": {
+      "english_sha256": "e31c940c376fa33ee4b18438861c9a7b0cdcff50841d95162c32373452a7c534",
+      "origins": [
+        "amendments-1.21-2.1.10-neoforge.jar"
+      ]
+    },
+    "another_furniture": {
+      "english_sha256": "3d18485f17a42ec402714516fe24dd88c6bd9a9aa1cf74a47498bf61a200bbb7",
+      "origins": [
+        "another_furniture-neoforge-4.0.3.jar"
+      ]
+    },
+    "ars_nouveau": {
+      "english_sha256": "01fbb9e0e32847fb78d5a8d7cc88efd1ec26a2216d500353d667ab6811e8e593",
+      "origins": [
+        "ars_nouveau-1.21.1-5.13.3.jar"
+      ]
+    },
+    "balm": {
+      "english_sha256": "9fae3ce9989652998ce846aa41777b35c320191c43443531bb9862a28b8397dc",
+      "origins": [
+        "balm-neoforge-1.21.1-21.0.66.jar"
+      ]
+    },
+    "brandonscore": {
+      "english_sha256": "af1a737464c57c10569222d054921d311b1618fd461278055edfc6f85079631d",
+      "origins": [
+        "BrandonsCore-1.21.1-3.2.1.309.jar"
+      ]
+    },
+    "buildinggadgets2": {
+      "english_sha256": "0dbd846072be5d27e8df4bc8deebb7c8cf37f1cfed9daca402a984680be68297",
+      "origins": [
+        "buildinggadgets2-1.3.9.jar"
+      ]
+    },
+    "chipped": {
+      "english_sha256": "1f42f7f2919cecc49e2538d3d51147bf31ded26702eb85db3dd4f4ebb423357e",
+      "origins": [
+        "chipped-neoforge-1.21.1-4.0.2.jar"
+      ]
+    },
+    "cloth-config2": {
+      "english_sha256": "30a02f35d903c13b191d174c7bb1701e16a3254c76c91c4914341826e7be8dea",
+      "origins": [
+        "cloth-config-15.0.140-neoforge.jar"
+      ]
+    },
+    "codechickenlib": {
+      "english_sha256": "758990620186dc8764b0c7d8f40371fb122c6975613f29ebe98ce52ca4d9f550",
+      "origins": [
+        "CodeChickenLib-1.21.1-4.6.1.529.jar"
+      ]
+    },
+    "controlling": {
+      "english_sha256": "848a4b3bd8f7879699aaeff6533e32f36cab0ecb2b38a0898b5d346a7ed2f635",
+      "origins": [
+        "Controlling-neoforge-1.21.1-19.0.5.jar"
+      ]
+    },
+    "craftingtweaks": {
+      "english_sha256": "02d0117ce41c89d772ea61db41075bea999152483b39bbe8b478c5aaaf3ff39b",
+      "origins": [
+        "craftingtweaks-neoforge-1.21.1-21.1.11.jar"
+      ]
+    },
+    "create": {
+      "english_sha256": "801ffddc646023bcd71876cff6bc216ec866d266c0f9508eb5ad268a225e5241",
+      "origins": [
+        "create-1.21.1-6.0.10.jar"
+      ]
+    },
+    "createaddition": {
+      "english_sha256": "61d03d9beef97908bac9a136d2999dd33e548adcea080d2d88863eb858f1b73c",
+      "origins": [
+        "createaddition-1.6.0.jar"
+      ]
+    },
+    "curios": {
+      "english_sha256": "2d0409695995a3fe0e789b42734676d94a8debf150b72d2ebf0620fb9c24786e",
+      "origins": [
+        "curios-neoforge-9.5.1-1.21.1.jar"
+      ]
+    },
+    "distanthorizons": {
+      "english_sha256": "26e2f9252a0ec7f08278c8af2c320ce170e247584a47d7f172bd250d21254e83",
+      "origins": [
+        "DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar"
+      ]
+    },
+    "draconicadditions": {
+      "english_sha256": "3812e17865d8197f1589d6659c0a5ed2058492c7f849d5d2ccc3ee85f3ac1c08",
+      "origins": [
+        "Draconic-Additions-1.21.1-2.6.0.4.jar"
+      ]
+    },
+    "draconicevolution": {
+      "english_sha256": "45576390de534f3f2c1891c97334ddc3d66d908c460871f0dda261e60cc7235a",
+      "origins": [
+        "Draconic-Evolution-1.21.1-3.1.4.633.jar"
+      ]
+    },
+    "farmersdelight": {
+      "english_sha256": "97df1d1408b67e791a61533e3abf8b82335616358bc7ba577349cad2283f90f3",
+      "origins": [
+        "FarmersDelight-1.21.1-1.3.4.jar"
+      ]
+    },
+    "flywheel": {
+      "english_sha256": "0d5da8ebb32197c5efe19ec1df57a21a03ae4576cd2bb379ae45f397d420b031",
+      "origins": [
+        "create-1.21.1-6.0.10.jar!META-INF/jarjar/flywheel-neoforge-1.21.1-1.0.6.jar"
+      ]
+    },
+    "framedblocks": {
+      "english_sha256": "b2b64b9c494b784d1389b06c8d5f659d53ef264a9ee848d32de9b352362d969c",
+      "origins": [
+        "FramedBlocks-10.6.1.jar"
+      ]
+    },
+    "fusion": {
+      "english_sha256": "0ede43426f3914f484cb28ad9300a8199a1f0d8cb67626bfe7e1d99dd89f0dc7",
+      "origins": [
+        "fusion-1.3.16-neoforge-mc1.21.1.jar"
+      ]
+    },
+    "guideme": {
+      "english_sha256": "e99ad552b5f0b9f3f61ea6607a2431cac41c51c2b34cb87bebfcd69e1204915e",
+      "origins": [
+        "guideme-21.1.19.jar"
+      ]
+    },
+    "handcrafted": {
+      "english_sha256": "ec2627204c118a8f30a0f4890f7f4db6dce659582fb733b6b14a932dcc280fbb",
+      "origins": [
+        "handcrafted-neoforge-1.21.1-4.0.3.jar"
+      ]
+    },
+    "interstice": {
+      "english_sha256": "42f07b70883958546cf1c667b7e112d25c4ee88e447b86d931e3f5536deae524",
+      "origins": [
+        "interstice-0.7.0-preview.9.jar"
+      ]
+    },
+    "inventoryprofilesnext": {
+      "english_sha256": "87eca30be336f16465fb88ded75a91ee35687436bc07763b1b68a62fa7f85554",
+      "origins": [
+        "InventoryProfilesNext-neoforge-1.21.1-2.2.5.jar"
+      ]
+    },
+    "iris": {
+      "english_sha256": "f49b6001d191c80a3ee85b497057ffd362f3a1ab43504d5d61b6e19b45c3c709",
+      "origins": [
+        "iris-neoforge-1.8.14-beta.1-mc1.21.1.jar"
+      ]
+    },
+    "jade": {
+      "english_sha256": "5663e01c370b7de9f69ea8bb05927aaf9c437af317951b481cf4daae3c33879a",
+      "origins": [
+        "Jade-1.21.1-NeoForge-15.10.6.jar"
+      ]
+    },
+    "jei": {
+      "english_sha256": "9f17678f0e514f180f707ed28f6cf0f956d3c1c06e4b7dcc1df5db81b1dc7846",
+      "origins": [
+        "jei-1.21.1-neoforge-19.51.0.418.jar"
+      ]
+    },
+    "lambdynlights": {
+      "english_sha256": "3755d6374fd53bdb716a25871ca19adf4b05b3d9406b1a5fb61c484ab2222394",
+      "origins": [
+        "lambdynamiclights-4.8.11-1.21.1.jar"
+      ]
+    },
+    "libipn": {
+      "english_sha256": "dbf8de430f7c26fd8f98db9ad6dc3828116c4d1a9617ddc29aab885d2f5bd3d9",
+      "origins": [
+        "libIPN-neoforge-1.21.1-6.6.3.jar"
+      ]
+    },
+    "mcwdoors": {
+      "english_sha256": "9bd02e260ce51d485c457708d75cd0b915369b7d5ddfc19684535b0aee2a1b0d",
+      "origins": [
+        "mcw-doors-1.1.5-mc1.21.1neoforge.jar"
+      ]
+    },
+    "mcwfurnitures": {
+      "english_sha256": "15ee2f57a8a419380863b10631d1875a1241b498ff91efc23e15bb3acfcf5268",
+      "origins": [
+        "mcw-furniture-3.4.1-mc1.21.1neoforge.jar"
+      ]
+    },
+    "mcwlights": {
+      "english_sha256": "272af0f268a81361ddf79079abfa35a4cf8aca240c1583e28c56202b25fd47d8",
+      "origins": [
+        "mcw-lights-1.1.5-mc1.21.1neoforge.jar"
+      ]
+    },
+    "mcwroofs": {
+      "english_sha256": "7a9cb841fdb64137d10ea31fb1c1192ed003742770af7c168e53684ed5d1e1c9",
+      "origins": [
+        "mcw-roofs-2.3.2-mc1.21.1neoforge.jar"
+      ]
+    },
+    "mcwwindows": {
+      "english_sha256": "6afe029efcd4683e9a3506577dbc9c2b156ac498ba6662174d82e2fb105fb462",
+      "origins": [
+        "mcw-mcwwindows-2.4.2-mc1.21.1neoforge.jar"
+      ]
+    },
+    "mekanism": {
+      "english_sha256": "4ce1be5a9f98f8df5699407f791d0ee76a482920c4cc36ec605ae50a266dd2a8",
+      "origins": [
+        "Mekanism-1.21.1-10.7.19.85.jar"
+      ]
+    },
+    "mekanismgenerators": {
+      "english_sha256": "93059169f89263f168bac677ed6c2343607186c6cad1c7a4ab39ef650261584c",
+      "origins": [
+        "MekanismGenerators-1.21.1-10.7.19.85.jar"
+      ]
+    },
+    "modern_industrialization": {
+      "english_sha256": "cc2e5a8ee61e1fc971c0ecde0cb7bb80d66cdb7dffdf5a8aca4e5c0a6534b474",
+      "origins": [
+        "Modern-Industrialization-2.5.10.jar"
+      ]
+    },
+    "modernfix": {
+      "english_sha256": "30bc8818720bd8baeb7ec153bab620c0b4f339d0611f0d839a8b866ce26f696f",
+      "origins": [
+        "modernfix-neoforge-5.27.26-mc1.21.1.jar"
+      ]
+    },
+    "moonlight": {
+      "english_sha256": "6c0b026bffde8b1c4bb293b29601bc33fc2ea80741e079eb8cb88897c891d1ef",
+      "origins": [
+        "moonlight-1.21.1-3.7.1-neoforge.jar"
+      ]
+    },
+    "nuggets": {
+      "english_sha256": "b4cad7b782231a54bf4c5bedead94fa5d442c370a6930a14eae5eba425d9c909",
+      "origins": [
+        "ars_nouveau-1.21.1-5.13.3.jar!META-INF/jarjar/nuggets-neoforge-1.21.1-1.1.0.48.jar"
+      ]
+    },
+    "offroad": {
+      "english_sha256": "a9a812ac4ff58713b8d27e89bfe9a4acd0f3c0c3072e81dd51b8bf3cd04e6fa0",
+      "origins": [
+        "create-aeronautics-bundled-1.21.1-1.3.2.jar!META-INF/jarjar/dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.3.2.jar"
+      ]
+    },
+    "ponder": {
+      "english_sha256": "424681af0405006f086947a98470134a89789d6bcbd9827dc616cdb1da94acc2",
+      "origins": [
+        "create-1.21.1-6.0.10.jar!META-INF/jarjar/ponder-neoforge-1.0.82+mc1.21.1.jar"
+      ]
+    },
+    "rechiseled": {
+      "english_sha256": "79ecece4829efbcde84977495d32b756eb7ec6e1fb902321e59281e3b44e5681",
+      "origins": [
+        "rechiseled-1.2.6-neoforge-mc1.21.jar"
+      ]
+    },
+    "rechiseledcreate": {
+      "english_sha256": "85c6503c2b1518f6aff921cbf1e1b61a878ebc74390a966b21db614f41406f28",
+      "origins": [
+        "rechiseledcreate-1.1.1-neoforge-mc1.21.jar"
+      ]
+    },
+    "sable": {
+      "english_sha256": "837d248092c5d26828c1645005a910d3a23f2fc47ced0a19f5c678fc1c0b0e5c",
+      "origins": [
+        "sable-neoforge-1.21.1-2.0.6.jar"
+      ]
+    },
+    "searchables": {
+      "english_sha256": "70db4545b2dc9a50c98f89a63951e5df280159ed4d2739b38ae1df0debca5b46",
+      "origins": [
+        "Searchables-neoforge-1.21.1-1.0.2.jar"
+      ]
+    },
+    "simulated": {
+      "english_sha256": "4dc191ae23d66eb9cb683520d5f14437eeb91648acb9c9abcf22496a7c306a22",
+      "origins": [
+        "create-aeronautics-bundled-1.21.1-1.3.2.jar!META-INF/jarjar/dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.3.2.jar"
+      ]
+    },
+    "sodium": {
+      "english_sha256": "743daff7e79e76cfc9e85b94bc837dd08c79e1b69cd0aa6c8df454045d9e8187",
+      "origins": [
+        "sodium-neoforge-0.8.13-mc1.21.1.jar!META-INF/jarjar/net.caffeinemc.sodium-neoforge-0.8.13+mc1.21.1-mod.jar"
+      ]
+    },
+    "storagedrawers": {
+      "english_sha256": "caf350e8e4d59a7c564f87c830ad1bb2a67c44a709fb5008ed1ed9c9500d28ca",
+      "origins": [
+        "StorageDrawers-neoforge-1.21.1-13.11.4.jar"
+      ]
+    },
+    "supermartijn642corelib": {
+      "english_sha256": "13a2f12cb108d527b025b0bab40c0bc9ed1aa8bf72b077411ac95517ad6fba2d",
+      "origins": [
+        "supermartijn642corelib-1.1.25-neoforge-mc1.21.jar"
+      ]
+    },
+    "supplementaries": {
+      "english_sha256": "942e4814bf60a440520ae08c4cf11f3aaa76586ceb2246dde0cb7bd7dc2de66a",
+      "origins": [
+        "supplementaries-1.21.1-3.9.9-neoforge.jar"
+      ]
+    },
+    "veil": {
+      "english_sha256": "6becb49a1de51e9fa0a36e595cd7e2501214b38b5fd2e4dfcf8a8a3cd350d9d3",
+      "origins": [
+        "sable-neoforge-1.21.1-2.0.6.jar!META-INF/jarjar/veil-neoforge-1.21.1-4.3.2.jar"
+      ]
+    },
+    "xaerobetterpvp": {
+      "english_sha256": "26f7acb82cdc58477433e8911aa774c39c11b82216b0051c882641ca9ac2e5ba",
+      "origins": [
+        "xaerominimap-neoforge-1.21.1-26.6.0.jar"
+      ]
+    },
+    "xaerolib": {
+      "english_sha256": "0aab721509791f8c4b49b96fc4668f19dd416e42015cbfdff42dd35da76791b8",
+      "origins": [
+        "xaerominimap-neoforge-1.21.1-26.6.0.jar!META-INF/jarjar/xaerolib-neoforge-1.21.1-1.7.3.jar",
+        "xaeroworldmap-neoforge-1.21.1-1.47.0.jar!META-INF/jarjar/xaerolib-neoforge-1.21.1-1.7.3.jar"
+      ]
+    },
+    "xaerominimap": {
+      "english_sha256": "b16aa6204e861c71768bc6b00756d4f30a1b8b2784812a41e6af95be97f91289",
+      "origins": [
+        "xaerominimap-neoforge-1.21.1-26.6.0.jar"
+      ]
+    },
+    "xaeroworldmap": {
+      "english_sha256": "897776051f1f28e690609cf30a38be4d9b787687bdccdcead431daaa0b9c9227",
+      "origins": [
+        "xaeroworldmap-neoforge-1.21.1-1.47.0.jar"
+      ]
+    },
+    "yigd": {
+      "english_sha256": "5e76ab57b0eea4197b6249fa327b34a71e1517945e7d0e7146c70e989746a824",
+      "origins": [
+        "youre-in-grave-danger-neoforge-2.0.13.jar"
+      ]
+    }
+  },
+  "extra_keys": [
+    {
+      "namespace": "buildinggadgets2",
+      "key": "Gadgets for Derps",
+      "en": "Gadgets for Derps",
+      "source": "data/buildinggadgets2/patchouli_books/buildinggadgets2book/book.json"
+    },
+    {
+      "namespace": "buildinggadgets2",
+      "key": "Building made easier!",
+      "en": "Building made easier!",
+      "source": "data/buildinggadgets2/patchouli_books/buildinggadgets2book/book.json"
+    }
+  ],
+  "guide_parser": {
+    "mod": "guideme-21.1.19.jar",
+    "source_commit": "52334ccacf15d763ffe318281d38dca8ec7aaeb8"
+  },
+  "english_invariants": [
+    {
+      "ns": "ae2",
+      "key": "achievement.ae2.Root",
+      "en": "Applied Energistics"
+    },
+    {
+      "ns": "ae2",
+      "key": "gui.ae2.CreativeTab",
+      "en": "Applied Energistics 2"
+    },
+    {
+      "ns": "ae2",
+      "key": "gui.ae2.ETAFormat",
+      "en": "HH:mm:ss"
+    },
+    {
+      "ns": "ae2",
+      "key": "gui.ae2.OCTunnel",
+      "en": "OpenComputers"
+    },
+    {
+      "ns": "ae2",
+      "key": "gui.ae2.units.fe",
+      "en": "FE"
+    },
+    {
+      "ns": "ae2",
+      "key": "key.ae2.category",
+      "en": "Applied Energistics 2"
+    },
+    {
+      "ns": "aeronautics",
+      "key": "advancement.aeronautics.root",
+      "en": "Create Aeronautics"
+    },
+    {
+      "ns": "aeronautics",
+      "key": "aeronautics.simulated_section.aeronautics",
+      "en": "Aeronautics"
+    },
+    {
+      "ns": "another_furniture",
+      "key": "item_group.another_furniture.tab",
+      "en": "Another Furniture"
+    },
+    {
+      "ns": "ars_nouveau",
+      "key": "ars_nouveau.position",
+      "en": "X: %1$d Y: %2$d Z: %3$d"
+    },
+    {
+      "ns": "cloth-config2",
+      "key": "modifier.cloth-config.alt",
+      "en": "Alt + %s"
+    },
+    {
+      "ns": "cloth-config2",
+      "key": "modifier.cloth-config.ctrl",
+      "en": "Ctrl + %s"
+    },
+    {
+      "ns": "cloth-config2",
+      "key": "modifier.cloth-config.shift",
+      "en": "Shift + %s"
+    },
+    {
+      "ns": "craftingtweaks",
+      "key": "key.categories.craftingtweaks",
+      "en": "Crafting Tweaks"
+    },
+    {
+      "ns": "create",
+      "key": "create.command.killTPSCommand",
+      "en": "killtps"
+    },
+    {
+      "ns": "create",
+      "key": "create.display_source.value_list.million",
+      "en": "m"
+    },
+    {
+      "ns": "create",
+      "key": "create.generic.daytime.am",
+      "en": "am"
+    },
+    {
+      "ns": "create",
+      "key": "create.generic.daytime.pm",
+      "en": "pm"
+    },
+    {
+      "ns": "create",
+      "key": "create.ponder.mod_name",
+      "en": "Create"
+    },
+    {
+      "ns": "create",
+      "key": "create.tooltip.keyCtrl",
+      "en": "Ctrl"
+    },
+    {
+      "ns": "create",
+      "key": "create.tooltip.keyShift",
+      "en": "Shift"
+    },
+    {
+      "ns": "create",
+      "key": "itemGroup.create.base",
+      "en": "Create"
+    },
+    {
+      "ns": "curios",
+      "key": "curios.name",
+      "en": "Curios"
+    },
+    {
+      "ns": "curios",
+      "key": "key.curios.category",
+      "en": "Curios"
+    },
+    {
+      "ns": "draconicevolution",
+      "key": "gui.draconicevolution.reactor.sas",
+      "en": "SAS"
+    },
+    {
+      "ns": "framedblocks",
+      "key": "framedblocks.key.categories.framedblocks",
+      "en": "FramedBlocks"
+    },
+    {
+      "ns": "framedblocks",
+      "key": "itemGroup.framed_blocks",
+      "en": "FramedBlocks"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "itemGroup.handcrafted.main",
+      "en": "Handcrafted"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.ad_astra.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.ad_astra.title",
+      "en": "Ad Astra"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.apple.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.beach_sunrise_left.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.beach_sunrise_mid.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.beach_sunrise_right.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.broken_birches.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.broken_birches_left_sidepanel.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.broken_birches_right_sidepanel.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.cookies_on_a_plate.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.coral_depths.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.desert_plateau.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.green_woods.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.lava_puddles.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.marigold_meadows.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.misty_mountain_left_sidepanel.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.misty_mountain_right_sidepanel.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.misty_mountains.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.my_man_diorite.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.mysterious_mangroves.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.nian_cat.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.pride_steve.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.rocky_beach.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.safari_sunset.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.small_safari_sunset.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.terrarium.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "handcrafted",
+      "key": "painting.handcrafted.the_cat_and_the_cup.author",
+      "en": "Kekie6"
+    },
+    {
+      "ns": "iris",
+      "key": "iris.keybinds",
+      "en": "Iris"
+    },
+    {
+      "ns": "jade",
+      "key": "modmenu.nameTranslation.jade",
+      "en": "Jade"
+    },
+    {
+      "ns": "jade",
+      "key": "narration.jade.blockpos",
+      "en": "X%s Y%s Z%s "
+    },
+    {
+      "ns": "jade",
+      "key": "config.jade.item_mod_name_extra_msg",
+      "en": "modid"
+    },
+    {
+      "ns": "jade",
+      "key": "jade.theme.jade.top",
+      "en": "One Probe"
+    },
+    {
+      "ns": "jade",
+      "key": "jade.theme.jade.create",
+      "en": "Create"
+    },
+    {
+      "ns": "jei",
+      "key": "_comment",
+      "en": "Debug (for a debug mode, do not need translation)"
+    },
+    {
+      "ns": "jei",
+      "key": "jei.key.combo.shift",
+      "en": "SHIFT + %s"
+    },
+    {
+      "ns": "jei",
+      "key": "jei.key.combo.control",
+      "en": "CTRL + %s"
+    },
+    {
+      "ns": "jei",
+      "key": "jei.key.combo.command",
+      "en": "CMD + %s"
+    },
+    {
+      "ns": "jei",
+      "key": "jei.key.combo.alt",
+      "en": "ALT + %s"
+    },
+    {
+      "ns": "jei",
+      "key": "jei.key.shift",
+      "en": "SHIFT"
+    },
+    {
+      "ns": "lambdynlights",
+      "key": "lambdynlights",
+      "en": "LambDynamicLights"
+    },
+    {
+      "ns": "lambdynlights",
+      "key": "modmenu.bluesky",
+      "en": "Bluesky"
+    },
+    {
+      "ns": "libipn",
+      "key": "libipn.common.gui.config.modifier_key",
+      "en": "Ctrl/Alt/Shift"
+    },
+    {
+      "ns": "mcwdoors",
+      "key": "itemGroup.mcwdoors",
+      "en": "Macaw's Doors"
+    },
+    {
+      "ns": "mcwfurnitures",
+      "key": "itemGroup.mcwfurnitures",
+      "en": "Macaw's Furniture"
+    },
+    {
+      "ns": "mcwlights",
+      "key": "itemGroup.mcwlights",
+      "en": "Macaw's Lights and Lamps"
+    },
+    {
+      "ns": "mcwroofs",
+      "key": "itemGroup.mcwroofs",
+      "en": "Macaw's Roofs"
+    },
+    {
+      "ns": "mcwwindows",
+      "key": "itemGroup.windows2",
+      "en": "Macaw's Windows Additions"
+    },
+    {
+      "ns": "mekanism",
+      "key": "advancements.mekanism.configuration_copying.title",
+      "en": "Ctrl+C, Ctrl+V"
+    },
+    {
+      "ns": "mekanism",
+      "key": "advancements.mekanism.root.title",
+      "en": "Mekanism"
+    },
+    {
+      "ns": "mekanism",
+      "key": "constants.mekanism.mod_name",
+      "en": "Mekanism"
+    },
+    {
+      "ns": "mekanism",
+      "key": "energy.mekanism.forge",
+      "en": "Forge Energy"
+    },
+    {
+      "ns": "mekanism",
+      "key": "energy.mekanism.forge.short",
+      "en": "FE"
+    },
+    {
+      "ns": "mekanism",
+      "key": "energy.mekanism.joules.short",
+      "en": "J"
+    },
+    {
+      "ns": "mekanism",
+      "key": "filter.mekanism.modid.id",
+      "en": "ID: %1$s"
+    },
+    {
+      "ns": "mekanism",
+      "key": "gui.mekanism.rgb",
+      "en": "RGB:"
+    },
+    {
+      "ns": "mekanism",
+      "key": "gui.mekanism.rgba",
+      "en": "RGBA:"
+    },
+    {
+      "ns": "mekanism",
+      "key": "temperature.mekanism.ambient.short",
+      "en": "STP"
+    },
+    {
+      "ns": "mekanism",
+      "key": "temperature.mekanism.celsius.short",
+      "en": "C"
+    },
+    {
+      "ns": "mekanism",
+      "key": "temperature.mekanism.fahrenheit.short",
+      "en": "F"
+    },
+    {
+      "ns": "mekanism",
+      "key": "temperature.mekanism.kelvin.short",
+      "en": "K"
+    },
+    {
+      "ns": "mekanism",
+      "key": "temperature.mekanism.rankine.short",
+      "en": "R"
+    },
+    {
+      "ns": "mekanismgenerators",
+      "key": "constants.mekanismgenerators.mod_name",
+      "en": "Mekanism: Generators"
+    },
+    {
+      "ns": "modern_industrialization",
+      "key": "key.categories.modern_industrialization.modern_industrialization",
+      "en": "Modern Industrialization"
+    },
+    {
+      "ns": "modern_industrialization",
+      "key": "text.modern_industrialization.CurseForge",
+      "en": "[CurseForge]"
+    },
+    {
+      "ns": "modern_industrialization",
+      "key": "text.modern_industrialization.MiningArea1x1",
+      "en": "1x1"
+    },
+    {
+      "ns": "modern_industrialization",
+      "key": "text.modern_industrialization.MiningArea3x3",
+      "en": "3x3"
+    },
+    {
+      "ns": "modern_industrialization",
+      "key": "text.modern_industrialization.ModernIndustrialization",
+      "en": "Modern Industrialization"
+    },
+    {
+      "ns": "modernfix",
+      "key": "key.modernfix",
+      "en": "ModernFix"
+    },
+    {
+      "ns": "offroad",
+      "key": "offroad.simulated_section.offroad",
+      "en": "Offroad"
+    },
+    {
+      "ns": "ponder",
+      "key": "ponder.ponder.shared.ctrl_and",
+      "en": "Ctrl +"
+    },
+    {
+      "ns": "simulated",
+      "key": "advancement.simulated.root",
+      "en": "Create Simulated"
+    },
+    {
+      "ns": "simulated",
+      "key": "itemGroup.simulated.group",
+      "en": "Create Simulated"
+    },
+    {
+      "ns": "simulated",
+      "key": "simulated.key.alt",
+      "en": "Alt"
+    },
+    {
+      "ns": "simulated",
+      "key": "simulated.simulated_section.simulated",
+      "en": "Simulated"
+    },
+    {
+      "ns": "storagedrawers",
+      "key": "config.jade.plugin_storagedrawers.main",
+      "en": "Storage Drawers"
+    },
+    {
+      "ns": "storagedrawers",
+      "key": "itemGroup.storagedrawers",
+      "en": "Storage Drawers"
+    },
+    {
+      "ns": "supplementaries",
+      "key": "tab.supplementaries.supplementaries",
+      "en": "Supplementaries"
+    },
+    {
+      "ns": "supplementaries",
+      "key": "message.supplementaries.altimeter",
+      "en": "Y: %d"
+    },
+    {
+      "ns": "supplementaries",
+      "key": "message.supplementaries.compass",
+      "en": "X: %d, Z: %d"
+    },
+    {
+      "ns": "supplementaries",
+      "key": "painting.supplementaries.bombs.author",
+      "en": "Plantkillable"
+    },
+    {
+      "ns": "supplementaries",
+      "key": "painting.supplementaries.jar.author",
+      "en": "TestedBubble"
+    },
+    {
+      "ns": "supplementaries",
+      "key": "supplementaries.gui.controls",
+      "en": "Supplementaries"
+    }
+  ]
+}

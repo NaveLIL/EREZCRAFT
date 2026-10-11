@@ -1,0 +1,22 @@
+{
+  "create.gui.stock_keeper.click_to_cycle": "Нажмите для переключения",
+  "create.gui.stock_keeper.jei_sync.none": "Без синхронизации",
+  "create.gui.stock_keeper.jei_sync.none.description": "Поиск в складском терминале и просмотрщике рецептов работает независимо.",
+  "create.gui.stock_keeper.jei_sync.sync_both": "Двусторонняя синхронизация",
+  "create.gui.stock_keeper.jei_sync.sync_both.description": "Поиск в складском терминале и просмотрщике рецептов синхронизируется.",
+  "create.gui.stock_keeper.jei_sync.sync_from_jei": "Синхронизация из просмотрщика рецептов",
+  "create.gui.stock_keeper.jei_sync.sync_from_jei.description": "Поиск в просмотрщике рецептов повторяется в складском терминале.",
+  "create.gui.stock_keeper.jei_sync.sync_from_stock_keeper": "Синхронизация из складского терминала",
+  "create.gui.stock_keeper.jei_sync.sync_from_stock_keeper.description": "Поиск в складском терминале повторяется в просмотрщике рецептов.",
+  "create.keyinfo.alt_modifier": "Модификатор Alt",
+  "create.keyinfo.ctrl_modifier": "Модификатор Ctrl",
+  "create.keyinfo.shift_modifier": "Модификатор Shift",
+  "create.schematic.tool.flip.description.3": "",
+  "create.schematic.tool.move_y.description.2": "",
+  "create.schematic.tool.move_y.description.3": "",
+  "create.schematic.tool.move.description.3": "",
+  "create.schematic.tool.print.description.3": "",
+  "create.schematic.tool.rotate.description.2": "",
+  "create.schematic.tool.rotate.description.3": "",
+  "tag.item.c.foods.dough.wheat": "Пшеничное тесто"
+}

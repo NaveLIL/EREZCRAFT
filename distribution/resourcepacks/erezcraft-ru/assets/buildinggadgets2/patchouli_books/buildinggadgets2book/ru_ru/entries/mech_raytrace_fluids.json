@@ -1,0 +1,21 @@
+{
+  "name": "Трассировка жидкостей",
+  "sortnum": 1,
+  "category": "buildinggadgets2:mechanics",
+  "icon": "buildinggadgets2:textures/book/icons/raytrace_fluid.png",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Трассировка жидкостей позволяет гаджетам взаимодействовать с жидкостями. При включении гаджеты замены могут менять жидкости, а строительные гаджеты могут строить поверх жидкостей. $(br2)При отключении гаджеты игнорируют жидкости и строят на блоках за ними. $(br2)Подробнее см. главу $(l:buildinggadgets2:mech_fluid_handling)Работа с жидкостями$(/l)."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Трассировка жидкостей",
+      "images": [
+        "buildinggadgets2:textures/book/images/raytracefluids.png"
+      ],
+      "border": true,
+      "text": "Воздействие на жидкости!"
+    }
+  ]
+}

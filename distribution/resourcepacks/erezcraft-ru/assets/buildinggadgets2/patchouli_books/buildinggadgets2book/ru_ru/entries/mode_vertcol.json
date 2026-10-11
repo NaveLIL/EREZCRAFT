@@ -1,0 +1,23 @@
+{
+  "name": "Вертикальная колонна",
+  "sortnum": 1,
+  "category": "buildinggadgets2:modes",
+  "icon": "buildinggadgets2:textures/book/mode/vertical_column.png",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Режим «Вертикальная колонна» доступен как для строительного, так и для заменяющего гаджетов. $(br2)Он строит вверх или вниз, если вы смотрите на верхнюю или нижнюю грань блока, или в обе стороны вокруг блока, если смотрите на боковую грань."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Вертикальная колонна",
+      "images": [
+        "buildinggadgets2:textures/book/images/vertcolumn1.png",
+        "buildinggadgets2:textures/book/images/vertcolumn3.png",
+        "buildinggadgets2:textures/book/images/vertcolumn2.png"
+      ],
+      "border": true,
+      "text": "Переключайте изображения выше, чтобы увидеть разные варианты"
+    }
+  ]
+}

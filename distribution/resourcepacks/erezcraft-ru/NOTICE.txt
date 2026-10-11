@@ -1,0 +1,21 @@
+EREZCRAFT Russian localization supplement
+
+This standalone resource pack is licensed under GNU AGPL version 3 only.
+The surrounding Interstice project retains its existing license.
+
+Includes adapted translations from:
+- RTF Extension 2.7.0: Guardian_50, MomentariyModder and the
+  Russian Translations and Fixes contributors. AGPL-3.0-only.
+- Rechiseled Russian Translation v3: leha7cool. MIT.
+- Applied Guide Translations 1.21.1: zilibobiksus. AGPL-3.0-or-later.
+- Mekanism Russian translations: Mekanism contributors. MIT.
+- Modded Minecraft Localization Resource Pack: RushanM and contributors. MIT.
+- Existing translations from the audited mod versions, reused within their namespaces.
+
+Upstream URLs, immutable versions and hashes are recorded in sources.json.
+The editable ru_ru JSON and localized Markdown/Patchouli pages are the
+corresponding source of this resource pack. Semantic corrections and their
+English originals are additionally recorded in
+distribution/localization/ru/reviewed-strings.json in the EREZCRAFT repository.
+
+Original mod JARs and English resources are not included or modified.

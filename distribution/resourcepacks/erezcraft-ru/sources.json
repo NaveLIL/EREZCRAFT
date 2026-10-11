@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "license": "AGPL-3.0-only",
+  "date": "2026-10-11",
+  "sources": [
+    {
+      "id": "rtf-extension-2.7.0",
+      "title": "RTF Extension 2.7.0",
+      "url": "https://modrinth.com/resourcepack/rtf-extension/version/Jc3ynK1l",
+      "download_url": "https://cdn.modrinth.com/data/IUa4fOEk/versions/Jc3ynK1l/%C2%A7eRTF%2B%20v.2.7.0%C2%A70_%C2%A78%C2%A70.zip",
+      "sha512": "8a0ef134a4aafb1420be139259591a5bd7182f978fb1e1f8309186a03d982f5aafe02a3735d03197485e32f5748be8a622051cbda097202a7bf4ed939b4e7e10",
+      "license": "AGPL-3.0-only",
+      "authors": [
+        "Guardian_50",
+        "MomentariyModder"
+      ]
+    },
+    {
+      "id": "rechiseled-ru-v3",
+      "title": "Rechiseled Russian Translation v3",
+      "url": "https://modrinth.com/resourcepack/rechiseled-russian-translation/version/epPL7shT",
+      "download_url": "https://cdn.modrinth.com/data/W0X3cNNF/versions/epPL7shT/ReRT-v3.zip",
+      "sha512": "609754ed9572214e25b90e5b1b195f2da93a21a15b96b67ee87ff6e7808ddb0c67d7097a53096291ab3a4c0c867fe747a4f972d28114a46aac94435938db0416",
+      "license": "MIT",
+      "authors": [
+        "leha7cool"
+      ]
+    },
+    {
+      "id": "applied-guide-ru-1.21.1",
+      "title": "Applied Guide Translations 1.21.1",
+      "url": "https://modrinth.com/resourcepack/applied-guide-translations/version/Hv4OeCmF",
+      "download_url": "https://cdn.modrinth.com/data/Uly7WCfm/versions/Hv4OeCmF/AppliedGuideTranslations_1.21.1.zip",
+      "sha512": "73e5d62d89282a0ccaceb28eff40efbdf89d643bb09a642317fbb8be12ffbe2b59d158faf3d74690757d276194d60f04239581677ef183ee84cb2c31d9271724",
+      "license": "AGPL-3.0-or-later",
+      "authors": [
+        "zilibobiksus"
+      ],
+      "adaptation": "Language-scoped _ru_ru paths; repaired truncated pages; original English anchors preserved."
+    },
+    {
+      "id": "mekanism-native-current",
+      "title": "Mekanism Russian translations",
+      "url": "https://github.com/mekanism/Mekanism/tree/bcd7a8bf594cff9614eb12238fe3776f19da24d9",
+      "commit": "bcd7a8bf594cff9614eb12238fe3776f19da24d9",
+      "license": "MIT",
+      "authors": [
+        "Mekanism contributors"
+      ]
+    },
+    {
+      "id": "rushanm-localization",
+      "title": "Modded Minecraft Localization Resource Pack",
+      "url": "https://github.com/RushanM/Modded-MC-L10n-Resource-Pack/tree/560b7e0862c2f9fbe4cdec91f6a459b43e45e67f",
+      "commit": "560b7e0862c2f9fbe4cdec91f6a459b43e45e67f",
+      "license": "MIT",
+      "authors": [
+        "RushanM",
+        "Localization project contributors"
+      ],
+      "files": [
+        {
+          "namespace": "jei",
+          "url": "https://raw.githubusercontent.com/RushanM/Modded-MC-L10n-Resource-Pack/560b7e0862c2f9fbe4cdec91f6a459b43e45e67f/%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2/1.21/assets/jei/lang/ru_ru.json",
+          "sha256": "a34cf5974228f62dba364fb169c37ead5db7ecffea62b5497e245a9eb90f3aa5"
+        },
+        {
+          "namespace": "iris",
+          "url": "https://raw.githubusercontent.com/RushanM/Modded-MC-L10n-Resource-Pack/560b7e0862c2f9fbe4cdec91f6a459b43e45e67f/%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2/1.21/assets/iris/lang/ru_ru.json",
+          "sha256": "15a443aee02f99d56fa2e89a568c8e76f50da24e7fc5c075a08dd7835d05f0c3"
+        },
+        {
+          "namespace": "sodium",
+          "url": "https://raw.githubusercontent.com/RushanM/Modded-MC-L10n-Resource-Pack/560b7e0862c2f9fbe4cdec91f6a459b43e45e67f/%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2/1.21/assets/sodium/lang/ru_ru.json",
+          "sha256": "45233b2db2c7abe503106e763b08fe1df997326830a5c61be2741c227458f811"
+        }
+      ]
+    },
+    {
+      "id": "existing-mod-translations",
+      "title": "Existing Russian translations in the pinned installed JARs",
+      "inventory": "distribution/localization/ru/profile.json",
+      "usage": "Unambiguous identical English strings reused only within their original namespace."
+    },
+    {
+      "id": "erezcraft-review",
+      "title": "EREZCRAFT additions and semantic corrections",
+      "source": "distribution/localization/ru/reviewed-strings.json",
+      "license": "AGPL-3.0-only"
+    }
+  ],
+  "initial_rtf_file_pins": [
+    {
+      "namespace": "ae2",
+      "sha256": "e61527436e9227ae5fb8f71d5828518a5c96f923d84baa98d125fdca1597df3d"
+    },
+    {
+      "namespace": "another_furniture",
+      "sha256": "cf834a0ae4243bfdc1c2c35ef643367b8d52ed9faf5432840cef7a2104d55fa4"
+    },
+    {
+      "namespace": "ars_nouveau",
+      "sha256": "c48c9e414a4fd280c55c499a610050df745b93706b0f0d9e9aa6ec1b454bf8bb"
+    },
+    {
+      "namespace": "balm",
+      "sha256": "8fcd373a1f8707ad29f24fc1f4c237f84a06b0e7466dfa08b693ca9c1dfce8c1"
+    },
+    {
+      "namespace": "buildinggadgets2",
+      "sha256": "5564b87d0b05da296abe113ad160015807ce03693e70046bafe93955fd09488f"
+    },
+    {
+      "namespace": "chipped",
+      "sha256": "588ab74938ca00dc254b6c108df9b1d39663175be2d9c50ea621e222020614f1"
+    },
+    {
+      "namespace": "codechickenlib",
+      "sha256": "2599773790780c462d67175c08bcdbc55b1d09e8e404832d9dd11680235194cb"
+    },
+    {
+      "namespace": "controlling",
+      "sha256": "bdf070e77275ed502aa214be7a5a916591b0b694cfaa8d1eec17412c34822d0c"
+    },
+    {
+      "namespace": "craftingtweaks",
+      "sha256": "3cbe000bf177220bc1fd20963eb5ba46f2a904c229248d6d3ee50ebe2ee24352"
+    },
+    {
+      "namespace": "curios",
+      "sha256": "e3f015c96fe14914c8c59a6a6b5a302f777c6885357ce54c08950187db6be0dd"
+    },
+    {
+      "namespace": "distanthorizons",
+      "sha256": "1fb9b65a3af05ce6a5f14040ef41db2d05e60ceae2852533f55f24fa99eb11c2"
+    },
+    {
+      "namespace": "framedblocks",
+      "sha256": "b56c08b8d3f25f5d9bf883bbe7a213b99fe60c6868b331a6eb3dcb4f2b7cf82d"
+    },
+    {
+      "namespace": "fusion",
+      "sha256": "4f67751ac80643a590f7ae5a4ec80dfe619dbe99ac7ddd50567b90c2b7684b20"
+    },
+    {
+      "namespace": "guideme",
+      "sha256": "46c2ba0df5f2ad052a98b475aeceb8ba06a8b7e7ab2c03de6d0f2331db69980a"
+    },
+    {
+      "namespace": "handcrafted",
+      "sha256": "8e6f19098153048250c1e56f1004f306d03f5ab51ccc363e7adaf8c5e04436a3"
+    },
+    {
+      "namespace": "iris",
+      "sha256": "932a815a949ab46c092a9aca72fb622362d2b35ef725f17cdc128b56c932d787"
+    },
+    {
+      "namespace": "jade",
+      "sha256": "4447f604162f17d7a2397b5f1113cce138a48d72b210e7e1748ec9ea4b363f6c"
+    },
+    {
+      "namespace": "jei",
+      "sha256": "ae51a2483e05c678e65253f55298dc93f6b3e04da41008de8fc59d47d718a630"
+    },
+    {
+      "namespace": "mcwwindows",
+      "sha256": "d3260f06fd362dd1a1cbd13d5e949518fee4d4104e6e0e61e3881528b7b6cef1"
+    },
+    {
+      "namespace": "mekanism",
+      "sha256": "f05311eea01a3c1b57f5b95d9324abc99635550f9829046a4469053639c6a474"
+    },
+    {
+      "namespace": "mekanismgenerators",
+      "sha256": "5f13067647cf7ec97362b747ec81a13b25bca869e2b6b9c6f26b495fa694a55f"
+    },
+    {
+      "namespace": "modernfix",
+      "sha256": "d5a5d168b382e2a9ff58025b86712c36b7614f650b4509173cad25235abd0c92"
+    },
+    {
+      "namespace": "moonlight",
+      "sha256": "0055b404da8208c03315966ea8e3c280104ca93fb71946b18f2e19478769c1cb"
+    },
+    {
+      "namespace": "rechiseled",
+      "sha256": "c01b4132d4f73c71a1eeac74987d1178dca1e8498ff8d012d74454ac22aa52b5"
+    },
+    {
+      "namespace": "rechiseledcreate",
+      "sha256": "6d17eb516ac0611af38d1a41416e4b772a5535c100d21669b6f8429d3ed56a5b"
+    },
+    {
+      "namespace": "sable",
+      "sha256": "0eecba4bc1c3eb2685dd22493b5d520e6cf0ec390e4ae703d7383ca7c3bbb40b"
+    },
+    {
+      "namespace": "sodium",
+      "sha256": "8990dba7c873b04e0e8e0c856ca67dead3761b672c9459c4770dc5499eaa6bb3"
+    },
+    {
+      "namespace": "supermartijn642corelib",
+      "sha256": "5f62f824d4d4a368d2f72e72e516e0c28bb726e35d4b552ffa2c746e46e02a2c"
+    },
+    {
+      "namespace": "xaeroworldmap",
+      "sha256": "ca1c2ba51080f7811a4273604e30996322285e8a6682e0f83f4ee2c397ebe8d7"
+    }
+  ],
+  "runtime_reference": {
+    "guideme_commit": "52334ccacf15d763ffe318281d38dca8ec7aaeb8",
+    "patchouli_1_21_commit": "df6bde4ca0cd496188c914a22c25d751a098687d",
+    "explanation": "Named guide anchors and literal book-title translation keys are supported by these reader implementations."
+  }
+}
