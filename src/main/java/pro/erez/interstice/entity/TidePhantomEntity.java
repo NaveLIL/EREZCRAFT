@@ -30,13 +30,15 @@ import pro.erez.interstice.tide.ShelterDetector;
 import pro.erez.interstice.tide.TideManager;
 import pro.erez.interstice.tide.TidePhase;
 
-/** The warning's flying hunters. A grab applies bounded physical motion, never
- * a mount, teleport, wall bypass or global change to the accepted tide/roof rules. */
+/** Phase hunters carrying genuine passengers through collision-checked escape paths. */
 public final class TidePhantomEntity extends Phantom {
     private static final EntityDataAccessor<Boolean> GRABBING=SynchedEntityData.defineId(TidePhantomEntity.class,EntityDataSerializers.BOOLEAN);
     private static final double REACH=2.4, MAX_PULL=.22;
     private UUID grabbed;
     private Vec3 escape;
+    private java.util.List<Vec3> carryPath=java.util.List.of();
+    private int carryStep;
+    private static final double SEAT=.65, CARRY_SPEED=.85;
     private int gripTicks,cooldown;
     private UUID huntTarget;
     private Vec3 huntEntrance;
@@ -59,7 +61,8 @@ public final class TidePhantomEntity extends Phantom {
     public boolean isGrabbing(){return entityData.get(GRABBING);}
     @Nullable public UUID grabbedPlayerId(){return grabbed;}
     private static boolean eligible(ServerLevel level,ServerPlayer player){return player!=null&&player.level()==level
-        &&player.isAlive()&&!player.isRemoved()&&!player.isCreative()&&!player.isSpectator()&&!player.isPassenger();}
+        &&player.isAlive()&&!player.isRemoved()&&!player.isCreative()&&!player.isSpectator()
+        &&(!player.isPassenger()||player.getVehicle() instanceof TidePhantomEntity);}
     private static boolean clearLine(ServerLevel level,Vec3 from,Vec3 to,net.minecraft.world.entity.Entity subject){
         if(!StrongRealmFauna.loadedBox(level,new AABB(from,to).inflate(.2)))return false;
         return level.clip(new ClipContext(from,to,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,subject)).getType()==HitResult.Type.MISS;
@@ -74,35 +77,52 @@ public final class TidePhantomEntity extends Phantom {
                 ||level.getBlockCollisions(subject,moved).iterator().hasNext()||level.containsAnyLiquid(moved))return false;
         }return true;
     }
-    /** A nearby open column connected by a genuine player-sized straight path.
-     * Fully sealed rooms have no route; broad roofs retain their physical value. */
-    @Nullable public static Vec3 safeEscape(ServerLevel level,ServerPlayer player){
-        if(!eligible(level,player)||!StrongRealmFauna.isV6(level))return null;
+    /** Lift a body from a shallow pit, then carry it along an unobstructed dry route.
+     * Solid ceilings and sealed rooms remain physical barriers. */
+    private static java.util.List<Vec3> escapePath(ServerLevel level,ServerPlayer player){
+        if(!eligible(level,player)||!StrongRealmFauna.isV6(level))return java.util.List.of();
         var profile=GeometryProfiles.get(level);Vec3 origin=player.position();AABB box=player.getBoundingBox();
-        for(int radius=3;radius<=12;radius+=3)for(int direction=0;direction<8;direction++){
-            double angle=direction*Math.PI/4;Vec3 candidate=origin.add(Math.cos(angle)*radius,0,Math.sin(angle)*radius);
-            AABB destination=box.move(candidate.subtract(origin));
-            if(!StrongRealmFauna.loadedBox(level,destination)||!freeSweep(level,player,box,candidate.subtract(origin)))continue;
-            if(destination.maxY>=SeaSurface.cellMinimum(profile,(int)Math.floor(candidate.x),(int)Math.floor(candidate.z),true)-2)continue;
-            int startY=(int)Math.floor(destination.maxY);
-            boolean open=true;
-            for(int x=(int)Math.floor(destination.minX+.05);x<=(int)Math.floor(destination.maxX-.05)&&open;x++)
-                for(int z=(int)Math.floor(destination.minZ+.05);z<=(int)Math.floor(destination.maxZ-.05);z++)
-                    if(ShelterDetector.hasRoofAt(level,profile,x,startY,z)){open=false;break;}
-            if(open)return candidate;
-        }return null;
+        for(double lift:new double[]{0,1.05,2.1,3.15}){
+            Vec3 raised=origin.add(0,lift,0);
+            if(!freeSweep(level,player,box,raised.subtract(origin)))continue;
+            for(int radius=3;radius<=12;radius+=3)for(int direction=0;direction<8;direction++){
+                double angle=direction*Math.PI/4;Vec3 candidate=raised.add(Math.cos(angle)*radius,0,Math.sin(angle)*radius);
+                AABB destination=box.move(candidate.subtract(origin));
+                if(!freeSweep(level,player,box.move(0,lift,0),candidate.subtract(raised)))continue;
+                if(destination.maxY>=SeaSurface.cellMinimum(profile,(int)Math.floor(candidate.x),(int)Math.floor(candidate.z),true)-2)continue;
+                int startY=(int)Math.floor(destination.maxY);boolean open=true;
+                for(int x=(int)Math.floor(destination.minX+.05);x<=(int)Math.floor(destination.maxX-.05)&&open;x++)
+                    for(int z=(int)Math.floor(destination.minZ+.05);z<=(int)Math.floor(destination.maxZ-.05);z++)
+                        if(ShelterDetector.hasRoofAt(level,profile,x,startY,z)){open=false;break;}
+                if(open)return lift>0?java.util.List.of(raised,candidate):java.util.List.of(candidate);
+            }
+        }
+        return java.util.List.of();
     }
+    @Nullable public static Vec3 safeEscape(ServerLevel level,ServerPlayer player){
+        var path=escapePath(level,player);return path.isEmpty()?null:path.getLast();
+    }
+    @Override protected Vec3 getPassengerAttachmentPoint(net.minecraft.world.entity.Entity passenger,net.minecraft.world.entity.EntityDimensions dimensions,float scale){return new Vec3(0,-SEAT,0);}
+    @Override protected void positionRider(net.minecraft.world.entity.Entity passenger,net.minecraft.world.entity.Entity.MoveFunction move){
+        if(hasPassenger(passenger))move.accept(passenger,getX(),getY()-SEAT,getZ());
+    }
+    @Override public Vec3 getDismountLocationForPassenger(LivingEntity passenger){return passenger.position();}
     public boolean tryBeginGrab(ServerPlayer player){
         if(!isAlive()||isRemoved()||!(level() instanceof ServerLevel level)||!StrongRealmFauna.isV6(level)||cooldown>0||isGrabbing()
             ||TideManager.getState(level.getServer()).phase()!=TidePhase.SURGE||!eligible(level,player)
-            ||distanceToSqr(player)>REACH*REACH||!ShelterDetector.isSheltered(level,player)
+            ||player.isPassenger()||distanceToSqr(player)>REACH*REACH||!ShelterDetector.isSheltered(level,player)
             ||!clearLine(level,getEyePosition(),player.getBoundingBox().getCenter(),this))return false;
         if(!level.getEntitiesOfClass(TidePhantomEntity.class,player.getBoundingBox().inflate(8),p->p!=this&&player.getUUID().equals(p.grabbedPlayerId())).isEmpty())return false;
-        Vec3 destination=safeEscape(level,player);if(destination==null)return false;
-        grabbed=player.getUUID();escape=destination;gripTicks=0;entityData.set(GRABBING,true);
+        var path=escapePath(level,player);if(path.isEmpty())return false;
+        Vec3 seat=player.position().add(0,SEAT,0);
+        if(!freeSweep(level,this,getBoundingBox(),seat.subtract(position())))return false;
+        Vec3 previous=position();setPos(seat);
+        if(!player.startRiding(this,true)){setPos(previous);return false;}
+        carryPath=path;carryStep=0;grabbed=player.getUUID();escape=path.getLast();gripTicks=0;entityData.set(GRABBING,true);
+        positionRider(player);setDeltaMovement(Vec3.ZERO);
         playSound(SoundEvents.PHANTOM_SWOOP,1.2F,.7F);return true;
     }
-    private void release(){grabbed=null;escape=null;gripTicks=0;huntEntrance=null;scanTicks=0;entityData.set(GRABBING,false);cooldown=Math.max(cooldown,80);}
+    private void release(){ejectPassengers();setDeltaMovement(Vec3.ZERO);carryPath=java.util.List.of();carryStep=0;grabbed=null;escape=null;gripTicks=0;huntEntrance=null;scanTicks=0;entityData.set(GRABBING,false);cooldown=Math.max(cooldown,80);}
     @Override public boolean hurt(DamageSource source,float damage){boolean applied=super.hurt(source,damage);if(applied&&!level().isClientSide)release();return applied;}
     @Override public void die(DamageSource source){release();super.die(source);}
     @Override public void tick(){super.tick();if(isAlive()&&!isRemoved()&&!level().isClientSide)updateHunt();}
@@ -110,28 +130,30 @@ public final class TidePhantomEntity extends Phantom {
     public void updateHunt(){
         if(!isAlive()||isRemoved()){release();return;}
         if(!(level() instanceof ServerLevel level))return;
+        // Vanilla may restore a player's RootVehicle after our own NBT was read.
+        if(!isGrabbing()&&!getPassengers().isEmpty())ejectPassengers();
         var phase=TideManager.getState(level.getServer()).phase();
         if(!StrongRealmFauna.isV6(level)||phase==TidePhase.CALM||phase==TidePhase.EBB){release();discard();return;}
         if(lastHuntPhase!=phase){lastHuntPhase=phase;scanTicks=0;huntTarget=null;huntEntrance=null;}
         if(cooldown>0)cooldown--;
         if(isGrabbing()){
             var entity=level.getEntity(grabbed);ServerPlayer player=entity instanceof ServerPlayer p?p:null;
-            if(phase!=TidePhase.SURGE||!eligible(level,player)||distanceToSqr(player)>16
-                ||!clearLine(level,getEyePosition(),player.getBoundingBox().getCenter(),this)
-                ||!ShelterDetector.isSheltered(level,player)||++gripTicks>60){release();return;}
-            Vec3 delta=escape.subtract(player.position());Vec3 horizontal=new Vec3(delta.x,0,delta.z);
-            if(horizontal.lengthSqr()<.25||!freeSweep(level,player,player.getBoundingBox(),horizontal.normalize().scale(.5))){release();return;}
-            Vec3 direction=horizontal.normalize();Vec3 previous=player.getDeltaMovement();
-            // Retain vertical gravity and fall behavior. Marking ordinary velocity
-            // synchronizes through vanilla packets; no flight permission is granted.
-            Vec3 pulled=new Vec3(previous.x*.45+direction.x*.12,previous.y,previous.z*.45+direction.z*.12);
-            double speed=pulled.horizontalDistance();if(speed>MAX_PULL)pulled=new Vec3(pulled.x/speed*MAX_PULL,pulled.y,pulled.z/speed*MAX_PULL);
-            player.setDeltaMovement(pulled);player.hasImpulse=true;player.hurtMarked=true;
-            steer(player.position().add(0,1.1,0),.23);return;
+            if(phase!=TidePhase.SURGE||!eligible(level,player)||player.getVehicle()!=this||++gripTicks>60){release();return;}
+            if(!ShelterDetector.isSheltered(level,player)){release();return;}
+            if(carryStep>=carryPath.size()){release();return;}
+            Vec3 delta=carryPath.get(carryStep).subtract(player.position());
+            if(delta.length()<.15){carryStep++;if(carryStep>=carryPath.size()){release();return;}delta=carryPath.get(carryStep).subtract(player.position());}
+            Vec3 step=delta.normalize().scale(Math.min(CARRY_SPEED,delta.length()));
+            if(!freeSweep(level,player,player.getBoundingBox(),step)||!freeSweep(level,this,getBoundingBox(),step)){release();return;}
+            // The mob and its genuine passenger use ordinary vehicle position packets.
+            // Validate the complete passenger body before every physical move.
+            setDeltaMovement(Vec3.ZERO);move(net.minecraft.world.entity.MoverType.SELF,step);positionRider(player);hasImpulse=true;
+            if(!ShelterDetector.isSheltered(level,player))release();
+            return;
         }
         if(scanTicks--<=0){
             scanTicks=20;huntTarget=null;huntEntrance=null;
-            var candidates=level.players().stream().filter(p->eligible(level,p)&&distanceToSqr(p)<48*48)
+            var candidates=level.players().stream().filter(p->eligible(level,p)&&!p.isPassenger()&&distanceToSqr(p)<48*48)
                 .sorted(java.util.Comparator.comparingDouble(this::distanceToSqr)).limit(10).toList();
             for(var candidate:candidates){
                 if(phase==TidePhase.SURGE&&cooldown==0){
@@ -143,10 +165,11 @@ public final class TidePhantomEntity extends Phantom {
             }
         }
         var target=huntTarget==null?null:level.getEntity(huntTarget);ServerPlayer player=target instanceof ServerPlayer p?p:null;
-        if(!eligible(level,player)){setDeltaMovement(getDeltaMovement().scale(.8));return;}
+        if(!eligible(level,player)||player.isPassenger()){setDeltaMovement(getDeltaMovement().scale(.8));return;}
         if(phase==TidePhase.WARNING||cooldown>0){
-            double angle=(tickCount+getId()*11)*.035;
-            Vec3 circle=player.position().add(Math.cos(angle)*7,5,Math.sin(angle)*7);
+            double angle=tickCount*.035+(getUUID().hashCode()&0xffff)*Math.PI*2/65536;
+            double radius=7+(getUUID().hashCode()&3)*1.3;
+            Vec3 circle=player.position().add(Math.cos(angle)*radius,5+(getUUID().hashCode()&1)*1.5,Math.sin(angle)*radius);
             steer(circle,.28);return;
         }
         if(tryBeginGrab(player))return;
@@ -162,7 +185,13 @@ public final class TidePhantomEntity extends Phantom {
     private void steer(Vec3 desired,double speed){
         if(!(level() instanceof ServerLevel level))return;Vec3 delta=desired.subtract(position());
         if(delta.lengthSqr()<.1){setDeltaMovement(getDeltaMovement().scale(.8));return;}
-        Vec3 step=delta.normalize().scale(speed);
+        Vec3 separation=Vec3.ZERO;
+        for(var neighbor:level.getEntitiesOfClass(TidePhantomEntity.class,getBoundingBox().inflate(3),e->e!=this&&e.isAlive())){
+            Vec3 away=position().subtract(neighbor.position());
+            if(away.lengthSqr()<.001)away=new Vec3(getId()>neighbor.getId()?1:-1,0,0);
+            separation=separation.add(away.normalize().scale((3-Math.min(3,away.length()))*.65));
+        }
+        Vec3 step=delta.normalize().add(separation).normalize().scale(speed);
         if(!freeSweep(level,this,getBoundingBox(),step)){setDeltaMovement(Vec3.ZERO);return;}
         setDeltaMovement(getDeltaMovement().scale(.3).add(step.scale(.7)));hasImpulse=true;
         setYRot((float)(Math.atan2(-step.x,step.z)*180/Math.PI));

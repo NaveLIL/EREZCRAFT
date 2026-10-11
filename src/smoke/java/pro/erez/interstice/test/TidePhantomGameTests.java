@@ -92,6 +92,19 @@ public final class TidePhantomGameTests {
     private static void released(GameTestHelper h,TidePhantomEntity phantom,String reason) {
         h.assertTrue(!phantom.isGrabbing()&&phantom.grabbedPlayerId()==null,reason);
     }
+    @GameTest(template="empty",batch="tide_phantom_separation",timeoutTicks=1200)
+    public static void coincidentWarningHuntersSeparateInsteadOfFlyingAsOne(GameTestHelper h){
+        try(var f=new Fixture(h)){
+            f.phases.phase(TidePhase.WARNING);
+            Vec3 start=f.player.position().add(8,5,8);
+            var first=f.phantom(f.world,start);var second=f.phantom(f.world,start);
+            for(int tick=0;tick<15;tick++){
+                first.updateHunt();second.updateHunt();
+                first.move(MoverType.SELF,first.getDeltaMovement());second.move(MoverType.SELF,second.getDeltaMovement());
+            }
+            h.assertTrue(first.distanceToSqr(second)>2.25,"Coincident warning phantoms remained clustered");
+        }h.succeed();
+    }
     @GameTest(template="empty",batch="tide_phantom_scope",timeoutTicks=100)
     public static void naturalSpawningWindowIsOnlyWarningInActualV6(GameTestHelper h) {
         var v6=h.getLevel().getServer().getLevel(IslandWorld.TENSION_WORLD);
@@ -178,12 +191,9 @@ public final class TidePhantomGameTests {
             var first=f.phantom();var second=f.phantom();
             h.assertTrue(first.tryBeginGrab(f.player)&&f.player.getUUID().equals(first.grabbedPlayerId()),"Grab does not bind the actual server player's UUID");
             h.assertTrue(!second.tryBeginGrab(f.player),"Two phantoms own the same player's grab");
-            var original=f.player.position();f.player.setDeltaMovement(.7,-.04,-.3);first.updateHunt();
-            var velocity=f.player.getDeltaMovement();
-            h.assertTrue(f.player.position().equals(original)&&velocity.horizontalDistance()<=.220001&&Math.abs(velocity.y+.04)<.000001,"Grab teleported, boosted vertical motion or exceeded its velocity cap");
-            h.assertTrue(f.player.hasImpulse&&f.player.hurtMarked&&!f.player.isPassenger(),"Grab lost vanilla velocity synchronization or became a mount");
-            f.player.move(MoverType.SELF,velocity);
-            h.assertTrue(f.player.position().distanceTo(original)>0&&f.player.position().distanceTo(original)<.25,"Native collision movement did not consume the bounded velocity");
+            var original=f.player.position();first.updateHunt();
+            h.assertTrue(f.player.getVehicle()==first&&f.player.position().distanceTo(original)>.4&&f.player.position().distanceTo(original)<=.851,"Actual passenger was not carried at the bounded faster speed");
+            h.assertTrue(!f.player.getAbilities().mayfly,"Capture granted a global flight permission");
             // Remove the actual roof over every occupied footprint cell: exposure must release immediately.
             var box=f.player.getBoundingBox();
             for(int x=(int)Math.floor(box.minX+.05);x<=(int)Math.floor(box.maxX-.05);x++)
@@ -192,6 +202,20 @@ public final class TidePhantomGameTests {
             first.updateHunt();released(h,first,"Phantom kept holding an exposed player for the tide");
         }
         h.succeed();
+    }
+    @GameTest(template="empty",batch="tide_phantom_pit",timeoutTicks=1200)
+    public static void passengerIsLiftedFromOneBlockPitAndReleasedIntoOpenAir(GameTestHelper h){
+        try(var f=new Fixture(h)){
+            f.world.setBlock(new BlockPos(f.x,99,f.z),Blocks.AIR.defaultBlockState(),3);
+            f.world.setBlock(new BlockPos(f.x,98,f.z),Blocks.STONE.defaultBlockState(),3);
+            f.player.setPos(f.x+.5,99.01,f.z+.5);
+            var phantom=f.phantom(f.world,f.player.position().add(0,1,0));
+            h.assertTrue(phantom.tryBeginGrab(f.player)&&f.player.getVehicle()==phantom,"One-block pit prevented real capture");
+            double height=f.player.getY();
+            for(int tick=0;tick<20&&phantom.isGrabbing();tick++)phantom.updateHunt();
+            h.assertTrue(f.player.getY()>height+.8&&!ShelterDetector.isSheltered(f.world,f.player),"Passenger was not lifted over the pit lip and carried outside the roof");
+            h.assertTrue(!f.player.isPassenger()&&!phantom.isGrabbing(),"Open-air passenger was not released");
+        }h.succeed();
     }
     @GameTest(template="empty",batch="tide_phantom_counterplay",timeoutTicks=1200)
     public static void successfulDamageDeathAndTheEndOfSurgeReleaseAndPreventImmediateRegrab(GameTestHelper h) {

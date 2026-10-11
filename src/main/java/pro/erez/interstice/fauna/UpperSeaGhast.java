@@ -44,6 +44,9 @@ public final class UpperSeaGhast extends Ghast {
                 && StrongRealmFauna.airborneHabitat(server, blockPosition());
     }
     @Override protected float getSoundVolume() { return 1.2F; }
+    @Override protected net.minecraft.sounds.SoundEvent getAmbientSound(){return pro.erez.interstice.sound.ModSounds.GHAST_AMBIENT.get();}
+    @Override protected net.minecraft.sounds.SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source){return pro.erez.interstice.sound.ModSounds.GHAST_HURT.get();}
+    @Override protected net.minecraft.sounds.SoundEvent getDeathSound(){return pro.erez.interstice.sound.ModSounds.GHAST_DEATH.get();}
 
     /** The same production method is exercised by projectile and native diagnostics. */
     public boolean fireAt(LivingEntity target) {
@@ -54,7 +57,7 @@ public final class UpperSeaGhast extends Ghast {
         Vec3 destination = new Vec3(target.getX(), target.getY(.5), target.getZ());
         var charge = new UpperSeaCharge(level(), this, origin, destination);
         if (!level().addFreshEntity(charge)) return false;
-        playSound(SoundEvents.GHAST_SHOOT, 1.0F, .65F);
+        playSound(pro.erez.interstice.sound.ModSounds.GHAST_SHOOT.get(), 1.0F, 1F);
         return true;
     }
     private final class RealmFloatGoal extends Goal {
@@ -93,7 +96,7 @@ public final class UpperSeaGhast extends Ghast {
             if (cooldown > 0) { setCharging(false); return; }
             visibleTicks++;
             setCharging(visibleTicks >= 10);
-            if (visibleTicks == 10) playSound(SoundEvents.GHAST_WARN, .8F, .6F);
+            if (visibleTicks == 10) playSound(pro.erez.interstice.sound.ModSounds.GHAST_WARN.get(), .8F, 1F);
             if (visibleTicks >= WINDUP_TICKS) {
                 fireAt(target); visibleTicks = 0; cooldown = SHOT_COOLDOWN_TICKS; setCharging(false);
             }

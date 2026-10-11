@@ -14,6 +14,6 @@ public final class TideFaunaClient {
     private TideFaunaClient(){}
     @SuppressWarnings({"rawtypes","unchecked"})
     @SubscribeEvent public static void renderers(EntityRenderersEvent.RegisterRenderers event){
-        event.registerEntityRenderer(TideFauna.TIDE_PHANTOM.get(),(net.minecraft.client.renderer.entity.EntityRendererProvider)PhantomRenderer::new);
+        event.registerEntityRenderer(TideFauna.TIDE_PHANTOM.get(),(net.minecraft.client.renderer.entity.EntityRendererProvider)TidePhantomRenderer::new);
     }
 }

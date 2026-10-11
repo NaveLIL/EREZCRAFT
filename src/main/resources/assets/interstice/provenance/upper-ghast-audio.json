@@ -1,0 +1,50 @@
+{
+  "creator": "EREZ Dev",
+  "license": "CC0-1.0",
+  "origin": "original deterministic procedural synthesis; no samples",
+  "generator": "tools/generate_ghast_sounds.py",
+  "files": {
+    "ambient.ogg": {
+      "sha256": "0c0f15f02c504bf78eb67c98604aa891adc7c73187c03aef944ac08e21badaad",
+      "seconds": 1.7,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak": 0.6114812073993249
+    },
+    "hurt.ogg": {
+      "sha256": "7574d4d3ae3e6619cd0f6da808101d2f130378e9e6d3f708c209432156749070",
+      "seconds": 0.55,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak": 0.5705543397953958
+    },
+    "death.ogg": {
+      "sha256": "616c9e9820adc0814923b8f70ddca9043f6e8e28db91813c42908afba32565ce",
+      "seconds": 1.6,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak": 0.6137741470572432
+    },
+    "warn.ogg": {
+      "sha256": "b4412244777ea77e9456c15a6c11f571f5d3c9cf543ff5fe109c2dcfc233a1d6",
+      "seconds": 1.1,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak": 0.5961688989248286
+    },
+    "shoot.ogg": {
+      "sha256": "44cf64bc9db9be12485c1e7bdbb5efbeea0158198891f8fdb2eebeffb1c8c631",
+      "seconds": 0.38,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak": 0.5044357166327158
+    },
+    "splash.ogg": {
+      "sha256": "4bc2f0977870782634d2db76173146ec5b92d3064fb0b5adf5a878dbc7748712",
+      "seconds": 0.55,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak": 0.557354175305921
+    }
+  }
+}

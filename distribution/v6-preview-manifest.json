@@ -1,6 +1,6 @@
 {
   "name": "EREZCRAFT V6 Preview",
-  "version": "0.7.0-preview.8",
+  "version": "0.7.0-preview.9",
   "minecraft": "1.21.1",
   "java_major": 21,
   "loader": {
@@ -10,9 +10,9 @@
   "mods": [
     {
       "id": "interstice",
-      "version": "0.7.0-preview.8",
-      "file": "interstice-0.7.0-preview.8.jar",
-      "sha256": "ee23f704e8f48ec29e73cc111b839bfdd66fdb28a59cf94a3f4b78168f9b57b9",
+      "version": "0.7.0-preview.9",
+      "file": "interstice-0.7.0-preview.9.jar",
+      "sha256": "becc16b4d36348d30be243b0411b338258efed96acc9809b82f55ebc02ecd6aa",
       "required_on": [
         "client",
         "server"
@@ -69,6 +69,6 @@
   "preview_dimension": "interstice:islands_v6",
   "ordinary_entry_dimension": "interstice:islands_v5",
   "instructions": "docs/V6_PREVIEW.md",
-  "verification": "docs/verification/REALM_EXPANSION.json",
-  "status": "preview.8 V6 pack ores, aimed spider attacks, bounded strong/tide fauna and DH AIR null guard; alpha.10/sequence10 published and installed; full component check and fresh full-pack native checks passed; natural Survival, visuals, multiplayer anti-flight, cold reload and real server capacity remain open"
+  "verification": "docs/verification/FAUNA_FEEDBACK.json",
+  "status": "preview.9 alpha.11/sequence11 published and installed: fauna environmental immunity, fast original-audio ghast, collision-safe phantom passenger capture and inventory button; targeted component/native checks passed; natural balance and multiplayer remain open"
 }

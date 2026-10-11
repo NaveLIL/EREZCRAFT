@@ -72,6 +72,7 @@ public final class ToxicLiquidBlock extends LiquidBlock {
                     }
                 }
         if (!touching) return;
+        if(onlyLower&&living instanceof pro.erez.interstice.entity.CaveRiftSpiderEntity)return;
         data.putLong("interstice:last_toxin_tick", now);
         if(onlyLower&&living instanceof net.minecraft.server.level.ServerPlayer player&&pro.erez.interstice.gear.RealmGear.protect(player,pro.erez.interstice.gear.RealmGear.HazardKind.LOWER_SEA))return;
         living.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(TOXIN)), 6.0F);

@@ -28,7 +28,7 @@ import pro.erez.interstice.ToxicLiquidBlock;
 
 /** A straight moving globule of upper toxin; never places fluid, fire, or damaged blocks. */
 public final class UpperSeaCharge extends Projectile {
-    public static final double SPEED = 1.1, SPLASH_RADIUS = 2.25;
+    public static final double SPEED = 5.5, SPLASH_RADIUS = 2.25;
     public static final int MAX_AIR_TICKS = 90;
     private int airTicks;
     public UpperSeaCharge(EntityType<? extends UpperSeaCharge> type, Level level) { super(type, level); }
@@ -86,7 +86,7 @@ public final class UpperSeaCharge extends Projectile {
             if (server.clip(new ClipContext(visiblePoint, target, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, this)).getType() == HitResult.Type.MISS)
                 hurtTarget(living, 3);
         }
-        server.playSound(null, BlockPos.containing(point), SoundEvents.SLIME_BLOCK_BREAK, SoundSource.HOSTILE, .8F, .7F);
+        server.playSound(null, BlockPos.containing(point), pro.erez.interstice.sound.ModSounds.GHAST_SPLASH.get(), SoundSource.HOSTILE, .8F, 1F);
         server.sendParticles(ParticleTypes.SNEEZE, point.x, point.y, point.z, 12, .4, .4, .4, .03);
         discard();
     }
