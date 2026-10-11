@@ -1,0 +1,18 @@
+{
+  "localization_commit": "0d089b0",
+  "release": "techmagic-0-1-0-alpha-12-ru",
+  "sequence": 12,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "interstice_version": "0.7.0-preview.9",
+  "client_jars": 62,
+  "manifest_files": 72,
+  "resource_pack_sha256": "27adbb222ed3e7ac3c9ac77ea9e5a13ce878dc9bf2b38c63a3e6e5c5ebe43ed8",
+  "resource_pack_bytes": 548082,
+  "manifest_url": "https://files.erezcraft.com/releases/archipelago/techmagic-0-1-0-alpha-12-ru/manifest.json",
+  "path": "resourcepacks/erezcraft-ru-mc1.21.1.zip",
+  "license": "AGPL-3.0-only",
+  "required_on": [
+    "client"
+  ]
+}

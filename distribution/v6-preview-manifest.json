@@ -41,7 +41,17 @@
       "sha512": "d14b32d3fd143a06514d6ad388eee11e9d657c84e1a937aaf8d033b1137fb43ef8b05cff1011a994cc42f3106823c51234f8bc18d72bb05bc317a20ea83c50ed"
     }
   ],
-  "resource_packs": [],
+  "resource_packs": [
+    {
+      "id": "erezcraft-ru",
+      "file": "erezcraft-ru-mc1.21.1.zip",
+      "sha256": "27adbb222ed3e7ac3c9ac77ea9e5a13ce878dc9bf2b38c63a3e6e5c5ebe43ed8",
+      "license": "AGPL-3.0-only",
+      "required_on": [
+        "client"
+      ]
+    }
+  ],
   "distant_horizons_reference_settings": {
     "lod_radius_chunks": 32,
     "worker_threads": 1,
@@ -70,5 +80,6 @@
   "ordinary_entry_dimension": "interstice:islands_v5",
   "instructions": "docs/V6_PREVIEW.md",
   "verification": "docs/verification/FAUNA_FEEDBACK.json",
-  "status": "preview.9 alpha.11/sequence11 published and installed: fauna environmental immunity, fast original-audio ghast, collision-safe phantom passenger capture and inventory button; targeted component/native checks passed; natural balance and multiplayer remain open"
+  "status": "preview.9 unchanged; alpha.12/sequence12 localization published and installed; 62 client JARs unchanged, 72 files; native language/resource loading and HTTPS ZIP repair passed; visual guide layout and natural Survival/multiplayer remain open",
+  "localization_verification": "docs/verification/RUSSIAN_LOCALIZATION_DELIVERY.json"
 }
