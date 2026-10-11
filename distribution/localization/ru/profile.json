@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "name": "EREZCRAFT installed client / Interstice 0.7.0-preview.9 / Minecraft 1.21.1 / NeoForge 21.1.252",
+  "name": "EREZCRAFT installed client / Interstice 0.7.0-preview.10 / Minecraft 1.21.1 / NeoForge 21.1.252",
   "checked_date": "2026-10-11",
   "jars": [
     {
@@ -194,9 +194,9 @@
       "sha256": "6f2a776fb28ed07d370899814e5e711fbeebe31396097d78a3b550439b364948"
     },
     {
-      "file": "interstice-0.7.0-preview.9.jar",
-      "bytes": 2208800,
-      "sha256": "becc16b4d36348d30be243b0411b338258efed96acc9809b82f55ebc02ecd6aa"
+      "file": "interstice-0.7.0-preview.10.jar",
+      "bytes": 2209122,
+      "sha256": "1d4f213ffdc0aedf311550b7c09408488ff9f06d1855f65855fec2a90a9c8b6a"
     },
     {
       "file": "iris-neoforge-1.8.14-beta.1-mc1.21.1.jar",

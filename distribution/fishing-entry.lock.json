@@ -1,0 +1,13 @@
+{
+  "release": "techmagic-0-1-0-alpha-13-entry",
+  "sequence": 13,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "interstice_version": "0.7.0-preview.10",
+  "mod_sha256": "1d4f213ffdc0aedf311550b7c09408488ff9f06d1855f65855fec2a90a9c8b6a",
+  "client_jars": 62,
+  "manifest_files": 72,
+  "current_dimension": "interstice:islands_v6",
+  "archive_dimension": "interstice:islands_v5",
+  "manifest_url": "https://files.erezcraft.com/releases/archipelago/techmagic-0-1-0-alpha-13-entry/manifest.json"
+}

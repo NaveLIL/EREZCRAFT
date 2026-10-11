@@ -48,7 +48,7 @@ public final class V6GameplayRegressionGameTests {
     }
 
     @GameTest(template = "empty", timeoutTicks = 300)
-    public static void actualV5RiftArrivalUnlocksFrameAndLensWithoutManualAwards(GameTestHelper h) {
+    public static void actualStoredV5PortalArrivalUnlocksFrameAndLensWithoutManualAwards(GameTestHelper h) {
         for (int x = 1; x <= 13; x++) for (int z = 1; z <= 13; z++) h.setBlock(new BlockPos(x, 1, z), Blocks.STONE);
         var player = TestPlayers.create(h, new BlockPos(6, 2, 6), GameType.SURVIVAL);
         try {
@@ -64,9 +64,17 @@ public final class V6GameplayRegressionGameTests {
             var echo = RiftSafety.prepareEcho(realm, RiftSafety.defaultHint(realm));
             h.assertTrue(echo != null, "The V5 connection must have a real safe echo");
             var source = new RiftLinks.Endpoint(h.getLevel().dimension(), player.blockPosition(), Direction.Axis.X);
-            var link = RiftLinks.get(player.server).add(RiftLinks.Kind.FISHING, source,
+            // Physical frames retain their saved destinations; discoveries now have a separate current-version link.
+            var frame = new pro.erez.interstice.rift.RiftGeometry.Frame(source.pos(), source.axis());
+            for (int w = -1; w <= 2; w++) for (int y = -1; y <= 3; y++) {
+                if ((w == -1 || w == 2) && (y == -1 || y == 3)) continue;
+                if (w == -1 || w == 2 || y == -1 || y == 3)
+                    h.getLevel().setBlock(frame.at(w, y), Interstice.RIFT_FRAME.get().defaultBlockState(), 3);
+            }
+            h.assertTrue(pro.erez.interstice.rift.RiftGeometry.activate(h.getLevel(), frame.at(-1, 0)) != null, "An archived physical frame must actually activate");
+            var link = RiftLinks.get(player.server).add(RiftLinks.Kind.PORTAL, source,
                     new RiftLinks.Endpoint(IslandWorld.VANILLA_WORLD, echo, Direction.Axis.X));
-            h.assertTrue(RiftTravel.enter(player, source, RiftLinks.Kind.FISHING), "Native rift travel must enter the saved V5 destination");
+            h.assertTrue(RiftTravel.enter(player, source, RiftLinks.Kind.PORTAL), "A saved physical frame must still enter its V5 destination");
             player.hasChangedDimension();
             h.assertTrue(player.level().dimension().equals(IslandWorld.VANILLA_WORLD)
                     && player.getPersistentData().getUUID(RiftTravel.ACTIVE).equals(link.id()),

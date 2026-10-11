@@ -104,9 +104,10 @@ public final class RiftTravel {
         ServerLevel origin = player.server.getLevel(source.dimension());
         if (origin == null || sourceExit(origin, source, kind) == null) return fail(player, "unsafe_source");
         RiftLinks data = RiftLinks.get(player.server);
-        RiftLinks.Link link = data.source(source, kind);
+        var intendedDimension = IslandWorld.isIsland(source.dimension()) ? Level.OVERWORLD : IslandWorld.CURRENT_WORLD;
+        RiftLinks.Link link = kind == RiftLinks.Kind.PORTAL ? data.source(source, kind) : data.source(source, kind, intendedDimension);
         if (link == null) {
-            ServerLevel destination = player.server.getLevel(IslandWorld.isIsland(source.dimension()) ? Level.OVERWORLD : IslandWorld.CURRENT_WORLD);
+            ServerLevel destination = player.server.getLevel(intendedDimension);
             if (destination == null) return fail(player, "missing_dimension");
             BlockPos hint;
             try { hint = returnHint(player, destination); }

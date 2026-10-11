@@ -108,13 +108,63 @@ public final class RiftGameTests {
         h.assertTrue(reload.echo(target.dimension(), target.pos()).source().equals(source), "Return lookup must preserve shared connections");
         h.succeed();
     }
+    @GameTest(template = "empty", timeoutTicks = 60)
+    public static void versionedDiscoveriesKeepBothEchoesAcrossReloadButFramesStayUnique(GameTestHelper h) {
+        for (var kind : new RiftLinks.Kind[]{RiftLinks.Kind.FISHING, RiftLinks.Kind.CAULDRON}) {
+            var data = new RiftLinks();
+            var source = new RiftLinks.Endpoint(Level.OVERWORLD, new BlockPos(15, 65, -32), Direction.Axis.X);
+            var old = data.add(kind, source, new RiftLinks.Endpoint(IslandWorld.VANILLA_WORLD, new BlockPos(5, 90, 5), Direction.Axis.X));
+            var current = data.add(kind, source, new RiftLinks.Endpoint(IslandWorld.TENSION_WORLD, new BlockPos(5, 90, 5), Direction.Axis.X));
+            var loaded = RiftLinks.load(data.save(new net.minecraft.nbt.CompoundTag(), h.getLevel().registryAccess()), h.getLevel().registryAccess());
+            h.assertTrue(loaded.size() == 2 && loaded.byId(old.id()).equals(old) && loaded.byId(current.id()).equals(current), "Reload must preserve both V5 and V6 discovery UUIDs and endpoints");
+            h.assertTrue(loaded.source(source, kind, IslandWorld.TENSION_WORLD).equals(current)
+                    && loaded.echo(old.echo().dimension(), old.echo().pos()).equals(old), "Current discovery lookup and archived return lookup must remain independent");
+            boolean duplicateRejected = false;
+            try { loaded.add(kind, source, new RiftLinks.Endpoint(IslandWorld.TENSION_WORLD, new BlockPos(20, 90, 20), Direction.Axis.X)); }
+            catch (IllegalStateException expected) { duplicateRejected = true; }
+            h.assertTrue(duplicateRejected, "Repeated discovery cannot create another link for the same version");
+        }
+        var frames = new RiftLinks();
+        var source = new RiftLinks.Endpoint(Level.OVERWORLD, new BlockPos(15, 65, -32), Direction.Axis.X);
+        frames.add(RiftLinks.Kind.PORTAL, source, new RiftLinks.Endpoint(IslandWorld.VANILLA_WORLD, new BlockPos(5, 90, 5), Direction.Axis.X));
+        boolean frameRejected = false;
+        try { frames.add(RiftLinks.Kind.PORTAL, source, new RiftLinks.Endpoint(IslandWorld.TENSION_WORLD, new BlockPos(20, 90, 20), Direction.Axis.X)); }
+        catch (IllegalStateException expected) { frameRejected = true; }
+        h.assertTrue(frameRejected, "A physical frame cannot be rewired by a versioned discovery");
+        h.succeed();
+    }
+    @GameTest(template = "empty", timeoutTicks = 300)
+    public static void fishingAtStoredV5SpotOpensV6WithoutBreakingOldEcho(GameTestHelper h) {
+        floor(h); var player = player(h, ROOT);
+        try {
+            var source = new RiftLinks.Endpoint(Level.OVERWORLD, player.blockPosition(), Direction.Axis.X);
+            var archive = player.server.getLevel(IslandWorld.VANILLA_WORLD);
+            var oldEcho = RiftSafety.prepareEcho(archive, RiftSafety.defaultHint(archive));
+            h.assertTrue(oldEcho != null, "A saved V5 connection requires a real safe echo");
+            var data = RiftLinks.get(player.server);
+            var old = data.add(RiftLinks.Kind.FISHING, source, new RiftLinks.Endpoint(IslandWorld.VANILLA_WORLD, oldEcho, Direction.Axis.X));
+            h.assertTrue(RiftTravel.enter(player, source, RiftLinks.Kind.FISHING)
+                    && player.level().dimension().location().toString().equals("interstice:islands_v6"), "Fishing at a previously linked V5 spot must now enter V6");
+            var current = data.byId(player.getPersistentData().getUUID(RiftTravel.ACTIVE));
+            h.assertTrue(!current.id().equals(old.id()) && data.byId(old.id()).equals(old), "Create a separate current discovery while preserving the old link exactly");
+            player.getPersistentData().remove(RiftTravel.COOLDOWN);
+            h.assertTrue(RiftTravel.returnThroughEcho(player, current.echo().pos()) && player.serverLevel() == h.getLevel(), "The new echo must return to the same outside source");
+            player.getPersistentData().remove(RiftTravel.COOLDOWN);
+            h.assertTrue(RiftTravel.enter(player, source, RiftLinks.Kind.FISHING)
+                    && player.getPersistentData().getUUID(RiftTravel.ACTIVE).equals(current.id()), "Repeat discovery must reuse the current V6 UUID");
+            player.teleportTo(archive, oldEcho.getX() - .5, oldEcho.getY() + .01, oldEcho.getZ() + .5, java.util.Set.of(), 0, 0);
+            player.getPersistentData().remove(RiftTravel.COOLDOWN);
+            h.assertTrue(RiftTravel.returnThroughEcho(player, oldEcho) && player.serverLevel() == h.getLevel(), "An already stranded V5 player must still return through the original echo");
+        } finally { remove(player); }
+        h.succeed();
+    }
     @GameTest(template = "empty", timeoutTicks = 300)
     public static void portalRoundTripUsesShelteredLandingAndCooldown(GameTestHelper h) {
         var frame = frame(h, Direction.Axis.X); RiftGeometry.activate(h.getLevel(), frame.at(-1, 0));
         ServerPlayer player = player(h, ROOT);
         try {
             h.assertTrue(RiftTravel.enter(player, frame.endpoint(h.getLevel()), RiftLinks.Kind.PORTAL), "Portal must enter without commands");
-            h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD), "New unlinked entrances must use the current V5 realm");
+            h.assertTrue(player.level().dimension().location().toString().equals("interstice:islands_v6"), "New unlinked entrances must use the actual V6 realm");
             h.assertTrue(ShelterDetector.isSheltered(player.level(), player), "First landing must have a roof against the tide");
             var link = RiftLinks.get(player.server).byId(player.getPersistentData().getUUID(RiftTravel.ACTIVE));
             h.assertTrue(!RiftTravel.returnThroughEcho(player, link.echo().pos()), "Immediate bounce must be blocked");
@@ -179,7 +229,14 @@ public final class RiftGameTests {
         } catch (Throwable error) { remove(player); throw error; }
         finally { h.getLevel().setWeatherParameters(0, 0, false, false); h.getLevel().setRainLevel(0); h.getLevel().setThunderLevel(0); }
         h.runAtTickTime(40, () -> {
-            try { h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD), "Queued catch must enter the current realm"); h.succeed(); }
+            try {
+                h.assertTrue(player.level().dimension().location().toString().equals("interstice:islands_v6"), "A natural storm catch must enter actual V6, independently of the default selector");
+                var link = RiftLinks.get(player.server).byId(player.getPersistentData().getUUID(RiftTravel.ACTIVE));
+                h.assertTrue(link != null && link.kind() == RiftLinks.Kind.FISHING && link.echo().dimension().equals(IslandWorld.TENSION_WORLD), "The fishing connection must persist its V6 echo");
+                player.getPersistentData().remove(RiftTravel.COOLDOWN);
+                h.assertTrue(RiftTravel.returnThroughEcho(player, link.echo().pos()) && player.serverLevel() == h.getLevel(), "The fishing echo must return to the original Overworld");
+                h.succeed();
+            }
             finally { remove(player); }
         });
     }
@@ -192,7 +249,7 @@ public final class RiftGameTests {
         var event = new ItemFishedEvent(List.of(new ItemStack(Items.COD, 2)), 1, hook); NeoForge.EVENT_BUS.post(event);
         h.assertTrue(!event.isCanceled() && event.getDrops().getFirst().is(Items.COD) && event.getDrops().getFirst().getCount() == 2 && event.getRodDamage() == 1, "The anomaly must preserve vanilla loot and rod wear");
         h.assertTrue(player.serverLevel() == h.getLevel(), "The event must finish before transfer");
-        h.runAtTickTime(40, () -> { try { h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD), "Lens must make a successful catch repeatable without a storm"); h.succeed(); } finally { remove(player); } });
+        h.runAtTickTime(40, () -> { try { h.assertTrue(player.level().dimension().location().toString().equals("interstice:islands_v6"), "A native catch event with a lens must reach actual V6 after the callback"); h.succeed(); } finally { remove(player); } });
     }
     @GameTest(template = "empty", timeoutTicks = 300)
     public static void cauldronKeepsVanillaBucketPickupBeforeTransfer(GameTestHelper h) {
@@ -204,7 +261,7 @@ public final class RiftGameTests {
         CauldronInteraction.WATER.map().get(Items.BUCKET).interact(full, h.getLevel(), pos, player, InteractionHand.MAIN_HAND, player.getMainHandItem());
         h.assertTrue(player.serverLevel() == h.getLevel(), "Vanilla cauldron operation must finish first");
         h.runAtTickTime(40, () -> { try {
-            h.assertTrue(player.level().dimension().equals(IslandWorld.CURRENT_WORLD), "Cauldron must transfer into the current realm after pickup");
+            h.assertTrue(player.level().dimension().location().toString().equals("interstice:islands_v6"), "Cauldron must transfer into actual V6 after pickup");
             h.assertTrue(player.getMainHandItem().is(Items.WATER_BUCKET) || player.getInventory().contains(new ItemStack(Items.WATER_BUCKET)), "Collected water must remain in the inventory");
             h.succeed();
         } finally { remove(player); } });
@@ -286,7 +343,7 @@ public final class RiftGameTests {
         var player=player(h,ROOT);
         try{
             var archive=player.server.getLevel(IslandWorld.LIVING_WORLD);
-            h.assertTrue(archive!=null&&!IslandWorld.CURRENT_WORLD.equals(IslandWorld.LIVING_WORLD),"Fixture needs distinct current V5 and archived V4 worlds");
+            h.assertTrue(archive!=null&&!IslandWorld.CURRENT_WORLD.equals(IslandWorld.LIVING_WORLD),"Fixture needs distinct current V6 and archived V4 worlds");
             var echo=RiftSafety.prepareEcho(archive,RiftSafety.defaultHint(archive));
             h.assertTrue(echo!=null&&archive.getBlockState(echo).is(Interstice.RIFT_ECHO.get()),"The archived link requires an actual safe V4 echo");
             var source=frame.endpoint(h.getLevel());
