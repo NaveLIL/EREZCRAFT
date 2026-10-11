@@ -1,6 +1,6 @@
 {
   "name": "EREZCRAFT V6 Preview",
-  "version": "0.7.0-preview.7",
+  "version": "0.7.0-preview.8",
   "minecraft": "1.21.1",
   "java_major": 21,
   "loader": {
@@ -10,9 +10,9 @@
   "mods": [
     {
       "id": "interstice",
-      "version": "0.7.0-preview.7",
-      "file": "interstice-0.7.0-preview.7.jar",
-      "sha256": "055d10b9b273f947db38359d402fe2102fa4f83fa683b777e0b26c5e0476812f",
+      "version": "0.7.0-preview.8",
+      "file": "interstice-0.7.0-preview.8.jar",
+      "sha256": "ee23f704e8f48ec29e73cc111b839bfdd66fdb28a59cf94a3f4b78168f9b57b9",
       "required_on": [
         "client",
         "server"
@@ -69,6 +69,6 @@
   "preview_dimension": "interstice:islands_v6",
   "ordinary_entry_dimension": "interstice:islands_v5",
   "instructions": "docs/V6_PREVIEW.md",
-  "verification": "docs/verification/V6_SHADER_MATERIALS.json",
-  "status": "preview.7 V6 Complementary/DH material adaptation; alpha.9/sequence9 published and installed; 4 native shader/material and 7 lightmap checks passed; owner visual recheck pending; gameplay/capacity gates remain open"
+  "verification": "docs/verification/REALM_EXPANSION.json",
+  "status": "preview.8 V6 pack ores, aimed spider attacks, bounded strong/tide fauna and DH AIR null guard; alpha.10/sequence10 published and installed; full component check and fresh full-pack native checks passed; natural Survival, visuals, multiplayer anti-flight, cold reload and real server capacity remain open"
 }

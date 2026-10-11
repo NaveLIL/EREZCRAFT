@@ -436,5 +436,9 @@
   "navigation.interstice.direction.nw": "северо-запад",
   "entity.interstice.echo_rift": "Эхо-разлом",
   "item.interstice.echo_shard": "Осколок эха",
-  "item.interstice.echo_rift_anchor": "Якорь Эхо-разлома"
+  "item.interstice.echo_rift_anchor": "Якорь Эхо-разлома",
+  "entity.interstice.upper_sea_ghast": "Гаст верхнего моря",
+  "entity.interstice.upper_sea_charge": "Заряд верхнего токсина",
+  "item.interstice.upper_sea_ghast_spawn_egg": "Яйцо призыва гаста верхнего моря",
+  "entity.interstice.tide_phantom": "Приливный фантом"
 }

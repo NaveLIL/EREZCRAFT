@@ -1,0 +1,24 @@
+{
+  "operation": "reuse unchanged accepted textures through original paths; custom cube geometry and vertex tint only",
+  "newRasterAssets": false,
+  "textures": [
+    {
+      "path": "src/main/resources/assets/interstice/textures/block/minerals/rift_shale.png",
+      "sha256": "119471a2385fbaa449aea8519d87d51f243b633faebd9c5d21c0a66c29e6c1a3",
+      "use": "upper-sea ghast stone shell and geometric eyes",
+      "existingAttribution": "docs/ASSET_LIBRARY.md; assets/interstice/provenance/minerals.json"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/block/minerals/vitriolite.png",
+      "sha256": "54072d0bdd6f0d2b1908c18ef305cd26207057da928330c827e1f6c3676a3b18",
+      "use": "upper-sea ghast hanging toxin sacs",
+      "existingAttribution": "docs/ASSET_LIBRARY.md; assets/interstice/provenance/minerals.json"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/block/light_still_v3.png",
+      "sha256": "e26a5551eadc686b8632160883cb0e92f97ef6f4e21798126a8c518f2dba87f4",
+      "use": "upper-toxin charge original animated block atlas sprite",
+      "existingAttribution": "existing author ocean assets, unchanged"
+    }
+  ]
+}

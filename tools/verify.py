@@ -21,6 +21,7 @@ ALLOWED = {"build", "assemble", "runGameTestServer", "runIslandSmoke", "runTallI
 ALLOWED.add("runGearGameTestServer")
 ALLOWED.add("runPaletteGallery")
 ALLOWED.add("runFaunaGameTestServer")
+ALLOWED.add("runRealmExpansionGameTestServer")
 ALLOWED.add("runTensionRealmSmoke")
 ALLOWED.add("runForestCaveGameTestServer")
 ALLOWED.add("runForestCaveSmoke")

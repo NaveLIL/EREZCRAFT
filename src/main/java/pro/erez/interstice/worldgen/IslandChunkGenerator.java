@@ -253,6 +253,8 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         if(isRevisedRealm()){
             pro.erez.interstice.minerals.GroundStrata.generate(geometry,chunk,region.getSeed());
             pro.erez.interstice.minerals.MineralDeposits.generate(geometry,chunk,region.getSeed(),terrainRevision);
+            if(terrainRevision==6)pro.erez.interstice.minerals.PackOreDepositsV6.generate(geometry,chunk,region.getSeed(),
+                    region.getLevel().dimension(),terrainRevision);
         }else generateOres(geometry,chunk,region.getSeed());
         boolean garden=RealmBiomes.isGarden(chunk,new BlockPos(chunk.getPos().getMinBlockX()+7,40,chunk.getPos().getMinBlockZ()+7));
         if(terrainRevision<5&&FeatureDistribution.watchpostAllowed(terrainRevision,region.getSeed(),chunk.getPos().x,chunk.getPos().z,garden))

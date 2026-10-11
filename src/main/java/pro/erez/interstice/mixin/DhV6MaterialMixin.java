@@ -24,6 +24,10 @@ public abstract class DhV6MaterialMixin {
 
     @Inject(method="getMaterialId", at=@At("RETURN"), cancellable=true, remap=false)
     private void interstice$weakForestGlow(CallbackInfoReturnable<Byte> callback) {
+        // DH's shared synthetic AIR wrapper deliberately stores a null state.
+        // It already has its own material byte; preserve that original return
+        // without consulting the client world or classifying any forest block.
+        if (blockState == null) return;
         var level = Minecraft.getInstance().level;
         if (level == null || !level.dimension().equals(IslandWorld.TENSION_WORLD)) return;
         var block = blockState.getBlock();

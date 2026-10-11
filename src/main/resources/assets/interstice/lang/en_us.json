@@ -436,5 +436,9 @@
   "navigation.interstice.direction.nw": "north-west",
   "entity.interstice.echo_rift": "Echo Rift",
   "item.interstice.echo_shard": "Echo Shard",
-  "item.interstice.echo_rift_anchor": "Echo Rift Anchor"
+  "item.interstice.echo_rift_anchor": "Echo Rift Anchor",
+  "entity.interstice.upper_sea_ghast": "Upper-Sea Ghast",
+  "entity.interstice.upper_sea_charge": "Upper-Toxin Charge",
+  "item.interstice.upper_sea_ghast_spawn_egg": "Upper-Sea Ghast Spawn Egg",
+  "entity.interstice.tide_phantom": "Tide Phantom"
 }

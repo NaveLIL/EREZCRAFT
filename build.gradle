@@ -383,6 +383,12 @@ neoForge {
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_fauna'
         }
+        realmExpansionGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/realm-expansion-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_strong_fauna,interstice_tide_fauna'
+        }
         liftGameTestServer {
             type = 'gameTestServer'
             gameDirectory = file('build/lift-gametests')
@@ -960,5 +966,6 @@ tasks.register('runSurvivalPreparationSmoke') { dependsOn tasks.named('runSurviv
 
 // A successful build includes the server's behavioral tests, in a disposable profile.
 tasks.named('check') { dependsOn tasks.named('runFaunaGameTestServer') }
+tasks.named('check') { dependsOn tasks.named('runRealmExpansionGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runForestCaveGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer'),tasks.named('runAgricultureGameTestServer'),tasks.named('runEquipmentGameTestServer'),tasks.named('runGearGameTestServer'),tasks.named('runTetherGameTestServer'),tasks.named('runLiftGameTestServer') }

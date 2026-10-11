@@ -27,7 +27,8 @@ public final class CaveFeatures {
         return value^(value>>>31);
     }
     private static int choice(long seed,BlockPos p,int bound) {return Math.floorMod(hash(seed,p.getX(),p.getY(),p.getZ()),bound);}
-    public static boolean rock(BlockState state) {return StoneVaults.isGround(state)||state.getBlock() instanceof pro.erez.interstice.minerals.RiftOreBlock;}
+    public static boolean rock(BlockState state) {return StoneVaults.isGround(state)||state.getBlock() instanceof pro.erez.interstice.minerals.RiftOreBlock
+            ||pro.erez.interstice.minerals.PackOreDepositsV6.isOre(state);}
     private static boolean inside(ChunkAccess chunk,BlockPos p) {
         return p.getX()>=chunk.getPos().getMinBlockX()&&p.getX()<=chunk.getPos().getMaxBlockX()
                 &&p.getZ()>=chunk.getPos().getMinBlockZ()&&p.getZ()<=chunk.getPos().getMaxBlockZ()

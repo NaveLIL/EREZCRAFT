@@ -109,6 +109,7 @@ final class V6CaveSurvey {
         }
     }
     static boolean mass(BlockState state){return StoneVaults.isGround(state)||state.getBlock() instanceof RiftOreBlock
+        ||pro.erez.interstice.minerals.PackOreDepositsV6.isOre(state)
         ||state.is(MineralEcology.ROOT_LOAM.get())||state.is(MineralEcology.TOXIC_SAND.get())
         ||state.is(MineralEcology.MINERAL_POWDER.get())||state.is(MineralEcology.MINERAL_FROST.get());}
     static JsonObject survey(ServerLevel level,BlockPos centre,int radius,int minY,int maxY){
