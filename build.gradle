@@ -831,11 +831,15 @@ def modpackZip = tasks.register('modpackZip', Zip) {
     from('docs/LAUNCHER_INTEGRATION.md') { into 'docs' }
     from('docs/OCEAN_DH_RENDER_FIX.md') { into 'docs' }
     from('docs/FLUID_FLIGHT_CRASH_FIX.md') { into 'docs' }
+    from('docs/V6_DARKNESS_TRIAL.md') { into 'docs' }
+    from('docs/V6_SHADER_MATERIALS.md') { into 'docs' }
     from('docs/verification/V6_FOREST_CAVES.json') { into 'docs/verification' }
     from('docs/verification/TECHMAGIC_FOUNDATION.json') { into 'docs/verification' }
     from('docs/verification/OCEAN_DH_RENDER_FIX.json') { into 'docs/verification' }
     from('docs/verification/OCEAN_DH_WORKSTATION_INSTALL.json') { into 'docs/verification' }
     from('docs/verification/FLUID_FLIGHT_CRASH_FIX.json') { into 'docs/verification' }
+    from('docs/verification/V6_DARKNESS_TRIAL.json') { into 'docs/verification' }
+    from('docs/verification/V6_SHADER_MATERIALS.json') { into 'docs/verification' }
     from('LICENSE') { into 'licenses/interstice' }
     from({ zipTree(configurations.distantHorizonsArtifact.singleFile) }) {
         include 'LICENSE.txt', 'LICENSE.LESSER.txt', 'LICENSE-LOGOS.txt'

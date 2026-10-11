@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "date": "2026-10-10",
+  "mod_version": "0.7.0-preview.6",
+  "pack_version": "0.1.0-alpha.8",
+  "delivery_sequence": 8,
+  "release_id": "techmagic-0-1-0-alpha-8-darkness",
+  "quantitative_passed": true,
+  "visual_status": "owner_pending",
+  "shader_visual_status": "owner_pending",
+  "actual_dimension": "interstice:islands_v6",
+  "mod_sha256": "6f958d3168d7256db0f9818cbd5dbc1511c6442055775490918df46762876cb0",
+  "stage": {
+    "mod_sha256": "6f958d3168d7256db0f9818cbd5dbc1511c6442055775490918df46762876cb0",
+    "files": 71,
+    "client_jars": 62,
+    "unchanged_pack_files": 68,
+    "worldgen_classes_byte_identical": 117,
+    "jar_entries_changed": [
+      "META-INF/neoforge.mods.toml",
+      "interstice.mixins.json",
+      "pro/erez/interstice/Interstice.class",
+      "pro/erez/interstice/IntersticeClientConfig.class",
+      "pro/erez/interstice/client/V6Darkness.class",
+      "pro/erez/interstice/mixin/V6LightTextureMixin.class"
+    ],
+    "fluid_crash_fix_byte_identical": true,
+    "worldgen_changed": false,
+    "shaders_changed": false,
+    "third_party_mods_changed": false,
+    "owner_worlds_copied": false,
+    "visual_status": "owner_pending"
+  },
+  "native_lightmap": {
+    "actual_dimension": "interstice:islands_v6",
+    "cases": [
+      {
+        "case": "V6 gamma 0",
+        "dh_upload_matches": true,
+        "dimension": "interstice:islands_v6",
+        "enabled": true,
+        "gamma": 0.0,
+        "passed": true,
+        "pixels_checked": 256,
+        "zero_light_after": "ff000000",
+        "zero_light_before": "ff14161a"
+      },
+      {
+        "case": "V6 gamma 1",
+        "dh_upload_matches": true,
+        "dimension": "interstice:islands_v6",
+        "enabled": true,
+        "gamma": 1.0,
+        "passed": true,
+        "pixels_checked": 256,
+        "zero_light_after": "ff000000",
+        "zero_light_before": "ff383e4a"
+      },
+      {
+        "case": "V6 config disabled",
+        "dh_upload_matches": true,
+        "dimension": "interstice:islands_v6",
+        "enabled": false,
+        "gamma": 1.0,
+        "passed": true,
+        "pixels_checked": 256,
+        "zero_light_after": "ff383e4a",
+        "zero_light_before": "ff383e4a"
+      },
+      {
+        "case": "V6 night vision",
+        "dh_upload_matches": true,
+        "dimension": "interstice:islands_v6",
+        "enabled": true,
+        "gamma": 1.0,
+        "passed": true,
+        "pixels_checked": 256,
+        "zero_light_after": "fffafcfc",
+        "zero_light_before": "fffafcfc"
+      },
+      {
+        "case": "V5 unchanged",
+        "dh_upload_matches": true,
+        "dimension": "interstice:islands_v5",
+        "enabled": true,
+        "gamma": 1.0,
+        "passed": true,
+        "pixels_checked": 256,
+        "zero_light_after": "ff383e4a",
+        "zero_light_before": "ff383e4a"
+      },
+      {
+        "case": "Overworld unchanged",
+        "dh_upload_matches": true,
+        "dimension": "minecraft:overworld",
+        "enabled": true,
+        "gamma": 1.0,
+        "passed": true,
+        "pixels_checked": 256,
+        "zero_light_after": "ff232323",
+        "zero_light_before": "ff232323"
+      },
+      {
+        "case": "V6 after dimension return",
+        "dh_upload_matches": true,
+        "dimension": "interstice:islands_v6",
+        "enabled": true,
+        "gamma": 1.0,
+        "passed": true,
+        "pixels_checked": 256,
+        "zero_light_after": "ff000000",
+        "zero_light_before": "ff383e4a"
+      }
+    ],
+    "dh_native_uploads_observed": 1343,
+    "generation_quiescence": {
+      "elapsed_actual_server_ticks": 38,
+      "generation_ref_count": 0,
+      "holders_checked": 1849,
+      "holders_not_ready_for_saving": 0,
+      "non_quiet_examples": [],
+      "pending_generation_tasks": 0,
+      "purpose": "darkness-lightmap-shutdown",
+      "save_futures_failed": 0,
+      "save_futures_pending": 0,
+      "server_tick": 8418,
+      "stable_actual_server_ticks": 20,
+      "timed_out": false
+    },
+    "launcher_managed_hash_ms": 994,
+    "launcher_runtime_prepare_ms": 3496,
+    "max_heap_bytes": 10737418240,
+    "own_integrated_server_stopped": true,
+    "owner_worlds_copied": false,
+    "passed": true,
+    "visual_verified": false
+  },
+  "delivery": {
+    "published": true,
+    "installed": true,
+    "files_checked": 71,
+    "repaired": 3,
+    "repeat_repaired": 0,
+    "player_world_files_preserved": 496,
+    "existing_preferences_preserved": true,
+    "client_darkness_enabled": true,
+    "game_started": false,
+    "game_server_contacted": false
+  },
+  "client_config": {
+    "file": "config/interstice-client.toml",
+    "key": "completeDarknessV6",
+    "default": true,
+    "policy": "seed"
+  },
+  "effects": {
+    "night_vision_preserved": true,
+    "conduit_vision_bypass_implemented": true,
+    "conduit_vision_native_tested": false,
+    "held_torch_visual_tested": false
+  },
+  "worldgen_changed": false,
+  "world_light_data_changed": false,
+  "owner_worlds_copied": false,
+  "server_capacity_verified": false,
+  "evidence": {
+    "assemble": ".verification/20261010T123522.018164Z-v6-darkness-fullbright",
+    "native": ".local/verification/v6-darkness-final-20261010/darkness-validation.json"
+  }
+}

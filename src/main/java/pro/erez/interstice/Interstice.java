@@ -182,7 +182,8 @@ public final class Interstice {
     private static BaseFlowingFluid.Properties heavyProperties() {
         return new BaseFlowingFluid.Properties(HEAVY_TYPE, HEAVY, HEAVY_FLOW).block(HEAVY_BLOCK).bucket(HEAVY_BUCKET).tickRate(5).levelDecreasePerBlock(1).explosionResistance(100);
     }
-    public Interstice(IEventBus bus) {
+    public Interstice(IEventBus bus, net.neoforged.fml.ModContainer container) {
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.CLIENT, IntersticeClientConfig.SPEC);
         bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerPayloads);
         bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerTask);
         bus.addListener(pro.erez.interstice.tide.TideSync::registerPayloads);

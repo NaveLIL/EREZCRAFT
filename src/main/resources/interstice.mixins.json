@@ -3,6 +3,6 @@
   "package": "pro.erez.interstice.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": ["EntityFluidContactMixin", "NavigationRegionGeometryMixin", "BucketItemMixin", "FlowingFluidMixin", "IceBlockMixin", "DhChunkyInitializationMixin", "DhIslandGeneratorMixin", "DhTaskPickerRejectionMixin"],
-  "client": ["ClientLevelGeometryMixin", "RenderRegionGeometryMixin", "SodiumLevelSliceGeometryMixin", "DhIslandCaveCullingMixin", "DhIslandOceanLightingMixin", "DhIslandVerticalSlicesMixin"],
+  "client": ["ClientLevelGeometryMixin", "RenderRegionGeometryMixin", "SodiumLevelSliceGeometryMixin", "DhIslandCaveCullingMixin", "DhIslandOceanLightingMixin", "DhIslandVerticalSlicesMixin", "V6LightTextureMixin", "DhV6MaterialMixin", "IrisV6ProgramSetMixin", "IrisV6BlockMaterialsMixin"],
   "injectors": {"defaultRequire": 1}
 }
