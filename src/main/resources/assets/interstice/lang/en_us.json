@@ -446,5 +446,10 @@
   "subtitles.interstice.upper_ghast.death": "Upper-sea ghast dies",
   "subtitles.interstice.upper_ghast.warn": "Ghast charges toxin",
   "subtitles.interstice.upper_ghast.shoot": "Ghast fires toxin",
-  "subtitles.interstice.upper_ghast.splash": "Toxin splashes"
+  "subtitles.interstice.upper_ghast.splash": "Toxin splashes",
+  "navigation.interstice.ethereal.arch": "Ruined archway",
+  "navigation.interstice.ethereal.monolith": "Ancient monolith",
+  "navigation.interstice.ethereal.shrine": "Forgotten shrine",
+  "navigation.interstice.ethereal.tower": "Ruined tower",
+  "navigation.interstice.ethereal.relic": "Ancient mechanism"
 }

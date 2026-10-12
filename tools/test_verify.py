@@ -54,6 +54,11 @@ class VerificationResultTests(unittest.TestCase):
                         destination = evidence / ('profiles/hydrologySmoke' if task=='runHydrologySmoke' else 'profiles/agriculturePropsSmoke')
                         destination.mkdir(parents=True)
                         (destination / ('hydrology-validation.json' if task=='runHydrologySmoke' else 'agriculture-props-validation.json')).write_text(json.dumps(result), encoding='utf-8')
+                    elif task == 'runEtherealSmoke':
+                        destination = evidence / 'profiles/etherealSmoke'
+                        destination.mkdir(parents=True)
+                        for name, value in result.items():
+                            (destination / name).write_text(json.dumps(value), encoding='utf-8')
                     else:
                         destination = evidence / "profiles/islandSmoke"
                         destination.mkdir(parents=True)
@@ -213,6 +218,18 @@ class VerificationResultTests(unittest.TestCase):
         code, _, summary = self.exercise("runGameTestServer", log="All 21 required tests passed :)\n")
         self.assertEqual(code, 0)
         self.assertTrue(summary["passed"])
+
+    def test_ethereal_client_requires_both_actual_native_receipts(self):
+        code, _, summary = self.exercise('runEtherealSmoke')
+        self.assertEqual(code, 1)
+        self.assertFalse(summary['passed'])
+
+    def test_ethereal_positive_flags_do_not_replace_natural_and_cold_evidence(self):
+        code, _, summary = self.exercise('runEtherealSmoke', result={
+            'ethereal-create-validation.json': {'passed': True, 'finished': True},
+            'ethereal-reload-validation.json': {'passed': True, 'finished': True}})
+        self.assertEqual(code, 1)
+        self.assertFalse(summary['passed'])
 
     def test_rift_server_requires_actual_gametest_completion(self):
         code, _, summary = self.exercise("runRiftGameTestServer", log="BUILD SUCCESSFUL\n")

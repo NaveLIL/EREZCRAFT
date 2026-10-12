@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "role": "Per-player loot for generated V6 structures",
+  "project": "Lootr",
+  "project_id": "EltpO5cN",
+  "project_url": "https://modrinth.com/mod/lootr",
+  "license": {
+    "id": "MIT",
+    "name": "MIT License",
+    "url": null
+  },
+  "minecraft": "1.21.1",
+  "loader": "neoforge",
+  "version": "1.21.1-1.11.38.127",
+  "version_id": "SPOrIzX8",
+  "filename": "lootr-neoforge-1.21.1-1.11.38.127.jar",
+  "download_url": "https://cdn.modrinth.com/data/EltpO5cN/versions/SPOrIzX8/lootr-neoforge-1.21.1-1.11.38.127.jar",
+  "bytes": 1075929,
+  "sha512": "7496051c1ba98f8801b8eb81773d1baec16166c3d2c5682476bd6f9433f794095099cea609fd5610525edb7c450b1bacd0011a31763e91c77c9a0034c8245ca3",
+  "sha256": "5c74de4709d1c13b25880fdd241a89d5d9f331346d20edc76f80ccd4d99dc66c",
+  "required_dependencies": [],
+  "distribution": "Original upstream JAR included unchanged in the local preview ZIP; full launcher delivery not published.",
+  "license_source_url": "https://raw.githubusercontent.com/LootrMinecraft/Lootr/1.16/LICENSE",
+  "license_sha256": "83e4dd21429a91fb7cea67a476032a9641425e5355df2e0f589a738b6ec9fd2c"
+}

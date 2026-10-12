@@ -446,5 +446,10 @@
   "subtitles.interstice.upper_ghast.death": "Гаст верхнего моря погибает",
   "subtitles.interstice.upper_ghast.warn": "Гаст набирает токсин",
   "subtitles.interstice.upper_ghast.shoot": "Гаст выпускает заряд",
-  "subtitles.interstice.upper_ghast.splash": "Токсин разбрызгивается"
+  "subtitles.interstice.upper_ghast.splash": "Токсин разбрызгивается",
+  "navigation.interstice.ethereal.arch": "Разрушенная арка",
+  "navigation.interstice.ethereal.monolith": "Древний монолит",
+  "navigation.interstice.ethereal.shrine": "Забытое святилище",
+  "navigation.interstice.ethereal.tower": "Разрушенная башня",
+  "navigation.interstice.ethereal.relic": "Древний механизм"
 }

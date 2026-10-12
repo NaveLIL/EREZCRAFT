@@ -1,6 +1,6 @@
 {
   "name": "EREZCRAFT V6 Preview",
-  "version": "0.7.0-preview.10",
+  "version": "0.7.0-preview.11",
   "minecraft": "1.21.1",
   "java_major": 21,
   "loader": {
@@ -10,13 +10,13 @@
   "mods": [
     {
       "id": "interstice",
-      "version": "0.7.0-preview.10",
-      "file": "interstice-0.7.0-preview.10.jar",
-      "sha256": "1d4f213ffdc0aedf311550b7c09408488ff9f06d1855f65855fec2a90a9c8b6a",
+      "version": "0.7.0-preview.11",
+      "file": "interstice-0.7.0-preview.11.jar",
       "required_on": [
         "client",
         "server"
-      ]
+      ],
+      "sha256": "f085d111a89ea716d5c03fa0990a4ffe8f5c51f4e9ea5efbab8e83d9874e35cd"
     }
   ],
   "external_mods": [
@@ -39,6 +39,24 @@
       "bytes": 28289212,
       "sha256": "864e70def5b0d54d619b940b66bb2784e91d3f3fc253064fdc1b3fc5786cbfab",
       "sha512": "d14b32d3fd143a06514d6ad388eee11e9d657c84e1a937aaf8d033b1137fb43ef8b05cff1011a994cc42f3106823c51234f8bc18d72bb05bc317a20ea83c50ed"
+    },
+    {
+      "id": "lootr",
+      "version": "1.21.1-1.11.38.127",
+      "file": "lootr-neoforge-1.21.1-1.11.38.127.jar",
+      "required_on": [
+        "client",
+        "server"
+      ],
+      "minecraft": "1.21.1",
+      "loader": "neoforge",
+      "license": "MIT",
+      "modrinth_project_id": "EltpO5cN",
+      "modrinth_version_id": "SPOrIzX8",
+      "download_url": "https://cdn.modrinth.com/data/EltpO5cN/versions/SPOrIzX8/lootr-neoforge-1.21.1-1.11.38.127.jar",
+      "bytes": 1075929,
+      "sha256": "5c74de4709d1c13b25880fdd241a89d5d9f331346d20edc76f80ccd4d99dc66c",
+      "sha512": "7496051c1ba98f8801b8eb81773d1baec16166c3d2c5682476bd6f9433f794095099cea609fd5610525edb7c450b1bacd0011a31763e91c77c9a0034c8245ca3"
     }
   ],
   "resource_packs": [
@@ -49,7 +67,8 @@
       "license": "AGPL-3.0-only",
       "required_on": [
         "client"
-      ]
+      ],
+      "included_in_core_preview_zip": false
     }
   ],
   "distant_horizons_reference_settings": {
@@ -79,7 +98,7 @@
   "preview_dimension": "interstice:islands_v6",
   "ordinary_entry_dimension": "interstice:islands_v6",
   "instructions": "docs/V6_PREVIEW.md",
-  "verification": "docs/verification/FISHING_V6_ENTRY.json",
-  "status": "preview.10 alpha.13/sequence13 published and installed: new discoveries and default explore enter actual V6; versioned anomalies preserve old echoes, physical portals keep destinations; 27 component checks and full-pack create/cold reload with DH passed; natural Survival/multiplayer remain open",
+  "verification": "docs/verification/ETHEREAL_STRUCTURES.json",
+  "status": "Local preview.11 adds 19 adapted CC0 Ethereal templates to V6 and pinned Lootr per-player loot; no launcher publication in this task.",
   "localization_verification": "docs/verification/RUSSIAN_LOCALIZATION_DELIVERY.json"
 }

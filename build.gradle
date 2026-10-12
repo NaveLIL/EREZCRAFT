@@ -30,6 +30,7 @@ sourceSets {
 }
 configurations {
     distantHorizonsArtifact
+    lootrArtifact
     smokeImplementation.extendsFrom implementation
     smokeCompileOnly.extendsFrom compileOnly
     smokeRuntimeOnly.extendsFrom runtimeOnly
@@ -45,6 +46,9 @@ repositories {
 }
 def sporeArtifact = file(providers.gradleProperty('sporeJar').getOrElse('research/spore/spore_1.21.1_2.2.0j_neo-original.jar'))
 dependencies {
+    lootrArtifact('maven.modrinth:EltpO5cN:SPOrIzX8') { transitive = false }
+    runtimeOnly('maven.modrinth:EltpO5cN:SPOrIzX8') { transitive = false }
+    smokeCompileOnly('maven.modrinth:EltpO5cN:SPOrIzX8') { transitive = false }
     // Required pack renderer. An external upstream mod, never shaded or reimplemented.
     distantHorizonsArtifact('maven.modrinth:uCdwusMi:9w34y8ai') { transitive = false }
     runtimeOnly('maven.modrinth:uCdwusMi:9w34y8ai') { transitive = false }
@@ -67,6 +71,20 @@ def verifyDistantHorizonsArtifact = tasks.register('verifyDistantHorizonsArtifac
     }
 }
 tasks.named('assemble') { dependsOn verifyDistantHorizonsArtifact }
+def verifyLootrArtifact = tasks.register('verifyLootrArtifact') {
+    doLast {
+        def artifact = configurations.lootrArtifact.singleFile
+        def digest = java.security.MessageDigest.getInstance('SHA-512')
+        artifact.withInputStream { input ->
+            byte[] buffer = new byte[1024 * 1024]; int length
+            while ((length = input.read(buffer)) > 0) digest.update(buffer, 0, length)
+        }
+        if (digest.digest().encodeHex().toString() != '7496051c1ba98f8801b8eb81773d1baec16166c3d2c5682476bd6f9433f794095099cea609fd5610525edb7c450b1bacd0011a31763e91c77c9a0034c8245ca3')
+            throw new GradleException('Lootr 1.21.1-1.11.38.127 upstream SHA-512 mismatch')
+        logger.lifecycle('Verified pinned Lootr 1.21.1-1.11.38.127: ' + artifact.name)
+    }
+}
+tasks.named('assemble') { dependsOn verifyLootrArtifact }
 def verifySporeArtifact = tasks.register('verifySporeArtifact') {
     doLast {
         if (!sporeArtifact.isFile()) throw new GradleException('Obtain the original Spore 2.2.0j NeoForge JAR; see docs/progress/M01.md or use -PsporeJar=/path/to/original.jar')
@@ -95,8 +113,19 @@ neoForge {
             loadedMods = [mods.interstice]
             systemProperty 'interstice.expectedModVersion', project.version.toString()
             taskBefore verifyDistantHorizonsArtifact
+            taskBefore verifyLootrArtifact
         }
         client { client() }
+        etherealCreate {
+            client()
+            gameDirectory = file('.verification/ethereal-smoke')
+            systemProperty 'interstice.etherealSmoke', 'create'
+        }
+        etherealReload {
+            client()
+            gameDirectory = file('.verification/ethereal-smoke')
+            systemProperty 'interstice.etherealSmoke', 'reload'
+        }
         clientSmoke {
             client()
             gameDirectory = file('build/client-smoke')
@@ -303,6 +332,12 @@ neoForge {
             gameDirectory = file('build/living-gametests')
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_living'
+        }
+        etherealGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/ethereal-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_ethereal'
         }
         ecologyGameTestServer {
             type = 'gameTestServer'
@@ -726,8 +761,13 @@ neoForge.runs.each { run ->
         run.sourceSet = run.name == 'infectionGameTestServer' ? sourceSets.componentInfectionGameTests : sourceSets.componentGameTests
     } else {
         if (run.type.get() == 'client') {
-            run.jvmArgument '-XX:+UseZGC'
-            run.jvmArgument '-XX:+ZGenerational'
+            if (providers.gradleProperty('intersticeVerificationGc').getOrElse('ZGC') == 'G1') {
+                if (!providers.gradleProperty('intersticeRunRoot').isPresent()) throw new GradleException('Diagnostic G1 requires an isolated verification root')
+                run.jvmArgument '-XX:+UseG1GC'
+            } else {
+                run.jvmArgument '-XX:+UseZGC'
+                run.jvmArgument '-XX:+ZGenerational'
+            }
             if (run.name.startsWith('techmagic')) {
                 run.jvmArgument '-Xms2G'
                 run.jvmArgument '-Xmx10G'
@@ -738,7 +778,7 @@ neoForge.runs.each { run ->
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['techmagicPregenCreate','techmagicPregenReload'] ? 'techmagicPregen' : name in ['forestCaveCreate','forestCaveReload'] ? 'forestCaveSmoke' : name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+        def profileName = name in ['etherealCreate','etherealReload'] ? 'etherealSmoke' : name in ['techmagicPregenCreate','techmagicPregenReload'] ? 'techmagicPregen' : name in ['forestCaveCreate','forestCaveReload'] ? 'forestCaveSmoke' : name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
                 name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
                 name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
@@ -809,6 +849,17 @@ tasks.named('runV6ProgressionReload') { dependsOn tasks.named('runV6ProgressionC
 tasks.register('runV6ProgressionSmoke') { dependsOn tasks.named('runV6ProgressionReload') }
 tasks.named('runForestCaveReload') { dependsOn tasks.named('runForestCaveCreate') }
 tasks.register('runForestCaveSmoke') { dependsOn tasks.named('runForestCaveReload') }
+tasks.named('runEtherealReload') { dependsOn tasks.named('runEtherealCreate') }
+tasks.register('runEtherealSmoke') { dependsOn tasks.named('runEtherealReload') }
+tasks.matching { it.name in ['prepareEtherealCreateRun','prepareEtherealReloadRun'] }.configureEach {
+    outputs.upToDateWhen { false }
+    doLast {
+        def directory = neoForge.runs.getByName(it.name.contains('Reload') ? 'etherealReload' : 'etherealCreate').gameDirectory.get().asFile
+        if (!directory.toPath().toAbsolutePath().toString().replace('\\','/').contains('/.verification/')) throw new GradleException('Ethereal verification must be isolated')
+        def config = new File(directory, 'config/fml.toml'); config.parentFile.mkdirs(); config.text = 'earlyWindowControl = false\n'
+        def options = new File(directory, 'options.txt'); if (!options.exists()) options.text = 'onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\n'
+    }
+}
 tasks.matching { it.name in ['prepareForestCaveCreateRun','prepareForestCaveReloadRun'] }.configureEach {
     outputs.upToDateWhen { false }
     doLast {
@@ -819,8 +870,9 @@ tasks.matching { it.name in ['prepareForestCaveCreateRun','prepareForestCaveRelo
     }
 }
 tasks.withType(Jar).configureEach { from('LICENSE') { into('META-INF/licenses'); rename { 'interstice-apache-2.0.txt' } } }
+tasks.withType(Jar).configureEach { from('art/sources/cc0/ethereal_structures/NOTICE.txt') { into 'META-INF/licenses'; rename { 'ethereal-structures-cc0.txt' } } }
 def modpackZip = tasks.register('modpackZip', Zip) {
-    dependsOn tasks.named('jar'), verifyDistantHorizonsArtifact
+    dependsOn tasks.named('jar'), verifyDistantHorizonsArtifact, verifyLootrArtifact
     archiveFileName = 'erezcraft-' + project.version + '-neoforge-modpack.zip'
     destinationDirectory = layout.buildDirectory.dir('distributions')
     from(tasks.named('jar')) { into 'mods' }
@@ -828,6 +880,12 @@ def modpackZip = tasks.register('modpackZip', Zip) {
         into 'mods'
         rename { 'DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar' }
     }
+    from(configurations.lootrArtifact) { into 'mods'; rename { 'lootr-neoforge-1.21.1-1.11.38.127.jar' } }
+    from('distribution/structure-loot.lock.json')
+    from('art/sources/cc0/ethereal_structures/NOTICE.txt') { into 'licenses/ethereal-structures' }
+    from({ zipTree(configurations.lootrArtifact.singleFile) }) { include 'LICENSE*', 'META-INF/LICENSE*'; into 'licenses/lootr' }
+    from('distribution/licenses/lootr-MIT.txt') { into 'licenses/lootr' }
+    from('docs/ETHEREAL_STRUCTURES.md') { into 'docs' }
     from('distribution/v6-preview-manifest.json')
     from('distribution/INSTALL.txt')
     from('distribution/client-options.txt') { rename { 'options.txt' } }
@@ -846,6 +904,7 @@ def modpackZip = tasks.register('modpackZip', Zip) {
     from('docs/verification/FLUID_FLIGHT_CRASH_FIX.json') { into 'docs/verification' }
     from('docs/verification/V6_DARKNESS_TRIAL.json') { into 'docs/verification' }
     from('docs/verification/V6_SHADER_MATERIALS.json') { into 'docs/verification' }
+    from('docs/verification/ETHEREAL_STRUCTURES.json') { into 'docs/verification' }
     from('LICENSE') { into 'licenses/interstice' }
     from({ zipTree(configurations.distantHorizonsArtifact.singleFile) }) {
         include 'LICENSE.txt', 'LICENSE.LESSER.txt', 'LICENSE-LOGOS.txt'
@@ -969,3 +1028,4 @@ tasks.named('check') { dependsOn tasks.named('runFaunaGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runRealmExpansionGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runForestCaveGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer'),tasks.named('runAgricultureGameTestServer'),tasks.named('runEquipmentGameTestServer'),tasks.named('runGearGameTestServer'),tasks.named('runTetherGameTestServer'),tasks.named('runLiftGameTestServer') }
+tasks.named('check') { dependsOn tasks.named('runEtherealGameTestServer') }

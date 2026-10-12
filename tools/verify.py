@@ -19,6 +19,8 @@ ALLOWED = {"build", "assemble", "runGameTestServer", "runIslandSmoke", "runTallI
            "runExpeditionGameTestServer", "runKeyPersistenceSmoke", "runWatchpostSmoke", "runWatchpostPersistenceSmoke", "runLivingGameTestServer", "runEcologyGameTestServer", "runMiningGameTestServer", "runLivingRealmSmoke",
            "runSurvivalPreparationSmoke", "runVaultGameTestServer", "runVaultPersistenceSmoke", "runGardenGameTestServer", "runGardenPersistenceSmoke", "runFoodGameTestServer", "runCrownFoodSmoke", "runMiningSmoke", "runHydrologySmoke", "runAgricultureGameTestServer", "runAgricultureSmoke", "runAgriculturePropsSmoke", "runEquipmentGameTestServer", "runBackpackSmoke", "runRetortUiSmoke", "runWearBackpackSmoke", "runVanillaTerrainSmoke"}
 ALLOWED.add("runGearGameTestServer")
+ALLOWED.add("runEtherealGameTestServer")
+ALLOWED.add("runEtherealSmoke")
 ALLOWED.add("runPaletteGallery")
 ALLOWED.add("runFaunaGameTestServer")
 ALLOWED.add("runRealmExpansionGameTestServer")
@@ -515,6 +517,25 @@ def main():
                                 accepted = accepted and (profile / "screenshots" / frame["file"]).is_file()
                             if phase == "reload":
                                 accepted = accepted and row.get("reload_pid") != result.get("creator_pid")
+                except (OSError, ValueError, KeyError) as error:
+                    record["validation_error"] = str(error); accepted = False
+                record["accepted"] = accepted
+            if code == 0 and task == "runEtherealSmoke":
+                profile = evidence / "profiles" / "etherealSmoke"
+                record["validations"] = {}
+                try:
+                    for phase in ("create", "reload"):
+                        result = json.loads((profile / ("ethereal-" + phase + "-validation.json")).read_text(encoding="utf-8"))
+                        record["validations"][phase] = result
+                        accepted = accepted and result.get("passed") is True and result.get("finished") is True
+                        accepted = accepted and result.get("actual_dimension") == "interstice:islands_v6" and result.get("actual_revision") == 6
+                        accepted = accepted and result.get("distant_horizons_loaded") is True and len(result.get("natural_structures", [])) >= 3
+                        accepted = accepted and result.get("native_item_take_packets") is True and result.get("second_player_inventory_preserved") is True
+                        if phase == "reload":
+                            accepted = accepted and result.get("creator_pid") != result.get("reload_pid")
+                            accepted = accepted and result.get("cold_first_stays_empty") is True and result.get("cold_second_stays_unclaimed") is True and result.get("cold_natural_structures_preserved") is True
+                    accepted = accepted and (profile / "screenshots/ethereal-personal-loot-menu.png").is_file()
+                    accepted = accepted and all((profile / ("screenshots/ethereal-natural-" + str(i) + ".png")).is_file() for i in range(3))
                 except (OSError, ValueError, KeyError) as error:
                     record["validation_error"] = str(error); accepted = False
                 record["accepted"] = accepted

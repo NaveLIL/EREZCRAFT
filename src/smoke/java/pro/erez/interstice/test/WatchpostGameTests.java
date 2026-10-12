@@ -74,19 +74,33 @@ public final class WatchpostGameTests {
     }
     @GameTest(template = "empty", timeoutTicks = 60)
     public static void generatedCacheLootIsUsefulAndDoesNotRefillAfterLoad(GameTestHelper h) {
-        BlockPos local = new BlockPos(3, 2, 3); h.setBlock(local, Blocks.BARREL);
-        var barrel = (BarrelBlockEntity) h.getLevel().getBlockEntity(h.absolutePos(local));
+        BlockPos local = new BlockPos(3, 2, 3); h.setBlock(local, pro.erez.interstice.worldgen.StructureLoot.personal(Blocks.BARREL.defaultBlockState()));
+        var barrel = (net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity) h.getLevel().getBlockEntity(h.absolutePos(local));
         barrel.setLootTable(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Interstice.ID, "chests/watchpost_ruin")), SEED);
+        var player = TestPlayers.create(h, new BlockPos(3, 2, 4), net.minecraft.world.level.GameType.SURVIVAL);
+        try {
+        net.minecraft.world.Container inventory = barrel;
+        if (barrel instanceof noobanidus.mods.lootr.common.block.entity.LootrBarrelBlockEntity personal)
+            inventory = noobanidus.mods.lootr.common.api.LootrAPI.getInventory(personal, player);
         int membrane = 0;
-        for (int slot = 0; slot < barrel.getContainerSize(); slot++) if (barrel.getItem(slot).is(Interstice.PRESSURE_COUPLER.get())) membrane += barrel.getItem(slot).getCount();
+        for (int slot = 0; slot < inventory.getContainerSize(); slot++) if (inventory.getItem(slot).is(Interstice.PRESSURE_COUPLER.get())) membrane += inventory.getItem(slot).getCount();
         h.assertTrue(membrane == 1, "A real cache must guarantee exactly one expedition component");
-        barrel.clearContent(); var data = barrel.saveWithFullMetadata(h.getLevel().registryAccess());
-        var reload = new BarrelBlockEntity(h.absolutePos(local), Blocks.BARREL.defaultBlockState()); reload.setLevel(h.getLevel()); reload.loadWithComponents(data, h.getLevel().registryAccess());
-        h.assertTrue(reload.isEmpty(), "Claimed cache must remain empty after block-entity reload");
+        inventory.clearContent(); inventory.setChanged();
+        if (barrel instanceof noobanidus.mods.lootr.common.block.entity.LootrBarrelBlockEntity personal) {
+            var saved = ((noobanidus.mods.lootr.common.data.LootrSavedData)noobanidus.mods.lootr.common.api.LootrAPI.getData(personal)).save(new net.minecraft.nbt.CompoundTag(), h.getLevel().registryAccess());
+            var reload = noobanidus.mods.lootr.common.data.LootrSavedData.load(saved, h.getLevel().registryAccess());
+            h.assertTrue(reload.getInventory(player.getUUID()).isEmpty(), "Claimed personal cache must remain empty after native reload");
+        } else {
+            var data = barrel.saveWithFullMetadata(h.getLevel().registryAccess());
+            var reload = new BarrelBlockEntity(h.absolutePos(local), Blocks.BARREL.defaultBlockState()); reload.setLevel(h.getLevel()); reload.loadWithComponents(data, h.getLevel().registryAccess());
+            h.assertTrue(reload.isEmpty(), "Claimed cache must remain empty after block-entity reload");
+        }
         var input = CraftingInput.of(3, 3, List.of(new ItemStack(Items.COPPER_INGOT), new ItemStack(Interstice.PRESSURE_COUPLER.get()), new ItemStack(Items.COPPER_INGOT),
                 new ItemStack(Items.COPPER_INGOT), new ItemStack(Items.COMPASS), new ItemStack(Items.COPPER_INGOT),
                 new ItemStack(Items.COPPER_INGOT), new ItemStack(Items.AMETHYST_SHARD), new ItemStack(Items.COPPER_INGOT)));
         var output = h.getLevel().getRecipeManager().getRecipeFor(RecipeType.CRAFTING, input, h.getLevel()).orElseThrow().value().assemble(input, h.getLevel().registryAccess());
-        h.assertTrue(output.is(Interstice.TIDE_INDICATOR.get()), "The recovered component must craft the functioning indicator item"); h.succeed();
+        h.assertTrue(output.is(Interstice.TIDE_INDICATOR.get()), "The recovered component must craft the functioning indicator item");
+        } finally { TestPlayers.remove(player); }
+        h.succeed();
     }
 }

@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "project": "Ethereal Structures",
+  "project_url": "https://modrinth.com/datapack/ethereal-structures",
+  "authors": [
+    {
+      "username": "Starkye",
+      "role": "Owner"
+    }
+  ],
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "version": "B1",
+  "version_id": "px0RRcOK",
+  "source_minecraft": "1.20.1",
+  "archive_url": "https://cdn.modrinth.com/data/vkbXs92f/versions/px0RRcOK/Ethereal-Structures-vB1.zip",
+  "archive_sha512": "3c06828e7e6b1e524f9e5d59c927fb7e4cf6d9b2aa51ff4dddd23b4be717eee674c2130c286f0542e47a328169749aeeae39cc674a9b80457ce10f9501dec3e1",
+  "archive_sha256": "779029275aec4fab47b695e0230a2749262b7bf5bd345549acdc7fd4f530de56",
+  "templates": {
+    "simple/ruined_archway0.nbt": "adf037e5a42145b1ea95bf3bfe1e9bb1eb05161f23209334ebff00674a2529c1",
+    "simple/ruined_archway1.nbt": "26aa95d1aed896afd2d45201d2fe4d1c5a31b3b5a32b84543a97b513a22e85c1",
+    "simple/ruined_staircase0.nbt": "8eb4379b5508b775154cfee5c4a304fa4aed0208823049ec1814ba15e1e72c8c",
+    "monoliths/tiny_pillar.nbt": "ec18bc3ab199c503e9ab37906f4ff58b02f59ddfd4255e4411bb55f85affbcda",
+    "monoliths/small_pillar.nbt": "ea03139e70790afbf63e4258933afddff1929057f97b411bff87ea095fe8fa3f",
+    "monoliths/medium_pillar.nbt": "9c9609acbf4e55696370ba227f7a9157485c9de41111e88e254fff2d82da9946",
+    "monoliths/large_pillar.nbt": "64dfe551d9cc730654850a0ef9cab81fb6a5b95142c7d9a0ea9a6161b910ff82",
+    "shrines/empty.nbt": "75f6f07f34b05fbbf8f3cfa84d6245178e5dae0f539e5fc5ca9aa8234de6b1d0",
+    "shrines/flower.nbt": "47d7b7eb5d265b60377b5ac201b3537bf9989a97f8877d7a36d37b76d1a80fbe",
+    "shrines/gold.nbt": "238d552bc669184768c87b604a0df4cf2ab7dc82983e003b23152b7ecad43224",
+    "shrines/lodestone.nbt": "6ceca5bb7b1816905f923cf258ef8ecaae4503e55ebaf05dc2ee2dd1082a92f1",
+    "shrines/burner.nbt": "3e7771da5ed0741b9d88d79e4d9bff8c56348ab331742fd621324087e88deb62",
+    "towers/ruined_tower0.nbt": "0d51721f5085841eb9794c8121ed8c969647ba579848fb575341e00af690b12b",
+    "towers/ruined_tower1.nbt": "473cc78b9882ec912eb5e55eacd19dd24861f9190fecc840ac01b09abdd1d8b3",
+    "towers/ruined_tower2.nbt": "139f231ba917df27dec84840b7939f495009aee406d48a42eabbd9f41e3931bf",
+    "towers/ruined_tower3.nbt": "dde905500e92a4a7a0037551fea139178a11bc63acba55459e68e6f70395a9c4",
+    "towers/ruined_tower4.nbt": "9862e56baf7ab566c4803eddcb4f413088724bd1a1e601c77374428c083717bc",
+    "towers/ruined_tower5.nbt": "78312695ea075591e77a9f65831452b17ea6d04f627ebed3036b205b9458648f",
+    "simple/ancient_golem.nbt": "65c9c8dbb94ecf22858cdd46116658bb592d7dd47c74e36252313e2a270eafe7"
+  },
+  "included_sources": "Unmodified selected NBT entries only; no mod/library binaries or textures."
+}

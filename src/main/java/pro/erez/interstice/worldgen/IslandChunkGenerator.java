@@ -267,7 +267,8 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
             else CaveFeatures.decorate(geometry,chunk,region.getSeed(),region,terrainRevision);
         }
         if(terrainRevision>=5){
-            RealmStructuresV5.generate(geometry,chunk,region.getSeed(),region,minimum);
+            if(terrainRevision==6)RealmStructuresV6.generate(geometry,chunk,region.getSeed(),region,minimum);
+            else RealmStructuresV5.generate(geometry,chunk,region.getSeed(),region,minimum);
             var columns=new java.util.HashMap<Long,NoiseColumn>();
             var reservations=RealmStructuresV5.forestReservation(region.getSeed());
             ForestV5.generate(geometry,chunk,region.getSeed(),region,new ForestV5.GroundProbe(){

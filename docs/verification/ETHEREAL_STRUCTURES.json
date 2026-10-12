@@ -1,0 +1,374 @@
+{
+  "schema": 1,
+  "status": "Verified local integration complete",
+  "version": "0.7.0-preview.11",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "java_major": 21,
+  "source_project": "https://modrinth.com/datapack/ethereal-structures",
+  "source_version_id": "px0RRcOK",
+  "source_license": "CC0-1.0",
+  "imported_templates": 19,
+  "catalog_variants": 23,
+  "replaced_in_v6": [
+    "laboratories -> arches/staircase/monoliths/shrines/statue",
+    "observation posts -> six ruined towers"
+  ],
+  "retained_in_v6": [
+    "two refuge variants",
+    "two cargo station variants"
+  ],
+  "dimension": "interstice:islands_v6",
+  "shared_anchor_budget": {
+    "cell_chunks": 18,
+    "proposal_probability": 0.58,
+    "minimum_gap_chunks": 15
+  },
+  "lootr": {
+    "schema": 1,
+    "role": "Per-player loot for generated V6 structures",
+    "project": "Lootr",
+    "project_id": "EltpO5cN",
+    "project_url": "https://modrinth.com/mod/lootr",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "minecraft": "1.21.1",
+    "loader": "neoforge",
+    "version": "1.21.1-1.11.38.127",
+    "version_id": "SPOrIzX8",
+    "filename": "lootr-neoforge-1.21.1-1.11.38.127.jar",
+    "download_url": "https://cdn.modrinth.com/data/EltpO5cN/versions/SPOrIzX8/lootr-neoforge-1.21.1-1.11.38.127.jar",
+    "bytes": 1075929,
+    "sha512": "7496051c1ba98f8801b8eb81773d1baec16166c3d2c5682476bd6f9433f794095099cea609fd5610525edb7c450b1bacd0011a31763e91c77c9a0034c8245ca3",
+    "sha256": "5c74de4709d1c13b25880fdd241a89d5d9f331346d20edc76f80ccd4d99dc66c",
+    "required_dependencies": [],
+    "distribution": "Original upstream JAR included unchanged in the local preview ZIP; full launcher delivery not published.",
+    "license_source_url": "https://raw.githubusercontent.com/LootrMinecraft/Lootr/1.16/LICENSE",
+    "license_sha256": "83e4dd21429a91fb7cea67a476032a9641425e5355df2e0f589a738b6ec9fd2c"
+  },
+  "focused_checks": {
+    "ethereal_gametests": 4,
+    "living_gametests": 31,
+    "gear_gametests": 19,
+    "python_verifier_tests": 65,
+    "offline_template_reproduction": {
+      "passed": true,
+      "offline_reproduction_identical": true,
+      "templates": 19,
+      "files_sha256": {
+        "src/main/resources/data/interstice/structure/ethereal/relic/ancient_golem.nbt": "30d26b69c03d1684b336c2fdb04ecc4a23006c68a923eae59de4f5fce8cb1b2d",
+        "src/main/resources/data/interstice/structure/ethereal/monolith/tiny_pillar.nbt": "3abd81ac28a353b28241d722429fc3dfcc549b562ce00e18e669a3c840b44e8c",
+        "src/main/resources/data/interstice/structure/ethereal/monolith/medium_pillar.nbt": "5fc44a19c2762b64994a88b499df61dfc73880ce9601893aa0223062772ffff9",
+        "src/main/resources/data/interstice/structure/ethereal/monolith/small_pillar.nbt": "865d94fe625ad0fe8ad9975e94bb5e5dc469bacbf7eaed8cb3f0a844ee82a160",
+        "src/main/resources/data/interstice/structure/ethereal/monolith/large_pillar.nbt": "78596a2a8cc2f98117e825836ff374aa4e4d9b9254a80a038fc1b1343d627229",
+        "src/main/resources/data/interstice/structure/ethereal/tower/ruined_tower4.nbt": "a70ef3358b125e1d523d58b34c1f324f7fabd744a86965e5f997976b0b870380",
+        "src/main/resources/data/interstice/structure/ethereal/tower/ruined_tower5.nbt": "78ec64083fc339967860ab7bfef90bf8cdb34e4075e4ccbb0ddfb7884299bead",
+        "src/main/resources/data/interstice/structure/ethereal/tower/ruined_tower2.nbt": "c904ce80d00367dc29abe5a2fe785a10c591ba9c96c3ede240a4b82b9cdae030",
+        "src/main/resources/data/interstice/structure/ethereal/tower/ruined_tower3.nbt": "a83780b4f773a487757bf017bba0dbe2b2eb77db11b552afdf1e6ac8b371f6a4",
+        "src/main/resources/data/interstice/structure/ethereal/tower/ruined_tower1.nbt": "115a686286cedfd7a0d84b2d4c31a0458d652b56ef931ff94b61fcaaa1e70bcf",
+        "src/main/resources/data/interstice/structure/ethereal/tower/ruined_tower0.nbt": "864d7bc3a128ddf7aed2b0ad30a3b0ca5eb91839a121709375cfb42201bad8f6",
+        "src/main/resources/data/interstice/structure/ethereal/shrine/burner.nbt": "6b7bb9408c49714d6730936d2cf3d09aa4b3fb65c9259555fde74207a28ed519",
+        "src/main/resources/data/interstice/structure/ethereal/shrine/empty.nbt": "def220dd5ff89c46dca0318833caa60b519987799f97f952f97a458f8399de4f",
+        "src/main/resources/data/interstice/structure/ethereal/shrine/flower.nbt": "cde237dcb0eccaf019b9a0000e2754cf376acf01323dfef44eeb948945f0e22c",
+        "src/main/resources/data/interstice/structure/ethereal/shrine/lodestone.nbt": "c7c0e91bdd19c581a629770b64e35254372f7568c190eeaf280fc8db75b32947",
+        "src/main/resources/data/interstice/structure/ethereal/shrine/gold.nbt": "6370ac34973c558f03e1179c1a8e60657a1d0437445910bbcbddbe8996c250c1",
+        "src/main/resources/data/interstice/structure/ethereal/arch/ruined_staircase0.nbt": "145277dee48cb78b104c6806157d8e5bc38b8b6b54da736cc9e5d81bbb7cf4ce",
+        "src/main/resources/data/interstice/structure/ethereal/arch/ruined_archway0.nbt": "d51d9f5263bc936736acb636b3d532791c6acf1a781ed17c8c95aea7f68f2186",
+        "src/main/resources/data/interstice/structure/ethereal/arch/ruined_archway1.nbt": "3a2eb6252f4ea4584e8b69715d5f137e4f74e419b9eadc855d1f8062b71628a9",
+        "src/main/resources/assets/interstice/provenance/ethereal-structures.json": "0e902a20315f0e9c00316348182e2465bb09b607665489f9ce1776f80641ddb6"
+      }
+    }
+  },
+  "native_create": {
+    "scope": "One real integrated client with DH/Lootr, natural V6 FULL chunks; second player is a server-side identity probe, not a second TCP client or human Survival.",
+    "garbage_collectors": [
+      "G1 Young Generation",
+      "G1 Concurrent GC",
+      "G1 Old Generation"
+    ],
+    "creator_pid": 11988,
+    "natural_structures": [
+      {
+        "template": "interstice:ethereal/monolith/small_pillar",
+        "position": 657782820126783,
+        "cache": 657233064304703,
+        "chunk_x": 149,
+        "chunk_z": -171
+      },
+      {
+        "template": "interstice:ethereal/shrine/lodestone",
+        "position": -23914388803532,
+        "cache": -24739022536652,
+        "chunk_x": -6,
+        "chunk_z": -167
+      },
+      {
+        "template": "interstice:ethereal/monolith/large_pillar",
+        "position": 644863559888943,
+        "cache": 645963071533103,
+        "chunk_x": 146,
+        "chunk_z": -150
+      },
+      {
+        "template": "interstice:ethereal/tower/ruined_tower4",
+        "position": -498628532801473,
+        "cache": -499178288615360,
+        "chunk_x": -114,
+        "chunk_z": -147
+      },
+      {
+        "template": "interstice:ethereal/shrine/flower",
+        "position": 120946269790258,
+        "cache": 121221147689010,
+        "chunk_x": 27,
+        "chunk_z": -142
+      }
+    ],
+    "numeric_proposals_checked": 7,
+    "actual_full_requests": 5,
+    "actual_dimension": "interstice:islands_v6",
+    "actual_revision": 6,
+    "distant_horizons_loaded": true,
+    "second_inventory": "{Items:[{Slot:1b,count:1,id:\"interstice:vitriolite_shard\"},{Slot:4b,count:2,id:\"interstice:phosphorite_crystal\"},{Slot:7b,count:1,id:\"interstice:phosphorite_crystal\"},{Slot:18b,count:1,id:\"interstice:ash_grain\"},{Slot:19b,count:1,id:\"interstice:vitriolite_shard\"},{Slot:22b,count:1,id:\"interstice:vitriolite_shard\"},{Slot:23b,count:2,id:\"interstice:ash_grain\"},{Slot:24b,count:1,id:\"interstice:phosphorite_crystal\"}]}",
+    "cache": 657233064304703,
+    "cache_uuid": "dce0abbb-0d06-4ee4-9ef8-5c9c1be91282",
+    "first_uuid": "380df991-f603-344c-a090-369bad2a924a",
+    "native_menu_loot_stacks": 5,
+    "native_menu_screen": "net.minecraft.client.gui.screens.inventory.ContainerScreen",
+    "menu_capture_after_client_ticks": 20,
+    "native_item_take_packets": true,
+    "second_player_inventory_preserved": true,
+    "create_settle": {
+      "purpose": "ethereal-create-shutdown",
+      "server_tick": 3225,
+      "elapsed_actual_server_ticks": 859,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 2066,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    },
+    "passed": true,
+    "finished": true
+  },
+  "native_reload": {
+    "scope": "One real integrated client with DH/Lootr, natural V6 FULL chunks; second player is a server-side identity probe, not a second TCP client or human Survival.",
+    "garbage_collectors": [
+      "G1 Young Generation",
+      "G1 Concurrent GC",
+      "G1 Old Generation"
+    ],
+    "creator_pid": 11988,
+    "natural_structures": [
+      {
+        "template": "interstice:ethereal/monolith/small_pillar",
+        "position": 657782820126783,
+        "cache": 657233064304703,
+        "chunk_x": 149,
+        "chunk_z": -171
+      },
+      {
+        "template": "interstice:ethereal/shrine/lodestone",
+        "position": -23914388803532,
+        "cache": -24739022536652,
+        "chunk_x": -6,
+        "chunk_z": -167
+      },
+      {
+        "template": "interstice:ethereal/monolith/large_pillar",
+        "position": 644863559888943,
+        "cache": 645963071533103,
+        "chunk_x": 146,
+        "chunk_z": -150
+      },
+      {
+        "template": "interstice:ethereal/tower/ruined_tower4",
+        "position": -498628532801473,
+        "cache": -499178288615360,
+        "chunk_x": -114,
+        "chunk_z": -147
+      },
+      {
+        "template": "interstice:ethereal/shrine/flower",
+        "position": 120946269790258,
+        "cache": 121221147689010,
+        "chunk_x": 27,
+        "chunk_z": -142
+      }
+    ],
+    "numeric_proposals_checked": 7,
+    "actual_full_requests": 5,
+    "actual_dimension": "interstice:islands_v6",
+    "actual_revision": 6,
+    "distant_horizons_loaded": true,
+    "second_inventory": "{Items:[{Slot:1b,count:1,id:\"interstice:vitriolite_shard\"},{Slot:4b,count:2,id:\"interstice:phosphorite_crystal\"},{Slot:7b,count:1,id:\"interstice:phosphorite_crystal\"},{Slot:18b,count:1,id:\"interstice:ash_grain\"},{Slot:19b,count:1,id:\"interstice:vitriolite_shard\"},{Slot:22b,count:1,id:\"interstice:vitriolite_shard\"},{Slot:23b,count:2,id:\"interstice:ash_grain\"},{Slot:24b,count:1,id:\"interstice:phosphorite_crystal\"}]}",
+    "cache": 657233064304703,
+    "cache_uuid": "dce0abbb-0d06-4ee4-9ef8-5c9c1be91282",
+    "first_uuid": "380df991-f603-344c-a090-369bad2a924a",
+    "native_menu_loot_stacks": 5,
+    "native_menu_screen": "net.minecraft.client.gui.screens.inventory.ContainerScreen",
+    "menu_capture_after_client_ticks": 20,
+    "native_item_take_packets": true,
+    "second_player_inventory_preserved": true,
+    "create_settle": {
+      "purpose": "ethereal-create-shutdown",
+      "server_tick": 3225,
+      "elapsed_actual_server_ticks": 859,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 2066,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    },
+    "passed": true,
+    "finished": true,
+    "reload_pid": 12116,
+    "cold_first_stays_empty": true,
+    "cold_second_stays_unclaimed": true,
+    "cold_natural_structures_preserved": true,
+    "reload_settle": {
+      "purpose": "ethereal-reload-shutdown",
+      "server_tick": 3299,
+      "elapsed_actual_server_ticks": 56,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 2066,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "native_report_directory": "/Users/dimon/Documents/Minecraft/.verification/20261012T093616.348698Z-ethereal-native-final",
+  "native_report_hashes": {
+    "create": "497952d6584829ba8277b300c27cca32bec8fee5dea454f366efd2e5cbe48421",
+    "reload": "4167904b58f6c43bc8b2e80a525435ae1cc31e070de05c5988d841d4150cec26"
+  },
+  "runtime_jar": "/Users/dimon/Documents/Minecraft/build/libs/interstice-0.7.0-preview.11.jar",
+  "runtime_sha256": "f085d111a89ea716d5c03fa0990a4ffe8f5c51f4e9ea5efbab8e83d9874e35cd",
+  "preview_zip_scope": "Interstice + DH + Lootr core preview; not the full technomagic pack",
+  "published": false,
+  "limitations": [
+    "Native scope: one real client and an EmbeddedChannel server-player probe, not two TCP clients.",
+    "Native full-chunk visual census covers five fixed-seed natural examples; all variants are covered by component placement tests.",
+    "Sodium/Iris/Complementary and the complete 62+1-mod pack were not included in this local native run.",
+    "macOS JBR21.0.11 generational ZGC crashed inside the collector; native verification used isolated diagnostic G1. Production defaults remain ZGC.",
+    "Human Survival balance and real dedicated server capacity remain open.",
+    "Large temples and multi-chunk outposts were not imported; existing chunks are not rebuilt."
+  ],
+  "earlier_attempts": [
+    {
+      "profile": "/Users/dimon/Documents/Minecraft/.verification/20261012T084425.055313Z-ethereal-components",
+      "result": "Missing new namespace test fixture; fixed without production changes."
+    },
+    {
+      "profile": "/Users/dimon/Documents/Minecraft/.verification/20261012T084748.114085Z-ethereal-components-v2",
+      "result": "4 new tests passed; old vanilla loot test required actual player context with Lootr."
+    },
+    {
+      "profile": "/Users/dimon/Documents/Minecraft/.verification/20261012T085446.627755Z-ethereal-regression",
+      "result": "Living31/Gear19 passed and five natural structures observed; native second identity lacked a real server connection, repaired using the existing supported mock connection."
+    },
+    {
+      "profile": "/Users/dimon/Documents/Minecraft/.verification/20261012T090504.892617Z-ethereal-native-v2",
+      "result": "JVM native ZGC crash; hs_err_pid10599.log retained."
+    },
+    {
+      "profile": "/Users/dimon/Documents/Minecraft/.verification/20261012T091709.460528Z-ethereal-full-build",
+      "result": "Pre-existing ExpeditionGameTests still expected revision5 after upstream switched ordinary entry to V6; updated to strict revision6, full build now passes."
+    }
+  ],
+  "full_build": {
+    "directory": "/Users/dimon/Documents/Minecraft/.verification/20261012T092148.650295Z-ethereal-full-build-v2",
+    "exit_code": 0,
+    "accepted": true,
+    "required_test_count": 463,
+    "required_group_count": 18,
+    "groups": [
+      15,
+      21,
+      4,
+      177,
+      27,
+      17,
+      8,
+      12,
+      7,
+      31,
+      17,
+      17,
+      33,
+      27,
+      19,
+      14,
+      13,
+      4
+    ],
+    "build_record_sha256": "3df2243700762814e92d16f623f0f61ce03c9fc666139bff738f17aa1e09e382",
+    "source_check": "Production Java/resources match the full-build snapshot; subsequent changes only diagnostic client capture/docs",
+    "main_files_matched": 1374
+  },
+  "existing_pngs_unchanged": 157,
+  "asset_audit": {
+    "passed": true,
+    "existing_pngs_unchanged": 157,
+    "source_and_runtime_hashes_for_all_19_templates": true,
+    "no_texture_generation": true
+  },
+  "artifact_audit": {
+    "passed": true,
+    "main_sources": 233,
+    "imported_templates": 19,
+    "no_smoke_test_classes_in_runtime": true,
+    "all_sources_match_source_jar": true,
+    "all_imported_nbt_match_runtime_jar": true,
+    "lootr_original_jar_sha512_verified": true,
+    "lootr_mit_notice_in_zip": true,
+    "runtime_sha256": "f085d111a89ea716d5c03fa0990a4ffe8f5c51f4e9ea5efbab8e83d9874e35cd",
+    "sources_sha256": "b7e4abdf9883843634c7d662ed6240b1e628b1651c0cd587871771e2c7bb82a6"
+  },
+  "previous_native_success_before_menu_frame_fix": "/Users/dimon/Documents/Minecraft/.verification/20261012T090749.783917Z-ethereal-native-g1",
+  "passed": true,
+  "completed_utc": "2026-10-12T09:42:50.246837+00:00",
+  "native_receipt_sha256": "e9aa1ae4d0a16a85679d97b12b267607501a42020f876ca25e38cba2e3e671f7",
+  "menu_image_visually_inspected": true,
+  "captures": [
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T093616.348698Z-ethereal-native-final/profiles/etherealSmoke/screenshots/ethereal-natural-0.png",
+      "sha256": "508fc786c043cd5fa6b77b9a82606f7e0949e9cde67011aaed85f11699f85696"
+    },
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T093616.348698Z-ethereal-native-final/profiles/etherealSmoke/screenshots/ethereal-natural-1.png",
+      "sha256": "875e7febe40d341d2cbad54cbd25e256e2570142963446ef56b23b2f16d5a70e"
+    },
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T093616.348698Z-ethereal-native-final/profiles/etherealSmoke/screenshots/ethereal-natural-2.png",
+      "sha256": "0881f7e7b8088d736effcec4c3e4ea359194e9cfcf8b6a247c22c24f7255a5b5"
+    },
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T093616.348698Z-ethereal-native-final/profiles/etherealSmoke/screenshots/ethereal-natural-3.png",
+      "sha256": "90471833127ad4605a94d3397a84c29b896c497275372e2d3742458369a65582"
+    },
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T093616.348698Z-ethereal-native-final/profiles/etherealSmoke/screenshots/ethereal-natural-4.png",
+      "sha256": "9666b748077a5e45f79e39336d2abbdd5de87e4ec22d16dad2a10f3173c44fd2"
+    },
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T093616.348698Z-ethereal-native-final/profiles/etherealSmoke/screenshots/ethereal-personal-loot-menu.png",
+      "sha256": "59b5626cd4c0ac9fce281561df7c5bacf7b7ae849c1a27446f9bd41abb7d44fa"
+    }
+  ]
+}
