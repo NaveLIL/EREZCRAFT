@@ -7,6 +7,10 @@ group = project.maven_group
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 java.withSourcesJar()
 sourceSets {
+    clientUi {
+        // A separate, optional client artifact: never bundled into the realm/server mod.
+        compileClasspath += sourceSets.main.compileClasspath
+    }
     smoke {
         compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
         runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
@@ -28,6 +32,13 @@ sourceSets {
         runtimeClasspath = sourceSets.infection.runtimeClasspath.filter { it.name != 'uCdwusMi-9w34y8ai.jar' }
     }
 }
+tasks.register('clientUiJar', Jar) {
+    dependsOn tasks.named('clientUiClasses')
+    archiveBaseName = 'erezcraft-client-ui'
+    archiveVersion = '0.1.0'
+    from sourceSets.clientUi.output
+}
+tasks.named('assemble') { dependsOn tasks.named('clientUiJar') }
 configurations {
     distantHorizonsArtifact
     lootrArtifact
@@ -885,7 +896,11 @@ tasks.matching { it.name in ['prepareForestCaveCreateRun','prepareForestCaveRelo
     }
 }
 tasks.withType(Jar).configureEach { from('LICENSE') { into('META-INF/licenses'); rename { 'interstice-apache-2.0.txt' } } }
-tasks.withType(Jar).configureEach { from('art/sources/cc0/ethereal_structures/NOTICE.txt') { into 'META-INF/licenses'; rename { 'ethereal-structures-cc0.txt' } } }
+tasks.withType(Jar).configureEach {
+    if (name != 'clientUiJar') {
+        from('art/sources/cc0/ethereal_structures/NOTICE.txt') { into 'META-INF/licenses'; rename { 'ethereal-structures-cc0.txt' } }
+    }
+}
 def modpackZip = tasks.register('modpackZip', Zip) {
     dependsOn tasks.named('jar'), verifyDistantHorizonsArtifact, verifyLootrArtifact
     archiveFileName = 'erezcraft-' + project.version + '-neoforge-modpack.zip'

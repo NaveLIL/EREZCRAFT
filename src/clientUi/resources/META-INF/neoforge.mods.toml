@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="Apache-2.0"
+
+[[mods]]
+modId="erezcraft_ui"
+version="0.1.0"
+displayName="EREZCRAFT: Client UI"
+displayTest="IGNORE_ALL_VERSION"
+description='''Compact EREZCRAFT player list. Client display only; uses Minecraft's existing verified skin pipeline.'''
+
+[[dependencies.erezcraft_ui]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.252,)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.erezcraft_ui]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="CLIENT"
+
+[[mixins]]
+config="erezcraft-ui.mixins.json"

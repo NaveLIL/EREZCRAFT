@@ -1,0 +1,182 @@
+{
+  "date": "2026-10-21",
+  "passed": true,
+  "published": true,
+  "publication_gate": "Owner approved final Tab design before publication",
+  "public_launcher_version_unchanged": "0.4.6",
+  "artifact": {
+    "path": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\libs\\erezcraft-client-ui-0.1.0.jar",
+    "bytes": 14392,
+    "sha256": "2ee43080502dca39d03a58fb4c4f7c93ace28487ef28cac05f449b1f6c8239aa",
+    "mod_id": "erezcraft_ui",
+    "version": "0.1.0",
+    "client_only": true
+  },
+  "native_evidence": "D:\\repos\\erezcraft\\.local\\verification\\tab-ui-20261021-c\\tab-ui-validation.json",
+  "native_evidence_sha256": "15af42e0fa3e49886c8cae3886553c7ac4b6c3518680122f63437ebab28cf16a",
+  "production_client_jars": 65,
+  "baseline_client_jars": 64,
+  "temporary_diagnostic_jars": 1,
+  "native_exit_code": 0,
+  "tests": {
+    "native_config_screen_registered": true,
+    "distant_horizons_loaded": true,
+    "user_credentials_read": false,
+    "owner_worlds_used": false,
+    "client_ui_version": "0.1.0",
+    "pid": 19572,
+    "actual_dimension": "minecraft:overworld",
+    "signed_public_erez_skin_verified": true,
+    "skin_texture": "minecraft:skins/b090dcdf5215b492dda5a79994dae769862d7b6b",
+    "native_scroll_event_consumed": true,
+    "scoreboard_fallback": true,
+    "screenshots": [
+      {
+        "file": "tab-compact-four.png",
+        "players": 4,
+        "gui_width": 683,
+        "gui_height": 384
+      },
+      {
+        "file": "tab-compact-ten.png",
+        "players": 10,
+        "gui_width": 683,
+        "gui_height": 384
+      },
+      {
+        "file": "tab-small-eighty.png",
+        "players": 80,
+        "gui_width": 427,
+        "gui_height": 240
+      },
+      {
+        "file": "tab-small-scroll.png",
+        "players": 80,
+        "gui_width": 427,
+        "gui_height": 240
+      },
+      {
+        "file": "tab-disabled-vanilla.png",
+        "players": 4,
+        "gui_width": 683,
+        "gui_height": 384
+      },
+      {
+        "file": "tab-scoreboard-vanilla.png",
+        "players": 4,
+        "gui_width": 683,
+        "gui_height": 384
+      }
+    ],
+    "own_integrated_server_stopped": true,
+    "passed": true
+  },
+  "screenshots": [
+    {
+      "file": "tab-compact-four.png",
+      "players": 4,
+      "gui_width": 683,
+      "gui_height": 384,
+      "path": "D:\\repos\\erezcraft\\.local\\verification\\tab-ui-20261021-c\\screenshots\\tab-compact-four.png",
+      "sha256": "0b1a0e0e335c040a56589559ac8aee9ee9932759965be7144bd32c953ae89336"
+    },
+    {
+      "file": "tab-compact-ten.png",
+      "players": 10,
+      "gui_width": 683,
+      "gui_height": 384,
+      "path": "D:\\repos\\erezcraft\\.local\\verification\\tab-ui-20261021-c\\screenshots\\tab-compact-ten.png",
+      "sha256": "266bb064f3a94aed63d392bd94a7bbe575196efe6971ba789aefe7e6ab8f74ce"
+    },
+    {
+      "file": "tab-small-eighty.png",
+      "players": 80,
+      "gui_width": 427,
+      "gui_height": 240,
+      "path": "D:\\repos\\erezcraft\\.local\\verification\\tab-ui-20261021-c\\screenshots\\tab-small-eighty.png",
+      "sha256": "df926a83096470f258d3e30ace18b76f992a0dc6b6ee8a5137d5c3091afed61c"
+    },
+    {
+      "file": "tab-small-scroll.png",
+      "players": 80,
+      "gui_width": 427,
+      "gui_height": 240,
+      "path": "D:\\repos\\erezcraft\\.local\\verification\\tab-ui-20261021-c\\screenshots\\tab-small-scroll.png",
+      "sha256": "87560b3ed99ea483139fddcce0fafdafd4e5d9fb0d1e58f06a2a7ecae8401a05"
+    },
+    {
+      "file": "tab-disabled-vanilla.png",
+      "players": 4,
+      "gui_width": 683,
+      "gui_height": 384,
+      "path": "D:\\repos\\erezcraft\\.local\\verification\\tab-ui-20261021-c\\screenshots\\tab-disabled-vanilla.png",
+      "sha256": "f89906025658746a2a38d04fb6c8d808c4704da5ad58643e5a5cee48f898b919"
+    },
+    {
+      "file": "tab-scoreboard-vanilla.png",
+      "players": 4,
+      "gui_width": 683,
+      "gui_height": 384,
+      "path": "D:\\repos\\erezcraft\\.local\\verification\\tab-ui-20261021-c\\screenshots\\tab-scoreboard-vanilla.png",
+      "sha256": "22dd4486167e34b726f1892720d121c082ae60a4e023975ceae49bfa18f9f718"
+    }
+  ],
+  "realm_jar_unchanged": true,
+  "worldgen_and_server_changes": false,
+  "user_data_or_credentials_used": false,
+  "limitations": [
+    "Artificial player-list packets in an owned flat Overworld; not a real 80-player load test.",
+    "No user V5/V6 world opened; this is a UI check, not renewed V6 acceptance."
+  ],
+  "owner_design_approved": true,
+  "baseline_pack_sequence": 15,
+  "public_pack_sequence": 16,
+  "publication": {
+    "sourceSequence": 15,
+    "sequence": 16,
+    "oldCatalogSha256": "b4ea52abd7f219499217acbac444edb45da9494ddc7c908a94ae9087cb3830d2",
+    "newCatalogSha256": "dcec0890bf402d7d0e7da6b02706125a49e81b303416e54417354bd4dc2f072c",
+    "files": 75,
+    "clientJars": 65,
+    "unchangedBaseFiles": 73,
+    "metadata": {
+      "path": "config/erezcraft-pack.json",
+      "size": 173,
+      "sha256": "0b1dfada0d3083c44a20180a3e49da273942ccf6119e05237b971517b55a020c",
+      "url": "https://files.erezcraft.com/blobs/0b1dfada0d3083c44a20180a3e49da273942ccf6119e05237b971517b55a020c",
+      "policy": "managed"
+    },
+    "added": {
+      "path": "mods/erezcraft-client-ui-0.1.0.jar",
+      "size": 14392,
+      "sha256": "2ee43080502dca39d03a58fb4c4f7c93ace28487ef28cac05f449b1f6c8239aa",
+      "url": "https://files.erezcraft.com/blobs/2ee43080502dca39d03a58fb4c4f7c93ace28487ef28cac05f449b1f6c8239aa",
+      "policy": "managed"
+    },
+    "stage": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\client-tab-20261021",
+    "public_https_verified": true,
+    "signatures_verified": true,
+    "uploaded_files": 4,
+    "uploaded_bytes": 42335,
+    "game_server_restarted": false,
+    "server_world_changes": false
+  },
+  "delivery": {
+    "client_jars": 65,
+    "corruption_repaired": 1,
+    "files": 75,
+    "fixture_world_options_and_client_preference_preserved": true,
+    "game_server_contacted": false,
+    "new_sequence": 16,
+    "old_sequence": 15,
+    "passed": true,
+    "real_https_ui_download": true,
+    "repeat_quarantined": 0,
+    "repeat_repaired": 0,
+    "same_size_mtime_repair": true,
+    "update_quarantined": 0,
+    "update_repaired": 2,
+    "user_worlds_used": false
+  },
+  "delivery_evidence": "D:\\repos\\erezcraft\\.local\\verification\\client-tab-delivery-20261021\\delivery-verification.json"
+}

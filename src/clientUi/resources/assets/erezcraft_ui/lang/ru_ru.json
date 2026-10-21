@@ -1,0 +1,8 @@
+{
+  "tab.erezcraft_ui.online": "В игре: %s",
+  "tab.erezcraft_ui.page": "%s–%s / %s · Колесо",
+  "tab.erezcraft_ui.ping": "%s мс",
+  "tab.erezcraft_ui.footer": "Междуморье",
+  "config.erezcraft_ui.compactPlayerList": "Компактный список игроков",
+  "config.erezcraft_ui.compactPlayerList.tooltip": "Оформление EREZCRAFT по Tab. Выключи, чтобы вернуть обычный список. Очки и здоровье в Tab всегда отображаются штатно."
+}

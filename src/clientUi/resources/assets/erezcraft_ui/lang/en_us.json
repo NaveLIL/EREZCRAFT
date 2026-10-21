@@ -1,0 +1,8 @@
+{
+  "tab.erezcraft_ui.online": "Online: %s",
+  "tab.erezcraft_ui.page": "%s–%s / %s · Scroll",
+  "tab.erezcraft_ui.ping": "%s ms",
+  "tab.erezcraft_ui.footer": "Interstice",
+  "config.erezcraft_ui.compactPlayerList": "Compact player list",
+  "config.erezcraft_ui.compactPlayerList.tooltip": "Use the EREZCRAFT Tab design. Disable to restore the vanilla list. Scoreboard objectives always use the vanilla display."
+}
