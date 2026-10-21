@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "checked_utc": "2026-10-21T12:05:02.136866+00:00",
+  "source_branch": "codex/home-server-infrastructure",
+  "local_integration_base": "399c7e6",
+  "upstream_macos_commit": "07d7770",
+  "upstream_modern_rename_commit": "bf88e90",
+  "native_acl_fix_commit": "49fc544",
+  "incoming_backend_matches_deployed_gateway": true,
+  "github_release_assets": [],
+  "dmg_in_git_tree": false,
+  "windows_native": {
+    "passed": true,
+    "os": "win32",
+    "actual_native_webview": true,
+    "credentials_read": false,
+    "game_started": false,
+    "account_mutated": false,
+    "anonymous_native_auth_guard_reached": true,
+    "results": {
+      "name_change_status": {
+        "error": "Войди в аккаунт EREZCRAFT"
+      },
+      "change_player_name": {
+        "error": "Войди в аккаунт EREZCRAFT"
+      }
+    }
+  },
+  "checks": {
+    "rust_core_tests": 46,
+    "node_tests": 28,
+    "svelte_errors": 0,
+    "svelte_warnings": 0,
+    "production_web_build": true,
+    "windows_release_build": true,
+    "backup_boundary_tests": 5
+  },
+  "windows_new_binary_published": false,
+  "macos_rebuild_after_acl_fix_pending": true,
+  "owner_intel_mac_server_entry_confirmed": true,
+  "owner_profile_mutated_by_tests": false,
+  "windows_verification_binary_sha256": "7789d231a0611b7c0174ec34cc1f1baeee8700fe863d98efbb2bcdcb3e321df5"
+}

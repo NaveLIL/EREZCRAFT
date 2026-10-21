@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-21",
+  "node_tests": 32,
+  "python_tests": 8,
+  "svelte_errors": 0,
+  "svelte_warnings": 0,
+  "rust_tests_historical_unchanged_core": 46,
+  "guild_ids": [
+    "1389991640151621643",
+    "1390368736485310472"
+  ],
+  "scope": "identify guilds.members.read",
+  "owner_uuid_override_only": true,
+  "whitelist": false,
+  "online_mode": true,
+  "member_cache_seconds": 60,
+  "already_connected_players_auto_kicked": false,
+  "oauth_credentials_encrypted_on_vps_only": true,
+  "old_mac_capabilities_schema_preserved": true,
+  "live_positive_member_login": "pending_human",
+  "live_negative_encrypted_login": {
+    "owner_credentials_used": false,
+    "fake_discord_grants_created": false,
+    "protocol": 767,
+    "launcher_preflight_rejected_unapproved_profile": true,
+    "unapproved_valid_token_join_http": 204,
+    "unapproved_valid_token_rejected": true,
+    "foreign_owner_uuid_join_http": 204,
+    "foreign_owner_uuid_rejected": true,
+    "missing_session_rejected": true,
+    "passed": true
+  },
+  "windows_public_release": {
+    "passed": true,
+    "version": "0.4.2",
+    "sequence": 3,
+    "signature_verified": true,
+    "https_executable_sha256_verified": true,
+    "sha256": "229abed889c178194cdffbcfb0b33c8f5e4bb74c09b9197cf63708a076f04ff8",
+    "size": 24219648,
+    "site_updated": true,
+    "mac_binary_published": false
+  },
+  "native": {
+    "passed": true,
+    "os": "win32",
+    "actual_native_webview": true,
+    "credentials_read": false,
+    "game_started": false,
+    "account_mutated": false,
+    "anonymous_native_auth_guard_reached": true,
+    "live_membership_instructions_visible": true,
+    "password_registration_hidden": true,
+    "results": {
+      "name_change_status": {
+        "error": "Войди в аккаунт EREZCRAFT"
+      },
+      "change_player_name": {
+        "error": "Войди в аккаунт EREZCRAFT"
+      }
+    }
+  },
+  "mac_public_binary": false,
+  "signed_updater_actual_0_4_1_to_0_4_2": {
+    "passed": true,
+    "from": "0.4.1",
+    "to": "0.4.2",
+    "actual_https_download": true,
+    "actual_native_replacement": true,
+    "new_webview_acknowledged": true,
+    "credentials_read": false,
+    "game_started": false,
+    "synthetic_user_data_preserved": true
+  }
+}

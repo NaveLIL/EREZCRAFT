@@ -185,7 +185,8 @@
     "home_source": "hourly;2 files/1 day",
     "pc_world": "hourly;72 files/100 GiB",
     "pc_auth": "every6h;28 files",
-    "vps_stored_backups": 0
+    "vps_stored_backups": 0,
+    "pc_server_configs": "with new world archive or when missing/corrupt;72 copies"
   },
   "all_current_health_checks_passed": true,
   "both_restricted_pc_keys_reject_shell": true,
@@ -204,5 +205,26 @@
     "restored_full_chunks": 12,
     "restored_v6_geometry_matches": true,
     "test_plaintext_cleaned": true
-  }
+  },
+  "pc_full_restore": {
+    "schema": 1,
+    "production_data_modified": false,
+    "private_key_sent_to_servers": false,
+    "auth_cms_authenticated_decryption": true,
+    "world_cms_authenticated_decryption": true,
+    "server_cms_authenticated_decryption": true,
+    "auth_files_verified": 26,
+    "auth_sqlite_integrity": true,
+    "master_key_present": true,
+    "drasl_signing_key_present": true,
+    "server_configuration_files_verified": 160,
+    "passed": true,
+    "owner_op_uuid_preserved": true,
+    "whitelist_preserved": true,
+    "frp_tls_private_identity_preserved": true,
+    "restored_full_chunks": 12,
+    "restored_v6_geometry_matches": true,
+    "test_plaintext_cleaned": true
+  },
+  "native_launcher_integration_report": "HOME_LAUNCHER_INTEGRATION.json"
 }
