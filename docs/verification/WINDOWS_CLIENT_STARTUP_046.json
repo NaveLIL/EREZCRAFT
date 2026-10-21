@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-21",
+  "passed": true,
+  "release": {
+    "passed": true,
+    "version": "0.4.6",
+    "sequence": 7,
+    "size": 24272896,
+    "sha256": "c39eda3a2a6e151acf2f55fe869a965354527e1e3a22219401ff035f22a77d7e",
+    "ed25519_signature_verified": true,
+    "public_https_artifact_verified": true,
+    "public_download_page_verified": true
+  },
+  "core_tests": 54,
+  "native_preference_tests": 2,
+  "node_tests": 32,
+  "rendered_frontend_scenarios": 10,
+  "full_client": {
+    "passed": true,
+    "screen": "net.minecraft.client.gui.screens.TitleScreen",
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.252",
+    "distant_horizons": "3.3.3",
+    "interstice": "0.7.0-preview.12",
+    "loaded_mod_entries": 90,
+    "max_heap_bytes": 6442450944,
+    "jvm_uptime_ms": 125956,
+    "world_created": false,
+    "exit_code": 0,
+    "real_jvm_native_graphics": true,
+    "synthetic_invalid_session": true,
+    "game_server_connection_tested": false
+  },
+  "memory_policy_native": {
+    "passed": true,
+    "two_real_native_processes": true,
+    "default_checked": false,
+    "persisted_after_restart": true,
+    "legacy_preferences_compatible": true,
+    "legacy_command_preserves_choice": true,
+    "explicit_disable_restores_guard": true,
+    "credentials_read": false,
+    "game_started": false
+  },
+  "automatic_update": {
+    "passed": true,
+    "from": "0.4.5",
+    "to": "0.4.6",
+    "actual_https_download": true,
+    "actual_native_replacement": true,
+    "actual_ui_button_clicked": false,
+    "automatic_without_click": true,
+    "unicode_installation_directory": true,
+    "new_webview_acknowledged": true,
+    "credentials_read": false,
+    "game_started": false,
+    "synthetic_user_data_preserved": true
+  },
+  "process_log_bytes": 327647,
+  "test_token_absent_from_log": true,
+  "user_worlds_opened": false,
+  "user_credentials_read": false,
+  "applocker_policy_changed": false,
+  "shortcut_target": "D:/Клавиатура/EREZCRAFT-Launcher.exe",
+  "artifacts": [
+    ".local/.verification/java-unicode-20261021/Клиент с пробелами/instance/client-title-validation.json",
+    ".local/.verification/java-unicode-20261021/Клиент с пробелами/instance/logs/launcher-process.log",
+    ".local/.verification/native-memory-1792596469233/report.json",
+    ".local/.verification/launcher-update-ui-1792596578411/Мой лаунчер/update-report.json",
+    ".local/.verification/native-acl-1792596678442/native-rename-acl.json"
+  ]
+}
