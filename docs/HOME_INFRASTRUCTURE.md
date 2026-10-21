@@ -41,14 +41,14 @@ AES256GCM с отдельным HKDF ключом от прежнего master. 
 можно отозвать в Discord → Authorized Apps. Grant входит в PC auth-backup;
 на VPS постоянные резервные архивы по-прежнему не хранятся.
 
-32 Node,8 Python, Svelte0/0 проходят. Настоящий Windows WebView2 подтвердил
+32 Node,11 Python, Svelte0/0 проходят. Настоящий Windows WebView2 подтвердил
 живые инструкции входа и dispatch смены имени. Реальное encrypted подключение
 protocol767 при выключенном whitelist отказало действующему, но не одобренному
 EREZ ID, отсутствующей сессии и попытке подставить UUID владельца; проверен отказ
 launcher preflight. Поддельные membership grants не создавались. Положительный
 OAuth/community сценарий проверен изолированным end-to-end тестом; живое окно
 согласия Discord и полный вход обычного участника ожидают проверки человеком.
-32/8 не являются полной проверкой безопасности или нагрузочной приёмкой10игроков.
+32/11 не являются полной проверкой безопасности или нагрузочной приёмкой10игроков.
 
 Официальные API: [Discord member endpoint](https://docs.discord.com/developers/resources/user#get-current-user-guild-member),
 [OAuth refresh/scopes](https://docs.discord.com/developers/topics/oauth2).
@@ -305,3 +305,13 @@ MSPT>40, свободном диске<10GiB или MemAvailable<2GiB; повт�
 сначала убрать **только** cron с меткой EREZCRAFT pregen, затем `chunky pause
 interstice:islands_v6` / `chunky pause minecraft:overworld` через внутренний RCON.
 Фактический старт и наблюдаемое продвижение записываются отдельным receipt.
+
+Фактический старт подтверждён: V6 radius2048 выполняется, persisted FULL проверены
+в6 новых чанках за прежним radius512. В замере контроллера20TPS и2.33ms/tick,
+игроков0; capacity10 этим не подтверждена. Настоящий pause → drain → continue
+проверен, checkpoint не выдан за завершение. Исправлена найденная гонка:
+Chunky некоторое время показывает running после команды pause; завершение
+очереди теперь требует сохранённого completed checkpoint и достаточного счётчика.
+11 Python включают регрессии паузы/возобновления и запрет ложного завершения.
+Расширенная прогрузка **ещё идёт**, после V6 — Overworld; её можно оставить в фоне.
+[Receipt](verification/HOME_PREGEN_2048.json).

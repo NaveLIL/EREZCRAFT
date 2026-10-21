@@ -1,0 +1,201 @@
+{
+  "live_pause_drain_resume_verified": true,
+  "true_v6_not_falsely_completed": true,
+  "overworld_checkpoint_preserved": true,
+  "state": {
+    "schema": 1,
+    "worlds": [
+      "interstice:islands_v6",
+      "minecraft:overworld"
+    ],
+    "radius": 2048,
+    "index": 0,
+    "phase": "running",
+    "completed": [],
+    "jvm_container_start": "2026-10-21T10:04:20.783823767Z",
+    "last_check_epoch": 1792588108.9098406,
+    "players": 0,
+    "mspt": 8.264,
+    "reason": null,
+    "last_command": "[Chunky] Task continuing for interstice:islands_v6.",
+    "resume_after": 0
+  },
+  "progress_first": "[Chunky] Task running for interstice:islands_v6. Processed: 1827 chunks (2.77%), ETA: 0:00:00, Rate: 0.0 cps, Current: 0, 0",
+  "progress_second": "[Chunky] Task running for interstice:islands_v6. Processed: 1831 chunks (2.77%), ETA: 1:25:48, Rate: 12.5 cps, Current: 59, 12",
+  "tps": "Overworld: 20.000 TPS (13.228 ms/tick)\ninterstice:islands_v3: 20.000 TPS (0.477 ms/tick)\ninterstice:islands_v4: 20.000 TPS (0.401 ms/tick)\nThe Nether: 20.000 TPS (0.216 ms/tick)\ninterstice:relief_lab: 20.000 TPS (0.271 ms/tick)\ninterstice:islands_tall: 20.000 TPS (0.167 ms/tick)\ninterstice:islands_v2: 20.000 TPS (0.113 ms/tick)\ninterstice:chaotic_lab: 20.000 TPS (0.153 ms/tick)\ninterstice:islands: 20.000 TPS (0.164 ms/tick)\ninterstice:islands_v5: 20.000 TPS (0.141 ms/tick)\ninterstice:islands_v6: 20.000 TPS (0.200 ms/tick)\nThe End: 20.000 TPS (0.104 ms/tick)\ninterstice:fluid_lab: 20.000 TPS (0.081 ms/tick)\nSpatial Storage: 20.000 TPS (0.099 ms/tick)\nOverall: 20.000 TPS (15.831 ms/tick)",
+  "persisted_new_full_chunks": {
+    "new_full_v6_chunks_outside_radius512": {
+      "40,8": {
+        "status": "minecraft:full",
+        "geometry_sha256": "1afb803b1006da0faa2fdbd6343c19f9454025d19a54c338fdb74376e43ea4d3"
+      },
+      "45,8": {
+        "status": "minecraft:full",
+        "geometry_sha256": "a5d57b02f7e1802b968a1d4c5680207faf2ab566b651515edaa0411eb2ac723f"
+      },
+      "50,8": {
+        "status": "minecraft:full",
+        "geometry_sha256": "c4e8d9c3ced9c21e493d8f14fa801c84bbaf23c170bec30baf8d9115465f7739"
+      },
+      "55,8": {
+        "status": "minecraft:full",
+        "geometry_sha256": "22ec165e859aa8aebf79cf2ebca8389bb5c2c182beb31e56d04780cbd8f00a0c"
+      },
+      "40,16": {
+        "status": "minecraft:full",
+        "geometry_sha256": "7dd73d0dc2c2d68f37c574cda1a2d48bbd55e6cbed74ecf881aae59bef9dda8b"
+      },
+      "45,16": {
+        "status": "minecraft:full",
+        "geometry_sha256": "7ae2f555fe9bc02ef877183848d942eab6156977cc6261f0c023abd0a1f4273c"
+      }
+    },
+    "cron_present": true
+  },
+  "prepared_generator": {
+    "settings": "interstice:islands_v6",
+    "geometry": {
+      "upper_reference": 222,
+      "clearance": 6,
+      "version": 1,
+      "min_y": 0,
+      "lower_sea_top": 34,
+      "height": 256
+    },
+    "biome_source": {
+      "biomes": [
+        {
+          "biome": "interstice:ash_islands",
+          "parameters": {
+            "depth": [
+              -2.0,
+              2.0
+            ],
+            "offset": 0.0,
+            "weirdness": [
+              -2.0,
+              2.0
+            ],
+            "erosion": [
+              -2.0,
+              2.0
+            ],
+            "temperature": [
+              -2.0,
+              2.0
+            ],
+            "humidity": [
+              -2.0,
+              2.0
+            ],
+            "continentalness": [
+              -2.0,
+              -0.2750000059604645
+            ]
+          }
+        },
+        {
+          "biome": "interstice:pale_gardens",
+          "parameters": {
+            "depth": [
+              -2.0,
+              2.0
+            ],
+            "offset": 0.0,
+            "weirdness": [
+              -2.0,
+              2.0
+            ],
+            "erosion": [
+              -0.20000000298023224,
+              2.0
+            ],
+            "temperature": [
+              -2.0,
+              2.0
+            ],
+            "humidity": [
+              -0.15000000596046448,
+              2.0
+            ],
+            "continentalness": [
+              -0.2750000059604645,
+              2.0
+            ]
+          }
+        },
+        {
+          "biome": "interstice:crimson_thickets",
+          "parameters": {
+            "depth": [
+              -2.0,
+              2.0
+            ],
+            "offset": 0.0,
+            "weirdness": [
+              -2.0,
+              2.0
+            ],
+            "erosion": [
+              -0.20000000298023224,
+              2.0
+            ],
+            "temperature": [
+              -2.0,
+              2.0
+            ],
+            "humidity": [
+              -2.0,
+              -0.15000000596046448
+            ],
+            "continentalness": [
+              -0.2750000059604645,
+              2.0
+            ]
+          }
+        },
+        {
+          "biome": "interstice:stone_vaults",
+          "parameters": {
+            "depth": [
+              -2.0,
+              2.0
+            ],
+            "offset": 0.0,
+            "weirdness": [
+              -2.0,
+              2.0
+            ],
+            "erosion": [
+              -2.0,
+              -0.20000000298023224
+            ],
+            "temperature": [
+              -2.0,
+              2.0
+            ],
+            "humidity": [
+              -2.0,
+              2.0
+            ],
+            "continentalness": [
+              -0.2750000059604645,
+              2.0
+            ]
+          }
+        }
+      ],
+      "type": "minecraft:multi_noise"
+    },
+    "type": "interstice:coupled_islands",
+    "terrain_revision": 6
+  },
+  "generation_complete": false,
+  "queue_worlds": [
+    "interstice:islands_v6",
+    "minecraft:overworld"
+  ],
+  "radius_blocks": 2048,
+  "async_pause_regression_fixed": true,
+  "python_tests": 11
+}

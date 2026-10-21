@@ -1,7 +1,7 @@
 {
   "date": "2026-10-21",
   "node_tests": 32,
-  "python_tests": 8,
+  "python_tests": 11,
   "svelte_errors": 0,
   "svelte_warnings": 0,
   "rust_tests_historical_unchanged_core": 46,
@@ -71,5 +71,6 @@
     "credentials_read": false,
     "game_started": false,
     "synthetic_user_data_preserved": true
-  }
+  },
+  "public_site_desktop_and_mobile_checked": true
 }
