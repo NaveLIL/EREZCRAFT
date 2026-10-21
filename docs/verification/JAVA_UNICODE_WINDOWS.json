@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-21",
+  "version": "0.4.3",
+  "updater_sequence": 4,
+  "cause": "Windows ACP1252 / Microsoft Java21.0.7 under Unicode installation path",
+  "reproduction": {
+    "all_official_jvm_files_verified": 402,
+    "ascii_java_version_succeeded": true,
+    "unicode_java_failed_find_java_dll": true,
+    "applocker_allowed_event_id": 8002,
+    "applocker_rules_changed": false
+  },
+  "fix": {
+    "private_localappdata_jvm_native_cache_per_installation": true,
+    "java_input_paths_use_existing_ascii_aliases": true,
+    "strict_mojmaps_output_boundary_kept": true,
+    "original_upstream_jars_executables_unmodified": true
+  },
+  "runtime_in_unicode_directory": {
+    "passed": true,
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.252",
+    "java_major": 21,
+    "fresh_neoforge_processors_executed": true
+  },
+  "rust_tests": 48,
+  "node_tests": 32,
+  "published_release": {
+    "passed": true,
+    "version": "0.4.3",
+    "sequence": 4,
+    "signature_verified": true,
+    "https_executable_sha256_verified": true,
+    "sha256": "3570220ee856ffd5ce52686871ce4e32959bbb4155acbe7e69227b90af01387c",
+    "size": 24234496,
+    "site_updated": true
+  },
+  "full_client_game_launch": "pending_owner_per_request",
+  "owner_worlds_and_options_modified": false,
+  "real_signed_update_0_4_2_to_0_4_3": {
+    "passed": true,
+    "from": "0.4.2",
+    "to": "0.4.3",
+    "actual_https_download": true,
+    "actual_native_replacement": true,
+    "new_webview_acknowledged": true,
+    "credentials_read": false,
+    "game_started": false,
+    "synthetic_user_data_preserved": true
+  }
+}

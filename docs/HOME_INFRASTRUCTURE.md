@@ -1,5 +1,12 @@
 # EREZCRAFT: домашний сервер и VPS — 21.10.2026
 
+Windows launcher0.4.3/updater4 опубликован21.10.2026: Java/NeoForge runtime
+из папки с кириллицей исправлен без отключения AppLocker. Проверены402 файла
+JVM, настоящая установка NeoForge21.1.252 в Unicode пути и подписанное
+обновление0.4.2→0.4.3 с новым native startup. Полный игровой запуск проверяет
+владелец. Сборкаalpha.15/sequence15 и сервер/V6 не менялись.
+[Receipt](verification/JAVA_UNICODE_WINDOWS.json).
+
 ## Допуск через Discord и доставка лаунчера — 21.10.2026
 
 Windows **0.4.2 / updater sequence3** опубликован на https://launcher.erezcraft.com.
