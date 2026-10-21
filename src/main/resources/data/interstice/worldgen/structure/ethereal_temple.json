@@ -1,0 +1,8 @@
+{
+  "type": "interstice:ethereal_complex",
+  "kind": "temple",
+  "biomes": "#interstice:has_structure/ethereal_complex",
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "spawn_overrides": {}
+}

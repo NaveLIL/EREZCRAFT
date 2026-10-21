@@ -1,0 +1,656 @@
+{
+  "schema": 1,
+  "license": "CC0-1.0",
+  "source_version": "px0RRcOK",
+  "archive_sha512": "3c06828e7e6b1e524f9e5d59c927fb7e4cf6d9b2aa51ff4dddd23b4be717eee674c2130c286f0542e47a328169749aeeae39cc674a9b80457ce10f9501dec3e1",
+  "material_mapping": {
+    "chipped:hewn_spruce_planks": "interstice:gloomcrown_planks",
+    "chipped:solid_spruce_trapdoor": "minecraft:spruce_trapdoor",
+    "chipped:crooked_ropeplank_ladder": "minecraft:ladder",
+    "chipped:stern_stripped_spruce_log": "interstice:stripped_gloomcrown_log",
+    "chipped:spruce_crate": "minecraft:barrel",
+    "decorative_blocks:spruce_palisade": "interstice:gloomcrown_log",
+    "decorative_blocks:spruce_support": "minecraft:spruce_fence",
+    "decorative_blocks:bar_panel": "minecraft:iron_bars",
+    "handcrafted:spruce_pillar_trim": "interstice:gloomcrown_log",
+    "handcrafted:spruce_dining_bench": "minecraft:spruce_stairs",
+    "farmersdelight:straw": "minecraft:hay_block",
+    "minecraft:water": "interstice:phosphorite"
+  },
+  "assembly": "Original marker coordinates and connector rotations; original components unchanged spatially. Overlapping optional modules skipped; missing outpost_tower0 and teepee_cyan excluded. Sources contain one large temple; two assembled camp variants per original base.",
+  "entities": "Source entity NBT omitted; original pillager/vindicator spawn overrides retained for camps in native structure settings.",
+  "templates": [
+    {
+      "id": "interstice:ethereal/complex/temple",
+      "size": [
+        18,
+        12,
+        15
+      ],
+      "blocks": 245,
+      "loot_barrels": 1,
+      "sha256": "22ccfdad0c3bc91a4bdc03c12de2d4adae70e51f644cd948ea59125cb7a99702",
+      "assembly": {
+        "source": "ruins/simple/ruined_temple0"
+      },
+      "coordinate_shift": [
+        0,
+        0,
+        0
+      ],
+      "loot_table": "interstice:chests/v5/laboratory"
+    },
+    {
+      "id": "interstice:ethereal/complex/camp_small_0",
+      "size": [
+        16,
+        10,
+        16
+      ],
+      "blocks": 400,
+      "loot_barrels": 3,
+      "sha256": "7cffbf06b50e09d876b4332dc6c0bf5055e839124f5569cbecbf40a27031d897",
+      "assembly": {
+        "base": "outposts/outpost_base_small",
+        "parts": [
+          {
+            "source": "outposts/outpost_lookout0",
+            "marker": [
+              10,
+              0,
+              5
+            ],
+            "offset": [
+              7,
+              1,
+              2
+            ],
+            "rotation": 2,
+            "role": "tower"
+          },
+          {
+            "source": "misc/tents/teepee_green",
+            "marker": [
+              3,
+              0,
+              9
+            ],
+            "offset": [
+              0,
+              1,
+              6
+            ],
+            "rotation": 2,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/teepee_red",
+            "marker": [
+              10,
+              0,
+              12
+            ],
+            "offset": [
+              7,
+              1,
+              9
+            ],
+            "rotation": 2,
+            "role": "tent"
+          }
+        ]
+      },
+      "coordinate_shift": [
+        0,
+        0,
+        0
+      ],
+      "loot_table": "interstice:chests/v5/cargo_station"
+    },
+    {
+      "id": "interstice:ethereal/complex/camp_small_1",
+      "size": [
+        16,
+        10,
+        16
+      ],
+      "blocks": 400,
+      "loot_barrels": 3,
+      "sha256": "2783e4ec2eb18401404edc88915d3fb7a5bd118fa112736d7ad379f225e0b26d",
+      "assembly": {
+        "base": "outposts/outpost_base_small",
+        "parts": [
+          {
+            "source": "outposts/outpost_lookout1",
+            "marker": [
+              10,
+              0,
+              5
+            ],
+            "offset": [
+              7,
+              1,
+              2
+            ],
+            "rotation": 2,
+            "role": "tower"
+          },
+          {
+            "source": "misc/tents/teepee_brown",
+            "marker": [
+              3,
+              0,
+              9
+            ],
+            "offset": [
+              0,
+              1,
+              6
+            ],
+            "rotation": 2,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/teepee_brown",
+            "marker": [
+              10,
+              0,
+              12
+            ],
+            "offset": [
+              7,
+              1,
+              9
+            ],
+            "rotation": 2,
+            "role": "tent"
+          }
+        ]
+      },
+      "coordinate_shift": [
+        0,
+        0,
+        0
+      ],
+      "loot_table": "interstice:chests/v5/cargo_station"
+    },
+    {
+      "id": "interstice:ethereal/complex/camp_medium_0",
+      "size": [
+        24,
+        10,
+        24
+      ],
+      "blocks": 789,
+      "loot_barrels": 6,
+      "sha256": "afd21542c9127032f8e64c062420bcb4abc41faf151452227a275e23cbabcfd7",
+      "assembly": {
+        "base": "outposts/outpost_base_medium",
+        "parts": [
+          {
+            "source": "outposts/outpost_lookout0",
+            "marker": [
+              3,
+              0,
+              19
+            ],
+            "offset": [
+              0,
+              1,
+              16
+            ],
+            "rotation": 0,
+            "role": "tower"
+          },
+          {
+            "source": "outposts/outpost_lookout1",
+            "marker": [
+              5,
+              0,
+              5
+            ],
+            "offset": [
+              2,
+              1,
+              2
+            ],
+            "rotation": 2,
+            "role": "tower"
+          },
+          {
+            "source": "outposts/outpost_lookout0",
+            "marker": [
+              15,
+              0,
+              8
+            ],
+            "offset": [
+              12,
+              1,
+              5
+            ],
+            "rotation": 0,
+            "role": "tower"
+          },
+          {
+            "source": "misc/tents/teepee_brown",
+            "marker": [
+              6,
+              0,
+              12
+            ],
+            "offset": [
+              3,
+              1,
+              9
+            ],
+            "rotation": 3,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/tent_red",
+            "marker": [
+              17,
+              0,
+              17
+            ],
+            "offset": [
+              14,
+              1,
+              12
+            ],
+            "rotation": 3,
+            "role": "tent"
+          }
+        ]
+      },
+      "coordinate_shift": [
+        0,
+        0,
+        0
+      ],
+      "loot_table": "interstice:chests/v5/cargo_station"
+    },
+    {
+      "id": "interstice:ethereal/complex/camp_medium_1",
+      "size": [
+        24,
+        10,
+        24
+      ],
+      "blocks": 783,
+      "loot_barrels": 5,
+      "sha256": "66096f977d60b3e843e261ac3a6cce98f4ae63ddd4c6348ff3805ee7ac3a85ed",
+      "assembly": {
+        "base": "outposts/outpost_base_medium",
+        "parts": [
+          {
+            "source": "outposts/outpost_lookout1",
+            "marker": [
+              3,
+              0,
+              19
+            ],
+            "offset": [
+              0,
+              1,
+              16
+            ],
+            "rotation": 0,
+            "role": "tower"
+          },
+          {
+            "source": "outposts/outpost_lookout0",
+            "marker": [
+              5,
+              0,
+              5
+            ],
+            "offset": [
+              2,
+              1,
+              2
+            ],
+            "rotation": 2,
+            "role": "tower"
+          },
+          {
+            "source": "outposts/outpost_lookout1",
+            "marker": [
+              15,
+              0,
+              8
+            ],
+            "offset": [
+              12,
+              1,
+              5
+            ],
+            "rotation": 0,
+            "role": "tower"
+          },
+          {
+            "source": "misc/tents/teepee_brown",
+            "marker": [
+              6,
+              0,
+              12
+            ],
+            "offset": [
+              3,
+              1,
+              9
+            ],
+            "rotation": 3,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/teepee_red",
+            "marker": [
+              17,
+              0,
+              17
+            ],
+            "offset": [
+              14,
+              1,
+              14
+            ],
+            "rotation": 3,
+            "role": "tent"
+          }
+        ]
+      },
+      "coordinate_shift": [
+        0,
+        0,
+        0
+      ],
+      "loot_table": "interstice:chests/v5/cargo_station"
+    },
+    {
+      "id": "interstice:ethereal/complex/camp_large_0",
+      "size": [
+        40,
+        10,
+        40
+      ],
+      "blocks": 1922,
+      "loot_barrels": 11,
+      "sha256": "9cc232f3046adf813975cb3ee38c011b15bb30adb6a96551a56edfc606a71e0a",
+      "assembly": {
+        "base": "outposts/outpost_base_large",
+        "parts": [
+          {
+            "source": "outposts/outpost_lookout0",
+            "marker": [
+              7,
+              0,
+              33
+            ],
+            "offset": [
+              4,
+              1,
+              30
+            ],
+            "rotation": 0,
+            "role": "tower"
+          },
+          {
+            "source": "outposts/outpost_lookout1",
+            "marker": [
+              29,
+              0,
+              30
+            ],
+            "offset": [
+              26,
+              1,
+              27
+            ],
+            "rotation": 0,
+            "role": "tower"
+          },
+          {
+            "source": "outposts/outpost_lookout0",
+            "marker": [
+              34,
+              0,
+              6
+            ],
+            "offset": [
+              31,
+              1,
+              3
+            ],
+            "rotation": 2,
+            "role": "tower"
+          },
+          {
+            "source": "misc/tents/teepee_white",
+            "marker": [
+              6,
+              0,
+              20
+            ],
+            "offset": [
+              3,
+              1,
+              17
+            ],
+            "rotation": 1,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/teepee_lightgray",
+            "marker": [
+              11,
+              0,
+              10
+            ],
+            "offset": [
+              8,
+              1,
+              7
+            ],
+            "rotation": 1,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/tent_cyan",
+            "marker": [
+              18,
+              0,
+              25
+            ],
+            "offset": [
+              13,
+              1,
+              22
+            ],
+            "rotation": 2,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/tent_green",
+            "marker": [
+              22,
+              0,
+              10
+            ],
+            "offset": [
+              19,
+              1,
+              5
+            ],
+            "rotation": 1,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/tent_white",
+            "marker": [
+              34,
+              0,
+              19
+            ],
+            "offset": [
+              29,
+              1,
+              16
+            ],
+            "rotation": 0,
+            "role": "tent"
+          }
+        ]
+      },
+      "coordinate_shift": [
+        0,
+        0,
+        0
+      ],
+      "loot_table": "interstice:chests/v5/cargo_station"
+    },
+    {
+      "id": "interstice:ethereal/complex/camp_large_1",
+      "size": [
+        40,
+        10,
+        40
+      ],
+      "blocks": 1910,
+      "loot_barrels": 9,
+      "sha256": "dab7257bfa94eb2d5217f820734f12487fb7586a856af9bd164c81bb94cbf6d7",
+      "assembly": {
+        "base": "outposts/outpost_base_large",
+        "parts": [
+          {
+            "source": "outposts/outpost_lookout1",
+            "marker": [
+              7,
+              0,
+              33
+            ],
+            "offset": [
+              4,
+              1,
+              30
+            ],
+            "rotation": 0,
+            "role": "tower"
+          },
+          {
+            "source": "outposts/outpost_lookout0",
+            "marker": [
+              29,
+              0,
+              30
+            ],
+            "offset": [
+              26,
+              1,
+              27
+            ],
+            "rotation": 0,
+            "role": "tower"
+          },
+          {
+            "source": "outposts/outpost_lookout1",
+            "marker": [
+              34,
+              0,
+              6
+            ],
+            "offset": [
+              31,
+              1,
+              3
+            ],
+            "rotation": 2,
+            "role": "tower"
+          },
+          {
+            "source": "misc/tents/tent_red",
+            "marker": [
+              6,
+              0,
+              20
+            ],
+            "offset": [
+              3,
+              1,
+              15
+            ],
+            "rotation": 1,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/teepee_brown",
+            "marker": [
+              11,
+              0,
+              10
+            ],
+            "offset": [
+              8,
+              1,
+              7
+            ],
+            "rotation": 1,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/teepee_brown",
+            "marker": [
+              18,
+              0,
+              25
+            ],
+            "offset": [
+              15,
+              1,
+              22
+            ],
+            "rotation": 2,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/teepee_green",
+            "marker": [
+              22,
+              0,
+              10
+            ],
+            "offset": [
+              19,
+              1,
+              7
+            ],
+            "rotation": 1,
+            "role": "tent"
+          },
+          {
+            "source": "misc/tents/teepee_white",
+            "marker": [
+              34,
+              0,
+              19
+            ],
+            "offset": [
+              31,
+              1,
+              16
+            ],
+            "rotation": 0,
+            "role": "tent"
+          }
+        ]
+      },
+      "coordinate_shift": [
+        0,
+        0,
+        0
+      ],
+      "loot_table": "interstice:chests/v5/cargo_station"
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 # Руины Ethereal в V6
 
+Этот документ описывает первый этап preview.11. Крупные храмы/лагеря
+добавлены в preview.12: [актуальное продолжение](ETHEREAL_COMPLEXES.md).
+
 Локальная версия **0.7.0-preview.11**, Minecraft1.21.1 / NeoForge21.1.252 / Java21.
 По поручению владельца добавлены готовые постройки и заменена часть прежних.
 Источник: [Ethereal Structures B1](https://modrinth.com/datapack/ethereal-structures),

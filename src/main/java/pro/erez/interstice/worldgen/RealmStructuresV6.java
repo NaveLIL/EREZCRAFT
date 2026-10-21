@@ -38,8 +38,12 @@ public final class RealmStructuresV6 {
     }
     public static List<ResourceLocation> templates() { return TEMPLATES; }
     public static RealmStructuresV5.Slot slot(long seed, int cellX, int cellZ) {
+        return slot(seed,cellX,cellZ,true);
+    }
+    public static RealmStructuresV5.Slot slot(long seed, int cellX, int cellZ, boolean complexes) {
         var original = RealmStructuresV5.slot(seed, cellX, cellZ);
         if (original == null) return null;
+        if (complexes && RealmComplexStructuresV6.scheduled(seed, original.chunk())) return null;
         var pool = switch (original.family()) {
             case LABORATORY -> RUINS;
             case OBSERVATION_POST -> TOWERS;
@@ -50,17 +54,22 @@ public final class RealmStructuresV6 {
         return new RealmStructuresV5.Slot(original.family(), variant, original.chunk(), original.rotation(), pool.get(variant));
     }
     public static RealmStructuresV5.Slot candidate(long seed, int chunkX, int chunkZ) {
-        var selected = slot(seed, Math.floorDiv(chunkX, RealmStructuresV5.CELL_CHUNKS), Math.floorDiv(chunkZ, RealmStructuresV5.CELL_CHUNKS));
+        return candidate(seed,chunkX,chunkZ,true);
+    }
+    public static RealmStructuresV5.Slot candidate(long seed, int chunkX, int chunkZ,boolean complexes) {
+        var selected = slot(seed, Math.floorDiv(chunkX, RealmStructuresV5.CELL_CHUNKS), Math.floorDiv(chunkZ, RealmStructuresV5.CELL_CHUNKS),complexes);
         return selected != null && selected.chunk().x == chunkX && selected.chunk().z == chunkZ ? selected : null;
     }
     public static boolean generate(GeometryProfile profile, ChunkAccess chunk, long seed, WorldGenRegion region, int minimum) {
         if (!IslandWorld.TENSION_WORLD.equals(region.getLevel().dimension())) return false;
-        if (candidate(seed, chunk.getPos().x, chunk.getPos().z) == null) return false;
+        boolean complexes=region.getLevel().getServer().getWorldData().worldGenOptions().generateStructures();
+        var selected=slot(seed,Math.floorDiv(chunk.getPos().x,RealmStructuresV5.CELL_CHUNKS),Math.floorDiv(chunk.getPos().z,RealmStructuresV5.CELL_CHUNKS),complexes);
+        if(selected==null||!selected.chunk().equals(chunk.getPos()))return false;
         var caves = pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(region.getLevel().getChunkSource().randomState()).forestCaves();
         for (int x = chunk.getPos().getMinBlockX(); x <= chunk.getPos().getMaxBlockX(); x++)
             for (int z = chunk.getPos().getMinBlockZ(); z <= chunk.getPos().getMaxBlockZ(); z++)
                 if (caves.entranceColumn(x, z)) return false;
-        return generate(profile, chunk, seed, region.getLevel().dimension(), region.getLevel().getStructureManager(), region.registryAccess(), minimum);
+        return place(profile, chunk, seed, region.getLevel().dimension(), region.getLevel().getStructureManager(), region.registryAccess(),selected.template(),selected.rotation(),minimum);
     }
     public static boolean generate(GeometryProfile profile, ChunkAccess chunk, long seed, ResourceKey<Level> dimension,
                                    StructureTemplateManager manager, HolderLookup.Provider registries, int minimum) {

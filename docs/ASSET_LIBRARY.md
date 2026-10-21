@@ -235,3 +235,10 @@ M15 добавляет ещё три палитры готовых изобра�
 `assets/interstice/provenance/ethereal-structures.json`.
 Описание и ограничения: [ETHEREAL_STRUCTURES.md](ETHEREAL_STRUCTURES.md).
 
+12.10.2026 дополнительно включены38 неизменённых исходных NBT для крупного
+храма и сборки лагерей из оригинальных частей. `tools/import_ethereal_complexes.py`
+сохраняет геометрию частей и исходные точки соединения; конвертация материалов,
+исключения повреждённых ссылок и детерминированная сборка документированы в
+`assets/interstice/provenance/ethereal-complexes.json`. Лицензия того же B1 — CC0.
+Новые игровые PNG не создаются. [Крупные комплексы](ETHEREAL_COMPLEXES.md).
+

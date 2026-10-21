@@ -192,6 +192,7 @@ public final class Interstice {
         FluidLightUpgrade.register(bus);
         pro.erez.interstice.sound.ModSounds.register(bus);
         VaultMaterials.register(bus);
+        pro.erez.interstice.worldgen.RealmComplexStructuresV6.register(bus);
         pro.erez.interstice.worldgen.GardenMaterials.register(bus);
         pro.erez.interstice.food.TideHeart.register(bus);
         pro.erez.interstice.worldgen.cave.CaveMaterials.register(bus);

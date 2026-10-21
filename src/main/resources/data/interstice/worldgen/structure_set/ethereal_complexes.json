@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "interstice:ethereal_temple",
+      "weight": 1
+    },
+    {
+      "structure": "interstice:ethereal_camp",
+      "weight": 2
+    }
+  ],
+  "placement": {
+    "type": "interstice:ethereal_complex"
+  }
+}

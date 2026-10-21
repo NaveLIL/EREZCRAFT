@@ -1,6 +1,6 @@
 {
   "name": "EREZCRAFT V6 Preview",
-  "version": "0.7.0-preview.11",
+  "version": "0.7.0-preview.12",
   "minecraft": "1.21.1",
   "java_major": 21,
   "loader": {
@@ -10,13 +10,13 @@
   "mods": [
     {
       "id": "interstice",
-      "version": "0.7.0-preview.11",
-      "file": "interstice-0.7.0-preview.11.jar",
+      "version": "0.7.0-preview.12",
+      "file": "interstice-0.7.0-preview.12.jar",
       "required_on": [
         "client",
         "server"
       ],
-      "sha256": "f085d111a89ea716d5c03fa0990a4ffe8f5c51f4e9ea5efbab8e83d9874e35cd"
+      "sha256": "7c65223bf471fca19adba5ac9c7ba9debe6545e28f67496baaae321dd78bb506"
     }
   ],
   "external_mods": [
@@ -98,7 +98,7 @@
   "preview_dimension": "interstice:islands_v6",
   "ordinary_entry_dimension": "interstice:islands_v6",
   "instructions": "docs/V6_PREVIEW.md",
-  "verification": "docs/verification/ETHEREAL_STRUCTURES.json",
-  "status": "Local preview.11 adds 19 adapted CC0 Ethereal templates to V6 and pinned Lootr per-player loot; no launcher publication in this task.",
+  "verification": "docs/verification/ETHEREAL_COMPLEXES.json",
+  "status": "Local preview.12 adds native multi-chunk Ethereal temples/camps with Lootr; requires structures enabled in new-world options; launcher delivery not published.",
   "localization_verification": "docs/verification/RUSSIAN_LOCALIZATION_DELIVERY.json"
 }

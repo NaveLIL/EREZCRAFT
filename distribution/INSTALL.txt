@@ -1,4 +1,4 @@
-EREZCRAFT 0.7.0-preview.11 — локальная preview ядра Междуморья
+EREZCRAFT 0.7.0-preview.12 — локальная preview ядра Междуморья
 
 Minecraft Java 1.21.1, NeoForge 21.1.252, Java 21.
 В папке mods три JAR: Interstice, Distant Horizons и Lootr.
@@ -46,3 +46,8 @@ G1/другого сборщика мусора перед этим удалит
 Distant Horizons: https://modrinth.com/mod/distanthorizons/version/3.3.3-1.21.1
 Исходники DH: https://gitlab.com/distant-horizons-team/distant-horizons
 Лицензия DH: LGPL-3.0-only; исходные лицензии включены в licenses.
+
+Preview.12: крупный храм18×12×15 и собранные лагеря16/24/40 блоков.
+Нужна включённая генерация структур в параметрах нового мира.
+Чанки комплекса генерируются/сохраняются стандартной системой Minecraft;
+все тайники — личные Lootr. Подробности: docs/ETHEREAL_COMPLEXES.md.

@@ -98,7 +98,8 @@ public final class EtherealStructureGameTests {
         for (long seed : new long[]{0, 1, -1, SEED, 76198123, 4294967297L})
             for (int x = -16; x < 16; x++) for (int z = -16; z < 16; z++) {
                 var original = RealmStructuresV5.slot(seed, x, z); var selected = RealmStructuresV6.slot(seed, x, z);
-                h.assertTrue((original == null) == (selected == null), "A second scheduling grid inflated structure density");
+                boolean large=original!=null&&RealmComplexStructuresV6.scheduled(seed,original.chunk());
+                h.assertTrue((original == null) == (selected == null&&!large), "A second scheduling grid inflated structure density");
                 if (selected == null) continue;
                 all.add(selected.template());
                 h.assertTrue(original.chunk().equals(selected.chunk()) && original.rotation() == selected.rotation(), "V6 changed the shared rare/forest anchor field");

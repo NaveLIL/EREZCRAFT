@@ -126,6 +126,18 @@ neoForge {
             gameDirectory = file('.verification/ethereal-smoke')
             systemProperty 'interstice.etherealSmoke', 'reload'
         }
+        etherealComplexCreate {
+            client()
+            gameDirectory = file('.verification/ethereal-complex-smoke')
+            systemProperty 'interstice.etherealSmoke', 'create'
+            systemProperty 'interstice.etherealComplexSmoke', 'true'
+        }
+        etherealComplexReload {
+            client()
+            gameDirectory = file('.verification/ethereal-complex-smoke')
+            systemProperty 'interstice.etherealSmoke', 'reload'
+            systemProperty 'interstice.etherealComplexSmoke', 'true'
+        }
         clientSmoke {
             client()
             gameDirectory = file('build/client-smoke')
@@ -778,7 +790,7 @@ neoForge.runs.each { run ->
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['etherealCreate','etherealReload'] ? 'etherealSmoke' : name in ['techmagicPregenCreate','techmagicPregenReload'] ? 'techmagicPregen' : name in ['forestCaveCreate','forestCaveReload'] ? 'forestCaveSmoke' : name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+        def profileName = name in ['etherealComplexCreate','etherealComplexReload'] ? 'etherealComplexSmoke' : name in ['etherealCreate','etherealReload'] ? 'etherealSmoke' : name in ['techmagicPregenCreate','techmagicPregenReload'] ? 'techmagicPregen' : name in ['forestCaveCreate','forestCaveReload'] ? 'forestCaveSmoke' : name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
                 name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
                 name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
@@ -851,10 +863,13 @@ tasks.named('runForestCaveReload') { dependsOn tasks.named('runForestCaveCreate'
 tasks.register('runForestCaveSmoke') { dependsOn tasks.named('runForestCaveReload') }
 tasks.named('runEtherealReload') { dependsOn tasks.named('runEtherealCreate') }
 tasks.register('runEtherealSmoke') { dependsOn tasks.named('runEtherealReload') }
-tasks.matching { it.name in ['prepareEtherealCreateRun','prepareEtherealReloadRun'] }.configureEach {
+tasks.named('runEtherealComplexReload') { dependsOn tasks.named('runEtherealComplexCreate') }
+tasks.register('runEtherealComplexSmoke') { dependsOn tasks.named('runEtherealComplexReload') }
+tasks.matching { it.name in ['prepareEtherealCreateRun','prepareEtherealReloadRun','prepareEtherealComplexCreateRun','prepareEtherealComplexReloadRun'] }.configureEach {
     outputs.upToDateWhen { false }
     doLast {
-        def directory = neoForge.runs.getByName(it.name.contains('Reload') ? 'etherealReload' : 'etherealCreate').gameDirectory.get().asFile
+        def prefix = it.name.contains('Complex') ? 'etherealComplex' : 'ethereal'
+        def directory = neoForge.runs.getByName(prefix + (it.name.contains('Reload') ? 'Reload' : 'Create')).gameDirectory.get().asFile
         if (!directory.toPath().toAbsolutePath().toString().replace('\\','/').contains('/.verification/')) throw new GradleException('Ethereal verification must be isolated')
         def config = new File(directory, 'config/fml.toml'); config.parentFile.mkdirs(); config.text = 'earlyWindowControl = false\n'
         def options = new File(directory, 'options.txt'); if (!options.exists()) options.text = 'onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\n'
@@ -886,6 +901,7 @@ def modpackZip = tasks.register('modpackZip', Zip) {
     from({ zipTree(configurations.lootrArtifact.singleFile) }) { include 'LICENSE*', 'META-INF/LICENSE*'; into 'licenses/lootr' }
     from('distribution/licenses/lootr-MIT.txt') { into 'licenses/lootr' }
     from('docs/ETHEREAL_STRUCTURES.md') { into 'docs' }
+    from('docs/ETHEREAL_COMPLEXES.md') { into 'docs' }
     from('distribution/v6-preview-manifest.json')
     from('distribution/INSTALL.txt')
     from('distribution/client-options.txt') { rename { 'options.txt' } }
@@ -905,6 +921,7 @@ def modpackZip = tasks.register('modpackZip', Zip) {
     from('docs/verification/V6_DARKNESS_TRIAL.json') { into 'docs/verification' }
     from('docs/verification/V6_SHADER_MATERIALS.json') { into 'docs/verification' }
     from('docs/verification/ETHEREAL_STRUCTURES.json') { into 'docs/verification' }
+    from('docs/verification/ETHEREAL_COMPLEXES.json') { into 'docs/verification' }
     from('LICENSE') { into 'licenses/interstice' }
     from({ zipTree(configurations.distantHorizonsArtifact.singleFile) }) {
         include 'LICENSE.txt', 'LICENSE.LESSER.txt', 'LICENSE-LOGOS.txt'

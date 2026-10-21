@@ -110,7 +110,7 @@ public final class StructureSearchJobs {
         var proposals=new ArrayList<RealmStructuresV5.Slot>();
         for(int i=0;i<Math.min(SOURCE_CELL_BUDGET,cells.size());i++){
             var cellPos=cells.get(i);var slot=IslandWorld.TENSION_WORLD.equals(level.dimension())
-                    ?pro.erez.interstice.worldgen.RealmStructuresV6.slot(level.getSeed(),cellPos.x,cellPos.z)
+                    ?pro.erez.interstice.worldgen.RealmStructuresV6.slot(level.getSeed(),cellPos.x,cellPos.z,level.getServer().getWorldData().worldGenOptions().generateStructures())
                     :RealmStructuresV5.slot(level.getSeed(),cellPos.x,cellPos.z);
             if(slot!=null&&distance(origin,slot.chunk().getMinBlockX()+8,slot.chunk().getMinBlockZ()+8)<=RADIUS*(double)RADIUS)proposals.add(slot);
         }
