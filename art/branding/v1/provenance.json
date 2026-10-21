@@ -6,7 +6,7 @@
   "source": "Built-in imagegen first concept; owner-approved PNG preserved unmodified as concept-approved.png",
   "production": "Project-native SVG interpretation and simplified small-size icon; PNG rendered directly from SVG by Chromium. ICO and ICNS are format conversions of the rendered icon.",
   "correction": "Both oceans have explicit clip paths; lower water surface is below the entire island, with an alpha-transparent air gap.",
-  "asset_status": "Prepared locally; not included in alpha.16 or launcher0.4.6",
+  "asset_status": "Approved master assets preserved; applied to Windows launcher 0.4.8 and launcher.erezcraft.com. macOS icon source updated; new macOS binary not built. Minecraft menu/loading logo unchanged.",
   "assets": {
     "concept-approved.png": {
       "bytes": 1284695,
@@ -48,5 +48,13 @@
       "bytes": 38916,
       "sha256": "d6bdd7e9e22c60389af0a384ef8cfca13945c0bfcef899c5b25f03634faee149"
     }
+  },
+  "delivery": {
+    "windows_launcher": "0.4.8",
+    "updater_sequence": 9,
+    "website": "https://launcher.erezcraft.com/",
+    "macos_icon_source_updated": true,
+    "macos_binary_published": false,
+    "minecraft_menu_or_loading_changed": false
   }
 }
