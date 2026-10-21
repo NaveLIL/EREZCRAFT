@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "project": "Simple Voice Chat",
+  "project_id": "9eGKb6K1",
+  "version_id": "2s7zUspF",
+  "version": "neoforge-1.21.1-2.6.22",
+  "filename": "voicechat-neoforge-1.21.1-2.6.22.jar",
+  "download_url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/2s7zUspF/voicechat-neoforge-1.21.1-2.6.22.jar",
+  "bytes": 4918442,
+  "sha256": "63116a4d21bd57221482d971dd85822f7c723c210b60411670cdb0aa26873cac",
+  "sha512": "309e3b18e299b2bccf9128dbb05c2603a9860f7cd68858d23f8fdb8265ea85ec7fb1655c95b87c0a9522ae1fd6380b26e4a4c31207f9c7af80870fcc6207abad",
+  "dependencies": [
+    {
+      "version_id": null,
+      "project_id": "9s6osm5g",
+      "file_name": null,
+      "dependency_type": "optional"
+    },
+    {
+      "version_id": null,
+      "project_id": "9eGKb6K1",
+      "file_name": null,
+      "dependency_type": "optional"
+    }
+  ],
+  "license": "LicenseRef-All-Rights-Reserved",
+  "distribution": "Original Modrinth CDN dependency; no public EREZCRAFT rehosting",
+  "server_udp_port": 24454,
+  "sable_udp_port": 25565,
+  "minecraft_tcp_port": 25565,
+  "force_voice_chat": false,
+  "macos_microphone_permission_verified": false
+}

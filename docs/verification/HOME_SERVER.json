@@ -1,0 +1,233 @@
+{
+  "server_boot": true,
+  "cold_terrain_persistence": true,
+  "server_jars": 50,
+  "interstice_sha256": "0ba35fe15485e017fa5d6a09f4987349f57bb923e39e39ac441bf08c2302bbb6",
+  "whitelist_owner_only": true,
+  "seed": 20261006,
+  "v6_generator": {
+    "settings": "interstice:islands_v6",
+    "geometry": {
+      "upper_reference": 222,
+      "clearance": 6,
+      "version": 1,
+      "min_y": 0,
+      "lower_sea_top": 34,
+      "height": 256
+    },
+    "biome_source": {
+      "biomes": [
+        {
+          "biome": "interstice:ash_islands",
+          "parameters": {
+            "depth": [
+              -2.0,
+              2.0
+            ],
+            "offset": 0.0,
+            "weirdness": [
+              -2.0,
+              2.0
+            ],
+            "erosion": [
+              -2.0,
+              2.0
+            ],
+            "temperature": [
+              -2.0,
+              2.0
+            ],
+            "humidity": [
+              -2.0,
+              2.0
+            ],
+            "continentalness": [
+              -2.0,
+              -0.2750000059604645
+            ]
+          }
+        },
+        {
+          "biome": "interstice:pale_gardens",
+          "parameters": {
+            "depth": [
+              -2.0,
+              2.0
+            ],
+            "offset": 0.0,
+            "weirdness": [
+              -2.0,
+              2.0
+            ],
+            "erosion": [
+              -0.20000000298023224,
+              2.0
+            ],
+            "temperature": [
+              -2.0,
+              2.0
+            ],
+            "humidity": [
+              -0.15000000596046448,
+              2.0
+            ],
+            "continentalness": [
+              -0.2750000059604645,
+              2.0
+            ]
+          }
+        },
+        {
+          "biome": "interstice:crimson_thickets",
+          "parameters": {
+            "depth": [
+              -2.0,
+              2.0
+            ],
+            "offset": 0.0,
+            "weirdness": [
+              -2.0,
+              2.0
+            ],
+            "erosion": [
+              -0.20000000298023224,
+              2.0
+            ],
+            "temperature": [
+              -2.0,
+              2.0
+            ],
+            "humidity": [
+              -2.0,
+              -0.15000000596046448
+            ],
+            "continentalness": [
+              -0.2750000059604645,
+              2.0
+            ]
+          }
+        },
+        {
+          "biome": "interstice:stone_vaults",
+          "parameters": {
+            "depth": [
+              -2.0,
+              2.0
+            ],
+            "offset": 0.0,
+            "weirdness": [
+              -2.0,
+              2.0
+            ],
+            "erosion": [
+              -2.0,
+              -0.20000000298023224
+            ],
+            "temperature": [
+              -2.0,
+              2.0
+            ],
+            "humidity": [
+              -2.0,
+              2.0
+            ],
+            "continentalness": [
+              -0.2750000059604645,
+              2.0
+            ]
+          }
+        }
+      ],
+      "type": "minecraft:multi_noise"
+    },
+    "type": "interstice:coupled_islands",
+    "terrain_revision": 6
+  },
+  "server_settings": {
+    "online-mode": "true",
+    "enforce-secure-profile": "true",
+    "white-list": "true",
+    "level-name": "erezcraft",
+    "view-distance": "8",
+    "simulation-distance": "6",
+    "allow-flight": "true"
+  },
+  "cold_sample_chunks": 12,
+  "overworld_pregenerated_chunks": 4225,
+  "v6_pregenerated_chunks": 4225,
+  "pregen_radius_blocks": 512,
+  "final_pregeneration_completed": true,
+  "schema": 1,
+  "checked_utc": "2026-10-21T09:49:52.305339+00:00",
+  "scope": "Owner-only first admission; bounded starter pregeneration and real encrypted login. Full client acceptance pending owner Mac.",
+  "protocol_security_passed": true,
+  "auth_outage_fail_closed": true,
+  "full_client_acceptance": "owner_mac_pending",
+  "client_jars": 63,
+  "release_sequence": 14,
+  "release_id": "techmagic-0-1-0-alpha-14-server",
+  "published": true,
+  "source_commit": "fee68b8",
+  "server_address": "mc.erezcraft.com:25565",
+  "home_vm": "192.168.10.152",
+  "server_directory": "/opt/minecraft/erezcraft",
+  "auth_checks": {
+    "protocol": 767,
+    "host": "mc.erezcraft.com",
+    "owner_accounts_used": false,
+    "missing_session_rejected": true,
+    "invalid_token_join_http": 403,
+    "invalid_token_rejected": true,
+    "foreign_uuid_join_http": 204,
+    "foreign_uuid_canonical_uuid": true,
+    "foreign_uuid_cannot_change_server_profile": true,
+    "foreign_name_join_http": 204,
+    "foreign_name_rejected": true,
+    "valid_session_join_http": 204,
+    "valid_session_canonical_uuid": true,
+    "revoked_session_join_http": 403,
+    "revoked_session_rejected": true,
+    "passed": true
+  },
+  "auth_outage_check": {
+    "protocol": 767,
+    "host": "mc.erezcraft.com",
+    "owner_accounts_used": false,
+    "auth_unavailable_join_http": 204,
+    "auth_unavailable_rejected": true,
+    "passed": true
+  },
+  "windows_native_attempt": {
+    "passed": false,
+    "reason": "Windows Dimon session disconnected; NeoForge could not find primary monitor; owned process stopped and own test session revoked"
+  },
+  "capacity_10_players_verified": false,
+  "starter_pregen_dimensions": [
+    "minecraft:overworld",
+    "interstice:islands_v6"
+  ],
+  "production_world_unbounded": true,
+  "public_access": "EREZ ID plus owner/test UUID whitelist; no OP accounts",
+  "remaining": [
+    "Owner Mac full pack start and real world entry",
+    "Player inventory cold persistence",
+    "Two real clients",
+    "Survival/machine/ME/ships/graves acceptance",
+    "Representative multiplayer load"
+  ],
+  "catalog_sequence": 14,
+  "manifest_sha256": "22e893e014ccc4b9c6c5c006b88d24e7808f5d3593ff154e276333a454390aed",
+  "manifest_files": 73,
+  "https_delivery": {
+    "actual_https_own_mod_and_lootr": true,
+    "files_checked": 73,
+    "new_sequence": 14,
+    "old_sequence": 13,
+    "owner_worlds_used": false,
+    "passed": true,
+    "quarantined": 1,
+    "repaired": 3,
+    "repeat_repaired": 0,
+    "world_and_options_preserved": true
+  }
+}

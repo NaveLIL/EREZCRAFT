@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "checked_utc": "2026-10-21T10:51:20.580430+00:00",
+  "release_sequence": 15,
+  "owner_only_admission": true,
+  "voice_udp_verified": true,
+  "sable_udp_1856_bytes_verified": true,
+  "https": {
+    "auth.erezcraft.com": {
+      "tls": "TLSv1.3",
+      "expires": "Jan  8 13:49:54 2027 GMT",
+      "http": 200
+    },
+    "files.erezcraft.com": {
+      "tls": "TLSv1.3",
+      "expires": "Jan  7 16:42:56 2027 GMT",
+      "http": 200
+    },
+    "launcher.erezcraft.com": {
+      "tls": "TLSv1.3",
+      "expires": "Jan 19 09:43:57 2027 GMT",
+      "http": 200
+    }
+  },
+  "home_health": {
+    "schema": 1,
+    "role": "home",
+    "checked_utc": "2026-10-21T11:50:11.101082+00:00",
+    "ok": true,
+    "checks": {
+      "minecraft_healthy": {
+        "ok": true
+      },
+      "tunnel_running": {
+        "ok": true
+      },
+      "backups_running": {
+        "ok": true
+      },
+      "maintenance_running": {
+        "ok": true
+      },
+      "world_backup_recent": {
+        "ok": true
+      },
+      "auth.erezcraft.com_tls_more_than_14_days": {
+        "ok": true
+      },
+      "files.erezcraft.com_tls_more_than_14_days": {
+        "ok": true
+      },
+      "launcher.erezcraft.com_tls_more_than_14_days": {
+        "ok": true
+      },
+      "auth_capabilities": {
+        "ok": true
+      },
+      "pack_metadata_more_than_7_days": {
+        "ok": true
+      },
+      "updater_metadata_more_than_7_days": {
+        "ok": true
+      },
+      "disk_headroom": {
+        "ok": true
+      }
+    }
+  },
+  "restricted_ssh_shell_rejected": true,
+  "monitoring": "every5min;private JSON plus journal transitions;no external notifications",
+  "macos_microphone_permission_implemented": false,
+  "actual_two_person_audio_test": false,
+  "authenticated_ship_flight_test": false,
+  "full_neoforge_mac_entry": "confirmed_by_owner_and_actual_server_join",
+  "capacity10_players_verified": false,
+  "certificate_renewal": {
+    "passed": true,
+    "nginx_reload_hook": true,
+    "actual_certbot_staging_renewal": true,
+    "initial_attempt_timed_out_during_default_random_delay": true
+  },
+  "checks": {
+    "auth_gateway_tests": 10,
+    "skin_tests": 3,
+    "backup_boundary_tests": 5,
+    "python_compile": true,
+    "release_node_syntax": true,
+    "launcher_site_headless_browser": {
+      "desktop": true,
+      "mobile390px": true,
+      "overflow": false,
+      "page_errors": 0
+    }
+  },
+  "vps_health": {
+    "schema": 1,
+    "role": "vps",
+    "checked_utc": "2026-10-21T11:50:12.950400+00:00",
+    "ok": true,
+    "checks": {
+      "nginx_active": {
+        "ok": true
+      },
+      "frps-minecraft_active": {
+        "ok": true
+      },
+      "erezcraft-game-ports_active": {
+        "ok": true
+      },
+      "certbot.timer_active": {
+        "ok": true
+      },
+      "auth_gateway_running": {
+        "ok": true
+      },
+      "auth_drasl_running": {
+        "ok": true
+      },
+      "encrypted_auth_stream_ready": {
+        "ok": true
+      },
+      "auth.erezcraft.com_tls_more_than_14_days": {
+        "ok": true
+      },
+      "files.erezcraft.com_tls_more_than_14_days": {
+        "ok": true
+      },
+      "launcher.erezcraft.com_tls_more_than_14_days": {
+        "ok": true
+      },
+      "auth_capabilities": {
+        "ok": true
+      },
+      "pack_metadata_more_than_7_days": {
+        "ok": true
+      },
+      "updater_metadata_more_than_7_days": {
+        "ok": true
+      },
+      "disk_headroom": {
+        "ok": true
+      }
+    }
+  },
+  "backup_destination": "owner_windows_pc",
+  "backup_directory": "D:/EREZCRAFT/backups",
+  "vps_backup_archives_retained": false,
+  "old_vps_timer_removed": true,
+  "old_home_vps_upload_cron_removed": true,
+  "pc_restore": {
+    "schema": 1,
+    "production_data_modified": false,
+    "private_key_sent_to_servers": false,
+    "auth_cms_authenticated_decryption": true,
+    "world_cms_authenticated_decryption": true,
+    "auth_files_verified": 16,
+    "auth_sqlite_integrity": true,
+    "master_key_present": true,
+    "drasl_signing_key_present": true,
+    "passed": true,
+    "test_plaintext_cleaned": true,
+    "restored_full_chunks": 12,
+    "restored_v6_geometry_matches": true
+  },
+  "pc_backup_repair": {
+    "passed": true,
+    "same_size_cipher_corruption_repaired_via_real_ssh": true,
+    "repeat_transferred": 0,
+    "retained_original_backup_changed": false
+  },
+  "windows_scheduled_task": {
+    "name": "EREZCRAFT Backups",
+    "last_task_result": 0,
+    "background_run_in_disconnected_owner_session": true,
+    "interval_minutes": 60,
+    "logon_trigger": true,
+    "requires_owner_logged_on": true,
+    "password_stored": false,
+    "elevated": false
+  },
+  "actual_owner_dimension": "minecraft:overworld",
+  "owner_op_level": 4,
+  "other_ops": 0,
+  "encrypted_backup_schedule": {
+    "home_source": "hourly;2 files/1 day",
+    "pc_world": "hourly;72 files/100 GiB",
+    "pc_auth": "every6h;28 files",
+    "vps_stored_backups": 0
+  },
+  "all_current_health_checks_passed": true,
+  "both_restricted_pc_keys_reject_shell": true,
+  "historical_initial_restore": {
+    "schema": 1,
+    "production_data_modified": false,
+    "private_key_sent_to_servers": false,
+    "auth_cms_authenticated_decryption": true,
+    "world_cms_authenticated_decryption": true,
+    "auth_files_verified": 15,
+    "auth_sqlite_integrity": true,
+    "master_key_present": true,
+    "drasl_signing_key_present": true,
+    "passed": true,
+    "world_plaintext_hash_matches_source": true,
+    "restored_full_chunks": 12,
+    "restored_v6_geometry_matches": true,
+    "test_plaintext_cleaned": true
+  }
+}

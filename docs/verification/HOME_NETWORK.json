@@ -1,0 +1,97 @@
+{
+  "server_boot": true,
+  "server_jars": 51,
+  "server_artifacts_verified": true,
+  "interstice_sha256": "0ba35fe15485e017fa5d6a09f4987349f57bb923e39e39ac441bf08c2302bbb6",
+  "voice_sha256": "63116a4d21bd57221482d971dd85822f7c723c210b60411670cdb0aa26873cac",
+  "cold_terrain_persistence": true,
+  "voice_host": "mc.erezcraft.com:24454",
+  "whitelist_owner_only": true,
+  "schema": 1,
+  "checked_utc": "2026-10-21T10:12:45.831678+00:00",
+  "scope": "Owner-only infrastructure admission; native graphical client, real audio and authenticated ship movement remain pending.",
+  "client_jars": 64,
+  "release_sequence": 15,
+  "release_id": "techmagic-0-1-0-alpha-15-network",
+  "published": true,
+  "protocol_security_passed": true,
+  "udp_proof": {
+    "host": "mc.erezcraft.com",
+    "voice_udp_port": 24454,
+    "sable_udp_port": 25565,
+    "voice_roundtrips_ms": [
+      125.0,
+      94.0,
+      109.0
+    ],
+    "passed": true,
+    "sable_frames": [
+      {
+        "bytes": 55,
+        "native_decoder_received_complete_frame": true
+      },
+      {
+        "bytes": 1856,
+        "native_decoder_received_complete_frame": true
+      }
+    ],
+    "native_sable_receive_buffer_observed_bytes": 2048,
+    "full_authenticated_ship_test": false,
+    "microphone_audio_test": false
+  },
+  "auth_checks": {
+    "protocol": 767,
+    "host": "mc.erezcraft.com",
+    "owner_accounts_used": false,
+    "missing_session_rejected": true,
+    "invalid_token_join_http": 403,
+    "invalid_token_rejected": true,
+    "foreign_uuid_join_http": 204,
+    "foreign_uuid_canonical_uuid": true,
+    "foreign_uuid_cannot_change_server_profile": true,
+    "foreign_name_join_http": 204,
+    "foreign_name_rejected": true,
+    "valid_session_join_http": 204,
+    "valid_session_canonical_uuid": true,
+    "revoked_session_join_http": 403,
+    "revoked_session_rejected": true,
+    "passed": true
+  },
+  "frps_daemon": "frps-minecraft.service",
+  "frps_config": "/etc/frp-minecraft/frps.toml",
+  "frps_max_ports_per_client": 3,
+  "frp_udp_packet_size": 65535,
+  "persistent_narrow_port_rules": "erezcraft-game-ports.service",
+  "legacy_sable_udp_dnat_bypassed": true,
+  "full_client_acceptance": "owner_intel_mac_join_confirmed_by_server",
+  "microphone_audio_test": false,
+  "authenticated_ship_test": false,
+  "manifest_sha256": "8965506296187437b71c22e1c938ac63319f6dbec5137a47741f81d621539c23",
+  "manifest_files": 74,
+  "catalog_sequence": 15,
+  "https_delivery": {
+    "actual_https_own_mod_and_lootr": true,
+    "files_checked": 74,
+    "new_sequence": 15,
+    "old_sequence": 13,
+    "owner_worlds_used": false,
+    "passed": true,
+    "quarantined": 1,
+    "repaired": 4,
+    "repeat_repaired": 0,
+    "world_and_options_preserved": true
+  },
+  "owner_mac_join": {
+    "server_confirmed": true,
+    "canonical_uuid": true,
+    "dh_player_join": true,
+    "actual_dimension": "minecraft:overworld",
+    "v6_entry_confirmed": false
+  },
+  "owner_op": {
+    "explicitly_requested": true,
+    "level": 4,
+    "bound_to_canonical_uuid": true,
+    "other_ops": 0
+  }
+}
