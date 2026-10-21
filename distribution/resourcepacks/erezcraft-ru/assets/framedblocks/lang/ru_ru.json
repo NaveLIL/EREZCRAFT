@@ -1,0 +1,6 @@
+{
+  "config.framedblocks.client.showCamoCraftingInJei": "Показывать рецепты применения камуфляжа в JEI",
+  "desc.framedblocks.framed_axe.retain_camo": "Рамные блоки, разрушенные этим топором, сохраняют свой камуфляж, а не выпадают отдельно.",
+  "item.framedblocks.framed_axe": "Рамный топор",
+  "label.framedblocks.jade.camo.details_prefix": "    %s"
+}

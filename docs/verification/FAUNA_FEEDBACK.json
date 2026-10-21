@@ -1,0 +1,1124 @@
+{
+  "date": "2026-10-11",
+  "mod_version": "0.7.0-preview.9",
+  "pack_version": "0.1.0-alpha.11",
+  "delivery_sequence": 11,
+  "quantitative_passed": true,
+  "affected_component_tests": 247,
+  "component_groups": {
+    "runEcologyGameTestServer": {
+      "passed": true,
+      "tests": 17,
+      "evidence": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\20261011T122334.360326Z-fauna-owner-feedback\\runEcologyGameTestServer.json"
+    },
+    "runGameTestServer": {
+      "passed": true,
+      "tests": 177,
+      "evidence": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\20261011T122334.360326Z-fauna-owner-feedback\\runGameTestServer.json"
+    },
+    "runGearGameTestServer": {
+      "passed": true,
+      "tests": 19,
+      "evidence": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\20261011T124228.993832Z-fauna-feedback-pass\\runGearGameTestServer.json"
+    },
+    "runLiftGameTestServer": {
+      "passed": true,
+      "tests": 13,
+      "evidence": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\20261011T124228.993832Z-fauna-feedback-pass\\runLiftGameTestServer.json"
+    },
+    "runRealmExpansionGameTestServer": {
+      "passed": true,
+      "tests": 21,
+      "evidence": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\20261011T124907.265859Z-fauna-separation-and-contact\\runRealmExpansionGameTestServer.json"
+    }
+  },
+  "stage": {
+    "mod_sha256": "becc16b4d36348d30be243b0411b338258efed96acc9809b82f55ebc02ecd6aa",
+    "files": 71,
+    "client_jars": 62,
+    "unchanged_pack_files": 69,
+    "protected_worldgen_geometry_mixins_classes": 146,
+    "geometry_ocean_dh_unchanged": true,
+    "original_texture_files": 157,
+    "original_textures_unchanged": true,
+    "original_audio_clips": 6
+  },
+  "mod_sha256": "becc16b4d36348d30be243b0411b338258efed96acc9809b82f55ebc02ecd6aa",
+  "native_evidence": "D:\\repos\\erezcraft\\.local\\verification\\fauna-feedback-20261011-d\\realm-expansion-validation.json",
+  "native_evidence_sha256": "2fc75b89846d6c98275028e2d03e7b6840c11731f1dd97eb10065738e40c5ef6",
+  "native": {
+    "source_client_jar_count": 62,
+    "diagnostic_jar_count": 1,
+    "distant_horizons_loaded": true,
+    "native_erez_id_matches": true,
+    "owner_worlds_copied": false,
+    "fresh_world_created": true,
+    "pid": 37200,
+    "max_heap_bytes": 8589934592,
+    "server_capacity_verified": false,
+    "survival_balance_verified": false,
+    "stage": 4,
+    "finished": true,
+    "passed": true,
+    "actual_server_dimension": "interstice:islands_v6",
+    "natural_ore_census": {
+      "dimension": "interstice:islands_v6",
+      "generator_revision": 6,
+      "registry_resolved_resources": 21,
+      "fresh_natural_full_chunk_count": 48,
+      "fixture_blocks_edited_before_census": 0,
+      "resolved_block_ids": [
+        "minecraft:iron_ore",
+        "minecraft:copper_ore",
+        "minecraft:gold_ore",
+        "minecraft:redstone_ore",
+        "minecraft:lapis_ore",
+        "minecraft:diamond_ore",
+        "minecraft:emerald_ore",
+        "create:zinc_ore",
+        "mekanism:osmium_ore",
+        "modern_industrialization:tin_ore",
+        "modern_industrialization:lead_ore",
+        "modern_industrialization:uranium_ore",
+        "mekanism:fluorite_ore",
+        "modern_industrialization:bauxite_ore",
+        "modern_industrialization:nickel_ore",
+        "modern_industrialization:antimony_ore",
+        "modern_industrialization:lignite_coal_ore",
+        "modern_industrialization:salt_ore",
+        "modern_industrialization:monazite_ore",
+        "modern_industrialization:tungsten_ore",
+        "draconicevolution:overworld_draconium_ore"
+      ],
+      "natural_full_chunk_positions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          32,
+          32
+        ],
+        [
+          32,
+          33
+        ],
+        [
+          32,
+          34
+        ],
+        [
+          32,
+          35
+        ],
+        [
+          33,
+          32
+        ],
+        [
+          33,
+          33
+        ],
+        [
+          33,
+          34
+        ],
+        [
+          33,
+          35
+        ],
+        [
+          34,
+          32
+        ],
+        [
+          34,
+          33
+        ],
+        [
+          34,
+          34
+        ],
+        [
+          34,
+          35
+        ],
+        [
+          35,
+          32
+        ],
+        [
+          35,
+          33
+        ],
+        [
+          35,
+          34
+        ],
+        [
+          35,
+          35
+        ],
+        [
+          64,
+          -32
+        ],
+        [
+          64,
+          -31
+        ],
+        [
+          64,
+          -30
+        ],
+        [
+          64,
+          -29
+        ],
+        [
+          65,
+          -32
+        ],
+        [
+          65,
+          -31
+        ],
+        [
+          65,
+          -30
+        ],
+        [
+          65,
+          -29
+        ],
+        [
+          66,
+          -32
+        ],
+        [
+          66,
+          -31
+        ],
+        [
+          66,
+          -30
+        ],
+        [
+          66,
+          -29
+        ],
+        [
+          67,
+          -32
+        ],
+        [
+          67,
+          -31
+        ],
+        [
+          67,
+          -30
+        ],
+        [
+          67,
+          -29
+        ]
+      ],
+      "natural_ore_counts": {
+        "minecraft:iron_ore": 674,
+        "minecraft:copper_ore": 465,
+        "minecraft:gold_ore": 70,
+        "minecraft:redstone_ore": 335,
+        "minecraft:lapis_ore": 46,
+        "minecraft:diamond_ore": 15,
+        "minecraft:emerald_ore": 1,
+        "create:zinc_ore": 379,
+        "mekanism:osmium_ore": 347,
+        "modern_industrialization:tin_ore": 342,
+        "modern_industrialization:lead_ore": 148,
+        "modern_industrialization:uranium_ore": 36,
+        "mekanism:fluorite_ore": 58,
+        "modern_industrialization:bauxite_ore": 151,
+        "modern_industrialization:nickel_ore": 71,
+        "modern_industrialization:antimony_ore": 64,
+        "modern_industrialization:lignite_coal_ore": 70,
+        "modern_industrialization:salt_ore": 77,
+        "modern_industrialization:monazite_ore": 28,
+        "modern_industrialization:tungsten_ore": 21,
+        "draconicevolution:overworld_draconium_ore": 0
+      },
+      "natural_vanilla_ore_blocks": 1606,
+      "natural_modded_ore_blocks": 1792,
+      "passed": true
+    },
+    "actual_client_dimension": "interstice:islands_v6",
+    "native_dh_null_material": {
+      "dimension": "interstice:islands_v6",
+      "actual_pinned_dh_air_wrapper": true,
+      "shadow_block_state_null": true,
+      "from_null_and_vanilla_air_returns_same_wrapper": true,
+      "original_material_byte": 14,
+      "render_thread_calls": 1024,
+      "background_thread_calls": 1024,
+      "original_material_preserved": true,
+      "passed": true
+    },
+    "native_combat_progress": {
+      "case_index": 6,
+      "completed_cases": [
+        {
+          "name": "spitter_zombie_10",
+          "armed": true,
+          "spider_position": [
+            350.5,
+            100.0,
+            350.5
+          ],
+          "prey_position": [
+            360.5,
+            100.0,
+            350.5
+          ],
+          "observer_position": [
+            342.5,
+            105.0,
+            342.5
+          ],
+          "spider_native_tick_count": 169,
+          "prey_native_tick_count": 40,
+          "spider_chunk_entity_ticking": true,
+          "prey_chunk_entity_ticking": true,
+          "stable_actual_entity_ready_ticks": 3,
+          "projectile_launch_position": [
+            350.5,
+            100.39500002861023,
+            350.5
+          ],
+          "projectile_launch_velocity": [
+            0.8118264983794907,
+            0.23642857108797366,
+            0.0
+          ],
+          "shot": true,
+          "elapsed_server_ticks_since_shot": 35,
+          "projectile_native_tick_count": 14,
+          "projectile_removed": true,
+          "projectile_current_position": [
+            359.8756872465516,
+            101.12857145275389,
+            350.5
+          ],
+          "projectile_current_velocity": [
+            0.6243127534484598,
+            -0.15357142891202633,
+            0.0
+          ],
+          "projectile_chunk_entity_ticking": true,
+          "prey_current_health": 16.0,
+          "last_native_move_collision_prediction": {
+            "type": "ENTITY",
+            "position": [
+              360.5,
+              100.0,
+              350.5
+            ],
+            "entity_type": "minecraft:zombie",
+            "entity_id": 29,
+            "was_intended_target": true
+          },
+          "real_moving_spit_damage": 4,
+          "passed": true
+        },
+        {
+          "name": "spitter_zombie_14",
+          "armed": true,
+          "spider_position": [
+            350.5,
+            100.0,
+            350.5
+          ],
+          "prey_position": [
+            364.5,
+            100.0,
+            350.5
+          ],
+          "observer_position": [
+            342.5,
+            105.0,
+            342.5
+          ],
+          "spider_native_tick_count": 40,
+          "prey_native_tick_count": 40,
+          "spider_chunk_entity_ticking": true,
+          "prey_chunk_entity_ticking": true,
+          "stable_actual_entity_ready_ticks": 3,
+          "projectile_launch_position": [
+            350.5,
+            100.39500002861023,
+            350.5
+          ],
+          "projectile_launch_velocity": [
+            0.7533915038248331,
+            0.35521739109702744,
+            0.0
+          ],
+          "shot": true,
+          "elapsed_server_ticks_since_shot": 35,
+          "projectile_native_tick_count": 22,
+          "projectile_removed": true,
+          "projectile_current_position": [
+            363.52403667474675,
+            101.5545652416478,
+            350.5
+          ],
+          "projectile_current_velocity": [
+            0.49291077032989683,
+            -0.2747826089029726,
+            0.0
+          ],
+          "projectile_chunk_entity_ticking": true,
+          "prey_current_health": 16.0,
+          "last_native_move_collision_prediction": {
+            "type": "ENTITY",
+            "position": [
+              364.5,
+              100.0,
+              350.5
+            ],
+            "entity_type": "minecraft:zombie",
+            "entity_id": 35,
+            "was_intended_target": true
+          },
+          "real_moving_spit_damage": 4,
+          "passed": true
+        },
+        {
+          "name": "ars_sorcerer_armor",
+          "production_equipped_item_ids": [
+            "ars_nouveau:sorcerer_hood",
+            "ars_nouveau:sorcerer_robes",
+            "ars_nouveau:sorcerer_leggings",
+            "ars_nouveau:sorcerer_boots"
+          ],
+          "armed": true,
+          "spider_position": [
+            350.5,
+            100.0,
+            350.5
+          ],
+          "prey_position": [
+            360.5,
+            100.0,
+            350.5
+          ],
+          "observer_position": [
+            342.5,
+            105.0,
+            342.5
+          ],
+          "spider_native_tick_count": 40,
+          "prey_native_tick_count": 40,
+          "spider_chunk_entity_ticking": true,
+          "prey_chunk_entity_ticking": true,
+          "stable_actual_entity_ready_ticks": 3,
+          "actual_armor": 11.0,
+          "actual_toughness": 0.0,
+          "normal_damage": 3.2999992,
+          "spider_bite_damage": 5,
+          "projectile_launch_position": [
+            350.5,
+            100.39500002861023,
+            350.5
+          ],
+          "projectile_launch_velocity": [
+            0.8118264983794907,
+            0.23642857108797366,
+            0.0
+          ],
+          "shot": true,
+          "elapsed_server_ticks_since_shot": 35,
+          "projectile_native_tick_count": 14,
+          "projectile_removed": true,
+          "projectile_current_position": [
+            359.8756872465516,
+            101.12857145275389,
+            350.5
+          ],
+          "projectile_current_velocity": [
+            0.6243127534484598,
+            -0.15357142891202633,
+            0.0
+          ],
+          "projectile_chunk_entity_ticking": true,
+          "prey_current_health": 16.0,
+          "last_native_move_collision_prediction": {
+            "type": "ENTITY",
+            "position": [
+              360.5,
+              100.0,
+              350.5
+            ],
+            "entity_type": "minecraft:zombie",
+            "entity_id": 41,
+            "was_intended_target": true
+          },
+          "real_moving_spit_damage": 4,
+          "passed": true
+        },
+        {
+          "name": "mekanism_hazmat_armor",
+          "production_equipped_item_ids": [
+            "mekanism:hazmat_mask",
+            "mekanism:hazmat_gown",
+            "mekanism:hazmat_pants",
+            "mekanism:hazmat_boots"
+          ],
+          "armed": true,
+          "spider_position": [
+            350.5,
+            100.0,
+            350.5
+          ],
+          "prey_position": [
+            360.5,
+            100.0,
+            350.5
+          ],
+          "observer_position": [
+            342.5,
+            105.0,
+            342.5
+          ],
+          "spider_native_tick_count": 40,
+          "prey_native_tick_count": 40,
+          "spider_chunk_entity_ticking": true,
+          "prey_chunk_entity_ticking": true,
+          "stable_actual_entity_ready_ticks": 3,
+          "actual_armor": 0.0,
+          "actual_toughness": 0.0,
+          "normal_damage": 5.0,
+          "spider_bite_damage": 5,
+          "projectile_launch_position": [
+            350.5,
+            100.39500002861023,
+            350.5
+          ],
+          "projectile_launch_velocity": [
+            0.8118264983794907,
+            0.23642857108797366,
+            0.0
+          ],
+          "shot": true,
+          "elapsed_server_ticks_since_shot": 35,
+          "projectile_native_tick_count": 14,
+          "projectile_removed": true,
+          "projectile_current_position": [
+            359.8756872465516,
+            101.12857145275389,
+            350.5
+          ],
+          "projectile_current_velocity": [
+            0.6243127534484598,
+            -0.15357142891202633,
+            0.0
+          ],
+          "projectile_chunk_entity_ticking": true,
+          "prey_current_health": 16.0,
+          "last_native_move_collision_prediction": {
+            "type": "ENTITY",
+            "position": [
+              360.5,
+              100.0,
+              350.5
+            ],
+            "entity_type": "minecraft:zombie",
+            "entity_id": 47,
+            "was_intended_target": true
+          },
+          "real_moving_spit_damage": 4,
+          "passed": true
+        },
+        {
+          "name": "upper_sea_ghast_direct_toxin",
+          "ghast_class": "pro.erez.interstice.fauna.UpperSeaGhast",
+          "charge_class": "pro.erez.interstice.fauna.UpperSeaCharge",
+          "real_direct_toxin_damage": 6,
+          "passed": true
+        },
+        {
+          "name": "upper_sea_ghast_opaque_wall",
+          "blocked_by_native_collider": true,
+          "passed": true
+        }
+      ]
+    },
+    "native_combat": {
+      "actual_entity_cases": [
+        {
+          "name": "spitter_zombie_10",
+          "armed": true,
+          "spider_position": [
+            350.5,
+            100.0,
+            350.5
+          ],
+          "prey_position": [
+            360.5,
+            100.0,
+            350.5
+          ],
+          "observer_position": [
+            342.5,
+            105.0,
+            342.5
+          ],
+          "spider_native_tick_count": 169,
+          "prey_native_tick_count": 40,
+          "spider_chunk_entity_ticking": true,
+          "prey_chunk_entity_ticking": true,
+          "stable_actual_entity_ready_ticks": 3,
+          "projectile_launch_position": [
+            350.5,
+            100.39500002861023,
+            350.5
+          ],
+          "projectile_launch_velocity": [
+            0.8118264983794907,
+            0.23642857108797366,
+            0.0
+          ],
+          "shot": true,
+          "elapsed_server_ticks_since_shot": 35,
+          "projectile_native_tick_count": 14,
+          "projectile_removed": true,
+          "projectile_current_position": [
+            359.8756872465516,
+            101.12857145275389,
+            350.5
+          ],
+          "projectile_current_velocity": [
+            0.6243127534484598,
+            -0.15357142891202633,
+            0.0
+          ],
+          "projectile_chunk_entity_ticking": true,
+          "prey_current_health": 16.0,
+          "last_native_move_collision_prediction": {
+            "type": "ENTITY",
+            "position": [
+              360.5,
+              100.0,
+              350.5
+            ],
+            "entity_type": "minecraft:zombie",
+            "entity_id": 29,
+            "was_intended_target": true
+          },
+          "real_moving_spit_damage": 4,
+          "passed": true
+        },
+        {
+          "name": "spitter_zombie_14",
+          "armed": true,
+          "spider_position": [
+            350.5,
+            100.0,
+            350.5
+          ],
+          "prey_position": [
+            364.5,
+            100.0,
+            350.5
+          ],
+          "observer_position": [
+            342.5,
+            105.0,
+            342.5
+          ],
+          "spider_native_tick_count": 40,
+          "prey_native_tick_count": 40,
+          "spider_chunk_entity_ticking": true,
+          "prey_chunk_entity_ticking": true,
+          "stable_actual_entity_ready_ticks": 3,
+          "projectile_launch_position": [
+            350.5,
+            100.39500002861023,
+            350.5
+          ],
+          "projectile_launch_velocity": [
+            0.7533915038248331,
+            0.35521739109702744,
+            0.0
+          ],
+          "shot": true,
+          "elapsed_server_ticks_since_shot": 35,
+          "projectile_native_tick_count": 22,
+          "projectile_removed": true,
+          "projectile_current_position": [
+            363.52403667474675,
+            101.5545652416478,
+            350.5
+          ],
+          "projectile_current_velocity": [
+            0.49291077032989683,
+            -0.2747826089029726,
+            0.0
+          ],
+          "projectile_chunk_entity_ticking": true,
+          "prey_current_health": 16.0,
+          "last_native_move_collision_prediction": {
+            "type": "ENTITY",
+            "position": [
+              364.5,
+              100.0,
+              350.5
+            ],
+            "entity_type": "minecraft:zombie",
+            "entity_id": 35,
+            "was_intended_target": true
+          },
+          "real_moving_spit_damage": 4,
+          "passed": true
+        },
+        {
+          "name": "ars_sorcerer_armor",
+          "production_equipped_item_ids": [
+            "ars_nouveau:sorcerer_hood",
+            "ars_nouveau:sorcerer_robes",
+            "ars_nouveau:sorcerer_leggings",
+            "ars_nouveau:sorcerer_boots"
+          ],
+          "armed": true,
+          "spider_position": [
+            350.5,
+            100.0,
+            350.5
+          ],
+          "prey_position": [
+            360.5,
+            100.0,
+            350.5
+          ],
+          "observer_position": [
+            342.5,
+            105.0,
+            342.5
+          ],
+          "spider_native_tick_count": 40,
+          "prey_native_tick_count": 40,
+          "spider_chunk_entity_ticking": true,
+          "prey_chunk_entity_ticking": true,
+          "stable_actual_entity_ready_ticks": 3,
+          "actual_armor": 11.0,
+          "actual_toughness": 0.0,
+          "normal_damage": 3.2999992,
+          "spider_bite_damage": 5,
+          "projectile_launch_position": [
+            350.5,
+            100.39500002861023,
+            350.5
+          ],
+          "projectile_launch_velocity": [
+            0.8118264983794907,
+            0.23642857108797366,
+            0.0
+          ],
+          "shot": true,
+          "elapsed_server_ticks_since_shot": 35,
+          "projectile_native_tick_count": 14,
+          "projectile_removed": true,
+          "projectile_current_position": [
+            359.8756872465516,
+            101.12857145275389,
+            350.5
+          ],
+          "projectile_current_velocity": [
+            0.6243127534484598,
+            -0.15357142891202633,
+            0.0
+          ],
+          "projectile_chunk_entity_ticking": true,
+          "prey_current_health": 16.0,
+          "last_native_move_collision_prediction": {
+            "type": "ENTITY",
+            "position": [
+              360.5,
+              100.0,
+              350.5
+            ],
+            "entity_type": "minecraft:zombie",
+            "entity_id": 41,
+            "was_intended_target": true
+          },
+          "real_moving_spit_damage": 4,
+          "passed": true
+        },
+        {
+          "name": "mekanism_hazmat_armor",
+          "production_equipped_item_ids": [
+            "mekanism:hazmat_mask",
+            "mekanism:hazmat_gown",
+            "mekanism:hazmat_pants",
+            "mekanism:hazmat_boots"
+          ],
+          "armed": true,
+          "spider_position": [
+            350.5,
+            100.0,
+            350.5
+          ],
+          "prey_position": [
+            360.5,
+            100.0,
+            350.5
+          ],
+          "observer_position": [
+            342.5,
+            105.0,
+            342.5
+          ],
+          "spider_native_tick_count": 40,
+          "prey_native_tick_count": 40,
+          "spider_chunk_entity_ticking": true,
+          "prey_chunk_entity_ticking": true,
+          "stable_actual_entity_ready_ticks": 3,
+          "actual_armor": 0.0,
+          "actual_toughness": 0.0,
+          "normal_damage": 5.0,
+          "spider_bite_damage": 5,
+          "projectile_launch_position": [
+            350.5,
+            100.39500002861023,
+            350.5
+          ],
+          "projectile_launch_velocity": [
+            0.8118264983794907,
+            0.23642857108797366,
+            0.0
+          ],
+          "shot": true,
+          "elapsed_server_ticks_since_shot": 35,
+          "projectile_native_tick_count": 14,
+          "projectile_removed": true,
+          "projectile_current_position": [
+            359.8756872465516,
+            101.12857145275389,
+            350.5
+          ],
+          "projectile_current_velocity": [
+            0.6243127534484598,
+            -0.15357142891202633,
+            0.0
+          ],
+          "projectile_chunk_entity_ticking": true,
+          "prey_current_health": 16.0,
+          "last_native_move_collision_prediction": {
+            "type": "ENTITY",
+            "position": [
+              360.5,
+              100.0,
+              350.5
+            ],
+            "entity_type": "minecraft:zombie",
+            "entity_id": 47,
+            "was_intended_target": true
+          },
+          "real_moving_spit_damage": 4,
+          "passed": true
+        },
+        {
+          "name": "upper_sea_ghast_direct_toxin",
+          "ghast_class": "pro.erez.interstice.fauna.UpperSeaGhast",
+          "charge_class": "pro.erez.interstice.fauna.UpperSeaCharge",
+          "real_direct_toxin_damage": 6,
+          "passed": true
+        },
+        {
+          "name": "upper_sea_ghast_opaque_wall",
+          "blocked_by_native_collider": true,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    "native_tide_phantoms": {
+      "unrelated_storm_lightning_temporarily_deferred": true,
+      "actual_dimension": "interstice:islands_v6",
+      "warning_only_spawn_predicate": true,
+      "latest_motion_observation": {
+        "stage": 3,
+        "elapsed_native_ticks": 3,
+        "server_position": [
+          350.5,
+          99.0,
+          350.5
+        ],
+        "server_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "server_gravity": 0.08,
+        "server_no_gravity": true,
+        "server_on_ground": true,
+        "server_abilities_flying": false,
+        "server_game_mode": "creative",
+        "sheltered": true,
+        "outside_native_ticks": 59,
+        "outside_first_server_y": 99.05,
+        "server_y_rise_after_outside": -0.04999999999999716,
+        "actual_phase": "calm",
+        "actual_phase_elapsed_ticks": 399,
+        "phantom_grabbing": false,
+        "phantom_removed": true,
+        "latest_native_client": {
+          "dimension": "interstice:islands_v6",
+          "position": [
+            350.5,
+            99.0,
+            350.5
+          ],
+          "velocity": [
+            0.0,
+            -0.0784000015258789,
+            0.0
+          ],
+          "gravity": 0.08,
+          "no_gravity": false,
+          "on_ground": true,
+          "abilities_flying": false,
+          "native_tick_count": 319,
+          "game_mode": "survival"
+        }
+      },
+      "surge_native_capture": true,
+      "sealed_room_grab_denied": true,
+      "non_surge_grab_denied": true,
+      "creative_grab_denied": true,
+      "maximum_actual_carried_step": 0.8500000000000227,
+      "one_block_pit_capture": true,
+      "actual_native_ticks": 64,
+      "native_horizontal_displacement": 3.661518000073383,
+      "maximum_observed_horizontal_velocity": 0.12055810036706795,
+      "native_passenger_capture": true,
+      "native_open_edge_release": true,
+      "native_outside_roof_ticks": 59,
+      "native_tide_handoff": true,
+      "native_released_player_gravity": -0.027999999999999997,
+      "native_released_player_vertical_displacement": 1.1500000476837187,
+      "damage_releases_grip": true,
+      "ebb_native_ticks_discard": true,
+      "test_player_mode_and_tide_restored": true,
+      "passed": true
+    },
+    "native_gui_audio": {
+      "native_decoded_original_ghast_clips": [
+        "ambient",
+        "hurt",
+        "death",
+        "warn",
+        "shoot",
+        "splash"
+      ],
+      "initialized_screens": [
+        {
+          "screen": "inventory",
+          "actual_class": "net.minecraft.client.gui.screens.inventory.InventoryScreen",
+          "effects": 4,
+          "x": 405,
+          "y": 355,
+          "gui_bottom": 323,
+          "screen_height": 480,
+          "outside_effect_column": true
+        },
+        {
+          "screen": "creative",
+          "actual_class": "net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen",
+          "effects": 4,
+          "x": 405,
+          "y": 340,
+          "gui_bottom": 308,
+          "screen_height": 480,
+          "outside_effect_column": true
+        }
+      ],
+      "passed": true
+    },
+    "native_tide_phantom_progress": {
+      "unrelated_storm_lightning_temporarily_deferred": true,
+      "actual_dimension": "interstice:islands_v6",
+      "warning_only_spawn_predicate": true,
+      "latest_motion_observation": {
+        "stage": 3,
+        "elapsed_native_ticks": 3,
+        "server_position": [
+          350.5,
+          99.0,
+          350.5
+        ],
+        "server_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "server_gravity": 0.08,
+        "server_no_gravity": true,
+        "server_on_ground": true,
+        "server_abilities_flying": false,
+        "server_game_mode": "creative",
+        "sheltered": true,
+        "outside_native_ticks": 59,
+        "outside_first_server_y": 99.05,
+        "server_y_rise_after_outside": -0.04999999999999716,
+        "actual_phase": "calm",
+        "actual_phase_elapsed_ticks": 399,
+        "phantom_grabbing": false,
+        "phantom_removed": true,
+        "latest_native_client": {
+          "dimension": "interstice:islands_v6",
+          "position": [
+            350.5,
+            99.0,
+            350.5
+          ],
+          "velocity": [
+            0.0,
+            -0.0784000015258789,
+            0.0
+          ],
+          "gravity": 0.08,
+          "no_gravity": false,
+          "on_ground": true,
+          "abilities_flying": false,
+          "native_tick_count": 319,
+          "game_mode": "survival"
+        }
+      },
+      "surge_native_capture": true,
+      "sealed_room_grab_denied": true,
+      "non_surge_grab_denied": true,
+      "creative_grab_denied": true,
+      "maximum_actual_carried_step": 0.8500000000000227,
+      "one_block_pit_capture": true,
+      "actual_native_ticks": 64,
+      "native_horizontal_displacement": 3.661518000073383,
+      "maximum_observed_horizontal_velocity": 0.12055810036706795,
+      "native_passenger_capture": true,
+      "native_open_edge_release": true,
+      "native_outside_roof_ticks": 59,
+      "native_tide_handoff": true,
+      "native_released_player_gravity": -0.027999999999999997,
+      "native_released_player_vertical_displacement": 1.1500000476837187,
+      "damage_releases_grip": true,
+      "ebb_native_ticks_discard": true,
+      "test_player_mode_and_tide_restored": true,
+      "passed": true
+    },
+    "generation_quiescence_before_disconnect": {
+      "purpose": "realm-expansion-shutdown",
+      "server_tick": 509,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 961,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    },
+    "own_integrated_server_stopped": true
+  },
+  "geometry_ocean_dh_unchanged": true,
+  "previous_full_build_453_is_historical": true,
+  "visual_review": "inventory_screenshots_reviewed; subjective creature palette/audio and natural balance pending",
+  "multiplayer_server_capacity_verified": false,
+  "delivery": {
+    "published": true,
+    "installed": true,
+    "checked": 71,
+    "repaired": 2,
+    "repeat_repaired": 0,
+    "world_files_preserved": 866,
+    "preferences_and_shortcut_preserved": true,
+    "live_https_update_repair": {
+      "checkedFiles": 71,
+      "corruptShaderAndCacheRepaired": true,
+      "extraModQuarantined": true,
+      "gameServerContacted": false,
+      "newSequence": 11,
+      "oldOwnJarRemoved": true,
+      "oldSequence": 10,
+      "ownerWorldsUsed": false,
+      "passed": true,
+      "personalFilesPreserved": true,
+      "realHttpsMetadataAndOwnFilesDownloaded": true,
+      "repeatHasNoChanges": true,
+      "sameSizeSameMtimeJarRepaired": true,
+      "seedConfigurationPreserved": true,
+      "unchangedPackFiles": 69
+    },
+    "game_server_contacted": false
+  }
+}

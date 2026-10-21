@@ -13,6 +13,8 @@ import pro.erez.interstice.Interstice;
  */
 public final class ModSounds {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, Interstice.ID);
+    private static DeferredHolder<SoundEvent,SoundEvent> ghast(String name){return SOUNDS.register("upper_ghast."+name,()->SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Interstice.ID,"upper_ghast."+name)));}
+    public static final DeferredHolder<SoundEvent,SoundEvent> GHAST_AMBIENT=ghast("ambient"),GHAST_HURT=ghast("hurt"),GHAST_DEATH=ghast("death"),GHAST_WARN=ghast("warn"),GHAST_SHOOT=ghast("shoot"),GHAST_SPLASH=ghast("splash");
 
     public static final DeferredHolder<SoundEvent, SoundEvent> TIDE_WARNING = SOUNDS.register("tide.warning",
             () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Interstice.ID, "tide.warning")));

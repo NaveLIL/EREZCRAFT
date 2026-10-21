@@ -493,11 +493,8 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
                 || target == null || !target.isAlive() || target.isRemoved() || target.level() != this.level()
                 || target instanceof CaveRiftSpiderEntity || !this.canAttack(target)
                 || this.distanceToSqr(target) > 14.0 * 14.0 || !this.getSensing().hasLineOfSight(target)) return;
-        Vec3 targetPos = target.position().add(0, target.getEyeHeight() * 0.5, 0);
-        Vec3 origin = this.position().add(0, isClimbingCeiling() ? 0.2 : this.getEyeHeight(), 0);
-        Vec3 dir = targetPos.subtract(origin).normalize().scale(0.85);
-
-        ToxinSpitEntity spit = new ToxinSpitEntity(this.level(), this, dir.x, dir.y, dir.z);
+        ToxinSpitEntity spit = new ToxinSpitEntity(this.level(), this, 0, 0, 0);
+        if (!spit.aimAt(target.getBoundingBox().getCenter())) return;
         this.level().addFreshEntity(spit);
         this.playSound(SoundEvents.LLAMA_SPIT, 1.0F, 1.4F);
     }

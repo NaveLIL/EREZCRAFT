@@ -45,6 +45,7 @@ import net.neoforged.neoforge.event.server.ServerStoppingEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import pro.erez.interstice.Interstice;
 import pro.erez.interstice.worldgen.IslandChunkGenerator;
+import pro.erez.interstice.worldgen.IslandWorld;
 import pro.erez.interstice.worldgen.RealmBiomes;
 import pro.erez.interstice.worldgen.RealmStructuresV5;
 
@@ -108,7 +109,9 @@ public final class StructureSearchJobs {
         cells.sort(Comparator.comparingDouble(p->distance(origin,p.x*cell+cell*.5,p.z*cell+cell*.5)));
         var proposals=new ArrayList<RealmStructuresV5.Slot>();
         for(int i=0;i<Math.min(SOURCE_CELL_BUDGET,cells.size());i++){
-            var cellPos=cells.get(i);var slot=RealmStructuresV5.slot(level.getSeed(),cellPos.x,cellPos.z);
+            var cellPos=cells.get(i);var slot=IslandWorld.TENSION_WORLD.equals(level.dimension())
+                    ?pro.erez.interstice.worldgen.RealmStructuresV6.slot(level.getSeed(),cellPos.x,cellPos.z,level.getServer().getWorldData().worldGenOptions().generateStructures())
+                    :RealmStructuresV5.slot(level.getSeed(),cellPos.x,cellPos.z);
             if(slot!=null&&distance(origin,slot.chunk().getMinBlockX()+8,slot.chunk().getMinBlockZ()+8)<=RADIUS*(double)RADIUS)proposals.add(slot);
         }
         proposals.sort(Comparator.<RealmStructuresV5.Slot>comparingInt(s->s.family()==RealmStructuresV5.Family.OBSERVATION_POST?0:1)
@@ -165,13 +168,13 @@ public final class StructureSearchJobs {
             var local=rotated(container.local,at);int x=at.x+local.getX(),z=at.z+local.getZ();
             for(int base=profile.lowerSeaTop()+5;base+at.plan.height<=profile.maxLand();base++){
                 var position=new BlockPos(x,base+local.getY(),z);
-                if(!chunk.getBlockState(position).is(container.state.getBlock())||!(chunk.getBlockEntity(position) instanceof RandomizableContainerBlockEntity entity))continue;
+                if(!pro.erez.interstice.worldgen.StructureLoot.matches(container.state,chunk.getBlockState(position))||!(chunk.getBlockEntity(position) instanceof RandomizableContainerBlockEntity entity))continue;
                 var table=entity.getLootTable();
                 if(table!=null&&(!table.location().equals(container.loot)||entity.getLootTableSeed()!=mix(level.getSeed()^position.asLong()^slot.template().toString().hashCode())))continue;
                 boolean matches=true;
                 for(var cell:at.plan.cells){var p=rotated(cell.local,at).offset(at.x,base,at.z);
                     // Opening a door/barrel or using its inventory does not remove the authored block silhouette.
-                    if(!chunk.getBlockState(p).is(cell.state.getBlock())){matches=false;break;}
+                    if(!pro.erez.interstice.worldgen.StructureLoot.matches(cell.state,chunk.getBlockState(p))){matches=false;break;}
                 }
                 if(matches)return new Result(new BlockPos(at.x+at.width/2,base,at.z+at.depth/2),slot.family(),slot.template(),table!=null);
             }
@@ -204,7 +207,7 @@ public final class StructureSearchJobs {
             player.getCooldowns().addCooldown(job.stack.getItem(),COOLDOWN_TICKS);
             if(!player.isCreative())job.stack.hurtAndBreak(1,player,LivingEntity.getSlotForHand(job.hand));
             if(job.best==null)player.displayClientMessage(Component.translatable("message.interstice.survey.none",RADIUS,job.full),false);
-            else{var p=job.best.position();player.displayClientMessage(Component.translatable("message.interstice.survey.found",StructureSurveyorItem.family(job.best.family()),p.getX(),p.getY(),p.getZ(),StructureSurveyorItem.direction(player.blockPosition(),p),job.full),false);}
+            else{var p=job.best.position();player.displayClientMessage(Component.translatable("message.interstice.survey.found",StructureSurveyorItem.family(job.best.family(),job.best.template()),p.getX(),p.getY(),p.getZ(),StructureSurveyorItem.direction(player.blockPosition(),p),job.full),false);}
             player.getInventory().setChanged();player.containerMenu.broadcastChanges();
         }else if(player!=null)player.displayClientMessage(Component.translatable("message.interstice.survey.cancelled"),true);
         System.out.println("REALM_SURVEY_SCAN "+report);

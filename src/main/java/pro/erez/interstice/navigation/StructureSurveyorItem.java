@@ -35,6 +35,18 @@ public final class StructureSurveyorItem extends Item {
         tag.putString("Template",found.template().toString());tag.putLong("SurveyedAt",now);all.put(MARK,tag);stack.set(DataComponents.CUSTOM_DATA,CustomData.of(all));
     }
     static Component family(RealmStructuresV5.Family family){return Component.translatable("navigation.interstice.family."+family.name().toLowerCase(java.util.Locale.ROOT));}
+    static Component family(RealmStructuresV5.Family family,ResourceLocation template){
+        if(template!=null&&template.getNamespace().equals("interstice")&&template.getPath().startsWith("ethereal/")){
+            var parts=template.getPath().split("/");
+            if(parts.length==3&&java.util.Set.of("arch","monolith","shrine","tower","relic").contains(parts[1]))
+                return Component.translatable("navigation.interstice.ethereal."+parts[1]);
+        }
+        return family(family);
+    }
+    private static Component family(ItemStack stack,Mark mark){
+        var tag=stack.getOrDefault(DataComponents.CUSTOM_DATA,CustomData.EMPTY).copyTag().getCompound(MARK);
+        return family(mark.family(),ResourceLocation.tryParse(tag.getString("Template")));
+    }
     public static Component direction(BlockPos from,BlockPos to){
         double angle=Math.atan2(to.getX()-from.getX(),-(to.getZ()-from.getZ()));
         int octant=Math.floorMod((int)Math.round(angle/(Math.PI/4)),8);
@@ -47,7 +59,7 @@ public final class StructureSurveyorItem extends Item {
                 var mark=mark(stack);
                 if(mark==null)server.displayClientMessage(Component.translatable("message.interstice.survey.no_mark"),true);
                 else if(!mark.dimension().equals(level.dimension().location()))server.displayClientMessage(Component.translatable("message.interstice.survey.other_dimension",mark.dimension().toString()),true);
-                else server.displayClientMessage(Component.translatable("message.interstice.survey.saved",family(mark.family()),mark.position().getX(),mark.position().getY(),mark.position().getZ(),direction(server.blockPosition(),mark.position())),false);
+                else server.displayClientMessage(Component.translatable("message.interstice.survey.saved",family(stack,mark),mark.position().getX(),mark.position().getY(),mark.position().getZ(),direction(server.blockPosition(),mark.position())),false);
                 return InteractionResultHolder.success(stack);
             }
             if(!StructureSearchJobs.begin(server,hand))return InteractionResultHolder.fail(stack);
@@ -56,6 +68,6 @@ public final class StructureSurveyorItem extends Item {
     }
     @Override public void appendHoverText(ItemStack stack,TooltipContext context,List<Component> lines,TooltipFlag flag){
         lines.add(Component.translatable("tooltip.interstice.structure_surveyor",StructureSearchJobs.RADIUS,StructureSearchJobs.FULL_BUDGET));
-        var mark=mark(stack);if(mark!=null)lines.add(Component.translatable("tooltip.interstice.survey_mark",family(mark.family()),mark.position().getX(),mark.position().getY(),mark.position().getZ()));
+        var mark=mark(stack);if(mark!=null)lines.add(Component.translatable("tooltip.interstice.survey_mark",family(stack,mark),mark.position().getX(),mark.position().getY(),mark.position().getZ()));
     }
 }

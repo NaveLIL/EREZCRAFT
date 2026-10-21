@@ -21,7 +21,13 @@ public final class BackpackClient {
     @SubscribeEvent public static void screens(RegisterMenuScreensEvent event){event.register(ExpeditionEquipment.PACK_MENU.get(),BackpackScreen::new);event.register(ExpeditionEquipment.HARNESS_MENU.get(),HarnessScreen::new);}
     @SubscribeEvent public static void inventoryButton(ScreenEvent.Init.Post event){
         if(!(event.getScreen() instanceof AbstractContainerScreen<?> screen)||!(screen instanceof InventoryScreen||screen instanceof CreativeModeInventoryScreen))return;
-        var button=Button.builder(Component.translatable("menu.interstice.harness.button"),b->PacketDistributor.sendToServer(new BackpackNetworking.OpenHarness())).bounds(screen.getGuiLeft()+screen.getXSize()+4,screen.getGuiTop()+4,43,18).build();
+        // Effects own the entire right column; creative tabs also extend below the panel.
+        int x=screen.getGuiLeft()+(screen.getXSize()-43)/2;
+        // IPN owns the first bottom row too. At the minimum GUI height use
+        // free space above the panel (above creative tabs when present).
+        int y=screen.getGuiTop()+screen.getYSize()+32;
+        if(y+18>screen.height-4)y=Math.max(4,screen.getGuiTop()-(screen instanceof CreativeModeInventoryScreen?48:24));
+        var button=Button.builder(Component.translatable("menu.interstice.harness.button"),b->PacketDistributor.sendToServer(new BackpackNetworking.OpenHarness())).bounds(x,y,43,18).build();
         button.setTooltip(Tooltip.create(Component.translatable("menu.interstice.harness.button_hint")));event.addListener(button);
     }
     @SubscribeEvent public static void keys(RegisterKeyMappingsEvent event){event.register(OPEN);}

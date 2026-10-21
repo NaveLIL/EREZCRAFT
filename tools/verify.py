@@ -19,8 +19,12 @@ ALLOWED = {"build", "assemble", "runGameTestServer", "runIslandSmoke", "runTallI
            "runExpeditionGameTestServer", "runKeyPersistenceSmoke", "runWatchpostSmoke", "runWatchpostPersistenceSmoke", "runLivingGameTestServer", "runEcologyGameTestServer", "runMiningGameTestServer", "runLivingRealmSmoke",
            "runSurvivalPreparationSmoke", "runVaultGameTestServer", "runVaultPersistenceSmoke", "runGardenGameTestServer", "runGardenPersistenceSmoke", "runFoodGameTestServer", "runCrownFoodSmoke", "runMiningSmoke", "runHydrologySmoke", "runAgricultureGameTestServer", "runAgricultureSmoke", "runAgriculturePropsSmoke", "runEquipmentGameTestServer", "runBackpackSmoke", "runRetortUiSmoke", "runWearBackpackSmoke", "runVanillaTerrainSmoke"}
 ALLOWED.add("runGearGameTestServer")
+ALLOWED.add("runEtherealGameTestServer")
+ALLOWED.add("runEtherealSmoke")
+ALLOWED.add("runEtherealComplexSmoke")
 ALLOWED.add("runPaletteGallery")
 ALLOWED.add("runFaunaGameTestServer")
+ALLOWED.add("runRealmExpansionGameTestServer")
 ALLOWED.add("runTensionRealmSmoke")
 ALLOWED.add("runForestCaveGameTestServer")
 ALLOWED.add("runForestCaveSmoke")
@@ -514,6 +518,31 @@ def main():
                                 accepted = accepted and (profile / "screenshots" / frame["file"]).is_file()
                             if phase == "reload":
                                 accepted = accepted and row.get("reload_pid") != result.get("creator_pid")
+                except (OSError, ValueError, KeyError) as error:
+                    record["validation_error"] = str(error); accepted = False
+                record["accepted"] = accepted
+            if code == 0 and task in ("runEtherealSmoke", "runEtherealComplexSmoke"):
+                profile = evidence / "profiles" / ("etherealComplexSmoke" if task == "runEtherealComplexSmoke" else "etherealSmoke")
+                record["validations"] = {}
+                try:
+                    for phase in ("create", "reload"):
+                        result = json.loads((profile / ("ethereal-" + phase + "-validation.json")).read_text(encoding="utf-8"))
+                        record["validations"][phase] = result
+                        accepted = accepted and result.get("passed") is True and result.get("finished") is True
+                        accepted = accepted and result.get("actual_dimension") == "interstice:islands_v6" and result.get("actual_revision") == 6
+                        accepted = accepted and result.get("distant_horizons_loaded") is True and len(result.get("natural_structures", [])) >= 3
+                        accepted = accepted and result.get("native_item_take_packets") is True and result.get("second_player_inventory_preserved") is True
+                        if task == "runEtherealComplexSmoke":
+                            accepted = accepted and result.get("native_complexes") is True and result.get("structure_generation_enabled") is True
+                            rows = result.get("natural_structures", [])
+                            accepted = accepted and any(r.get("template", "").endswith("/temple") for r in rows)
+                            accepted = accepted and any("/camp_large_" in r.get("template", "") and r.get("width") == 40 and r.get("actual_lootr_caches", 0) >= 9 for r in rows)
+                            accepted = accepted and all(r.get("native_structure_start") is True and r.get("full_chunks", 0) > 1 for r in rows)
+                        if phase == "reload":
+                            accepted = accepted and result.get("creator_pid") != result.get("reload_pid")
+                            accepted = accepted and result.get("cold_first_stays_empty") is True and result.get("cold_second_stays_unclaimed") is True and result.get("cold_natural_structures_preserved") is True
+                    accepted = accepted and (profile / "screenshots/ethereal-personal-loot-menu.png").is_file()
+                    accepted = accepted and all((profile / ("screenshots/ethereal-natural-" + str(i) + ".png")).is_file() for i in range(3))
                 except (OSError, ValueError, KeyError) as error:
                     record["validation_error"] = str(error); accepted = False
                 record["accepted"] = accepted

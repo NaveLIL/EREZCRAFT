@@ -1,0 +1,22 @@
+{
+  "name": "Разместить сверху",
+  "sortnum": 1,
+  "category": "buildinggadgets2:mechanics",
+  "icon": "buildinggadgets2:textures/book/icons/place_on_top.png",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "«Разместить сверху» работает по-разному для каждого режима, а для некоторых не оказывает никакого эффекта. $(br2)В общем случае вместо размещения вокруг блока он размещает блоки сверху. Попробуйте и посмотрите, как это влияет на отрисовку! $(br2)Посмотрите на две картинки справа для примера."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Разместить сверху",
+      "images": [
+        "buildinggadgets2:textures/book/images/placeontop1.png",
+        "buildinggadgets2:textures/book/images/placeontop2.png"
+      ],
+      "border": true,
+      "text": "Переключайте изображения выше, чтобы увидеть разные варианты"
+    }
+  ]
+}

@@ -172,6 +172,7 @@ public final class Interstice {
                 output.accept(RIFT_COBWEB_ITEM.get());
                 output.accept(SPIDER_EGG_SAC_ITEM.get());
                 output.accept(CAVE_RIFT_SPIDER_SPAWN_EGG.get());
+                    output.accept(pro.erez.interstice.fauna.StrongRealmFauna.UPPER_SEA_GHAST_SPAWN_EGG.get());
                 output.accept(ECHO_SHARD.get());
                 output.accept(ECHO_RIFT_ANCHOR.get());
             }).build());
@@ -182,7 +183,8 @@ public final class Interstice {
     private static BaseFlowingFluid.Properties heavyProperties() {
         return new BaseFlowingFluid.Properties(HEAVY_TYPE, HEAVY, HEAVY_FLOW).block(HEAVY_BLOCK).bucket(HEAVY_BUCKET).tickRate(5).levelDecreasePerBlock(1).explosionResistance(100);
     }
-    public Interstice(IEventBus bus) {
+    public Interstice(IEventBus bus, net.neoforged.fml.ModContainer container) {
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.CLIENT, IntersticeClientConfig.SPEC);
         bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerPayloads);
         bus.addListener(pro.erez.interstice.geometry.GeometrySync::registerTask);
         bus.addListener(pro.erez.interstice.tide.TideSync::registerPayloads);
@@ -190,6 +192,7 @@ public final class Interstice {
         FluidLightUpgrade.register(bus);
         pro.erez.interstice.sound.ModSounds.register(bus);
         VaultMaterials.register(bus);
+        pro.erez.interstice.worldgen.RealmComplexStructuresV6.register(bus);
         pro.erez.interstice.worldgen.GardenMaterials.register(bus);
         pro.erez.interstice.food.TideHeart.register(bus);
         pro.erez.interstice.worldgen.cave.CaveMaterials.register(bus);
@@ -200,6 +203,8 @@ public final class Interstice {
         pro.erez.interstice.rift.RiftInitiation.register(bus);
         pro.erez.interstice.navigation.RealmNavigation.register(bus);
         pro.erez.interstice.fauna.RealmFauna.register(bus);
+        pro.erez.interstice.fauna.StrongRealmFauna.register(bus);
+        pro.erez.interstice.fauna.TideFauna.register(bus);
         pro.erez.interstice.ecology.RealmEcology.register(bus);
         pro.erez.interstice.gear.RealmGear.register(bus);
         pro.erez.interstice.tether.RiftTethers.register(bus);

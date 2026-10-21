@@ -436,5 +436,20 @@
   "navigation.interstice.direction.nw": "north-west",
   "entity.interstice.echo_rift": "Echo Rift",
   "item.interstice.echo_shard": "Echo Shard",
-  "item.interstice.echo_rift_anchor": "Echo Rift Anchor"
+  "item.interstice.echo_rift_anchor": "Echo Rift Anchor",
+  "entity.interstice.upper_sea_ghast": "Upper-Sea Ghast",
+  "entity.interstice.upper_sea_charge": "Upper-Toxin Charge",
+  "item.interstice.upper_sea_ghast_spawn_egg": "Upper-Sea Ghast Spawn Egg",
+  "entity.interstice.tide_phantom": "Tide Phantom",
+  "subtitles.interstice.upper_ghast.ambient": "Upper-sea ghast drones",
+  "subtitles.interstice.upper_ghast.hurt": "Upper-sea ghast hurts",
+  "subtitles.interstice.upper_ghast.death": "Upper-sea ghast dies",
+  "subtitles.interstice.upper_ghast.warn": "Ghast charges toxin",
+  "subtitles.interstice.upper_ghast.shoot": "Ghast fires toxin",
+  "subtitles.interstice.upper_ghast.splash": "Toxin splashes",
+  "navigation.interstice.ethereal.arch": "Ruined archway",
+  "navigation.interstice.ethereal.monolith": "Ancient monolith",
+  "navigation.interstice.ethereal.shrine": "Forgotten shrine",
+  "navigation.interstice.ethereal.tower": "Ruined tower",
+  "navigation.interstice.ethereal.relic": "Ancient mechanism"
 }

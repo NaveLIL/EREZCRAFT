@@ -54,6 +54,13 @@ class VerificationResultTests(unittest.TestCase):
                         destination = evidence / ('profiles/hydrologySmoke' if task=='runHydrologySmoke' else 'profiles/agriculturePropsSmoke')
                         destination.mkdir(parents=True)
                         (destination / ('hydrology-validation.json' if task=='runHydrologySmoke' else 'agriculture-props-validation.json')).write_text(json.dumps(result), encoding='utf-8')
+                    elif task in ('runEtherealSmoke', 'runEtherealComplexSmoke'):
+                        destination = evidence / ('profiles/etherealComplexSmoke' if task == 'runEtherealComplexSmoke' else 'profiles/etherealSmoke')
+                        destination.mkdir(parents=True)
+                        for name, value in result.items():
+                            output = destination / name
+                            output.parent.mkdir(parents=True, exist_ok=True)
+                            output.write_text(json.dumps(value), encoding='utf-8')
                     else:
                         destination = evidence / "profiles/islandSmoke"
                         destination.mkdir(parents=True)
@@ -213,6 +220,50 @@ class VerificationResultTests(unittest.TestCase):
         code, _, summary = self.exercise("runGameTestServer", log="All 21 required tests passed :)\n")
         self.assertEqual(code, 0)
         self.assertTrue(summary["passed"])
+
+    def test_ethereal_client_requires_both_actual_native_receipts(self):
+        code, _, summary = self.exercise('runEtherealSmoke')
+        self.assertEqual(code, 1)
+        self.assertFalse(summary['passed'])
+
+    def test_ethereal_positive_flags_do_not_replace_natural_and_cold_evidence(self):
+        code, _, summary = self.exercise('runEtherealSmoke', result={
+            'ethereal-create-validation.json': {'passed': True, 'finished': True},
+            'ethereal-reload-validation.json': {'passed': True, 'finished': True}})
+        self.assertEqual(code, 1)
+        self.assertFalse(summary['passed'])
+
+    def complex_receipts(self):
+        row = {'passed': True, 'finished': True, 'actual_dimension': 'interstice:islands_v6', 'actual_revision': 6,
+               'distant_horizons_loaded': True, 'native_item_take_packets': True, 'second_player_inventory_preserved': True,
+               'native_complexes': True, 'structure_generation_enabled': True, 'creator_pid': 100, 'reload_pid': 101,
+               'cold_first_stays_empty': True, 'cold_second_stays_unclaimed': True, 'cold_natural_structures_preserved': True,
+               'natural_structures': [{'template':'interstice:ethereal/complex/temple','native_structure_start':True,'full_chunks':3},
+                  {'template':'interstice:ethereal/complex/camp_medium_0','native_structure_start':True,'full_chunks':9},
+                  {'template':'interstice:ethereal/complex/camp_large_1','native_structure_start':True,'full_chunks':9,'width':40,'actual_lootr_caches':9}]}
+        result = {'ethereal-create-validation.json': copy.deepcopy(row), 'ethereal-reload-validation.json': copy.deepcopy(row)}
+        for name in ['ethereal-personal-loot-menu.png'] + ['ethereal-natural-'+str(i)+'.png' for i in range(3)]:
+            result['screenshots/'+name] = 'unit receipt path fixture; never native visual evidence'
+        return result
+
+    def test_complex_smoke_requires_enabled_native_structure_generation(self):
+        result = self.complex_receipts()
+        result['ethereal-create-validation.json']['structure_generation_enabled'] = False
+        code, _, summary = self.exercise('runEtherealComplexSmoke', result=result)
+        self.assertEqual(code, 1)
+        self.assertFalse(summary['passed'])
+
+    def test_complex_smoke_cannot_substitute_small_ruins_for_large_camps(self):
+        result = self.complex_receipts()
+        result['ethereal-create-validation.json']['natural_structures'][-1]['width'] = 13
+        code, _, summary = self.exercise('runEtherealComplexSmoke', result=result)
+        self.assertEqual(code, 1)
+        self.assertFalse(summary['passed'])
+
+    def test_complex_smoke_accepts_its_complete_explicit_receipt_contract(self):
+        code, _, summary = self.exercise('runEtherealComplexSmoke', result=self.complex_receipts())
+        self.assertEqual(code, 0)
+        self.assertTrue(summary['passed'])
 
     def test_rift_server_requires_actual_gametest_completion(self):
         code, _, summary = self.exercise("runRiftGameTestServer", log="BUILD SUCCESSFUL\n")

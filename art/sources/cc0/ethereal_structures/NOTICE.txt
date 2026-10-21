@@ -1,0 +1,9 @@
+Ethereal Structures B1 — CC0 1.0 Universal
+Original project: https://modrinth.com/datapack/ethereal-structures
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Creators: Starkye
+
+The NBT templates in this directory are unmodified source entries.
+Their SHA-256 and the official archive SHA-512 are recorded in sources.json.
+Converted templates are reproduced offline by tools/import_ethereal_structures.py.
+No code, binaries, textures or assets of required third-party mods are included.

@@ -1,0 +1,353 @@
+{
+  "schema": 1,
+  "license": "CC0-1.0",
+  "project_url": "https://modrinth.com/datapack/ethereal-structures",
+  "version_id": "px0RRcOK",
+  "archive_sha512": "3c06828e7e6b1e524f9e5d59c927fb7e4cf6d9b2aa51ff4dddd23b4be717eee674c2130c286f0542e47a328169749aeeae39cc674a9b80457ce10f9501dec3e1",
+  "conversion": "Preserved occupied cell coordinates; explicit material replacements, removed empty cells/entities/ForgeCaps, resolved jigsaw final states, native barrels/loot; one added cache on templates without containers.",
+  "block_mapping": {
+    "minecraft:stone_bricks": "interstice:vaultstone_bricks",
+    "minecraft:cracked_stone_bricks": "interstice:weathered_vaultstone",
+    "minecraft:mossy_stone_bricks": "interstice:vaultstone",
+    "minecraft:mossy_cobblestone": "interstice:weathered_vaultstone",
+    "minecraft:stone_brick_stairs": "interstice:vaultstone_bricks_stairs",
+    "minecraft:mossy_stone_brick_stairs": "interstice:vaultstone_stairs",
+    "minecraft:stone_brick_slab": "interstice:vaultstone_bricks_slab",
+    "minecraft:mossy_stone_brick_slab": "interstice:vaultstone_slab",
+    "minecraft:stone_brick_wall": "interstice:vaultstone_bricks_wall",
+    "minecraft:mossy_stone_brick_wall": "interstice:vaultstone_wall",
+    "chipped:spiraled_mossy_stone_bricks": "interstice:polished_vaultstone",
+    "chipped:crying_mossy_stone_bricks": "interstice:vaultstone_bricks",
+    "decorative_blocks:stone_pillar": "interstice:polished_vaultstone",
+    "decorative_blocks:brazier": "minecraft:campfire",
+    "create:flywheel": "interstice:polished_vaultstone",
+    "create:lit_blaze_burner": "interstice:phosphorite",
+    "createdeco:pearl_bricks": "interstice:polished_vaultstone",
+    "minecraft:gold_block": "interstice:phosphorite",
+    "minecraft:lodestone": "interstice:polished_vaultstone",
+    "minecraft:dirt": "interstice:root_loam",
+    "minecraft:coarse_dirt": "interstice:root_loam",
+    "minecraft:rooted_dirt": "interstice:root_loam",
+    "minecraft:dirt_path": "interstice:root_loam",
+    "minecraft:grass_block": "interstice:abyssal_turf"
+  },
+  "templates": [
+    {
+      "id": "interstice:ethereal/arch/ruined_archway0",
+      "size": [
+        11,
+        5,
+        7
+      ],
+      "blocks": 56,
+      "loot_barrels": 1,
+      "sha256": "d51d9f5263bc936736acb636b3d532791c6acf1a781ed17c8c95aea7f68f2186",
+      "source": "simple/ruined_archway0.nbt",
+      "source_sha256": "adf037e5a42145b1ea95bf3bfe1e9bb1eb05161f23209334ebff00674a2529c1",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/arch/ruined_archway1",
+      "size": [
+        13,
+        6,
+        9
+      ],
+      "blocks": 126,
+      "loot_barrels": 1,
+      "sha256": "3a2eb6252f4ea4584e8b69715d5f137e4f74e419b9eadc855d1f8062b71628a9",
+      "source": "simple/ruined_archway1.nbt",
+      "source_sha256": "26aa95d1aed896afd2d45201d2fe4d1c5a31b3b5a32b84543a97b513a22e85c1",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/arch/ruined_staircase0",
+      "size": [
+        10,
+        6,
+        10
+      ],
+      "blocks": 132,
+      "loot_barrels": 1,
+      "sha256": "145277dee48cb78b104c6806157d8e5bc38b8b6b54da736cc9e5d81bbb7cf4ce",
+      "source": "simple/ruined_staircase0.nbt",
+      "source_sha256": "8eb4379b5508b775154cfee5c4a304fa4aed0208823049ec1814ba15e1e72c8c",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/monolith/tiny_pillar",
+      "size": [
+        3,
+        6,
+        3
+      ],
+      "blocks": 23,
+      "loot_barrels": 1,
+      "sha256": "3abd81ac28a353b28241d722429fc3dfcc549b562ce00e18e669a3c840b44e8c",
+      "source": "monoliths/tiny_pillar.nbt",
+      "source_sha256": "ec18bc3ab199c503e9ab37906f4ff58b02f59ddfd4255e4411bb55f85affbcda",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "interstice:ethereal/monolith/small_pillar",
+      "size": [
+        5,
+        9,
+        5
+      ],
+      "blocks": 76,
+      "loot_barrels": 1,
+      "sha256": "865d94fe625ad0fe8ad9975e94bb5e5dc469bacbf7eaed8cb3f0a844ee82a160",
+      "source": "monoliths/small_pillar.nbt",
+      "source_sha256": "ea03139e70790afbf63e4258933afddff1929057f97b411bff87ea095fe8fa3f",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "interstice:ethereal/monolith/medium_pillar",
+      "size": [
+        7,
+        13,
+        7
+      ],
+      "blocks": 207,
+      "loot_barrels": 1,
+      "sha256": "5fc44a19c2762b64994a88b499df61dfc73880ce9601893aa0223062772ffff9",
+      "source": "monoliths/medium_pillar.nbt",
+      "source_sha256": "9c9609acbf4e55696370ba227f7a9157485c9de41111e88e254fff2d82da9946",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "interstice:ethereal/monolith/large_pillar",
+      "size": [
+        10,
+        17,
+        10
+      ],
+      "blocks": 439,
+      "loot_barrels": 1,
+      "sha256": "78596a2a8cc2f98117e825836ff374aa4e4d9b9254a80a038fc1b1343d627229",
+      "source": "monoliths/large_pillar.nbt",
+      "source_sha256": "64dfe551d9cc730654850a0ef9cab81fb6a5b95142c7d9a0ea9a6161b910ff82",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "interstice:ethereal/shrine/empty",
+      "size": [
+        7,
+        4,
+        7
+      ],
+      "blocks": 47,
+      "loot_barrels": 1,
+      "sha256": "def220dd5ff89c46dca0318833caa60b519987799f97f952f97a458f8399de4f",
+      "source": "shrines/empty.nbt",
+      "source_sha256": "75f6f07f34b05fbbf8f3cfa84d6245178e5dae0f539e5fc5ca9aa8234de6b1d0",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/shrine/flower",
+      "size": [
+        7,
+        4,
+        7
+      ],
+      "blocks": 54,
+      "loot_barrels": 1,
+      "sha256": "cde237dcb0eccaf019b9a0000e2754cf376acf01323dfef44eeb948945f0e22c",
+      "source": "shrines/flower.nbt",
+      "source_sha256": "47d7b7eb5d265b60377b5ac201b3537bf9989a97f8877d7a36d37b76d1a80fbe",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/shrine/gold",
+      "size": [
+        7,
+        4,
+        7
+      ],
+      "blocks": 59,
+      "loot_barrels": 1,
+      "sha256": "6370ac34973c558f03e1179c1a8e60657a1d0437445910bbcbddbe8996c250c1",
+      "source": "shrines/gold.nbt",
+      "source_sha256": "238d552bc669184768c87b604a0df4cf2ab7dc82983e003b23152b7ecad43224",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "interstice:ethereal/shrine/lodestone",
+      "size": [
+        7,
+        4,
+        7
+      ],
+      "blocks": 59,
+      "loot_barrels": 1,
+      "sha256": "c7c0e91bdd19c581a629770b64e35254372f7568c190eeaf280fc8db75b32947",
+      "source": "shrines/lodestone.nbt",
+      "source_sha256": "6ceca5bb7b1816905f923cf258ef8ecaae4503e55ebaf05dc2ee2dd1082a92f1",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "interstice:ethereal/shrine/burner",
+      "size": [
+        7,
+        4,
+        7
+      ],
+      "blocks": 54,
+      "loot_barrels": 1,
+      "sha256": "6b7bb9408c49714d6730936d2cf3d09aa4b3fb65c9259555fde74207a28ed519",
+      "source": "shrines/burner.nbt",
+      "source_sha256": "3e7771da5ed0741b9d88d79e4d9bff8c56348ab331742fd621324087e88deb62",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "interstice:ethereal/tower/ruined_tower0",
+      "size": [
+        12,
+        13,
+        11
+      ],
+      "blocks": 279,
+      "loot_barrels": 1,
+      "sha256": "864d7bc3a128ddf7aed2b0ad30a3b0ca5eb91839a121709375cfb42201bad8f6",
+      "source": "towers/ruined_tower0.nbt",
+      "source_sha256": "0d51721f5085841eb9794c8121ed8c969647ba579848fb575341e00af690b12b",
+      "loot_table": "interstice:chests/v5/observation_post",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/tower/ruined_tower1",
+      "size": [
+        12,
+        13,
+        11
+      ],
+      "blocks": 279,
+      "loot_barrels": 1,
+      "sha256": "115a686286cedfd7a0d84b2d4c31a0458d652b56ef931ff94b61fcaaa1e70bcf",
+      "source": "towers/ruined_tower1.nbt",
+      "source_sha256": "473cc78b9882ec912eb5e55eacd19dd24861f9190fecc840ac01b09abdd1d8b3",
+      "loot_table": "interstice:chests/v5/observation_post",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/tower/ruined_tower2",
+      "size": [
+        12,
+        13,
+        11
+      ],
+      "blocks": 245,
+      "loot_barrels": 1,
+      "sha256": "c904ce80d00367dc29abe5a2fe785a10c591ba9c96c3ede240a4b82b9cdae030",
+      "source": "towers/ruined_tower2.nbt",
+      "source_sha256": "139f231ba917df27dec84840b7939f495009aee406d48a42eabbd9f41e3931bf",
+      "loot_table": "interstice:chests/v5/observation_post",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/tower/ruined_tower3",
+      "size": [
+        12,
+        13,
+        11
+      ],
+      "blocks": 226,
+      "loot_barrels": 1,
+      "sha256": "a83780b4f773a487757bf017bba0dbe2b2eb77db11b552afdf1e6ac8b371f6a4",
+      "source": "towers/ruined_tower3.nbt",
+      "source_sha256": "dde905500e92a4a7a0037551fea139178a11bc63acba55459e68e6f70395a9c4",
+      "loot_table": "interstice:chests/v5/observation_post",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/tower/ruined_tower4",
+      "size": [
+        12,
+        13,
+        11
+      ],
+      "blocks": 193,
+      "loot_barrels": 1,
+      "sha256": "a70ef3358b125e1d523d58b34c1f324f7fabd744a86965e5f997976b0b870380",
+      "source": "towers/ruined_tower4.nbt",
+      "source_sha256": "9862e56baf7ab566c4803eddcb4f413088724bd1a1e601c77374428c083717bc",
+      "loot_table": "interstice:chests/v5/observation_post",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/tower/ruined_tower5",
+      "size": [
+        12,
+        13,
+        11
+      ],
+      "blocks": 151,
+      "loot_barrels": 1,
+      "sha256": "78ec64083fc339967860ab7bfef90bf8cdb34e4075e4ccbb0ddfb7884299bead",
+      "source": "towers/ruined_tower5.nbt",
+      "source_sha256": "78312695ea075591e77a9f65831452b17ea6d04f627ebed3036b205b9458648f",
+      "loot_table": "interstice:chests/v5/observation_post",
+      "added_cache": null
+    },
+    {
+      "id": "interstice:ethereal/relic/ancient_golem",
+      "size": [
+        5,
+        9,
+        7
+      ],
+      "blocks": 56,
+      "loot_barrels": 1,
+      "sha256": "30d26b69c03d1684b336c2fdb04ecc4a23006c68a923eae59de4f5fce8cb1b2d",
+      "source": "simple/ancient_golem.nbt",
+      "source_sha256": "65c9c8dbb94ecf22858cdd46116658bb592d7dd47c74e36252313e2a270eafe7",
+      "loot_table": "interstice:chests/v5/laboratory",
+      "added_cache": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

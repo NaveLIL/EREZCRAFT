@@ -46,8 +46,9 @@ public final class RealmStructuresV5 {
             return ResourceLocation.fromNamespaceAndPath(Interstice.ID, "chests/v5/" + directory);
         }
     }
-    public record Slot(Family family, int variant, ChunkPos chunk, int rotation) {
-        public ResourceLocation template() { return family.template(variant); }
+    public record Slot(Family family, int variant, ChunkPos chunk, int rotation, ResourceLocation selectedTemplate) {
+        public Slot(Family family, int variant, ChunkPos chunk, int rotation) { this(family, variant, chunk, rotation, null); }
+        public ResourceLocation template() { return selectedTemplate == null ? family.template(variant) : selectedTemplate; }
     }
     private record Cell(BlockPos pos, BlockState state, CompoundTag blockEntity) {}
     private record Plan(int width, int height, int depth, List<Cell> cells) {}
@@ -124,6 +125,12 @@ public final class RealmStructuresV5 {
                                StructureTemplateManager manager, HolderLookup.Provider registries,
                                ResourceLocation template, int rotation, int minimum) {
         if (!profile.equals(GeometryProfile.TALL) || rotation < 0 || rotation > 3 || !templates().contains(template)) return false;
+        return placeTemplate(profile, chunk, seed, manager, registries, template, rotation, minimum, false);
+    }
+    /** Shared chunk-local placement; callers own the dimension and template allowlist. */
+    static boolean placeTemplate(GeometryProfile profile, ChunkAccess chunk, long seed,
+                                StructureTemplateManager manager, HolderLookup.Provider registries,
+                                ResourceLocation template, int rotation, int minimum, boolean personalLoot) {
         var authored = manager.get(template).orElseThrow(() -> new IllegalStateException("Missing V5 authored template " + template));
         Plan plan = plan(authored, registries);
         int width = rotation % 2 == 0 ? plan.width : plan.depth;
@@ -153,7 +160,9 @@ public final class RealmStructuresV5 {
         for (Cell cell : plan.cells) {
             BlockPos local = rotated(cell.pos, rotation, plan.width, plan.depth);
             BlockPos point = base.offset(local);
-            placement.put(point, new Cell(point, cell.state.rotate(turn), cell.blockEntity));
+            var state = cell.state.rotate(turn);
+            if (personalLoot) state = StructureLoot.personal(state);
+            placement.put(point, new Cell(point, state, StructureLoot.personalNbt(state, cell.blockEntity)));
             if (cell.pos.getY() == 0) {
                 for (int y = ground[local.getX()][local.getZ()] + 1; y < base.getY(); y++) {
                     BlockPos foot = new BlockPos(point.getX(), y, point.getZ());
@@ -198,8 +207,8 @@ public final class RealmStructuresV5 {
         CompoundTag data = template.save(new CompoundTag());
         var size = data.getList("size", Tag.TAG_INT);
         int width = size.getInt(0), height = size.getInt(1), depth = size.getInt(2);
-        if (width < 1 || width > 13 || depth < 1 || depth > 13 || height < 1 || height > 12)
-            throw new IllegalStateException("V5 templates must fit their chunk-local bounds");
+        if (width < 1 || width > 13 || depth < 1 || depth > 13 || height < 1 || height > 24)
+            throw new IllegalStateException("Realm templates must fit their chunk-local bounds");
         var palette = new ArrayList<BlockState>();
         for (Tag item : data.getList("palette", Tag.TAG_COMPOUND)) {
             BlockState state = NbtUtils.readBlockState(registries.lookupOrThrow(Registries.BLOCK), (CompoundTag)item);

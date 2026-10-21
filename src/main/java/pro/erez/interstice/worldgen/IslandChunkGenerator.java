@@ -109,6 +109,10 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     }
     @Override public ChunkGeneratorStructureState createState(HolderLookup<StructureSet> structures,RandomState random,long seed){
         synchronized(this){if(terrainSeed!=null&&terrainSeed!=seed)throw new IllegalStateException("Generator reused for different world seeds");terrainSeed=seed;}
+        // Native structure bookkeeping only; V6's density, biomes and random state stay unchanged.
+        if(terrainRevision==6)return ChunkGeneratorStructureState.createForFlat(random,seed,getBiomeSource(),
+                structures.listElements().filter(s->s.value().placement() instanceof RealmComplexStructuresV6.Placement)
+                        .map(s->(net.minecraft.core.Holder<StructureSet>)s));
         return super.createState(structures,random,seed);
     }
     private long terrainSeed(){if(terrainSeed==null)throw new IllegalStateException("Terrain world seed has not been bound");return terrainSeed;}
@@ -247,12 +251,16 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
             livingSurface(chunk);fillLivingSeas(chunk,random);
         }else{super.buildSurface(region,structures,random,chunk);fillSeas(geometry,chunk);}
         int minimum=featureMinimum(region,geometry);
+        java.util.function.BiPredicate<Integer,Integer> complexReserved=terrainRevision==6&&region.getLevel().getServer().getWorldData().worldGenOptions().generateStructures()?
+                RealmComplexStructuresV6.reservation(region.getSeed(),this,random,region.getLevel().getStructureManager(),region.registryAccess(),region):((x,z)->false);
         StoneVaults.geologicalSurface(geometry,chunk,region.getSeed(),minimum);
         PaleGardens.geology(geometry,chunk,region.getSeed(),minimum);
         if(terrainRevision>=4)pro.erez.interstice.minerals.RealmSurfaces.decorate(geometry,chunk,region.getSeed(),(x,z)->terrainColumn(random,x,z));
         if(isRevisedRealm()){
             pro.erez.interstice.minerals.GroundStrata.generate(geometry,chunk,region.getSeed());
             pro.erez.interstice.minerals.MineralDeposits.generate(geometry,chunk,region.getSeed(),terrainRevision);
+            if(terrainRevision==6)pro.erez.interstice.minerals.PackOreDepositsV6.generate(geometry,chunk,region.getSeed(),
+                    region.getLevel().dimension(),terrainRevision);
         }else generateOres(geometry,chunk,region.getSeed());
         boolean garden=RealmBiomes.isGarden(chunk,new BlockPos(chunk.getPos().getMinBlockX()+7,40,chunk.getPos().getMinBlockZ()+7));
         if(terrainRevision<5&&FeatureDistribution.watchpostAllowed(terrainRevision,region.getSeed(),chunk.getPos().x,chunk.getPos().z,garden))
@@ -265,7 +273,8 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
             else CaveFeatures.decorate(geometry,chunk,region.getSeed(),region,terrainRevision);
         }
         if(terrainRevision>=5){
-            RealmStructuresV5.generate(geometry,chunk,region.getSeed(),region,minimum);
+            if(terrainRevision==6)RealmStructuresV6.generate(geometry,chunk,region.getSeed(),region,minimum);
+            else RealmStructuresV5.generate(geometry,chunk,region.getSeed(),region,minimum);
             var columns=new java.util.HashMap<Long,NoiseColumn>();
             var reservations=RealmStructuresV5.forestReservation(region.getSeed());
             ForestV5.generate(geometry,chunk,region.getSeed(),region,new ForestV5.GroundProbe(){
@@ -273,7 +282,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
                         pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).columnBeforeForestCaves(x,z):rawNativeColumn(random,x,z));}
                 public int surface(int x,int z){var c=column(x,z);for(int y=geometry.maxLand();y>geometry.lowerSeaTop();y--)if(!c.getBlock(y).isAir())return y;return geometry.lowerSeaTop();}
                 public boolean solid(int x,int y,int z){return y<=geometry.lowerSeaTop()||!column(x,z).getBlock(y).isAir();}
-                public boolean reserved(int x,int y,int z){return reservations.test(x,z)||terrainRevision==6&&
+                public boolean reserved(int x,int y,int z){return reservations.test(x,z)||complexReserved.test(x,z)||terrainRevision==6&&
                         pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).forestCaves().entranceColumn(x,z);}
             });
         }else{
@@ -282,13 +291,13 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
             GardenTrees.generate(geometry,chunk,region.getSeed(),region);
         }
         if(terrainRevision==6)PaleGardens.undergrowth(geometry,chunk,region.getSeed(),minimum,
-                pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).forestCaves()::reservedWalkway);
+                p->complexReserved.test(p.getX(),p.getZ())||pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).forestCaves().reservedWalkway(p));
         else PaleGardens.undergrowth(geometry,chunk,region.getSeed(),minimum);
         if(terrainRevision==6)ForestFlora.decorate(geometry,chunk,region.getSeed(),region,5,
-                pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).forestCaves()::reservedWalkway);
+                p->complexReserved.test(p.getX(),p.getZ())||pro.erez.interstice.worldgen.terrain.NativeColumnSamplerV6.of(random).forestCaves().reservedWalkway(p));
         else if(terrainRevision>=5)ForestFlora.decorate(geometry,chunk,region.getSeed(),region,5);
         if(FeatureDistribution.tideSproutsAllowed(terrainRevision,region.getSeed(),chunk.getPos().x,chunk.getPos().z))
-            generateTideSprouts(geometry,chunk,region.getSeed(),minimum);
+            generateTideSprouts(geometry,chunk,region.getSeed(),minimum,complexReserved);
         NativeCropPatches.generate(geometry,chunk,region.getSeed(),terrainRevision);
     }
     private void livingSurface(ChunkAccess chunk){
@@ -317,6 +326,9 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         generateTideSprouts(profile,chunk,seed,profile.minLand());
     }
     public static void generateTideSprouts(GeometryProfile profile,ChunkAccess chunk,long seed,int minimum) {
+        generateTideSprouts(profile,chunk,seed,minimum,(x,z)->false);
+    }
+    public static void generateTideSprouts(GeometryProfile profile,ChunkAccess chunk,long seed,int minimum,java.util.function.BiPredicate<Integer,Integer> reserved) {
         int cx = chunk.getPos().x;
         int cz = chunk.getPos().z;
         long chunkSeed = (seed ^ (cx * 987654321L + cz * 123456789L)) + 777L;
@@ -332,6 +344,7 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
         for (int i = 0; i < count; i++) {
             int x = startX + rnd.nextInt(16);
             int z = startZ + rnd.nextInt(16);
+            if(reserved.test(x,z))continue;
 
             // Scan downward from top of land zone to find abyssal turf surface
             for (int y = profile.maxLand(); y >= minimum; y--) {
@@ -426,9 +439,19 @@ public final class IslandChunkGenerator extends NoiseBasedChunkGenerator {
     }
     // Uncontrolled carvers, lakes and structures could breach the sea-clearance contract.
     @Override public void applyCarvers(WorldGenRegion region,long seed,RandomState random,BiomeManager biomes,StructureManager structures,ChunkAccess chunk,GenerationStep.Carving step) {}
-    @Override public void applyBiomeDecoration(WorldGenLevel region,ChunkAccess chunk,StructureManager structures) {}
+    @Override public void applyBiomeDecoration(WorldGenLevel region,ChunkAccess chunk,StructureManager structures) {
+        if(terrainRevision!=6||!region.getLevel().dimension().equals(IslandWorld.TENSION_WORLD))return;
+        var box=new net.minecraft.world.level.levelgen.structure.BoundingBox(chunk.getPos().getMinBlockX(),geometry.minY()+1,chunk.getPos().getMinBlockZ(),chunk.getPos().getMaxBlockX(),geometry.roof()-1,chunk.getPos().getMaxBlockZ());
+        var section=net.minecraft.core.SectionPos.of(chunk.getPos(),chunk.getMinSection());
+        region.registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.STRUCTURE).stream()
+                .filter(s->s instanceof RealmComplexStructuresV6.ComplexStructure).forEach(s->
+                    structures.startsForStructure(section,s).forEach(start->start.placeInChunk(region,structures,this,
+                            net.minecraft.util.RandomSource.create(region.getSeed()^chunk.getPos().toLong()),box,chunk.getPos())));
+    }
     @Override public void spawnOriginalMobs(WorldGenRegion region) {}
-    @Override public void createStructures(RegistryAccess registries,ChunkGeneratorStructureState state,StructureManager structures,ChunkAccess chunk,StructureTemplateManager templates) {}
+    @Override public void createStructures(RegistryAccess registries,ChunkGeneratorStructureState state,StructureManager structures,ChunkAccess chunk,StructureTemplateManager templates) {
+        if(terrainRevision==6)super.createStructures(registries,state,structures,chunk,templates);
+    }
     @Override public void addDebugScreenInfo(List<String> lines,RandomState random,BlockPos pos) {
         super.addDebugScreenInfo(lines,random,pos);
         lines.add("Interstice terrain revision "+terrainRevision+": land "+(isLivingRealm()?geometry.minY()+1:geometry.minLand())+".."+geometry.maxLand()+"; upper-sea clearance >= "+geometry.clearance());

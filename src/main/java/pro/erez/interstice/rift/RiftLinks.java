@@ -32,19 +32,28 @@ public final class RiftLinks extends SavedData {
         for (Link link : links.values()) if (link.kind() == kind && link.source().equals(endpoint)) return link;
         return null;
     }
+    /** Discoveries are versioned; physical portal frames retain their original connection. */
+    public Link source(Endpoint endpoint, Kind kind, ResourceKey<Level> destination) {
+        for (Link link : links.values()) if (link.kind() == kind && link.source().equals(endpoint)
+                && link.echo().dimension().equals(destination)) return link;
+        return null;
+    }
+    private boolean sourceOccupied(Kind kind, Endpoint source, Endpoint echo) {
+        return kind == Kind.PORTAL ? source(source, kind) != null : source(source, kind, echo.dimension()) != null;
+    }
     public Link echo(ResourceKey<Level> dimension, BlockPos pos) {
         for (Link link : links.values()) if (link.echo().dimension().equals(dimension) && link.echo().pos().equals(pos)) return link;
         return null;
     }
     public Link byId(UUID id) { return links.get(id); }
     public Link add(Kind kind, Endpoint source, Endpoint echo) {
-        if (source(source, kind) != null || echo(echo.dimension(), echo.pos()) != null) throw new IllegalStateException("Rift endpoint already linked");
+        if (sourceOccupied(kind, source, echo) || echo(echo.dimension(), echo.pos()) != null) throw new IllegalStateException("Rift endpoint already linked");
         Link link = new Link(UUID.randomUUID(), kind, source, echo);
         links.put(link.id(), link); setDirty(); return link;
     }
     public int size() { return links.size(); }
     @Override public CompoundTag save(CompoundTag tag, HolderLookup.Provider provider) {
-        tag.putInt("Version", 1);
+        tag.putInt("Version", 2);
         ListTag records = new ListTag();
         for (Link link : links.values()) {
             CompoundTag record = new CompoundTag(); record.putUUID("Id", link.id()); record.putString("Kind", link.kind().name());
@@ -70,7 +79,7 @@ public final class RiftLinks extends SavedData {
             if (source == null || echo == null || !record.hasUUID("Id")) continue;
             Kind kind; try { kind = Kind.valueOf(record.getString("Kind")); } catch (IllegalArgumentException ignored) { continue; }
             UUID id = record.getUUID("Id");
-            if (result.links.containsKey(id) || result.source(source, kind) != null || result.echo(echo.dimension(), echo.pos()) != null) continue;
+            if (result.links.containsKey(id) || result.sourceOccupied(kind, source, echo) || result.echo(echo.dimension(), echo.pos()) != null) continue;
             result.links.put(id, new Link(id, kind, source, echo));
         }
         return result;

@@ -34,7 +34,7 @@ public final class ExpeditionGameTests {
             player.hasChangedDimension(); // virtual client acknowledges the completed dimension switch
             if (!player.level().dimension().equals(IslandWorld.CURRENT_WORLD)
                     || !(player.serverLevel().getChunkSource().getGenerator() instanceof pro.erez.interstice.worldgen.IslandChunkGenerator generator)
-                    || generator.terrainRevision()!=5) throw new AssertionError("First expedition must enter the current V5 realm");
+                    || generator.terrainRevision()!=6) throw new AssertionError("First expedition must enter the current V6 realm");
             if (ExpeditionLedger.get(player.server).journey(player.getUUID()) == null) throw new AssertionError("Real dimension event did not record the expedition");
             player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Interstice.WAYFARER_KEY.get()));
             return player;

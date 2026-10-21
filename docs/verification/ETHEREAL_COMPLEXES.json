@@ -1,0 +1,313 @@
+{
+  "schema": 1,
+  "status": "Local integration verified; not published",
+  "version": "0.7.0-preview.12",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "java_major": 21,
+  "source_project": "https://modrinth.com/datapack/ethereal-structures",
+  "source_version": "px0RRcOK",
+  "license": "CC0-1.0",
+  "source_archive_sha512": "3c06828e7e6b1e524f9e5d59c927fb7e4cf6d9b2aa51ff4dddd23b4be717eee674c2130c286f0542e47a328169749aeeae39cc674a9b80457ce10f9501dec3e1",
+  "large_templates": 7,
+  "source_large_temple_templates": 1,
+  "camp_layouts_per_size": 2,
+  "camp_sizes": [
+    16,
+    24,
+    40
+  ],
+  "no_new_textures": true,
+  "native_create": {
+    "scope": "One real integrated client with DH/Lootr, natural V6 FULL chunks; second player is a server-side identity probe, not a second TCP client or human Survival.",
+    "garbage_collectors": [
+      "G1 Young Generation",
+      "G1 Concurrent GC",
+      "G1 Old Generation"
+    ],
+    "creator_pid": 14486,
+    "natural_structures": [
+      {
+        "template": "interstice:ethereal/complex/temple",
+        "position": 226774261792830,
+        "origin": 224850116407358,
+        "chunk_x": 51,
+        "chunk_z": -177,
+        "rotation": 3,
+        "width": 15,
+        "height": 12,
+        "depth": 18,
+        "full_chunks": 3,
+        "actual_source_cells": 245,
+        "actual_lootr_caches": 1,
+        "native_structure_start": true
+      },
+      {
+        "template": "interstice:ethereal/complex/camp_medium_0",
+        "position": -292195222585278,
+        "origin": -295493757517758,
+        "chunk_x": -67,
+        "chunk_z": -115,
+        "rotation": 3,
+        "width": 24,
+        "height": 10,
+        "depth": 24,
+        "full_chunks": 9,
+        "actual_source_cells": 789,
+        "actual_lootr_caches": 6,
+        "native_structure_start": true
+      },
+      {
+        "template": "interstice:ethereal/complex/camp_large_1",
+        "position": 622598457425982,
+        "origin": 617100899205182,
+        "chunk_x": 141,
+        "chunk_z": -30,
+        "rotation": 3,
+        "width": 40,
+        "height": 10,
+        "depth": 40,
+        "full_chunks": 9,
+        "actual_source_cells": 1910,
+        "actual_lootr_caches": 9,
+        "native_structure_start": true
+      }
+    ],
+    "numeric_proposals_checked": 16,
+    "native_complexes": true,
+    "structure_generation_enabled": true,
+    "actual_full_requests": 3,
+    "actual_dimension": "interstice:islands_v6",
+    "actual_revision": 6,
+    "distant_horizons_loaded": true,
+    "second_inventory": "{Items:[{Slot:10b,count:1,id:\"interstice:vitriolite_shard\"},{Slot:15b,count:1,id:\"interstice:phosphorite_crystal\"},{Slot:17b,count:1,id:\"interstice:ash_grain\"},{Slot:18b,count:1,id:\"interstice:ash_grain\"},{Slot:21b,count:1,id:\"interstice:phosphorite_crystal\"},{Slot:23b,count:1,id:\"interstice:riftsilver_mesh\"},{Slot:24b,count:1,id:\"interstice:vitriolite_shard\"}]}",
+    "cache": 226774261764160,
+    "cache_uuid": "552c82de-604d-421d-888b-20789fc498c6",
+    "first_uuid": "380df991-f603-344c-a090-369bad2a924a",
+    "native_menu_loot_stacks": 5,
+    "native_menu_screen": "net.minecraft.client.gui.screens.inventory.ContainerScreen",
+    "menu_capture_after_client_ticks": 20,
+    "native_item_take_packets": true,
+    "second_player_inventory_preserved": true,
+    "create_settle": {
+      "purpose": "ethereal-create-shutdown",
+      "server_tick": 3475,
+      "elapsed_actual_server_ticks": 764,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 2362,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    },
+    "passed": true,
+    "finished": true
+  },
+  "native_reload": {
+    "scope": "One real integrated client with DH/Lootr, natural V6 FULL chunks; second player is a server-side identity probe, not a second TCP client or human Survival.",
+    "garbage_collectors": [
+      "G1 Young Generation",
+      "G1 Concurrent GC",
+      "G1 Old Generation"
+    ],
+    "creator_pid": 14486,
+    "natural_structures": [
+      {
+        "template": "interstice:ethereal/complex/temple",
+        "position": 226774261792830,
+        "origin": 224850116407358,
+        "chunk_x": 51,
+        "chunk_z": -177,
+        "rotation": 3,
+        "width": 15,
+        "height": 12,
+        "depth": 18,
+        "full_chunks": 3,
+        "actual_source_cells": 245,
+        "actual_lootr_caches": 1,
+        "native_structure_start": true
+      },
+      {
+        "template": "interstice:ethereal/complex/camp_medium_0",
+        "position": -292195222585278,
+        "origin": -295493757517758,
+        "chunk_x": -67,
+        "chunk_z": -115,
+        "rotation": 3,
+        "width": 24,
+        "height": 10,
+        "depth": 24,
+        "full_chunks": 9,
+        "actual_source_cells": 789,
+        "actual_lootr_caches": 6,
+        "native_structure_start": true
+      },
+      {
+        "template": "interstice:ethereal/complex/camp_large_1",
+        "position": 622598457425982,
+        "origin": 617100899205182,
+        "chunk_x": 141,
+        "chunk_z": -30,
+        "rotation": 3,
+        "width": 40,
+        "height": 10,
+        "depth": 40,
+        "full_chunks": 9,
+        "actual_source_cells": 1910,
+        "actual_lootr_caches": 9,
+        "native_structure_start": true
+      }
+    ],
+    "numeric_proposals_checked": 16,
+    "native_complexes": true,
+    "structure_generation_enabled": true,
+    "actual_full_requests": 3,
+    "actual_dimension": "interstice:islands_v6",
+    "actual_revision": 6,
+    "distant_horizons_loaded": true,
+    "second_inventory": "{Items:[{Slot:10b,count:1,id:\"interstice:vitriolite_shard\"},{Slot:15b,count:1,id:\"interstice:phosphorite_crystal\"},{Slot:17b,count:1,id:\"interstice:ash_grain\"},{Slot:18b,count:1,id:\"interstice:ash_grain\"},{Slot:21b,count:1,id:\"interstice:phosphorite_crystal\"},{Slot:23b,count:1,id:\"interstice:riftsilver_mesh\"},{Slot:24b,count:1,id:\"interstice:vitriolite_shard\"}]}",
+    "cache": 226774261764160,
+    "cache_uuid": "552c82de-604d-421d-888b-20789fc498c6",
+    "first_uuid": "380df991-f603-344c-a090-369bad2a924a",
+    "native_menu_loot_stacks": 5,
+    "native_menu_screen": "net.minecraft.client.gui.screens.inventory.ContainerScreen",
+    "menu_capture_after_client_ticks": 20,
+    "native_item_take_packets": true,
+    "second_player_inventory_preserved": true,
+    "create_settle": {
+      "purpose": "ethereal-create-shutdown",
+      "server_tick": 3475,
+      "elapsed_actual_server_ticks": 764,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 2362,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    },
+    "passed": true,
+    "finished": true,
+    "reload_pid": 14546,
+    "cold_first_stays_empty": true,
+    "cold_second_stays_unclaimed": true,
+    "cold_natural_structures_preserved": true,
+    "reload_settle": {
+      "purpose": "ethereal-reload-shutdown",
+      "server_tick": 3564,
+      "elapsed_actual_server_ticks": 56,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 2362,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "native_profile": "/Users/dimon/Documents/Minecraft/.verification/20261012T111451.121047Z-ethereal-complex-native-overview/profiles/etherealComplexSmoke",
+  "native_receipt_sha256": "753b24d9b7a0933a7b359a84c507ba0e9fd9401449856c90fb6383b4f5acba6c",
+  "component_receipt": "/Users/dimon/Documents/Minecraft/.verification/20261012T104508.124504Z-ethereal-complex-components/runEtherealGameTestServer.json",
+  "component_required_tests": 9,
+  "python_verifier_checks": 68,
+  "native_structures": true,
+  "shared_budget": {
+    "grid_chunks": 18,
+    "large_share_of_existing_proposals": 0.25,
+    "site_attempts": 4,
+    "max_support": 6
+  },
+  "generation_dimensions": [
+    "interstice:islands_v6"
+  ],
+  "world_structures_flag_required": true,
+  "published": false,
+  "limitations": [
+    "One actual client plus a registered EmbeddedChannel server-player identity, not two TCP clients.",
+    "Native visual integration used Interstice/DH/Lootr core; complete pack, Sodium/Iris shaders and Survival combat balance not tested.",
+    "Native verification uses isolated G1 on this macOS because JBR21.0.11 generational ZGC previously crashed.",
+    "Pocket surveyor still searches small ruins; large complexes use Minecraft native /locate.",
+    "Existing chunks are not rebuilt; old worlds with structures disabled are not modified."
+  ],
+  "captures": [
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T111451.121047Z-ethereal-complex-native-overview/profiles/etherealComplexSmoke/screenshots/ethereal-natural-0.png",
+      "sha256": "d214b6b1e4a7ea3dbfd3491f63868fbbd3490804bae872b11e96aceb2d72a910"
+    },
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T111451.121047Z-ethereal-complex-native-overview/profiles/etherealComplexSmoke/screenshots/ethereal-natural-1.png",
+      "sha256": "d75debd10590c4aaf18821af7cd71ec6628cdacadd3df8c5fddbb15f1ea817e3"
+    },
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T111451.121047Z-ethereal-complex-native-overview/profiles/etherealComplexSmoke/screenshots/ethereal-natural-2.png",
+      "sha256": "f3d1d1f93ba1ec61a2f9e85c37e0e41bacbb59d68e833c443500573ecc9905c9"
+    },
+    {
+      "file": "/Users/dimon/Documents/Minecraft/.verification/20261012T111451.121047Z-ethereal-complex-native-overview/profiles/etherealComplexSmoke/screenshots/ethereal-personal-loot-menu.png",
+      "sha256": "8f9b8ac0c15d4719227ca498d3a1784354444dab11843300663147d20e28c929"
+    }
+  ],
+  "earlier_attempt": {
+    "profile": "/Users/dimon/Documents/Minecraft/.verification/20261012T105436.642455Z-ethereal-complex-native-first",
+    "passed": true,
+    "camera_telemetry": "/Users/dimon/Documents/Minecraft/.verification/20261012T105436.642455Z-ethereal-complex-native-first/camera-telemetry.txt",
+    "note": "Actual positions diagnosed after input moved the verification camera. Only camera/control state restored; geometry and loot checks passed. Overview recaptured on identical seed/sites at higher altitude to avoid foliage occlusion."
+  },
+  "passed": true,
+  "full_build": {
+    "receipt": "/Users/dimon/Documents/Minecraft/.verification/20261012T112434.962314Z-ethereal-complex-full/build.json",
+    "sha256": "8500692841a47f9660c79f3172156b0ddf45ceb88302963b1671d4d1dfff10a2",
+    "required_tests": 468,
+    "groups": 18,
+    "accepted": true,
+    "note": "Full build precedes the final LevelChunk NBT-only fix; natural ProtoChunk branch unchanged."
+  },
+  "final_component": {
+    "receipt": "/Users/dimon/Documents/Minecraft/.verification/20261021T083633.102917Z-ethereal-complex-final-nbt/runEtherealGameTestServer.json",
+    "sha256": "e213ab115fabd5699eb31e2d2d306d2fb2fbc21c1a75d87c1d0c250273da89e4",
+    "required_tests": 9,
+    "accepted": true,
+    "note": "Final LevelChunk NBT fix validated after full build."
+  },
+  "asset_audit": {
+    "passed": true,
+    "offline_reproduction_identical": true,
+    "templates": 7,
+    "runtime_source_hashes": {
+      "src/main/resources/data/interstice/structure/ethereal/complex/camp_small_1.nbt": "2783e4ec2eb18401404edc88915d3fb7a5bd118fa112736d7ad379f225e0b26d",
+      "src/main/resources/data/interstice/structure/ethereal/complex/temple.nbt": "22ccfdad0c3bc91a4bdc03c12de2d4adae70e51f644cd948ea59125cb7a99702",
+      "src/main/resources/data/interstice/structure/ethereal/complex/camp_small_0.nbt": "7cffbf06b50e09d876b4332dc6c0bf5055e839124f5569cbecbf40a27031d897",
+      "src/main/resources/data/interstice/structure/ethereal/complex/camp_medium_0.nbt": "afd21542c9127032f8e64c062420bcb4abc41faf151452227a275e23cbabcfd7",
+      "src/main/resources/data/interstice/structure/ethereal/complex/camp_medium_1.nbt": "66096f977d60b3e843e261ac3a6cce98f4ae63ddd4c6348ff3805ee7ac3a85ed",
+      "src/main/resources/data/interstice/structure/ethereal/complex/camp_large_0.nbt": "9cc232f3046adf813975cb3ee38c011b15bb30adb6a96551a56edfc606a71e0a",
+      "src/main/resources/data/interstice/structure/ethereal/complex/camp_large_1.nbt": "dab7257bfa94eb2d5217f820734f12487fb7586a856af9bd164c81bb94cbf6d7",
+      "src/main/resources/assets/interstice/provenance/ethereal-complexes.json": "92ce76cd901e224102132568112acff3bbd347f313b456da691bea246c4ac90b"
+    },
+    "pngs_unchanged": 157
+  },
+  "runtime_audit": {
+    "main_sources": 234,
+    "main_classes": 439,
+    "runtime_resources": 1153,
+    "pngs_unchanged": 157,
+    "errors": [],
+    "metadata": "neoforge.mods.toml compared after normal Gradle property expansion",
+    "passed": true
+  },
+  "runtime_jar": {
+    "file": "/Users/dimon/Documents/Minecraft/build/libs/interstice-0.7.0-preview.12.jar",
+    "sha256": "7c65223bf471fca19adba5ac9c7ba9debe6545e28f67496baaae321dd78bb506"
+  },
+  "source_jar": {
+    "file": "/Users/dimon/Documents/Minecraft/build/libs/interstice-0.7.0-preview.12-sources.jar",
+    "sha256": "523a0acfd769f9c063139ab1ccd03e6b7feaf9b72b266ad1b5998c52484703db"
+  },
+  "finalized_date": "2026-10-21"
+}

@@ -15,6 +15,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -22,6 +23,10 @@ import net.minecraft.world.phys.Vec3;
 import pro.erez.interstice.Interstice;
 
 public final class ToxinSpitEntity extends Projectile {
+    private static final double HORIZONTAL_DRAG = 0.98;
+    private static final double GRAVITY = 0.03;
+    private static final double LAUNCH_SPEED = 0.85;
+    private static final int MAX_AIM_TICKS = 40;
     private int ticksInAir;
 
     public ToxinSpitEntity(EntityType<? extends ToxinSpitEntity> type, Level level) {
@@ -33,6 +38,45 @@ public final class ToxinSpitEntity extends Projectile {
         this.setOwner(owner);
         this.setPos(owner.getX(), owner.getEyeY() - 0.2, owner.getZ());
         this.setDeltaMovement(vx, vy, vz);
+    }
+
+    /** Solve the real, discrete trajectory from this projectile's actual muzzle, without homing. */
+    public boolean aimAt(Vec3 target) {
+        Vec3 difference = target.subtract(this.position());
+        if (!Double.isFinite(difference.lengthSqr()) || difference.lengthSqr() < 1.0E-8) return false;
+        double horizontalSteps = 0;
+        double drag = 1;
+        for (int ticks = 1; ticks <= MAX_AIM_TICKS; ticks++) {
+            horizontalSteps += drag;
+            drag *= HORIZONTAL_DRAG;
+            Vec3 velocity = new Vec3(difference.x / horizontalSteps,
+                    (difference.y + GRAVITY * ticks * (ticks - 1) / 2.0) / ticks,
+                    difference.z / horizontalSteps);
+            if (velocity.lengthSqr() > LAUNCH_SPEED * LAUNCH_SPEED) continue;
+            // Keep the shortest low arc. Do not switch to a lob over cover when it is blocked.
+            if (!clearTrajectory(velocity, ticks)) return false;
+            this.setDeltaMovement(velocity);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean clearTrajectory(Vec3 velocity, int ticks) {
+        Vec3 position = this.position();
+        for (int tick = 0; tick < ticks; tick++) {
+            Vec3 next = position.add(velocity);
+            if (!this.level().hasChunkAt(net.minecraft.core.BlockPos.containing(next))
+                    || this.level().clip(new ClipContext(position, next, ClipContext.Block.COLLIDER,
+                    ClipContext.Fluid.NONE, this)).getType() != HitResult.Type.MISS) return false;
+            position = next;
+            velocity = nextVelocity(velocity);
+        }
+        return true;
+    }
+
+    private static Vec3 nextVelocity(Vec3 velocity) {
+        return new Vec3(velocity.x * HORIZONTAL_DRAG, velocity.y - GRAVITY,
+                velocity.z * HORIZONTAL_DRAG);
     }
 
     @Override
@@ -64,7 +108,7 @@ public final class ToxinSpitEntity extends Projectile {
         }
 
         // Slight gravity drop
-        this.setDeltaMovement(mov.x * 0.98, mov.y - 0.03, mov.z * 0.98);
+        this.setDeltaMovement(nextVelocity(mov));
 
         if (++this.ticksInAir > 100) {
             this.discard();

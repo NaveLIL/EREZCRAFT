@@ -22,7 +22,8 @@ public final class IslandWorld {
     public static final ResourceKey<Level> LIVING_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v4"));
     public static final ResourceKey<Level> VANILLA_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v5"));
     public static final ResourceKey<Level> TENSION_WORLD=ResourceKey.create(Registries.DIMENSION,ResourceLocation.fromNamespaceAndPath(Interstice.ID,"islands_v6"));
-    public static final ResourceKey<Level> CURRENT_WORLD=VANILLA_WORLD;
+    // First discoveries and new unlinked portals use V6. Saved rift endpoints retain their dimension.
+    public static final ResourceKey<Level> CURRENT_WORLD=TENSION_WORLD;
     private IslandWorld() {}
     public static boolean isIsland(ResourceKey<Level> dimension) {
         return dimension.equals(WORLD) || dimension.equals(TALL_WORLD)||dimension.equals(DRAFT_WORLD)||dimension.equals(PREVIOUS_WORLD)||dimension.equals(LIVING_WORLD)||dimension.equals(VANILLA_WORLD)||dimension.equals(TENSION_WORLD);
@@ -163,7 +164,7 @@ public final class IslandWorld {
                 .then(Commands.literal("explore")
                         .executes(context->enter(context.getSource(),CURRENT_WORLD))
                         .then(Commands.literal("living").executes(context->enter(context.getSource(),CURRENT_WORLD)))
-                        .then(Commands.literal("vanilla").executes(context->enter(context.getSource(),CURRENT_WORLD)))
+                        .then(Commands.literal("vanilla").executes(context->enter(context.getSource(),VANILLA_WORLD)))
                         .then(Commands.literal("v6").executes(context->enter(context.getSource(),TENSION_WORLD)))
                         .then(Commands.literal("v5").executes(context->enter(context.getSource(),VANILLA_WORLD)))
                         .then(Commands.literal("v4").executes(context->enter(context.getSource(),LIVING_WORLD)))

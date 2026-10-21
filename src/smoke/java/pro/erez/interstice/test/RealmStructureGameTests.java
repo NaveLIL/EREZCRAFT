@@ -159,24 +159,37 @@ public final class RealmStructureGameTests {
     @GameTest(template = "empty", timeoutTicks = 100)
     public static void actualFamilyLootIsBoundedUsefulAndStaysClaimedAcrossReload(GameTestHelper h) {
         int index = 0;
+        var player = TestPlayers.create(h, new BlockPos(2, 2, 3), net.minecraft.world.level.GameType.SURVIVAL);
+        try {
         for (var family : RealmStructuresV5.Family.values()) {
-            BlockPos local = new BlockPos(2 + index++, 2, 2); h.setBlock(local, Blocks.BARREL);
-            var barrel = (BarrelBlockEntity)h.getLevel().getBlockEntity(h.absolutePos(local));
+            BlockPos local = new BlockPos(2 + index++, 2, 2); h.setBlock(local, pro.erez.interstice.worldgen.StructureLoot.personal(Blocks.BARREL.defaultBlockState()));
+            var barrel = (net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity)h.getLevel().getBlockEntity(h.absolutePos(local));
             barrel.setLootTable(ResourceKey.create(Registries.LOOT_TABLE, family.lootTable()), SEED);
+            net.minecraft.world.Container inventory = barrel;
+            if (barrel instanceof noobanidus.mods.lootr.common.block.entity.LootrBarrelBlockEntity personal)
+                inventory = noobanidus.mods.lootr.common.api.LootrAPI.getInventory(personal, player);
             int count = 0;
-            for (int slot = 0; slot < barrel.getContainerSize(); slot++) {
-                var item = barrel.getItem(slot);
+            for (int slot = 0; slot < inventory.getContainerSize(); slot++) {
+                var item = inventory.getItem(slot);
                 if (!item.isEmpty()) {
                     h.assertTrue(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(item.getItem()).getNamespace().equals(Interstice.ID), "Structure loot must support the native material economy");
                     count += item.getCount();
                 }
             }
             h.assertTrue(count >= 2 && count <= 16, "Loot must load real registered supplies without giant or empty rewards: " + family + " count=" + count);
-            barrel.clearContent(); var saved = barrel.saveWithFullMetadata(h.getLevel().registryAccess());
+            inventory.clearContent(); inventory.setChanged();
+            if (barrel instanceof noobanidus.mods.lootr.common.block.entity.LootrBarrelBlockEntity personal) {
+                var saved = ((noobanidus.mods.lootr.common.data.LootrSavedData)noobanidus.mods.lootr.common.api.LootrAPI.getData(personal)).save(new net.minecraft.nbt.CompoundTag(), h.getLevel().registryAccess());
+                var loaded = noobanidus.mods.lootr.common.data.LootrSavedData.load(saved, h.getLevel().registryAccess());
+                h.assertTrue(loaded.getInventory(player.getUUID()).isEmpty(), "Unpacked personal loot must remain claimed after native saved-data reload");
+                continue;
+            }
+            var saved = barrel.saveWithFullMetadata(h.getLevel().registryAccess());
             var loaded = new BarrelBlockEntity(h.absolutePos(local), barrel.getBlockState()); loaded.setLevel(h.getLevel());
             loaded.loadWithComponents(saved, h.getLevel().registryAccess());
             h.assertTrue(loaded.isEmpty(), "Unpacked loot must stay claimed after native block-entity reload");
         }
+        } finally { TestPlayers.remove(player); }
         h.succeed();
     }
     @GameTest(template = "empty", timeoutTicks = 100)

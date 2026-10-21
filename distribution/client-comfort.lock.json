@@ -1028,7 +1028,7 @@
   "recommended_client_config": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\client-comfort-research\\config\\inventoryprofilesnext\\integrationHints\\erezcraft-safe-containers.json",
   "client_jars": 62,
   "server_jars": 49,
-  "delivery_sequence": 7,
+  "delivery_sequence": 11,
   "quests_added": false,
   "custom_recipe_changes": false
 }

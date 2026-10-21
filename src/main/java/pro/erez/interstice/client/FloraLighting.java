@@ -18,7 +18,9 @@ import pro.erez.interstice.Interstice;
 @EventBusSubscriber(modid = Interstice.ID, value = Dist.CLIENT)
 public final class FloraLighting {
     @SubscribeEvent public static void bake(ModelEvent.ModifyBakingResult event) {
-        for (Block block : new Block[]{Interstice.ABYSSAL_TURF.get(), Interstice.TIDE_SPROUT.get(), Interstice.GLOOMCROWN_LEAVES.get()}) {
+        for (Block block : new Block[]{Interstice.ABYSSAL_TURF.get(), Interstice.TIDE_SPROUT.get(), Interstice.GLOOMCROWN_LEAVES.get(),
+                pro.erez.interstice.worldgen.GardenMaterials.PALEHEART_LEAVES.get(),
+                pro.erez.interstice.worldgen.GardenMaterials.CROWN_LEAVES.get()}) {
             for (BlockState state : block.getStateDefinition().getPossibleStates()) {
                 event.getModels().computeIfPresent(BlockModelShaper.stateToModelLocation(state), (key, model) -> new SmoothLuminousModel(model));
             }

@@ -1,0 +1,14 @@
+{
+  "argument.flywheel_backend.id.unknown": "Неизвестный движок «%s»",
+  "command.flywheel.backend.get": "Текущий движок Flywheel: «%s»",
+  "command.flywheel.backend.set": "Движок Flywheel изменён на «%s»",
+  "command.flywheel.backend.set.unavailable": "Запрошенный движок «%s» недоступен",
+  "command.flywheel.limit_updates.get.off": "Ограничение обновлений отключено",
+  "command.flywheel.limit_updates.get.on": "Ограничение обновлений включено",
+  "command.flywheel.limit_updates.set.off": "Ограничение обновлений отключено",
+  "command.flywheel.limit_updates.set.on": "Ограничение обновлений включено",
+  "command.flywheel.use_light_directions.get.off": "Направления освещения не используются",
+  "command.flywheel.use_light_directions.get.on": "Направления освещения используются",
+  "command.flywheel.use_light_directions.set.off": "Использование направлений освещения отключено",
+  "command.flywheel.use_light_directions.set.on": "Использование направлений освещения включено"
+}

@@ -219,3 +219,26 @@ M15 добавляет ещё три палитры готовых изобра�
 Генератор текстур: `tools/GenerateSpiderTextures.java`.
 Конвертеры геометрии и анимаций: `tools/convert_sea_spider.py` и `tools/generate_spider_animation.py`.
 
+## Готовая архитектура Ethereal Structures — V6
+
+По поручению владельца12.10.2026 включены19 архитектурных NBT из
+[Ethereal Structures B1](https://modrinth.com/datapack/ethereal-structures),
+автор Starkye, Modrinth `px0RRcOK`, CC0-1.0. Неизменённые источники, SHA-256,
+официальный archive SHA-512 и CC0 notice находятся в
+`art/sources/cc0/ethereal_structures/`. Архив и сторонние моды не включены в Git.
+
+`tools/import_ethereal_structures.py` воспроизводит игровые шаблоны офлайн:
+сохраняет координаты архитектуры, заменяет материалы существующими блоками,
+удаляет пустые клетки/служебные маркеры/старые данные модов, назначает местный
+лут и добавляет тайник вариантам без контейнера. PNG не создаются/не меняются.
+Все исходные и игровые хеши, замены и размеры фиксируются в
+`assets/interstice/provenance/ethereal-structures.json`.
+Описание и ограничения: [ETHEREAL_STRUCTURES.md](ETHEREAL_STRUCTURES.md).
+
+12.10.2026 дополнительно включены38 неизменённых исходных NBT для крупного
+храма и сборки лагерей из оригинальных частей. `tools/import_ethereal_complexes.py`
+сохраняет геометрию частей и исходные точки соединения; конвертация материалов,
+исключения повреждённых ссылок и детерминированная сборка документированы в
+`assets/interstice/provenance/ethereal-complexes.json`. Лицензия того же B1 — CC0.
+Новые игровые PNG не создаются. [Крупные комплексы](ETHEREAL_COMPLEXES.md).
+

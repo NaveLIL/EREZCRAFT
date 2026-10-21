@@ -32,7 +32,7 @@ public final class SporePodGas {
         cloud.setDuration((int)Math.min(Integer.MAX_VALUE,(long)cloud.tickCount+saved.getLong(EXPIRES)-now));
         if(Math.floorMod(now,5)!=0)return;float radius=cloud.getRadius();
         for(var victim:level.getEntitiesOfClass(LivingEntity.class,cloud.getBoundingBox().inflate(0,1.5,0))){
-            if(!victim.isAlive()||victim instanceof Player p&&(p.isCreative()||p.isSpectator())||victim.getPersistentData().getLong(CONTACT)>now)continue;
+            if(!victim.isAlive()||victim instanceof pro.erez.interstice.entity.CaveRiftSpiderEntity||victim instanceof Player p&&(p.isCreative()||p.isSpectator())||victim.getPersistentData().getLong(CONTACT)>now)continue;
             double dx=victim.getX()-cloud.getX(),dz=victim.getZ()-cloud.getZ();if(dx*dx+dz*dz>radius*radius)continue;
             victim.getPersistentData().putLong(CONTACT,now+20);if(victim instanceof net.minecraft.server.level.ServerPlayer player&&pro.erez.interstice.gear.RealmGear.protect(player,pro.erez.interstice.gear.RealmGear.HazardKind.SPORE_POD))continue;victim.addEffect(new MobEffectInstance(MobEffects.POISON,160,1));victim.addEffect(new MobEffectInstance(MobEffects.WEAKNESS,240));victim.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,80));
         }
