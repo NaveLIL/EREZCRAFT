@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EREZCRAFT">
+  <defs><clipPath id="disc"><circle cx="32" cy="32" r="31"/></clipPath><clipPath id="sea"><path d="M0 53H64V64H0Z"/></clipPath></defs>
+  <g clip-path="url(#disc)">
+    <path fill="#dcdab3" d="M0 0H64V17C53 15 47 18 40 17S22 15 15 17S6 16 0 18Z"/>
+    <path fill="#929671" d="M0 8C13 7 19 9 18 10S10 11 14 12S27 12 29 13H0ZM64 8C55 7 45 9 47 10S55 11 51 12S38 13 39 14H64Z"/>
+    <g clip-path="url(#sea)">
+      <path fill="#98172a" d="M0 53H64V64H0Z"/>
+      <path fill="#c32839" d="M0 55C14 54 20 56 24 57S16 59 21 60S32 61 33 64H0ZM64 55C54 55 46 57 48 58S57 60 52 61H64Z"/>
+    </g>
+  </g>
+  <path fill="#e4e1bd" fill-rule="evenodd" d="M4 24L12 21H52L60 24L52 29L43 39L38 38L32 50L26 38L21 39L12 29ZM15 28L23 35L28 33L32 43L36 33L41 35L49 28Z"/>
+</svg>

@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-21",
+  "brand": "EREZCRAFT",
+  "direction": "Междуморье: остров между двумя морями",
+  "owner_concept_approved": true,
+  "source": "Built-in imagegen first concept; owner-approved PNG preserved unmodified as concept-approved.png",
+  "production": "Project-native SVG interpretation and simplified small-size icon; PNG rendered directly from SVG by Chromium. ICO and ICNS are format conversions of the rendered icon.",
+  "correction": "Both oceans have explicit clip paths; lower water surface is below the entire island, with an alpha-transparent air gap.",
+  "asset_status": "Prepared locally; not included in alpha.16 or launcher0.4.6",
+  "assets": {
+    "concept-approved.png": {
+      "bytes": 1284695,
+      "sha256": "ed0812872268658a8f299552890f32918eb47ae68c9728ba19f1a47331f6177a"
+    },
+    "erezcraft-app-icon.png": {
+      "bytes": 41046,
+      "sha256": "52aaef21d1e1c9daf6ffed0a976628a5ff4c373c2708ad44adb6d1f332ed5ab5"
+    },
+    "erezcraft-emblem.png": {
+      "bytes": 36124,
+      "sha256": "940adeeb393ca9cd32e869149d8dd3289c7c9a0ac56de8fc16c8470646892139"
+    },
+    "erezcraft-emblem.svg": {
+      "bytes": 2424,
+      "sha256": "2263f488327b2cbc60cff7e84661cf6bcdc25468b5eeff913a88c43462769af4"
+    },
+    "erezcraft-icon-small.png": {
+      "bytes": 1729,
+      "sha256": "36e57bd43eb9d0640999ee7df6c0a9adcb5e0fd8a99d181d61686e3c5511b3f7"
+    },
+    "erezcraft-icon-small.svg": {
+      "bytes": 851,
+      "sha256": "a9343961cba5060dabe20497a5ca5e6b3f8857a0630ab3543c7e907f7e20a9fa"
+    },
+    "erezcraft-logo.png": {
+      "bytes": 43373,
+      "sha256": "f25c61ed3eef657fd417fa0aa7dd394cbf46d548b049c540877e763d4f80f9f0"
+    },
+    "erezcraft-logo.svg": {
+      "bytes": 3299,
+      "sha256": "98829cba5f935fa0ab3a8957e28386d9b84002671c79dfea9edd7694239b7c44"
+    },
+    "erezcraft.icns": {
+      "bytes": 134037,
+      "sha256": "094408fb89994b61a4841543e52dcfc4105b75b8d6f71d1a568272c43b8622f1"
+    },
+    "erezcraft.ico": {
+      "bytes": 38916,
+      "sha256": "d6bdd7e9e22c60389af0a384ef8cfca13945c0bfcef899c5b25f03634faee149"
+    }
+  }
+}
