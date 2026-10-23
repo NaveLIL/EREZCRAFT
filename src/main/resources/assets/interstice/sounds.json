@@ -97,5 +97,53 @@
         "name": "interstice:upper_ghast/splash"
       }
     ]
+  },
+  "vault_hunter.ambient": {
+    "subtitle": "subtitles.interstice.vault_hunter.ambient",
+    "sounds": [
+      {
+        "name": "interstice:vault_hunter/ambient"
+      }
+    ]
+  },
+  "vault_hunter.alert": {
+    "subtitle": "subtitles.interstice.vault_hunter.alert",
+    "sounds": [
+      {
+        "name": "interstice:vault_hunter/alert"
+      }
+    ]
+  },
+  "vault_hunter.windup": {
+    "subtitle": "subtitles.interstice.vault_hunter.windup",
+    "sounds": [
+      {
+        "name": "interstice:vault_hunter/windup"
+      }
+    ]
+  },
+  "vault_hunter.attack": {
+    "subtitle": "subtitles.interstice.vault_hunter.attack",
+    "sounds": [
+      {
+        "name": "interstice:vault_hunter/attack"
+      }
+    ]
+  },
+  "vault_hunter.hurt": {
+    "subtitle": "subtitles.interstice.vault_hunter.hurt",
+    "sounds": [
+      {
+        "name": "interstice:vault_hunter/hurt"
+      }
+    ]
+  },
+  "vault_hunter.death": {
+    "subtitle": "subtitles.interstice.vault_hunter.death",
+    "sounds": [
+      {
+        "name": "interstice:vault_hunter/death"
+      }
+    ]
   }
 }

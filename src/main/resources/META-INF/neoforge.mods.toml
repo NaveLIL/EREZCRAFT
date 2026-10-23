@@ -24,3 +24,17 @@ side="BOTH"
 
 [[mixins]]
 config="interstice.mixins.json"
+
+[[dependencies.interstice]]
+modId="smartbrainlib"
+type="required"
+versionRange="[1.16.11]"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.interstice]]
+modId="azurecortex"
+type="required"
+versionRange="[0.1.7]"
+ordering="AFTER"
+side="BOTH"

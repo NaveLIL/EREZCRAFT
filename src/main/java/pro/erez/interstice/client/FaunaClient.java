@@ -19,6 +19,7 @@ public final class FaunaClient {
 
     @SubscribeEvent public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(RealmFauna.CANOPY_SENTINEL.get(), CanopySentinelRenderer::new);
+        event.registerEntityRenderer(pro.erez.interstice.fauna.StrongRealmFauna.VAULT_HUNTER.get(), VaultHunterRenderer::new);
     }
 
     private FaunaClient() {}

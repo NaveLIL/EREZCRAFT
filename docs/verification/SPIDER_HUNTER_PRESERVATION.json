@@ -1,0 +1,25 @@
+{
+  "candidate_sha256": "eb363fcb50d777ade2b29bb9bc21cae2975ec2d331d220ab107ede5bb710ebe4",
+  "candidate_bytes": 2328062,
+  "worldgen": {
+    "files": 127,
+    "changed": []
+  },
+  "textures": {
+    "files": 157,
+    "changed": []
+  },
+  "fluids": {
+    "files": 1,
+    "changed": []
+  },
+  "mixins": {
+    "files": 18,
+    "changed": []
+  },
+  "sea_surface": true,
+  "fluid_client": true,
+  "test_classes_in_main_jar": false,
+  "current_compiled_classes_equal_candidate_jar": 451,
+  "workstation_source_files_unchanged": true
+}

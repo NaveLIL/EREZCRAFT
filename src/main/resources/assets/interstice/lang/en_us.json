@@ -451,5 +451,13 @@
   "navigation.interstice.ethereal.monolith": "Ancient monolith",
   "navigation.interstice.ethereal.shrine": "Forgotten shrine",
   "navigation.interstice.ethereal.tower": "Ruined tower",
-  "navigation.interstice.ethereal.relic": "Ancient mechanism"
+  "navigation.interstice.ethereal.relic": "Ancient mechanism",
+  "entity.interstice.vault_hunter": "Vault Hunter",
+  "item.interstice.vault_hunter_spawn_egg": "Vault Hunter Spawn Egg",
+  "subtitles.interstice.vault_hunter.ambient": "Vault hunter rasps",
+  "subtitles.interstice.vault_hunter.alert": "Vault hunter spots prey",
+  "subtitles.interstice.vault_hunter.windup": "Vault hunter winds up",
+  "subtitles.interstice.vault_hunter.attack": "Vault hunter strikes",
+  "subtitles.interstice.vault_hunter.hurt": "Vault hunter hurts",
+  "subtitles.interstice.vault_hunter.death": "Vault hunter dies"
 }

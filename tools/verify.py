@@ -24,6 +24,9 @@ ALLOWED.add("runEtherealSmoke")
 ALLOWED.add("runEtherealComplexSmoke")
 ALLOWED.add("runPaletteGallery")
 ALLOWED.add("runFaunaGameTestServer")
+ALLOWED.add("runHunterGameTestServer")
+ALLOWED.update(("runHunterColdCreateGameTestServer", "runHunterColdReloadGameTestServer"))
+ALLOWED.add("runSpiderMovementSmoke")
 ALLOWED.add("runRealmExpansionGameTestServer")
 ALLOWED.add("runTensionRealmSmoke")
 ALLOWED.add("runForestCaveGameTestServer")
@@ -340,10 +343,17 @@ def tension_matrix_receipt(result, profile):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--label", required=True)
+    parser.add_argument("--spider-pack-source", type=Path, help="Owned copy of the current client mods/config under .verification")
     parser.add_argument("tasks", nargs="+", choices=sorted(ALLOWED))
     args = parser.parse_args()
     if not re.fullmatch(r"[A-Za-z0-9_-]+", args.label):
         parser.error("label must contain only letters, digits, - and _")
+    if "runSpiderMovementSmoke" in args.tasks:
+        if args.spider_pack_source is None:
+            parser.error("runSpiderMovementSmoke requires --spider-pack-source")
+        args.spider_pack_source = args.spider_pack_source.resolve(strict=True)
+        if not args.spider_pack_source.is_relative_to((ROOT / ".verification").resolve()):
+            parser.error("spider pack source must be an owned copy under .verification")
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
     evidence = ROOT / ".verification" / (stamp + "-" + args.label)
     evidence.mkdir(parents=True, exist_ok=False)
@@ -374,6 +384,8 @@ def main():
                             str(ROOT / "gradle/wrapper/gradle-wrapper.jar"), "org.gradle.wrapper.GradleWrapperMain"]
             command = launcher + ["--no-daemon", "--console=plain",
                        "-PintersticeRunRoot=" + str(evidence / "profiles"), task]
+            if task == "runSpiderMovementSmoke":
+                command.append("-PspiderPackSource=" + str(args.spider_pack_source))
             record = {"command": command, "cwd": str(ROOT), "source_commit": head,
                       "java_home": env.get("JAVA_HOME"), "started_utc": dt.datetime.now(dt.timezone.utc).isoformat()}
             started = time.monotonic()
@@ -472,6 +484,19 @@ def main():
                         accepted = accepted and result.get("foundation_components", 0) >= 20
                         accepted = accepted and result.get("max_heap_bytes") == 10 * 1024 ** 3
                         accepted = accepted and "-XX:+UseZGC" in result.get("jvm_arguments", "") and "-XX:+ZGenerational" in result.get("jvm_arguments", "")
+                except (OSError, ValueError) as error:
+                    record["validation_error"] = str(error); accepted = False
+            if code == 0 and task == "runSpiderMovementSmoke":
+                try:
+                    result = json.loads((evidence / "profiles" / "spiderMovementSmoke" / "spider-movement-validation.json").read_text(encoding="utf-8"))
+                    record["validation"] = result
+                    accepted = accepted and all(result.get(key) is True for key in ("passed", "full_pack_dh_loaded", "own_server_stopped", "server_traversal_passed", "client_variant_dimensions_verified", "client_surface_state_verified", "full_pack_hunter_lost_sight_snapshot", "full_pack_hunter_finite_memory", "full_pack_hunter_covered_ambush", "full_pack_ceiling_spit_hit"))
+                    accepted = accepted and result.get("owner_worlds_used") is False and len(result.get("actual_tick_traversal", [])) == 3
+                    accepted = accepted and all(result.get(key) is True for key in ("wendigo_geometry_and_animation_verified", "full_pack_wendigo_strike_damage", "client_wendigo_strike_synced"))
+                    accepted = accepted and result.get("smartbrainlib_loaded") is True and result.get("hunter_uses_smartbrain") is True
+                    accepted = accepted and result.get("azurecortex_loaded") is True and result.get("all_spiders_use_smartbrain") is True
+                    accepted = accepted and result.get("wall_heading_verified") is True and len(result.get("wall_heading_frames", [])) == 3
+                    accepted = accepted and result.get("eight_hunter_timing", {}).get("active_hunters") == 8
                 except (OSError, ValueError) as error:
                     record["validation_error"] = str(error); accepted = False
             record["accepted"] = accepted

@@ -1,0 +1,8 @@
+SmartBrainLib 1.16.11 — Tslat
+License: Mozilla Public License 2.0 (MPL-2.0).
+Original unmodified NeoForge 1.21.1 binary from Modrinth version O5EpeqI3.
+Source code: https://github.com/Tslat/SmartBrainLib/tree/1.21
+Reviewed source revision: https://github.com/Tslat/SmartBrainLib/tree/1e091c69477f49972d8f434a595a3eb7d115346b
+Upstream project: https://modrinth.com/mod/smartbrainlib
+The original binary is distributed without modification; not shaded into Interstice.
+Download URL and hashes are recorded in hunter-ai.lock.json.

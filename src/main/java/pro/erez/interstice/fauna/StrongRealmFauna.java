@@ -50,21 +50,30 @@ public final class StrongRealmFauna {
                     .<UpperSeaCharge>of(UpperSeaCharge::new, MobCategory.MISC)
                     .sized(.55F, .55F).clientTrackingRange(12).updateInterval(1)
                     .build("interstice:upper_sea_charge"));
+    public static final DeferredHolder<EntityType<?>, EntityType<VaultHunter>> VAULT_HUNTER =
+            ENTITIES.register("vault_hunter", () -> EntityType.Builder.<VaultHunter>of(VaultHunter::new, MobCategory.MONSTER)
+                    .sized(.95F, 2.7F).eyeHeight(1.9F).clientTrackingRange(8).updateInterval(2).build("interstice:vault_hunter"));
+    public static final int HUNTER_LOCAL_CAP = 2, HUNTER_WORLD_CAP = 8;
     public static final int SKELETON_LOCAL_CAP = 2, GHAST_LOCAL_CAP = 1;
     public static final int SKELETON_WORLD_CAP = 16, GHAST_WORLD_CAP = 6;
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, Interstice.ID);
     public static final DeferredHolder<Item, Item> UPPER_SEA_GHAST_SPAWN_EGG = ITEMS.register("upper_sea_ghast_spawn_egg", () ->
             new net.neoforged.neoforge.common.DeferredSpawnEggItem(UPPER_SEA_GHAST, 0x343c40, 0xc5d985, new Item.Properties()));
+    public static final DeferredHolder<Item, Item> VAULT_HUNTER_SPAWN_EGG = ITEMS.register("vault_hunter_spawn_egg", () ->
+            new net.neoforged.neoforge.common.DeferredSpawnEggItem(VAULT_HUNTER, 0x323f42, 0xb1c7b4, new Item.Properties()));
     private static final Map<ServerLevel, Integer> CURSORS = new WeakHashMap<>();
     private StrongRealmFauna() {}
 
     public static void register(IEventBus modBus) {
+        HunterSounds.register(modBus);
+        HunterBrain.register(modBus);
         ENTITIES.register(modBus);
         ITEMS.register(modBus);
         modBus.addListener(StrongRealmFauna::attributes);
         NeoForge.EVENT_BUS.addListener(StrongRealmFauna::tick);
     }
     private static void attributes(EntityAttributeCreationEvent event) {
+        event.put(VAULT_HUNTER.get(), VaultHunter.createHunterAttributes().build());
         event.put(UPPER_SEA_GHAST.get(), UpperSeaGhast.createRealmAttributes().build());
     }
     public static boolean isV6(ServerLevel level) {
@@ -161,6 +170,11 @@ public final class StrongRealmFauna {
                 || !belowPopulationCaps(level, pos, UpperSeaGhast.class, GHAST_LOCAL_CAP, GHAST_WORLD_CAP)) return false;
         return addNatural(level, pos, UPPER_SEA_GHAST.get().create(level));
     }
+    public static boolean trySpawnHunter(ServerLevel level, BlockPos pos) {
+        if (!hasMonsterCapacity(level) || !awayFromPlayers(level, pos) || !cavernHabitat(level, pos)
+                || !belowPopulationCaps(level, pos, VaultHunter.class, HUNTER_LOCAL_CAP, HUNTER_WORLD_CAP)) return false;
+        return addNatural(level, pos, VAULT_HUNTER.get().create(level));
+    }
     private static boolean addNatural(ServerLevel level, BlockPos pos, Mob entity) {
         if (entity == null) return false;
         entity.moveTo(Vec3.atBottomCenterOf(pos));
@@ -194,7 +208,7 @@ public final class StrongRealmFauna {
                     for (int y = top; y > Math.max(geometry.lowerSeaTop(), (int)player.getY() - 20); y--) {
                         BlockPos pos = new BlockPos(x, y, z);
                         if (chunk.getBlockState(pos).isAir() && naturalRock(chunk.getBlockState(pos.below()))
-                                && trySpawnSkeleton(level, pos)) return;
+                                && (level.random.nextInt(4) == 0 ? trySpawnHunter(level, pos) : trySpawnSkeleton(level, pos))) return;
                     }
                 }
             }

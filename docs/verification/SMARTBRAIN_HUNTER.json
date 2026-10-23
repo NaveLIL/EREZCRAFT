@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-23",
+  "scope": "Local owner-approved SmartBrainLib Vault Hunter integration",
+  "source_commit": "bb9f67ac3bc4fd909f613f4ecfcd39134fb3ef83",
+  "published": false,
+  "committed": false,
+  "server_changed": false,
+  "llm_or_openrouter_installed": false,
+  "dependency_lock": "distribution/hunter-ai.lock.json",
+  "smartbrain_version": "1.16.11",
+  "candidate": "build/libs/interstice-0.7.0-preview.12.jar",
+  "candidate_version_note": "Unreleased working candidate retains project version; publication needs a distinct mod version and live sequence check",
+  "component_checks": [
+    {
+      "task": "runGameTestServer",
+      "required_tests_passed": 177,
+      "receipt": ".verification/20261023T052257.163373Z-smartbrain-release-check/runGameTestServer.json"
+    },
+    {
+      "task": "runHunterGameTestServer",
+      "required_tests_passed": 32,
+      "receipt": ".verification/20261023T052257.163373Z-smartbrain-release-check/runHunterGameTestServer.json"
+    },
+    {
+      "task": "runHunterColdCreateGameTestServer",
+      "required_tests_passed": 1,
+      "receipt": ".verification/20261023T052257.163373Z-smartbrain-release-check/runHunterColdCreateGameTestServer.json"
+    },
+    {
+      "task": "runHunterColdReloadGameTestServer",
+      "required_tests_passed": 1,
+      "receipt": ".verification/20261023T052257.163373Z-smartbrain-release-check/runHunterColdReloadGameTestServer.json"
+    }
+  ],
+  "component_checks_total": 211,
+  "native_receipt": ".verification/20261023T052257.163373Z-smartbrain-release-check/runSpiderMovementSmoke.json",
+  "native_validation": {
+    "smartbrainlib_loaded": true,
+    "full_pack_dh_loaded": true,
+    "owner_worlds_used": false,
+    "survival_balance_verified": false,
+    "hunter_uses_smartbrain": true,
+    "wendigo_original_cubes": 84,
+    "wendigo_model_min_y": -0.018709242343902588,
+    "wendigo_model_max_y": 2.6488702297210693,
+    "wendigo_geometry_and_animation_verified": true,
+    "actual_tick_traversal": [
+      {
+        "variant": "SKIRMISHER",
+        "wall_climbed": true,
+        "ceiling_reached": true,
+        "height": 1.2,
+        "distance_to_goal": 1.5497207641601562e-06
+      },
+      {
+        "variant": "LURKER",
+        "wall_climbed": true,
+        "ceiling_reached": true,
+        "height": 1.7,
+        "distance_to_goal": 1.5497207641601562e-06
+      },
+      {
+        "variant": "SPITTER",
+        "wall_climbed": true,
+        "ceiling_reached": true,
+        "height": 1.1,
+        "distance_to_goal": 3.039836883544922e-06
+      }
+    ],
+    "hunter_server_position": "(6.5, 70.0, 22.5)",
+    "hunter_client_id": 285,
+    "server_traversal_passed": true,
+    "full_pack_ceiling_spit_hit": true,
+    "full_pack_hunter_lost_sight_snapshot": true,
+    "full_pack_hunter_covered_ambush": true,
+    "full_pack_hunter_finite_memory": true,
+    "client_wendigo_strike_synced": true,
+    "full_pack_wendigo_strike_damage": true,
+    "eight_hunter_timing": {
+      "active_hunters": 8,
+      "samples": 140,
+      "p50_ms": 4.3347,
+      "p95_ms": 7.1479,
+      "max_ms": 26.4518,
+      "scope": "Prepared integrated-server scene, not production capacity or Survival acceptance"
+    },
+    "client_variant_dimensions_verified": true,
+    "client_surface_state_verified": true,
+    "own_server_stopped": true,
+    "passed": true
+  },
+  "cold_create": {
+    "pid": 20244,
+    "source_had_combat_memory": true,
+    "source_health": 7.0,
+    "passed": true
+  },
+  "cold_reload": {
+    "pid": 13732,
+    "creator_pid": 20244,
+    "wounds_preserved": true,
+    "combat_memory_cleared": true,
+    "passed": true
+  },
+  "assemble_receipt": ".verification/20261023T053351.492485Z-smartbrain-package-final/assemble.json",
+  "verification_tool_tests": {
+    "passed": 68,
+    "command": "python tools/test_verify.py"
+  },
+  "preservation": {
+    "candidate_sha256": "a08ea8ea825c3a5323330585ee03f25b877e54d3c41073137f9ae51b91c4c794",
+    "candidate_bytes": 2459869,
+    "worldgen": {
+      "files": 127,
+      "changed": []
+    },
+    "textures": {
+      "files": 157,
+      "changed": []
+    },
+    "fluids": {
+      "files": 1,
+      "changed": []
+    },
+    "mixins": {
+      "files": 18,
+      "changed": []
+    },
+    "fluid_client": {
+      "files": 4,
+      "changed": []
+    },
+    "sea_surface": {
+      "files": 1,
+      "changed": []
+    },
+    "current_compiled_classes_equal_candidate_jar": 465,
+    "test_classes_in_main_jar": false,
+    "smartbrain_shaded": false,
+    "original_wendigo_pngs_unchanged": true,
+    "workstation_source_files_checked": 182,
+    "workstation_source_files_unchanged": true,
+    "core_zip": {
+      "path": "build/distributions/erezcraft-0.7.0-preview.12-neoforge-modpack.zip",
+      "sha256": "33012cb97937b806789b1fa2b80b86e04a5aee55f048605f11acb650b0d39e88",
+      "bytes": 31475924,
+      "jars": [
+        "mods/interstice-0.7.0-preview.12.jar",
+        "mods/DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar",
+        "mods/lootr-neoforge-1.21.1-1.11.38.127.jar",
+        "mods/SmartBrainLib-neoforge-1.21.1-1.16.11.jar"
+      ],
+      "original_smartbrain_and_licenses_verified": true
+    }
+  },
+  "saved_worlds_unchanged": true,
+  "earlier_failures": [
+    {
+      "evidence": ".verification/20261023T051152.188784Z-smartbrain-full",
+      "reason": "Old 16-block GameTest template did not cover the 14-block projectile target/corridor; replaced by 26x9x10 template without changing projectile production code or original hit assertions."
+    },
+    {
+      "evidence": ".verification/20261023T052004.243691Z-smartbrain-final",
+      "reason": "Aborted owned test JVM: per-test force/unforce tickets conflicted with pending GameTest lifecycle. Experimental forced tickets removed."
+    },
+    {
+      "evidence": ".verification/20261023T052257.163373Z-smartbrain-release-check",
+      "reason": "All game checks passed; assemble failed on self-dependent CopySpec for two license inputs. Inputs changed to a list, subsequent assemble passed. Original failed summary retained."
+    }
+  ],
+  "limitations": [
+    "Prepared integrated scene, not natural Survival acceptance",
+    "No second TCP player / multiplayer acceptance for this change",
+    "Eight-hunter timing is a short integrated scene, not real dedicated capacity or a before/after performance comparison",
+    "NBT file crosses two component JVMs; not full region/world reload acceptance",
+    "Owner artistic assessment and balance still open",
+    "Loaded-chunk guard covers navigation requests; not a global no-chunk-load guarantee",
+    "No public update, launcher catalog mutation or production restart"
+  ]
+}

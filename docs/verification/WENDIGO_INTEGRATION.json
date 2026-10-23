@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-23",
+  "scope": "Local owner-approved Willmood Wendigo integration and AI library source review",
+  "published": false,
+  "committed": false,
+  "server_changed": false,
+  "llm_or_openrouter_installed": false,
+  "ai_libraries_installed": false,
+  "candidate": "build/libs/interstice-0.7.0-preview.12.jar",
+  "candidate_version_note": "Unreleased working candidate retains project version; coordinated publication needs a distinct mod version and live sequence check",
+  "component_checks": [
+    {
+      "task": "runHunterGameTestServer",
+      "accepted": true,
+      "required_tests_passed": 27,
+      "receipt": ".verification/20261023T044342.811334Z-wendigo-final/runHunterGameTestServer.json"
+    },
+    {
+      "task": "runGameTestServer",
+      "accepted": true,
+      "required_tests_passed": 177,
+      "receipt": ".verification/20261023T044342.811334Z-wendigo-final/runGameTestServer.json"
+    }
+  ],
+  "component_checks_total": 204,
+  "native_receipt": ".verification/20261023T044939.170675Z-wendigo-gallery-final/runSpiderMovementSmoke.json",
+  "native_validation": {
+    "full_pack_dh_loaded": true,
+    "owner_worlds_used": false,
+    "survival_balance_verified": false,
+    "wendigo_original_cubes": 84,
+    "wendigo_model_min_y": -0.018709242343902588,
+    "wendigo_model_max_y": 2.647944211959839,
+    "wendigo_geometry_and_animation_verified": true,
+    "actual_tick_traversal": [
+      {
+        "variant": "SKIRMISHER",
+        "wall_climbed": true,
+        "ceiling_reached": true,
+        "height": 1.2,
+        "distance_to_goal": 1.5497207641601562e-06
+      },
+      {
+        "variant": "LURKER",
+        "wall_climbed": true,
+        "ceiling_reached": true,
+        "height": 1.7,
+        "distance_to_goal": 1.5497207641601562e-06
+      },
+      {
+        "variant": "SPITTER",
+        "wall_climbed": true,
+        "ceiling_reached": true,
+        "height": 1.1,
+        "distance_to_goal": 3.039836883544922e-06
+      }
+    ],
+    "hunter_server_position": "(6.5, 70.0, 22.5)",
+    "hunter_client_id": 142,
+    "server_traversal_passed": true,
+    "full_pack_ceiling_spit_hit": true,
+    "full_pack_hunter_lost_sight_snapshot": true,
+    "full_pack_hunter_covered_ambush": true,
+    "full_pack_hunter_finite_memory": true,
+    "client_wendigo_strike_synced": true,
+    "full_pack_wendigo_strike_damage": true,
+    "client_variant_dimensions_verified": true,
+    "client_surface_state_verified": true,
+    "own_server_stopped": true,
+    "passed": true
+  },
+  "earlier_full_regression_native_receipt": ".verification/20261023T044342.811334Z-wendigo-final/runSpiderMovementSmoke.json",
+  "assemble_receipt": ".verification/20261023T044342.811334Z-wendigo-final/assemble.json",
+  "verification_tool_tests": {
+    "passed": 68,
+    "command": "python tools/test_verify.py"
+  },
+  "preservation": {
+    "candidate_sha256": "9c545ab047fe023fdad201f40bcb310f5aa7f6e74995ccee1b40f1c690ef967e",
+    "candidate_bytes": 2444775,
+    "worldgen": {
+      "files": 127,
+      "changed": []
+    },
+    "textures": {
+      "files": 157,
+      "changed": []
+    },
+    "fluids": {
+      "files": 1,
+      "changed": []
+    },
+    "mixins": {
+      "files": 18,
+      "changed": []
+    },
+    "sea_surface": true,
+    "fluid_client": true,
+    "test_classes_in_main_jar": false,
+    "current_compiled_classes_equal_candidate_jar": 456,
+    "original_wendigo_main_png_unchanged": true,
+    "original_wendigo_eye_png_unchanged": true,
+    "license_and_attribution_bundled": true,
+    "hunter_ogg_count": 6,
+    "workstation_source_files_checked": 182,
+    "workstation_source_files_unchanged": true
+  },
+  "saved_worlds_unchanged": true,
+  "screenshots": [
+    "docs/verification/wendigo/front.png",
+    "docs/verification/wendigo/strike.png"
+  ],
+  "limitations": [
+    "Prepared diagnostic scene, not natural Survival acceptance",
+    "No second TCP player / multiplayer acceptance for this change",
+    "No real server capacity measurement",
+    "Owner artistic assessment of animation/sound and provisional loot balance still open",
+    "Libraries reviewed through metadata and selected source classes only; no runtime integration or benchmark claimed"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Wendigo / Vault Hunter",
+  "creator": "Willmood",
+  "source": "https://sketchfab.com/3d-models/free-wendigo-for-all-very-old-model-f0006885dac14bc690e8150902a670ef",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "retrieved": "2026-10-23",
+  "archive_sha256": "5a5fcb5b03b400226e452ed004f2c913278b101c9e9cf357da468b8a9d341c06",
+  "source_sha256": "e7907b5a153bd7e1cb1e15342e17407745a648a07cc6cfa5af944311fdb2e24d",
+  "texture_sha256": "4e6dbe835e18241a0b9738e3c4736df31ed72384945f72ce5158519a5c121348",
+  "original_cubes": 84,
+  "adaptations": [
+    "Java ModelParts coordinate conversion, rotations and exact per-face UV",
+    "uniform scale",
+    "EREZ Dev original gameplay animation; source contains only demonstration pose"
+  ],
+  "texture_modified": false,
+  "attribution": "Wendigo model and texture by Willmood, CC BY 4.0; adapted by EREZ Dev",
+  "previous_prototype": "Original six-cuboid behaviour-test geometry using vaultstone; replaced by owner-approved Wendigo",
+  "eyes_texture_sha256": "47535e0ddd4d023e90b84e331f714633133345fd3c9742caebfdf2c077093488",
+  "eyes_texture_modified": false
+}

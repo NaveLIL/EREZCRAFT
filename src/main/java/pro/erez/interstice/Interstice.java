@@ -72,7 +72,7 @@ public final class Interstice {
     public static final DeferredHolder<Block, pro.erez.interstice.block.SpiderEggSacBlock> SPIDER_EGG_SAC = BLOCKS.register("spider_egg_sac", pro.erez.interstice.block.SpiderEggSacBlock::new);
     public static final DeferredHolder<net.minecraft.world.entity.EntityType<?>, net.minecraft.world.entity.EntityType<pro.erez.interstice.entity.CaveRiftSpiderEntity>> CAVE_RIFT_SPIDER =
             ENTITY_TYPES.register("cave_rift_spider", () -> net.minecraft.world.entity.EntityType.Builder.of(pro.erez.interstice.entity.CaveRiftSpiderEntity::new, net.minecraft.world.entity.MobCategory.MONSTER)
-                    .sized(1.2F, 0.7F)
+                    .sized(1.2F, 1.2F)
                     .clientTrackingRange(8)
                     .build("cave_rift_spider"));
     public static final DeferredHolder<net.minecraft.world.entity.EntityType<?>, net.minecraft.world.entity.EntityType<pro.erez.interstice.entity.ToxinSpitEntity>> TOXIN_SPIT =
@@ -173,6 +173,7 @@ public final class Interstice {
                 output.accept(SPIDER_EGG_SAC_ITEM.get());
                 output.accept(CAVE_RIFT_SPIDER_SPAWN_EGG.get());
                     output.accept(pro.erez.interstice.fauna.StrongRealmFauna.UPPER_SEA_GHAST_SPAWN_EGG.get());
+                    output.accept(pro.erez.interstice.fauna.StrongRealmFauna.VAULT_HUNTER_SPAWN_EGG.get());
                 output.accept(ECHO_SHARD.get());
                 output.accept(ECHO_RIFT_ANCHOR.get());
             }).build());
@@ -204,6 +205,7 @@ public final class Interstice {
         pro.erez.interstice.navigation.RealmNavigation.register(bus);
         pro.erez.interstice.fauna.RealmFauna.register(bus);
         pro.erez.interstice.fauna.StrongRealmFauna.register(bus);
+        pro.erez.interstice.entity.SpiderBrain.register(bus);
         pro.erez.interstice.fauna.TideFauna.register(bus);
         pro.erez.interstice.ecology.RealmEcology.register(bus);
         pro.erez.interstice.gear.RealmGear.register(bus);

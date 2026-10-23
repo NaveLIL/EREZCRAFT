@@ -82,6 +82,7 @@ public final class SpiderCombatGameTests {
         corridor(helper);
         var owner = owner(helper, ownerPos); owner.setClimbingCeiling(ceiling);
         var target = target(helper, targetPos);
+        helper.assertTrue(helper.getLevel().isPositionEntityTicking(target.blockPosition()), "Projectile target lies outside the ticking fixture");
         owner.performRangedAttack(target, 1);
         var shots = shots(helper, owner);
         helper.assertTrue(shots.size() == 1, "Visible in-range stationary target did not receive a shot");
@@ -89,48 +90,52 @@ public final class SpiderCombatGameTests {
         helper.assertTrue(shots.getFirst().getDeltaMovement().length() <= .8500001,
                 "Accuracy repair increased accepted launch speed");
         helper.runAtTickTime(35, () -> {
-            helper.assertTrue(shots.getFirst().isRemoved(), "Real projectile did not finish its impact");
+            helper.assertTrue(shots.getFirst().isRemoved(), "Real projectile did not finish its impact: ticks="+shots.getFirst().tickCount+" position="+shots.getFirst().position()+" prey="+target.position());
             helper.assertTrue(Math.abs(target.getHealth() - 16) < .001,
                     "Real shot failed to deal exactly four damage at the stationary target: " + target.getHealth());
             helper.succeed();
         });
     }
 
-    @GameTest(template = "empty", batch = "spider_combat_ten", timeoutTicks = 60)
+    @GameTest(template = "spider_combat", batch = "spider_combat_ten", timeoutTicks = 60)
     public static void actualProjectileHitsStationaryZombieTenBlocksAway(GameTestHelper helper) {
         hits(helper, new BlockPos(3, 2, 5), new BlockPos(13, 2, 5), false);
     }
 
-    @GameTest(template = "empty", batch = "spider_combat_fourteen", timeoutTicks = 60)
+    @GameTest(template = "spider_combat", batch = "spider_combat_fourteen", timeoutTicks = 60)
     public static void actualProjectileHitsStationaryZombieAtFourteenBlockLimit(GameTestHelper helper) {
         hits(helper, new BlockPos(3, 2, 5), new BlockPos(17, 2, 5), false);
     }
 
-    @GameTest(template = "empty", batch = "spider_combat_ceiling", timeoutTicks = 60)
+    @GameTest(template = "spider_combat", batch = "spider_combat_ceiling", timeoutTicks = 60)
     public static void ceilingVariantAimsFromActualMuzzleAtLowerPrey(GameTestHelper helper) {
         hits(helper, new BlockPos(3, 5, 5), new BlockPos(13, 2, 5), true);
     }
 
-    @GameTest(template = "empty", batch = "spider_combat_raised", timeoutTicks = 60)
+    @GameTest(template = "spider_combat", batch = "spider_combat_raised", timeoutTicks = 60)
     public static void actualProjectileReachesRaisedPrey(GameTestHelper helper) {
         hits(helper, new BlockPos(3, 2, 5), new BlockPos(13, 4, 5), false);
     }
 
-    @GameTest(template = "empty", batch = "spider_combat_low_roof", timeoutTicks = 60)
+    @GameTest(template = "spider_combat", batch = "spider_combat_low_roof", timeoutTicks = 60)
     public static void visibleTargetUnderLowRoofDoesNotReceiveShotThroughBlockedArc(GameTestHelper helper) {
         corridor(helper);
         var owner = owner(helper, new BlockPos(3, 2, 5));
         var target = target(helper, new BlockPos(13, 2, 5));
         // This obstacle is above the direct eye ray, but inside the actual ballistic arc.
-        helper.setBlock(new BlockPos(5, 3, 5), Blocks.STONE);
+        // Leave clearance for the taller/wider body while the arc grazes the near roof edge.
+        owner.setPos(owner.getX()-.25, owner.getY(), owner.getZ());
+        // Updated for the taller variant eye; still requires clear sight and a blocked ballistic arc.
+        helper.setBlock(new BlockPos(4, 3, 5), Blocks.STONE);
         owner.getSensing().tick();
+        helper.assertTrue(helper.getLevel().noCollision(owner,owner.getBoundingBox()), "Roof fixture intersects the enlarged body");
         helper.assertTrue(owner.getSensing().hasLineOfSight(target), "Fixture blocked straight sight rather than the arc");
         owner.performRangedAttack(target, 1);
         helper.assertTrue(shots(helper, owner).isEmpty(), "Trajectory preflight ignored a real collider above the eye ray");
         helper.succeed();
     }
 
-    @GameTest(template = "empty", batch = "spider_combat_late_cover", timeoutTicks = 60)
+    @GameTest(template = "spider_combat", batch = "spider_combat_late_cover", timeoutTicks = 60)
     public static void coverPlacedAfterLaunchStopsTheNativeProjectile(GameTestHelper helper) {
         corridor(helper);
         var owner = owner(helper, new BlockPos(3, 2, 5));
@@ -147,7 +152,7 @@ public final class SpiderCombatGameTests {
         });
     }
 
-    @GameTest(template = "empty", batch = "spider_combat_mod_armor", timeoutTicks = 60)
+    @GameTest(template = "spider_combat", batch = "spider_combat_mod_armor", timeoutTicks = 60)
     public static void nonVanillaEquipmentArmorProtectsOrdinaryDamageButNeitherSpiderAttack(GameTestHelper helper) {
         corridor(helper);
         var owner = owner(helper, new BlockPos(3, 2, 5));

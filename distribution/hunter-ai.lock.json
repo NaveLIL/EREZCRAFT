@@ -1,0 +1,22 @@
+{
+  "purpose": "Owner-approved Vault Hunter SmartBrain integration, local unreleased dependency",
+  "source": "https://modrinth.com/mod/smartbrainlib",
+  "source_repository": "https://github.com/Tslat/SmartBrainLib",
+  "source_commit": "1e091c69477f49972d8f434a595a3eb7d115346b",
+  "license": "MPL-2.0",
+  "minecraft": "1.21.1",
+  "loader": "neoforge",
+  "client_required": true,
+  "server_required": true,
+  "version": "1.16.11",
+  "modrinth_project": "PuyPazRT",
+  "modrinth_version": "O5EpeqI3",
+  "filename": "SmartBrainLib-neoforge-1.21.1-1.16.11.jar",
+  "download_url": "https://cdn.modrinth.com/data/PuyPazRT/versions/O5EpeqI3/SmartBrainLib-neoforge-1.21.1-1.16.11.jar",
+  "bytes": 391053,
+  "sha512": "bfc76f6fd8c388d01b80601ad1b826f6b3f5ec5ea915e5725af129561e6bc4a10890975e6f6d2a0348d842c13042dcf1a9d0a1574fba76bce60119bee76e2dc2",
+  "sha256": "68036561cc5511766d54cc0deabc3fc3a5e68f9e3db2478f2574ec82b494374b",
+  "published": true,
+  "delivery_sequence": 17,
+  "release_id": "techmagic-0-1-0-alpha-17-fauna"
+}

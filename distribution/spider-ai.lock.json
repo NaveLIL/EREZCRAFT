@@ -1,0 +1,22 @@
+{
+  "version": "0.1.7",
+  "minecraft": "1.21.1",
+  "loader": "neoforge",
+  "coordinate": "com.azure.azurecortex:azurecortex-neoforge-1.21.1:0.1.7",
+  "source_commit": "ff3cd7431d2de0f3c61b16ef8b77a0397d8e639d",
+  "source_repository": "https://github.com/AzureDoom/AzureCortex",
+  "download_url": "https://maven.azuredoom.com/mods/com/azure/azurecortex/azurecortex-neoforge-1.21.1/0.1.7/azurecortex-neoforge-1.21.1-0.1.7.jar",
+  "filename": "azurecortex-neoforge-1.21.1-0.1.7.jar",
+  "bytes": 217677,
+  "sha256": "fee651757aeb4aee52941d1b0d0d4d4c6aadf73418cd5ebf64a78f910442332b",
+  "sha512": "2e440981640bc2f78e380b1361dea98724cba538e63e96338a07d17b09f97c2951b7931a10a184b0e7ad655581e243f4c15e387d652cadeafff31d4de51b8cbe",
+  "license": "MIT",
+  "client_required": true,
+  "server_required": true,
+  "published": true,
+  "release_common_sources_url": "https://maven.azuredoom.com/mods/com/azure/azurecortex/azurecortex-common-1.21.1/0.1.7/azurecortex-common-1.21.1-0.1.7-sources.jar",
+  "release_common_sources_sha256": "ac2ec959f50f14da59ac001632ea3d7b320885265bfbcbdcdbbd5b1d6cc57610",
+  "reviewed_crawl_sources_match_release": true,
+  "delivery_sequence": 17,
+  "release_id": "techmagic-0-1-0-alpha-17-fauna"
+}

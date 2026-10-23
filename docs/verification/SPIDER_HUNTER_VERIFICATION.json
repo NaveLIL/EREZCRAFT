@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-23",
+  "status": "local_unreleased_candidate",
+  "base_commit": "bb9f67ac3bc4fd909f613f4ecfcd39134fb3ef83",
+  "published": false,
+  "live_game_server_modified": false,
+  "launcher_modified": false,
+  "tests_passed": 237,
+  "component_groups": {
+    "runHunterGameTestServer": {
+      "passed": true,
+      "tests": 22,
+      "receipt": ".verification\\20261023T035337.706611Z-spider-hunter-source-final\\runHunterGameTestServer.json"
+    },
+    "runGameTestServer": {
+      "passed": true,
+      "tests": 177,
+      "receipt": ".verification\\20261023T034627.447528Z-spider-hunter-persistence-final\\runGameTestServer.json"
+    },
+    "runRealmExpansionGameTestServer": {
+      "passed": true,
+      "tests": 21,
+      "receipt": ".verification\\20261023T031633.323934Z-spider-hunter-regression\\runRealmExpansionGameTestServer.json"
+    },
+    "runEcologyGameTestServer": {
+      "passed": true,
+      "tests": 17,
+      "receipt": ".verification\\20261023T031633.323934Z-spider-hunter-regression\\runEcologyGameTestServer.json"
+    }
+  },
+  "component_gametest_dh_exception": true,
+  "full_client_with_dh": {
+    "full_pack_dh_loaded": true,
+    "owner_worlds_used": false,
+    "survival_balance_verified": false,
+    "actual_tick_traversal": [
+      {
+        "variant": "SKIRMISHER",
+        "wall_climbed": true,
+        "ceiling_reached": true,
+        "height": 1.2,
+        "distance_to_goal": 1.5497207641601562e-06
+      },
+      {
+        "variant": "LURKER",
+        "wall_climbed": true,
+        "ceiling_reached": true,
+        "height": 1.7,
+        "distance_to_goal": 1.5497207641601562e-06
+      },
+      {
+        "variant": "SPITTER",
+        "wall_climbed": true,
+        "ceiling_reached": true,
+        "height": 1.1,
+        "distance_to_goal": 3.039836883544922e-06
+      }
+    ],
+    "hunter_server_position": "(6.5, 70.0, 22.5)",
+    "hunter_client_id": 113,
+    "server_traversal_passed": true,
+    "full_pack_ceiling_spit_hit": true,
+    "full_pack_hunter_lost_sight_snapshot": true,
+    "full_pack_hunter_covered_ambush": true,
+    "full_pack_hunter_finite_memory": true,
+    "client_variant_dimensions_verified": true,
+    "client_surface_state_verified": true,
+    "own_server_stopped": true,
+    "passed": true
+  },
+  "full_client_components": 65,
+  "actual_native_dimension": "interstice:islands_v6",
+  "actual_native_generator_revision": 6,
+  "native_receipt": ".verification\\20261023T034627.447528Z-spider-hunter-persistence-final\\runSpiderMovementSmoke.json",
+  "preservation": {
+    "candidate_sha256": "eb363fcb50d777ade2b29bb9bc21cae2975ec2d331d220ab107ede5bb710ebe4",
+    "candidate_bytes": 2328062,
+    "worldgen": {
+      "files": 127,
+      "changed": []
+    },
+    "textures": {
+      "files": 157,
+      "changed": []
+    },
+    "fluids": {
+      "files": 1,
+      "changed": []
+    },
+    "mixins": {
+      "files": 18,
+      "changed": []
+    },
+    "sea_surface": true,
+    "fluid_client": true,
+    "test_classes_in_main_jar": false,
+    "current_compiled_classes_equal_candidate_jar": 451,
+    "workstation_source_files_unchanged": true
+  },
+  "protected_save_snapshots_unchanged": true,
+  "verification_harness_unit_tests": 68,
+  "native_scope": "Fresh owned prepared scenes and actual integrated-server ticks; no Survival, multiplayer login or capacity acceptance",
+  "hunter_art": "Temporary cuboid prototype using unchanged accepted vaultstone tile; final art/audio/balance not accepted",
+  "artifact": "build\\libs\\interstice-0.7.0-preview.12.jar",
+  "artifact_version_note": "Unreleased working candidate retains existing project version; a coordinated publication requires a distinct mod version and a new signed delivery sequence"
+}

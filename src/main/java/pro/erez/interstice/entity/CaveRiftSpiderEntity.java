@@ -1,6 +1,7 @@
 package pro.erez.interstice.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -27,10 +28,15 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
+import com.mojang.serialization.Dynamic;
+import net.minecraft.world.entity.ai.Brain;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
+import net.tslat.smartbrainlib.api.SmartBrainOwner;
+import net.tslat.smartbrainlib.api.core.*;
+import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
+import com.azure.azurecortex.navigation.crawl.CrawlCapability;
+import com.azure.azurecortex.navigation.movement.NavigationQueries;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
@@ -44,7 +50,7 @@ import java.util.EnumSet;
 import pro.erez.interstice.Interstice;
 import pro.erez.interstice.worldgen.IslandChunkGenerator;
 
-public final class CaveRiftSpiderEntity extends Monster implements RangedAttackMob {
+public final class CaveRiftSpiderEntity extends Monster implements RangedAttackMob, SmartBrainOwner<CaveRiftSpiderEntity>, CrawlCapability {
     public static final ResourceKey<DamageType> SPIDER_BITE =
             ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(Interstice.ID, "spider_bite"));
     public static final ResourceKey<DamageType> SPIDER_SPIT =
@@ -57,6 +63,107 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int burstTicks = 0;
+    private static final EntityDataAccessor<Byte> DATA_SURFACE =
+            SynchedEntityData.defineId(CaveRiftSpiderEntity.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Float> CRAWL_FORWARD_X=SynchedEntityData.defineId(CaveRiftSpiderEntity.class,EntityDataSerializers.FLOAT),
+            CRAWL_FORWARD_Y=SynchedEntityData.defineId(CaveRiftSpiderEntity.class,EntityDataSerializers.FLOAT),
+            CRAWL_FORWARD_Z=SynchedEntityData.defineId(CaveRiftSpiderEntity.class,EntityDataSerializers.FLOAT);
+    private java.util.List<SpiderSurfacePath.Step> surfacePath = java.util.List.of();
+    private int surfaceStep, detachTicks, nextSurfacePlan, nextSurfaceSpitAttempt, nextSpitTick;
+    private Vec3 surfaceGoal;
+    private boolean needsBodyFit = true;
+    private boolean brainPaused;
+    private int crawlGrace;
+    private Vec3 oldCrawlForward=new Vec3(0,0,1);
+    private Direction previousSurface = Direction.DOWN;
+    private float surfaceTransition = 1, oldSurfaceTransition = 1;
+
+    @Override public EntityDimensions getDefaultDimensions(Pose pose) {
+        // A stable volume in every orientation; the visual body is ~1.5*scale tall.
+        float size = 2.0F * getVariant().scale;
+        return EntityDimensions.scalable(size, size).withEyeHeight(size * .7F);
+    }
+    @Override public void onSyncedDataUpdated(EntityDataAccessor<?> key) {
+        super.onSyncedDataUpdated(key);
+        if (DATA_VARIANT.equals(key)) refreshDimensions();
+        if (DATA_SURFACE.equals(key)) {
+            previousSurface = visualSurface;
+            visualSurface = getSurface();
+            surfaceTransition = oldSurfaceTransition = 0;
+        }
+    }
+    private Direction visualSurface = Direction.DOWN;
+    public Direction getSurface() { return Direction.from3DDataValue(entityData.get(DATA_SURFACE)); }
+    public Direction previousSurface() { return previousSurface; }
+    public float surfaceTransition(float partial) { return Mth.lerp(partial, oldSurfaceTransition, surfaceTransition); }
+    private void attach(Direction surface) {
+        entityData.set(DATA_SURFACE, (byte)surface.get3DDataValue());
+        setClimbingCeiling(surface == Direction.UP);
+        setClimbingWall(surface.getAxis().isHorizontal());
+    }
+    public void detachFromSurface() {
+        detachTicks = 16;
+        surfacePath = java.util.List.of(); surfaceGoal = null;
+        attach(Direction.DOWN);
+    }
+    private boolean support(Direction face) {
+        AABB bb = getBoundingBox().deflate(.08);
+        double reach = .18;
+        AABB probe = switch (face) {
+            case DOWN -> new AABB(bb.minX, getBoundingBox().minY - reach, bb.minZ, bb.maxX, getBoundingBox().minY + .01, bb.maxZ);
+            case UP -> new AABB(bb.minX, getBoundingBox().maxY - .01, bb.minZ, bb.maxX, getBoundingBox().maxY + reach, bb.maxZ);
+            case EAST -> new AABB(getBoundingBox().maxX - .01, bb.minY, bb.minZ, getBoundingBox().maxX + reach, bb.maxY, bb.maxZ);
+            case WEST -> new AABB(getBoundingBox().minX - reach, bb.minY, bb.minZ, getBoundingBox().minX + .01, bb.maxY, bb.maxZ);
+            case SOUTH -> new AABB(bb.minX, bb.minY, getBoundingBox().maxZ - .01, bb.maxX, bb.maxY, getBoundingBox().maxZ + reach);
+            case NORTH -> new AABB(bb.minX, bb.minY, getBoundingBox().minZ - reach, bb.maxX, bb.maxY, getBoundingBox().minZ + .01);
+        };
+        if (!level().hasChunksAt(BlockPos.containing(probe.minX, probe.minY, probe.minZ), BlockPos.containing(probe.maxX, probe.maxY, probe.maxZ))) return false;
+        return !level().noCollision(this, probe);
+    }
+    /** A real route request, also used by isolated traversal checks. It never teleports the spider. */
+    public boolean crawlTo(Vec3 bodyCenter) {
+        var path = new AzureSpiderNavigation(this).find(bodyCenter);
+        if (path.isEmpty()) return false;
+        surfaceGoal = bodyCenter; surfacePath = path; surfaceStep = 0;
+        getNavigation().stop();
+        return true;
+    }
+    public boolean hasSurfaceRoute() { return surfaceStep < surfacePath.size(); }
+    @Override public void calculateEntityAnimation(boolean includeY) {
+        super.calculateEntityAnimation(includeY || isClimbingWall() || isClimbingCeiling());
+    }
+    private static final java.util.Map<Level, SurfacePlanBudget> SURFACE_PLAN_TICK = new java.util.WeakHashMap<>();
+    public boolean surfaceControlNeeded() {
+            if (detachTicks > 0 || isInWater() || isInLava()) return false;
+            if (hasSurfaceRoute() || isClimbingCeiling() || isClimbingWall()) return true;
+            return tickCount >= nextSurfacePlan && (hasCeilingAbove() && !onGround() || horizontalCollision
+                    || getTarget() != null && getTarget().isAlive() && distanceToSqr(getTarget()) > 16 && getTarget().getY() > getY()+1.5 && getNavigation().isDone()
+                    || getVariant()==Variant.LURKER && !isBursting() && getTarget()==null);
+        }
+    public void tickSurfaceControl() {
+            getNavigation().stop();
+            if (tickCount < nextSurfacePlan || hasSurfaceRoute()) return;
+            if (!SURFACE_PLAN_TICK.computeIfAbsent(level(), ignored -> new SurfacePlanBudget()).tryAcquire(getId(), level().getGameTime())) return;
+            nextSurfacePlan = tickCount + 35 + getId() % 10;
+            LivingEntity target = getTarget();
+            Vec3 goal = SpiderBrain.observed(this);
+            if(goal==null)goal=surfaceGoal;
+            if (target != null && getSensing().hasLineOfSight(target))
+                goal = new Vec3(target.getX(), getY() + getBbHeight()/2, target.getZ());
+            // Reach the underside via a wall, instead of pushing vertically into the roof forever.
+            if (!isClimbingCeiling()) {
+                BlockPos base = blockPosition();
+                for (int dy = 1; dy <= 12; dy++) {
+                    BlockPos pos = base.above(dy);
+                    if (!level().hasChunkAt(pos)) break;
+                    if (level().getBlockState(pos).isFaceSturdy(level(), pos, Direction.DOWN)) {
+                        Vec3 roof = new Vec3(goal == null ? getX() : goal.x, pos.getY()-getBbHeight()/2, goal == null ? getZ() : goal.z);
+                        if (!crawlTo(roof)) crawlTo(new Vec3(getX(), roof.y, getZ()));
+                        return;
+                    }
+                }
+            } else if (goal != null) crawlTo(goal);
+    }
 
     public enum Variant {
         SKIRMISHER(0, "skirmisher", 16.0, 0.36, 5.0, 0.60F),
@@ -104,6 +211,8 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         super.defineSynchedData(builder);
         builder.define(DATA_FLAGS, (byte) 0);
         builder.define(DATA_VARIANT, (byte) Variant.SKIRMISHER.id);
+        builder.define(DATA_SURFACE, (byte) Direction.DOWN.get3DDataValue());
+        builder.define(CRAWL_FORWARD_X,0F);builder.define(CRAWL_FORWARD_Y,0F);builder.define(CRAWL_FORWARD_Z,1F);
     }
 
     public Variant getVariant() {
@@ -117,6 +226,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
     private void applyVariant(Variant variant, boolean initializeHealth) {
         this.entityData.set(DATA_VARIANT, (byte) variant.id);
         this.reapplyAttributes(initializeHealth);
+        if (initializeHealth) needsBodyFit = true;
     }
 
     private void reapplyAttributes(boolean initializeHealth) {
@@ -163,11 +273,11 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
     }
 
     public void triggerAmbushBurst() {
-        if (getVariant() == Variant.LURKER && !isBursting()) {
+        if (getVariant() == Variant.LURKER && !isBursting() && SpiderBrain.canBurst(this)) {
+            SpiderBrain.burstStarted(this);
             this.burstTicks = 160; // 8 seconds burst sprint
             this.setBursting(true);
             this.playSound(SoundEvents.SPIDER_HURT, 1.3F, 1.6F);
-            alertPack(this.getTarget());
             if (this.getTarget() != null) {
                 performAmbushLunge(this.getTarget());
             }
@@ -199,24 +309,36 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         }
     }
 
-    public void alertPack(LivingEntity target) {
-        if (target == null || this.level().isClientSide) return;
-        var box = new AABB(this.getX() - 20, this.getY() - 10, this.getZ() - 20,
-                this.getX() + 20, this.getY() + 10, this.getZ() + 20);
-        var pack = this.level().getEntitiesOfClass(CaveRiftSpiderEntity.class, box, s -> s.isAlive() && s != this);
-        for (var spider : pack) {
-            if (spider.getTarget() == null) {
-                spider.setTarget(target);
-                if (spider.getVariant() == Variant.LURKER) {
-                    spider.triggerAmbushBurst();
-                }
-            }
-        }
-    }
+    public void alertPack(LivingEntity target) { SpiderBrain.alert(this,target); }
 
+    @Override protected Brain.Provider<CaveRiftSpiderEntity> brainProvider(){return new SmartBrainProvider<>(this);}
+    @Override protected Brain<?> makeBrain(Dynamic<?> data){return brainProvider().makeBrain(data);}
+    @Override @SuppressWarnings("unchecked") public Brain<CaveRiftSpiderEntity> getBrain(){return (Brain<CaveRiftSpiderEntity>)super.getBrain();}
+    @Override public java.util.List<? extends ExtendedSensor<? extends CaveRiftSpiderEntity>> getSensors(){return SpiderBrain.sensors();}
+    @Override public BrainActivityGroup<CaveRiftSpiderEntity> getCoreTasks(){return SpiderBrain.core();}
+    @Override public BrainActivityGroup<CaveRiftSpiderEntity> getIdleTasks(){return SpiderBrain.idle();}
+    @Override public BrainActivityGroup<CaveRiftSpiderEntity> getFightTasks(){return SpiderBrain.fight();}
+    @Override protected void customServerAiStep(){super.customServerAiStep();tickBrain(this);}
+    @Override public LivingEntity getTarget(){return getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).orElse(null);}
+    public String combatTactic(){return SpiderBrain.tactic(this);}
+    public int spitCooldownRemaining(){return Math.max(0,nextSpitTick-tickCount);}
+    @Override public boolean isWallCrawling(){return isClimbingWall()||isClimbingCeiling();}
+    @Override public void setWallCrawling(boolean value){if(!value)attach(Direction.DOWN);else crawlGrace=4;}
+    @Override public int getWallCrawlGraceTicks(){return crawlGrace;}
+    @Override public void setWallCrawlGraceTicks(int value){crawlGrace=value;}
+    @Override public Vec3 getCrawlForward(){return new Vec3(entityData.get(CRAWL_FORWARD_X),entityData.get(CRAWL_FORWARD_Y),entityData.get(CRAWL_FORWARD_Z));}
+    @Override public Vec3 getOldCrawlForward(){return oldCrawlForward;}
+    @Override public Vec3 getCrawlUp(){return Vec3.atLowerCornerOf(getSurface().getOpposite().getNormal());}
+    @Override public Vec3 getOldCrawlUp(){return Vec3.atLowerCornerOf(previousSurface().getOpposite().getNormal());}
+    @Override public double getCrawlDistFromBlock(){return 0;}
+    @Override public double getOldCrawlDistFromBlock(){return 0;}
+    @Override public void setCrawlOrientation(Vec3 forward,Vec3 up,double distance){
+        if(forward.lengthSqr()>.00001){forward=forward.normalize();entityData.set(CRAWL_FORWARD_X,(float)forward.x);entityData.set(CRAWL_FORWARD_Y,(float)forward.y);entityData.set(CRAWL_FORWARD_Z,(float)forward.z);}
+        attach(Direction.getNearest(up.x,up.y,up.z).getOpposite());
+    }
     @Override
     protected net.minecraft.world.entity.ai.navigation.PathNavigation createNavigation(Level level) {
-        return new WallClimberNavigation(this, level);
+        return new GroundPathNavigation(this, level);
     }
 
     @Override
@@ -224,14 +346,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         return this.isClimbingWall() || this.isClimbingCeiling();
     }
 
-    public boolean hasCeilingAbove() {
-        AABB bb = this.getBoundingBox();
-        AABB ceilingBox = new AABB(
-                bb.minX + 0.05, bb.maxY - 0.05, bb.minZ + 0.05,
-                bb.maxX - 0.05, bb.maxY + 0.35, bb.maxZ - 0.05
-        );
-        return !this.level().noCollision(this, ceilingBox);
-    }
+    public boolean hasCeilingAbove() { return support(Direction.UP); }
 
     public boolean canTargetEntity(@Nullable LivingEntity entity) {
         if (entity == null || !entity.isAlive()) return false;
@@ -239,7 +354,9 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         if (entity instanceof Player player) {
             if (player.isCreative() || player.isSpectator()) return false;
             if (this.getVariant() == Variant.LURKER) {
-                return this.isBursting() || this.distanceToSqr(player) <= 12.25;
+                return this.isBursting() || this.distanceToSqr(player) <= 12.25
+                        || isClimbingCeiling() && player.getY()<getY() && player.getY()>getY()-10
+                        && player.position().subtract(position()).horizontalDistanceSqr()<=12.25;
             }
             return true;
         }
@@ -248,10 +365,9 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
 
     @Override
     public void setTarget(@Nullable LivingEntity target) {
-        if (target instanceof CaveRiftSpiderEntity) {
-            return;
-        }
-        super.setTarget(target);
+        if(target instanceof CaveRiftSpiderEntity)return;
+        if(target==null){getBrain().eraseMemory(MemoryModuleType.ATTACK_TARGET);return;}
+        if(SpiderBrain.eligible(this,target))SpiderBrain.acquire(this,target);
     }
 
     @Override
@@ -264,191 +380,91 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
 
     @Override
     public void travel(Vec3 travelVector) {
-        if (this.isAlive() && this.isClimbingCeiling()) {
-            this.resetFallDistance();
-
-            double speed = this.getAttributeValue(Attributes.MOVEMENT_SPEED) * 0.85;
-            this.moveRelative((float) speed, travelVector);
-            this.move(MoverType.SELF, this.getDeltaMovement());
-
-            Vec3 vel = this.getDeltaMovement();
-            double stickyY = this.hasCeilingAbove() ? 0.02 : vel.y;
-            this.setDeltaMovement(vel.x * 0.8, stickyY, vel.z * 0.8);
-            return;
+        if (!isAlive()) { surfacePath = java.util.List.of(); attach(Direction.DOWN); }
+        if (!level().isClientSide && isAlive() && detachTicks == 0) {
+            if (hasSurfaceRoute()) {
+                var next = surfacePath.get(surfaceStep);
+                if (!level().hasChunkAt(next.support()) || !level().getBlockState(next.support()).isFaceSturdy(level(), next.support(), next.face().getOpposite())) {
+                    detachFromSurface();
+                } else {
+                    Vec3 center = getBoundingBox().getCenter(), diff = next.center().subtract(center);
+                    // Any unexpected displacement cancels the route instead of flying back to it.
+                    if (diff.lengthSqr() > 2.3) { detachFromSurface(); super.travel(travelVector); return; }
+                    double speed = Math.min(.26, getAttributeValue(Attributes.MOVEMENT_SPEED)*.8);
+                    Vec3 step = NavigationQueries.computeWallCrawlVelocity(this,next.center(),speed);
+                    if (new SpiderSurfacePath(this).clearSegment(center, center.add(step))) {
+                        attach(next.face());
+                        resetFallDistance();
+                        move(MoverType.SELF, step);
+                        Vec3 normal=Vec3.atLowerCornerOf(next.face().getOpposite().getNormal());
+                        Vec3 tangent=step.subtract(normal.scale(step.dot(normal)));
+                        if(tangent.lengthSqr()>.00001)setCrawlOrientation(tangent,normal,0);
+                        setDeltaMovement(Vec3.ZERO);
+                        if (getBoundingBox().getCenter().distanceToSqr(next.center()) < .015) surfaceStep++;
+                        if (step.horizontalDistanceSqr() > .0001) {
+                            setYRot((float)(Mth.atan2(step.z, step.x)*180/Math.PI)-90);
+                            yBodyRot = getYRot();
+                        }
+                        return;
+                    }
+                    detachFromSurface();
+                }
+            } else if (getSurface() != Direction.DOWN && support(getSurface())) {
+                resetFallDistance(); setDeltaMovement(Vec3.ZERO); return;
+            } else if (hasCeilingAbove() && !onGround()) {
+                attach(Direction.UP); resetFallDistance(); setDeltaMovement(Vec3.ZERO); return;
+            } else attach(Direction.DOWN);
         }
         super.travel(travelVector);
     }
 
-    @Override
-    protected void registerGoals() {
-        this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new LeapAtTargetGoal(this, 0.55F));
-        this.goalSelector.addGoal(3, new SpitterRangedAttackGoal(this, 1.15, 38, 14.0F));
-        this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.25, true));
-        this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8));
-        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+    @Override protected void registerGoals() {} // SmartBrain is the sole action scheduler.
 
-        // Retaliation: alert comrades, NEVER target brothers
-        this.targetSelector.addGoal(1, new HurtByTargetGoal(this) {
-            @Override
-            public boolean canUse() {
-                if (this.mob.getLastHurtByMob() instanceof CaveRiftSpiderEntity) {
-                    this.mob.setLastHurtByMob(null);
-                    return false;
-                }
-                return super.canUse();
-            }
-
-            @Override
-            public void start() {
-                super.start();
-                if (mob instanceof CaveRiftSpiderEntity spider) {
-                    if (spider.getTarget() instanceof CaveRiftSpiderEntity) {
-                        spider.setTarget(null);
-                        return;
-                    }
-                    spider.triggerAmbushBurst();
-                    spider.alertPack(spider.getTarget());
-                }
-            }
-        }.setAlertOthers());
-
-        // Target Players
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false,
-                this::canTargetEntity) {
-            @Override
-            public void start() {
-                super.start();
-                if (mob instanceof CaveRiftSpiderEntity spider) {
-                    if (spider.getVariant() == Variant.LURKER) {
-                        spider.triggerAmbushBurst();
-                    }
-                    spider.alertPack(spider.getTarget());
-                }
-            }
-        });
-
-        // Prey 1: Cave bats (frequent prey in caverns)
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Bat.class, 10, true, false,
-                this::canTargetEntity));
-
-        // Prey 2: Village protectors (Iron Golems)
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, 10, true, false,
-                this::canTargetEntity));
-
-        // Prey 3: Hostile undead invaders (Zombies)
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Zombie.class, 10, true, false,
-                this::canTargetEntity));
-
-        // Prey 4: Hostile undead invaders (Skeletons)
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractSkeleton.class, 10, true, false,
-                this::canTargetEntity));
+    private void fitResizedBody() {
+        if (!needsBodyFit || level().isClientSide) return;
+        AABB region = getBoundingBox().inflate(1.5);
+        if (!level().hasChunksAt(BlockPos.containing(region.minX, region.minY, region.minZ),
+                BlockPos.containing(region.maxX, region.maxY, region.maxZ))) return;
+        needsBodyFit = false;
+        if (level().noCollision(this, getBoundingBox().deflate(.001))) return;
+        var probe = new SpiderSurfacePath(this);
+        Vec3 origin = position();
+        java.util.List<Vec3> offsets = new java.util.ArrayList<>();
+        // Pre-update ceiling saves used a 0.7 block body. Preserve their old top face first.
+        offsets.add(new Vec3(0, Mth.clamp(.7-getBbHeight(), -1.5, 1.5), 0));
+        java.util.List<Vec3> nearby = new java.util.ArrayList<>();
+        for (int x=-3;x<=3;x++) for (int y=-3;y<=3;y++) for (int z=-3;z<=3;z++) {
+            Vec3 offset = new Vec3(x*.5,y*.5,z*.5);
+            if (offset.lengthSqr()<=2.25) nearby.add(offset);
+        }
+        nearby.sort(Comparator.comparingDouble(Vec3::lengthSqr)); offsets.addAll(nearby);
+        for (Vec3 offset : offsets) {
+            Vec3 feet = origin.add(offset);
+            if (!probe.clear(feet.add(0,getBbHeight()/2,0))) continue;
+            setPos(feet); setDeltaMovement(Vec3.ZERO);
+            attach(hasCeilingAbove() ? Direction.UP : Direction.DOWN);
+            return;
+        }
     }
 
     @Override
     public void tick() {
+        oldCrawlForward=getCrawlForward();
+        if(crawlGrace>0)crawlGrace--;
+        fitResizedBody();
+        oldSurfaceTransition = surfaceTransition;
+        surfaceTransition = Math.min(1, surfaceTransition + .2F);
+        if (detachTicks > 0) detachTicks--;
         super.tick();
 
         if (this.level().isClientSide) {
             this.idleAnimationState.startIfStopped(this.tickCount);
         } else {
-            boolean ceiling = this.hasCeilingAbove() && !this.onGround();
-            this.setClimbingCeiling(ceiling);
-            this.setClimbingWall(this.horizontalCollision && !ceiling);
-
-            // Ceiling behavior & Ambush drops
-            if (this.isClimbingCeiling()) {
-                this.resetFallDistance();
-                LivingEntity target = this.getTarget();
-
-                // If no target yet, seek prey beneath within 10 blocks vertical and 7 blocks horizontal
-                if (target == null && this.tickCount % 10 == 0) {
-                    AABB ambushZone = this.getBoundingBox().inflate(7.0, 0, 7.0).expandTowards(0, -10.0, 0);
-                    var candidates = this.level().getEntitiesOfClass(LivingEntity.class, ambushZone, this::canTargetEntity);
-                    if (!candidates.isEmpty()) {
-                        candidates.sort(Comparator.comparingDouble(this::distanceToSqr));
-                        this.setTarget(candidates.get(0));
-                        target = this.getTarget();
-                    }
-                }
-
-                if (target != null && target.isAlive()) {
-                    double dx = target.getX() - this.getX();
-                    double dz = target.getZ() - this.getZ();
-                    double horizDist = Math.sqrt(dx * dx + dz * dz);
-                    double dy = target.getY() - this.getY();
-
-                    // If target is beneath the spider
-                    if (dy < -1.0) {
-                        if (this.getVariant() == Variant.LURKER) {
-                            if (horizDist <= 3.5) {
-                                // Lethal Ambush Drop from ceiling!
-                                this.setClimbingCeiling(false);
-                                this.triggerAmbushBurst();
-                                this.setDeltaMovement(dx * 0.35, -0.85, dz * 0.35);
-                                this.hasImpulse = true;
-                                this.playSound(SoundEvents.SPIDER_HURT, 1.4F, 1.8F);
-                                if (this.level() instanceof ServerLevel sl) {
-                                    sl.sendParticles(ParticleTypes.CRIT, this.getX(), this.getY(), this.getZ(), 12, 0.4, 0.4, 0.4, 0.2);
-                                }
-                            } else {
-                                // Stalk along ceiling towards target
-                                double speed = 0.28;
-                                this.setDeltaMovement(dx / horizDist * speed, 0.01, dz / horizDist * speed);
-                                this.setYRot((float) (Mth.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F);
-                                this.yBodyRot = this.getYRot();
-                            }
-                        } else if (this.getVariant() == Variant.SKIRMISHER) {
-                            if (horizDist <= 2.8) {
-                                // Skirmisher drop pounce
-                                this.setClimbingCeiling(false);
-                                this.setDeltaMovement(dx * 0.25, -0.70, dz * 0.25);
-                                this.hasImpulse = true;
-                                this.playSound(SoundEvents.SPIDER_HURT, 1.1F, 1.4F);
-                            } else {
-                                // Crawl along ceiling towards target
-                                double speed = 0.32;
-                                this.setDeltaMovement(dx / horizDist * speed, 0.01, dz / horizDist * speed);
-                                this.setYRot((float) (Mth.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F);
-                                this.yBodyRot = this.getYRot();
-                            }
-                        } else if (this.getVariant() == Variant.SPITTER) {
-                            // Spitters snipe from above, or crawl closer if out of range
-                            if (horizDist > 12.0) {
-                                double speed = 0.22;
-                                this.setDeltaMovement(dx / horizDist * speed, 0.01, dz / horizDist * speed);
-                            }
-                            this.setYRot((float) (Mth.atan2(dz, dx) * (180.0 / Math.PI)) - 90.0F);
-                            this.yBodyRot = this.getYRot();
-                        }
-                    }
-                }
-            }
-
-            // Lurker ground proximity sensing: if player gets close, burst out!
-            if (this.getVariant() == Variant.LURKER && !this.isBursting()) {
-                var nearestPlayer = this.level().getNearestPlayer(this, 3.5);
-                if (nearestPlayer != null && nearestPlayer.isAlive() && !nearestPlayer.isCreative() && !nearestPlayer.isSpectator()) {
-                    this.setTarget(nearestPlayer);
-                    this.triggerAmbushBurst();
-                }
-            }
-
+            if(!isAlive()||isNoAi()){
+                if(!brainPaused){getBrain().stopAll((ServerLevel)level(),this);getNavigation().stop();surfacePath=java.util.List.of();brainPaused=true;}
+            }else brainPaused=false;
             // Burst timer countdown & dynamic lunges during burst
             if (this.isBursting()) {
-                if (this.getVariant() == Variant.LURKER) {
-                    LivingEntity target = this.getTarget();
-                    if (target != null && target.isAlive()) {
-                        // Periodically pounce during burst sprint if target tries to flee (3 to 8 blocks away)
-                        if (this.burstTicks % 35 == 0 && this.onGround()) {
-                            double distSq = this.distanceToSqr(target);
-                            if (distSq >= 9.0 && distSq <= 64.0) {
-                                performAmbushLunge(target);
-                            }
-                        }
-                    }
-                }
                 if (--this.burstTicks <= 0) {
                     this.setBursting(false);
                 }
@@ -489,13 +505,14 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
 
     @Override
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
-        if (!(this.level() instanceof ServerLevel) || this.getVariant() != Variant.SPITTER
+        if (tickCount < nextSpitTick || !(this.level() instanceof ServerLevel) || this.getVariant() != Variant.SPITTER
                 || target == null || !target.isAlive() || target.isRemoved() || target.level() != this.level()
                 || target instanceof CaveRiftSpiderEntity || !this.canAttack(target)
                 || this.distanceToSqr(target) > 14.0 * 14.0 || !this.getSensing().hasLineOfSight(target)) return;
         ToxinSpitEntity spit = new ToxinSpitEntity(this.level(), this, 0, 0, 0);
         if (!spit.aimAt(target.getBoundingBox().getCenter())) return;
         this.level().addFreshEntity(spit);
+        nextSpitTick = tickCount + 38;
         this.playSound(SoundEvents.LLAMA_SPIT, 1.0F, 1.4F);
     }
 
@@ -514,7 +531,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         }
 
         if (hasCeilingAbove()) {
-            setClimbingCeiling(true);
+            attach(Direction.UP);
         }
 
         return spawnGroupData;
@@ -557,6 +574,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
+        tag.putInt("SpiderBodyRevision", needsBodyFit ? 0 : 1);
         tag.putByte("SpiderVariant", (byte) getVariant().id);
         tag.putInt("BurstTicks", this.burstTicks);
         tag.putBoolean("SpiderBursting", this.isBursting());
@@ -565,6 +583,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
+        needsBodyFit = tag.getInt("SpiderBodyRevision") < 1;
         if (tag.contains("SpiderVariant")) {
             applyVariant(Variant.byId(tag.getByte("SpiderVariant")), false);
         }
@@ -596,56 +615,4 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
     }
 
-    private static class SpitterRangedAttackGoal extends Goal {
-        private final CaveRiftSpiderEntity spider;
-        private final double speedModifier;
-        private final int attackInterval;
-        private final float maxAttackDistance;
-        private int attackTime = -1;
-
-        public SpitterRangedAttackGoal(CaveRiftSpiderEntity spider, double speed, int interval, float maxDist) {
-            this.spider = spider;
-            this.speedModifier = speed;
-            this.attackInterval = interval;
-            this.maxAttackDistance = maxDist * maxDist;
-            this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
-        }
-
-        @Override
-        public boolean canUse() {
-            LivingEntity target = spider.getTarget();
-            return spider.getVariant() == Variant.SPITTER && target != null && target.isAlive()
-                    && !target.isRemoved() && target.level() == spider.level() && spider.canAttack(target);
-        }
-
-        @Override
-        public void stop() {
-            spider.getNavigation().stop();
-            attackTime = -1;
-        }
-
-        @Override
-        public void tick() {
-            LivingEntity target = spider.getTarget();
-            if (target == null) return;
-            double distSq = spider.distanceToSqr(target.getX(), target.getY(), target.getZ());
-            spider.getLookControl().setLookAt(target, 30.0F, 30.0F);
-
-            // Retreat if too close (< 5 blocks)
-            if (distSq < 25.0) {
-                Vec3 away = spider.position().subtract(target.position()).normalize().scale(5.0);
-                spider.getNavigation().moveTo(spider.getX() + away.x, spider.getY() + away.y, spider.getZ() + away.z, speedModifier * 1.2);
-            } else if (distSq > maxAttackDistance || !spider.getSensing().hasLineOfSight(target)) {
-                spider.getNavigation().moveTo(target, speedModifier);
-            } else {
-                spider.getNavigation().stop();
-            }
-
-            if (--this.attackTime <= 0 && distSq <= maxAttackDistance
-                    && spider.getSensing().hasLineOfSight(target)) {
-                this.attackTime = this.attackInterval;
-                spider.performRangedAttack(target, 1.0F);
-            }
-        }
-    }
 }

@@ -42,6 +42,8 @@ tasks.named('assemble') { dependsOn tasks.named('clientUiJar') }
 configurations {
     distantHorizonsArtifact
     lootrArtifact
+    smartBrainArtifact
+    azureCortexArtifact
     smokeImplementation.extendsFrom implementation
     smokeCompileOnly.extendsFrom compileOnly
     smokeRuntimeOnly.extendsFrom runtimeOnly
@@ -51,12 +53,20 @@ configurations {
 }
 repositories {
     exclusiveContent {
+        forRepository { maven { name = "AzureDoom"; url = "https://maven.azuredoom.com/mods" } }
+        filter { includeGroup "com.azure.azurecortex" }
+    }
+    exclusiveContent {
         forRepository { maven { name = 'Modrinth'; url = 'https://api.modrinth.com/maven' } }
         filter { includeGroup 'maven.modrinth' }
     }
 }
 def sporeArtifact = file(providers.gradleProperty('sporeJar').getOrElse('research/spore/spore_1.21.1_2.2.0j_neo-original.jar'))
 dependencies {
+    azureCortexArtifact("com.azure.azurecortex:azurecortex-neoforge-1.21.1:0.1.7") { transitive = false }
+    implementation("com.azure.azurecortex:azurecortex-neoforge-1.21.1:0.1.7") { transitive = false }
+    smartBrainArtifact('maven.modrinth:PuyPazRT:O5EpeqI3') { transitive = false }
+    implementation('maven.modrinth:PuyPazRT:O5EpeqI3') { transitive = false }
     lootrArtifact('maven.modrinth:EltpO5cN:SPOrIzX8') { transitive = false }
     runtimeOnly('maven.modrinth:EltpO5cN:SPOrIzX8') { transitive = false }
     smokeCompileOnly('maven.modrinth:EltpO5cN:SPOrIzX8') { transitive = false }
@@ -96,6 +106,32 @@ def verifyLootrArtifact = tasks.register('verifyLootrArtifact') {
     }
 }
 tasks.named('assemble') { dependsOn verifyLootrArtifact }
+
+def verifySmartBrainArtifact = tasks.register('verifySmartBrainArtifact') {
+    doLast {
+        def artifact = configurations.smartBrainArtifact.singleFile
+        def digest = java.security.MessageDigest.getInstance('SHA-512')
+        artifact.withInputStream { input ->
+            byte[] buffer = new byte[1024 * 1024]; int length
+            while ((length = input.read(buffer)) > 0) digest.update(buffer, 0, length)
+        }
+        if (digest.digest().encodeHex().toString() != 'bfc76f6fd8c388d01b80601ad1b826f6b3f5ec5ea915e5725af129561e6bc4a10890975e6f6d2a0348d842c13042dcf1a9d0a1574fba76bce60119bee76e2dc2')
+            throw new GradleException('SmartBrainLib 1.16.11 / NeoForge 1.21.1 upstream SHA-512 mismatch')
+        logger.lifecycle('Verified pinned SmartBrainLib 1.16.11: ' + artifact.name)
+    }
+}
+tasks.named('assemble') { dependsOn verifySmartBrainArtifact }
+def verifyAzureCortexArtifact = tasks.register('verifyAzureCortexArtifact') {
+    doLast {
+        def artifact = configurations.azureCortexArtifact.singleFile
+        def expected = new groovy.json.JsonSlurper().parse(file('distribution/spider-ai.lock.json')).sha512
+        if(java.security.MessageDigest.getInstance('SHA-512').digest(artifact.bytes).encodeHex().toString() != expected)
+            throw new GradleException('AzureCortex 0.1.7 SHA-512 mismatch')
+        logger.lifecycle('Verified pinned AzureCortex 0.1.7: ' + artifact.name)
+    }
+}
+tasks.named('assemble') { dependsOn verifyAzureCortexArtifact }
+
 def verifySporeArtifact = tasks.register('verifySporeArtifact') {
     doLast {
         if (!sporeArtifact.isFile()) throw new GradleException('Obtain the original Spore 2.2.0j NeoForge JAR; see docs/progress/M01.md or use -PsporeJar=/path/to/original.jar')
@@ -125,6 +161,8 @@ neoForge {
             systemProperty 'interstice.expectedModVersion', project.version.toString()
             taskBefore verifyDistantHorizonsArtifact
             taskBefore verifyLootrArtifact
+            taskBefore verifyAzureCortexArtifact
+            taskBefore verifySmartBrainArtifact
         }
         client { client() }
         etherealCreate {
@@ -440,6 +478,38 @@ neoForge {
             gameDirectory = file('build/fauna-gametests')
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_fauna'
+        }
+        spiderMovementSmoke {
+            client()
+            gameDirectory = file('.verification/spider-movement-native')
+            systemProperty 'interstice.spiderMovementSmoke', 'true'
+            jvmArgument '-Xmx10G'
+            jvmArgument '-XX:+UseZGC'
+            jvmArgument '-XX:+ZGenerational'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '800'
+        }
+        hunterGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/hunter-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_hunters'
+        }
+        hunterColdCreateGameTestServer {
+            type = 'gameTestServer'
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            gameDirectory = file('.verification/hunter-cold')
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_hunter_cold'
+            systemProperty 'interstice.hunterCold', 'create'
+        }
+        hunterColdReloadGameTestServer {
+            type = 'gameTestServer'
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            gameDirectory = file('.verification/hunter-cold')
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_hunter_cold'
+            systemProperty 'interstice.hunterCold', 'reload'
         }
         realmExpansionGameTestServer {
             type = 'gameTestServer'
@@ -802,6 +872,7 @@ neoForge.runs.each { run ->
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
         def profileName = name in ['etherealComplexCreate','etherealComplexReload'] ? 'etherealComplexSmoke' : name in ['etherealCreate','etherealReload'] ? 'etherealSmoke' : name in ['techmagicPregenCreate','techmagicPregenReload'] ? 'techmagicPregen' : name in ['forestCaveCreate','forestCaveReload'] ? 'forestCaveSmoke' : name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+                name in ['hunterColdCreateGameTestServer','hunterColdReloadGameTestServer'] ? 'hunterCold' :
                 name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
                 name in ['persistenceCreate', 'persistenceReload'] ? 'persistenceSmoke' :
@@ -902,7 +973,7 @@ tasks.withType(Jar).configureEach {
     }
 }
 def modpackZip = tasks.register('modpackZip', Zip) {
-    dependsOn tasks.named('jar'), verifyDistantHorizonsArtifact, verifyLootrArtifact
+    dependsOn tasks.named('jar'), verifyDistantHorizonsArtifact, verifyLootrArtifact, verifySmartBrainArtifact, verifyAzureCortexArtifact
     archiveFileName = 'erezcraft-' + project.version + '-neoforge-modpack.zip'
     destinationDirectory = layout.buildDirectory.dir('distributions')
     from(tasks.named('jar')) { into 'mods' }
@@ -911,6 +982,18 @@ def modpackZip = tasks.register('modpackZip', Zip) {
         rename { 'DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar' }
     }
     from(configurations.lootrArtifact) { into 'mods'; rename { 'lootr-neoforge-1.21.1-1.11.38.127.jar' } }
+    from(configurations.smartBrainArtifact) { into 'mods'; rename { 'SmartBrainLib-neoforge-1.21.1-1.16.11.jar' } }
+    from(configurations.azureCortexArtifact) { into 'mods'; rename { 'azurecortex-neoforge-1.21.1-0.1.7.jar' } }
+    from('distribution/spider-ai.lock.json')
+    from('docs/SPIDER_HYBRID_AI.md') { into 'docs' }
+    from('docs/FAUNA_AI_RELEASE.md') { into 'docs' }
+    from('docs/verification/fauna-release') { into 'docs/verification/fauna-release' }
+    from('docs/verification/spider-hybrid') { into 'docs/verification/spider-hybrid' }
+    from('distribution/licenses/AzureCortex-MIT.txt') { into 'licenses/azurecortex' }
+    from('distribution/hunter-ai.lock.json')
+    from({ zipTree(configurations.smartBrainArtifact.singleFile) }) { include 'LICENSE*', 'META-INF/LICENSE*'; into 'licenses/smartbrainlib' }
+    from(['distribution/licenses/SmartBrainLib-MPL-2.0.txt', 'distribution/licenses/SmartBrainLib-NOTICE.txt']) { into 'licenses/smartbrainlib' }
+    from(['docs/VAULT_HUNTER.md', 'docs/SMARTBRAIN_HUNTER.md', 'docs/AI_LIBRARY_REVIEW.md']) { into 'docs' }
     from('distribution/structure-loot.lock.json')
     from('art/sources/cc0/ethereal_structures/NOTICE.txt') { into 'licenses/ethereal-structures' }
     from({ zipTree(configurations.lootrArtifact.singleFile) }) { include 'LICENSE*', 'META-INF/LICENSE*'; into 'licenses/lootr' }
@@ -1061,3 +1144,25 @@ tasks.named('check') { dependsOn tasks.named('runRealmExpansionGameTestServer') 
 tasks.named('check') { dependsOn tasks.named('runForestCaveGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('runRiftGameTestServer'), tasks.named('runExpeditionGameTestServer'), tasks.named('runVaultGameTestServer'),tasks.named('runGardenGameTestServer'),tasks.named('runFoodGameTestServer'),tasks.named('runLivingGameTestServer'),tasks.named('runEcologyGameTestServer'),tasks.named('runMiningGameTestServer'),tasks.named('runAgricultureGameTestServer'),tasks.named('runEquipmentGameTestServer'),tasks.named('runGearGameTestServer'),tasks.named('runTetherGameTestServer'),tasks.named('runLiftGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runEtherealGameTestServer') }
+
+tasks.named('check') { dependsOn tasks.named('runHunterGameTestServer') }
+
+// Full production client binaries, read-only source; never copy an owner's world or options.
+tasks.named('prepareSpiderMovementSmokeRun') {
+    outputs.upToDateWhen { false }
+    doLast {
+        def target = neoForge.runs.spiderMovementSmoke.gameDirectory.get().asFile
+        if (!target.toPath().toAbsolutePath().toString().replace('\\','/').contains('/.verification/')) throw new GradleException('Owned verification profile required')
+        if (new File(target,'saves').exists()) throw new GradleException('A new full-client profile is required')
+        def source = file(providers.gradleProperty('spiderPackSource').get())
+        def jars = fileTree(new File(source,'mods')) { include '*.jar' }.files
+        if (jars.size()!=65) throw new GradleException('Expected current 65-JAR client')
+        jars.findAll { !it.name.startsWith('interstice-') && !it.name.startsWith('DistantHorizons-') && !it.name.startsWith('lootr-') }.each { jar ->
+            copy { from jar; into new File(target,'mods') }
+        }
+        copy { from new File(source,'config'); into new File(target,'config') }
+        copy { from new File(source,'defaultconfigs'); into new File(target,'defaultconfigs') }
+        new File(target,'config/fml.toml').text='earlyWindowControl = false\n'
+        new File(target,'options.txt').text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\nrenderDistance:8\nsimulationDistance:5\n'
+    }
+}

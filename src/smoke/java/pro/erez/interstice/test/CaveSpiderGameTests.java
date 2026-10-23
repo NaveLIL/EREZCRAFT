@@ -133,7 +133,7 @@ public final class CaveSpiderGameTests {
             try{
                 var field=Mob.class.getDeclaredField("goalSelector");field.setAccessible(true);var selector=(GoalSelector)field.get(owner);
                 var running=selector.getAvailableGoals().stream().filter(goal->goal.isRunning()).map(goal->goal.getGoal().getClass().getSimpleName()).toList();
-                h.assertTrue(running.contains("SpitterRangedAttackGoal")&&!running.contains("MeleeAttackGoal"),"Actual AI failed ranged/moving-melee exclusivity: "+running);
+                h.assertTrue(running.isEmpty()&&owner.getBrain() instanceof net.tslat.smartbrainlib.api.core.SmartBrain&&owner.getBrain().isActive(net.minecraft.world.entity.schedule.Activity.FIGHT),"Legacy Goals compete with SmartBrain ranged combat: "+running);
             }catch(ReflectiveOperationException unavailable){throw new IllegalStateException("Cannot inspect actual native goal selection",unavailable);}
             h.assertTrue(owner.distanceToSqr(prey)>196&&h.getLevel().getEntitiesOfClass(ToxinSpitEntity.class,bounds,e->e.getOwner()==owner).isEmpty(),"Native AI shot outside its14-block range");
             prey.teleportTo(h.getLevel(),owner.getX()+8,owner.getY(),owner.getZ(),Set.of(),0,0);prey.hasChangedDimension();
@@ -427,7 +427,7 @@ public final class CaveSpiderGameTests {
         var spider = new CaveRiftSpiderEntity(Interstice.CAVE_RIFT_SPIDER.get(), h.getLevel());
         // Position directly under ceiling (y=3.25, bb height is 0.7, top is 3.95, stone ceiling is at y=4.0)
         spider.setPos(h.absolutePos(new BlockPos(2, 0, 2)).getX() + 0.5,
-                      h.absolutePos(new BlockPos(2, 0, 2)).getY() + 3.25,
+                      h.absolutePos(new BlockPos(2, 0, 2)).getY() + 4.0 - spider.getBbHeight(),
                       h.absolutePos(new BlockPos(2, 0, 2)).getZ() + 0.5);
         h.getLevel().addFreshEntity(spider);
 
@@ -456,7 +456,7 @@ public final class CaveSpiderGameTests {
         var lurker = new CaveRiftSpiderEntity(Interstice.CAVE_RIFT_SPIDER.get(), h.getLevel());
         lurker.setVariant(CaveRiftSpiderEntity.Variant.LURKER);
         lurker.setPos(h.absolutePos(new BlockPos(2, 0, 2)).getX() + 0.5,
-                      h.absolutePos(new BlockPos(2, 0, 2)).getY() + 4.25,
+                      h.absolutePos(new BlockPos(2, 0, 2)).getY() + 5.0 - lurker.getBbHeight(),
                       h.absolutePos(new BlockPos(2, 0, 2)).getZ() + 0.5);
         h.getLevel().addFreshEntity(lurker);
         lurker.setClimbingCeiling(true);

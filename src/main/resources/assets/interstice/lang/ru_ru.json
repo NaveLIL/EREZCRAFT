@@ -451,5 +451,13 @@
   "navigation.interstice.ethereal.monolith": "Древний монолит",
   "navigation.interstice.ethereal.shrine": "Забытое святилище",
   "navigation.interstice.ethereal.tower": "Разрушенная башня",
-  "navigation.interstice.ethereal.relic": "Древний механизм"
+  "navigation.interstice.ethereal.relic": "Древний механизм",
+  "entity.interstice.vault_hunter": "Сводник",
+  "item.interstice.vault_hunter_spawn_egg": "Яйцо призыва сводника",
+  "subtitles.interstice.vault_hunter.ambient": "Сводник хрипит",
+  "subtitles.interstice.vault_hunter.alert": "Сводник заметил добычу",
+  "subtitles.interstice.vault_hunter.windup": "Сводник замахивается",
+  "subtitles.interstice.vault_hunter.attack": "Сводник наносит удар",
+  "subtitles.interstice.vault_hunter.hurt": "Сводник ранен",
+  "subtitles.interstice.vault_hunter.death": "Сводник погибает"
 }

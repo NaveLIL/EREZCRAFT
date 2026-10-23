@@ -29,15 +29,26 @@ public final class CaveRiftSpiderRenderer extends MobRenderer<CaveRiftSpiderEnti
     }
 
     @Override
+    protected void setupRotations(CaveRiftSpiderEntity entity, PoseStack poseStack, float age,
+                                  float bodyYaw, float partialTick, float scale) {
+        var rotation=pro.erez.interstice.entity.SpiderSurfaceFrame.rotation(entity.previousSurface(),entity.getSurface(),entity.surfaceTransition(partialTick));
+        if(entity.getSurface()!=net.minecraft.core.Direction.DOWN||entity.previousSurface()!=net.minecraft.core.Direction.DOWN){
+            // Ground yaw is changed by look/attack controls even during a purely
+            // vertical climb. Use the server-synced world tangent instead.
+            var forward=entity.getOldCrawlForward().lerp(entity.getCrawlForward(),partialTick);
+            bodyYaw=pro.erez.interstice.entity.SpiderSurfaceFrame.bodyYaw(rotation,forward,bodyYaw);
+        }
+        float center = entity.getBbHeight() / (2*scale);
+        poseStack.translate(0, center, 0);
+        poseStack.mulPose(rotation);
+        poseStack.translate(0, -center, 0);
+        super.setupRotations(entity, poseStack, age, bodyYaw, partialTick, scale);
+    }
+
+    @Override
     protected void scale(CaveRiftSpiderEntity entity, PoseStack poseStack, float partialTickTime) {
         float s = entity.getVariant().scale;
         poseStack.scale(s, s, s);
-
-        if (entity.isClimbingCeiling()) {
-            // Flip upside-down and align feet against ceiling
-            poseStack.translate(0.0F, entity.getBbHeight() / s + 0.15F, 0.0F);
-            poseStack.mulPose(com.mojang.math.Axis.ZP.rotationDegrees(180.0F));
-        }
 
         // The original bbmodel faces West (-X). Rotate -90 degrees around Y so the spider faces North (-Z, forward).
         poseStack.mulPose(com.mojang.math.Axis.YP.rotationDegrees(-90.0F));
