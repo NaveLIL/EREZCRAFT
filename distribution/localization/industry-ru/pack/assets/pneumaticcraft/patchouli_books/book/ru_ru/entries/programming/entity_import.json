@@ -1,0 +1,29 @@
+{
+  "name": "Виджет захвата сущности",
+  "icon": "pneumaticcraft:textures/progwidgets/entity_import_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Дрон/$ летит к ближайшей сущности в $(l:programming/area)области/$, соответствующей необязательному $(l:base_concepts/entity_filter)фильтру сущностей/$ из $(l:programming/text)текстового/$ виджета, и поднимает её для перевозки.$(p)Можно перевозить и игроков. Игрок легко сходит с $(item)дрона/$ нажатием $(thing)приседания/$. Впрочем, полёт на управляемом существе тоже бывает полезен..."
+    },
+    {
+      "type": "text",
+      "title": "Сферы опыта",
+      "text": "Дроны также захватывают $(thing)сферы опыта/$: для них подходит фильтр $(item)@orb/$. Опыт превращается в $(l:base_concepts/memory_essence)эссенцию памяти/$ во внутреннем резервуаре. Затем $(l:programming/liquid_export)экспорт жидкости/$ позволяет передать её во внешний резервуар."
+    },
+    {
+      "type": "text",
+      "title": "Ограничения области",
+      "text": "Подключённые $(l:programming/area)области/$ должны иметь форму $(thing)параллелепипеда/$: другие формы не поддерживаются. Более сложную форму можно составить из нескольких разрешённых и запрещённых областей."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/entity_import_piece.png"
+      ],
+      "text": "$(italic)Похищение пришельцами/$"
+    }
+  ]
+}

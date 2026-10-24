@@ -1,0 +1,19 @@
+{
+  "name": "Виджет удаления предметов",
+  "icon": "pneumaticcraft:textures/progwidgets/void_item_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Виджет мгновенно и безвозвратно уничтожает предметы в инвентаре дрона. Будьте внимательны! Настоятельно рекомендуется подключить $(l:programming/item_filter)фильтр предметов/$: тогда удаляются только разрешённые предметы.$(p)Работа завершается, когда в инвентаре $(item)дрона/$ не остаётся подходящих предметов."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/void_item_piece.png"
+      ],
+      "text": "$(italic)Не очень-то и хотелось/$"
+    }
+  ]
+}

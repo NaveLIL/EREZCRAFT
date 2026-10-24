@@ -1,0 +1,22 @@
+{
+  "name": "Теплоизоляция",
+  "icon": "pneumaticcraft:thermal_lagging",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Машины $(pncr), использующие $(l:base_concepts/heat)тепло/$, теряют его через открытые грани. Подходит изоляция почти любыми непроводящими тепло блоками, но особенно удобна $(thing)теплоизоляционная обшивка/$."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:thermal_lagging",
+      "text": "$(thing)Теплоизоляционная обшивка/$ позволяет $(italic)нажимать сквозь неё/$ по машине, будто обшивки нет.$(p)Чтобы взаимодействовать с самой обшивкой или снять её, возьмите $(item)кирку/$, $(item)ключ/$ или $(thing)присядьте/$."
+    },
+    {
+      "type": "crafting",
+      "text": "Создание теплоизоляционной обшивки",
+      "recipe": "pneumaticcraft:thermal_lagging"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Виджет ожидания",
+  "icon": "pneumaticcraft:textures/progwidgets/wait_piece.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Дрон/$ ждёт заданное время, ничего не делая. Продолжительность задаётся подключённым $(l:programming/text)текстовым/$ виджетом.$(p)Поддерживаемые форматы:$(li)$(thing)20/$: ждать 1 секунду, то есть 20 тиков.$(li)$(thing)10s/$: ждать 10 секунд.$(li)$(thing)5m/$: ждать 5 минут."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/wait_piece.png"
+      ],
+      "text": "$(italic)В ожидании Годо/$"
+    }
+  ]
+}

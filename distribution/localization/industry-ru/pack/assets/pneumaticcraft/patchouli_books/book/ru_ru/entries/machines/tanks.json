@@ -1,0 +1,39 @@
+{
+  "name": "Резервуары",
+  "icon": "pneumaticcraft:small_tank",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Четыре резервуара называются $(item)малым/$, $(item)средним/$, $(item)большим/$ и $(item)огромным/$. В отличие от $(l:machines/liquid_hopper)жидкостных воронок/$, они компактнее хранят жидкость и соединяются вертикально. Автоматической передачи обычно нет, но $(l:base_concepts/upgrades#dispenser)улучшение раздатчика/$ добавляет выталкивание жидкости."
+    },
+    {
+      "type": "text",
+      "title": "Вертикальное соединение",
+      "text": "Все типы резервуаров можно $(thing)соединять/$ вертикально. Нажмите $(l:tools/pneumatic_wrench)ключом/$ по верхней половине для соединения с резервуаром сверху, по нижней — снизу.$(p)После соединения жидкость из $(ttcolor)$(t:Жидкость с плотностью < 0 вместо этого поднимается)верхних резервуаров/$ стекает вниз, пока там есть место."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/small_tanks.png"
+      ],
+      "border": "true",
+      "text": "Три соединённых малых резервуара"
+    },
+    {
+      "type": "text",
+      "text": "Ограничения:$(li)В обоих резервуарах должна быть одинаковая жидкость либо хотя бы один должен быть пустым.$(li)Жидкость $(italic)не/$ поднимается: подавайте её сверху, извлекайте снизу.$(li)Интерфейс показывает количество только в резервуаре, по которому нажали ПКМ."
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:small_tank",
+      "recipe2": "pneumaticcraft:medium_tank"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:large_tank",
+      "recipe2": "pneumaticcraft:huge_tank"
+    }
+  ]
+}

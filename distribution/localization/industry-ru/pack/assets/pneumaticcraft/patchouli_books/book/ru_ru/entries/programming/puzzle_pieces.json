@@ -1,0 +1,20 @@
+{
+  "name": "Детали программы",
+  "icon": "pneumaticcraft:textures/progwidgets/start_piece.png",
+  "category": "pneumaticcraft:programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Программирующие пазлы/$, или $(thing)детали программы/$, — предметы для программирования $(l:tools/drone)дрона/$ через $(l:programming/programmer)программатор/$. Они расходуются при записи программы. Вернуть их можно, записав в $(item)дрона/$ меньшую или пустую программу.$(p)Виртуальные представления $(thing)деталей программы/$ в $(item)программаторе/$ называются $(thing)виджетами программирования/$."
+    },
+    {
+      "type": "text",
+      "text": "Для записи программы в $(l:tools/drone)дрона/$ нужные $(thing)детали программы/$ должны находиться в вашем инвентаре или хранилище с любой стороны $(item)программатора/$.$(p)В творческом режиме детали не требуются."
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:programming_puzzle"
+    }
+  ]
+}

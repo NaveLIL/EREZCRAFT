@@ -1,0 +1,40 @@
+{
+  "name": "Виджет атаки сущности",
+  "icon": "pneumaticcraft:textures/progwidgets/attack_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Дрон/$ атакует живых существ в области.$(p)Подключённые $(l:programming/area)области/$ должны иметь форму $(thing)параллелепипеда/$. Более сложную форму можно составить несколькими разрешёнными областями справа и запрещёнными слева."
+    },
+    {
+      "type": "text",
+      "title": "Фильтрация сущностей",
+      "text": "Укажите цели в $(l:programming/text)текстовых/$ виджетах с $(l:base_concepts/entity_filter)фильтром сущностей/$. Например, чтобы $(thing)дрон/$ атаковал всех игроков, подключите $(thing)текст/$ со значением $(#600)@player/$ $(italic)справа/$ от $(thing)атаки сущности/$.$(p)Чтобы исключить себя, подключите $(thing)текст/$ со своим ником $(italic)слева/$."
+    },
+    {
+      "type": "spotlight",
+      "item": "minecraft:diamond_sword",
+      "title": "Ближний бой",
+      "text": "$(l:tools/drone)Дроны/$ используют оружие ближнего боя из своего инвентаря. Если у $(thing)дрона/$ их несколько, выбирается наносящее наибольший урон.$(p)Оружие можно получить $(l:programming/inventory_import)импортом из инвентаря/$. Это настоятельно рекомендуется: безоружная атака слаба."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:minigun_upgrade",
+      "text": "Установите $(l:base_concepts/upgrades#minigun)улучшение минигана/$ в $(l:tools/drone)дрона/$, чтобы дать ему $(l:tools/minigun)миниган/$. Снабдив его $(l:tools/minigun_ammo)боеприпасами/$ через $(l:programming/inventory_import)импорт из инвентаря/$, вы позволите $(thing)дрону/$ атаковать издалека.$(p)Базовая дальность — 16 блоков. До 16 $(l:base_concepts/upgrades#range_upgrade)улучшений дальности/$ увеличивают её до 32 блоков."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:micromissiles",
+      "text": "Дроны также стреляют $(l:tools/micromissiles)микроракетами/$. Если при выполнении виджета $(thing)дрон/$ держит $(item)микроракету/$, он запускает её в текущую цель. Подключённый $(l:base_concepts/entity_filter)фильтр сущностей/$ копируется в фильтр самой микроракеты."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/attack_piece.png"
+      ],
+      "text": "$(italic)Я ещё вернусь/$"
+    }
+  ]
+}

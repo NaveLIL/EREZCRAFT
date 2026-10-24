@@ -1,0 +1,19 @@
+{
+  "name": "Виджет экспорта RF",
+  "icon": "pneumaticcraft:textures/progwidgets/rf_export_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "У $(l:tools/drone)дронов/$ есть буфер на 100,000 FE, Forge Energy. Виджет передаёт энергию из него во внешний блок, например $(item)энергоячейку Thermal Expansion/$ или $(item)конденсатор Immersive Engineering/$.$(p)$(italic)Название историческое: экспортируется FE (Forge Energy), а не RF (Redstone Flux)./$"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/rf_export_piece.png"
+      ],
+      "text": "$(italic)Виджет экспорта RF/$"
+    }
+  ]
+}

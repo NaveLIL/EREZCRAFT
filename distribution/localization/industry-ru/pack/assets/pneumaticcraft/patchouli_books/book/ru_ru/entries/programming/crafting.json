@@ -1,0 +1,29 @@
+{
+  "name": "Виджет создания предметов",
+  "icon": "pneumaticcraft:textures/progwidgets/craft_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Дрон/$ создаёт предметы из содержимого своего инвентаря. Задайте рецепт, разместив $(l:programming/item_filter)фильтры предметов/$ справа от виджета создания в форме рецепта.$(p)Все 9 $(thing)фильтров/$ не обязательны: достаточно правильно воспроизвести расположение ингредиентов."
+    },
+    {
+      "type": "text",
+      "text": "По умолчанию виджет создаёт максимум доступных предметов. Ограничьте это настройкой $(thing)«Использовать количество»/$.$(p)Вероятно, $(item)дрону/$ понадобятся $(l:base_concepts/upgrades#dispenser)улучшения инвентаря/$ для дополнительных слотов."
+    },
+    {
+      "type": "text",
+      "flag": "mod:jei",
+      "title": "Интеграция с JEI",
+      "text": "Быстро настроить фильтры для рецепта можно через JEI. Подробнее — на $(l:programming/programmer#jei)этой странице/$."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/craft_piece.png"
+      ],
+      "text": "$(italic)Виджет создания предметов/$"
+    }
+  ]
+}

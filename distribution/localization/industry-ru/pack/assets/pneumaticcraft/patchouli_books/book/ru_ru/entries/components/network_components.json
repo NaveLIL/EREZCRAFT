@@ -1,0 +1,48 @@
+{
+  "name": "Сетевые компоненты",
+  "icon": "pneumaticcraft:network_api",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Эти компоненты в основном нужны $(l:programming/security_station)станции безопасности/$, но используются и в других рецептах. $(l:components/network_components#network_storage)Сетевое хранилище/$ и $(l:components/network_components#network_api)сетевой API/$ также хранят программы $(l:tools/drone)дронов/$."
+    },
+    {
+      "type": "crafting",
+      "anchor": "diagnostic",
+      "text": "$(item)Диагностическая подпрограмма/$ обязательна для $(l:machines/security_station)станции безопасности/$.$(br)Она отслеживает $(l:machines/security_station#hacking)попытки взлома/$ до атакующего. Если все $(item)диагностические подпрограммы/$ захвачены, $(item)станция/$ взломана.",
+      "recipe": "pneumaticcraft:diagnostic_subroutine"
+    },
+    {
+      "type": "crafting",
+      "anchor": "io_port",
+      "text": "$(item)Сетевой порт ввода-вывода/$ обязателен для $(l:machines/security_station)станции безопасности/$.$(br)Это точка входа при взломе вашей $(item)станции/$.",
+      "recipe": "pneumaticcraft:network_io_port"
+    },
+    {
+      "type": "crafting",
+      "anchor": "registry",
+      "text": "$(item)Сетевой реестр/$ обязателен для $(l:machines/security_station)станции безопасности/$.$(br)Это цель взлома: если захвачены $(italic)все/$ реестры, $(item)станция/$ взломана.",
+      "recipe": "pneumaticcraft:network_registry"
+    },
+    {
+      "type": "crafting",
+      "anchor": "node",
+      "text": "$(item)Сетевой узел/$ соединяет обязательные компоненты $(l:machines/security_station)станции безопасности/$.",
+      "recipe": "pneumaticcraft:network_node"
+    },
+    {
+      "type": "crafting",
+      "anchor": "network_api",
+      "text": "$(item)Сетевой API/$ хранит программы $(l:tools/drone)дронов/$. Для записи нужны $(l:programming/puzzle_pieces)детали программы/$. Программы запускаются в $(l:programming/programmable_controller)программируемом контроллере/$ или виджетом $(l:programming/external_program)внешней программы/$.",
+      "recipe": "pneumaticcraft:network_api"
+    },
+    {
+      "type": "crafting",
+      "anchor": "network_storage",
+      "text": "$(item)Сетевое хранилище данных/$ хранит программы $(l:tools/drone)дронов/$. $(l:programming/puzzle_pieces)Детали программы/$ для записи $(italic)не/$ нужны, поэтому запускать программы из него нельзя. Зато оно удобно для библиотеки программ и обмена с игроками.",
+      "recipe": "pneumaticcraft:network_data_storage"
+    }
+  ]
+}

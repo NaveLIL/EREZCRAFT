@@ -1,0 +1,34 @@
+{
+  "name": "Объёмный пакет",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:volume_package",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Объёмные пакеты/$ содержат ресурсы вроде жидкостей. Их можно вставлять или распаковывать в подходящие ёмкости."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "packagedauto:volume_package",
+      "link_recipe": true,
+      "title": "Получение",
+      "text": "$(item)Объёмные пакеты/$ с определёнными ресурсами создаются специальными машинами. Например, $(l:core/fluid_package_filler)наполнитель жидкостных пакетов/$ создаёт $(item)объёмные пакеты/$ с жидкостями."
+    },
+    {
+      "type": "patchouli:text",
+      "flag": "&mod:jei,!mod:emi",
+      "item": "packagedauto:volume_package",
+      "title": "Интеграция с JEI",
+      "text": "Нажмите $(thing)$(k:jei.showUses)/$ над $(item)объёмным пакетом/$, чтобы увидеть его содержимое."
+    },
+    {
+      "type": "patchouli:text",
+      "flag": "mod:ae2",
+      "item": "packagedauto:volume_package",
+      "title": "Интеграция с AE2",
+      "text": "Машины, предоставляющие автокрафт $(thing)МЭ-сети/$, могут учитывать содержимое $(thing)объёмных пакетов/$ как вход и выход автокрафта и создавать пакеты напрямую."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 3
+}

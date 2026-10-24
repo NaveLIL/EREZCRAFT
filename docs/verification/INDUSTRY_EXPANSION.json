@@ -1,0 +1,340 @@
+{
+  "schema": 1,
+  "status": "published and verified",
+  "base_sequence": 17,
+  "client_jars": 79,
+  "server_jars": 67,
+  "native": {
+    "versions": {
+      "create": "6.0.10",
+      "modern_industrialization": "2.5.10",
+      "sable": "2.0.6",
+      "interstice": "0.7.0-preview.13",
+      "create_connected": "1.3.3-mc1.21.1",
+      "sliceanddice": "4.3.4",
+      "create_enchantment_industry": "2.5.4b",
+      "packagedauto": "4.0.8.21",
+      "packageddraconic": "4.0.0.1",
+      "pneumaticcraft": "8.2.23",
+      "extended_industrialization": "1.16.4-1.21.1",
+      "sfm": "4.34.0",
+      "create_dragons_plus": "1.11.9",
+      "tesseract_api": "1.12.18-1.21.1",
+      "patchouli": "1.21.1-93-NEOFORGE",
+      "railways": "0.3.0-beta.2+neoforge-mc1.21.1"
+    },
+    "failures": [],
+    "loaded_mod_count": 107,
+    "translations_checked": 18974,
+    "book_resources_checked": 430,
+    "language": "ru_ru",
+    "distant_horizons_loaded": true,
+    "no_world_opened": true,
+    "passed": true
+  },
+  "localization": {
+    "schema": 1,
+    "status": "PASS",
+    "checked_profile": "EREZCRAFT industry candidate / published Interstice preview.13 + 12 additions / 79 JAR",
+    "minecraft": "1.21.1",
+    "jars": 79,
+    "namespaces": 77,
+    "overlay_namespaces": 63,
+    "translated_keys": 19004,
+    "missing_before": 18131,
+    "missing_after": 0,
+    "markdown_pages": 142,
+    "patchouli_pages": 288,
+    "originals_unchanged": true,
+    "checks": [
+      "Pinned mod SHA-256",
+      "English source digests",
+      "Missing language keys",
+      "Placeholder counts and indices",
+      "Minecraft formatting codes",
+      "UTF-8 and empty entries",
+      "Original guide component markup",
+      "Original heading anchors",
+      "Patchouli technical fields and links",
+      "No English/gameplay/binary asset overrides"
+    ],
+    "errors": [],
+    "limitations": [
+      "Does not detect arbitrary text hardcoded in mod classes.",
+      "Does not prove visual fit or live client resource-pack activation.",
+      "Building Gadgets Patchouli content is included for compatible readers; no new reader mod is installed."
+    ]
+  },
+  "translation_build": {
+    "generated_language_keys": 1189,
+    "generated_book_files": 259,
+    "origins": {
+      "reviewed": 2153,
+      "technical_literal": 95,
+      "reviewed_pattern": 321,
+      "RTF": 62,
+      "exact_english_book_reuse": 178
+    },
+    "unresolved_unique": 0,
+    "ready_for_publication": true
+  },
+  "train": {
+    "owner_worlds_used": false,
+    "synthetic_control": true,
+    "cold_reload": false,
+    "dedicated": true,
+    "recipe_counts": {
+      "create_connected": 127,
+      "sliceanddice": 146,
+      "create_enchantment_industry": 25,
+      "packagedauto": 19,
+      "packageddraconic": 9,
+      "pneumaticcraft": 411,
+      "extended_industrialization": 249,
+      "sfm": 17,
+      "railways": 2582
+    },
+    "assembly_direction": "east",
+    "train_assembled": true,
+    "train_id": "fb18f112-e59e-4bf5-8b5a-3561db5f5b28",
+    "travelled_blocks": 20.0,
+    "carriages": 1,
+    "saved_x": -19,
+    "saved_y": 66,
+    "saved_z": 0,
+    "passed": true,
+    "ticks": 341
+  },
+  "cold_train": {
+    "owner_worlds_used": false,
+    "synthetic_control": true,
+    "cold_reload": true,
+    "dedicated": true,
+    "recipe_counts": {
+      "create_connected": 127,
+      "sliceanddice": 146,
+      "create_enchantment_industry": 25,
+      "packagedauto": 19,
+      "packageddraconic": 9,
+      "pneumaticcraft": 411,
+      "extended_industrialization": 249,
+      "sfm": 17,
+      "railways": 2582
+    },
+    "train_id": "fb18f112-e59e-4bf5-8b5a-3561db5f5b28",
+    "train_count": 1,
+    "position_retained": true,
+    "passed": true,
+    "ticks": 120
+  },
+  "resource_pack": {
+    "sha256": "d60538ba17a995e191183513d9f833f79d97801258ac60e2a36f600ad6cb328a",
+    "bytes": 878840,
+    "entries": 503,
+    "all_native_accepted_entries_unchanged": true,
+    "attribution_files_added": 3
+  },
+  "owner_worlds_used": false,
+  "unpublished_fauna_included": false,
+  "limitations": [
+    "Menu/resource validation is not visual inspection of every guide page.",
+    "Synthetic train controls do not prove player input, schedules, every track type, or survival balance.",
+    "Dedicated startup and recipes do not prove capacity for ten players or live Draconic fusion automation."
+  ],
+  "normalized_install_names": [
+    "pneumaticcraft-repressurized-8.2.23-mc1.21.1.jar",
+    "Super-Factory-Manager-SFM-MC1.21.1-4.34.0.jar",
+    "railways-0.3.0-beta.2-neoforge-mc1.21.1.jar"
+  ],
+  "native_resource_pack_entries": 503,
+  "sequence": 18,
+  "release_id": "techmagic-0-1-0-alpha-18-industry",
+  "server": {
+    "passed": true,
+    "server_jars": 67,
+    "old_jars_unchanged": 54,
+    "mod_version": "0.7.0-preview.13",
+    "backup_destination": "owner_pc",
+    "online_auth_required": true,
+    "owner_only_op4": true,
+    "healthy": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false,
+    "started_at": "2026-10-24T11:54:16.222813673Z"
+  },
+  "admission": {
+    "passed": true,
+    "protocol": 767,
+    "rsa_aes_login_used": true,
+    "authentication_required": true,
+    "missing_session_rejected_by_authentication": true,
+    "not_rejected_by_whitelist_or_mod_mismatch": true,
+    "owner_accounts_used": false,
+    "credentials_read": false,
+    "world_entered": false
+  },
+  "publication": {
+    "sourceSequence": 17,
+    "sequence": 18,
+    "releaseId": "techmagic-0-1-0-alpha-18-industry",
+    "oldCatalogSha256": "ca2298513ed47c55c62b7d2214adb08fd11cd4a2570572d76840e4dc3241b4e4",
+    "newCatalogSha256": "a833589586161f36eb85b38bef385dc125b91b993208e1f0188eeaa1b24a4165",
+    "files": 89,
+    "clientJars": 79,
+    "unchangedBaseFiles": 75,
+    "removed": [],
+    "changed": [
+      {
+        "path": "config/erezcraft-pack.json",
+        "size": 173,
+        "sha256": "6e6aa5e97ee265aca2fd17adeba3f99added07b4a4f74569303d45203f549882",
+        "url": "https://files.erezcraft.com/blobs/6e6aa5e97ee265aca2fd17adeba3f99added07b4a4f74569303d45203f549882",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/CreateDragonsPlus-1.11.9.jar",
+        "size": 1085674,
+        "sha256": "37f05a6775bbe811fe8c2833fa6289a1c704d0b25bdd5f239d343a5c6f62ed8a",
+        "url": "https://cdn.modrinth.com/data/dzb1a5WV/versions/b0u9vk8C/CreateDragonsPlus-1.11.9.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/PackagedAuto-1.21.1-4.0.8.21.jar",
+        "size": 573307,
+        "sha256": "1dd7eaf0e695855d98b322d62ef145f41457b90fb80f5ce08139ea4d197079ea",
+        "url": "https://cdn.modrinth.com/data/ugIdhQx4/versions/ErYy5Im9/PackagedAuto-1.21.1-4.0.8.21.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/PackagedDraconic-1.21.1-4.0.0.1.jar",
+        "size": 143334,
+        "sha256": "5b97b3a3d620d74ab00b826ededbc5508f22b70025eb12aebff40a248f6b5a35",
+        "url": "https://cdn.modrinth.com/data/dNduUQBR/versions/ImNmnhkd/PackagedDraconic-1.21.1-4.0.0.1.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/Patchouli-1.21.1-93-NEOFORGE.jar",
+        "size": 646777,
+        "sha256": "959af52ed6640c316c3a8469203420be4aeea11ad6603890ba83bf48f5d9f993",
+        "url": "https://cdn.modrinth.com/data/nU0bVIaL/versions/BIogJv2D/Patchouli-1.21.1-93-NEOFORGE.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/Super-Factory-Manager-SFM-MC1.21.1-4.34.0.jar",
+        "size": 1597623,
+        "sha256": "4b589e0b310133998f26f0c12c3ee8d367360be1771e0e96c951322cea6c7ad0",
+        "url": "https://cdn.modrinth.com/data/aecUorJQ/versions/HWz24fIm/Super%20Factory%20Manager%20%28SFM%29-MC1.21.1-4.34.0.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/create-enchantment-industry-2.5.4b.jar",
+        "size": 1607432,
+        "sha256": "0230b4dfa5af59bc91aef6a26f13165aeeec7026969ce39c823fc3d198e2241d",
+        "url": "https://cdn.modrinth.com/data/JWGBpFUP/versions/L6VSDdC4/create-enchantment-industry-2.5.4b.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/create_connected-1.3.3-mc1.21.1.jar",
+        "size": 6786783,
+        "sha256": "0c5eb9ffb5c8d71e6e2a39023feb85c51adfb10d38949bc47c4abbd53b351a4f",
+        "url": "https://cdn.modrinth.com/data/Vg5TIO6d/versions/Xe7EqzfQ/create_connected-1.3.3-mc1.21.1.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/extended-industrialization-1.16.4-1.21.1.jar",
+        "size": 2246194,
+        "sha256": "a440f8416b6ed0f3a56009f175a7cb07d7585d985126dd6d23d58fc370061d80",
+        "url": "https://cdn.modrinth.com/data/CCM0U9YU/versions/rtmKKvYg/extended-industrialization-1.16.4-1.21.1.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/pneumaticcraft-repressurized-8.2.23-mc1.21.1.jar",
+        "size": 11884697,
+        "sha256": "647ce20d52cf139f3b693b9b4c4753966a95a6dafc82d9e538ae4ae5b0249f9c",
+        "url": "https://cdn.modrinth.com/data/ncAcdgk7/versions/TNzeuLH3/pneumaticcraft-repressurized-8.2.23%2Bmc1.21.1.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/railways-0.3.0-beta.2-neoforge-mc1.21.1.jar",
+        "size": 18728584,
+        "sha256": "64b74ddad661deae1cfe7e8334cfa3d39bb8ef7b761f83595ba0476c4a9bb1d5",
+        "url": "https://cdn.modrinth.com/data/L3Jv0QZI/versions/czVeSmZo/railways-0.3.0-beta.2%2Bneoforge-mc1.21.1.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/sliceanddice-4.3.4-neoforge.jar",
+        "size": 1356389,
+        "sha256": "b3982e89611761d7f1cdce90794cd88498a2c9e1447d8a1aba33ed831f3c9201",
+        "url": "https://cdn.modrinth.com/data/GmjmRQ0A/versions/D6mQaFRW/sliceanddice-4.3.4-neoforge.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/tesseract-api-neoforge-1.12.18-1.21.1.jar",
+        "size": 764062,
+        "sha256": "1f976407e94222f76dc9132b7debc979e4c732d126138f7f371caa0f65dc224a",
+        "url": "https://cdn.modrinth.com/data/pHNT1iyc/versions/luummThA/tesseract-api-neoforge-1.12.18-1.21.1.jar",
+        "policy": "managed"
+      },
+      {
+        "path": "resourcepacks/erezcraft-ru-mc1.21.1.zip",
+        "size": 878840,
+        "sha256": "d60538ba17a995e191183513d9f833f79d97801258ac60e2a36f600ad6cb328a",
+        "url": "https://files.erezcraft.com/blobs/d60538ba17a995e191183513d9f833f79d97801258ac60e2a36f600ad6cb328a",
+        "policy": "managed"
+      }
+    ],
+    "stage": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\industry-release-20261024",
+    "public_https_verified": true,
+    "signatures_verified": true,
+    "uploaded_files": 4,
+    "uploaded_bytes": 911963,
+    "game_server_restarted": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false
+  },
+  "backup": {
+    "passed": true,
+    "destination": "owner_pc",
+    "encrypted_on_pc": true,
+    "world_files_verified": 707,
+    "world_archive_sha256": "46dbb425e53a9c23faed994e7dc6d30a91a9f28618419537279e8ef7b3c5fa8f",
+    "world_ciphertext_verified": true,
+    "server_ciphertext_verified": true
+  },
+  "delivery": {
+    "client_jars": 79,
+    "corruption_repaired": 1,
+    "files": 89,
+    "fixture_world_options_and_client_preference_preserved": true,
+    "game_server_contacted": false,
+    "new_sequence": 18,
+    "old_sequence": 17,
+    "passed": true,
+    "real_https_industry_download": true,
+    "repeat_quarantined": 0,
+    "repeat_repaired": 0,
+    "same_size_mtime_repair": true,
+    "update_quarantined": 0,
+    "update_repaired": 14,
+    "user_worlds_used": false
+  },
+  "guideme_parser": {
+    "passed": true,
+    "pages": 142
+  },
+  "java_zip_validation": {
+    "passed": true,
+    "entries": 503
+  },
+  "reproducible_source_build": {
+    "passed": true,
+    "resource_pack_sha256": "d60538ba17a995e191183513d9f833f79d97801258ac60e2a36f600ad6cb328a"
+  },
+  "positive_auth_attempt": {
+    "passed": false,
+    "stage": "test account authentication before any game connection",
+    "note": "Existing Tst fixture credentials did not receive HTTP 200; no credentials printed, no account changes attempted. Full positive updated-client join remains open."
+  },
+  "staged_resourcepack_sources_byte_verified": 510,
+  "newline_preservation": "Pack source trees use -text attributes, retaining exact accepted UTF-8 bytes on Windows/macOS checkouts."
+}

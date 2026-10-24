@@ -1,0 +1,40 @@
+{
+  "name": "Этанол",
+  "icon": "pneumaticcraft:ethanol_bucket",
+  "category": "pneumaticcraft:renewables",
+  "advancement": "pneumaticcraft:yeast_culture",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Этанол/$ получают в $(l:manufacturing/thermopneumatic_processing_plant)термопневматической установке/$ из $(l:renewables/yeast_culture)дрожжевой культуры/$ и $(thing)сахара/$. Он входит в состав $(l:renewables/biodiesel)биодизеля/$."
+    },
+    {
+      "type": "text",
+      "text": "Процесс зависит от температуры: поддерживайте термопневматическую установку в диапазоне от 30°C до 60°C.$(p)В тёплых биомах это просто, а в холодных может потребовать усилий. Учтите: с глубиной температура окружающей среды обычно растёт, поэтому в умеренном биоме можно разместить производство на меньшей высоте Y."
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/ethanol_from_sugar"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/ethanol_from_melon"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/ethanol_from_potato"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/ethanol_from_poisonous_potato"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/ethanol_from_apple"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/ethanol_from_sweet_berries"
+    }
+  ]
+}

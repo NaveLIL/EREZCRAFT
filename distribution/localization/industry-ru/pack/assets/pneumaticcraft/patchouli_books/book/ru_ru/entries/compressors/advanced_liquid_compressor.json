@@ -1,0 +1,17 @@
+{
+  "name": "Продвинутый жидкостный компрессор",
+  "icon": "pneumaticcraft:advanced_liquid_compressor",
+  "category": "pneumaticcraft:compressors",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Продвинутый жидкостный компрессор/$ — вариант $(l:compressors/liquid_compressor)жидкостного компрессора/$ $(l:base_concepts/pressure_tiers)уровня 2/$ с безопасным давлением до 20 бар. Базовая выработка — 50 мл воздуха за такт; поддерживаются $(l:base_concepts/upgrades#speed)улучшения скорости/$.$(p)Его необходимо $(l:base_concepts/heat)охлаждать/$: с ростом температуры эффективность падает вплоть до полного прекращения выработки воздуха."
+    },
+    {
+      "type": "crafting",
+      "text": "Создание $(item)продвинутого жидкостного компрессора/$",
+      "recipe": "pneumaticcraft:advanced_liquid_compressor"
+    }
+  ]
+}

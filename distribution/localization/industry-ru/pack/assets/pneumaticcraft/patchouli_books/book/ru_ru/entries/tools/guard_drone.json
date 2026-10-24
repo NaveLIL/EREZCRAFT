@@ -1,0 +1,45 @@
+{
+  "name": "Дрон-защитник",
+  "icon": "pneumaticcraft:guard_drone[pneumaticcraft:air=120000]",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:pressure_chamber",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Дрон-охранник/$ — специализированный непрограммируемый $(l:tools/drone)дрон/$. Разместите его на хранилище: он возьмёт оттуда один предмет как оружие и начнёт атаковать мобов в пределах своей области."
+    },
+    {
+      "type": "spotlight",
+      "title": "Автоматическая зарядка",
+      "item": "pneumaticcraft:charging_station",
+      "text": "Как и всем дронам, им для работы нужно $(l:base_concepts/pressure)давление/$. При нехватке воздуха они автоматически ищут $(l:tools/drone#charging)зарядную станцию с улучшением раздатчика/$."
+    },
+    {
+      "type": "text",
+      "title": "Дальность",
+      "text": "$(thing)Дрон-охранник/$ ищет враждебных мобов в пределах 16 блоков по горизонтали от места установки, 8 блоков вверх и 5 вниз.$(p)Малая вертикальная дальность не позволяет ему постоянно замечать мобов в глубоких пещерах и телепортироваться к ним, зря расходуя воздух и пропадая из виду."
+    },
+    {
+      "type": "spotlight",
+      "title": "Оружие",
+      "item": "minecraft:netherite_sword",
+      "text": "$(thing)Дрон-охранник/$ берёт любой предмет из хранилища, поэтому положите туда подходящее оружие ближнего боя. Если оно сломается и замены не будет, дрон продолжит сражаться без оружия, что очень неэффективно."
+    },
+    {
+      "type": "spotlight",
+      "title": "Дальний бой",
+      "item": "pneumaticcraft:minigun_upgrade",
+      "text": "Можно установить $(l:base_concepts/upgrades#minigun)улучшение минигана/$: тогда вместо оружия положите в хранилище $(l:tools/minigun_ammo)патроны минигана/$."
+    },
+    {
+      "type": "entity",
+      "entity": "pneumaticcraft:guard_drone",
+      "offset": -0.3
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Дрон-защитник",
+      "recipe": "pneumaticcraft:guard_drone"
+    }
+  ]
+}

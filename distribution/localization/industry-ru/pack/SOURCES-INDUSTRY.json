@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "date": "2026-10-24",
+  "combined_pack_license": "AGPL-3.0-only",
+  "source": "https://github.com/NaveLIL/EREZCRAFT/tree/codex/home-server-infrastructure/distribution/localization/industry-ru",
+  "sources": [
+    {
+      "id": "rtf",
+      "version": "2.8.4",
+      "version_id": "YSxTAlVL",
+      "download_url": "https://cdn.modrinth.com/data/qcfGSnrv/versions/YSxTAlVL/RTF_v.2.8.4_1.20.x.zip",
+      "sha256": "fee98ce0d181d22ec9ab665092f6a7b0899a6d12d57893dda41e76eab097929e",
+      "sha512": "9389876b0232b55df0bca2875c4dc2a352dfdc5d7c3917fb7f5fe97e09dde29597d512712ccb4aeb861f3e9f4d198b09cccfcacc25651a09930f5dc6d7813f94",
+      "repository": "https://github.com/Russian-Translations-and-Fixes/RTF/tree/326542ab6552a016681527637fddf8e4d0b7f1d5",
+      "repository_license": "GPL-3.0; exact upstream LICENSE retained in LICENSE-RTF-GPL-3.0.txt"
+    },
+    {
+      "id": "rtf-extension",
+      "version": "2.7.0",
+      "version_id": "Jc3ynK1l",
+      "download_url": "https://cdn.modrinth.com/data/IUa4fOEk/versions/Jc3ynK1l/%C2%A7eRTF%2B%20v.2.7.0%C2%A70_%C2%A78%C2%A70.zip",
+      "sha256": "025a8dd0aad829a880e18de94ee5d17a72c5f3a50f9bb816de2751b84a0a2b38",
+      "sha512": "8a0ef134a4aafb1420be139259591a5bd7182f978fb1e1f8309186a03d982f5aafe02a3735d03197485e32f5748be8a622051cbda097202a7bf4ed939b4e7e10"
+    }
+  ],
+  "own_work": "EREZ Dev: updated UI/Ponder translations, complete PackagedAuto/PackagedDraconic/PneumaticCraft guides, Extended Industrialization GuideME pages. Machine-assisted public-text drafts were post-edited; mechanics fields and links verified.",
+  "notes": [
+    "Only actually Russian RTF fragments with exactly matching English 1.20.1/1.21.1 source were reused; English stub pages were replaced.",
+    "Original mod binaries remain unchanged and are downloaded from their original Modrinth CDN URLs.",
+    "Code examples, identifiers and proper names intentionally retain their original spelling."
+  ]
+}

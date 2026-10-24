@@ -1,0 +1,31 @@
+{
+  "name": "Виджет области",
+  "icon": "pneumaticcraft:textures/progwidgets/area_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Область/$ — параметр других виджетов, задающий, где они действуют. Область может состоять и из одного блока. Для настройки нужны $(l:tools/gps_tool)GPS-инструмент/$ или $(l:tools/gps_area_tool)GPS-инструмент области/$.$(p)Есть три основных способа задать область:"
+    },
+    {
+      "type": "text",
+      "text": "1. Нажмите $(thing)ПКМ/$ по виджету области в $(l:programming/programmer)программаторе/$. Границы задаются двумя кнопками $(thing)GPS/$: нажмите кнопку и выберите $(l:tools/gps_tool)GPS-инструмент/$ из инвентаря. Ниже выбираются $(thing)тип области/$ и его параметры."
+    },
+    {
+      "type": "text",
+      "text": "2. Настройте $(l:tools/gps_tool)GPS-инструмент/$ или $(l:tools/gps_area_tool)GPS-инструмент области/$ в мире. Затем в $(l:programming/programmer)программаторе/$:$(li)Нажмите $(thing)ЛКМ/$ с $(item)GPS-инструментом или GPS-инструментом области/$ по существующей $(thing)«Области»/$, чтобы скопировать настройки.$(li)Нажмите $(thing)ЛКМ/$ с $(item)GPS-инструментом/$ по пустому месту, чтобы создать $(l:programming/coordinate)координатный/$ виджет.$(li)Нажмите $(thing)Shift+ЛКМ/$ с $(item)GPS-инструментом/$ по пустому месту, чтобы создать $(thing)«Область»/$.$(li)Нажмите $(thing)ЛКМ/$ с $(item)GPS-инструментом области/$ по пустому месту, чтобы создать $(thing)«Область»/$."
+    },
+    {
+      "type": "text",
+      "text": "3. Продвинутый способ: используйте $(thing)переменные/$, созданные $(l:programming/coordinate_operator)оператором координат/$. Переключите $(l:programming/programmer)программатор/$ в $(thing)продвинутый/$ режим. Рядом с кнопками GPS появятся списки переменных. Выберите имя переменной: соответствующий угол области будет брать её координаты."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/area_piece.png"
+      ],
+      "text": "$(italic)Виджет области/$"
+    }
+  ]
+}

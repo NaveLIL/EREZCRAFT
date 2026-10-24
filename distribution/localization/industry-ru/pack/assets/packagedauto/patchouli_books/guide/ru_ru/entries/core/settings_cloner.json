@@ -1,0 +1,25 @@
+{
+  "name": "Копировщик настроек",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:settings_cloner",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Копировщик настроек упаковки/$ позволяет переносить настройки поддерживаемых упаковочных машин."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "packagedauto:settings_cloner",
+      "link_recipe": true,
+      "title": "Использование",
+      "text": "Чтобы скопировать настройки поддерживаемой машины $(item)копировщиком/$, используйте $(thing)$(k:sneak) + $(k:use)/$.$(p)Затем используйте $(thing)$(k:use)/$ на машине того же типа для вставки настроек.$(p)Для очистки используйте $(thing)$(k:sneak) + $(k:use)/$ в воздухе или на неподдерживаемом блоке."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "packagedauto:settings_cloner",
+      "title": "Создание"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 5
+}

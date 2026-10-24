@@ -1,0 +1,17 @@
+{
+  "name": "Витринная полка",
+  "icon": "pneumaticcraft:display_shelf",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Выставочная полка/$ работает как $(l:machines/display_table)выставочный стол/$, но вдвое ниже. Если у блока под ней нет сплошной верхней грани, ножки не отображаются."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Витринная полка",
+      "recipe": "pneumaticcraft:display_shelf"
+    }
+  ]
+}

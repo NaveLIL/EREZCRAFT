@@ -1,0 +1,17 @@
+{
+  "name": "Пушечный ствол",
+  "icon": "pneumaticcraft:cannon_barrel",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Компонент для создания других устройств. Сам по себе не применяется."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Пушечный ствол",
+      "recipe": "pneumaticcraft:cannon_barrel"
+    }
+  ]
+}

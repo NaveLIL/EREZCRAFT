@@ -29,7 +29,7 @@ public class VerifyGuideMarkdown {
         try (var paths = Files.walk(Path.of(args[0]))) {
             for (var path : paths.filter(p -> p.toString().endsWith(".md")).sorted().toList()) {
                 // License/notice files aren't GuideME documents.
-                if (!path.toString().contains("ae2guide") && !path.toString().contains("mi_guidebook")) continue;
+                if (!path.toString().contains("ae2guide") && !path.toString().contains("mi_guidebook") && !path.toString().replace('\\','/').contains("/guides/")) continue;
                 try {
                     MdAst.fromMarkdown(Files.readString(path).replace("\r\n", "\n"), options);
                 } catch (Exception error) {

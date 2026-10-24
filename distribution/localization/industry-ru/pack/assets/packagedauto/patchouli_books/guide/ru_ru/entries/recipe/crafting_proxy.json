@@ -1,0 +1,42 @@
+{
+  "name": "Прокси сборки",
+  "category": "packagedauto:recipe",
+  "icon": "packagedauto:crafting_proxy",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Прокси сборочной машины пакетов/$ позволяет $(l:core/unpackager)распаковщикам/$ отправлять предметы в специализированные сборочные машины на расстоянии."
+    },
+    {
+      "type": "packagedauto:spotlight2",
+      "item1": "packagedauto:proxy_marker",
+      "item2": "packagedauto:crafting_proxy",
+      "title": "Использование",
+      "text": "Привяжите $(item)маркер прокси/$ к сборочной машине пакетов и поместите его в прокси."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Использование (продолжение)",
+      "text": "Для очистки привязанного $(item)маркера прокси/$ используйте $(thing)$(k:sneak) + $(k:use)/$ либо положите его в сетку крафта.$(p)Используйте $(thing)$(k:sneak) + $(k:use)/$ пустой рукой на $(item)прокси сборочной машины пакетов/$, чтобы увидеть его дальность и цель.$(p)Соедините привязанный $(item)маркер прокси/$ с непривязанными в сетке крафта, чтобы скопировать данные."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Копирование настроек",
+      "text": "$(l:core/settings_cloner)Копировщик настроек упаковки/$ переносит выбранную цель $(item)прокси сборочной машины пакетов/$.$(p)Для вставки цели в вашем инвентаре нужен пустой $(item)маркер прокси/$."
+    },
+    {
+      "type": "patchouli:text",
+      "flag": "mod:ae2",
+      "title": "Интеграция с AE2",
+      "text": "$(item)Прокси сборочной машины пакетов/$ можно подключить к $(thing)МЭ-сети/$."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "packagedauto:proxy_marker",
+      "recipe2": "packagedauto:crafting_proxy",
+      "title": "Создание"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 100
+}

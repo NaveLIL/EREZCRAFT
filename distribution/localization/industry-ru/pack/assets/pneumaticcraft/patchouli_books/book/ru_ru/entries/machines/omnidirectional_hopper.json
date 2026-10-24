@@ -1,0 +1,33 @@
+{
+  "name": "Всенаправленная воронка",
+  "icon": "pneumaticcraft:omnidirectional_hopper",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Всенаправленная воронка/$ похожа на обычную $(item)воронку/$, но ориентируется в $(italic)любом/$ направлении. Поддерживает $(l:base_concepts/upgrades)улучшения/$, значительно повышающие скорость. $(l:base_concepts/pressure)Воздух/$ не нужен: удобно в начале игры."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:omnidirectional_hopper",
+      "text": "При установке $(9)вход/$ смотрит на вас, а $(6)выход/$ — на блок, к которому ставится воронка.$(p)$(thing)ПКМ/$ с $(l:tools/pneumatic_wrench)пневматическим ключом/$ меняет направление входа. $(thing)ПКМ с приседанием/$ — выхода. Могут подойти ключи других модов."
+    },
+    {
+      "type": "text",
+      "title": "Улучшение - Диспенсер",
+      "flag": "pneumaticcraft:omniHopperDispenser",
+      "text": "С $(l:base_concepts/upgrades#dispenser)улучшением раздатчика/$ предметы выбрасываются в мир со стороны $(6)выхода/$, если там нет хранилища.$(p)Это улучшенный $(item)выбрасыватель/$: быстрее, точнее и с более гибким $(#f00)управлением редстоуном/$."
+    },
+    {
+      "type": "text",
+      "title": "Улучшение - Трекер существ",
+      "text": "$(l:base_concepts/upgrades#entity_tracker)Трекер сущностей/$ позволяет извлекать предметы из сущностей перед $(9)входом/$. Запретите извлечение, добавив тип сущности в тег $(thing)pneumaticcraft:omnihopper_blacklisted/$. Жители исключены по умолчанию, иначе они могли бы стать бесконечным источником предметов."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Всенаправленная воронка",
+      "recipe": "pneumaticcraft:omnidirectional_hopper"
+    }
+  ]
+}

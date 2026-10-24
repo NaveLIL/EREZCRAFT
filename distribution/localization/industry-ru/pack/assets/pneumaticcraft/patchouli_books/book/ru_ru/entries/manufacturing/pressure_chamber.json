@@ -1,0 +1,87 @@
+{
+  "name": "Барокамера",
+  "icon": "pneumaticcraft:pressure_chamber_wall",
+  "category": "pneumaticcraft:manufacturing",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Барокамера/$ — многоблочная конструкция, сжимающая материалы для получения новых. Благодаря большому запасу воздуха она также служит своеобразным аккумулятором.$(p)Правила сборки:$(li)Полая конструкция размером 3x3x3, 4x4x4 или 5x5x5."
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(thing)Рёбра/$ и $(thing)углы/$ состоят из $(item)стенок/$ или $(item)стекла барокамеры/$.$(li)В $(thing)гранях/$ допускаются $(item)стенки/$, $(item)стекло/$, $(item)клапаны/$ и $(l:manufacturing/pressure_chamber#interface)интерфейсы барокамеры/$.$(li)Нужен хотя бы один $(item)клапан/$.$(li)Рекомендуются хотя бы два $(item)интерфейса/$: один направлен внутрь, другой наружу."
+    },
+    {
+      "type": "multiblock",
+      "name": "Барокамера",
+      "multiblock_id": "pneumaticcraft:pressure_chamber_3",
+      "text": "Пример барокамеры 3x3x3 с 1 $(item)клапаном/$ и 2 $(item)интерфейсами/$"
+    },
+    {
+      "type": "multiblock",
+      "name": "Барокамера",
+      "multiblock_id": "pneumaticcraft:pressure_chamber_4",
+      "text": "Пример барокамеры 4x4x4 с 2 $(item)клапанами/$ и 2 $(item)интерфейсами/$"
+    },
+    {
+      "type": "multiblock",
+      "name": "Барокамера",
+      "multiblock_id": "pneumaticcraft:pressure_chamber_5",
+      "text": "Пример барокамеры 5x5x5 с 4 $(item)клапанами/$ и 4 $(item)интерфейсами/$"
+    },
+    {
+      "type": "spotlight",
+      "anchor": "interface",
+      "item": "pneumaticcraft:pressure_chamber_interface",
+      "text": "$(item)Интерфейс барокамеры/$ автоматизирует подачу и извлечение предметов из $(thing)барокамеры/$. Предметы $(italic)обязательно/$ подаются через $(item)воронки/$ или трубы других модов. Нужны как минимум два интерфейса: один буквой 'I' наружу ($(thing)входной/$), другой буквой 'O' наружу ($(thing)выходной/$)."
+    },
+    {
+      "type": "text",
+      "text": "Входные интерфейсы принимают только ингредиенты рецептов барокамеры. Выходные по умолчанию извлекают только готовые продукты. Кнопка в настройках разрешает извлечение $(italic)всех/$ предметов.$(p)$(italic)По сравнению с версией 1.12.2 поведение изменилось и стало гораздо удобнее./$"
+    },
+    {
+      "type": "text",
+      "text": "Выходные $(item)интерфейсы/$ автоматически передают предметы в соседнее хранилище. Трубы других модов поддерживаются, если распознаются как инвентарь.$(p)Каждый предмет требует 1000mL $(l:base_concepts/pressure)воздуха/$: на полный стак $(item)интерфейсу/$ нужно 64000mL, то есть 4 бар в базовой камере 3x3x3. Если интерфейс будто застрял, он просто ждёт достаточного давления."
+    },
+    {
+      "type": "text",
+      "text": "$(bold)Советы/$$(li)Сжимайте $(item)железо/$ в виде $(item)железных блоков/$: перенос в камеру и обратно потребует лишь 1/9 воздуха.$(li)Дополнительные клапаны ускоряют наполнение большой камеры, если компрессоры производят достаточно воздуха."
+    },
+    {
+      "type": "crafting",
+      "title": "Стены и стекло",
+      "recipe": "pneumaticcraft:pressure_chamber_wall",
+      "recipe2": "pneumaticcraft:pressure_chamber_glass"
+    },
+    {
+      "type": "crafting",
+      "title": "Интерфейс и клапан",
+      "recipe": "pneumaticcraft:pressure_chamber_interface",
+      "recipe2": "pneumaticcraft:pressure_chamber_valve_x1"
+    },
+    {
+      "type": "crafting",
+      "title": "Клапаны",
+      "recipe": "pneumaticcraft:pressure_chamber_valve_x4",
+      "recipe2": "pneumaticcraft:pressure_chamber_valve"
+    },
+    {
+      "type": "spotlight",
+      "title": "Усиленный клапан",
+      "item": "pneumaticcraft:reinforced_pressure_chamber_valve",
+      "text": "$(item)Усиленный клапан барокамеры/$ — продвинутый блок, повышающий максимальное давление с обычных 5 бар до 20 бар. Это позволяет хранить в барокамере в 4 раза больше воздуха и может открыть $(ttcolor)$(t:По умолчанию всем рецептам барокамеры достаточно 5 бар, но сборки могут это изменить)новые рецепты/$."
+    },
+    {
+      "type": "crafting",
+      "title": "Несобранный усиленный клапан",
+      "recipe": "pneumaticcraft:unassembled_reinforced_pressure_chamber_valve",
+      "text": "Учтите, что улучшать $(item)интерфейсы/$, $(item)стены/$ и $(item)стекло/$ не требуется."
+    },
+    {
+      "type": "pneumaticcraft:assembly_system",
+      "title": "Усиленный клапан",
+      "recipe": "pneumaticcraft:assembly/reinforced_pressure_chamber_valve"
+    }
+  ]
+}

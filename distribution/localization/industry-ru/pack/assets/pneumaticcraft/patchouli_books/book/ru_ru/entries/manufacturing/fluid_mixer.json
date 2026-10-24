@@ -1,0 +1,17 @@
+{
+  "name": "Смешиватель жидкостей",
+  "icon": "pneumaticcraft:fluid_mixer",
+  "category": "pneumaticcraft:manufacturing",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Смеситель жидкостей/$ использует $(l:base_concepts/pressure)давление/$, чтобы соединять две жидкости в новую жидкость или предмет. Основное применение — производство $(l:renewables/biodiesel)биодизеля/$.$(p)Большее давление ускоряет работу, но повышает расход воздуха."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Смешиватель жидкостей",
+      "recipe": "pneumaticcraft:fluid_mixer"
+    }
+  ]
+}

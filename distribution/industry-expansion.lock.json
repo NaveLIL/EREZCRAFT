@@ -1,0 +1,563 @@
+{
+  "schema": 1,
+  "status": "published alpha.18 / sequence18; native client, dedicated train, cold train and RU accepted",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.252",
+  "base_sequence": 17,
+  "base_client_jars": 67,
+  "candidate_client_jars": 79,
+  "mods": [
+    {
+      "project": "create-connected",
+      "project_id": "Vg5TIO6d",
+      "version_id": "Xe7EqzfQ",
+      "version": "1.3.3-mc1.21.1",
+      "channel": "release",
+      "filename": "create_connected-1.3.3-mc1.21.1.jar",
+      "bytes": 6786783,
+      "download_url": "https://cdn.modrinth.com/data/Vg5TIO6d/versions/Xe7EqzfQ/create_connected-1.3.3-mc1.21.1.jar",
+      "sha512": "485675693980a266611669857fa9cd348e2a29140b87bf0a8ab3e13c3591422cceaa36b7a2eb90084d35ec1868c8eec9f924383bb4dada2dddcb72e9f09361b0",
+      "sha256": "0c5eb9ffb5c8d71e6e2a39023feb85c51adfb10d38949bc47c4abbd53b351a4f",
+      "dependencies": {
+        "create_connected": [
+          {
+            "modId": "neoforge",
+            "mandatory": true,
+            "versionRange": "[21.1.200,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "mandatory": true,
+            "versionRange": "[1.21.1,1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "mandatory": true,
+            "versionRange": "[6.0.10,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "installed_filename": "create_connected-1.3.3-mc1.21.1.jar"
+    },
+    {
+      "project": "slice-and-dice",
+      "project_id": "GmjmRQ0A",
+      "version_id": "D6mQaFRW",
+      "version": "4.3.4",
+      "channel": "release",
+      "filename": "sliceanddice-4.3.4-neoforge.jar",
+      "bytes": 1356389,
+      "download_url": "https://cdn.modrinth.com/data/GmjmRQ0A/versions/D6mQaFRW/sliceanddice-4.3.4-neoforge.jar",
+      "sha512": "18fc9c70d2958ad6a0e7106ca2a5659d664fe9d5001a02afbd0c7d6980749764fcd90203abb2b9c6d7b1c8e564e421be04dfca1aeb25974371d7deeabf4b96a3",
+      "sha256": "b3982e89611761d7f1cdce90794cd88498a2c9e1447d8a1aba33ed831f3c9201",
+      "dependencies": {
+        "sliceanddice": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "kotlinforforge",
+            "versionRange": "[5.8,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "atmosphere",
+            "versionRange": "[1.0.7,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "versionRange": "[6.0.9,7.0.0)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create_enchantment_industry",
+            "versionRange": "[1.3.0,)",
+            "ordering": "NONE",
+            "side": "BOTH",
+            "type": "optional"
+          }
+        ]
+      },
+      "installed_filename": "sliceanddice-4.3.4-neoforge.jar"
+    },
+    {
+      "project": "create-enchantment-industry",
+      "project_id": "JWGBpFUP",
+      "version_id": "L6VSDdC4",
+      "version": "2.5.4b",
+      "channel": "beta",
+      "filename": "create-enchantment-industry-2.5.4b.jar",
+      "bytes": 1607432,
+      "download_url": "https://cdn.modrinth.com/data/JWGBpFUP/versions/L6VSDdC4/create-enchantment-industry-2.5.4b.jar",
+      "sha512": "c3d8511f5eec5a4ec7240f69cf6952038d72d4e32b48a0ace7b10d729a4073c1181e6dbcb2f1a1841480e5fc7bc7da3833b8ed4793dd0c3cc057eb8ac488eb3d",
+      "sha256": "0230b4dfa5af59bc91aef6a26f13165aeeec7026969ce39c823fc3d198e2241d",
+      "dependencies": {
+        "create_enchantment_industry": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1, 1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create_dragons_plus",
+            "type": "required",
+            "versionRange": "[1.11.9,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "apothic_enchanting",
+            "type": "optional",
+            "versionRange": "[1.6.1,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "apotheosis",
+            "type": "optional",
+            "versionRange": "[8.7.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "apothic_spawners",
+            "type": "optional",
+            "versionRange": "[1.4.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "optional",
+            "versionRange": "[2.0.3,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "touhou_little_maid",
+            "type": "optional",
+            "versionRange": "[1.2.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "installed_filename": "create-enchantment-industry-2.5.4b.jar"
+    },
+    {
+      "project": "packagedauto",
+      "project_id": "ugIdhQx4",
+      "version_id": "ErYy5Im9",
+      "version": "1.21.1-4.0.8.21",
+      "channel": "beta",
+      "filename": "PackagedAuto-1.21.1-4.0.8.21.jar",
+      "bytes": 573307,
+      "download_url": "https://cdn.modrinth.com/data/ugIdhQx4/versions/ErYy5Im9/PackagedAuto-1.21.1-4.0.8.21.jar",
+      "sha512": "96a730b8221e5e9eefa27fe78c429dc7efaeb5ccb6c7f39b122ad8a89549c353b883bad00190aa5beff5ebbc9a2494db3eee8883c1c4b6a98a83bba1337de627",
+      "sha256": "1dd7eaf0e695855d98b322d62ef145f41457b90fb80f5ce08139ea4d197079ea",
+      "dependencies": {
+        "packagedauto": [
+          {
+            "modId": "neoforge",
+            "versionRange": "[21,)",
+            "type": "required"
+          },
+          {
+            "modId": "ae2",
+            "versionRange": "*",
+            "type": "optional"
+          }
+        ]
+      },
+      "installed_filename": "PackagedAuto-1.21.1-4.0.8.21.jar"
+    },
+    {
+      "project": "packageddraconic",
+      "project_id": "dNduUQBR",
+      "version_id": "ImNmnhkd",
+      "version": "1.21.1-4.0.0.1",
+      "channel": "beta",
+      "filename": "PackagedDraconic-1.21.1-4.0.0.1.jar",
+      "bytes": 143334,
+      "download_url": "https://cdn.modrinth.com/data/dNduUQBR/versions/ImNmnhkd/PackagedDraconic-1.21.1-4.0.0.1.jar",
+      "sha512": "0b327c75cbf782a1c3f719f750b1a8b48ebcf66dbe6f023260ee544f8facb856320cdc30454714a2c07910ea90f2ad7b4df44c12ad23143bd08c090041717b24",
+      "sha256": "5b97b3a3d620d74ab00b826ededbc5508f22b70025eb12aebff40a248f6b5a35",
+      "dependencies": {
+        "packageddraconic": [
+          {
+            "modId": "neoforge",
+            "versionRange": "[21,)",
+            "type": "required"
+          },
+          {
+            "modId": "packagedauto",
+            "versionRange": "[4.0.4,)",
+            "type": "required"
+          },
+          {
+            "modId": "draconicevolution",
+            "versionRange": "*",
+            "type": "required"
+          }
+        ]
+      },
+      "installed_filename": "PackagedDraconic-1.21.1-4.0.0.1.jar"
+    },
+    {
+      "project": "pneumaticcraft-repressurized",
+      "project_id": "ncAcdgk7",
+      "version_id": "TNzeuLH3",
+      "version": "8.2.23",
+      "channel": "release",
+      "filename": "pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar",
+      "bytes": 11884697,
+      "download_url": "https://cdn.modrinth.com/data/ncAcdgk7/versions/TNzeuLH3/pneumaticcraft-repressurized-8.2.23%2Bmc1.21.1.jar",
+      "sha512": "1863243c4e76ecdef60c541e332808df48f50e01d7f75f5b1bd52e38f086925aa715a199775cf885746e3869cfc78ee5ac463fd33a1ac55cccab5394d19e2bfa",
+      "sha256": "647ce20d52cf139f3b693b9b4c4753966a95a6dafc82d9e538ae4ae5b0249f9c",
+      "dependencies": {
+        "pneumaticcraft": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.181,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "patchouli",
+            "type": "optional",
+            "versionRange": "[1.21-87,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "jei",
+            "type": "optional",
+            "versionRange": "[19.9.0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "emi",
+            "type": "optional",
+            "versionRange": "[1.1.13,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "installed_filename": "pneumaticcraft-repressurized-8.2.23-mc1.21.1.jar"
+    },
+    {
+      "project": "extended-industrialization",
+      "project_id": "CCM0U9YU",
+      "version_id": "rtmKKvYg",
+      "version": "1.16.4-1.21.1",
+      "channel": "release",
+      "filename": "extended-industrialization-1.16.4-1.21.1.jar",
+      "bytes": 2246194,
+      "download_url": "https://cdn.modrinth.com/data/CCM0U9YU/versions/rtmKKvYg/extended-industrialization-1.16.4-1.21.1.jar",
+      "sha512": "1fd57b1ebb67e81fa40e212b04a7b340ad6cc76750130c2583fbc1cb8b000d0f71284fc10273d9db5b491aa48c99809bcd30b3a3c3fb6bbb8ba5c529600bbdab",
+      "sha256": "a440f8416b6ed0f3a56009f175a7cb07d7585d985126dd6d23d58fc370061d80",
+      "dependencies": {
+        "extended_industrialization": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.238,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "modern_industrialization",
+            "type": "required",
+            "versionRange": "[2.5.10-, 2.6-)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "emi",
+            "type": "optional",
+            "versionRange": "[1.1.24, 1.2-)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "tesseract_api",
+            "type": "required",
+            "versionRange": "[1.12.18-, 1.13-)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "accessories",
+            "type": "optional",
+            "versionRange": "[1.0.0-beta.34-, 1.1.0-)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "curios",
+            "type": "optional",
+            "versionRange": "[9,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "guideme",
+            "type": "required",
+            "versionRange": "[21.1.13, 21.2)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "installed_filename": "extended-industrialization-1.16.4-1.21.1.jar"
+    },
+    {
+      "project": "super-factory-manager",
+      "project_id": "aecUorJQ",
+      "version_id": "HWz24fIm",
+      "version": "4.34.0",
+      "channel": "release",
+      "filename": "Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar",
+      "bytes": 1597623,
+      "download_url": "https://cdn.modrinth.com/data/aecUorJQ/versions/HWz24fIm/Super%20Factory%20Manager%20%28SFM%29-MC1.21.1-4.34.0.jar",
+      "sha512": "c8897ecdc3659c9a06ce1dabe2f81d55888f425ddc3c7e2ddeb48d95d73c3b887eb135455d7d5a3da1915c4c6dc693b0e113413d323334137f808cb3871c9158",
+      "sha256": "4b589e0b310133998f26f0c12c3ee8d367360be1771e0e96c951322cea6c7ad0",
+      "dependencies": {
+        "sfm": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.0.0-beta,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "mekanism",
+            "type": "optional",
+            "versionRange": "[10.3.2,)"
+          }
+        ]
+      },
+      "installed_filename": "Super-Factory-Manager-SFM-MC1.21.1-4.34.0.jar"
+    },
+    {
+      "project": "create-dragons-plus",
+      "project_id": "dzb1a5WV",
+      "version_id": "b0u9vk8C",
+      "version": "1.11.9",
+      "channel": "release",
+      "filename": "CreateDragonsPlus-1.11.9.jar",
+      "bytes": 1085674,
+      "download_url": "https://cdn.modrinth.com/data/dzb1a5WV/versions/b0u9vk8C/CreateDragonsPlus-1.11.9.jar",
+      "sha512": "43299e49afe7132515aa8ad545b8c9566d90f12cfb39456b3d6e1ebc8e03f05787fbc420e7cc9495df4d6b585d13e7a4c4c7385f82f20aeb829c9491b725af53",
+      "sha256": "37f05a6775bbe811fe8c2833fa6289a1c704d0b25bdd5f239d343a5c6f62ed8a",
+      "dependencies": {
+        "create_dragons_plus": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1, 1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "installed_filename": "CreateDragonsPlus-1.11.9.jar"
+    },
+    {
+      "project": "tesseract-api",
+      "project_id": "pHNT1iyc",
+      "version_id": "luummThA",
+      "version": "1.12.18-1.21.1",
+      "channel": "release",
+      "filename": "tesseract-api-neoforge-1.12.18-1.21.1.jar",
+      "bytes": 764062,
+      "download_url": "https://cdn.modrinth.com/data/pHNT1iyc/versions/luummThA/tesseract-api-neoforge-1.12.18-1.21.1.jar",
+      "sha512": "440b1d03d5379d4b098d20e6614359f458ac7b435201f1e64d1b62a3b665aab40bf970c3aadfb00a2bda58a1cc4659983dc6c1cd2a48262d0021152e1a7362e8",
+      "sha256": "1f976407e94222f76dc9132b7debc979e4c732d126138f7f371caa0f65dc224a",
+      "dependencies": {
+        "tesseract_api": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "modern_industrialization",
+            "type": "optional",
+            "versionRange": "[2.5.4-, 2.6-)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "guideme",
+            "type": "optional",
+            "versionRange": "[21.1.13, 21.2)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "installed_filename": "tesseract-api-neoforge-1.12.18-1.21.1.jar"
+    },
+    {
+      "project": "patchouli",
+      "project_id": "nU0bVIaL",
+      "version_id": "BIogJv2D",
+      "version": "1.21.1-93-neoforge",
+      "channel": "release",
+      "filename": "Patchouli-1.21.1-93-NEOFORGE.jar",
+      "bytes": 646777,
+      "download_url": "https://cdn.modrinth.com/data/nU0bVIaL/versions/BIogJv2D/Patchouli-1.21.1-93-NEOFORGE.jar",
+      "sha512": "0b5c172db9a6eeecb5ca44b359a83548c3a60be7ff313959acdfc1e5b8039736c18e57e947d435b52d06da31159d2d02ea36e5742668dbc826308a4c99e4039f",
+      "sha256": "959af52ed6640c316c3a8469203420be4aeea11ad6603890ba83bf48f5d9f993",
+      "dependencies": {
+        "patchouli": [
+          {
+            "modId": "neoforge",
+            "type": "REQUIRED",
+            "versionRange": "[21.0.31-beta,)"
+          },
+          {
+            "modId": "minecraft",
+            "type": "REQUIRED",
+            "versionRange": "[1.21.1,1.21.2)"
+          }
+        ]
+      },
+      "installed_filename": "Patchouli-1.21.1-93-NEOFORGE.jar"
+    },
+    {
+      "project": "create-steam-n-rails-1.21.1",
+      "project_id": "L3Jv0QZI",
+      "version_id": "czVeSmZo",
+      "version": "0.3.0-beta.2+neoforge-mc1.21.1",
+      "channel": "beta",
+      "filename": "railways-0.3.0-beta.2+neoforge-mc1.21.1.jar",
+      "bytes": 18728584,
+      "download_url": "https://cdn.modrinth.com/data/L3Jv0QZI/versions/czVeSmZo/railways-0.3.0-beta.2%2Bneoforge-mc1.21.1.jar",
+      "sha512": "def5c767467bf7863e2efc1a8cc3bf3442e1090ee1504e447c4120b9ff4ff6780de93d2a7d1bf696cd19407010d465b99f00bbf780776b0a9648804fa1b45f75",
+      "sha256": "64b74ddad661deae1cfe7e8334cfa3d39bb8ef7b761f83595ba0476c4a9bb1d5",
+      "dependencies": {
+        "railways": [
+          {
+            "modId": "neoforge",
+            "mandatory": true,
+            "versionRange": "[21.1.233,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "mandatory": true,
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "mandatory": true,
+            "versionRange": "[6.0.7,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "hexcasting",
+            "type": "optional",
+            "versionRange": "[0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "voicechat",
+            "type": "optional",
+            "versionRange": "[0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "installed_filename": "railways-0.3.0-beta.2-neoforge-mc1.21.1.jar"
+    }
+  ],
+  "sequence": 18,
+  "candidate_server_jars": 67,
+  "release_id": "techmagic-0-1-0-alpha-18-industry",
+  "existing_client_dependency_added_to_server": {
+    "path": "mods/kotlinforforge-5.12.0-all.jar",
+    "size": 7279264,
+    "sha256": "2785a4dd6de5c6c56065fd8eb789c82771bd2ee773c30794c23160a3b2c39139",
+    "url": "https://cdn.modrinth.com/data/ordsPcFz/versions/uhJhCT7X/kotlinforforge-5.12.0-all.jar",
+    "policy": "managed"
+  }
+}

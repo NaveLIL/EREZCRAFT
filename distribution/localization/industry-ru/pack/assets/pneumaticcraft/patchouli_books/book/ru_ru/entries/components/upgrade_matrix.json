@@ -1,0 +1,16 @@
+{
+  "name": "Улучшенная матрица",
+  "icon": "pneumaticcraft:upgrade_matrix",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Матрица улучшений/$ заменяет $(item)лазурит/$ в рецептах любых $(l:base_concepts/upgrades)улучшений/$. Матрицы значительно экономят лазурит, что полезно при большом числе улучшений и малом запасе материала."
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/upgrade_matrix"
+    }
+  ]
+}

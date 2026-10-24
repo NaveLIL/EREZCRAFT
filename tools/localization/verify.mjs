@@ -4,9 +4,9 @@ import { fileURLToPath } from 'node:url';
 import { audit, parseJson, sha256 } from './audit.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const pack = path.join(root, 'distribution/resourcepacks/erezcraft-ru');
-const profile = parseJson(await readFile(path.join(root, 'distribution/localization/ru/profile.json')));
-const [mods, reportPath] = process.argv.slice(2);
+const [mods, reportPath, packArgument, profileArgument] = process.argv.slice(2);
+const pack = path.resolve(packArgument || path.join(root, 'distribution/resourcepacks/erezcraft-ru'));
+const profile = parseJson(await readFile(profileArgument || path.join(root, 'distribution/localization/ru/profile.json')));
 if (!mods) throw new Error('Usage: node tools/localization/verify.mjs <mods-directory> [report.json]');
 const inventory = await audit(mods);
 const patches = new Map(), packFiles = [];

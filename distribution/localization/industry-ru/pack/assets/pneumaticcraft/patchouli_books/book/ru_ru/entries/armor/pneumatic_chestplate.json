@@ -1,0 +1,77 @@
+{
+  "name": "Пневмонагрудник",
+  "icon": "pneumaticcraft:pneumatic_chestplate",
+  "category": "pneumaticcraft:armor",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Пневматический нагрудник/$ — одна из четырёх частей $(thing)пневматической брони/$.$(p)Его $(l:base_concepts/pressure)запас воздуха/$ больше, чем у остальных частей."
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:pneumatic_chestplate",
+      "text": "Создание пневматического нагрудника"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:security_upgrade",
+      "text": "С $(l:base_concepts/upgrades#security)улучшением безопасности/$ нагрудник защищает от огня и лавы, но расходует много воздуха: он интенсивно сбрасывается, тушит пламя поблизости и охлаждает вас. Ближайшая лава даже постепенно затвердевает."
+    },
+    {
+      "type": "text",
+      "title": "Улучшение безопасности: продолжение",
+      "text": "Защита включается, когда вы должны получить урон от огня. Если вы уже защищены, например зельем, улучшение не действует."
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:immersiveengineering",
+      "title": "Immersive Engineering",
+      "item": "immersiveengineering:wirecoil_copper",
+      "text": "$(item)Улучшение безопасности/$ также защищает от ударов током при касании неизолированных проводов $(l:https://minecraft.curseforge.com/projects/immersive-engineering)Immersive Engineering/$. Нагрудник расходует воздух пропорционально предотвращённому урону. Отбрасывание при этом сохраняется."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:magnet_upgrade",
+      "text": "С $(l:base_concepts/upgrades#magnet)улучшениями магнита/$ ближайшие предметы и сферы опыта притягиваются к вам с очень небольшим расходом воздуха. Базовый радиус — 5 блоков; дополнительные улучшения увеличивают его до 10 блоков."
+    },
+    {
+      "type": "text",
+      "title": "Улучшение магнита: продолжение",
+      "text": "Магнит учитывает действие цветка $(item)солегнолии/$ из Botania и не забирает предметы с $(item)конвейерных лент/$ Immersive Engineering."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:charging_upgrade",
+      "text": "$(l:base_concepts/upgrades#charging)Зарядные улучшения/$ позволяют нагруднику наполнять воздухом другие пневматические предметы в инвентаре, включая надетые. Давление в них не превысит давление самого нагрудника. До 6 таких улучшений повышают скорость зарядки."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:dispenser_upgrade",
+      "text": "$(l:base_concepts/upgrades#dispenser)Улучшение раздатчика/$ позволяет выстреливать предметами и блоками из левой руки, подобно $(l:machines/air_cannon)пневмопушке/$. Зажмите и отпустите $(thing)$(k:pneumaticcraft.chestplate.launcher)/$. Полный заряд занимает 15 тиков, или 0.75 секунды. Если отпустить клавишу раньше, скорость снаряда будет ниже."
+    },
+    {
+      "type": "text",
+      "title": "Улучшение раздатчика: продолжение",
+      "text": "$(li)Некоторые предметы ведут себя как в $(item)раздатчике/$: например, $(item)динамит/$ или $(item)стрелы/$.$(li)Другие блоки, например $(item)факелы/$, летят, кувыркаясь, и устанавливаются при столкновении.$(li)Остальные предметы просто вылетают как выброшенные предметы."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:range_upgrade",
+      "text": "$(l:base_concepts/upgrades#range)Улучшение дальности/$ в нагруднике увеличивает дистанцию взаимодействия с блоками на 3.5 блока. На атаки ближнего боя оно не влияет. Пока функция активна, постоянно расходуется немного воздуха."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:air_conditioning_upgrade",
+      "flag": "mod:toughasnails",
+      "title": "Улучшение кондиционирования",
+      "text": "До четырёх $(l:base_concepts/upgrades#air_conditioning)улучшений кондиционирования/$ защищают от экстремальных температур, добавляемых модом $(l:https://minecraft.curseforge.com/projects/tough-as-nails)Tough As Nails/$. Кондиционер включается, когда температура тела отклоняется от нормы, и выключается после её восстановления."
+    },
+    {
+      "type": "text",
+      "flag": "mod:toughasnails",
+      "title": "Улучшение кондиционирования: продолжение",
+      "text": "При этом умеренно расходуется сжатый воздух. Расход зависит от требуемой силы нагрева или охлаждения и числа улучшений. В некоторых условиях для комфортной температуры не нужны все четыре улучшения."
+    }
+  ]
+}

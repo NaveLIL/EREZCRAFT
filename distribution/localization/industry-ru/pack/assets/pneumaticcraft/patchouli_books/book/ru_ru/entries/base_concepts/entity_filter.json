@@ -1,0 +1,59 @@
+{
+  "name": "Фильтры существ",
+  "icon": "minecraft:player_head",
+  "category": "pneumaticcraft:base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Фильтры сущностей/$ задают, на какие $(thing)сущности/$ действует машина или инструмент $(pncr).$(p)В большинстве полей фильтра удерживайте $(thing)F1/$ для справки."
+    },
+    {
+      "type": "text",
+      "text": "Для выбора типа укажите его имя: например, $(#800)creeper/$ соответствует $(thing)minecraft:creeper/$. Собственное имя сущности или игрока заключайте в кавычки: $(#800)'Minemaarten'/$ или $(#800)'desht'/$.$(p)Для группы $(italic)типов/$, например животных, враждебных мобов или игроков, добавьте '@'. Поддерживаемые $(thing)спецификаторы @/$ и примеры приведены далее."
+    },
+    {
+      "type": "text",
+      "title": "Примеры",
+      "text": "$(li)$(#800)@player/$ — все игроки$(li)$(#800)@mob/$ — все враждебные существа$(li)$(#800)@animal/$ — все мирные существа (животные)$(li)$(#800)@animal(age=adult)/$ — все взрослые животные$(li)$(#800)@animal(age=baby)/$ — все детёныши$(li)$(#800)@animal(breedable=yes)/$ — животные, которые сейчас могут размножаться$(li)$(#800)sheep(shearable=yes)/$ — овцы, которых можно постричь"
+    },
+    {
+      "type": "text",
+      "title": "Примеры: продолжение",
+      "text": "$(li)$(#800)sheep(shearable=yes,color=black)/$ — чёрные овцы, которых можно постричь$(li)$(#800)wolf(color=blue)/$ — волки и собаки с синим ошейником$(li)$(#800)cat(color=white)/$ — кошки с белым ошейником$(li)$(#800)@minecart/$ — вагонетки$(li)$(#800)@boat/$ — лодки$(li)$(#800)@living/$ — все живые существа$(li)$(#800)@item/$ — выброшенные предметы$(li)$(#800)@orb/$ — сферы опыта"
+    },
+    {
+      "type": "text",
+      "title": "Примеры: продолжение",
+      "text": "$(li)$(#800)@drone/$ выбирает $(l:tools/drone)дронов/$.$(li)$(#800)@mob(mod=minecraft)/$ — мобов только из пространства имён $(thing)minecraft/$.$(li)$(#800)Creeper/$ — криперов.$(li)$(#800)'MineMaarten'/$ или $(#800)\"Minemaarten\"/$ — сущность с именем 'MineMaarten'.$(li)$(#800)c*/$ — типы с именем на 'c', например криперов или коров.$(li)$(#800)*pig*/$ — типы, содержащие 'pig', например свинью или свинозомби."
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(#800)@player(team=team1)/$ — игроки ванильной команды табло «team1»$(li)$(#800)@player(holding=stick)/$ — игроки, держащие палку$(li)$(#800)@player(holding=#minecraft:planks)/$ — игроки, держащие предмет с тегом $(thing)minecraft:planks/$"
+    },
+    {
+      "type": "text",
+      "flag": "mod:ftbteams",
+      "text": "$(li)$(#800)@player(ftbteam=<uuid>|<shortname>)/$ — участники команды $(l:https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge)FTB Teams/$ с указанным UUID или коротким именем.$(p)Модификаторы $(#800)ftbteam_officer/$, $(#800)ftbteam_owner/$ и $(#800)ftbteam_ally/$ выбирают соответственно игроков со званием не ниже офицера, владельца или союзников команды; $(#800)ftbteam_enemy/$ — игроков, явно отмеченных как враги."
+    },
+    {
+      "type": "text",
+      "text": "Регистр букв не учитывается: $(#800)zombie/$ и $(#800)Zombie/$ одинаково выбирают зомби.$(p)Можно задать $(thing)последовательность/$ фильтров через ';' (точку с запятой). Достаточно совпадения с $(italic)любым/$ из них:$(li)$(#800)creeper;zombie/$ выбирает $(italic)и/$ криперов, и зомби."
+    },
+    {
+      "type": "text",
+      "text": "Префикс '!' отрицает фильтр:$(li)$(#800)!@player/$ — всё, что $(italic)не/$ игрок.$(li)$(#800)!Creeper;Zombie/$ — ни крипер, $(italic)ни/$ зомби.$(li)$(#800)Creeper;!Zombie/$ — $(#f00)ошибка/$: '!' допускается только в самом начале фильтра./$$(p)$(bold)Примечание:/$ в $(l:programming/text)текстовых/$ виджетах $(l:tools/drone)дрона/$ '!' не поддерживается. Для исключения подключайте текст слева, как обычно."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "pneumaticcraft:tools/micromissiles",
+        "pneumaticcraft:tubes/air_grate_module",
+        "pneumaticcraft:armor/pneumatic_helmet",
+        "pneumaticcraft:machines/sentry_turret",
+        "pneumaticcraft:machines/universal_sensor",
+        "pneumaticcraft:programming/text"
+      ],
+      "text": "$(italic)Машины и инструменты с фильтрацией сущностей/$"
+    }
+  ]
+}

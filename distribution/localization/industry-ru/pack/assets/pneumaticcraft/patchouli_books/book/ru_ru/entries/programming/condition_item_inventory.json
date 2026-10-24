@@ -1,0 +1,19 @@
+{
+  "name": "Виджет «Условие: предметы»",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_item_inventory_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Это $(l:programming/conditions)условие/$.$(p)$(thing)«Условие: предметы»/$ проверяет количество предметов в инвентаре. Учитываются предметы, разрешённые подключённым $(l:programming/item_filter)фильтром предметов/$. Без фильтра считаются все предметы."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_item_inventory_piece.png"
+      ],
+      "text": "$(italic)Виджет «Условие: предметы»/$"
+    }
+  ]
+}

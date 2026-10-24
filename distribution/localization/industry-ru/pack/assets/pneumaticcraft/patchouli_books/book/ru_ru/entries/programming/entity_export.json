@@ -1,0 +1,19 @@
+{
+  "name": "Виджет выгрузки сущности",
+  "icon": "pneumaticcraft:textures/progwidgets/entity_export_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Дрон/$ летит в заданную $(l:programming/area)область/$ и отпускает переносимую сущность, если она разрешена необязательным $(l:base_concepts/entity_filter)фильтром сущностей/$ из подключённого $(l:programming/text)текстового/$ виджета.$(p)См. также $(l:programming/entity_import)захват сущности/$."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/entity_export_piece.png"
+      ],
+      "text": "$(italic)Виджет выгрузки сущности/$"
+    }
+  ]
+}

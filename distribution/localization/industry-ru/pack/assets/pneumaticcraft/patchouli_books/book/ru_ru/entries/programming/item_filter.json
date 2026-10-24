@@ -1,0 +1,23 @@
+{
+  "name": "Виджет фильтра предметов",
+  "icon": "pneumaticcraft:textures/progwidgets/item_filter_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Фильтр предметов/$ — $(thing)параметр/$ других виджетов, задающий допустимые блоки и предметы для подбора, установки, добычи и других действий.$(p)Откройте настройки $(thing)ПКМ/$. Кнопка $(thing)«Поиск предмета...»/$ ищет среди всех предметов игры, а $(thing)«Поиск в инвентаре...»/$ — среди ваших."
+    },
+    {
+      "type": "text",
+      "text": "Дополнительные параметры определяют правила сопоставления. Их действие описано в подсказках флажков.$(p)Как обычно, фильтр $(italic)справа/$ от родительского виджета разрешает предметы, а $(italic)слева/$ запрещает."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/item_filter_piece.png"
+      ],
+      "text": "$(italic)Виджет фильтра предметов/$"
+    }
+  ]
+}

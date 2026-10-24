@@ -18,8 +18,15 @@ export async function audit(modsDirectory) {
         const ru = ruReader ? parseJson(ruReader()) : {};
         if (languages.has(ns)) {
           const previous = languages.get(ns);
-          if (JSON.stringify(previous.en) !== JSON.stringify(en) || JSON.stringify(previous.ru) !== JSON.stringify(ru)) {
-            throw new Error(`Conflicting bundled translations: ${ns}`);
+          // Add-ons may contribute disjoint keys to a library's namespace.
+          // Merge those resources as Minecraft does, but refuse ambiguous values.
+          for (const [locale, incoming] of [['en', en], ['ru', ru]]) {
+            for (const [key, value] of Object.entries(incoming)) {
+              if (key in previous[locale] && previous[locale][key] !== value) {
+                throw new Error(`Conflicting bundled translations: ${ns}/${locale}/${key}`);
+              }
+              previous[locale][key] = value;
+            }
           }
           previous.origins.push(origin);
         } else languages.set(ns, { ns, origins: [origin], en, ru });
@@ -28,8 +35,9 @@ export async function audit(modsDirectory) {
         const target = name.replace('/en_us/', '/ru_ru/');
         books.push({ origin, source: name, target, en: parseJson(read()), ru: entries.has(target) ? parseJson(entries.get(target)()) : null });
       }
-      if (name.endsWith('.md') && /\/ae2guide\/|\/mi_guidebook\//.test(name) && !/\/_/.test(name)) {
-        const folder = name.includes('/ae2guide/') ? '/ae2guide/' : '/mi_guidebook/';
+      const guideRoot = name.match(/^(assets\/[^/]+\/guides\/[^/]+\/[^/]+\/)/)?.[1];
+      if (name.endsWith('.md') && (/\/ae2guide\/|\/mi_guidebook\//.test(name) || guideRoot) && !/\/_/.test(name)) {
+        const folder = guideRoot || (name.includes('/ae2guide/') ? '/ae2guide/' : '/mi_guidebook/');
         const target = name.replace(folder, folder + '_ru_ru/');
         books.push({ origin, source: name, target, en: read().toString('utf8'), ru: entries.has(target) ? entries.get(target)().toString('utf8') : null });
       }

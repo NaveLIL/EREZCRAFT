@@ -1,0 +1,38 @@
+{
+  "name": "Производство биодизеля",
+  "icon": "minecraft:book",
+  "category": "pneumaticcraft:renewables",
+  "priority": "true",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Краткое руководство по производству возобновляемого $(thing)биодизеля/$. Следуйте этим шагам; подробности ищите на других страницах раздела. Некоторые страницы откроются лишь после выполнения необходимых достижений."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:yeast_culture_bucket",
+      "text": "Шаг 1a: получите $(thing)дрожжевую культуру/$. Поместите грибы и воду в $(l:manufacturing/thermopneumatic_processing_plant)термопневматическую установку/$. Поддерживайте температуру от 30°C до 60°C. Сложность этого зависит от биома и высоты."
+    },
+    {
+      "type": "spotlight",
+      "item": "minecraft:sugar",
+      "text": "Шаг 1b (необязательно): получив хотя бы ведро дрожжевой культуры, её можно размножать быстрее. Вылейте культуру в небольшой водоём, бросьте туда сахар, затем вылейте ведро воды в соседнюю с культурой клетку. Культура превратит эту воду в новую культуру."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:ethanol_bucket",
+      "text": "Шаг 2: получите $(thing)этанол/$ из $(thing)дрожжевой культуры/$ и $(thing)сахара/$ в $(l:manufacturing/thermopneumatic_processing_plant)термопневматической установке/$. Требования к температуре почти такие же, как на шаге 1a."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:vegetable_oil_bucket",
+      "text": "Шаг 3: получите $(thing)растительное масло/$, отжав $(thing)семена/$ или $(thing)урожай/$ в $(l:manufacturing/thermopneumatic_processing_plant)термопневматической установке/$ под небольшим давлением."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:biodiesel_bucket",
+      "text": "Шаг 4: смешайте $(thing)этанол/$ и $(thing)растительное масло/$ в $(l:manufacturing/fluid_mixer)смесителе жидкостей/$. Поздравляем: возобновляемое топливо готово!"
+    }
+  ]
+}

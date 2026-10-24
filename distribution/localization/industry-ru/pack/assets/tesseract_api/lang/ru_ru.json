@@ -1,0 +1,8 @@
+{
+  "eu_cost_transformer.tesseract_api.percentage": "%d%%",
+  "text.tesseract_api.mi_machine_batcher_recipe": "Поддерживает пакетное выполнение рецептов: %s.",
+  "text.tesseract_api.mi_machine_batcher_size_and_cost": "Выполняет до %d рецептов за пакет с множителем энергозатрат %s.",
+  "text.tesseract_api.spliterator": ", ",
+  "text.tesseract_api.spliterator_last": " и ",
+  "text.tesseract_api.tooltips_shift_required": "Нажмите [Shift] для подробностей"
+}

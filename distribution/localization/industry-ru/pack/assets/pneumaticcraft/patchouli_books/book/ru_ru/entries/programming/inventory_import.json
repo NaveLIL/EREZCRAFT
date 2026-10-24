@@ -1,0 +1,23 @@
+{
+  "name": "Виджет импорта из инвентаря",
+  "icon": "pneumaticcraft:textures/progwidgets/inventory_import_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Дрон/$ летит к ближайшему хранилищу в заданной $(l:programming/area)области/$ и забирает из него предметы в $(item)свой инвентарь/$.$(p)Откройте настройки $(thing)ПКМ/$, чтобы выбрать сторону, с которой $(item)дрон/$ извлекает предметы, и их максимальное количество."
+    },
+    {
+      "type": "text",
+      "text": "Можно подключить любое число $(l:programming/item_filter)фильтров предметов/$, в том числе ни одного. Фильтры $(italic)справа/$ разрешают предметы, а $(italic)слева/$ запрещают.$(p)Виджет завершает работу, когда инвентарь $(item)дрона/$ заполнен или в подходящих хранилищах больше нет подходящих предметов."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/inventory_import_piece.png"
+      ],
+      "text": "$(italic)Это я заберу, спасибо/$"
+    }
+  ]
+}

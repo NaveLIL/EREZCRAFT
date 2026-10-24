@@ -1,0 +1,22 @@
+{
+  "name": "Вихревая труба",
+  "icon": "pneumaticcraft:vortex_tube",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Вихревая труба/$ основана на $(l:https://en.wikipedia.org/wiki/vortex_tube)реальном физическом явлении/$. Она делит поток $(l:base_concepts/pressure)воздуха/$ на $(l:base_concepts/heat)горячую и холодную/$ части, нагревая один конец и охлаждая другой. Концы обмениваются теплом между собой, поэтому для получения тепла отводите холод, а для охлаждения — тепло. В этом поможет $(l:machines/heat_sink)радиатор/$."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:vortex_tube",
+      "text": "При установке или повороте $(thing)вихревой трубы/$ горячий конец обращён к вам. Концы отмечены узкими красной и синей полосками.$(p)$(thing)Труба/$ требует сжатого воздуха. Большее давление увеличивает разницу температур, но повышает расход воздуха."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Вихревая труба",
+      "recipe": "pneumaticcraft:vortex_tube"
+    }
+  ]
+}

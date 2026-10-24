@@ -1,0 +1,19 @@
+{
+  "name": "Виджет вывода редстоуна",
+  "icon": "pneumaticcraft:textures/progwidgets/emit_redstone_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Дрон/$ выдаёт $(#f00)сигнал редстоуна/$. Откройте настройки виджета нажатием $(thing)ПКМ/$ и выберите стороны вывода. Сила сигнала задаётся подключённым $(l:programming/text)текстовым/$ виджетом с числом от 0 до 15."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/emit_redstone_piece.png"
+      ],
+      "text": "$(italic)Виджет вывода редстоуна/$"
+    }
+  ]
+}

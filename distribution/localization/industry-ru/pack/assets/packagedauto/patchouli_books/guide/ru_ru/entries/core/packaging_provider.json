@@ -1,0 +1,36 @@
+{
+  "name": "МЭ-поставщик упаковки",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:packaging_provider",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)МЭ-поставщик упаковки/$ совмещает функции $(l:core/packager)упаковщика/$ и $(l:core/unpackager)распаковщика/$.$(p)Он должен быть подключён к $(thing)МЭ-сети/$ и занимает канал."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "packagedauto:packaging_provider",
+      "link_recipe": true,
+      "title": "Использование",
+      "text": "Положите в $(item)МЭ-поставщик упаковки/$ записанный $(l:core/recipe_holder)носитель рецептов/$. В зависимости от настроек машина предоставит прямые рецепты, упаковку и/или распаковку."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Настройки",
+      "text": "$(thing)Прямые рецепты/$: предоставлять рецепты пакетов как большие рецепты обработки, пропуская упаковку и распаковку.$(p)$(thing)Упаковка/$: предоставлять рецепты упаковки, как $(l:core/packager)упаковщик/$.$(p)$(thing)Распаковка/$: предоставлять рецепты распаковки, как $(l:core/unpackager)распаковщик/$."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Копирование настроек",
+      "text": "$(l:core/settings_cloner)Копировщик настроек упаковки/$ переносит настройки предоставления рецептов и сами рецепты.$(p)У целевого $(item)МЭ-поставщика упаковки/$ не должно быть рецептов, а в вашем инвентаре нужен $(l:core/recipe_holder)носитель рецептов/$."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "packagedauto:packaging_provider",
+      "title": "Создание"
+    }
+  ],
+  "flag": "mod:ae2",
+  "read_by_default": true,
+  "sortnum": 10
+}

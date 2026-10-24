@@ -1,0 +1,19 @@
+{
+  "name": "Виджет перемещения к точке",
+  "icon": "pneumaticcraft:textures/progwidgets/goto_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Перемещение к точке/$ направляет $(l:tools/drone)дрона/$ в ближайшую достижимую позицию заданной $(l:programming/area)области/$.$(p)Виджет завершается, $(ttcolor)$(t:В настройках по ПКМ можно задать немедленное завершение)когда дрон достигнет области/$ или если она недоступна."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/goto_piece.png"
+      ],
+      "text": "$(italic)Виджет перемещения к точке/$"
+    }
+  ]
+}

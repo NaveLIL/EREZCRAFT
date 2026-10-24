@@ -1,0 +1,24 @@
+{
+  "name": "Виджет «Для каждого предмета»",
+  "icon": "pneumaticcraft:textures/progwidgets/for_each_item.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Продвинутый виджет выполняет подпрограмму для каждого подключённого $(l:programming/item_filter)фильтра предметов/$. Он присваивает фильтр заданной переменной и переходит к $(l:programming/label)метке/$ с именем из $(l:programming/text)текстового/$ виджета. Дойдя до конца программы, где обычно выполняется возврат к $(l:programming/start)старту/$, выполнение возвращается сюда и повторяется для следующего $(thing)фильтра предметов/$."
+    },
+    {
+      "type": "text",
+      "title": "Выход из цикла",
+      "text": "Для выхода из цикла присвойте предметной переменной виджета $(thing)«Для каждого предмета»/$ пустой фильтр с помощью $(l:programming/item_assign)присваивания предмета/$. При следующем возврате к $(thing)«Для каждого предмета»/$ обход фильтров прекратится."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/for_each_item.png"
+      ],
+      "text": "$(italic)Виджет «Для каждого предмета»/$"
+    }
+  ]
+}

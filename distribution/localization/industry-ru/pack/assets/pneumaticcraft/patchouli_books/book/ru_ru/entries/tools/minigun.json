@@ -1,0 +1,22 @@
+{
+  "name": "Миниган",
+  "icon": "pneumaticcraft:minigun[pneumaticcraft:air=30000]",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Миниган/$ — ручное оружие на $(l:base_concepts/pressure)сжатом воздухе/$ и $(l:tools/minigun_ammo)боеприпасах/$. Патроны должны быть в $(l:tools/minigun_ammo#magazine)магазине/$: из инвентаря они не расходуются.$(p)Удерживайте $(thing)ПКМ/$: стволы раскрутятся, и начнётся стрельба."
+    },
+    {
+      "type": "text",
+      "title": "Улучшение",
+      "text": "Скорость раскрутки, дальность, вероятность эффекта зелья и другие свойства $(item)минигана/$ улучшаются в $(l:machines/charging_station)зарядной станции/$.$(p)Все улучшения и их эффекты описаны в её интерфейсе улучшений."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Миниган",
+      "recipe": "pneumaticcraft:minigun"
+    }
+  ]
+}

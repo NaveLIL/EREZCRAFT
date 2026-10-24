@@ -1,0 +1,23 @@
+{
+  "name": "Виджет перехода",
+  "icon": "pneumaticcraft:textures/progwidgets/jump_piece.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Виджет управляет $(l:programming/flow_control)ходом программы/$. Дойдя до $(thing)перехода/$, программа берёт имя из $(l:programming/text)текстового/$ виджета и переходит к одноимённой $(l:programming/label)метке/$. Если это невозможно, выполнение возвращается к $(l:programming/start)старту/$. В корректной программе такого аварийного возврата быть не должно."
+    },
+    {
+      "type": "text",
+      "text": "$(thing)Переходы/$ объединяют несколько $(italic)ветвей/$, направляя их к одной $(l:programming/label)метке/$, или помогают разделить программу на подпрограммы. Включите $(bold)«Показать поток»/$ внизу слева в $(l:programming/programmer)программаторе/$, чтобы увидеть линии между одноимёнными виджетами $(thing)перехода, условия и метки/$."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/jump_piece.png"
+      ],
+      "text": "$(italic)Почему бы и нет?/$"
+    }
+  ]
+}

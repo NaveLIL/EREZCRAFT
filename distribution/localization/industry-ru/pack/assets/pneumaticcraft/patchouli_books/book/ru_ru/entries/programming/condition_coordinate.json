@@ -1,0 +1,23 @@
+{
+  "name": "Виджет «Условие: координаты»",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_coordinate_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Это $(l:programming/conditions)условие/$.$(p)$(thing)«Условие: координаты»/$ сравнивает две $(l:programming/coordinate)позиции/$ по выбранным компонентам X/Y/Z. Проверять можно одну, две или все три компоненты."
+    },
+    {
+      "type": "text",
+      "text": "Сравниваемые компоненты выбираются флажками в настройках, а операция, «=» или «>=», — переключателями.$(p)Сравнение также показывается текстом, например $(thing)x1 <= x2 and z1 <= z2/$."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_coordinate_piece.png"
+      ],
+      "text": "$(italic)Виджет «Условие: координаты»/$"
+    }
+  ]
+}

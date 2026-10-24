@@ -1,0 +1,19 @@
+{
+  "name": "Виджет комментария",
+  "icon": "pneumaticcraft:textures/progwidgets/comment_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Виджет добавляет $(thing)комментарии/$ к программе и не влияет на её работу. Для его использования не требуются $(l:programming/puzzle_pieces)детали программы/$."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/comment_piece.png"
+      ],
+      "text": "$(italic)Виджет комментария/$"
+    }
+  ]
+}

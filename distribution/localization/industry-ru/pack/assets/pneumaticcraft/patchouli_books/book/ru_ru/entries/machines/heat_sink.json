@@ -1,0 +1,30 @@
+{
+  "name": "Радиатор",
+  "icon": "pneumaticcraft:heat_sink",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Радиатор/$ отводит $(l:base_concepts/heat)тепло/$.$(p)При температуре выше 60°C или ниже -60°C касание $(item)радиатора/$ наносит урон!$(p)$(item)Радиатор/$ отводит тепло только от непосредственно подключённого блока. Для нескольких $(item)радиаторов/$ расширьте поверхность $(l:machines/heat_pipe)тепловыми трубами/$."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/heat_sinks.png"
+      ],
+      "border": "true",
+      "text": "$(italic)$(l:compressors/advanced_liquid_compressor)Продвинутый жидкостный компрессор/$ $(italic)с несколькими радиаторами/$"
+    },
+    {
+      "type": "text",
+      "title": "Активное охлаждение",
+      "text": "$(l:tubes/air_grate_module#active_cooling)Воздушная решётка/$ повышает эффективность $(item)радиатора/$ в своей области. Область видна при установке решётки на $(l:tubes/pressure_tubes)пневмотрубу/$. Охлаждение от нескольких решёток складывается."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Радиатор",
+      "recipe": "pneumaticcraft:heat_sink"
+    }
+  ]
+}

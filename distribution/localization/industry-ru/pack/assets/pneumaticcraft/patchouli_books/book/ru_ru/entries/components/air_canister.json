@@ -1,0 +1,17 @@
+{
+  "name": "Воздушная канистра",
+  "icon": "pneumaticcraft:air_canister",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Воздушный баллон/$ нужен для создания $(l:base_concepts/pressure)пневматических/$ предметов и инструментов. Его также можно заряжать и опустошать в $(l:machines/charging_station)зарядной станции/$. Объём $(item)баллона/$ — 3000mL, предел — 10 бар; он не взрывается.$(p)Созданный с баллоном пневматический предмет сохраняет его запас воздуха."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Воздушная канистра",
+      "recipe": "pneumaticcraft:air_canister"
+    }
+  ]
+}

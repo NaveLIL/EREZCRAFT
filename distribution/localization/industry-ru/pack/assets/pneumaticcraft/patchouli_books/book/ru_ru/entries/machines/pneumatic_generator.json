@@ -1,0 +1,27 @@
+{
+  "name": "Пнемвогенератор",
+  "icon": "pneumaticcraft:pneumatic_generator",
+  "category": "pneumaticcraft:machines",
+  "flag": "pneumaticcraft:pneumaticGeneratorEnabled",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Пневматический генератор превращает $(l:base_concepts/pressure)сжатый воздух/$ в $(thing)IndustrialCraft 2 EU/$. Это машина второго уровня с минимальным рабочим давлением 15 бар. Эффективность по умолчанию — 40%; она $(ttcolor)$(t:Параметр I:pneumaticGeneratorEfficiency)меняется в настройках/$.$(p)Без $(l:base_concepts/upgrades#speed)улучшений скорости/$ выход равен 32 EU/тик, с одним — 128 EU/тик, с двумя — 512 EU/тик."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:pneumatic_generator",
+      "text": "Расход воздуха в mL/тик:$(p)$(formula)выход энергии / E * 400/$$(p)Здесь $(formula)E/$ — эффективность в процентах. При стандартных 40% и выходе 32EU/тик расход равен $(formula)32 / 40 * 400 = 320mL/тик/$."
+    },
+    {
+      "type": "text",
+      "text": "На эффективность сильно влияет $(l:base_concepts/heat)температура/$ генератора. Его нужно $(thing)охлаждать/$: с нагревом эффективность падает вплоть до полного прекращения выработки."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Пнемвогенератор",
+      "recipe": "pneumaticcraft:pneumatic_generator"
+    }
+  ]
+}

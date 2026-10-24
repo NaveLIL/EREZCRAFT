@@ -1,0 +1,23 @@
+{
+  "name": "Виджет присваивания предмета",
+  "icon": "pneumaticcraft:textures/progwidgets/item_assign_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Продвинутый виджет $(thing)присваивания предмета/$ сохраняет предмет в $(l:programming/variables)переменную/$. Переменные бывают координатными и предметными; здесь рассматриваются вторые.$(p)Общие сведения о переменных и координатных переменных приведены на странице $(l:programming/coordinate_operator)оператора координат/$."
+    },
+    {
+      "type": "text",
+      "text": "Подключите $(l:programming/item_filter)фильтр предметов/$ с нужным предметом $(italic)справа/$ от $(thing)присваивания предмета/$. Имя $(thing)переменной/$ задаётся в настройках $(thing)присваивания/$, открываемых $(thing)ПКМ/$. Из фильтра берётся только сам предмет, без настроек фильтрации.$(p)Если $(thing)фильтр предметов/$ не подключён, переменной присваивается предмет в руке дрона."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/item_assign_piece.png"
+      ],
+      "text": "$(italic)Виджет присваивания предмета/$"
+    }
+  ]
+}

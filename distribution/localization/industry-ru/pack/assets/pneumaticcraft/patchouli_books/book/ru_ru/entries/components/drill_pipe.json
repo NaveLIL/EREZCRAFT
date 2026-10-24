@@ -1,0 +1,17 @@
+{
+  "name": "Буровая труба",
+  "icon": "pneumaticcraft:drill_pipe",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Буровые трубы/$ нужны $(l:machines/gas_lift)газлифту/$ для проходки к жидкостям.$(p)При желании их можно использовать и для строительства."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Буровая труба",
+      "recipe": "pneumaticcraft:drill_pipe"
+    }
+  ]
+}

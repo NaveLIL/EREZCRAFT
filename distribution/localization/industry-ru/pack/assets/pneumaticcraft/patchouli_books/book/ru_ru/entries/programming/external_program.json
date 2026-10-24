@@ -1,0 +1,23 @@
+{
+  "name": "Виджет внешней программы",
+  "icon": "pneumaticcraft:textures/progwidgets/external_program_piece.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Виджет ищет хранилища в заданной $(l:programming/area)области/$ и перебирает их слоты. Найдя $(l:tools/drone)дрона/$ или $(l:components/network_components#network_api)сетевой API/$, он выполняет записанную в предмете программу.$(p)После завершения программы $(item)дрон/$ переходит к следующему слоту или хранилищу."
+    },
+    {
+      "type": "text",
+      "text": "Это удобно для отладки программ $(item)дрона/$: $(l:programming/programmer)программатор/$ тоже считается хранилищем. Запишите в $(item)дрона/$ $(thing)внешнюю программу/$ с областью, включающей только $(item)программатор/$, и разместите его.$(p)Теперь положите другого $(item)дрона/$ или $(item)сетевой API/$ в программатор и создайте программу. После нажатия $(thing)⟶ (экспорт)/$ в $(item)программаторе/$ размещённый $(item)дрон/$ немедленно её выполнит."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/external_program_piece.png"
+      ],
+      "text": "$(italic)Программа в программе/$"
+    }
+  ]
+}

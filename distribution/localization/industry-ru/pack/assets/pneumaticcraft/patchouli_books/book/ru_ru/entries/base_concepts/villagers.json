@@ -1,0 +1,17 @@
+{
+  "name": "Крестьянин механик",
+  "icon": "minecraft:emerald",
+  "category": "pneumaticcraft:base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Ходят слухи о $(thing)жителе/$ с интересными деталями $(pncr). Кажется, он пережил несчастный случай с $(l:manufacturing/pressure_chamber)барокамерой/$? Теперь он предпочитает свой дом в деревне. Впрочем, $(l:machines/charging_station)зарядная станция/$ может привлечь безработного жителя и без поисков дома..."
+    },
+    {
+      "type": "entity",
+      "name": "Механик",
+      "entity": "minecraft:villager{VillagerData:{profession:'pneumaticcraft:mechanic'}}",
+      "text": "$(italic)Не поклонник $(l:tools/amadron_tablet)Amadron/$."
+    }
+  ]
+}

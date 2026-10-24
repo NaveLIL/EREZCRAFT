@@ -1,0 +1,37 @@
+{
+  "name": "Дрон-собиратель",
+  "icon": "pneumaticcraft:collector_drone[pneumaticcraft:air=120000]",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:pressure_chamber",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Дрон-сборщик/$ — специализированный непрограммируемый $(l:tools/drone)дрон/$. Разместите его на хранилище, например сундуке, или рядом с ним. Он подбирает ближайшие предметы и складывает их туда."
+    },
+    {
+      "type": "spotlight",
+      "title": "Автоматическая зарядка",
+      "item": "pneumaticcraft:charging_station",
+      "text": "Как и всем дронам, им для работы нужно $(l:base_concepts/pressure)давление/$. При нехватке воздуха они автоматически ищут $(l:tools/drone#charging)зарядную станцию с улучшением раздатчика/$."
+    },
+    {
+      "type": "text",
+      "title": "Фильтрация предметов",
+      "text": "Если разместить $(thing)дрона-сборщика/$ $(italic)на/$ хранилище, фильтр задаётся предметами, уже лежащими внутри. При размещении на земле $(italic)рядом/$ или на пустом хранилище фильтрации $(italic)нет/$.$(p)Для изменения фильтра снимите дрона ключом и разместите заново."
+    },
+    {
+      "type": "text",
+      "text": "Базовая область $(thing)дрона-сборщика/$ — куб 17x17x17 с центром в точке установки. До 16 $(l:base_concepts/upgrades#range)улучшений дальности/$ увеличивают область."
+    },
+    {
+      "type": "entity",
+      "entity": "pneumaticcraft:collector_drone",
+      "offset": -0.3
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Дрон-собиратель",
+      "recipe": "pneumaticcraft:collector_drone"
+    }
+  ]
+}

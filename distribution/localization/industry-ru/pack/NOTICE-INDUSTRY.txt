@@ -1,0 +1,9 @@
+EREZCRAFT Russian industry expansion — modified 2026-10-24 by EREZ Dev.
+
+Credits: Russian Translations and Fixes (RTF) contributors; RTF Extension contributors Guardian_50 and MomentariyModder; original mod authors for the guide content.
+Original license and source notices of the base resource pack remain in NOTICE.txt and sources.json. RTF upstream repository license is retained separately.
+
+Source, versions and archive digests: SOURCES-INDUSTRY.json.
+The resource-pack JSON/Markdown is provided as editable source. Combined pack: AGPL-3.0-only. No warranty.
+
+This adaptation adds missing translations, replaces English stubs and corrects terminology and formatting. It does not change recipes or gameplay.

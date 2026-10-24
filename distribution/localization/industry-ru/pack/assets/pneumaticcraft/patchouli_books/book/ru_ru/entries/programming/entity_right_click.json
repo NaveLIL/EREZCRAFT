@@ -1,0 +1,19 @@
+{
+  "name": "Виджет ПКМ по сущности",
+  "icon": "pneumaticcraft:textures/progwidgets/entity_right_click_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Дрон/$ один раз применяет $(thing)ПКМ/$ предметом из первого слота к каждой сущности в заданной $(l:programming/area)области/$. Так можно стричь овец, доить коров, разводить животных и делать многое другое.$(p)Подключённые $(l:programming/area)области/$ должны иметь форму $(thing)параллелепипеда/$. Другие формы можно составить из нескольких разрешённых и запрещённых областей."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/entity_right_click_piece.png"
+      ],
+      "text": "$(italic)Тык!/$"
+    }
+  ]
+}

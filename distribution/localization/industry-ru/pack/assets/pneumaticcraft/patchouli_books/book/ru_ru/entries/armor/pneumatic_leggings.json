@@ -1,0 +1,37 @@
+{
+  "name": "Пневмоштаны",
+  "icon": "pneumaticcraft:pneumatic_leggings",
+  "category": "pneumaticcraft:armor",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Пневматические поножи/$ — одна из четырёх частей $(thing)пневматической брони/$."
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:pneumatic_leggings",
+      "text": "Создание пневматических поножей"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:speed_upgrade",
+      "text": "$(l:base_concepts/upgrades#speed)Улучшения скорости/$ в поножах не только ускоряют запуск брони, но и повышают $(thing)скорость бега/$ с небольшими $(l:base_concepts/pressure)затратами воздуха/$. Можно установить до 4 улучшений."
+    },
+    {
+      "type": "text",
+      "title": "Улучшение скорости: продолжение",
+      "text": "В интерфейсе брони можно сразу уменьшить прибавку к скорости: искать $(l:machines/charging_station)зарядную станцию/$ и снимать улучшения не придётся."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:jumping_upgrade_1",
+      "text": "$(l:base_concepts/upgrades#jumping_1)Улучшение прыжка/$ увеличивает высоту прыжка за небольшой расход воздуха. Есть 4 уровня этого улучшения.$(p)Удерживая $(thing)$(k:key.sneak)/$ при прыжке, можно снизить высоту до уровня одного улучшения."
+    },
+    {
+      "type": "text",
+      "title": "Улучшение прыжка: продолжение",
+      "text": "В интерфейсе брони можно сразу уменьшить прибавку к высоте прыжка: искать $(l:machines/charging_station)зарядную станцию/$ и снимать улучшения не придётся."
+    }
+  ]
+}

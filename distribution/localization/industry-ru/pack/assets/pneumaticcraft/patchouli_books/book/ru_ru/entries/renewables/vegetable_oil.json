@@ -1,0 +1,20 @@
+{
+  "name": "Растительное масло",
+  "icon": "pneumaticcraft:vegetable_oil_bucket",
+  "category": "pneumaticcraft:renewables",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Растительное масло/$ получают в $(l:manufacturing/thermopneumatic_processing_plant)термопневматической установке/$ из различных $(thing)семян/$ и $(thing)сельскохозяйственных культур/$. Семена обычно дают больше масла, чем выращенный урожай. Масло необходимо для производства $(l:renewables/biodiesel)биодизеля/$."
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/vegetable_oil_from_seeds"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/vegetable_oil_from_crops"
+    }
+  ]
+}

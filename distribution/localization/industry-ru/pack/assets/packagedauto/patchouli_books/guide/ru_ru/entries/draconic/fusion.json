@@ -1,0 +1,55 @@
+{
+  "name": "Термоядерный синтез",
+  "category": "packagedauto:recipe",
+  "icon": "packageddraconic:fusion_crafter",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Термоядерный синтез/$ использует $(item)сборщик пакетов термоядерного синтеза/$ для выполнения рецептов $(item)ядра термоядерного синтеза/$."
+    },
+    {
+      "type": "packagedauto:spotlight2",
+      "item1": "packageddraconic:fusion_crafter",
+      "item2": "packageddraconic:marked_draconium_injector,packageddraconic:marked_wyvern_injector,packageddraconic:marked_draconic_injector,packageddraconic:marked_chaotic_injector",
+      "title": "Использование",
+      "text": "Разместите достаточно $(item)отмеченных инжекторов/$ нужного уровня на расстоянии не менее 3 блоков от $(item)сборщика пакетов термоядерного синтеза/$. Они должны смотреть на сборщик без препятствий и быть подключены к питанию.$(p)Самому $(item)сборщику/$ тоже требуется энергия."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Использование (продолжение)",
+      "text": "Используйте $(thing)$(k:sneak) + $(k:use)/$ пустой рукой на простаивающем $(item)сборщике пакетов термоядерного синтеза/$, чтобы узнать число и уровень доступных и требуемых $(item)отмеченных инжекторов/$.$(p)Готовые предметы поступают из $(item)сборщика/$ в соседние инвентари."
+    },
+    {
+      "type": "patchouli:text",
+      "flag": "mod:ae2",
+      "title": "Интеграция с AE2",
+      "text": "$(item)Сборщик пакетов термоядерного синтеза/$ и $(item)отмеченные инжекторы/$ подключаются к $(thing)МЭ-сети/$.$(p)Сборщик получает из неё энергию; и сборщик, и инжекторы отправляют готовые и оставшиеся предметы прямо в сеть."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "packageddraconic:marked_draconium_injector",
+      "recipe2": "packageddraconic:marked_wyvern_injector",
+      "title": "Создание"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "packageddraconic:marked_draconic_injector",
+      "recipe2": "packageddraconic:marked_chaotic_injector",
+      "title": "Создание"
+    },
+    {
+      "type": "packagedauto:draconic/fusion_recipe",
+      "flag": "!mod:ae2",
+      "recipe": "packageddraconic:fusion_crafter",
+      "title": "Термоядерный синтез"
+    },
+    {
+      "type": "packagedauto:draconic/fusion_recipe",
+      "flag": "mod:ae2",
+      "recipe": "packageddraconic:fusion_crafter_ae",
+      "title": "Термоядерный синтез"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 4001
+}

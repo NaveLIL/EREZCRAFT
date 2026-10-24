@@ -1,0 +1,33 @@
+{
+  "name": "Создание",
+  "category": "packagedauto:recipe",
+  "icon": "packagedauto:crafter",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Создание/$ — тип рецептов, выполняемых $(item)сборщиком пакетов/$ по рецептам обычного верстака.$(p)Готовые предметы поступают из $(item)сборщика пакетов/$ в соседние инвентари.$(p)$(item)Сборщику пакетов/$ требуется энергия."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "flag": "mod:ae2",
+      "item": "packagedauto:crafter",
+      "link_recipe": true,
+      "title": "Интеграция с AE2",
+      "text": "$(item)Сборщик пакетов/$ подключается к $(thing)МЭ-сети/$.$(p)Он получает энергию из сети и отправляет готовые предметы прямо в неё."
+    },
+    {
+      "type": "patchouli:crafting",
+      "flag": "!mod:ae2",
+      "recipe": "packagedauto:crafter",
+      "title": "Создание"
+    },
+    {
+      "type": "patchouli:crafting",
+      "flag": "mod:ae2",
+      "recipe": "packagedauto:crafter_ae",
+      "title": "Создание"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 104
+}

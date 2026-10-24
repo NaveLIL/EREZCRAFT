@@ -1,0 +1,29 @@
+{
+  "name": "Виджет сбора урожая",
+  "icon": "pneumaticcraft:textures/progwidgets/harvest_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Дрон собирает созревшие растения и деревья в заданной $(l:programming/area)области/$. Выпавшие предметы $(italic)не/$ подбираются: добавьте $(l:programming/pickup_item)подбор предметов/$ или поручите сбор другому $(item)дрону/$.$(p)Необязательный $(l:programming/item_filter)фильтр предметов/$ ограничивает виды растений. Указывайте их семена."
+    },
+    {
+      "type": "text",
+      "title": "Инструменты",
+      "text": "$(item)Дрон/$ может $(l:programming/inventory_import)взять из инвентаря/$ $(item)мотыгу/$: тогда урожай автоматически пересаживается с расходом её прочности.$(p)Флажок $(item)«Требуется мотыга»/$ разрешает $(item)дрону/$ сбор $(italic)только/$ с мотыгой. Если она сломается, дрон сможет сначала получить новую, а затем продолжить работу."
+    },
+    {
+      "type": "text",
+      "title": "Ограничение сбора урожая",
+      "text": "Откройте $(thing)ПКМ/$ настройки $(thing)сбора урожая/$ и задайте предел.$(p)Например, при значении 1 $(item)дрон/$ за один запуск соберёт урожай лишь с одного блока, затем перейдёт к следующему виджету."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/harvest_piece.png"
+      ],
+      "text": "$(italic)Прочь с моей земли!/$"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "atmosphere.command.local_providers.created": "Создан локальный источник погоды с ID %s",
+  "atmosphere.command.local_providers.duplicate": "Не удалось создать локальный источник погоды: ID %s уже занят",
+  "atmosphere.command.local_providers.list.entry": "%s",
+  "atmosphere.command.local_providers.list.header": "Локальных источников погоды: %s",
+  "atmosphere.command.local_providers.removed": "Удалён локальный источник погоды с ID %s",
+  "atmosphere.command.local_providers.unknown": "Локальный источник погоды с ID %s не найден",
+  "atmosphere.command.weather_condition.unknown": "Неизвестное погодное условие «%s»",
+  "atmosphere.debug.render.disabled": "Отладочная визуализация Atmosphere отключена",
+  "atmosphere.debug.render.enabled": "Отладочная визуализация Atmosphere включена"
+}

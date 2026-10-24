@@ -1,0 +1,27 @@
+{
+  "name": "Виджет оператора координат",
+  "icon": "pneumaticcraft:textures/progwidgets/coordinate_operation_plus_minus.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Оператор координат/$ создаёт и изменяет $(l:programming/variables)переменные/$ для продвинутых программ дрона. Подключите один или несколько виджетов $(l:programming/coordinate)координат/$ с исходными значениями. Оператор выполнит над ними арифметическое действие, выбранное в настройках."
+    },
+    {
+      "type": "text",
+      "text": "Доступные операции:$(li)$(bold)Сложение/вычитание/$: складывает значения справа и вычитает значения слева.$(li)$(bold)Умножение/деление/$: перемножает значения справа и делит результат на значения слева.$(li)$(bold)Минимум/максимум/$: берёт максимальные X/Y/Z среди значений справа, затем минимум между полученным результатом и значениями слева."
+    },
+    {
+      "type": "text",
+      "text": "Результат сохраняется в $(l:programming/variables)переменной/$ с именем из настроек оператора. Эту $(thing)переменную/$ можно затем использовать:$(li)В $(l:programming/area)области/$ вместо координат GPS укажите имя $(thing)переменной/$.$(li)В $(l:programming/condition_coordinate)условии по координатам/$ выполните проверку $(thing)переменной/$."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/coordinate_operation_plus_minus.png"
+      ],
+      "text": "$(italic)Виджет оператора координат/$"
+    }
+  ]
+}

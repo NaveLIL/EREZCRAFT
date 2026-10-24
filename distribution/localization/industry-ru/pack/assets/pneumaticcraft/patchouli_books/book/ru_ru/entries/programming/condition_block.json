@@ -1,0 +1,23 @@
+{
+  "name": "Виджет «Условие: блок»",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_block_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Это $(l:programming/conditions)условие/$.$(p)$(thing)«Условие: блок»/$ ищет заданные блоки в $(l:programming/area)области/$. Например, так можно проверить, созрел ли урожай. Нужные блоки задаются $(l:programming/item_filter)фильтром предметов/$."
+    },
+    {
+      "type": "text",
+      "text": "Если блок можно добыть Шёлковым касанием, дрон сравнивает фильтр с этим блоком как предметом. Иначе проверяются обычные выпадающие предметы.$(p)Например, фильтр пшеницы совпадёт, когда растение начнёт давать пшеницу, то есть полностью созреет."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_block_piece.png"
+      ],
+      "text": "$(italic)Виджет «Условие: блок»/$"
+    }
+  ]
+}

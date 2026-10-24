@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "date": "2026-10-24",
+  "status": "accepted",
+  "unresolved_translations": 0,
+  "resource_pack_sha256": "d60538ba17a995e191183513d9f833f79d97801258ac60e2a36f600ad6cb328a",
+  "resource_pack_bytes": 878840,
+  "entries": 503,
+  "unique_language_keys": 18974,
+  "patchouli_resources": 288,
+  "guideme_pages": 142,
+  "native_client_with_dh": true,
+  "verification": "docs/verification/INDUSTRY_EXPANSION.json",
+  "limitations": "Native resource activation is verified; visual fit of every individual guide page is not. Code examples and proper names retain original spelling."
+}

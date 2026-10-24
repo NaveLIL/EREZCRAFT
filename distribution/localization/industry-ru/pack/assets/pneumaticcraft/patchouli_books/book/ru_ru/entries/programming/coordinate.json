@@ -1,0 +1,23 @@
+{
+  "name": "Виджет координат",
+  "icon": "pneumaticcraft:textures/progwidgets/coordinate_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Координаты/$ — параметр для $(l:programming/coordinate_operator)оператора координат/$ и $(l:programming/condition_coordinate)условия по координатам/$.$(p)В отличие от $(l:programming/area)области/$, где задаются $(italic)две/$ позиции для границ $(thing)области/$, здесь передаётся только $(italic)одна/$ позиция. Задать её можно двумя способами:"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)Константа/$$(br)Фиксированная позиция. Выберите $(l:tools/gps_tool)GPS-инструмент/$ или введите X/Y/Z в поля вручную.$(p)$(bold)Переменная/$$(br)Используется значение, сохранённое в $(l:programming/variables)переменной/$. Этот режим только читает координаты: изменить саму переменную здесь нельзя!"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/coordinate_piece.png"
+      ],
+      "text": "$(italic)Виджет координат/$"
+    }
+  ]
+}

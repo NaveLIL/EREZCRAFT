@@ -1,0 +1,17 @@
+{
+  "name": "Соединение трубы",
+  "icon": "pneumaticcraft:tube_junction",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Перекрестие труб/$ позволяет двум $(l:tubes/pressure_tubes)пневмотрубам/$ любого $(l:base_concepts/pressure_tiers)уровня давления/$ пересекаться, не соединяясь друг с другом."
+    },
+    {
+      "type": "crafting",
+      "text": "Создание перекрестия труб",
+      "recipe": "pneumaticcraft:tube_junction"
+    }
+  ]
+}

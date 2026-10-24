@@ -1,0 +1,4 @@
+# Resource-pack archives are hash pinned. Preserve the accepted UTF-8 bytes,
+# including each upstream file's line endings, on Windows and macOS checkouts.
+distribution/resourcepacks/erezcraft-ru/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+distribution/localization/industry-ru/pack/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

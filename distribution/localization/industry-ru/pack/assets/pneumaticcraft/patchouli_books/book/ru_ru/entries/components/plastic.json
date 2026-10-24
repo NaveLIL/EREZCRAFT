@@ -1,0 +1,69 @@
+{
+  "name": "Пластик",
+  "icon": "pneumaticcraft:plastic_bucket",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Пластик/$ — важный компонент $(pncr).$(p)$(item)Расплавленный пластик/$ получают из $(l:manufacturing/refinery)СНГ/$ и $(item)угля/$ либо $(l:renewables/biodiesel)биодизеля/$ и $(item)древесного угля/$ в $(l:manufacturing/thermopneumatic_processing_plant)термопневматической установке/$."
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/plastic_from_lpg"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/plastic_from_biodiesel"
+    },
+    {
+      "type": "spotlight",
+      "title": "Пластиковый лист",
+      "item": "pneumaticcraft:plastic",
+      "flag": "pneumaticcraft:inWorldPlasticSolidification",
+      "text": "Вылитый в мир $(item)расплавленный пластик/$ примерно за полсекунды превращается в $(item)пластиковый лист/$. Процесс легко автоматизировать $(l:machines/liquid_hopper)жидкостной воронкой/$ с $(l:base_concepts/upgrades#dispenser)улучшением раздатчика/$ и $(l:machines/omnidirectional_hopper)всенаправленной воронкой/$."
+    },
+    {
+      "type": "spotlight",
+      "title": "Пластиковый лист",
+      "item": "pneumaticcraft:plastic",
+      "flag": "!pneumaticcraft:inWorldPlasticSolidification",
+      "text": "Для получения $(item)пластиковых листов/$ поместите ведро или $(l:machines/tanks)резервуар/$ с $(item)расплавленным пластиком/$ в инвентарь с $(l:semiblocks/heat_frame)тепловой рамкой/$. Охладите её, желательно ниже -80C: чем холоднее, тем лучше. $(item)Пластик/$ расходуется из ёмкости; на каждые 1000mB есть шанс получить второй $(item)лист/$."
+    },
+    {
+      "type": "text",
+      "title": "Увеличение выхода",
+      "flag": "pneumaticcraft:inWorldPlasticSolidification",
+      "text": "Другой способ получения $(item)пластиковых листов/$: поместите ведро или $(l:machines/tanks)резервуар/$ с $(item)расплавленным пластиком/$ в инвентарь с $(l:semiblocks/heat_frame)тепловой рамкой/$. Охладите её, желательно ниже -80C: чем холоднее, тем лучше. $(item)Пластик/$ расходуется из ёмкости; на каждые 1000mB есть шанс получить второй $(item)лист/$."
+    },
+    {
+      "type": "text",
+      "title": "О резервуарах",
+      "text": "Хотя у резервуаров $(pncr) есть слоты и на них ставится $(thing)тепловая рамка/$, просто прикрепить рамку к блоку с расплавленным пластиком недостаточно. Резервуар должен лежать предметом внутри инвентаря, например сундука, к которому прикреплена рамка."
+    },
+    {
+      "type": "spotlight",
+      "title": "Пластиковый строительный кирпичик™",
+      "item": "pneumaticcraft:plastic_brick_red",
+      "text": "Строительные кирпичики создаются из $(item)пластиковых листов/$ и красителя.$(p)Не наступайте босиком: больно до неприличия!$(p)$(italic)Совместимы с ведущими марками строительных кирпичиков./$"
+    },
+    {
+      "type": "spotlight",
+      "title": "Гладкий пластиковый строительный кирпичик™",
+      "item": "pneumaticcraft:smooth_plastic_brick_red",
+      "text": "Гладкая версия $(item)пластикового строительного кирпичика/$ тоже подходит для строительства.$(p)Особенно хороша для пола: по ней вы ходите быстрее!"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:plastic_brick_red",
+      "recipe2": "pneumaticcraft:smooth_plastic_brick_red",
+      "text": "Рецепты остальных цветов легко угадать"
+    },
+    {
+      "type": "smelting",
+      "recipe": "pneumaticcraft:plastic_sheet_from_brick",
+      "recipe2": "pneumaticcraft:plastic_sheet_from_smooth_brick",
+      "text": "Кирпичики переплавляются обратно в пластиковые листы"
+    }
+  ]
+}

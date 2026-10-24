@@ -1,0 +1,32 @@
+{
+  "name": "Универсальный датчик",
+  "icon": "pneumaticcraft:universal_sensor",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Универсальный датчик/$ измеряет условия мира и выдаёт по ним $(#f00)сигнал редстоуна/$.$(p)$(ttcolor)$(t:Постоянный источник сигнала работает бесплатно)Почти всегда/$ для работы нужны $(l:base_concepts/pressure)воздух/$, 1 mL/тик, и соответствующие $(l:base_concepts/upgrades)улучшения/$."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:universal_sensor",
+      "text": "Датчик измеряет более 15 условий: от наличия блока по координатам до активности трансляции Twitch. Откройте $(thing)универсальный датчик/$ для списка и описаний доступных режимов."
+    },
+    {
+      "type": "text",
+      "title": "Улучшения",
+      "text": "Установите $(l:base_concepts/upgrades#entity_tracker)трекер сущностей/$, $(l:base_concepts/upgrades#dispenser)улучшение раздатчика/$ или $(l:base_concepts/upgrades#block_tracker)трекер блоков/$ с $(l:tools/gps_tool)GPS-инструментом/$ для соответствующей категории датчиков. Например, подсчёт существ поблизости требует $(item)трекера сущностей/$."
+    },
+    {
+      "type": "text",
+      "title": "Пример: подсчёт сущностей",
+      "text": "Допустим, вы хотите забивать животных в загоне, только когда их достаточно.$(p)Добавьте $(l:base_concepts/upgrades#entity_tracker)трекер сущностей/$ и столько $(l:base_concepts/upgrades#range)улучшений дальности/$, чтобы охватить загон.$(p)В настройках выберите $(thing)сущности/$, затем $(thing)в пределах радиуса/$ и введите $(l:base_concepts/entity_filter)фильтр/$ вида животного, например 'cow'."
+    },
+    {
+      "type": "crafting",
+      "text": "Рецепт: Универсальный датчик",
+      "recipe": "pneumaticcraft:universal_sensor"
+    }
+  ]
+}

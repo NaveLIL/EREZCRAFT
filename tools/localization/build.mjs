@@ -5,7 +5,7 @@ import { writeZip, readZip } from './zip.mjs';
 import { sha256 } from './audit.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const source = path.join(root, 'distribution/resourcepacks/erezcraft-ru');
+const source = path.resolve(process.argv[3] || path.join(root, 'distribution/resourcepacks/erezcraft-ru'));
 const output = path.resolve(process.argv[2] || path.join(root, 'build/distributions/erezcraft-ru-mc1.21.1.zip'));
 const files = new Map();
 async function walk(directory) {

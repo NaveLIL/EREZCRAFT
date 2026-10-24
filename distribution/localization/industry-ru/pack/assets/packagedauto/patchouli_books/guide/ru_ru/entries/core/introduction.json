@@ -1,0 +1,19 @@
+{
+  "name": "Введение",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:package",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(#822)PackagedAuto/$ объединяет предметы в $(thing)пакеты/$ для упрощения некоторых задач крафта.$(p)Сначала запишите $(l:core/recipe_holder)носители рецептов/$ в $(l:core/encoder)кодировщике рецептов пакетов/$.$(br)По записанным носителям $(l:core/packager)упаковщики/$ определяют, какие $(l:core/package)пакеты рецептов/$ создавать. Пакеты затем обрабатываются в $(l:core/unpackager)распаковщике/$."
+    },
+    {
+      "type": "patchouli:text",
+      "flag": "mod:ae2",
+      "title": "Интеграция с AE2",
+      "text": "Многие возможности $(#822)PackagedAuto/$ рассчитаны на интеграцию с AE2. В статьях о машинах описано, что даёт подключение к $(thing)МЭ-сети/$."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 0
+}

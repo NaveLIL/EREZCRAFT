@@ -1,0 +1,25 @@
+{
+  "name": "Носитель рецептов пакетов",
+  "category": "packagedauto:core",
+  "icon": "packagedauto:recipe_holder",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Носители рецептов пакетов/$ хранят данные, записанные $(l:core/encoder)кодировщиком рецептов пакетов/$.$(p)Для очистки записанного $(item)носителя/$ используйте $(thing)$(k:sneak) + $(k:use)/$ либо поместите его в сетку крафта.$(p)Соедините записанный $(item)носитель/$ с пустыми в сетке крафта, чтобы скопировать содержимое."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "flag": "&mod:jei,!mod:emi",
+      "item": "packagedauto:recipe_holder",
+      "title": "Интеграция с JEI",
+      "text": "Нажмите $(thing)$(k:jei.showUses)/$ над записанным $(item)носителем/$, чтобы подробно просмотреть сохранённые рецепты."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "packagedauto:recipe_holder",
+      "title": "Создание"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 4
+}

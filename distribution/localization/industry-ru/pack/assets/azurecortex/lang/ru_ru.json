@@ -1,0 +1,8 @@
+{
+  "entity.azurecortex.cortex_zombie": "Зомби Cortex",
+  "entity.azurecortex.cortex_skeleton": "Скелет Cortex",
+  "entity.azurecortex.cortex_spider": "Паук Cortex",
+  "item.azurecortex.cortex_zombie_spawn_egg": "Яйцо призыва зомби Cortex",
+  "item.azurecortex.cortex_skeleton_spawn_egg": "Яйцо призыва скелета Cortex",
+  "item.azurecortex.cortex_spider_spawn_egg": "Яйцо призыва паука Cortex"
+}

@@ -1,0 +1,16 @@
+{
+  "itemGroup.packageddraconic": "PackagedDraconic",
+  "block.packageddraconic.fusion_crafter": "Сборщик пакетов термоядерного синтеза",
+  "block.packageddraconic.fusion_crafter.injectors.usable": "Сейчас доступны отмеченные инжекторы синтеза:",
+  "block.packageddraconic.fusion_crafter.injectors.required": "Минимум необходимых отмеченных инжекторов синтеза:",
+  "block.packageddraconic.fusion_crafter.injectors.0": "Драконий: %s",
+  "block.packageddraconic.fusion_crafter.injectors.1": "Виверна: %s",
+  "block.packageddraconic.fusion_crafter.injectors.2": "Драконик: %s",
+  "block.packageddraconic.fusion_crafter.injectors.3": "Хаос: %s",
+  "block.packageddraconic.marked_draconium_injector": "Отмеченный дракониевый инжектор синтеза",
+  "block.packageddraconic.marked_wyvern_injector": "Отмеченный виверновый инжектор синтеза",
+  "block.packageddraconic.marked_draconic_injector": "Отмеченный драконический инжектор синтеза",
+  "block.packageddraconic.marked_chaotic_injector": "Отмеченный хаотический инжектор синтеза",
+  "recipe.packageddraconic.fusion": "Термоядерный синтез",
+  "recipe.packageddraconic.fusion.short": "Синтез"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Ядро спаунера",
+  "icon": "pneumaticcraft:spawner_core",
+  "category": "pneumaticcraft:spawning",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Ядро спаунера/$ — сердце обычного $(item)спаунера/$, содержащее сущность создаваемого моба.$(p)Ядро можно извлечь с помощью $(l:spawning/spawner_extractor)экстрактора спаунера/$, а можно создать самостоятельно и использовать в более мощном $(l:spawning/pressurized_spawner)пневматическом спаунере/$."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:spawner_core",
+      "text": "Ядро спаунера можно получить двумя способами:$(li)Извлечь его из спаунера $(l:spawning/spawner_extractor)экстрактором спаунера/$. Готовьтесь к бою! Такое ядро на 100% заполнено сущностью моба из этого спаунера.$(li)Создать пустое ядро и наполнить его сущностью мобов с помощью $(l:spawning/vacuum_trap)вакуумной ловушки/$."
+    },
+    {
+      "type": "text",
+      "text": "Ядро, заполненное $(item)вакуумной ловушкой/$, может содержать сущности нескольких разных мобов. Не всегда это удобно.$(p)Нажав по ядру $(thing)ПКМ/$, можно выпустить случайного моба, но нужный результат не гарантирован. Получить ядро со 100% чистотой с помощью $(thing)вакуумной ловушки/$ непросто: действуйте внимательно."
+    },
+    {
+      "type": "crafting",
+      "text": "Создание оболочки ядра спаунера. Она нужна для создания самого $(item)ядра спаунера/$.",
+      "recipe": "pneumaticcraft:spawner_core_shell"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/spawner_core"
+    }
+  ]
+}
