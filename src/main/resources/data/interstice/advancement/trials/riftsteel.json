@@ -1,0 +1,38 @@
+{
+  "parent": "interstice:trials/clean_lining",
+  "display": {
+    "icon": {
+      "id": "interstice:riftsteel_ingot"
+    },
+    "title": {
+      "translate": "advancements.interstice.riftsteel.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.riftsteel.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsteel_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "interstice:smelt_riftsilver",
+  "display": {
+    "icon": {
+      "id": "interstice:reaction_retort"
+    },
+    "title": {
+      "translate": "advancements.interstice.retort.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.retort.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:reaction_retort"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ]
+}

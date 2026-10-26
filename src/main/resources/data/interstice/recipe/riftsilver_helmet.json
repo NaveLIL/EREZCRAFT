@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "MMM",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "interstice:riftsilver_ingot"
+    }
+  },
+  "result": {
+    "id": "interstice:riftsilver_helmet",
+    "count": 1
+  }
+}

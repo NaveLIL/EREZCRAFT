@@ -149,6 +149,8 @@ public final class Interstice {
                 pro.erez.interstice.equipment.ExpeditionEquipment.displayItems(output);
                 pro.erez.interstice.ecology.RealmEcology.displayItems(output);
                 pro.erez.interstice.gear.RealmGear.displayItems(output);
+                pro.erez.interstice.gear.RealmArmaments.displayItems(output);
+                output.accept(pro.erez.interstice.gear.FieldJournal.JOURNAL.get());
                 pro.erez.interstice.tether.RiftTethers.displayItems(output);
                 pro.erez.interstice.lift.RealmLift.displayItems(output);
                 pro.erez.interstice.rift.RiftInitiation.displayItems(output);
@@ -209,6 +211,8 @@ public final class Interstice {
         pro.erez.interstice.fauna.TideFauna.register(bus);
         pro.erez.interstice.ecology.RealmEcology.register(bus);
         pro.erez.interstice.gear.RealmGear.register(bus);
+        pro.erez.interstice.gear.RealmArmaments.register(bus);
+        pro.erez.interstice.gear.FieldJournal.register(bus);
         pro.erez.interstice.tether.RiftTethers.register(bus);
         pro.erez.interstice.lift.RealmLift.register(bus);
         DENSITIES.register(bus);

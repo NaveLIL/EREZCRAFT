@@ -1,0 +1,51 @@
+{
+  "parent": "interstice:trials/riftsteel",
+  "display": {
+    "icon": {
+      "id": "interstice:riftsteel_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.interstice.riftsteel_tools.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.riftsteel_tools.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "sword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsteel_sword"
+          }
+        ]
+      }
+    },
+    "pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsteel_pickaxe"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "sword"
+    ],
+    [
+      "pickaxe"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  }
+}

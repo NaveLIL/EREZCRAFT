@@ -19,6 +19,8 @@ ALLOWED = {"build", "assemble", "runGameTestServer", "runIslandSmoke", "runTallI
            "runExpeditionGameTestServer", "runKeyPersistenceSmoke", "runWatchpostSmoke", "runWatchpostPersistenceSmoke", "runLivingGameTestServer", "runEcologyGameTestServer", "runMiningGameTestServer", "runLivingRealmSmoke",
            "runSurvivalPreparationSmoke", "runVaultGameTestServer", "runVaultPersistenceSmoke", "runGardenGameTestServer", "runGardenPersistenceSmoke", "runFoodGameTestServer", "runCrownFoodSmoke", "runMiningSmoke", "runHydrologySmoke", "runAgricultureGameTestServer", "runAgricultureSmoke", "runAgriculturePropsSmoke", "runEquipmentGameTestServer", "runBackpackSmoke", "runRetortUiSmoke", "runWearBackpackSmoke", "runVanillaTerrainSmoke"}
 ALLOWED.add("runGearGameTestServer")
+ALLOWED.add("runProgressionGameTestServer")
+ALLOWED.add("runProgressionNativeSmoke")
 ALLOWED.add("runEtherealGameTestServer")
 ALLOWED.add("runEtherealSmoke")
 ALLOWED.add("runEtherealComplexSmoke")
@@ -344,8 +346,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--label", required=True)
     parser.add_argument("--spider-pack-source", type=Path, help="Owned copy of the current client mods/config under .verification")
+    parser.add_argument("--progression-pack-source", type=Path, help="Owned alpha.18 client copy under .verification")
     parser.add_argument("tasks", nargs="+", choices=sorted(ALLOWED))
     args = parser.parse_args()
+    if "runProgressionNativeSmoke" in args.tasks:
+        if args.progression_pack_source is None:
+            parser.error("runProgressionNativeSmoke requires --progression-pack-source")
+        args.progression_pack_source = args.progression_pack_source.resolve(strict=True)
+        if not args.progression_pack_source.is_relative_to((ROOT / ".verification").resolve()):
+            parser.error("progression pack must be an owned .verification copy")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", args.label):
         parser.error("label must contain only letters, digits, - and _")
     if "runSpiderMovementSmoke" in args.tasks:
@@ -382,10 +391,18 @@ def main():
                 # Direct Java avoids a dependency on Windows batch execution policy.
                 launcher = [str(Path(env["JAVA_HOME"]) / "bin/java.exe"), "-classpath",
                             str(ROOT / "gradle/wrapper/gradle-wrapper.jar"), "org.gradle.wrapper.GradleWrapperMain"]
+            profile_root = evidence / "profiles"
+            if task == "runProgressionNativeSmoke":
+                # Native SQLite still has a Windows MAX_PATH limit. Keep owned DH worlds short.
+                profile_root = ROOT / ".verification" / ("ep-" + hashlib.sha256(str(evidence).encode()).hexdigest()[:8])
+                profile_root.mkdir(exist_ok=False)
+                write(evidence / "profile-root.json", {"root": str(profile_root)})
             command = launcher + ["--no-daemon", "--console=plain",
-                       "-PintersticeRunRoot=" + str(evidence / "profiles"), task]
+                       "-PintersticeRunRoot=" + str(profile_root), task]
             if task == "runSpiderMovementSmoke":
                 command.append("-PspiderPackSource=" + str(args.spider_pack_source))
+            if task == "runProgressionNativeSmoke":
+                command.append("-PprogressionPackSource=" + str(args.progression_pack_source))
             record = {"command": command, "cwd": str(ROOT), "source_commit": head,
                       "java_home": env.get("JAVA_HOME"), "started_utc": dt.datetime.now(dt.timezone.utc).isoformat()}
             started = time.monotonic()
@@ -397,6 +414,13 @@ def main():
             record.update(exit_code=code, duration_seconds=round(time.monotonic() - started, 3),
                           ended_utc=dt.datetime.now(dt.timezone.utc).isoformat())
             accepted = code == 0
+            if code == 0 and task == "runProgressionNativeSmoke":
+                try:
+                    proofs = [json.loads((profile_root / "progressionNative" / ("progression-" + mode + ".json")).read_text(encoding="utf-8")) for mode in ("create", "reload")]
+                    record["validations"] = proofs
+                    accepted = all(p.get("passed") is True and p.get("distant_horizons_loaded") is True and p.get("models_checked") == 18 and p.get("native_book_pages") == 16 for p in proofs) and proofs[0]["pid"] != proofs[1]["pid"] and proofs[1].get("cold_equipment_advancement_and_journal") is True
+                except (OSError, ValueError, KeyError) as error:
+                    record["validation_error"] = str(error); accepted = False
             if code == 0 and (task == "build" or GAME_TEST_TASK.fullmatch(task)):
                 log = (evidence / (task + ".log")).read_text(encoding="utf-8", errors="replace")
                 try:

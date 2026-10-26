@@ -1,0 +1,36 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "interstice:riftsilver_ingot"
+      },
+      "count": 4
+    },
+    {
+      "ingredient": {
+        "item": "interstice:pyrolith"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "interstice:pure_vitriolite_lining"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "interstice:chemotrophic_fabric"
+      },
+      "count": 2
+    }
+  ],
+  "outputs": [
+    {
+      "id": "interstice:riftsteel_ingot",
+      "count": 4
+    }
+  ],
+  "ticks": 1200
+}

@@ -254,3 +254,8 @@ M15 добавляет ещё три палитры готовых изобра�
 ## Геометрический прототип сводника — 23.10.2026
 
 `VaultHunterModel` напрямую использует принятую `textures/block/stone/vaultstone.png`, SHA-256 `016af768ef98234fb2adeaf332d6573f7f1563ad5228fb74fd9c79807e787595`. Цепочка происхождения: `realm-v6-palette.json` → `geology-library.json`. Рисунок, размер и альфа-канал файла не менялись; новых PNG для существа нет. Оригинальная временная модель из шести частей относится к коду Apache-2.0. Это модель для проверки поведения, финальное оформление существа не утверждено. Реестр: `assets/interstice/provenance/vault-hunter.json`.
+
+
+## Снаряжение Междуморья, 26.10.2026
+
+11 неизменённых исходных спрайтов Malcolm Riley, [unused-textures](https://github.com/MalcolmRiley/unused-textures/tree/8b85ad732023174d9a9da74e6bf2272d6c0bef17), commit `8b85ad732023174d9a9da74e6bf2272d6c0bef17`, лицензия [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Это отдельный проверенный источник, не CC0. Файлы, размеры, SHA-256, исходные URL и отсутствие изменений перечислены в `assets/interstice/provenance/armaments.json`. Полный текст лицензии включён в JAR. Броня на персонаже ссылается на встроенные слои Minecraft и меняет цвет; инструменты используют новую геометрию с существующими целыми текстурами. [Описание](EXPEDITION_PROGRESSION.md).

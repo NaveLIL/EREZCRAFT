@@ -1,0 +1,122 @@
+{
+  "author": "Malcolm Riley",
+  "license": "CC-BY-4.0",
+  "source_repository": "https://github.com/MalcolmRiley/unused-textures",
+  "commit": "8b85ad732023174d9a9da74e6bf2272d6c0bef17",
+  "sources": [
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/tool_greatsword_silver.png",
+      "source_sha256": "46f11f45d0ad9be47b9be9378fda4f38f6ac303e5c96e9cd83896e710563ca4f",
+      "file": "tool_greatsword_silver.png",
+      "size": [
+        32,
+        32
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/tool_greatsword_steel.png",
+      "source_sha256": "eeeb1f0503d70a9a3a68a4d43cf71f314b927a4480572866ebf43188e500ccea",
+      "file": "tool_greatsword_steel.png",
+      "size": [
+        32,
+        32
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/ingot_steel.png",
+      "source_sha256": "c61ee1b4ec05e69c214e70d7d32f7ecffbc72c8110214e2b505d60653383884f",
+      "file": "ingot_steel.png",
+      "size": [
+        16,
+        16
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_helmet_tin.png",
+      "source_sha256": "ff66cc8638c218f4d1daf376de2b793b141cef0273553bd69eda55b004bb8e13",
+      "file": "armor_helmet_tin.png",
+      "size": [
+        16,
+        16
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_chest_tin.png",
+      "source_sha256": "10d8e49c1ab4c30ac6102b7780320a3d4f0db22a29c9d2d2a6852033d0d8a4d7",
+      "file": "armor_chest_tin.png",
+      "size": [
+        16,
+        16
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_legs_tin.png",
+      "source_sha256": "c7ab75519a6b62cd5e17d8b31d9c08056c1de4bdbd059d54224742e899bf4a5b",
+      "file": "armor_legs_tin.png",
+      "size": [
+        16,
+        16
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_boots_tin.png",
+      "source_sha256": "20ad0717a5b9f802c0eafcf7cbea3053f5d4bf45c562ce7e8fef41ed01879a8e",
+      "file": "armor_boots_tin.png",
+      "size": [
+        16,
+        16
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_helmet_superalloy.png",
+      "source_sha256": "5baca9633295b2eb014f8215434c086afbc3ab9278d621ef3402f6086e33346d",
+      "file": "armor_helmet_superalloy.png",
+      "size": [
+        16,
+        16
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_chest_superalloy.png",
+      "source_sha256": "0b0b9a17f03df575ad6ed389eecdecddef6dc8f48fd9aa2bc2eed891feada6ed",
+      "file": "armor_chest_superalloy.png",
+      "size": [
+        16,
+        16
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_legs_superalloy.png",
+      "source_sha256": "079a85edc86008b3ffc6296f75204a59a997bd9f7d772c8edec0040a576393c1",
+      "file": "armor_legs_superalloy.png",
+      "size": [
+        16,
+        16
+      ],
+      "operation": "unchanged original bytes"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_boots_superalloy.png",
+      "source_sha256": "e9e32ee8a910a82c61fe16e0a63ac135727315e430ce66bfb5bd16d1837f81a3",
+      "file": "armor_boots_superalloy.png",
+      "size": [
+        16,
+        16
+      ],
+      "operation": "unchanged original bytes"
+    }
+  ],
+  "worn_armour": "Native Minecraft leather and overlay layers referenced at runtime, with fixed material tint; no Mojang PNG redistributed",
+  "tools": "Original voxel geometry referencing whole pre-existing project textures",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_file": "armaments-LICENSE.txt"
+}

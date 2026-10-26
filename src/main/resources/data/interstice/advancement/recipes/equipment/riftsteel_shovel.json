@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsilver_ingot"
+          }
+        ]
+      }
+    },
+    "craft": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "interstice:riftsteel_shovel"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "material",
+      "craft"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "interstice:riftsteel_shovel"
+    ]
+  }
+}

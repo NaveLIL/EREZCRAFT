@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:riftsilver_sword",
+    "interstice:riftsilver_pickaxe",
+    "interstice:riftsilver_axe",
+    "interstice:riftsilver_shovel",
+    "interstice:riftsilver_hoe",
+    "interstice:riftsilver_helmet",
+    "interstice:riftsilver_chestplate",
+    "interstice:riftsilver_leggings",
+    "interstice:riftsilver_boots",
+    "interstice:riftsteel_sword",
+    "interstice:riftsteel_pickaxe",
+    "interstice:riftsteel_axe",
+    "interstice:riftsteel_shovel",
+    "interstice:riftsteel_hoe",
+    "interstice:riftsteel_helmet",
+    "interstice:riftsteel_chestplate",
+    "interstice:riftsteel_leggings",
+    "interstice:riftsteel_boots"
+  ]
+}

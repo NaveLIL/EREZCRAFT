@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-26",
+  "status": "published",
+  "mod_version": "0.7.0-preview.15",
+  "target_pack_sequence": 19,
+  "trials_added": 20,
+  "equipment_items_added": 18,
+  "alloy_ingot_added": 1,
+  "journal_pages": 16,
+  "journal_milestones": 23,
+  "client_jars": 79,
+  "server_jars": 67,
+  "components": {
+    "passed": true,
+    "new": 7,
+    "rift_regressions": 27,
+    "gear_regressions": 19,
+    "total": 53,
+    "summary": ".verification/progression-clean-20261026/components/summary.json"
+  },
+  "runner_unit_tests": {
+    "passed": true,
+    "count": 68
+  },
+  "native": {
+    "create": {
+      "native_book_pages": 16,
+      "maximum_page_lines": 14,
+      "models_checked": 18,
+      "mod_version": "0.7.0-preview.15",
+      "distant_horizons_loaded": true,
+      "mod_count": 106,
+      "passed": true,
+      "reason": "",
+      "pid": 13940,
+      "stage": 6,
+      "owner_world_used": false,
+      "prepared_fixture_not_survival": true,
+      "settled": {
+        "purpose": "progression_native_shutdown",
+        "server_tick": 507,
+        "elapsed_actual_server_ticks": 181,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1802,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "reload": {
+      "cold_equipment_advancement_and_journal": true,
+      "native_book_pages": 16,
+      "maximum_page_lines": 14,
+      "models_checked": 18,
+      "mod_version": "0.7.0-preview.15",
+      "distant_horizons_loaded": true,
+      "mod_count": 106,
+      "passed": true,
+      "reason": "",
+      "pid": 20696,
+      "stage": 6,
+      "owner_world_used": false,
+      "prepared_fixture_not_survival": true,
+      "settled": {
+        "purpose": "progression_native_shutdown",
+        "server_tick": 722,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1802,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    }
+  },
+  "byte_preservation": {
+    "passed": true,
+    "base_sha256": "565b8a18f2ba17a6caadd2301d9c265d535cc46895e8d2602430207530635979",
+    "jar_sha256": "cfe9d181eade76b898b511a55d98610cd88dea15ca7a3a00f64a96c09483b922",
+    "protected_classes_unchanged": 181,
+    "old_pngs_unchanged": 159,
+    "changed_existing_classes": [
+      "pro/erez/interstice/Interstice.class",
+      "pro/erez/interstice/rift/RiftTravel.class"
+    ],
+    "unpublished_fauna_included": false
+  },
+  "art": {
+    "author": "Malcolm Riley",
+    "license": "CC-BY-4.0",
+    "unchanged_sprites": 11,
+    "notice": "assets/interstice/provenance/armaments.json"
+  },
+  "limits": [
+    "Prepared native fixtures are not unassisted Survival or balance acceptance",
+    "Positive multiplayer join with the updated client remains a player check",
+    "Worn armour uses native Minecraft layers with initial tint and supports native dyeing",
+    "Unfinished fauna behaviour changes excluded from release"
+  ],
+  "live_server_updated": true,
+  "public_catalog_updated": true,
+  "pack_sequence": 19,
+  "pack_release": "0.1.0-alpha.19",
+  "release_id": "techmagic-0-1-0-alpha-19-progression",
+  "server": {
+    "passed": true,
+    "server_jars": 67,
+    "old_jars_unchanged": 66,
+    "mod_version": "0.7.0-preview.15",
+    "backup_destination": "owner_pc",
+    "online_auth_required": true,
+    "owner_only_op4": true,
+    "healthy": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false,
+    "unpublished_fauna_included": false,
+    "started_at": "2026-10-26T14:35:00.68690168Z"
+  },
+  "delivery": {
+    "client_jars": 79,
+    "corruption_repaired": 1,
+    "files": 89,
+    "fixture_world_options_and_client_preference_preserved": true,
+    "game_server_contacted": false,
+    "new_sequence": 19,
+    "old_sequence": 18,
+    "passed": true,
+    "real_https_progression_download": true,
+    "repeat_quarantined": 0,
+    "repeat_repaired": 0,
+    "same_size_mtime_repair": true,
+    "update_quarantined": 1,
+    "update_repaired": 2,
+    "user_worlds_used": false
+  },
+  "admission": {
+    "passed": true,
+    "encrypted_rsa_aes_login": true,
+    "missing_session_rejected": true,
+    "reason": "unverified_username",
+    "owner_credentials_used": false,
+    "positive_multiplayer_not_tested": true
+  },
+  "backup": {
+    "passed": true,
+    "destination": "owner_pc",
+    "source_stopped": true,
+    "world_files_verified": 726,
+    "archive_sha256": "bf742cf8bdefb5c347beea2a69bfb5c3ed9369b222e79d4c823464625fec11a9",
+    "restore_not_repeated_this_iteration": true
+  },
+  "publication": {
+    "sequence": 19,
+    "files": 89,
+    "clientJars": 79,
+    "unchangedBaseFiles": 87,
+    "removed": [
+      "mods/interstice-0.7.0-preview.13.jar"
+    ],
+    "public_https_verified": true,
+    "signatures_verified": true,
+    "uploaded_files": 4,
+    "uploaded_bytes": 2591701
+  }
+}

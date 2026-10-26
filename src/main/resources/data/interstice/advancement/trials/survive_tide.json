@@ -1,0 +1,31 @@
+{
+  "parent": "interstice:trials/tide_indicator",
+  "display": {
+    "icon": {
+      "id": "interstice:ballast_belt"
+    },
+    "title": {
+      "translate": "advancements.interstice.survive_tide.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.survive_tide.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "survived": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "survived"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

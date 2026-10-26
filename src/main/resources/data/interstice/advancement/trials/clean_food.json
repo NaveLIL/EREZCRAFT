@@ -1,0 +1,46 @@
+{
+  "parent": "interstice:trials/retort",
+  "display": {
+    "icon": {
+      "id": "interstice:purified_bread"
+    },
+    "title": {
+      "translate": "advancements.interstice.clean_food.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.clean_food.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "bread": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:purified_bread"
+          }
+        ]
+      }
+    },
+    "root": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:purified_root"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "bread",
+      "root"
+    ]
+  ]
+}

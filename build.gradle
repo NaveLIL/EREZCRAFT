@@ -473,6 +473,34 @@ neoForge {
             loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
             systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_gear'
         }
+        progressionGameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = file('build/progression-gametests')
+            loadedMods = [mods.interstice, mods.interstice_geometry_fixture]
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_progression'
+        }
+        progressionCreate {
+            client()
+            jvmArgument '-Xms2G'
+            jvmArgument '-Xmx8G'
+            gameDirectory = file('.verification/progression-native')
+            systemProperty 'interstice.progressionSmoke', 'create'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '800'
+        }
+        progressionReload {
+            client()
+            jvmArgument '-Xms2G'
+            jvmArgument '-Xmx8G'
+            gameDirectory = file('.verification/progression-native')
+            systemProperty 'interstice.progressionSmoke', 'reload'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '800'
+        }
         faunaGameTestServer {
             type = 'gameTestServer'
             gameDirectory = file('build/fauna-gametests')
@@ -871,7 +899,7 @@ neoForge.runs.each { run ->
 // Verification always supplies a newly created root. Ordinary existing profiles keep their paths.
 if (providers.gradleProperty('intersticeRunRoot').isPresent()) {
     neoForge.runs.configureEach {
-        def profileName = name in ['etherealComplexCreate','etherealComplexReload'] ? 'etherealComplexSmoke' : name in ['etherealCreate','etherealReload'] ? 'etherealSmoke' : name in ['techmagicPregenCreate','techmagicPregenReload'] ? 'techmagicPregen' : name in ['forestCaveCreate','forestCaveReload'] ? 'forestCaveSmoke' : name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
+        def profileName = name in ['progressionCreate','progressionReload'] ? 'progressionNative' : name in ['etherealComplexCreate','etherealComplexReload'] ? 'etherealComplexSmoke' : name in ['etherealCreate','etherealReload'] ? 'etherealSmoke' : name in ['techmagicPregenCreate','techmagicPregenReload'] ? 'techmagicPregen' : name in ['forestCaveCreate','forestCaveReload'] ? 'forestCaveSmoke' : name in ['v6ProgressionCreate','v6ProgressionReload'] ? 'v6ProgressionSmoke' : name in ['winchCreate','winchReload'] ? 'winchSmoke' : name in ['gearCreate','gearReload'] ? 'gearSmoke' : name in ['nativeFieldLiftCreate','nativeFieldLiftReload'] ? 'fieldLiftSmoke' : name in ['vanillaTerrainCreate','vanillaTerrainReload'] ? 'vanillaTerrainSmoke' : name in ['wearBackpackCreate','wearBackpackReload'] ? 'wearBackpackSmoke' : name in ['backpackCreate','backpackReload'] ? 'backpackSmoke' : name in ['agricultureCreate','agricultureReload'] ? 'agricultureSmoke' : name in ['miningCreate','miningReload'] ? 'miningSmoke' : name in ['livingRealmCreate','livingRealmReload'] ? 'livingRealm' : name in ['crownFoodCreate', 'crownFoodReload'] ? 'crownFood' :
                 name in ['hunterColdCreateGameTestServer','hunterColdReloadGameTestServer'] ? 'hunterCold' :
                 name in ['gardenPersistenceCreate', 'gardenPersistenceReload'] ? 'gardenPersistence' :
                 name in ['vaultPersistenceCreate', 'vaultPersistenceReload'] ? 'vaultPersistence' :
@@ -1146,6 +1174,45 @@ tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('
 tasks.named('check') { dependsOn tasks.named('runEtherealGameTestServer') }
 
 tasks.named('check') { dependsOn tasks.named('runHunterGameTestServer') }
+
+tasks.named('check') { dependsOn tasks.named('runProgressionGameTestServer') }
+tasks.register('runProgressionNativeSmoke') { dependsOn tasks.named('runProgressionCreate'), tasks.named('runProgressionReload') }
+tasks.named('runProgressionReload') {
+    mustRunAfter tasks.named('runProgressionCreate')
+    doFirst {
+        def proof = new File(neoForge.runs.getByName('progressionReload').gameDirectory.get().asFile, 'progression-create.json')
+        if (!proof.isFile() || new groovy.json.JsonSlurper().parse(proof).passed != true)
+            throw new GradleException('Native creation did not pass; do not launch a redundant reload')
+    }
+}
+
+['progressionCreate', 'progressionReload'].each { runName -> tasks.named('prepare' + runName.capitalize() + 'Run') {
+    outputs.upToDateWhen { false }
+    doLast {
+        if (!providers.gradleProperty('intersticeRunRoot').isPresent()) throw new GradleException('New isolated verification root required')
+        def target = neoForge.runs.getByName(runName).gameDirectory.get().asFile
+        def source = file(providers.gradleProperty('progressionPackSource').get())
+        if (!source.toPath().toRealPath().toString().replace('\\','/').contains('/.verification/')) throw new GradleException('Owned pack source required')
+        def jars = fileTree(new File(source,'mods')) { include '*.jar' }.files
+        if (jars.size() != 79) throw new GradleException('Expected alpha.18 79-JAR client')
+        jars.each { jar ->
+            def archive = new java.util.zip.ZipFile(jar)
+            boolean supplied
+            try {
+                def entry = archive.getEntry('META-INF/neoforge.mods.toml') ?: archive.getEntry('META-INF/mods.toml')
+                def metadata = entry ? archive.getInputStream(entry).getText('UTF-8') : ''
+                supplied = (metadata =~ /modId\s*=\s*["'](?:interstice|lootr|distanthorizons|smartbrainlib|azurecortex)["']/).find()
+            } finally { archive.close() }
+            if (!supplied) copy { from jar; into new File(target,'mods') }
+        }
+        if (runName == 'progressionCreate') {
+            if (new File(target,'saves').exists()) throw new GradleException('New progression profile required')
+            ['config','defaultconfigs','resourcepacks','shaderpacks'].each { folder -> copy { from new File(source,folder); into new File(target,folder) } }
+            new File(target,'options.txt').text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\nrenderDistance:3\nsimulationDistance:5\nguiScale:2\nmaxFps:60\nfullscreen:false\npauseOnLostFocus:false\nresourcePacks:["mod_resources","file/erezcraft-ru-mc1.21.1.zip"]\n'
+            new File(target,'config/fml.toml').text='earlyWindowControl = false\n'
+        }
+    }
+} }
 
 // Full production client binaries, read-only source; never copy an owner's world or options.
 tasks.named('prepareSpiderMovementSmokeRun') {

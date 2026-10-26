@@ -1,0 +1,51 @@
+{
+  "parent": "interstice:trials/riftsteel_suit",
+  "display": {
+    "icon": {
+      "id": "interstice:riftsteel_chestplate"
+    },
+    "title": {
+      "translate": "advancements.interstice.master.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.master.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "mastered": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "advancements": {
+              "interstice:trials/return_home": true,
+              "interstice:trials/stable_portal": true,
+              "interstice:trials/survive_tide": true,
+              "interstice:trials/clean_food": true,
+              "interstice:trials/surveyor": true,
+              "interstice:trials/all_spiders": true,
+              "interstice:trials/vault_hunter": true,
+              "interstice:trials/upper_ghast": true,
+              "interstice:trials/tide_phantom": true,
+              "interstice:trials/riftsteel_tools": true,
+              "interstice:trials/riftsteel_suit": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mastered"
+    ]
+  ],
+  "rewards": {
+    "experience": 250
+  }
+}

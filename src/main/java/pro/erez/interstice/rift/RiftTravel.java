@@ -125,6 +125,8 @@ public final class RiftTravel {
         if (landing == null || !RiftSafety.standing(destination, landing) || sourceExit(origin, source, kind) == null) return fail(player, "no_landing");
         FluidLab.rememberReturn(player);
         if (!transfer(player, destination, landing, link.id())) return fail(player, "transfer_failed");
+        if (kind == RiftLinks.Kind.PORTAL)
+            pro.erez.interstice.gear.ExpeditionTrials.award(player, "trials/stable_portal", "travelled");
         player.displayClientMessage(Component.translatable(IslandWorld.isIsland(destination.dimension())
                 ? "message.interstice.rift.entered" : "message.interstice.rift.emerged"), false);
         return true;

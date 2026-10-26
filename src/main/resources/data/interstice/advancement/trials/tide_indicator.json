@@ -1,0 +1,35 @@
+{
+  "parent": "interstice:rift_discovery",
+  "display": {
+    "icon": {
+      "id": "interstice:tide_indicator"
+    },
+    "title": {
+      "translate": "advancements.interstice.tide_indicator.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.tide_indicator.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:tide_indicator"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained"
+    ]
+  ]
+}

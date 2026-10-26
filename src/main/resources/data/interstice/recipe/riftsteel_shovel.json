@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " M ",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "M": {
+      "item": "interstice:riftsteel_ingot"
+    },
+    "S": {
+      "item": "interstice:world_stick"
+    }
+  },
+  "result": {
+    "id": "interstice:riftsteel_shovel",
+    "count": 1
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "parent": "interstice:trials/first_spider",
+  "display": {
+    "icon": {
+      "id": "interstice:riftsteel_sword"
+    },
+    "title": {
+      "translate": "advancements.interstice.all_spiders.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.all_spiders.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "skirmisher": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "interstice:cave_rift_spider",
+          "nbt": "{SpiderVariant:0b}"
+        }
+      }
+    },
+    "lurker": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "interstice:cave_rift_spider",
+          "nbt": "{SpiderVariant:1b}"
+        }
+      }
+    },
+    "spitter": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "interstice:cave_rift_spider",
+          "nbt": "{SpiderVariant:2b}"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "skirmisher"
+    ],
+    [
+      "lurker"
+    ],
+    [
+      "spitter"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

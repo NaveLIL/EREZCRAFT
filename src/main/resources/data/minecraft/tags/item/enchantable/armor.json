@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:riftsilver_helmet",
+    "interstice:riftsilver_chestplate",
+    "interstice:riftsilver_leggings",
+    "interstice:riftsilver_boots",
+    "interstice:riftsteel_helmet",
+    "interstice:riftsteel_chestplate",
+    "interstice:riftsteel_leggings",
+    "interstice:riftsteel_boots"
+  ]
+}

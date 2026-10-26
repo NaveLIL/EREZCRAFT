@@ -1,0 +1,31 @@
+{
+  "parent": "interstice:trials/return_home",
+  "display": {
+    "icon": {
+      "id": "interstice:rift_frame"
+    },
+    "title": {
+      "translate": "advancements.interstice.stable_portal.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.stable_portal.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "travelled": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "travelled"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

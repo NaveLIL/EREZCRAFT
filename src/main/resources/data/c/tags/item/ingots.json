@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "interstice:riftsilver_ingot"
+    "interstice:riftsilver_ingot",
+    "interstice:riftsteel_ingot"
   ]
 }

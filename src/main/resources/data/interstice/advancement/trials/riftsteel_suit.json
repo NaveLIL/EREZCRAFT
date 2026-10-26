@@ -1,0 +1,31 @@
+{
+  "parent": "interstice:trials/riftsteel",
+  "display": {
+    "icon": {
+      "id": "interstice:riftsteel_chestplate"
+    },
+    "title": {
+      "translate": "advancements.interstice.riftsteel_suit.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.riftsteel_suit.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "equipped": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "equipped"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "parent": "interstice:trials/all_spiders",
+  "display": {
+    "icon": {
+      "id": "interstice:riftsteel_sword"
+    },
+    "title": {
+      "translate": "advancements.interstice.vault_hunter.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.vault_hunter.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "interstice:vault_hunter"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

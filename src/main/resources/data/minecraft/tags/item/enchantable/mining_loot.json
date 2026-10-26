@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:riftsilver_pickaxe",
+    "interstice:riftsilver_axe",
+    "interstice:riftsilver_shovel",
+    "interstice:riftsilver_hoe",
+    "interstice:riftsteel_pickaxe",
+    "interstice:riftsteel_axe",
+    "interstice:riftsteel_shovel",
+    "interstice:riftsteel_hoe"
+  ]
+}

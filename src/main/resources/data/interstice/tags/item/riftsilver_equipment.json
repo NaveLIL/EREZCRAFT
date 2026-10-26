@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:riftsilver_sword",
+    "interstice:riftsilver_pickaxe",
+    "interstice:riftsilver_axe",
+    "interstice:riftsilver_shovel",
+    "interstice:riftsilver_hoe",
+    "interstice:riftsilver_helmet",
+    "interstice:riftsilver_chestplate",
+    "interstice:riftsilver_leggings",
+    "interstice:riftsilver_boots"
+  ]
+}
