@@ -1,0 +1,104 @@
+{
+  "recorded_utc": "2026-10-27T13:41:40.597168+00:00",
+  "revision": "E11",
+  "version": "0.7.0-preview.24-engineer",
+  "candidate": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ea01",
+  "mesh_sha256": "113515a35cc122f2238265b1ab850f981ee8c3bc7d665cb980585531009f786b",
+  "atlas_sha256": "32e973dcd322b47d41b708a7ae5640ed40e432cb455c6f3a0b2ca8f3ff9df177",
+  "jar_sha256": "58181fc822ad0a2f72dc202a37fa948783d632d68b231fc7208506f8cc909a7c",
+  "jar_bytes": 3141788,
+  "parts": 208,
+  "faces": 4173,
+  "exact_mesh_uv_atlas_in_jar_and_processed_resources": true,
+  "blender": "reports/blender_E11.json",
+  "native": {
+    "passed": true,
+    "evidence": "reports/native/run_07/run.json",
+    "mod_count": 106,
+    "distant_horizons": true,
+    "motion_frames": 24
+  },
+  "gametests": {
+    "passed": 43,
+    "runtime_java_files_unchanged_since_tests": 269,
+    "evidence": "reports/gametests/runProgressionGameTestServer.json"
+  },
+  "cloth": {
+    "evidence": "reports/cloth/run_05/result.json",
+    "source_sha256": "3fb3183a7413d6349425d882485a0bd803a69e0d55d2a12a2e9afdd9ef2fd6ce",
+    "identical_cloth_surface_geometry_to_tested_E07": true,
+    "signature": "557ebb3af36ef8cf7ac1af9378ea5bb2cecf84cd7435141bbf13686f73f5e015",
+    "sampled_points": 2534400
+  },
+  "runtime_delta": {
+    "unchanged_prior_classes": 522,
+    "changed_prior_classes": [
+      "pro/erez/interstice/gear/RealmArmaments.class"
+    ],
+    "added_classes": [
+      "pro/erez/interstice/client/EngineerArmorClient$1.class",
+      "pro/erez/interstice/client/EngineerArmorClient.class",
+      "pro/erez/interstice/client/EngineerArmorModel$1.class",
+      "pro/erez/interstice/client/EngineerArmorModel$Data.class",
+      "pro/erez/interstice/client/EngineerArmorModel$Face.class",
+      "pro/erez/interstice/client/EngineerArmorModel$Part.class",
+      "pro/erez/interstice/client/EngineerArmorModel.class",
+      "pro/erez/interstice/client/EngineerCloth$Box.class",
+      "pro/erez/interstice/client/EngineerCloth$Link.class",
+      "pro/erez/interstice/client/EngineerCloth$State.class",
+      "pro/erez/interstice/client/EngineerCloth.class",
+      "pro/erez/interstice/gear/EngineerArmor$Piece.class",
+      "pro/erez/interstice/gear/EngineerArmor.class"
+    ]
+  },
+  "source_snapshot": {
+    "src/main/java/pro/erez/interstice/client/EngineerArmorClient.java": "ee186c324c60e8fa428027d67bc8f40e1e854b525d6cff2901dcdc81bf71619a",
+    "src/main/java/pro/erez/interstice/client/EngineerArmorModel.java": "53e5597f1032f165ef4468ea5da3b1a8e6da3ab2d31b3935bfdb758412992da7",
+    "src/main/java/pro/erez/interstice/client/EngineerCloth.java": "3fb3183a7413d6349425d882485a0bd803a69e0d55d2a12a2e9afdd9ef2fd6ce",
+    "src/main/java/pro/erez/interstice/gear/EngineerArmor.java": "5d2c6e81f3d6aabadf1a66d6368f4a71f761f3f6562a5340ab1569b98cdf2291",
+    "src/main/java/pro/erez/interstice/gear/RealmArmaments.java": "67ad049038e60c25bdd3e5e5a41d33f71fe7b6cbf3579d6425058827f91a5896",
+    "src/main/resources/assets/interstice/armor/engineer.json": "113515a35cc122f2238265b1ab850f981ee8c3bc7d665cb980585531009f786b",
+    "src/main/resources/assets/interstice/lang/en_us.json": "5c8454b5e1c8afd89b92c9f0a0ff0ee012239382432034200d9a82a17d0aa8c2",
+    "src/main/resources/assets/interstice/lang/ru_ru.json": "de4b5e672ed1408a114cdc2a77f84543a2cbe48be665ee5bb9c352915e1dbd58",
+    "src/main/resources/assets/interstice/models/item/engineer_boots.json": "7bdf929ba3882e2cc3e2af7cd159d3d0818b1e5aec182ab8a94a636e10795feb",
+    "src/main/resources/assets/interstice/models/item/engineer_chestplate.json": "15859b37115c2d0652596a6ac981de8593255f5c1187554f2ed36a107a4cde96",
+    "src/main/resources/assets/interstice/models/item/engineer_helmet.json": "c4d4dad2be4c9cda9d1df9d4dc0c278ea5f40ac1aaca17cc4b50e37da1bb6d34",
+    "src/main/resources/assets/interstice/models/item/engineer_leggings.json": "da39941d0c07c11aabb4df10afbbb24370e014e4593be7b2ad5b2352f3cdb157",
+    "src/main/resources/assets/interstice/textures/item/engineer_atlas.png": "32e973dcd322b47d41b708a7ae5640ed40e432cb455c6f3a0b2ca8f3ff9df177",
+    "src/main/resources/assets/interstice/textures/models/armor/engineer.png": "32e973dcd322b47d41b708a7ae5640ed40e432cb455c6f3a0b2ca8f3ff9df177",
+    "src/main/resources/assets/minecraft/atlases/blocks.json": "092153309e77b53cb8cef2a31910db1e769e33b6826a190c6136f7cc817d32c3",
+    "src/main/resources/data/minecraft/tags/item/enchantable/armor.json": "868fa15489dbcb91e0a60143ee1ef81eb208f7fc6e74ab58f5346877ee6fa7f0",
+    "src/main/resources/data/minecraft/tags/item/enchantable/chest_armor.json": "cc4142707e84ab1ff04dc45d3d05235613e0233096604faac091b94259363489",
+    "src/main/resources/data/minecraft/tags/item/enchantable/durability.json": "722df3bf1dfdae614ae999e7ebfc82d9ce237087f7258f63a6accfe98609a8ca",
+    "src/main/resources/data/minecraft/tags/item/enchantable/equippable.json": "868fa15489dbcb91e0a60143ee1ef81eb208f7fc6e74ab58f5346877ee6fa7f0",
+    "src/main/resources/data/minecraft/tags/item/enchantable/foot_armor.json": "decdbd5ce3d2792fbbd9ce6f9aeb6f6b08de075c5815244f8be4b0eb2f9e0c93",
+    "src/main/resources/data/minecraft/tags/item/enchantable/head_armor.json": "457bd5614519868c933c8a8ace34493129183ccfc88295a988104222e0c06547",
+    "src/main/resources/data/minecraft/tags/item/enchantable/legs_armor.json": "f879079ea5518272b9309f0f1001e9fd119f06f555721fe8854d6dd3d49339f1",
+    "src/smoke/java/pro/erez/interstice/client/EngineerNative.java": "5b23236e980b28c6ddfdefb9bc5447e983ca8716b23ab79ce4400bc52930e27d"
+  },
+  "flat_mask_materials": {
+    "mask_cheek": "#66727d",
+    "mask_filter": "#414e5a",
+    "mask_ridge": "#6d7984",
+    "mask_rim": "#52606c",
+    "mask_hose": "#515f6b",
+    "mask_coupler": "#384550",
+    "mask_joint": "#252f39"
+  },
+  "old_S03_preserved": true,
+  "owner_final_visual_approval": false,
+  "deployed": false,
+  "limits": [
+    "Prepared gallery, not Survival gameplay acceptance",
+    "No mass-player FPS benchmark or first-person sleeve acceptance",
+    "Iron baseline statistics only; recipes and abilities not designed",
+    "Geometry/UV/albedo parity does not make studio and Minecraft lighting pixel-identical"
+  ],
+  "gameplay_proposal": {
+    "implemented": false,
+    "path": "source/engineer_gameplay_proposal.json",
+    "sha256": "dc29f0fd4a98c2c9217d6a0db2a95a78e5dea989e10d259f6ed86a5a891d54de",
+    "design_review": "reports/gameplay_design_review.json",
+    "note": "Future stats and abilities; current native candidate still has the iron visual-test baseline."
+  }
+}

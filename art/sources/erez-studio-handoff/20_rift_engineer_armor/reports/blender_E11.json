@@ -1,0 +1,24 @@
+{
+  "revision": "EREZ-ENGINEER-ARMOR-E11",
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": "113515a35cc122f2238265b1ab850f981ee8c3bc7d665cb980585531009f786b",
+  "parts": 208,
+  "faces": 4173,
+  "vertices": 4108,
+  "atlas_size": [
+    1024,
+    1024
+  ],
+  "atlas_used_height": 241,
+  "rendered_from_frozen_mesh": true,
+  "game_implemented": false,
+  "geometry_modifiers_remaining": false,
+  "outputs": {
+    "preview/engineer_E11_back.png": "95a591378df292724229cf39cc82794b1eeb09371ebdf5e6661212bac777d566",
+    "preview/engineer_E11_front.png": "dd1ff3e9aafa6dc90b11ea96954c50c0418ec08a56fbf63791311e0118583285",
+    "preview/engineer_E11_front_back.png": "2d18cb63797178599f9ccb26e070ad75b1a2aa3ab68de77a183eab82e3433a39",
+    "preview/engineer_E11_quarter.png": "27ce3fd8d5948e720660daaa1f02f337338980af5dbfa3679871e8b8b0fd23a9",
+    "assembly/EREZ_Rift_Engineer_Armor_E11.blend": "c67ea447d617ff16246b8bd34f80d0760c60082c4b3bbb5255804736eb716276",
+    "exports/EREZ_Rift_Engineer_Armor_E11.glb": "9a23675ca7b5f40a5658737a1b9e67fdb5034f83665b2ab1d09d13253b79f437"
+  }
+}

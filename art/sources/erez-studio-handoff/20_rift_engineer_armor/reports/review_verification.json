@@ -1,0 +1,1520 @@
+{
+  "recorded_utc": "2026-10-27T13:21:48.232898+00:00",
+  "revision": "EREZ-ENGINEER-ARMOR-E11",
+  "passed": true,
+  "parts": 208,
+  "faces": 4173,
+  "vertices": 4108,
+  "authoritative_mesh_sha256": "113515a35cc122f2238265b1ab850f981ee8c3bc7d665cb980585531009f786b",
+  "atlas_sha256": "32e973dcd322b47d41b708a7ae5640ed40e432cb455c6f3a0b2ca8f3ff9df177",
+  "bounds_mc_neutral": [
+    [
+      -8.369999885559082,
+      -8.649999618530273,
+      -6.039999961853027
+    ],
+    [
+      9.521990776062012,
+      24.350000381469727,
+      5.099999904632568
+    ]
+  ],
+  "model_units_per_block": 16,
+  "native_bone_pivots_preserved": true,
+  "old_source_and_atlas_unchanged": true,
+  "previous_blend_preserved": {
+    "path": "D:\\repos\\Blender\\creations\\17_rift_engineer_skin\\assembly\\EREZ_Rift_Engineer_S03.blend",
+    "sha256": "a84bdfab04158daaa9f91b9049228e4d312150d53bce3076f7b5fdc0a80855a4"
+  },
+  "actual_3d_insignia_and_hebrew": true,
+  "glb_meshes": 208,
+  "packed_glb_textures": true,
+  "blender": {
+    "revision": "EREZ-ENGINEER-ARMOR-E11",
+    "blender_version": "5.2.2 LTS",
+    "source_sha256": "113515a35cc122f2238265b1ab850f981ee8c3bc7d665cb980585531009f786b",
+    "parts": 208,
+    "faces": 4173,
+    "vertices": 4108,
+    "atlas_size": [
+      1024,
+      1024
+    ],
+    "atlas_used_height": 241,
+    "rendered_from_frozen_mesh": true,
+    "game_implemented": false,
+    "geometry_modifiers_remaining": false,
+    "outputs": {
+      "preview/engineer_E11_back.png": "95a591378df292724229cf39cc82794b1eeb09371ebdf5e6661212bac777d566",
+      "preview/engineer_E11_front.png": "dd1ff3e9aafa6dc90b11ea96954c50c0418ec08a56fbf63791311e0118583285",
+      "preview/engineer_E11_front_back.png": "2d18cb63797178599f9ccb26e070ad75b1a2aa3ab68de77a183eab82e3433a39",
+      "preview/engineer_E11_quarter.png": "27ce3fd8d5948e720660daaa1f02f337338980af5dbfa3679871e8b8b0fd23a9",
+      "assembly/EREZ_Rift_Engineer_Armor_E11.blend": "c67ea447d617ff16246b8bd34f80d0760c60082c4b3bbb5255804736eb716276",
+      "exports/EREZ_Rift_Engineer_Armor_E11.glb": "9a23675ca7b5f40a5658737a1b9e67fdb5034f83665b2ab1d09d13253b79f437"
+    }
+  },
+  "geometry": [
+    {
+      "name": "hood_base",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "coat_torso",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_sleeve",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_trousers",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_sleeve",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_trousers",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "visor_frame",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "visor_glass",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "visor_inner_highlight",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "brow_guard",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_hood_fold",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_hood_cheek_fold",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_hood_buckle_cross_-5.35",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_hood_buckle_cross_-4.3",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_hood_buckle_side_-2.25",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_hood_buckle_side_-1.38",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_hood_fold",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_hood_cheek_fold",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_hood_buckle_cross_-5.35",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_hood_buckle_cross_-4.3",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_hood_buckle_side_-2.25",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_hood_buckle_side_-1.38",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "respirator_center",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "respirator_center_ridge",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "cheek_plate_-1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "cheek_plate_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_lower_rim",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "inner_shirt",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "shirt_button_0",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "shirt_button_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "shirt_button_2",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "shirt_button_3",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_loop_0",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_catch_0",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_loop_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_catch_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_loop_2",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_catch_2",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_loop_3",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_catch_3",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_loop_4",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_catch_4",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_buckle_top",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_buckle_bottom",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_buckle_side_0.025000000000000022",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "bandolier_buckle_side_1.045",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_buckle_top",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_buckle_bottom",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_buckle_side_-0.59",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_buckle_side_0.36",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_tongue",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_front_pouch_-1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "pouch_flap_-1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "pouch_clasp_-1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_rear_pouch_-1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_pouch_clasp_-1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_front_pouch_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "pouch_flap_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "pouch_clasp_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_rear_pouch_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_pouch_clasp_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_back_loop_0",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_back_loop_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "belt_back_loop_2",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_front_skirt",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_front_hem",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_inner_lining",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_rear_skirt",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_rear_hem",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_side_gusset",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_back_fold",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_front_fold",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_leg_upper_webbing",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_leg_lower_webbing",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_leg_webbing_clasp",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_knee_guard",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_boot",
+      "bone": "right_leg",
+      "slot": "boots",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_boot_toecap",
+      "bone": "right_leg",
+      "slot": "boots",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_boot_sole",
+      "bone": "right_leg",
+      "slot": "boots",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_boot_instep",
+      "bone": "right_leg",
+      "slot": "boots",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_front_skirt",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_front_hem",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_inner_lining",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_rear_skirt",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_rear_hem",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_side_gusset",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_back_fold",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_front_fold",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_leg_upper_webbing",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_leg_lower_webbing",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_leg_webbing_clasp",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_knee_guard",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_boot",
+      "bone": "left_leg",
+      "slot": "boots",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_boot_toecap",
+      "bone": "left_leg",
+      "slot": "boots",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_boot_sole",
+      "bone": "left_leg",
+      "slot": "boots",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_boot_instep",
+      "bone": "left_leg",
+      "slot": "boots",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_tailored_shoulder",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_upper_sleeve_overlay",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_sleeve_webbing_0",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_sleeve_catch_0",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_sleeve_webbing_1",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_sleeve_catch_1",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_glove",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_tailored_shoulder",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_upper_sleeve_overlay",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_sleeve_webbing_0",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_sleeve_catch_0",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_glove",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_device",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_device_inset",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_vertical_window",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "wrist_center_highlight",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "wrist_fastener_4.1",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_fastener_7.0",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "back_star_0_0",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "back_star_0_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "back_star_0_2",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "back_star_1_0",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "back_star_1_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "back_star_1_2",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "shoulder_harness_upper",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "shoulder_harness_tucked_tail",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "harness_shoulder_wrap_front",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "harness_shoulder_wrap_back",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "harness_rear_side_anchor",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "high_collar_back",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "high_collar_back_binding",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "high_collar_side_-1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "high_collar_side_binding_-1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "collar_front_fold_-1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "high_collar_side_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "high_collar_side_binding_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "collar_front_fold_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_upper_sleeve_shell",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_forearm_shell",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_elbow_overlap",
+      "bone": "right_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_upper_sleeve_shell",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_forearm_shell",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "left_elbow_overlap",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_lateral_backing",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_clamp_0_z-2.32",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_clamp_0_z2.12",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_clamp_0_front_bend",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "wrist_clamp_0_outer",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "wrist_clamp_0_back_bend",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "wrist_clamp_0_inner",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_clamp_0_catch",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_clamp_1_z-2.32",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_clamp_1_z2.12",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_clamp_1_front_bend",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "wrist_clamp_1_outer",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "wrist_clamp_1_back_bend",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "wrist_clamp_1_inner",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "wrist_clamp_1_catch",
+      "bone": "left_arm",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "right_front_skirt_waist_bridge",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_rear_skirt_waist_bridge",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "right_side_gusset_waist_bridge",
+      "bone": "right_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_front_skirt_waist_bridge",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_rear_skirt_waist_bridge",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "left_side_gusset_waist_bridge",
+      "bone": "left_leg",
+      "slot": "leggings",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_harness_side_-1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "mask_harness_side_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "mask_harness_rear_wrap",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "mask_harness_front_anchor_-1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "mask_harness_front_anchor_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "hood_lower_retention_back",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "hood_lower_retention_side_-1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "hood_lower_retention_side_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "back_yoke_panel",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "back_yoke_upper_binding",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_insignia_patch",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_equipment_strap_-1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "rear_strap_keeper_-1_1.55",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_strap_keeper_-1_6.9",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_-1_0",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_-1_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_-1_2",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_-1_3",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_-1_4",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "respirator_vent_-1_0",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "respirator_vent_-1_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "respirator_vent_-1_2",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_equipment_strap_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "rear_strap_keeper_1_1.55",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_strap_keeper_1_6.9",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_1_0",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_1_1",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_1_2",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_1_3",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "rear_yoke_stitch_1_4",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "respirator_vent_1_0",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "respirator_vent_1_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "respirator_vent_1_2",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "mask_intake_frame_-1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_recess_-1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_louver_-1_0",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_louver_-1_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_louver_-1_2",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_louver_-1_3",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_frame_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_recess_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_louver_1_0",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_louver_1_1",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_louver_1_2",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "mask_intake_louver_1_3",
+      "bone": "head",
+      "slot": "helmet",
+      "vertices": 8,
+      "faces": 6
+    },
+    {
+      "name": "trouser_waist_underlayer",
+      "bone": "body",
+      "slot": "leggings",
+      "vertices": 24,
+      "faces": 26
+    },
+    {
+      "name": "back_hebrew",
+      "bone": "body",
+      "slot": "chestplate",
+      "vertices": 244,
+      "faces": 171
+    }
+  ],
+  "limits": [
+    "Game evidence is recorded separately in reports/native; this file validates authoring assets",
+    "Reference is a concept image; likeness requires owner visual review",
+    "Blender render uses a mild A-stance; native poses and lighting differ",
+    "Iron statistics are a temporary visual-test baseline; no recipes, deployment or launcher changes"
+  ]
+}

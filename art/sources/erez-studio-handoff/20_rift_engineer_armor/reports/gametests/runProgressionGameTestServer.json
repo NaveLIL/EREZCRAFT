@@ -1,0 +1,47 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ea01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ea01\\.verification\\20261027T123204.122899Z-engineer24\\profiles",
+    "runProgressionGameTestServer"
+  ],
+  "cwd": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ea01",
+  "source_commit": "e54c21422aa920c28aa18518c964428de9b63822",
+  "java_home": "D:/repos/Minecraft/EREZCRAFT/.verification/toolchain/jdk-21.0.12.1+1",
+  "started_utc": "2026-10-27T12:32:15.340857+00:00",
+  "pid": 7476,
+  "exit_code": 0,
+  "duration_seconds": 107.672,
+  "ended_utc": "2026-10-27T12:34:03.020864+00:00",
+  "expected_game_test_tasks": [
+    "runProgressionGameTestServer"
+  ],
+  "game_test_tasks": {
+    "runProgressionGameTestServer": {
+      "executions": [
+        {
+          "status": "",
+          "completion_counts": [
+            43
+          ],
+          "failures": []
+        }
+      ],
+      "completion_counts": [
+        43
+      ],
+      "required_tests_passed": 43
+    }
+  },
+  "unexpected_game_test_tasks": [],
+  "game_test_errors": [],
+  "required_test_groups": [
+    43
+  ],
+  "required_tests_passed": 43,
+  "accepted": true
+}
