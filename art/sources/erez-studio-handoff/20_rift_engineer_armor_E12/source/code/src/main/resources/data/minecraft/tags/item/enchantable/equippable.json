@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:riftsilver_helmet",
+    "interstice:riftsilver_chestplate",
+    "interstice:riftsilver_leggings",
+    "interstice:riftsilver_boots",
+    "interstice:riftsteel_helmet",
+    "interstice:riftsteel_chestplate",
+    "interstice:riftsteel_leggings",
+    "interstice:riftsteel_boots",
+    "interstice:aegis_helmet",
+    "interstice:aegis_chestplate",
+    "interstice:aegis_leggings",
+    "interstice:aegis_boots",
+    "interstice:kotomyaf_helmet",
+    "interstice:kotomyaf_chestplate",
+    "interstice:kotomyaf_leggings",
+    "interstice:kotomyaf_boots",
+    "interstice:engineer_helmet",
+    "interstice:engineer_chestplate",
+    "interstice:engineer_leggings",
+    "interstice:engineer_boots"
+  ]
+}
