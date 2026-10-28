@@ -90,7 +90,8 @@ public final class SpiderEggSacBlock extends Block {
 
         // Toxic effect to surrounding entities
         var box = new AABB(pos).inflate(3.0);
-        var victims = level.getEntitiesOfClass(LivingEntity.class, box, e -> !(e instanceof CaveRiftSpiderEntity));
+        var victims = level.getEntitiesOfClass(LivingEntity.class, box,
+                e -> !pro.erez.interstice.fauna.RealmFaunaHazards.adaptedToFlora(e));
         for (var victim : victims) {
             victim.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), cause);
             victim.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 1), cause);
@@ -99,6 +100,7 @@ public final class SpiderEggSacBlock extends Block {
         // Spawn 1 to 2 skirmisher spider defenders
         int count = 1 + level.getRandom().nextInt(2);
         for (int i = 0; i < count; i++) {
+            if (!pro.erez.interstice.entity.SpiderPopulation.hasRoom(level, pos)) break;
             CaveRiftSpiderEntity spider = new CaveRiftSpiderEntity(Interstice.CAVE_RIFT_SPIDER.get(), level);
             spider.moveTo(pos.getX() + 0.5 + (level.getRandom().nextDouble() - 0.5) * 0.4,
                     pos.getY() + 0.1,

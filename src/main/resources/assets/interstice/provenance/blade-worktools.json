@@ -1,0 +1,163 @@
+{
+  "revision": "B01",
+  "author": "TimmyChips",
+  "license": "CC0-1.0",
+  "source_url": "https://modrinth.com/resourcepack/blade-held-items",
+  "version_id": "LLyZvI13",
+  "source_version": "Default_1.0.1",
+  "archive_sha256": "b886506212c0efd5f5ad524f24a046b19f7a38ad0245bcc6a5c88c3b66e705a7",
+  "geometry_and_uv_changes": false,
+  "palette_only_texture_changes": true,
+  "pommel_dependency_required": false,
+  "inventory": "Native 3D models in all contexts, not a separate held-model switch",
+  "models": {
+    "riftsilver_pickaxe": {
+      "source_model": "assets/minecraft/models/item/pommel_held_models/template_pickaxe.json",
+      "source_texture": "assets/minecraft/textures/item/pommel_held_models/iron_pickaxe_held.png",
+      "source_model_sha256": "43ad69b4caadcb835c5096c5540fe68b4557183872ef28c74311f72c4422046c",
+      "source_texture_sha256": "a333d7d93d1b740448baec61a83c09c9db16d54f1fdfcc7cc48afaf2661f425d",
+      "elements": 7,
+      "faces": 41,
+      "model_sha256": "85d99b5abe46c6f13795ee17b41fd3d3edc0e6dcffff219e280184bca6745b4f",
+      "texture_sha256": "ee8ff3b5a1b46d6c110262817f3e0477b9ba33c898b93dad01730830ceb1fa5f",
+      "alpha_unchanged": true
+    },
+    "riftsteel_pickaxe": {
+      "source_model": "assets/minecraft/models/item/pommel_held_models/template_pickaxe.json",
+      "source_texture": "assets/minecraft/textures/item/pommel_held_models/iron_pickaxe_held.png",
+      "source_model_sha256": "43ad69b4caadcb835c5096c5540fe68b4557183872ef28c74311f72c4422046c",
+      "source_texture_sha256": "a333d7d93d1b740448baec61a83c09c9db16d54f1fdfcc7cc48afaf2661f425d",
+      "elements": 7,
+      "faces": 41,
+      "model_sha256": "b2c61e8084b4736e301685d8b97ff0327fd9d5b9c860ed783c59c18bf2939ab0",
+      "texture_sha256": "ddc2c39326bcc529838e79c88e4784c51f84f2ec48d236c468254d549f907129",
+      "alpha_unchanged": true
+    },
+    "riftsilver_axe": {
+      "source_model": "assets/minecraft/models/item/pommel_held_models/template_axe.json",
+      "source_texture": "assets/minecraft/textures/item/pommel_held_models/iron_axe_held.png",
+      "source_model_sha256": "266e47b6879d9f0888047c1d72ad8168350a4fa1233c8af7c330a6e9e99507b9",
+      "source_texture_sha256": "1ded7f537d64a7ca006cf1654dbb67ab3294d0275ca97b6fb26f99ea397e53cc",
+      "elements": 6,
+      "faces": 32,
+      "model_sha256": "966321a7435acf213ff1c14bc06a9e2638ba019edc516c20a5905bec1e585a9b",
+      "texture_sha256": "cc999bdeac857694c4be932a63420a28c5cb4ea15a5731de3a4c1ce5d285e42f",
+      "alpha_unchanged": true
+    },
+    "riftsteel_axe": {
+      "source_model": "assets/minecraft/models/item/pommel_held_models/template_axe.json",
+      "source_texture": "assets/minecraft/textures/item/pommel_held_models/iron_axe_held.png",
+      "source_model_sha256": "266e47b6879d9f0888047c1d72ad8168350a4fa1233c8af7c330a6e9e99507b9",
+      "source_texture_sha256": "1ded7f537d64a7ca006cf1654dbb67ab3294d0275ca97b6fb26f99ea397e53cc",
+      "elements": 6,
+      "faces": 32,
+      "model_sha256": "4bd7667a07fac0b7c89eac93128968e6001fa67ad97477fb381cff3cdd2b6687",
+      "texture_sha256": "fbf93a712dfd497a3c25969a54b77cc0cafecd64561e3eda1470e9a5d6905a97",
+      "alpha_unchanged": true
+    },
+    "riftsilver_shovel": {
+      "source_model": "assets/minecraft/models/item/pommel_held_models/template_shovel.json",
+      "source_texture": "assets/minecraft/textures/item/pommel_held_models/iron_shovel_held.png",
+      "source_model_sha256": "3ca6ca167025422668b53ba619231b62aeb11fe2dbb8e58cb399d72b7dfce39c",
+      "source_texture_sha256": "7f1c17bbc1b4ae5e5a370f01f3591faf83e6bf3b0170dedff73bdd75a415ee71",
+      "elements": 4,
+      "faces": 22,
+      "model_sha256": "d5d922ae6172c267b57eb96699351b640c7c0d49e59389a9f8443fa66f1b6c2c",
+      "texture_sha256": "db9638dd34a62a0bfa4bca73f3a63ec076c68da7b298eab4bef0e78d6e59d7a8",
+      "alpha_unchanged": true
+    },
+    "riftsteel_shovel": {
+      "source_model": "assets/minecraft/models/item/pommel_held_models/template_shovel.json",
+      "source_texture": "assets/minecraft/textures/item/pommel_held_models/iron_shovel_held.png",
+      "source_model_sha256": "3ca6ca167025422668b53ba619231b62aeb11fe2dbb8e58cb399d72b7dfce39c",
+      "source_texture_sha256": "7f1c17bbc1b4ae5e5a370f01f3591faf83e6bf3b0170dedff73bdd75a415ee71",
+      "elements": 4,
+      "faces": 22,
+      "model_sha256": "0871a14b87280e56d1a5975b88220c5b9d15ac8680ab4ed5882b945edf7ef072",
+      "texture_sha256": "65d15995395b244e5085fc0831552c637c583bafc5de53488778a821125485f3",
+      "alpha_unchanged": true
+    },
+    "riftsilver_hoe": {
+      "source_model": "assets/minecraft/models/item/pommel_held_models/template_hoe.json",
+      "source_texture": "assets/minecraft/textures/item/pommel_held_models/iron_hoe_held.png",
+      "source_model_sha256": "87fafdeee6f8809acfa62f8e5a6cff9a1f411e5dd614286d2df62e590eb5d52e",
+      "source_texture_sha256": "b7a07776c73ba2fa73f239e2589381de94d90a4e468f782ee1aff9445943c586",
+      "elements": 3,
+      "faces": 17,
+      "model_sha256": "4a553bf65e226eed1174f2ca31032868e8d11f6a8adb1d6a6c55bbd612b07b9a",
+      "texture_sha256": "144fe5157e07260e3bef367d146d780ef7c00715857f8d0695e5923422d07d71",
+      "alpha_unchanged": true
+    },
+    "riftsteel_hoe": {
+      "source_model": "assets/minecraft/models/item/pommel_held_models/template_hoe.json",
+      "source_texture": "assets/minecraft/textures/item/pommel_held_models/iron_hoe_held.png",
+      "source_model_sha256": "87fafdeee6f8809acfa62f8e5a6cff9a1f411e5dd614286d2df62e590eb5d52e",
+      "source_texture_sha256": "b7a07776c73ba2fa73f239e2589381de94d90a4e468f782ee1aff9445943c586",
+      "elements": 3,
+      "faces": 17,
+      "model_sha256": "a0b1c4b58edddf216cca8650b3c2d3bc02bd34b0013f5bd569355e5e8ae28152",
+      "texture_sha256": "bfcc553543a938f693f8a38526d14eb048b13e08240438ddfbc5496ff6bfc02f",
+      "alpha_unchanged": true
+    }
+  },
+  "palette": {
+    "metal": {
+      "riftsilver": [
+        [
+          82,
+          62,
+          101
+        ],
+        [
+          174,
+          160,
+          193
+        ],
+        [
+          230,
+          225,
+          240
+        ]
+      ],
+      "riftsteel": [
+        [
+          26,
+          45,
+          54
+        ],
+        [
+          72,
+          100,
+          110
+        ],
+        [
+          181,
+          207,
+          213
+        ]
+      ]
+    },
+    "wood": {
+      "(138, 87, 36)": [
+        132,
+        111,
+        88
+      ],
+      "(105, 66, 28)": [
+        105,
+        88,
+        70
+      ],
+      "(74, 46, 20)": [
+        76,
+        63,
+        49
+      ],
+      "(40, 25, 10)": [
+        43,
+        37,
+        29
+      ]
+    }
+  }
+}

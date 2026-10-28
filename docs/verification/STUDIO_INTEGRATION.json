@@ -1,0 +1,556 @@
+{
+  "recorded_utc": "2026-10-27T14:52:49.270Z",
+  "passed": true,
+  "head": "a768bef287d0413979db18c526c689f4c6499517",
+  "scope": "Study Blender projects 12–20; integrate 18 →19 →20 E12 while preserving existing workstation development; enlarge only working-profile height of pickaxes, axes and hoes as WT04",
+  "version": "0.7.0-preview.27-workheads",
+  "integration_base": "0.7.0-preview.26-studio",
+  "canonical_blender_root": "D:/repos/Blender/creations",
+  "projects_reviewed": [
+    {
+      "project": 12,
+      "revision": "LS03",
+      "result": "Separate longsword, original sword retained"
+    },
+    {
+      "project": 13,
+      "revision": "A04",
+      "result": "Silver, riftsteel and Magen sets retained"
+    },
+    {
+      "project": 14,
+      "revision": "A04",
+      "result": "Kotomyaf without face mask or tail; sounds and abilities retained"
+    },
+    {
+      "project": 15,
+      "result": "Sixteen 3D armor miniatures retained"
+    },
+    {
+      "project": 16,
+      "revision": "B02",
+      "result": "Three backpacks; capacities 54/72/84 retained"
+    },
+    {
+      "project": 17,
+      "result": "Rejected 3D skin preserved as history; CPM and avatar compatibility mod not installed"
+    },
+    {
+      "project": 18,
+      "revision": "T01",
+      "result": "Three expedition instruments integrated"
+    },
+    {
+      "project": 19,
+      "revision": "WT04",
+      "result": "WT03 mechanics integrated; six working profiles doubled in height only"
+    },
+    {
+      "project": 20,
+      "revision": "E12",
+      "result": "Exact mesh/atlas, native iron-baseline armor and cosmetic coat physics integrated; D02 remains a design"
+    }
+  ],
+  "artifact_history_hashes_verified": [
+    {
+      "project": "12_minecraft_longsword",
+      "match": true
+    },
+    {
+      "project": "13_minecraft_armor",
+      "match": true
+    },
+    {
+      "project": "14_kotomyaf_armor",
+      "match": true
+    },
+    {
+      "project": "15_armor_inventory_icons",
+      "match": true
+    },
+    {
+      "project": "16_expedition_backpacks",
+      "match": true
+    },
+    {
+      "project": "18_expedition_tools",
+      "match": true
+    },
+    {
+      "project": "19_realm_worktools",
+      "match": true
+    },
+    {
+      "project": "20_rift_engineer_armor",
+      "match": true
+    }
+  ],
+  "E12_committed_snapshot_files_verified": 45,
+  "engineer": {
+    "revision": "E12",
+    "selected_by_owner": true,
+    "parts": 208,
+    "faces": 4173,
+    "mesh_sha256": "53fc25f75c0d5cc8dafb37c2f2d1a523c1db75606614ad6ab9a9d85bed5262f6",
+    "atlas_sha256": "aaf6b13f4f67649e16c67681d875b1c96439034b06a3305ad7d7c93dae0747e3",
+    "D02_implemented": false,
+    "stats": "Existing iron baseline, no new recipes or abilities",
+    "geometry_matches_tested_preview25": true
+  },
+  "WT04": {
+    "source": "D:/repos/Blender/creations/19_realm_worktools/source/worktools_WT04.json",
+    "source_sha256": "5a79608e307041fc9897cb08996445d48f52a39a92349d88307b9ddd58917db8",
+    "blender": "D:/repos/Blender/creations/19_realm_worktools/assembly/realm_worktools_WT04.blend",
+    "height_factor": 2,
+    "width_factor": 1,
+    "depth_factor": 1,
+    "handles_unchanged": true,
+    "both_shovels_unchanged": true,
+    "textures_unchanged": true,
+    "gameplay_unchanged": true,
+    "final_visual_approval_recorded": false,
+    "design_verification": "D:/repos/Blender/creations/19_realm_worktools/reports/design_verification_WT04.json"
+  },
+  "checks": {
+    "assemble": true,
+    "required_component_tests": 43,
+    "runner_unit_tests": 68,
+    "component_evidence": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/components.json",
+    "component_DH_exception": "Artificial GameTestServer only; DH present in every real client",
+    "native_clients": [
+      {
+        "kind": "tools",
+        "passed": true,
+        "mod_count": 106,
+        "screenshots": 10,
+        "evidence": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/native-tools/run.json"
+      },
+      {
+        "kind": "worktools",
+        "passed": true,
+        "mod_count": 106,
+        "screenshots": 22,
+        "evidence": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/native-worktools/run.json"
+      },
+      {
+        "kind": "engineer",
+        "passed": true,
+        "mod_count": 106,
+        "screenshots": 36,
+        "evidence": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/native-engineer/run.json"
+      }
+    ],
+    "cold": {
+      "passed": true,
+      "creator_pid": 33600,
+      "reloader_pid": 3428,
+      "worktool_mode_name_wear_custom_data": true,
+      "four_engineer_items": true,
+      "previous_journal_trials_equipment_and_magen_charge": true,
+      "evidence": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/cold.json"
+    },
+    "WT04_native": {
+      "passed": true,
+      "mod_count": 106,
+      "screenshots": 22,
+      "evidence": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/native-worktools-wt04/run.json"
+    },
+    "regeneration": {
+      "passed": true,
+      "files_checked": 1394,
+      "changed": []
+    },
+    "package_equivalence": {
+      "passed": true,
+      "changed_entries": [
+        "META-INF/neoforge.mods.toml",
+        "assets/interstice/models/item/riftsilver_axe.json",
+        "assets/interstice/models/item/riftsilver_hoe.json",
+        "assets/interstice/models/item/riftsilver_pickaxe.json",
+        "assets/interstice/models/item/riftsteel_axe.json",
+        "assets/interstice/models/item/riftsteel_hoe.json",
+        "assets/interstice/models/item/riftsteel_pickaxe.json"
+      ],
+      "added_entries": [],
+      "removed_entries": [],
+      "all_runtime_classes_identical": true,
+      "runtime_classes": 538,
+      "jar_sha256": "99dbb71d91200e88e492c40204c95c9b4db8db87b79a3d1adb1f2551847be1c3",
+      "jar_bytes": 3116872
+    }
+  },
+  "preservation": {
+    "existing_source_files_unchanged": 1908,
+    "unexpected_changes": [],
+    "candidate_runtime_source_mismatches": [],
+    "preexisting_runtime_java_files_preserved": 265,
+    "intentionally_modified_preexisting_runtime_java": [
+      "src/main/java/pro/erez/interstice/gear/RealmArmaments.java"
+    ],
+    "primary_gradle_properties_unchanged": true,
+    "user_world_files": 1156,
+    "user_world_files_unchanged": true,
+    "existing_fauna_development_preserved": true,
+    "original_WT03_report_restored_exactly_from_immutable_handoff": true,
+    "rollback_backups": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/before",
+    "input_hashes": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/before-sha256.json"
+  },
+  "modifications": [
+    {
+      "path": "src/main/resources/assets/interstice/models/item/lift_controller.json",
+      "before_sha256": "197a20408bde5d4e7622f597ab43417cefd5656c4e15e5fe65b75c6647c94594",
+      "after_sha256": "7dd5265138165191c16773f118845130388539a9ba16baadac65bc0f23c6a0cc"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/structure_surveyor.json",
+      "before_sha256": "16fc013d5e9eb2f19da1ebd72ae4077f8bb3bf795dd60d01be57cb46f9198465",
+      "after_sha256": "cc47532669b70c04348dfb9f21323e2010b66ccead9e3dbf069d420e051d4bfa"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/tether_spool.json",
+      "before_sha256": "db4a00f6723ce261118292b1820c3c2f94d0b2a0ac79ae03b2afd63b70018392",
+      "after_sha256": "5d75320eba322fd81949a61ede36370a80dc48e2009787e70fca6e41e0fd636e"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/expedition_tools/body.png",
+      "before_sha256": null,
+      "after_sha256": "b5e5d1c910d5667bfe9dc8f220f88347b4ad5fe9fd4e50f81d6a89bf9d677d9a"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/expedition_tools/brass.png",
+      "before_sha256": null,
+      "after_sha256": "1dcd833edc20c15a2a98008674d2b1593d3e40eac5effb6dde829760110c6d7f"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/expedition_tools/cyan.png",
+      "before_sha256": null,
+      "after_sha256": "ea7a55d30899655df973133b9cc0ccc73e0b7d823394a9f60d3695e7528ec083"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/expedition_tools/frame.png",
+      "before_sha256": null,
+      "after_sha256": "cea2f347282f025c25dbaa26b42b108a213f084e3f485a69a0b952450b8704d8"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/expedition_tools/glass.png",
+      "before_sha256": null,
+      "after_sha256": "9ab08c484e41a00a67b579aaaa5e8d8f4d6c595544879ab2204ba99f056b22fe"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/expedition_tools/grip.png",
+      "before_sha256": null,
+      "after_sha256": "4bcaa1375238e785335a6747e256762f318c422627900741759c4d176cea59db"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/expedition_tools/rope.png",
+      "before_sha256": null,
+      "after_sha256": "a87edc1edf24e1f34237c310eaa9f5d5dc31e0d2f4e894f64a564dfeabb06fd7"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/expedition_tools/rope_seam.png",
+      "before_sha256": null,
+      "after_sha256": "d81fe3c624fc4455386ed7645b6877baf972f77d2a843fe393da494ede53f447"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/expedition_tools/shadow.png",
+      "before_sha256": null,
+      "after_sha256": "a3f33d18628001cad973dba6e3821338c42b982323a9b44b62acc52dcb992e31"
+    },
+    {
+      "path": "src/main/java/pro/erez/interstice/gear/RealmArmaments.java",
+      "before_sha256": "ab8911eecd81fa862f571d07c01156d76bf5332456687d73708ac69da1c50ac7",
+      "after_sha256": "67ad049038e60c25bdd3e5e5a41d33f71fe7b6cbf3579d6425058827f91a5896"
+    },
+    {
+      "path": "src/main/java/pro/erez/interstice/gear/RealmWorktools.java",
+      "before_sha256": null,
+      "after_sha256": "8b756007e9fea2a569fada6d9d43569f1508df65dcf6804e04e9dbe3e510b8b4"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/lang/en_us.json",
+      "before_sha256": "a62bc9b801d9be23097ad424aa2fe4306ca28b86719536521bee28509e4ab364",
+      "after_sha256": "5c8454b5e1c8afd89b92c9f0a0ff0ee012239382432034200d9a82a17d0aa8c2"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/lang/ru_ru.json",
+      "before_sha256": "0d94b1195fea6a9bddce8d9e050854d65ee504ee5cbaebfec0f1ad2c1267211d",
+      "after_sha256": "de4b5e672ed1408a114cdc2a77f84543a2cbe48be665ee5bb9c352915e1dbd58"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/riftsilver_axe.json",
+      "before_sha256": "7ecf2c192fcf3186c234c9b79b5b21e0987e6085e626d9e4c903c1ba33da61ef",
+      "after_sha256": "87f8ed3f5baafcd3155c18aa5df3fe93357f77d204a4539f99fdc8f36ec64338"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/riftsilver_hoe.json",
+      "before_sha256": "29d5ce132bd048c40b9991845e2e3641c6dd276defa5184a010b6c0915810d61",
+      "after_sha256": "8c15b58ba27ac3710933f47b7852be0a625998ae07402461d4f80ed96b0c1897"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/riftsilver_pickaxe.json",
+      "before_sha256": "751bf407e7b9d0f47a894961ebc1bc4f73cf2615b8f203df9109afc749c6e16e",
+      "after_sha256": "ea045248afcf975822d2690ac9f10919e08b9f9d64f633069999acb9a8cffbfb"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/riftsilver_shovel.json",
+      "before_sha256": "29e132a29dfc05ca9f5aee555b9ee03c1ae4760b3525f6dc4560809e5df0479e",
+      "after_sha256": "8add9f8c23dea20b8aecd3aca248076529f0483160852f70e5aaf6940884e087"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/riftsteel_axe.json",
+      "before_sha256": "e6f2f1e4616c10e27be89d7fc459c2a05a74d2832e01f1df65f8ba6eafd9a97e",
+      "after_sha256": "0285a82bfa1558d3eca6050aca0e55e9537965dc0c3637d6e75ea8ef2913af6f"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/riftsteel_hoe.json",
+      "before_sha256": "48f30eaab50128d4305066ccab44da3cc7e10c5881fbcac034fe06f5382044ab",
+      "after_sha256": "1db42d2c70a19f5fa441284492b9b1d6f9c167226b78f02f2821dba4edf21386"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/riftsteel_pickaxe.json",
+      "before_sha256": "d527bb26381c1581aa7cc5a80cd061184a21510190507c3537b8b0d6ec5691db",
+      "after_sha256": "f566c53c6206cc64b92cce240e036e27db65eac7e57311eb8a79d1d2fec99c52"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/riftsteel_shovel.json",
+      "before_sha256": "7b592479e065fa0b405911ed76f00ff73263cd39e00cdfc4fa50b3a87d0f9bae",
+      "after_sha256": "f56e534d81b154bba29fe5c54457622bcd55e2d84b818503580863e055121954"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/worktools/brass.png",
+      "before_sha256": null,
+      "after_sha256": "720f0e98a8ec5b4e5e19ab8471a1626832da75e99b47467a9285bbe1a3210f60"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/worktools/cyan.png",
+      "before_sha256": null,
+      "after_sha256": "91894b71dd9649e902fbd4eeab0937e60182076ddd13ec77ecfeb571d33bd98c"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/worktools/dark.png",
+      "before_sha256": null,
+      "after_sha256": "919a13e628eb08f1baf0cab527de1a56d76ffe3b1c1514693ff460e9c1c0457d"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/worktools/edge.png",
+      "before_sha256": null,
+      "after_sha256": "0fc89b72ee1814a943499b7936cb123d0d49b6748d1c119de4892818cbbc7ac3"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/worktools/grip.png",
+      "before_sha256": null,
+      "after_sha256": "a921d1e95346febbb499160e7fc7eca79a30fd3d91e97e77b98c4de246bc8a09"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/worktools/silver.png",
+      "before_sha256": null,
+      "after_sha256": "d0d0c8b350437c11eb2f6fe47ddbe70b2c4b83235dd920cfb751995eb5b9bdbc"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/worktools/silver_shadow.png",
+      "before_sha256": null,
+      "after_sha256": "cf5bdb3622c38ddbc3bdcbb994929b039c8f8189a9f9d81fe331064d3d8d29bc"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/worktools/steel.png",
+      "before_sha256": null,
+      "after_sha256": "ce2fa3181532024535709b53fe556708654586ee082b87d077f435033cf517cb"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/worktools/wood.png",
+      "before_sha256": null,
+      "after_sha256": "6f0b35851025151f556413dc6ed6a9d973ae35115da3ea3d5ed6de1e51583093"
+    },
+    {
+      "path": "src/main/resources/data/interstice/tags/block/area_tillable.json",
+      "before_sha256": null,
+      "after_sha256": "e5b004363765b3bb23ac5edceaf24a9495eb2799512c73937ede8007d19861a7"
+    },
+    {
+      "path": "src/main/resources/data/interstice/tags/block/excavation_soil.json",
+      "before_sha256": null,
+      "after_sha256": "84b170eac5b8ae28b7865f74a12b3cc32feb12fa92e53624c404e1810d3c090b"
+    },
+    {
+      "path": "src/main/resources/data/interstice/tags/block/excavation_stone.json",
+      "before_sha256": null,
+      "after_sha256": "a037a6514047caf1ea71f024bb77a78c00407cd344f594f56369e3db838c4f06"
+    },
+    {
+      "path": "src/main/resources/data/interstice/tags/block/felling_logs.json",
+      "before_sha256": null,
+      "after_sha256": "a2b1f51f31337eb31055fdd94a9ea5126b03ca0d5266630ce704e70f52d4a9f5"
+    },
+    {
+      "path": "src/main/resources/data/interstice/tags/block/riftsilver_resonant_materials.json",
+      "before_sha256": null,
+      "after_sha256": "ff316a2e29a2ade15303b72e6683fe4b9777932ae0d01bba1650fe15244600fb"
+    },
+    {
+      "path": "src/smoke/java/pro/erez/interstice/client/WorktoolsNative.java",
+      "before_sha256": null,
+      "after_sha256": "3bb3df5200cb341879b8402bf0b405a1e521000cf52bb75b512f7b8694ddf620"
+    },
+    {
+      "path": "src/smoke/java/pro/erez/interstice/test/WorktoolsGameTests.java",
+      "before_sha256": null,
+      "after_sha256": "5398ed007df8656b686b4d05a1b5889bcca7f7b66e159defbc73d78c69fe5535"
+    },
+    {
+      "path": "src/main/java/pro/erez/interstice/client/EngineerArmorClient.java",
+      "before_sha256": null,
+      "after_sha256": "ee186c324c60e8fa428027d67bc8f40e1e854b525d6cff2901dcdc81bf71619a"
+    },
+    {
+      "path": "src/main/java/pro/erez/interstice/client/EngineerArmorModel.java",
+      "before_sha256": null,
+      "after_sha256": "53e5597f1032f165ef4468ea5da3b1a8e6da3ab2d31b3935bfdb758412992da7"
+    },
+    {
+      "path": "src/main/java/pro/erez/interstice/client/EngineerCloth.java",
+      "before_sha256": null,
+      "after_sha256": "3fb3183a7413d6349425d882485a0bd803a69e0d55d2a12a2e9afdd9ef2fd6ce"
+    },
+    {
+      "path": "src/main/java/pro/erez/interstice/gear/EngineerArmor.java",
+      "before_sha256": null,
+      "after_sha256": "5d2c6e81f3d6aabadf1a66d6368f4a71f761f3f6562a5340ab1569b98cdf2291"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/armor/engineer.json",
+      "before_sha256": null,
+      "after_sha256": "53fc25f75c0d5cc8dafb37c2f2d1a523c1db75606614ad6ab9a9d85bed5262f6"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/engineer_boots.json",
+      "before_sha256": null,
+      "after_sha256": "f84a5f32563156c1129923ba4a480af60dce54aad733f9f19f0b308fa8f864a0"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/engineer_chestplate.json",
+      "before_sha256": null,
+      "after_sha256": "644aaf7ae4920c7852291660193eca155b52ff8624d931e056533d2dcd801a72"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/engineer_helmet.json",
+      "before_sha256": null,
+      "after_sha256": "a201675601031653954eb4377c717a5bb26af49b40e55ce52ce32c9af8858ea2"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/models/item/engineer_leggings.json",
+      "before_sha256": null,
+      "after_sha256": "ea176845918742b8107846c645016e02197f4ed5d1e1468e461a0c58936a9a5c"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/item/engineer_atlas.png",
+      "before_sha256": null,
+      "after_sha256": "aaf6b13f4f67649e16c67681d875b1c96439034b06a3305ad7d7c93dae0747e3"
+    },
+    {
+      "path": "src/main/resources/assets/interstice/textures/models/armor/engineer.png",
+      "before_sha256": null,
+      "after_sha256": "aaf6b13f4f67649e16c67681d875b1c96439034b06a3305ad7d7c93dae0747e3"
+    },
+    {
+      "path": "src/main/resources/assets/minecraft/atlases/blocks.json",
+      "before_sha256": "432f06d3ac3d27f6bdad7dc4f0caa87b2a8a5348fc8ee37c458365fa35184756",
+      "after_sha256": "092153309e77b53cb8cef2a31910db1e769e33b6826a190c6136f7cc817d32c3"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/item/enchantable/armor.json",
+      "before_sha256": "1d92bdddc794273d5c66fafc93d9212fa7d009aed5c5a8e5b5554116a2162609",
+      "after_sha256": "868fa15489dbcb91e0a60143ee1ef81eb208f7fc6e74ab58f5346877ee6fa7f0"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/item/enchantable/chest_armor.json",
+      "before_sha256": "7a7f3cfbf9bf4427611ef5f04ed23f9aa96769c6ecdc50d738861fca7d22eef4",
+      "after_sha256": "cc4142707e84ab1ff04dc45d3d05235613e0233096604faac091b94259363489"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/item/enchantable/durability.json",
+      "before_sha256": "d490b1b4a06c376367ec8f119bf014a9a35444a0ce01c363d5135fc7ce812013",
+      "after_sha256": "722df3bf1dfdae614ae999e7ebfc82d9ce237087f7258f63a6accfe98609a8ca"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/item/enchantable/equippable.json",
+      "before_sha256": "1d92bdddc794273d5c66fafc93d9212fa7d009aed5c5a8e5b5554116a2162609",
+      "after_sha256": "868fa15489dbcb91e0a60143ee1ef81eb208f7fc6e74ab58f5346877ee6fa7f0"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/item/enchantable/foot_armor.json",
+      "before_sha256": "202618463198dad725543961ca6d57cfc46bc65b55b4fbef60399a1ad4ea1d70",
+      "after_sha256": "decdbd5ce3d2792fbbd9ce6f9aeb6f6b08de075c5815244f8be4b0eb2f9e0c93"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/item/enchantable/head_armor.json",
+      "before_sha256": "c809ef5137f810ccdcbc7b167e2a8b2805fecfbd978d0d5e757a790f9c839ef9",
+      "after_sha256": "457bd5614519868c933c8a8ace34493129183ccfc88295a988104222e0c06547"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/item/enchantable/legs_armor.json",
+      "before_sha256": "ba3b28fb6ce1fb797a3c91a44c814d046a3f7cf3ba2d0deb0083145325a2d18b",
+      "after_sha256": "f879079ea5518272b9309f0f1001e9fd119f06f555721fe8854d6dd3d49339f1"
+    },
+    {
+      "path": "src/smoke/java/pro/erez/interstice/client/EngineerNative.java",
+      "before_sha256": null,
+      "after_sha256": "194472c83917d5fdee509e68d2950cb9a949f354cd3f0afef2f5d01880bd41e7"
+    },
+    {
+      "path": "src/smoke/java/pro/erez/interstice/client/ToolsNative.java",
+      "before_sha256": null,
+      "after_sha256": "d1369be4c6fb67c5fab6a443a11eaeadd888cfc0b0391c6cc027aab0f8a24e39"
+    },
+    {
+      "path": "tools/build_expedition_progression.py",
+      "before_sha256": "5f47d7f770f7e354a76673d2410758de4160b5e41b82761946f925a787419ade",
+      "after_sha256": "53c9f822ed4e685f360a30c2194954c6f5dbc70b0265778d750a4806ffbc1bef"
+    },
+    {
+      "path": "build.gradle",
+      "before_sha256": "25a93bf6c277897840a05ac875e0afb9d53cdb3200b580a625130c699beaa11d",
+      "after_sha256": "28000fe002036e4cef89f8c1c938e6228fda5fc2e258c0792611cf594406f058"
+    },
+    {
+      "path": "src/smoke/java/pro/erez/interstice/client/ExpeditionProgressionSmoke.java",
+      "before_sha256": "f2c0967c5331c6660be910f072c713ee321099d0e86bce461d836dbe36f67dfa",
+      "after_sha256": "f46346b36d902706d152aefbfb34a1f101b0f5432e0e3c6680999a41805b75a7"
+    }
+  ],
+  "artifact": {
+    "path": "D:/repos/Minecraft/EREZCRAFT/build/libs/interstice-0.7.0-preview.27-workheads.jar",
+    "sha256": "99dbb71d91200e88e492c40204c95c9b4db8db87b79a3d1adb1f2551847be1c3",
+    "bytes": 3116872,
+    "sources": "D:/repos/Minecraft/EREZCRAFT/build/libs/interstice-0.7.0-preview.27-workheads-sources.jar"
+  },
+  "publication": {
+    "published": false,
+    "server_changed": false,
+    "launcher_changed": false,
+    "owner_profiles_updated": false
+  },
+  "limits": [
+    "Prepared fixtures and component tests do not constitute long Survival or multiplayer-capacity acceptance",
+    "Existing unfinished fauna work remains present and is not declared accepted by this integration",
+    "D02 energy, HUD and closed-circuit breathing are not implemented",
+    "Engineer first-person sleeves, every shader/animation mod and numeric FPS are not accepted",
+    "The preexisting missing upper_sea_ghast_spawn_egg item model remains in the separate art backlog"
+  ],
+  "preparation_notes": [
+    "First disposable-copy attempt omitted distribution lock files; preserved log components-setup-missing-lock.log. Complete copy assembled and all 43 tests passed.",
+    "Two license inputs were added to the disposable copy; final artifact retains every previous license entry."
+  ],
+  "documentation_updated": [
+    "docs/HANDOFF.md",
+    "docs/HANDOFF_EREZ_STUDIO.md",
+    "docs/HANDOFF_EREZ_STUDIO_E12.md",
+    "D:/repos/Blender/creations/19_realm_worktools/README.md"
+  ],
+  "evidence_hashes": {
+    "components": "696d22fbc73fec373ba02e050c3edb8d8fb1477a717845f73d869ad4e48e5e39",
+    "cold": "c2ae7e1d132b8c878ba469893a6be8f32433f1a8db294c1559055a4450ca6318",
+    "WT04_native": "1368265a1cfb77c227b4964a82a702e12315f0cec753983bb16348a893e61129",
+    "WT04_blender": "c91fc82a127cf1938f5e1d7e444308f3a749d9b05a63db3f35d9b561e4ac677e",
+    "WT04_geometry": "62c5b72775d4ac0144d31e7bacd8d4a3b0c1905f3408afd15b1217451688ad98"
+  }
+}

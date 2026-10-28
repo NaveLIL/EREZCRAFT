@@ -1,0 +1,1 @@
+The palm position check passed, but the vertical shaft was occluded by the forearm. WT09 retains the same palm target and moves the shaft diagonally out of the forearm. WT08 is not a final accepted grip.

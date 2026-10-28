@@ -1,0 +1,104 @@
+{
+  "client_side": "required",
+  "server_side": "unsupported",
+  "game_versions": [
+    "1.20.1",
+    "1.21",
+    "1.21.1",
+    "1.21.4"
+  ],
+  "environment": [],
+  "id": "QtFiEb3u",
+  "slug": "blade-held-items",
+  "project_type": "resourcepack",
+  "team": "PxYOtKjO",
+  "organization": null,
+  "title": "Blade - Held Items",
+  "description": "Gives the held models of tools and weapons 3d models",
+  "body": "<img src=\"https://i.imgur.com/zy7STXo.png\" title=\"Zombies holding 3d sword models\" width=\"1000\"/>\n\n<br>\n<br>\n\n<h1 align=\"center\">No Mods Required for 1.21.4 Version!</h1>\n<a href=\"https://modrinth.com/mod/pommel-held-item-models\"><img src=\"https://i.imgur.com/cWof8zr.png\" title=\"Download Pommel\"/></a>\n<h3 align=\"center\">Pommel Held Item Models mod required for 1.21.1 and below versions</h3>\n<a href=\"https://modrinth.com/mod/pommel-held-item-models\" title=\"Download Pommel\"><h4 align=\"center\">Download Pommel here!</h4></a>\n\n<br>\n<h3>What is Blade?</h3>\n<p>Blade is a resource pack that has 3d models for several tools and weapons when held, while still having item sprites in the inventory, just like the trident. Pommel is required for versions below 1.21.4.</p>\n<h4>Tools that have 3d held models include:</h4>\n<ul>\n    <li>Pickaxes</li>\n    <li>Swords</li>\n    <li>Shovels</li>\n    <li>Axes</li>\n    <li>Hoes</li>\n    <li>And the Mace!</li>\n</ul>\n\n<p>Also includes an optional download where the sword models' blades are symmetrical with a pointy tip.</p>\n\n<br>\n<h3>Some Examples</h3>\n<img src=\"https://i.imgur.com/oXZRL2t.png\" title=\"Blade Held Model Examples\" width=\"1600\"/>",
+  "body_url": null,
+  "published": "2024-07-19T19:30:16.953021Z",
+  "updated": "2024-12-10T22:42:33.671087Z",
+  "approved": "2024-07-20T06:27:21.310661Z",
+  "queued": "2024-07-19T20:16:48.996667Z",
+  "status": "approved",
+  "requested_status": "approved",
+  "moderator_message": null,
+  "license": {
+    "id": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": null
+  },
+  "downloads": 5573,
+  "followers": 38,
+  "categories": [
+    "equipment",
+    "items",
+    "tweaks"
+  ],
+  "additional_categories": [
+    "16x",
+    "decoration",
+    "vanilla-like"
+  ],
+  "loaders": [
+    "minecraft"
+  ],
+  "versions": [
+    "NmKoXpim",
+    "LLyZvI13",
+    "t3HkqE7c",
+    "oUUcFI3u",
+    "LMl6ULiN",
+    "1WdhnjkL",
+    "mPyFV4QC"
+  ],
+  "icon_url": "https://cdn.modrinth.com/data/QtFiEb3u/b6d6bcc7b949ded7f6c6d669384a5a5e3d4754f2_96.webp",
+  "raw_icon_url": "https://cdn.modrinth.com/data/QtFiEb3u/050dc5b98874c4e4886f5db091ed556ad8b1c1ab.png",
+  "issues_url": null,
+  "source_url": null,
+  "wiki_url": null,
+  "discord_url": null,
+  "donation_urls": [],
+  "gallery": [
+    {
+      "url": "https://cdn.modrinth.com/data/QtFiEb3u/images/a95a63a17f20bb5ed4cc7bb7b116537de138cd2d_350.webp",
+      "raw_url": "https://cdn.modrinth.com/data/QtFiEb3u/images/a95a63a17f20bb5ed4cc7bb7b116537de138cd2d.png",
+      "featured": false,
+      "title": "Zombies with 3d Model Swords",
+      "description": null,
+      "created": "2024-07-19T20:08:28.812570Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/QtFiEb3u/images/863aece6a373cfab36a088a2fef2c3e40d3da192.png",
+      "raw_url": "https://cdn.modrinth.com/data/QtFiEb3u/images/863aece6a373cfab36a088a2fef2c3e40d3da192.png",
+      "featured": false,
+      "title": "3d Held Tools Example",
+      "description": null,
+      "created": "2024-07-19T20:09:21.291734Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/QtFiEb3u/images/461106a1760fa7859bcaf4d23b4339c0b9620219.png",
+      "raw_url": "https://cdn.modrinth.com/data/QtFiEb3u/images/461106a1760fa7859bcaf4d23b4339c0b9620219.png",
+      "featured": true,
+      "title": "Diamond Pickaxe Held Model",
+      "description": null,
+      "created": "2024-07-19T20:12:54.777061Z",
+      "ordering": 0
+    },
+    {
+      "url": "https://cdn.modrinth.com/data/QtFiEb3u/images/29fa1c2cbccf2cf197583ae9d33bd136a9cec8b4.png",
+      "raw_url": "https://cdn.modrinth.com/data/QtFiEb3u/images/29fa1c2cbccf2cf197583ae9d33bd136a9cec8b4.png",
+      "featured": false,
+      "title": "Optional Symmetrical Sword Blades Version",
+      "description": "Optional symmetrical sword blades version",
+      "created": "2024-08-31T19:19:47.421841Z",
+      "ordering": 5
+    }
+  ],
+  "color": 1257232,
+  "thread_id": "49qoqctc",
+  "monetization_status": "monetized"
+}

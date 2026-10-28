@@ -1,0 +1,31 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\sk01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\sk01\\.verification\\skin04",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "started_utc": "2026-10-27T09:23:25.964466+00:00",
+  "harness_sha256": "17b0666e7226e70640c10778763690621e2a01dc11e4aa0eff84564f6a903dcf",
+  "owner_profile_used": false,
+  "passed": false,
+  "pid": 22664,
+  "exit_code": 0,
+  "duration_seconds": 146.782,
+  "proof": {
+    "passed": false,
+    "reason": "java.lang.IllegalStateException: CPM config concurrency guard must be active",
+    "phase": 1,
+    "pid": 23192,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "avatar-failure.png"
+    ]
+  }
+}

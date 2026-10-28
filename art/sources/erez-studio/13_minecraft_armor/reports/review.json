@@ -1,0 +1,36 @@
+{
+  "revision": "ARMOR-A01",
+  "purpose": "Visual review before game integration",
+  "mod_files_written": false,
+  "baseline": "Standard HumanoidArmorModel reconstruction using existing leather textures and material tints; not a game screenshot",
+  "same_camera_scale_lighting": true,
+  "image_aspect_preserved": true,
+  "reviewed_views": [
+    "riftsteel_proposed.png",
+    "riftsilver_proposed.png",
+    "riftsteel_original.png",
+    "riftsilver_original.png",
+    "steel_back.png",
+    "steel_walking.png"
+  ],
+  "geometry": {
+    "riftsilver": {
+      "cubes": 71,
+      "quads": 426
+    },
+    "riftsteel": {
+      "cubes": 81,
+      "quads": 486
+    }
+  },
+  "limitations": [
+    "Blender visual proposal, not a native game screenshot.",
+    "Wearable renderer, trims, dye behavior, slim arms, first-person arms and animation clipping remain unverified.",
+    "Pouches are visual details, not additional inventory slots."
+  ],
+  "review_previews": {
+    "armor_comparison_A01.png": "efad8b1702fe237bc54271196218a8d73a946f7e7f466be3052ca778d8a4b6a8",
+    "riftsteel_review_A01.png": "9b87a7934cd55d57fa53fa8c227b47dfaeaee030d9bbb589f0d7bfd757595d79",
+    "riftsilver_review_A01.png": "5be543f4f8afad0dc255c69e1c4c0f0bb7dc097c12b85e561d06cc0562a3568d"
+  }
+}

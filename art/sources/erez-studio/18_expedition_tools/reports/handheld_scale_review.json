@@ -1,0 +1,285 @@
+{
+  "trigger": "Owner rejected oversized handheld presentation",
+  "geometry_changed": false,
+  "inventory_scale_changed": false,
+  "previous_third_person_scale": 0.75,
+  "previous_first_person_scale": 0.7,
+  "previous_first_person_fixture_fov": 42,
+  "current_first_person_fixture_fov": 70,
+  "current": {
+    "tether_spool": {
+      "gui": {
+        "rotation": [
+          20,
+          -25,
+          0
+        ],
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.95,
+          0.95,
+          0.95
+        ]
+      },
+      "thirdperson_righthand": {
+        "rotation": [
+          0,
+          -90,
+          55
+        ],
+        "translation": [
+          0,
+          2.3,
+          0
+        ],
+        "scale": [
+          0.42,
+          0.42,
+          0.42
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          0,
+          90,
+          -55
+        ],
+        "translation": [
+          0,
+          2.3,
+          0
+        ],
+        "scale": [
+          0.42,
+          0.42,
+          0.42
+        ]
+      },
+      "firstperson_righthand": {
+        "rotation": [
+          0,
+          -90,
+          25
+        ],
+        "translation": [
+          1.13,
+          3.2,
+          1.13
+        ],
+        "scale": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "firstperson_lefthand": {
+        "rotation": [
+          0,
+          -90,
+          -25
+        ],
+        "translation": [
+          1.13,
+          3.2,
+          1.13
+        ],
+        "scale": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    },
+    "lift_controller": {
+      "gui": {
+        "rotation": [
+          20,
+          -25,
+          0
+        ],
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.95,
+          0.95,
+          0.95
+        ]
+      },
+      "thirdperson_righthand": {
+        "rotation": [
+          0,
+          -90,
+          55
+        ],
+        "translation": [
+          0,
+          2.3,
+          0
+        ],
+        "scale": [
+          0.33,
+          0.33,
+          0.33
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          0,
+          90,
+          -55
+        ],
+        "translation": [
+          0,
+          2.3,
+          0
+        ],
+        "scale": [
+          0.33,
+          0.33,
+          0.33
+        ]
+      },
+      "firstperson_righthand": {
+        "rotation": [
+          0,
+          -90,
+          25
+        ],
+        "translation": [
+          1.13,
+          3.2,
+          1.13
+        ],
+        "scale": [
+          0.45,
+          0.45,
+          0.45
+        ]
+      },
+      "firstperson_lefthand": {
+        "rotation": [
+          0,
+          -90,
+          -25
+        ],
+        "translation": [
+          1.13,
+          3.2,
+          1.13
+        ],
+        "scale": [
+          0.45,
+          0.45,
+          0.45
+        ]
+      }
+    },
+    "structure_surveyor": {
+      "gui": {
+        "rotation": [
+          20,
+          -25,
+          0
+        ],
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.95,
+          0.95,
+          0.95
+        ]
+      },
+      "thirdperson_righthand": {
+        "rotation": [
+          0,
+          -90,
+          55
+        ],
+        "translation": [
+          0,
+          2.3,
+          0
+        ],
+        "scale": [
+          0.38,
+          0.38,
+          0.38
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          0,
+          90,
+          -55
+        ],
+        "translation": [
+          0,
+          2.3,
+          0
+        ],
+        "scale": [
+          0.38,
+          0.38,
+          0.38
+        ]
+      },
+      "firstperson_righthand": {
+        "rotation": [
+          0,
+          -90,
+          25
+        ],
+        "translation": [
+          1.13,
+          3.2,
+          1.13
+        ],
+        "scale": [
+          0.48,
+          0.48,
+          0.48
+        ]
+      },
+      "firstperson_lefthand": {
+        "rotation": [
+          0,
+          -90,
+          -25
+        ],
+        "translation": [
+          1.13,
+          3.2,
+          1.13
+        ],
+        "scale": [
+          0.48,
+          0.48,
+          0.48
+        ]
+      }
+    }
+  },
+  "history": {
+    "oversized_tools-held-front.png": {
+      "source": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\et01\\.verification\\tools01\\progressionNative\\screenshots\\tools-held-front.png",
+      "sha256": "f1065fb7f8a9542331ca094fb6bfe8f6a0add878399647a0f2c9a57400740c4b",
+      "edited": false
+    },
+    "oversized_tools-first-person-lift_controller.png": {
+      "source": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\et01\\.verification\\tools01\\progressionNative\\screenshots\\tools-first-person-lift_controller.png",
+      "sha256": "82adfd27bf9d8201af47e8f1663e2e9c993abc5a843bb2e230137cf6527690bd",
+      "edited": false
+    }
+  },
+  "comparison_note": "First-person before/after changes both display scale and fixture FOV; not a controlled scale-only or FPS comparison. No live user options changed."
+}

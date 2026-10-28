@@ -1,0 +1,6 @@
+{
+  "accepted_for_performance": false,
+  "functional_visual_checks_passed": true,
+  "reason": "New mock connections restored their initial pending teleport; only six actors were visible.",
+  "correction": "Use protocol teleport for every actor and count RenderPlayerEvent.Post on every sampled frame; require exactly ten."
+}

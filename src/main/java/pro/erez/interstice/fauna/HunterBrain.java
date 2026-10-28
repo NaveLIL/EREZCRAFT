@@ -153,7 +153,17 @@ public final class HunterBrain {
     }
     /** Native SBL path follower, with a short failure cooldown instead of retrying every tick. */
     private static final class Movement extends MoveToWalkTarget<VaultHunter>{
-        @Override protected void stop(VaultHunter e){super.stop(e);cooldownFinishedAt=e.level().getGameTime()+5;}
+        Movement(){noTimeout();cooldownFor(e->0);}
+        @Override protected boolean checkExtraStartConditions(ServerLevel level,VaultHunter e){
+            boolean ready=super.checkExtraStartConditions(level,e);
+            if(!ready)cooldownFinishedAt=level.getGameTime()+5;
+            return ready;
+        }
+        @Override protected void stop(VaultHunter e){
+            boolean failed=e.getNavigation().isStuck();
+            super.stop(e);
+            cooldownFinishedAt=failed?e.level().getGameTime()+5:0;
+        }
     }
     private static final class Wander extends SetRandomWalkTarget<VaultHunter>{
         @Override protected Vec3 getTargetPos(VaultHunter e){

@@ -1,0 +1,90 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": "5a79608e307041fc9897cb08996445d48f52a39a92349d88307b9ddd58917db8",
+  "native_json_source": true,
+  "geometry_modifiers": false,
+  "game_verified": false,
+  "sets": {
+    "riftsilver_pickaxe": {
+      "elements": 33,
+      "mesh_objects": 33
+    },
+    "riftsilver_axe": {
+      "elements": 23,
+      "mesh_objects": 23
+    },
+    "riftsilver_shovel": {
+      "elements": 20,
+      "mesh_objects": 20
+    },
+    "riftsilver_hoe": {
+      "elements": 19,
+      "mesh_objects": 19
+    },
+    "riftsteel_pickaxe": {
+      "elements": 35,
+      "mesh_objects": 35
+    },
+    "riftsteel_axe": {
+      "elements": 25,
+      "mesh_objects": 25
+    },
+    "riftsteel_shovel": {
+      "elements": 22,
+      "mesh_objects": 22
+    },
+    "riftsteel_hoe": {
+      "elements": 21,
+      "mesh_objects": 21
+    }
+  },
+  "outputs": {
+    "assembly/realm_worktools_WT04.blend": "dcc834d498336e482e71cf01e0e424e4b7743397283fce48eba83c797fdb5a3c",
+    "preview/riftsilver_WT01.png": "e7db794a22b3574bc2a07b08f6d014264cb110d08421fad053b263113320c057",
+    "preview/riftsilver_WT02.png": "78b2e986c3615b810a32c143492c5d19cd602589067cb1f1b6ce50dcbbb5c2fe",
+    "preview/riftsilver_WT03.png": "9701a04df03988c35d2f8aac26ebc3404bb3a5363204ab340e7b613ac624b1e0",
+    "preview/riftsilver_WT04.png": "a25323d3d7be6956ab251f781347cc596a9295ac0fdcfd3a082fe9a0374fe006",
+    "preview/riftsteel_WT01.png": "6802361edd6c089128e19c9687ab101f5e37aee82c3d5e131107fe2f45962f89",
+    "preview/riftsteel_WT02.png": "3dc2f02c0fc5772afea3aef90d226a849564ad56c89df30b6747bf9c6e59fcc2",
+    "preview/riftsteel_WT03.png": "1368a5d30bf6dca39a5673c076bf6210d1852e92d9fe764f34de65af9297f113",
+    "preview/riftsteel_WT04.png": "300124c4338af688a10c31d3be71a2536c58640e75de9f8b6bfe1bfb87ee2c4b",
+    "preview/worktools_previous.png": "c4240f561e7d8e42c4f76fd9dbdadbdcbb0af7c05de9f530d06693350c6e7268",
+    "preview/worktools_WT01.png": "1c510fadbc760744a8a356b0b0ff50073fbf66f9aa440973eb1d712e8bb0a79f",
+    "preview/worktools_WT02.png": "2613b9a634e33912ffcf6b9eafbb03d41e58e09e45df5163a225b80df81b7361",
+    "preview/worktools_WT03.png": "aa93605d29cdcf11775f270d2472b826b3173e0ff4df82edc724d2448a0c5a11",
+    "preview/worktools_WT03_before_WT04.png": "df629e03e730031dd1b40db22c3b5e8d545ee21f1686e2ab56c9badf02209123",
+    "preview/worktools_WT04.png": "fa895837e15009fd9041736dac9d85049b41d91cc9dd1276fc86a2a5b6b79780",
+    "exports/riftsilver_axe_WT01.glb": "e0ee1a7e97ae91e9aa1a0d085ea871b9a209fcc9e670f373b18e33ba70bbf8ff",
+    "exports/riftsilver_axe_WT02.glb": "f7e1fcc44c18b6b5be3b933458ffe33c1ba65c995bef2d37ec7f3b6cec0a79ff",
+    "exports/riftsilver_axe_WT03.glb": "33e8358e55926e1ed1711dcc0d8407db43d733bc8af72c7dbaa248e7a3cc34d4",
+    "exports/riftsilver_axe_WT04.glb": "16b8cc37f89cb49bd9983e1288071af2238b8a386b1e4933cd9e0728f9a6be3f",
+    "exports/riftsilver_hoe_WT01.glb": "235d255e925439b781c8bcf72ac1f306fed36f18fe0003cb21518d683da23ff7",
+    "exports/riftsilver_hoe_WT02.glb": "f30b1a158835caccc18041a461d5bde4974e4473b40b1302f35fdad29438ce8f",
+    "exports/riftsilver_hoe_WT03.glb": "1347b73394c73ad6f86e69f0cdc5184bdffb092ae8fa87a8e206afc4fe36ed57",
+    "exports/riftsilver_hoe_WT04.glb": "9b2afc1b29fe4b1c70502a4356073b333301a1b893c345c899d53aa9941ecb7c",
+    "exports/riftsilver_pickaxe_WT01.glb": "18719888d5e6670fe86ead65b489d8ee494d32e1658945715b8cd9e25a78cf94",
+    "exports/riftsilver_pickaxe_WT02.glb": "19b9aeeafdb90b62f9b86fe49f893cfb935a355bf1fc7b08603759771c762803",
+    "exports/riftsilver_pickaxe_WT03.glb": "ed7154afdd13b0935003625e9be8ff910afbe38ed1aa80ba8f9469813bfadf67",
+    "exports/riftsilver_pickaxe_WT04.glb": "2ec195e8735cee26d7741bfb9c1e734c33873cade2c1466bd63da285ad434307",
+    "exports/riftsilver_shovel_WT01.glb": "281e94680682522251ddc75c5e7e869ae74ddcc9268ee90d001d5ad990d21d15",
+    "exports/riftsilver_shovel_WT02.glb": "1048c7b468e4418e0a58034fae275325bf6793cab49528ba77de6e9c564fb63d",
+    "exports/riftsilver_shovel_WT03.glb": "047e916aaee349af7e483ea0f7fb391681da9d9513174c3f97eb3b3ed1b06267",
+    "exports/riftsilver_shovel_WT04.glb": "14623416591b2c0b00cf746e0ac2ff51b710d71106e4622324b690afe9f8f3f2",
+    "exports/riftsteel_axe_WT01.glb": "8819852a39a61c4ea5fab803882fec7c33576f08aacb341aa4507d93ae0a2b9b",
+    "exports/riftsteel_axe_WT02.glb": "4b52c13779fc97927f90a30998430f3c220c1100fe8931a541e66cf088841e24",
+    "exports/riftsteel_axe_WT03.glb": "0d17448d786e8e459685dc0f5c5cb794d497e045a4f016477cfe0913ff781622",
+    "exports/riftsteel_axe_WT04.glb": "5ea4a32315a778604274899e1148712877989ed3b010ff5eb31bac20c606977d",
+    "exports/riftsteel_hoe_WT01.glb": "3d7c6ae0691c844f77041db3bcfcee40e3675687a83d91f0e5d99f9ae2dc1813",
+    "exports/riftsteel_hoe_WT02.glb": "78830306a73703e402111146df60e6efd7f85b3c544fa97a1faeedb60bcd16ca",
+    "exports/riftsteel_hoe_WT03.glb": "a9d1756d14865e4e3518b52c5e862ab5861373ec44e12ac6ceacf8470bee6e96",
+    "exports/riftsteel_hoe_WT04.glb": "8bcdfaa3a370d73d9636f4ba7b96e48b06c8ae3683ccaa90c45e08cf9eca3bef",
+    "exports/riftsteel_pickaxe_WT01.glb": "d8feb4da28983d8183e6885e58bcdfa3d44dc7aa10b7cb96364363b810ec1db4",
+    "exports/riftsteel_pickaxe_WT02.glb": "43c51a782a69768e371318510fffb145700760baf7737c4067f34873ba52ecd6",
+    "exports/riftsteel_pickaxe_WT03.glb": "f37fea7094b38076c449c2595f3e57a153d81236338c56e3fb1405146680b31d",
+    "exports/riftsteel_pickaxe_WT04.glb": "ee9ae369a7d3022c06c19139b7b7d06eeea4c5113a088be64fc3c23fc890942e",
+    "exports/riftsteel_shovel_WT01.glb": "8486c066e193943acd6c29ef121eb0b4313d13071a5a668e67fffcd228954815",
+    "exports/riftsteel_shovel_WT02.glb": "66f26916be063c7f419f3ac9a8399e593f19197260abdfa0af0432ec6d7946a4",
+    "exports/riftsteel_shovel_WT03.glb": "bdc52b3a4b914b49a8ffb4563eb4bd75dd845170a9d6de013d60992af1cd3cdd",
+    "exports/riftsteel_shovel_WT04.glb": "4d6692c42941f572d730c067c4573c031ac9dc5b70b045d1ab84c0ccfbb509b5"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+  "players": [
+    {
+      "tier": "kotomyaf",
+      "name": "Kotomyaf_Wide",
+      "skin_model": "default",
+      "entity_class": "net.minecraft.client.player.RemotePlayer",
+      "native_armor_vertices": 6681600
+    },
+    {
+      "tier": "kotomyaf",
+      "name": "Kotomyaf_Slim",
+      "skin_model": "slim",
+      "entity_class": "net.minecraft.client.player.RemotePlayer",
+      "native_armor_vertices": 6681600
+    },
+    {
+      "tier": "aegis",
+      "name": "EREZ_Magen",
+      "skin_model": "default",
+      "entity_class": "net.minecraft.client.player.RemotePlayer",
+      "native_armor_vertices": 5514528
+    }
+  ],
+  "mod_count": 106,
+  "distant_horizons_loaded": true,
+  "mod_version": "0.7.0-preview.19-kotomyaf",
+  "render_width": 1920,
+  "render_height": 1080,
+  "crouching_checked": true,
+  "walking_checked": true,
+  "bow_pose_checked": true,
+  "trim_dye_glint_checked": true,
+  "backpack_visual_checked": true,
+  "swimming_checked": true,
+  "native_purr_finished_after_shift_release": true,
+  "native_jump_meow_queued_without_cut": true,
+  "purrs_started": 1,
+  "meows_started": 1,
+  "natural_sound_finishes": 1,
+  "shortest_purr_ms": 3556,
+  "fear_distances": [
+    {
+      "type": "minecraft:creeper",
+      "before": 2.299999952316284,
+      "after": 3.532472848892212,
+      "protected_target_cleared": true
+    },
+    {
+      "type": "minecraft:zombie",
+      "before": 2.299999952316284,
+      "after": 5.194048881530762,
+      "protected_target_cleared": true
+    }
+  ],
+  "native_creeper_and_baby_zombie_retreated": true,
+  "passed": true,
+  "reason": "",
+  "phase": 16,
+  "pid": 19208,
+  "prepared_fixture_not_survival": true,
+  "owner_profile_used": false,
+  "screenshots": [
+    "kotomyaf-all-front.png",
+    "kotomyaf-all-back.png",
+    "kotomyaf-all-quarter.png",
+    "kotomyaf-wide-close.png",
+    "kotomyaf-slim-close.png",
+    "kotomyaf-magen-close.png",
+    "kotomyaf-all-crouching.png",
+    "kotomyaf-all-walking.png",
+    "kotomyaf-all-bow.png",
+    "kotomyaf-trim-dye-glint.png",
+    "kotomyaf-all-backpacks.png",
+    "kotomyaf-all-swimming.png",
+    "kotomyaf-creeper-and-baby-zombie-retreat.png"
+  ],
+  "settled": {
+    "purpose": "armor_player_gallery_shutdown",
+    "server_tick": 976,
+    "elapsed_actual_server_ticks": 19,
+    "stable_actual_server_ticks": 20,
+    "holders_checked": 1282,
+    "generation_ref_count": 0,
+    "save_futures_pending": 0,
+    "holders_not_ready_for_saving": 0,
+    "pending_generation_tasks": 0,
+    "save_futures_failed": 0,
+    "timed_out": false,
+    "non_quiet_examples": []
+  }
+}

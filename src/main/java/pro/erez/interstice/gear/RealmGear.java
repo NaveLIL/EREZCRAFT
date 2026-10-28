@@ -62,17 +62,24 @@ public final class RealmGear {
         if (chestArmor(stack) && stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().contains(COATING))
             event.getToolTip().add(Component.translatable("tooltip.interstice.coating_charges", coatingCharges(stack)));
     }
-    private static boolean usableBelt(ItemStack stack) {
+    public static boolean usableBelt(ItemStack stack) {
         return stack.is(BALLAST_BELT.get()) && stack.getDamageValue() < BELT_MAX_DAMAGE;
     }
     private static InteractionHand beltHand(ServerPlayer player) {
         if (usableBelt(player.getMainHandItem())) return InteractionHand.MAIN_HAND;
         return usableBelt(player.getOffhandItem()) ? InteractionHand.OFF_HAND : null;
     }
+    private static ItemStack selectedBelt(ServerPlayer player){
+        // Every eligible belt has the same .62 strength. Prefer an existing hand belt;
+        // the mounted physical belt is a fallback, never a second multiplier or wear target.
+        var hand=beltHand(player);if(hand!=null)return player.getItemInHand(hand);
+        var chest=player.getItemBySlot(EquipmentSlot.CHEST);
+        return EngineerArmor.worn(chest,EquipmentSlot.CHEST)?EngineerModules.get(chest,1):ItemStack.EMPTY;
+    }
     /** Multiplies the whole optional gravity modifier; it does not change base gravity or other entities. */
     public static double buoyancyFactor(LivingEntity entity) {
         if (!(entity instanceof ServerPlayer player) || !player.isAlive() || player.isCreative() || player.isSpectator()
-                || !IslandWorld.isIsland(player.level().dimension()) || beltHand(player) == null) return 1;
+                || !IslandWorld.isIsland(player.level().dimension()) || !usableBelt(selectedBelt(player))) return 1;
         return .62;
     }
     /** Call after the normal buoyancy update: shelter, fluid, vehicles and phase eligibility remain native. */
@@ -82,17 +89,18 @@ public final class RealmGear {
                 || tide.phase() != TidePhase.SURGE && tide.phase() != TidePhase.EBB || tide.buoyancyIntensity() <= 0) return;
         var gravity = player.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.GRAVITY);
         if (gravity == null || !gravity.hasModifier(BuoyancyController.BUOYANCY_ID)) return;
-        InteractionHand hand = beltHand(player); if (hand == null) return;
-        ItemStack stack = player.getItemInHand(hand);
+        ItemStack stack=selectedBelt(player);if(!usableBelt(stack))return;
+        boolean mounted=beltHand(player)==null;
         long now = player.level().getGameTime();
         var tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
         if (tag.contains(BELT_LAST_WEAR) && tag.getLong(BELT_LAST_WEAR) == now) return;
         int active = Math.clamp(tag.getInt(BELT_ACTIVE_TICKS), 0, 19) + 1;
         tag.putLong(BELT_LAST_WEAR, now); tag.putInt(BELT_ACTIVE_TICKS, active == 20 ? 0 : active);
         stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag)); player.getInventory().setChanged();
-        if (active < 20) return;
+        if (active < 20) {if(mounted)EngineerModules.set(player.getItemBySlot(EquipmentSlot.CHEST),1,stack);return;}
         int wear = stack.getDamageValue() + 1;
         stack.setDamageValue(Math.min(wear, BELT_MAX_DAMAGE));
+        if(mounted)EngineerModules.set(player.getItemBySlot(EquipmentSlot.CHEST),1,stack);
         if (wear >= BELT_MAX_DAMAGE)
             player.displayClientMessage(Component.translatable("message.interstice.ballast.exhausted"), true);
         player.getInventory().setChanged();

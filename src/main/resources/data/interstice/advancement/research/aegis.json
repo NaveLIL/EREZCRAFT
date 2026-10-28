@@ -1,0 +1,52 @@
+{
+  "parent": "interstice:trials/master",
+  "display": {
+    "icon": {
+      "id": "interstice:aegis_helmet"
+    },
+    "title": {
+      "translate": "advancements.interstice.aegis.title"
+    },
+    "description": {
+      "translate": "advancements.interstice.aegis.description"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "assembled": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "interstice:aegis_helmet"
+            ]
+          },
+          {
+            "items": [
+              "interstice:aegis_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "interstice:aegis_leggings"
+            ]
+          },
+          {
+            "items": [
+              "interstice:aegis_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "assembled"
+    ]
+  ],
+  "rewards": {
+    "experience": 250
+  }
+}

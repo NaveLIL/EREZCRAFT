@@ -568,6 +568,9 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         }
         if (!hasRockCeiling) return false;
 
+        if ((spawnType == MobSpawnType.NATURAL || spawnType == MobSpawnType.CHUNK_GENERATION)
+                && !SpiderPopulation.hasRoom(level.getLevel(), pos)) return false;
+
         return isDarkEnoughToSpawn(level, pos, random) && checkMobSpawnRules(entityType, level, spawnType, pos, random);
     }
 

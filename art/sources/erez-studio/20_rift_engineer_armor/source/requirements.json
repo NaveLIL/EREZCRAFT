@@ -1,0 +1,62 @@
+{
+  "project": "EREZ Rift Engineer armor",
+  "revision": "E12 native visual candidate",
+  "current_scope": "Owner-directed appearance and native movement acceptance before gameplay design",
+  "basis": "Preserved avatar S03 geometry, proportions and six native bone pivots; individually refine or replace mismatching parts",
+  "reference": "reference/owner_reference.jpg",
+  "must_preserve": [
+    "Dark textured hood and full respirator mask",
+    "Narrow cyan visor",
+    "Tall shaped collar",
+    "Long flared split coat",
+    "Detailed diagonal bandolier",
+    "Rear Star of David only; front emblem and backing removed by owner",
+    "Correct unmirrored Hebrew ארז on back",
+    "Belt pouches and brass hardware",
+    "Vertical cyan wrist device",
+    "Dark boots with gunmetal toe caps"
+  ],
+  "geometry_units": "16 model units per Minecraft block",
+  "constraints": [
+    "Keep old project17 unmodified",
+    "No CPM dependency",
+    "No skin/account changes",
+    "Iron armor baseline only for visual testing; no authored balance, recipes or abilities",
+    "No server, launcher or owner-profile changes",
+    "Preview must be a real render of saved 3D geometry, not a generated illustration",
+    "Use real geometry for visible bevels and flared panels; preserve it in mesh export"
+  ],
+  "acceptance": [
+    "Front/back silhouette and detail comparison with reference",
+    "Helmet, chest, leg and boot ownership recorded",
+    "Packed texture images and exported mesh",
+    "Source/Blender mesh correspondence checked",
+    "Native motion checked in prepared scene; mass performance and first-person sleeve rendering remain unverified"
+  ],
+  "current_geometry": "source/armor_E12.json",
+  "owner_visual_approval": "Pending final E12 review",
+  "old_model_preservation_verified": true,
+  "latest_changes": [
+    "Buckle aligned to diagonal harness",
+    "Harness tail tucked into belt",
+    "Centered visor and centered highlight",
+    "Mask mounted to hood with tall wraparound collar",
+    "Lateral wrist instrument on backing plate with two clamps",
+    "Richer contrasty pixel fabric",
+    "Compact gloves without paw-like knuckle blocks",
+    "Continuous exterior mask strap around hood",
+    "Centered chest star on square patch",
+    "Centered rear star on separate square patch",
+    "Rear yoke and restored equipment straps",
+    "Distinct worn metal, leather, rubber and fabric materials",
+    "Facial respirator in contrasting cold steel gray; dark rubber rim and visible wear retained",
+    "Remove mottled/worn textures from facial mask",
+    "Each respirator component uses its own uniform light-gray shade; vents remain dark",
+    "Muted blue-gray component palette to harmonize with charcoal armor",
+    "Replace exposed pale hose shapes with integrated side intake frames and recessed louvers",
+    "Opaque dark waist underlayer prevents vanilla skin showing through the coat split",
+    "Darken the flat respirator materials while preserving component differences",
+    "Remove the front Star of David and its square backing; retain rear insignia",
+    "Place leather waist belt outside the moving cloth attachment bridges; shift brass buckle, pouches and keepers with the belt"
+  ]
+}

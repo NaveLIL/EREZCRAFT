@@ -23,8 +23,7 @@ import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.registries.*;
 import pro.erez.interstice.Interstice;
 
-/** Two repairable native tiers; specialised lining only mitigates the realm's spider damage. */
-@EventBusSubscriber(modid = Interstice.ID)
+/** Repairable expedition and heavy-combat tiers; balance lives in RealmArmor. */
 public final class RealmArmaments {
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, Interstice.ID);
     private static final DeferredRegister<ArmorMaterial> MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, Interstice.ID);
@@ -37,22 +36,23 @@ public final class RealmArmaments {
     static {
         equipment("riftsilver", SILVER, SILVER_ARMOR, false);
         equipment("riftsteel", STEEL, STEEL_ARMOR, true);
+        // A separate weapon: the original sword keeps its factory, stats and recipe.
+        add("riftsteel_longsword", () -> new SwordItem(STEEL, new Item.Properties()
+                .attributes(SwordItem.createAttributes(STEEL, 7, -2.4F))));
     }
     private RealmArmaments() {}
-    public static void register(IEventBus bus) { MATERIALS.register(bus); ITEMS.register(bus); }
+    public static void register(IEventBus bus) { MATERIALS.register(bus); ITEMS.register(bus); AegisArmor.register(bus); KotomyafArmor.register(bus); EngineerArmor.register(bus); }
     public static Item item(String name) { return Objects.requireNonNull(EQUIPMENT.get(name), name).get(); }
     public static void displayItems(CreativeModeTab.Output output) {
-        output.accept(RIFTSTEEL.get()); EQUIPMENT.values().forEach(i -> output.accept(i.get()));
+        output.accept(RIFTSTEEL.get()); EQUIPMENT.values().forEach(i -> output.accept(i.get())); AegisArmor.displayItems(output); KotomyafArmor.displayItems(output); EngineerArmor.displayItems(output);
     }
     private static Holder<ArmorMaterial> material(String name, boolean steel) {
         return MATERIALS.register(name, () -> new ArmorMaterial(
-                Map.of(ArmorItem.Type.HELMET, steel ? 3 : 2, ArmorItem.Type.CHESTPLATE, steel ? 8 : 6,
-                        ArmorItem.Type.LEGGINGS, steel ? 6 : 5, ArmorItem.Type.BOOTS, steel ? 3 : 2),
-                steel ? 16 : 18, SoundEvents.ARMOR_EQUIP_IRON,
+                Map.of(ArmorItem.Type.HELMET, steel ? 4 : 3, ArmorItem.Type.CHESTPLATE, steel ? 9 : 8,
+                        ArmorItem.Type.LEGGINGS, steel ? 7 : 6, ArmorItem.Type.BOOTS, steel ? 4 : 3),
+                steel ? 20 : 22, SoundEvents.ARMOR_EQUIP_IRON,
                 () -> Ingredient.of(steel ? RIFTSTEEL.get() : Interstice.RIFTSILVER_INGOT.get()),
-                List.of(new ArmorMaterial.Layer(ResourceLocation.withDefaultNamespace("leather"), "", true),
-                        new ArmorMaterial.Layer(ResourceLocation.withDefaultNamespace("leather"), "_overlay", false)),
-                steel ? 2 : 0, steel ? .05F : 0));
+                RealmArmor.layers(), steel ? 4 : 3, steel ? .125F : .05F));
     }
     private static Tier tier(boolean steel) {
         return new Tier() {
@@ -69,18 +69,12 @@ public final class RealmArmaments {
     private static void add(String id, Supplier<? extends Item> factory) { EQUIPMENT.put(id, ITEMS.register(id, factory)); }
     private static void equipment(String name, Tier tier, Holder<ArmorMaterial> material, boolean steel) {
         add(name + "_sword", () -> new SwordItem(tier, new Item.Properties().attributes(SwordItem.createAttributes(tier, 3, -2.4F))));
-        add(name + "_pickaxe", () -> new PickaxeItem(tier, new Item.Properties().attributes(PickaxeItem.createAttributes(tier, 1, -2.8F))));
-        add(name + "_axe", () -> new AxeItem(tier, new Item.Properties().attributes(AxeItem.createAttributes(tier, 6, -3.1F))));
-        add(name + "_shovel", () -> new ShovelItem(tier, new Item.Properties().attributes(ShovelItem.createAttributes(tier, 1.5F, -3))));
-        add(name + "_hoe", () -> new HoeItem(tier, new Item.Properties().attributes(HoeItem.createAttributes(tier, steel ? -3 : -2, steel ? 0 : -1))));
+        add(name + "_pickaxe", () -> new RealmWorktools.Pickaxe(tier, new Item.Properties().attributes(PickaxeItem.createAttributes(tier, 1, -2.8F)),steel));
+        add(name + "_axe", () -> new RealmWorktools.Axe(tier, new Item.Properties().attributes(AxeItem.createAttributes(tier, 6, -3.1F)),steel));
+        add(name + "_shovel", () -> new RealmWorktools.Shovel(tier, new Item.Properties().attributes(ShovelItem.createAttributes(tier, 1.5F, -3)),steel));
+        add(name + "_hoe", () -> new RealmWorktools.Hoe(tier, new Item.Properties().attributes(HoeItem.createAttributes(tier, steel ? -3 : -2, steel ? 0 : -1)),steel));
         for (ArmorItem.Type type : List.of(ArmorItem.Type.HELMET, ArmorItem.Type.CHESTPLATE, ArmorItem.Type.LEGGINGS, ArmorItem.Type.BOOTS)) {
-            add(name + "_" + type.getName(), () -> new ArmorItem(material, type,
-                    new Item.Properties().durability(type.getDurability(steel ? 32 : 20))
-                            .component(DataComponents.DYED_COLOR, new DyedItemColor(steel ? 0x386369 : 0xb4bdc9, false))) {
-                @Override public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> text, TooltipFlag flags) {
-                    text.add(Component.translatable(steel ? "tooltip.interstice.riftsteel_armor" : "tooltip.interstice.riftsilver_armor"));
-                }
-            });
+            add(name + "_" + type.getName(), () -> new RealmArmor.Item(material, type, steel));
         }
     }
     public static int protectivePieces(LivingEntity entity) {
@@ -91,20 +85,5 @@ public final class RealmArmaments {
                     && armor.getEquipmentSlot() == slot && stack.getDamageValue() < stack.getMaxDamage()) count++;
         }
         return count;
-    }
-    @SubscribeEvent public static void incoming(LivingIncomingDamageEvent event) {
-        var key = event.getSource().typeHolder().unwrapKey().orElse(null);
-        if (key == null || !key.location().getNamespace().equals(Interstice.ID)
-                || !Set.of("spider_bite", "spider_spit").contains(key.location().getPath())
-                || event.isCanceled() || event.getAmount() <= 0 || event.getEntity().level().isClientSide) return;
-        int pieces = protectivePieces(event.getEntity());
-        if (pieces == 0) return;
-        event.setAmount((float)(event.getAmount() * (1 - pieces * SPIDER_REDUCTION_PER_PIECE)));
-        // These sources bypass vanilla armour wear. The specialised lining must still wear out.
-        for (EquipmentSlot slot : List.of(EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET)) {
-            var stack = event.getEntity().getItemBySlot(slot);
-            if (stack.getItem() instanceof ArmorItem armor && armor.getMaterial().equals(STEEL_ARMOR) && armor.getEquipmentSlot() == slot)
-                stack.hurtAndBreak(1, event.getEntity(), slot);
-        }
     }
 }

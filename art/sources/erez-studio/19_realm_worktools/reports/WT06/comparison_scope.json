@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "comparison_right_hand_scenes_and_measured_contexts_unchanged": true,
+  "reason": "Final mirrored third-person left-hand X anchor correction; all photographed and measured right-hand transforms and geometry identical. Final native worktools run separately checks both hands and reload.",
+  "rows": [
+    {
+      "item": "riftsilver_axe",
+      "changes_after_comparison": [
+        "/display/thirdperson_lefthand/translation/0"
+      ]
+    },
+    {
+      "item": "riftsilver_hoe",
+      "changes_after_comparison": [
+        "/display/thirdperson_lefthand/translation/0"
+      ]
+    },
+    {
+      "item": "riftsilver_pickaxe",
+      "changes_after_comparison": [
+        "/display/thirdperson_lefthand/translation/0"
+      ]
+    },
+    {
+      "item": "riftsilver_shovel",
+      "changes_after_comparison": [
+        "/display/thirdperson_lefthand/translation/0"
+      ]
+    },
+    {
+      "item": "riftsteel_axe",
+      "changes_after_comparison": [
+        "/display/thirdperson_lefthand/translation/0"
+      ]
+    },
+    {
+      "item": "riftsteel_hoe",
+      "changes_after_comparison": [
+        "/display/thirdperson_lefthand/translation/0"
+      ]
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "changes_after_comparison": [
+        "/display/thirdperson_lefthand/translation/0"
+      ]
+    },
+    {
+      "item": "riftsteel_shovel",
+      "changes_after_comparison": [
+        "/display/thirdperson_lefthand/translation/0"
+      ]
+    }
+  ]
+}

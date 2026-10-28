@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "revision": "WT04",
+  "source_sha256": "5a79608e307041fc9897cb08996445d48f52a39a92349d88307b9ddd58917db8",
+  "height_factor": 2.0,
+  "width_factor": 1.0,
+  "depth_factor": 1.0,
+  "checks": [
+    {
+      "item": "riftsilver_pickaxe",
+      "modified_working_elements": 23,
+      "all_x_z_bounds_unchanged": true,
+      "unselected_elements_unchanged": true,
+      "hand_transforms_unchanged": true
+    },
+    {
+      "item": "riftsilver_axe",
+      "modified_working_elements": 13,
+      "all_x_z_bounds_unchanged": true,
+      "unselected_elements_unchanged": true,
+      "hand_transforms_unchanged": true
+    },
+    {
+      "item": "riftsilver_shovel",
+      "modified_working_elements": 0,
+      "all_x_z_bounds_unchanged": true,
+      "unselected_elements_unchanged": true,
+      "hand_transforms_unchanged": true
+    },
+    {
+      "item": "riftsilver_hoe",
+      "modified_working_elements": 9,
+      "all_x_z_bounds_unchanged": true,
+      "unselected_elements_unchanged": true,
+      "hand_transforms_unchanged": true
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "modified_working_elements": 23,
+      "all_x_z_bounds_unchanged": true,
+      "unselected_elements_unchanged": true,
+      "hand_transforms_unchanged": true
+    },
+    {
+      "item": "riftsteel_axe",
+      "modified_working_elements": 13,
+      "all_x_z_bounds_unchanged": true,
+      "unselected_elements_unchanged": true,
+      "hand_transforms_unchanged": true
+    },
+    {
+      "item": "riftsteel_shovel",
+      "modified_working_elements": 0,
+      "all_x_z_bounds_unchanged": true,
+      "unselected_elements_unchanged": true,
+      "hand_transforms_unchanged": true
+    },
+    {
+      "item": "riftsteel_hoe",
+      "modified_working_elements": 9,
+      "all_x_z_bounds_unchanged": true,
+      "unselected_elements_unchanged": true,
+      "hand_transforms_unchanged": true
+    }
+  ],
+  "textures_changed": false,
+  "gameplay_changed": false
+}

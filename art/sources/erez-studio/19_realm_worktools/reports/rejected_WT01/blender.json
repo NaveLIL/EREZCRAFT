@@ -1,0 +1,56 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": "67eb316d9141faeea3de31bf01cecf1141aca349aa580dc91f5bdcf43deacb88",
+  "native_json_source": true,
+  "geometry_modifiers": false,
+  "game_verified": false,
+  "sets": {
+    "riftsilver_pickaxe": {
+      "elements": 16,
+      "mesh_objects": 16
+    },
+    "riftsilver_axe": {
+      "elements": 17,
+      "mesh_objects": 17
+    },
+    "riftsilver_shovel": {
+      "elements": 18,
+      "mesh_objects": 18
+    },
+    "riftsilver_hoe": {
+      "elements": 15,
+      "mesh_objects": 15
+    },
+    "riftsteel_pickaxe": {
+      "elements": 19,
+      "mesh_objects": 19
+    },
+    "riftsteel_axe": {
+      "elements": 19,
+      "mesh_objects": 19
+    },
+    "riftsteel_shovel": {
+      "elements": 19,
+      "mesh_objects": 19
+    },
+    "riftsteel_hoe": {
+      "elements": 17,
+      "mesh_objects": 17
+    }
+  },
+  "outputs": {
+    "assembly/realm_worktools_WT01.blend": "1da3cefb9773292d8d1ce30b391675fa73198243da957dc7368e1c219f3df460",
+    "preview/riftsilver_WT01.png": "e7db794a22b3574bc2a07b08f6d014264cb110d08421fad053b263113320c057",
+    "preview/riftsteel_WT01.png": "6802361edd6c089128e19c9687ab101f5e37aee82c3d5e131107fe2f45962f89",
+    "preview/worktools_previous.png": "562d1ad3557df71e5824f1bb74f2b72f60c48278018e104c819d909e3027501b",
+    "preview/worktools_WT01.png": "1c510fadbc760744a8a356b0b0ff50073fbf66f9aa440973eb1d712e8bb0a79f",
+    "exports/riftsilver_axe_WT01.glb": "e0ee1a7e97ae91e9aa1a0d085ea871b9a209fcc9e670f373b18e33ba70bbf8ff",
+    "exports/riftsilver_hoe_WT01.glb": "235d255e925439b781c8bcf72ac1f306fed36f18fe0003cb21518d683da23ff7",
+    "exports/riftsilver_pickaxe_WT01.glb": "18719888d5e6670fe86ead65b489d8ee494d32e1658945715b8cd9e25a78cf94",
+    "exports/riftsilver_shovel_WT01.glb": "281e94680682522251ddc75c5e7e869ae74ddcc9268ee90d001d5ad990d21d15",
+    "exports/riftsteel_axe_WT01.glb": "8819852a39a61c4ea5fab803882fec7c33576f08aacb341aa4507d93ae0a2b9b",
+    "exports/riftsteel_hoe_WT01.glb": "3d7c6ae0691c844f77041db3bcfcee40e3675687a83d91f0e5d99f9ae2dc1813",
+    "exports/riftsteel_pickaxe_WT01.glb": "d8feb4da28983d8183e6885e58bcdfa3d44dc7aa10b7cb96364363b810ec1db4",
+    "exports/riftsteel_shovel_WT01.glb": "8486c066e193943acd6c29ef121eb0b4313d13071a5a668e67fffcd228954815"
+  }
+}

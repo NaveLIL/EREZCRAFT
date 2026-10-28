@@ -1,0 +1,25 @@
+{
+  "revision": "EREZ-ENGINEER-ARMOR-E09",
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": "7fb4a309096428396928aa54fff63853693559c0513e306c54ba30e7f46691c7",
+  "parts": 208,
+  "faces": 4281,
+  "vertices": 4168,
+  "atlas_size": [
+    1024,
+    1024
+  ],
+  "atlas_used_height": 241,
+  "rendered_from_frozen_mesh": true,
+  "game_implemented": false,
+  "geometry_modifiers_remaining": false,
+  "outputs": {
+    "preview/engineer_E09_back.png": "e7ceb415a5db813ea889f03c429c15b0e2637fd4bea4f0d691ba42209c026b7d",
+    "preview/engineer_E09_front.png": "d9931f477f86c4a8ee479e1a783785f921adc76b28360b21de746d881cc4a7a1",
+    "preview/engineer_E09_front_back.png": "bd0c086f6e233a89b080e3fa8712517b7a0d9ae728bd82864b7391b4575360a0",
+    "preview/engineer_E09_quarter.png": "e63d8821555bb495f9fa2c229806c6cd25a9162a17cf51a8e7d58f4e6b5bfeca",
+    "assembly/EREZ_Rift_Engineer_Armor_E09.blend": "b0ddd2dc395601867e1671fc1c8e781364d34ae312aebf7d9c1e9299f0902eea",
+    "exports/EREZ_Rift_Engineer_Armor_E09.glb": "dd4ee33489185a528fd0b620e6a96248bd4bd5822a4e9804c684ed3379fcae28"
+  },
+  "bevel_export_fix": "Keep box bevel width below 45 percent of minimum thickness; no collapsed float32 faces"
+}

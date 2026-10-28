@@ -1,0 +1,1654 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": false,
+  "gui_light": "front",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "silver": "interstice:item/worktools/silver",
+    "silver_shadow": "interstice:item/worktools/silver_shadow",
+    "steel": "interstice:item/worktools/steel",
+    "edge": "interstice:item/worktools/edge",
+    "dark": "interstice:item/worktools/dark",
+    "brass": "interstice:item/worktools/brass",
+    "grip": "interstice:item/worktools/grip",
+    "wood": "interstice:item/worktools/wood",
+    "cyan": "interstice:item/worktools/cyan",
+    "particle": "interstice:item/worktools/steel"
+  },
+  "elements": [
+    {
+      "name": "haft",
+      "from": [
+        7.3,
+        0.7,
+        7.3
+      ],
+      "to": [
+        8.7,
+        15.2,
+        8.7
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.4,
+            12
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.4,
+            12
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.4,
+            12
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.4,
+            12
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.4,
+            2.4
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.4,
+            2.4
+          ]
+        }
+      }
+    },
+    {
+      "name": "grip",
+      "from": [
+        7.15,
+        1.5,
+        7.15
+      ],
+      "to": [
+        8.85,
+        6.2,
+        8.85
+      ],
+      "faces": {
+        "north": {
+          "texture": "#grip",
+          "uv": [
+            1,
+            1,
+            2.7,
+            5.7
+          ]
+        },
+        "south": {
+          "texture": "#grip",
+          "uv": [
+            1,
+            1,
+            2.7,
+            5.7
+          ]
+        },
+        "east": {
+          "texture": "#grip",
+          "uv": [
+            1,
+            1,
+            2.7,
+            5.7
+          ]
+        },
+        "west": {
+          "texture": "#grip",
+          "uv": [
+            1,
+            1,
+            2.7,
+            5.7
+          ]
+        },
+        "up": {
+          "texture": "#grip",
+          "uv": [
+            1,
+            1,
+            2.7,
+            2.7
+          ]
+        },
+        "down": {
+          "texture": "#grip",
+          "uv": [
+            1,
+            1,
+            2.7,
+            2.7
+          ]
+        }
+      }
+    },
+    {
+      "name": "grip_binding_2",
+      "from": [
+        7.1,
+        2,
+        7.1
+      ],
+      "to": [
+        8.9,
+        2.22,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "grip_binding_3.3",
+      "from": [
+        7.1,
+        3.3,
+        7.1
+      ],
+      "to": [
+        8.9,
+        3.52,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "grip_binding_4.6",
+      "from": [
+        7.1,
+        4.6,
+        7.1
+      ],
+      "to": [
+        8.9,
+        4.82,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.22
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.8,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "pommel",
+      "from": [
+        7.05,
+        0.45,
+        7.05
+      ],
+      "to": [
+        8.95,
+        1.1,
+        8.95
+      ],
+      "faces": {
+        "north": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.9,
+            1.65
+          ]
+        },
+        "south": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.9,
+            1.65
+          ]
+        },
+        "east": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.9,
+            1.65
+          ]
+        },
+        "west": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.9,
+            1.65
+          ]
+        },
+        "up": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.9,
+            2.9
+          ]
+        },
+        "down": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.9,
+            2.9
+          ]
+        }
+      }
+    },
+    {
+      "name": "neck_band",
+      "from": [
+        7.0,
+        14.4,
+        7
+      ],
+      "to": [
+        9.0,
+        14.95,
+        9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            3,
+            1.55
+          ]
+        },
+        "south": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            3,
+            1.55
+          ]
+        },
+        "east": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            3,
+            1.55
+          ]
+        },
+        "west": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            3,
+            1.55
+          ]
+        },
+        "up": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            3,
+            3
+          ]
+        },
+        "down": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            3,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_0",
+      "from": [
+        7.5,
+        14.0,
+        7.1
+      ],
+      "to": [
+        8.5,
+        23.0,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.0,
+            6.0
+          ]
+        },
+        "south": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.0,
+            6.0
+          ]
+        },
+        "east": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            6.0
+          ]
+        },
+        "west": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            6.0
+          ]
+        },
+        "up": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.0,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.0,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_1",
+      "from": [
+        7.0,
+        14.9,
+        7.1
+      ],
+      "to": [
+        7.5,
+        23.0,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            5.5
+          ]
+        },
+        "south": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            5.5
+          ]
+        },
+        "east": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            5.5
+          ]
+        },
+        "west": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            5.5
+          ]
+        },
+        "up": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_2",
+      "from": [
+        8.5,
+        14.9,
+        7.1
+      ],
+      "to": [
+        9.0,
+        23.0,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            5.5
+          ]
+        },
+        "south": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            5.5
+          ]
+        },
+        "east": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            5.5
+          ]
+        },
+        "west": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            5.5
+          ]
+        },
+        "up": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_3",
+      "from": [
+        6.5,
+        15.8,
+        7.1
+      ],
+      "to": [
+        7.0,
+        22.1,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            4.5
+          ]
+        },
+        "south": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            4.5
+          ]
+        },
+        "east": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            4.5
+          ]
+        },
+        "west": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            4.5
+          ]
+        },
+        "up": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_4",
+      "from": [
+        9.0,
+        15.8,
+        7.1
+      ],
+      "to": [
+        9.5,
+        22.1,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            4.5
+          ]
+        },
+        "south": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            4.5
+          ]
+        },
+        "east": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            4.5
+          ]
+        },
+        "west": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            2.8,
+            4.5
+          ]
+        },
+        "up": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#steel",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_5",
+      "from": [
+        6.0,
+        16.7,
+        7.1
+      ],
+      "to": [
+        6.5,
+        22.1,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            4.0
+          ]
+        },
+        "south": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            4.0
+          ]
+        },
+        "east": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            4.0
+          ]
+        },
+        "west": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            4.0
+          ]
+        },
+        "up": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_6",
+      "from": [
+        9.5,
+        16.7,
+        7.1
+      ],
+      "to": [
+        10.0,
+        22.1,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            4.0
+          ]
+        },
+        "south": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            4.0
+          ]
+        },
+        "east": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            4.0
+          ]
+        },
+        "west": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            4.0
+          ]
+        },
+        "up": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_7",
+      "from": [
+        6.5,
+        22.1,
+        7.1
+      ],
+      "to": [
+        7.0,
+        23.0,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            1.5
+          ]
+        },
+        "south": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            1.5
+          ]
+        },
+        "east": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.5
+          ]
+        },
+        "west": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.5
+          ]
+        },
+        "up": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_8",
+      "from": [
+        9.0,
+        22.1,
+        7.1
+      ],
+      "to": [
+        9.5,
+        23.0,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            1.5
+          ]
+        },
+        "south": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            1.5
+          ]
+        },
+        "east": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.5
+          ]
+        },
+        "west": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.5
+          ]
+        },
+        "up": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            1.5,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "curved_shovel_9",
+      "from": [
+        7.0,
+        23.0,
+        7.1
+      ],
+      "to": [
+        9.0,
+        23.9,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            3.0,
+            1.5
+          ]
+        },
+        "south": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            3.0,
+            1.5
+          ]
+        },
+        "east": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.5
+          ]
+        },
+        "west": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            2.8,
+            1.5
+          ]
+        },
+        "up": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            3.0,
+            2.8
+          ]
+        },
+        "down": {
+          "texture": "#edge",
+          "uv": [
+            1,
+            1,
+            3.0,
+            2.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "eye_reinforcement",
+      "from": [
+        7.15,
+        15.26,
+        6.1
+      ],
+      "to": [
+        8.85,
+        18.86,
+        9.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.7,
+            3.0
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.7,
+            3.0
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            4.8,
+            3.0
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            4.8,
+            3.0
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.7,
+            4.8
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            1,
+            1,
+            2.7,
+            4.8
+          ]
+        }
+      }
+    },
+    {
+      "name": "eye_pin_5.85",
+      "from": [
+        7.7,
+        16.52,
+        5.85
+      ],
+      "to": [
+        8.3,
+        17.6,
+        6.1
+      ],
+      "faces": {
+        "north": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.6,
+            1.6
+          ]
+        },
+        "south": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.6,
+            1.6
+          ]
+        },
+        "east": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.25,
+            1.6
+          ]
+        },
+        "west": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.25,
+            1.6
+          ]
+        },
+        "up": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.6,
+            1.25
+          ]
+        },
+        "down": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.6,
+            1.25
+          ]
+        }
+      }
+    },
+    {
+      "name": "small_inlay_5.85",
+      "from": [
+        7.4,
+        16.7,
+        5.85
+      ],
+      "to": [
+        7.6,
+        17.42,
+        6.1
+      ],
+      "faces": {
+        "north": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.2,
+            1.4
+          ]
+        },
+        "south": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.2,
+            1.4
+          ]
+        },
+        "east": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.25,
+            1.4
+          ]
+        },
+        "west": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.25,
+            1.4
+          ]
+        },
+        "up": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.2,
+            1.25
+          ]
+        },
+        "down": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.2,
+            1.25
+          ]
+        }
+      }
+    },
+    {
+      "name": "eye_pin_9.9",
+      "from": [
+        7.7,
+        16.52,
+        9.9
+      ],
+      "to": [
+        8.3,
+        17.6,
+        10.15
+      ],
+      "faces": {
+        "north": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.6,
+            1.6
+          ]
+        },
+        "south": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.6,
+            1.6
+          ]
+        },
+        "east": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.25,
+            1.6
+          ]
+        },
+        "west": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.25,
+            1.6
+          ]
+        },
+        "up": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.6,
+            1.25
+          ]
+        },
+        "down": {
+          "texture": "#brass",
+          "uv": [
+            1,
+            1,
+            1.6,
+            1.25
+          ]
+        }
+      }
+    },
+    {
+      "name": "small_inlay_9.9",
+      "from": [
+        7.4,
+        16.7,
+        9.9
+      ],
+      "to": [
+        7.6,
+        17.42,
+        10.15
+      ],
+      "faces": {
+        "north": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.2,
+            1.4
+          ]
+        },
+        "south": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.2,
+            1.4
+          ]
+        },
+        "east": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.25,
+            1.4
+          ]
+        },
+        "west": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.25,
+            1.4
+          ]
+        },
+        "up": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.2,
+            1.25
+          ]
+        },
+        "down": {
+          "texture": "#cyan",
+          "uv": [
+            1,
+            1,
+            1.2,
+            1.25
+          ]
+        }
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        12,
+        -25,
+        -35
+      ],
+      "scale": [
+        0.698263,
+        0.698263,
+        0.698263
+      ],
+      "translation": [
+        -1.52103,
+        -2.19668,
+        0
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        35,
+        0,
+        -35
+      ],
+      "translation": [
+        1.475812,
+        0.976509,
+        1.708915
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        35,
+        0,
+        -35
+      ],
+      "translation": [
+        1.475812,
+        0.976509,
+        1.708915
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -60,
+        -20
+      ],
+      "translation": [
+        -2,
+        0,
+        0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -60,
+        -20
+      ],
+      "translation": [
+        -2,
+        0,
+        0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.364706,
+        0.364706,
+        0.364706
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "scale": [
+        0.597015,
+        0.597015,
+        0.597015
+      ],
+      "translation": [
+        -0.0,
+        -2.49254,
+        0
+      ]
+    }
+  }
+}

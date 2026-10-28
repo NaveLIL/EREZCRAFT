@@ -1,0 +1,10 @@
+{
+  "commit": "a768bef287d0413979db18c526c689f4c6499517",
+  "no_push": true,
+  "paths": [
+    "docs/HANDOFF_EREZ_STUDIO_E12.md",
+    "docs/verification/EREZ_STUDIO_E12.json",
+    "art/sources/erez-studio-handoff/20_rift_engineer_armor_E12",
+    "docs/HANDOFF_EREZ_STUDIO.md"
+  ]
+}

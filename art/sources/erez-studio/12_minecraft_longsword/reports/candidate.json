@@ -1,0 +1,32 @@
+{
+  "candidate": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ls03",
+  "base_commit": "e54c21422aa920c28aa18518c964428de9b63822",
+  "changed_existing": [
+    "docs/HANDOFF.md",
+    "src/main/java/pro/erez/interstice/gear/RealmArmaments.java",
+    "src/main/resources/assets/interstice/lang/en_us.json",
+    "src/main/resources/assets/interstice/lang/ru_ru.json",
+    "src/main/resources/data/c/tags/item/tools/sword.json",
+    "src/main/resources/data/interstice/tags/item/riftsteel_equipment.json",
+    "src/main/resources/data/minecraft/tags/item/enchantable/durability.json",
+    "src/main/resources/data/minecraft/tags/item/enchantable/sword.json",
+    "src/main/resources/data/minecraft/tags/item/enchantable/weapon.json",
+    "src/main/resources/data/minecraft/tags/item/swords.json",
+    "src/smoke/java/pro/erez/interstice/client/ExpeditionProgressionSmoke.java",
+    "tools/build_expedition_progression.py",
+    "tools/verify.py"
+  ],
+  "new_files": [
+    "src/smoke/java/pro/erez/interstice/test/LongswordGameTests.java",
+    "src/main/resources/assets/interstice/models/item/riftsteel_longsword.json",
+    "src/main/resources/assets/interstice/provenance/riftsteel-longsword.json",
+    "src/main/resources/data/interstice/recipe/riftsteel_longsword.json",
+    "src/main/resources/data/interstice/advancement/recipes/equipment/riftsteel_longsword.json",
+    "docs/LONGSWORD.md",
+    "docs/verification/LONGSWORD.json"
+  ],
+  "patch_sha256": "28ae56ea98bb93547f2fb7f36f5d08d3c50fc2ebc7164a80280bc73c76922138",
+  "original_sword_model_and_recipe_unchanged": true,
+  "unfinished_fauna_in_candidate": false,
+  "version_override": "0.7.0-preview.16-longsword"
+}

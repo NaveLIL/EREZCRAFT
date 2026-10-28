@@ -1,0 +1,225 @@
+{
+  "date": "2026-10-28",
+  "pack_sequence": 21,
+  "delivery": {
+    "client_jars": 79,
+    "corruption_repaired": 1,
+    "files": 89,
+    "fixture_world_options_and_client_preference_preserved": true,
+    "game_server_contacted": false,
+    "new_sequence": 21,
+    "old_sequence": 20,
+    "passed": true,
+    "real_https_blade_download": true,
+    "repeat_quarantined": 0,
+    "repeat_repaired": 0,
+    "same_size_mtime_repair": true,
+    "update_quarantined": 1,
+    "update_repaired": 2,
+    "user_worlds_used": false
+  },
+  "entity_nbt": {
+    "passed": true,
+    "scope": "Entity NBT across two game-test JVMs; not full region/world reload",
+    "results": [
+      {
+        "mode": "create",
+        "command": [
+          "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+          "-classpath",
+          "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+          "org.gradle.wrapper.GradleWrapperMain",
+          "--no-daemon",
+          "--console=plain",
+          "-Pmod_version=0.7.0-preview.36-blade-tools",
+          "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\postrelease-alpha21-20261028\\cold-profiles",
+          "runHunterColdCreateGameTestServer"
+        ],
+        "passed": true,
+        "pid": 15560,
+        "exit_code": 0,
+        "expected_game_test_tasks": [
+          "runHunterColdCreateGameTestServer"
+        ],
+        "game_test_tasks": {
+          "runHunterColdCreateGameTestServer": {
+            "executions": [
+              {
+                "status": "",
+                "completion_counts": [
+                  2
+                ],
+                "failures": []
+              }
+            ],
+            "completion_counts": [
+              2
+            ],
+            "required_tests_passed": 2
+          }
+        },
+        "unexpected_game_test_tasks": [],
+        "game_test_errors": [],
+        "required_test_groups": [
+          2
+        ],
+        "required_tests_passed": 2,
+        "seconds": 35.38999999999942,
+        "hunter": {
+          "pid": 2440,
+          "source_had_combat_memory": true,
+          "source_health": 7,
+          "passed": true
+        },
+        "spider": {
+          "pid": 2440,
+          "source_had_combat_memory": true,
+          "passed": true
+        }
+      },
+      {
+        "mode": "reload",
+        "command": [
+          "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+          "-classpath",
+          "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+          "org.gradle.wrapper.GradleWrapperMain",
+          "--no-daemon",
+          "--console=plain",
+          "-Pmod_version=0.7.0-preview.36-blade-tools",
+          "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\postrelease-alpha21-20261028\\cold-profiles",
+          "runHunterColdReloadGameTestServer"
+        ],
+        "passed": true,
+        "pid": 10136,
+        "exit_code": 0,
+        "expected_game_test_tasks": [
+          "runHunterColdReloadGameTestServer"
+        ],
+        "game_test_tasks": {
+          "runHunterColdReloadGameTestServer": {
+            "executions": [
+              {
+                "status": "",
+                "completion_counts": [
+                  2
+                ],
+                "failures": []
+              }
+            ],
+            "completion_counts": [
+              2
+            ],
+            "required_tests_passed": 2
+          }
+        },
+        "unexpected_game_test_tasks": [],
+        "game_test_errors": [],
+        "required_test_groups": [
+          2
+        ],
+        "required_tests_passed": 2,
+        "seconds": 32.98399999999947,
+        "hunter": {
+          "pid": 15784,
+          "creator_pid": 2440,
+          "wounds_preserved": true,
+          "combat_memory_cleared": true,
+          "passed": true
+        },
+        "spider": {
+          "pid": 15784,
+          "creator_pid": 2440,
+          "wounds_variant_body_and_remaining_burst_preserved": true,
+          "combat_memory_cleared": true,
+          "passed": true
+        }
+      }
+    ]
+  },
+  "tcp_status": "passed",
+  "test_route": "Owned loopback TCP over SSH exec to dedicated container loopback; ordinary Docker port mapping was not reachable",
+  "production_world_used": false,
+  "backups_created": false,
+  "tcp": {
+    "passed": true,
+    "source_receipt": ".verification/postrelease-alpha21-20261028/tcp3/network-run.json",
+    "real_v6": true,
+    "dh_loaded": true,
+    "separate_dedicated": true,
+    "singleplayer_server_absent": true,
+    "client": {
+      "probe-hunter": {
+        "travelled": 62.64533015834465,
+        "longest_idle_ticks": 1,
+        "samples": 359,
+        "mean": 0.17449952690346698,
+        "stationary": 2,
+        "max": 0.8684949417009591,
+        "coefficient_of_variation": 0.4856658771168747
+      },
+      "probe-spitter": {
+        "travelled": 68.62306459011279,
+        "longest_idle_ticks": 1,
+        "samples": 359,
+        "mean": 0.19115059774404677,
+        "stationary": 2,
+        "max": 0.907352473082495,
+        "coefficient_of_variation": 0.43138911375282857
+      },
+      "probe-vanilla": {
+        "travelled": 36.34366285969746,
+        "longest_idle_ticks": 4,
+        "samples": 359,
+        "mean": 0.10123582969275058,
+        "stationary": 70,
+        "max": 0.38608817959421565,
+        "coefficient_of_variation": 0.5692880410441696
+      }
+    },
+    "server": {
+      "probe-hunter": {
+        "samples": 359,
+        "travelled": 55.26430915441957,
+        "mean": 0.1539395798173247,
+        "max": 0.21418614837121197,
+        "longest_idle_ticks": 0
+      },
+      "probe-spitter": {
+        "samples": 359,
+        "travelled": 73.22999653701935,
+        "mean": 0.20398327726189233,
+        "max": 0.24669633982245043,
+        "longest_idle_ticks": 3
+      },
+      "probe-vanilla": {
+        "samples": 359,
+        "travelled": 40.832424508261084,
+        "mean": 0.11373934403415344,
+        "max": 0.1141894537139435,
+        "longest_idle_ticks": 0
+      }
+    },
+    "hunter_chase_ticks": 360,
+    "test_server_stopped": true,
+    "visual_frames_captured": 40,
+    "visual_gait_acceptance": false,
+    "visual_note": "Captured frames are too dark/poorly framed to establish visual gait approval; acceptance uses actual server/client positions only",
+    "fixture_note": "Spitter target was allowed to be selected by its own AI; no claim that it retained the initially supplied invulnerable prey. The late fixture-only Invulnerable change is logged in tcp3/prey-adjustment.json."
+  },
+  "passed": true,
+  "client_installation_and_entity_nbt_and_tcp_motion_passed": true,
+  "production_server_updated_during_tests": false,
+  "limits": [
+    "Prepared arena, not natural Survival or 10-player capacity acceptance",
+    "Offline identity on isolated dedicated server; does not prove positive EREZ ID login on production",
+    "SSH TCP route, not Sable UDP ship or voice-chat acceptance",
+    "Entity NBT was reloaded across JVMs, not full region/world persistence"
+  ],
+  "cleanup": {
+    "test_container_exited": true,
+    "local_game_jvms_absent": true,
+    "local_proxy_stopped": true,
+    "production_healthy": true
+  }
+}

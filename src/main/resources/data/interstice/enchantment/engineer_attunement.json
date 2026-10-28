@@ -1,0 +1,21 @@
+{
+  "description": {
+    "translate": "enchantment.interstice.engineer_attunement"
+  },
+  "supported_items": "#interstice:enchantable/engineer_helmet",
+  "weight": 3,
+  "max_level": 3,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 42,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "head"
+  ],
+  "effects": {}
+}

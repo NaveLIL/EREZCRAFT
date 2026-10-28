@@ -519,6 +519,16 @@ neoForge {
             programArgument '--height'
             programArgument '800'
         }
+        faunaNetworkSmoke {
+            client()
+            gameDirectory = file('.verification/fauna-network-client')
+            systemProperty 'interstice.faunaNetworkSmoke', 'true'
+            jvmArgument '-Xmx8G'
+            programArgument '--width'
+            programArgument '1280'
+            programArgument '--height'
+            programArgument '800'
+        }
         hunterGameTestServer {
             type = 'gameTestServer'
             gameDirectory = file('build/hunter-gametests')
@@ -875,6 +885,29 @@ neoForge {
         }
     }
 }
+// Explicit studio checks keep the normal progression/persistence harness independent.
+neoForge.runs {
+    ['Tools', 'Worktools', 'Engineer', 'TideIndicator', 'EngineerSystems'].each { kind ->
+        register('studio' + kind) {
+            client()
+            jvmArgument '-Xms2G'
+            jvmArgument '-Xmx8G'
+            gameDirectory = file('.verification/studio-' + kind.toLowerCase())
+            systemProperty 'interstice.studioSmoke', kind.toLowerCase()
+            if (kind == 'EngineerSystems') systemProperty 'interstice.engineerCold', project.providers.gradleProperty('engineerCold').getOrElse('create')
+            programArgument '--width'
+            programArgument '1920'
+            programArgument '--height'
+            programArgument '1080'
+        }
+    }
+    register('engineerGameTestServer') {
+        type = 'gameTestServer'
+        gameDirectory = file('.verification/engineer-gametests')
+        loadedMods = [project.neoForge.mods.interstice, project.neoForge.mods.interstice_geometry_fixture]
+        systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_engineer'
+    }
+}
 // DH3.3.3 casts NeoForge's GameTestServer to DedicatedServer. Component tests must use
 // their own classpath; EVERY real client/dedicated run and assembled modpack includes DH.
 neoForge.runs.each { run ->
@@ -1174,7 +1207,6 @@ tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('
 tasks.named('check') { dependsOn tasks.named('runEtherealGameTestServer') }
 
 tasks.named('check') { dependsOn tasks.named('runHunterGameTestServer') }
-
 tasks.named('check') { dependsOn tasks.named('runProgressionGameTestServer') }
 tasks.register('runProgressionNativeSmoke') { dependsOn tasks.named('runProgressionCreate'), tasks.named('runProgressionReload') }
 tasks.named('runProgressionReload') {
@@ -1186,11 +1218,18 @@ tasks.named('runProgressionReload') {
     }
 }
 
-['progressionCreate', 'progressionReload'].each { runName -> tasks.named('prepare' + runName.capitalize() + 'Run') {
+['progressionCreate', 'progressionReload', 'studioTools', 'studioWorktools', 'studioEngineer', 'studioTideIndicator', 'studioEngineerSystems'].each { runName -> tasks.named('prepare' + runName.capitalize() + 'Run') {
     outputs.upToDateWhen { false }
     doLast {
         if (!providers.gradleProperty('intersticeRunRoot').isPresent()) throw new GradleException('New isolated verification root required')
         def target = neoForge.runs.getByName(runName).gameDirectory.get().asFile
+        if (!target.toPath().toRealPath().toString().replace('\\','/').contains('/.verification/')) throw new GradleException('Owned verification profile required')
+        def engineerReload = runName == 'studioEngineerSystems' && providers.gradleProperty('engineerCold').getOrElse('create') == 'reload'
+        if (engineerReload) {
+            def proof = new File(target, 'engineer-d02-create.json')
+            if (!proof.isFile() || new groovy.json.JsonSlurper().parse(proof).passed != true || !new File(target, 'saves/engineer-d02-owned/level.dat').isFile())
+                throw new GradleException('A passed owned engineer creation is required for cold reload')
+        }
         def source = file(providers.gradleProperty('progressionPackSource').get())
         if (!source.toPath().toRealPath().toString().replace('\\','/').contains('/.verification/')) throw new GradleException('Owned pack source required')
         def jars = fileTree(new File(source,'mods')) { include '*.jar' }.files
@@ -1205,7 +1244,7 @@ tasks.named('runProgressionReload') {
             } finally { archive.close() }
             if (!supplied) copy { from jar; into new File(target,'mods') }
         }
-        if (runName == 'progressionCreate') {
+        if (runName != 'progressionReload' && !engineerReload) {
             if (new File(target,'saves').exists()) throw new GradleException('New progression profile required')
             ['config','defaultconfigs','resourcepacks','shaderpacks'].each { folder -> copy { from new File(source,folder); into new File(target,folder) } }
             new File(target,'options.txt').text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\nrenderDistance:3\nsimulationDistance:5\nguiScale:2\nmaxFps:60\nfullscreen:false\npauseOnLostFocus:false\nresourcePacks:["mod_resources","file/erezcraft-ru-mc1.21.1.zip"]\n'
@@ -1215,21 +1254,22 @@ tasks.named('runProgressionReload') {
 } }
 
 // Full production client binaries, read-only source; never copy an owner's world or options.
-tasks.named('prepareSpiderMovementSmokeRun') {
+['spiderMovementSmoke', 'faunaNetworkSmoke'].each { faunaRun -> tasks.named('prepare' + faunaRun.capitalize() + 'Run') {
     outputs.upToDateWhen { false }
     doLast {
-        def target = neoForge.runs.spiderMovementSmoke.gameDirectory.get().asFile
+        def target = neoForge.runs.getByName(faunaRun).gameDirectory.get().asFile
         if (!target.toPath().toAbsolutePath().toString().replace('\\','/').contains('/.verification/')) throw new GradleException('Owned verification profile required')
         if (new File(target,'saves').exists()) throw new GradleException('A new full-client profile is required')
         def source = file(providers.gradleProperty('spiderPackSource').get())
         def jars = fileTree(new File(source,'mods')) { include '*.jar' }.files
-        if (jars.size()!=65) throw new GradleException('Expected current 65-JAR client')
-        jars.findAll { !it.name.startsWith('interstice-') && !it.name.startsWith('DistantHorizons-') && !it.name.startsWith('lootr-') }.each { jar ->
+        if (jars.size()!=79) throw new GradleException('Expected current 79-JAR client')
+        jars.findAll { !it.name.startsWith('interstice-') && !it.name.startsWith('DistantHorizons-') && !it.name.startsWith('lootr-') && !it.name.startsWith('SmartBrainLib-') && !it.name.startsWith('azurecortex-') }.each { jar ->
             copy { from jar; into new File(target,'mods') }
         }
         copy { from new File(source,'config'); into new File(target,'config') }
         copy { from new File(source,'defaultconfigs'); into new File(target,'defaultconfigs') }
         new File(target,'config/fml.toml').text='earlyWindowControl = false\n'
-        new File(target,'options.txt').text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\nrenderDistance:8\nsimulationDistance:5\n'
+        new File(target,'options.txt').text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\nrenderDistance:8\nsimulationDistance:5\npauseOnLostFocus:false\n'
     }
+}
 }

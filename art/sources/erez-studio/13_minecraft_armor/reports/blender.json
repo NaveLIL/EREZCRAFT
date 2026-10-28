@@ -1,0 +1,40 @@
+{
+  "revision": "ARMOR-A01",
+  "geometry_source_sha256": "e75c45a5f6bcb0ec2aa43e05c0b9b46da1296108b00d39421b21057264b09ddd",
+  "sets": {
+    "riftsilver_original": {
+      "objects": 9,
+      "armor_quads": 54,
+      "preview": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\preview\\riftsilver_original.png"
+    },
+    "riftsilver_proposed": {
+      "objects": 71,
+      "armor_quads": 426,
+      "preview": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\preview\\riftsilver_front.png"
+    },
+    "riftsteel_original": {
+      "objects": 9,
+      "armor_quads": 54,
+      "preview": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\preview\\riftsteel_original.png"
+    },
+    "riftsteel_proposed": {
+      "objects": 81,
+      "armor_quads": 486,
+      "preview": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\preview\\steel_walking.png"
+    }
+  },
+  "native_game_verified": false,
+  "outputs": {
+    "assembly\\mezhdumorye_armor_A01.blend": "98ee99c8803d1f26911bb9deb80cafbbe7141471a61d382bf129fd687f0a1bbd",
+    "exports\\riftsilver_armor_A01.glb": "924d5ced72fba5b80173af0dfed3f821f970be8f675fd4fd524f7bbd42ba9438",
+    "exports\\riftsteel_armor_A01.glb": "20dfe831ff6f37b77bdbca1213d5717149e2f5be9002318e2c6b2a31e2c07258",
+    "preview\\riftsilver_front.png": "2e7345db9e111ebe77f36338e32a7d400b90e60f0c2b5226e68ae930dc5ecd0f",
+    "preview\\riftsilver_original.png": "0b3bf5bf6e55447db5202ecf0d38c695fdff4f7ae90da18c25db6fcf9cc374b5",
+    "preview\\riftsilver_proposed.png": "b30d499e31aabb4540e8c54213f590a75a52297f926a5cc44939792e9543a942",
+    "preview\\riftsteel_front.png": "252d0d557d225ea979612f650671ca9096db22de7a4fe682b410fb980152cf0a",
+    "preview\\riftsteel_original.png": "9a0ec0abed493285568bb45252f1008a12486b137f77a750c698b3909b2edc65",
+    "preview\\riftsteel_proposed.png": "33d312b2d449bbaed317c21619aef610c70e379822c3236794b9641c7a6b1605",
+    "preview\\steel_back.png": "78294557ee87cf437921d2e2de3fc7f8cd348e9ff8f8886bb4aa2c9c6c18c74d",
+    "preview\\steel_walking.png": "c2a0640021f3ee5a9ea011dd4bd6b86f157f59447314691786687bbdddad56e1"
+  }
+}

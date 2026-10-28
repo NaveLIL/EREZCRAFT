@@ -1,0 +1,161 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\bp01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\bp01\\.verification\\packs03",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "-PbackpackBenchOnly=true",
+    "runProgressionCreate"
+  ],
+  "started_utc": "2026-10-27T08:28:18.004605+00:00",
+  "harness_sha256": "e16a8d6355e4fe474a06ec94357043fdec9488c1d30f27b83f72abce6baa8e25",
+  "owner_profile_used": false,
+  "passed": true,
+  "pid": 20412,
+  "exit_code": 0,
+  "duration_seconds": 180.093,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "players": [
+      {
+        "tier": "riftsilver",
+        "name": "Pack_Field",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 964464
+      },
+      {
+        "tier": "riftsteel",
+        "name": "Pack_Expedition",
+        "skin_model": "slim",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 1100304
+      },
+      {
+        "tier": "aegis",
+        "name": "Pack_Rift",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 1684416
+      }
+    ],
+    "native_item_models": [
+      {
+        "item": "field_backpack",
+        "quads": 242
+      },
+      {
+        "item": "expedition_backpack",
+        "quads": 292
+      },
+      {
+        "item": "rift_backpack",
+        "quads": 296
+      }
+    ],
+    "previous_16_armor_icons_checked": true,
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.21-backpacks",
+    "benchmark_only": false,
+    "crouching_checked": true,
+    "walking_checked": true,
+    "kotomyaf_checked": true,
+    "elytra_checked": true,
+    "swimming_checked": true,
+    "frame_benchmark": [
+      {
+        "renderer": "previous_v20",
+        "pass": 1,
+        "samples": 720,
+        "median_frame_ms": 3.8836,
+        "p95_frame_ms": 6.6685,
+        "median_fps": 257.4930476877124,
+        "minimum_players_drawn": 10
+      },
+      {
+        "renderer": "B02_new",
+        "pass": 2,
+        "samples": 720,
+        "median_frame_ms": 4.58,
+        "p95_frame_ms": 7.8712,
+        "median_fps": 218.34061135371178,
+        "minimum_players_drawn": 10
+      },
+      {
+        "renderer": "previous_v20",
+        "pass": 3,
+        "samples": 720,
+        "median_frame_ms": 3.5414,
+        "p95_frame_ms": 5.8546,
+        "median_fps": 282.3742022928785,
+        "minimum_players_drawn": 10
+      }
+    ],
+    "benchmark_players": 10,
+    "benchmark_camera_inside_studio": true,
+    "benchmark_vsync": false,
+    "benchmark_frame_cap": 260,
+    "gpu": "AMD Radeon RX 6800 XT",
+    "passed": true,
+    "reason": "",
+    "phase": 15,
+    "pid": 9520,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "backpacks-armor-front.png",
+      "backpacks-armor-back.png",
+      "backpacks-armor-quarter.png",
+      "backpacks-field-close.png",
+      "backpacks-expedition-close.png",
+      "backpacks-rift-close.png",
+      "backpacks-crouching.png",
+      "backpacks-walking.png",
+      "backpacks-bare-back.png",
+      "backpacks-kotomyaf-back.png",
+      "backpacks-elytra-folded.png",
+      "backpacks-elytra-flight.png",
+      "backpacks-swimming.png",
+      "backpacks-item-miniatures.png",
+      "backpacks-ten-players-before.png",
+      "backpacks-ten-players.png"
+    ],
+    "settled": {
+      "purpose": "armor_player_gallery_shutdown",
+      "server_tick": 989,
+      "elapsed_actual_server_ticks": 20,
+      "stable_actual_server_ticks": 21,
+      "holders_checked": 1118,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "screenshot_sha256": {
+    "backpacks-armor-front.png": "8a3d426d9541cbda396698c10861675a87f738fa24f3d039573f585469cf4201",
+    "backpacks-armor-back.png": "feae86614982f85c5c596e3a55fb86d54cf74fa9d828df9d30f83b103f8df2cb",
+    "backpacks-armor-quarter.png": "6abbb18ca02811565cc717190644b911308fc41c96d803d5647b9bf78fc9d442",
+    "backpacks-field-close.png": "ef81c2aa915c2690b4eb3b817d3f43aa24950d830195e318f00620ea501de152",
+    "backpacks-expedition-close.png": "7b406473f32fe15e977d27901d0201cd6564e23a9cd45b506bffb992d3d97fab",
+    "backpacks-rift-close.png": "79368c3b5d3bf0b09f7faf94dd59fc4511afbd3bdfd62f303a340a53f495f68e",
+    "backpacks-crouching.png": "7a25448972f843be2ad2c89ec815dedf20c854026cd46de79e6ac9adb3bf3761",
+    "backpacks-walking.png": "0dc53fb3b8d35d86588e2e38fde3e6604ab090fa4a4a1b7a94e28eab4a8f9570",
+    "backpacks-bare-back.png": "9d9d1ec281f6c627519f270012b4b91a818bfac033b3d4ff8d17b06c9064a598",
+    "backpacks-kotomyaf-back.png": "da3d4459feb40130cd741a25aca76042be312949fa46f72015822782d5515b19",
+    "backpacks-elytra-folded.png": "889e0b4027865f70293b351a43842077ddabcf9460e3102e52d0a7f8b7611360",
+    "backpacks-elytra-flight.png": "411539624d27c35c49219d2dab5c23670748efe4ebdbc46aa60b552796a38a32",
+    "backpacks-swimming.png": "70e75db23aef9fe48e9d98a395262d6413a9e541129d7394881b788c8dc689b4",
+    "backpacks-item-miniatures.png": "d6cca953898e3f74c062e71ff6512b6727779c28cb6d2300d6d6405300b57188",
+    "backpacks-ten-players-before.png": "1b5812da11cd82df562fa1d6176acdef78cfeb71e06bc34457a2396d3ae05a5e",
+    "backpacks-ten-players.png": "489728bd5810e5996cc373c97f0460ebae2a8f9655dc6d739a70602746752c53"
+  }
+}

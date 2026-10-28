@@ -46,14 +46,22 @@ public final class SpiderMovementSmoke {
     private static net.minecraft.world.entity.monster.Zombie ceilingPrey;
     private static Vec3 remembered;
     private static net.minecraft.server.level.ServerPlayer aiPlayer;
-    private static boolean traversalFinished, ceilingCombatFinished, hunterCombatStarted;
+    private static boolean traversalFinished, ceilingCombatFinished, hunterCombatStarted, headingHoldFinished;
     private static boolean modelVerified, strikeScreenshot;
     private static final Set<Integer> wallHeadings=new HashSet<>();
     private static int strikeCameraTicks;
     private static final List<pro.erez.interstice.fauna.VaultHunter> stressHunters=new ArrayList<>();
     private static final List<Double> stressTickMs=new ArrayList<>();
+    private static int motionFrameCount,lastMotionFrameTick=-1;
+    private static final Map<String,List<Double>> serverMotionSteps=new LinkedHashMap<>();
+    private static final Map<String,Vec3> serverMotionPrevious=new HashMap<>();
     private static long tickStarted;
     private static int stressStart;
+    private static CaveRiftSpiderEntity motionSpider;
+    private static pro.erez.interstice.fauna.VaultHunter motionHunter;
+    private static net.minecraft.world.entity.monster.Zombie motionPrey;
+    private static final Map<String,List<Double>> motionSteps=new LinkedHashMap<>();
+    private static final Map<String,Vec3> motionPrevious=new HashMap<>();
     private static volatile int elapsed;
     private static boolean started,closing;
     private static volatile boolean done;
@@ -85,12 +93,26 @@ public final class SpiderMovementSmoke {
                 report.addProperty("hunter_client_id",hunter.getId());
                 report.addProperty("server_traversal_passed",true);
                 traversalFinished=true;
-                for(var s:spiders)s.setNoAi(true);
+                for(int i=0;i<spiders.size();i++){
+                    var s=spiders.get(i);s.setNoAi(true);
+                    s.moveTo(2+s.getBbWidth()/2+.01,72,3.5+i*7);
+                    s.setCrawlOrientation(new Vec3(0,1,0),new Vec3(1,0,0),0);
+                }
+            }
+            // Hold the already-tested wall pose long enough for the observer to
+            // receive it even while DH is initially building client meshes.
+            if(traversalFinished&&elapsed>=300&&!headingHoldFinished){
+                for(int i=0;i<spiders.size();i++){
+                    var s=spiders.get(i);var goal=goals.get(i);
+                    s.moveTo(goal.x,goal.y-s.getBbHeight()/2,goal.z);
+                    s.setCrawlOrientation(new Vec3(1,0,0),new Vec3(0,-1,0),0);
+                }
+                headingHoldFinished=true;
                 ceilingPrey=new net.minecraft.world.entity.monster.Zombie(net.minecraft.world.entity.EntityType.ZOMBIE,level);
                 ceilingPrey.setNoAi(true);ceilingPrey.setNoGravity(true);ceilingPrey.moveTo(5.5,70,17.5);level.addFreshEntity(ceilingPrey);
                 spiders.get(2).setNoAi(false);spiders.get(2).setTarget(ceilingPrey);combatTick=event.getServer().getTickCount();
             }
-            if(traversalFinished&&!ceilingCombatFinished&&event.getServer().getTickCount()-combatTick>=90){
+            if(headingHoldFinished&&!ceilingCombatFinished&&event.getServer().getTickCount()-combatTick>=90){
                 require(ceilingPrey.getHealth()<20&&spiders.get(2).isClimbingCeiling(),"Full-pack ceiling spitter failed to hit actual prey");
                 report.addProperty("full_pack_ceiling_spit_hit",true);ceilingPrey.discard();
                 var s=spiders.get(2);s.setNoAi(true);s.setTarget(null);Vec3 goal=goals.get(2);s.moveTo(goal.x,goal.y-s.getBbHeight()/2,goal.z);s.setDeltaMovement(Vec3.ZERO);
@@ -144,7 +166,26 @@ public final class SpiderMovementSmoke {
                         var timing=new JsonObject();timing.addProperty("active_hunters",8);timing.addProperty("samples",stressTickMs.size());
                         timing.addProperty("p50_ms",stressTickMs.get(stressTickMs.size()/2));timing.addProperty("p95_ms",stressTickMs.get((int)(stressTickMs.size()*.95)));timing.addProperty("max_ms",stressTickMs.getLast());
                         timing.addProperty("scope","Prepared integrated-server scene, not production capacity or Survival acceptance");report.add("eight_hunter_timing",timing);
-                        stressHunters.forEach(net.minecraft.world.entity.Entity::discard);aiPlayer.setGameMode(GameType.CREATIVE);done=true;
+                        stressHunters.forEach(net.minecraft.world.entity.Entity::discard);
+                        for(int x=-2;x<=50;x++)for(int z=18;z<=34;z++){
+                            level.setBlock(new BlockPos(x,69,z),Blocks.STONE.defaultBlockState(),3);
+                            for(int y=70;y<=77;y++)level.setBlock(new BlockPos(x,y,z),Blocks.AIR.defaultBlockState(),3);
+                        }
+                        motionHunter=StrongRealmFauna.VAULT_HUNTER.get().create(level);
+                        motionHunter.moveTo(3.5,70,22.5);motionHunter.setPersistenceRequired();level.addFreshEntity(motionHunter);
+                        motionSpider=Interstice.CAVE_RIFT_SPIDER.get().create(level);
+                        motionSpider.setVariant(CaveRiftSpiderEntity.Variant.SPITTER);motionSpider.moveTo(3.5,70,29.5);motionSpider.setPersistenceRequired();level.addFreshEntity(motionSpider);
+                        motionPrey=new net.minecraft.world.entity.monster.Zombie(net.minecraft.world.entity.EntityType.ZOMBIE,level);
+                        motionPrey.setNoAi(true);motionPrey.setNoGravity(true);motionPrey.moveTo(18.5,70,29.5);level.addFreshEntity(motionPrey);motionSpider.setTarget(motionPrey);
+                    }
+                    if(age>=160&&age<280){
+                        aiPlayer.teleportTo(level,motionHunter.getX()+8,70,22.5,Set.of(),0,0);
+                        motionPrey.moveTo(motionSpider.getX()+15,70,29.5);
+                        if(age>=185&&age<270)for(var actor:List.of(motionHunter,motionSpider)){String key=actor==motionHunter?"hunter":"spitter";Vec3 old=serverMotionPrevious.put(key,actor.position());if(old!=null)serverMotionSteps.computeIfAbsent(key,k->new ArrayList<>()).add(actor.position().subtract(old).horizontalDistance());}
+                    }
+                    if(age==280){
+                        motionSpider.setNoAi(true);motionHunter.setNoAi(true);motionPrey.discard();
+                        aiPlayer.setGameMode(GameType.CREATIVE);done=true;
                     }
                 }
                 require(!hunterCombatStarted||tick<300||stressStart>0||done,"Wendigo did not damage actual full-pack player");
@@ -183,7 +224,19 @@ public final class SpiderMovementSmoke {
             }
             if(mc.screen instanceof BackupConfirmScreen){for(var child:mc.screen.children())if(child instanceof Button b&&b.getMessage().getContents() instanceof TranslatableContents t&&t.getKey().equals("selectWorld.backupJoinSkipButton")){b.onPress();return;}return;}
             if(mc.level==null||mc.player==null||mc.getSingleplayerServer()==null)return;
+            if(motionHunter!=null&&motionSpider!=null&&!done&&stressStart>0){
+                int age=mc.getSingleplayerServer().getTickCount()-stressStart;
+                if(age>=185&&age<225&&motionFrameCount<30&&lastMotionFrameTick!=age){var peer=mc.level.getEntity(motionHunter.getId());if(peer!=null){mc.options.fov().set(45);view(mc,peer.getX()+4,70.9,peer.getZ()+7,150,-2);Screenshot.grab(mc.gameDirectory,String.format(java.util.Locale.ROOT,"hunter-walk-%03d.png",motionFrameCount++),mc.getMainRenderTarget(),m->{});lastMotionFrameTick=age;}}
+                for(var actor:List.of(motionHunter,motionSpider)){
+                    var peer=mc.level.getEntity(actor.getId());if(peer==null)continue;
+                    String kind=actor==motionHunter?"hunter":"spitter";
+                    Vec3 previous=motionPrevious.put(kind,peer.position());
+                    if(age>185&&age<270&&previous!=null)
+                        motionSteps.computeIfAbsent(kind,k->new ArrayList<>()).add(peer.position().subtract(previous).horizontalDistance());
+                }
+            }
             if(stage==0){
+                verifyHunterAudio(mc);
                 var server=mc.getSingleplayerServer();var uuid=mc.getUser().getProfileId();
                 preparation=server.submit(()->{
                     level=server.getLevel(IslandWorld.TENSION_WORLD);
@@ -216,7 +269,7 @@ public final class SpiderMovementSmoke {
             if(mc.level.getEntity(hunter.getId()) instanceof pro.erez.interstice.fauna.VaultHunter peer){
                 if(!modelVerified){ verifyModel(peer);modelVerified=true; }
                 float strike=peer.attackProgress(0);
-                if(hunterCombatStarted&&!done){
+                if(hunterCombatStarted&&!done&&stressStart==0){
                     mc.getEntityRenderDispatcher().setRenderHitBoxes(false);view(mc,8.5,69.6,26.5,153,0);strikeCameraTicks++;
                 }
                 if(strike>.25F&&strikeCameraTicks>=3&&!strikeScreenshot){
@@ -244,7 +297,22 @@ public final class SpiderMovementSmoke {
                 if(shot==5) {mc.getEntityRenderDispatcher().setRenderHitBoxes(false);view(mc,6.5,69.6,27,180,0);}
                 viewWait=12;
             }
-            if(done&&shot>=6){require(wallHeadings.size()==3,"Not all client wall headings were checked");report.addProperty("wall_heading_verified",true);report.addProperty("client_variant_dimensions_verified",true);report.addProperty("client_surface_state_verified",true);closing=true;settler=new NativeChunkSettler.Session("spider-movement-close",2400);write(mc);}
+            if(done&&shot>=6){
+                var motion=new JsonObject();
+                for(var entry:motionSteps.entrySet()){
+                    var row=new JsonObject();var values=entry.getValue();
+                    require(values.size()>=40,"Insufficient network movement samples");
+                    double mean=values.stream().mapToDouble(Double::doubleValue).average().orElseThrow();
+                    row.addProperty("samples",values.size());row.addProperty("mean_blocks_per_tick",mean);
+                    row.addProperty("stationary_ticks",values.stream().filter(v->v<.001).count());
+                    row.addProperty("max_step",values.stream().mapToDouble(Double::doubleValue).max().orElseThrow());
+                    row.addProperty("coefficient_of_variation",Math.sqrt(values.stream().mapToDouble(v->(v-mean)*(v-mean)).average().orElseThrow())/Math.max(.0001,mean));
+                    motion.add(entry.getKey(),row);
+                }
+                require(motion.size()==2,"Missing rendered motion actors");for(var entry:motionSteps.entrySet()){var stats=motionStats(entry.getValue());require(stats.get("travelled").getAsDouble()>8&&stats.get("longest_idle_ticks").getAsInt()<=10,"Client motion stalled "+entry.getKey()+" "+stats);}
+                report.add("client_motion",motion);var serverMotion=new JsonObject();for(var entry:serverMotionSteps.entrySet()){var stats=motionStats(entry.getValue());require(stats.get("samples").getAsInt()>=60&&stats.get("travelled").getAsDouble()>8,"Insufficient real server movement "+entry.getKey()+" "+stats);require(stats.get("longest_idle_ticks").getAsInt()<=3,"Server motion pauses "+entry.getKey()+" "+stats);serverMotion.add(entry.getKey(),stats);}require(serverMotion.size()==2,"Missing server motion actors");require(motionFrameCount>=20,"Missing visible hunter gait frames");report.add("server_continuous_motion",serverMotion);report.addProperty("hunter_gait_frames",motionFrameCount);
+                require(wallHeadings.size()==3,"Not all client wall headings were checked");report.addProperty("wall_heading_verified",true);report.addProperty("client_variant_dimensions_verified",true);report.addProperty("client_surface_state_verified",true);closing=true;settler=new NativeChunkSettler.Session("spider-movement-close",2400);write(mc);
+            }
 
         }catch(Throwable failure){
             report.addProperty("error",failure.toString());report.addProperty("passed",false);write(mc);
@@ -273,6 +341,22 @@ public final class SpiderMovementSmoke {
         }
         var rows=report.has("wall_heading_frames")?report.getAsJsonArray("wall_heading_frames"):new JsonArray();var row=new JsonObject();
         row.addProperty("variant",peer.getVariant().name());row.addProperty("forward",expected.toString());row.addProperty("worst_dot_error",worst);row.addProperty("ground_yaws_tested",4);rows.add(row);report.add("wall_heading_frames",rows);
+    }
+    private static void verifyHunterAudio(Minecraft mc)throws Exception{
+        var rows=new JsonArray();String[] names={"ambient","alert","windup","attack","hurt","death"};double[] expected={.8,.72,.28,.22,.36,1.2};
+        for(int i=0;i<names.length;i++){
+            var path=net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(Interstice.ID,"sounds/vault_hunter/"+names[i]+".ogg");
+            try(var input=mc.getResourceManager().open(path);var sound=new net.minecraft.client.sounds.JOrbisAudioStream(input)){
+                var format=sound.getFormat();var pcm=sound.readAll().order(java.nio.ByteOrder.LITTLE_ENDIAN);int bytes=pcm.remaining(),peak=0;double squares=0;int count=0;
+                while(pcm.remaining()>=2){int value=pcm.getShort();peak=Math.max(peak,Math.abs(value));squares+=(double)value*value;count++;}
+                double duration=bytes/(format.getFrameRate()*format.getFrameSize());require(format.getChannels()==1&&format.getSampleRate()==44100&&Math.abs(duration-expected[i])<.05,"Invalid native hunter audio "+names[i]);require(peak>128&&peak<32750,"Silent/clipped hunter sound "+names[i]);
+                require(mc.getSoundManager().getSoundEvent(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(Interstice.ID,"vault_hunter."+names[i]))!=null,"Unregistered hunter sound");
+                var row=new JsonObject();row.addProperty("sound",names[i]);row.addProperty("seconds",duration);row.addProperty("peak_pcm16",peak);row.addProperty("rms_pcm16",Math.sqrt(squares/count));rows.add(row);
+            }
+        }report.add("hunter_audio_native_decode",rows);
+    }
+    private static JsonObject motionStats(List<Double> values){
+        var row=new JsonObject();double sum=values.stream().mapToDouble(Double::doubleValue).sum(),mean=sum/values.size();int streak=0,longest=0;for(double step:values){streak=step<.005?streak+1:0;longest=Math.max(longest,streak);}row.addProperty("samples",values.size());row.addProperty("travelled",sum);row.addProperty("mean",mean);row.addProperty("max_step",values.stream().mapToDouble(Double::doubleValue).max().orElse(0));row.addProperty("longest_idle_ticks",longest);return row;
     }
     private static void verifyModel(pro.erez.interstice.fauna.VaultHunter peer){
         require(peer.getBrain() instanceof net.tslat.smartbrainlib.api.core.SmartBrain,"Hunter is not using a real SmartBrain");

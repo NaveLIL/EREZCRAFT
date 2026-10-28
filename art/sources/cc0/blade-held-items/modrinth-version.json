@@ -1,0 +1,46 @@
+{
+  "game_versions": [
+    "1.20.1",
+    "1.21",
+    "1.21.1"
+  ],
+  "loaders": [
+    "minecraft"
+  ],
+  "environment": "unknown",
+  "id": "LLyZvI13",
+  "project_id": "QtFiEb3u",
+  "author_id": "tswEm1ra",
+  "featured": true,
+  "name": "blade-held-items-resourcepack_1.0.1",
+  "version_number": "Default_1.0.1",
+  "changelog": "Slight tweak to the pack description.\nDoesn't actually add any new features.\n\nDespite the warning in-game, it will still work on 1.20.1.",
+  "changelog_url": null,
+  "date_published": "2024-08-31T02:37:13.852209Z",
+  "downloads": 180,
+  "version_type": "release",
+  "status": "listed",
+  "requested_status": null,
+  "files": [
+    {
+      "id": "OqKdab3b",
+      "hashes": {
+        "sha1": "e888c24a6d7fd4ba0fe9e4b0bbf972aa114d8721",
+        "sha512": "e5a1d4e5d2433e3d4f61fce5494dd205b54e7710943feeab07073376bfb37b80d039f6dbec7309379cf8a5d4b31ffab8b10b2a2dd55819f393553d1b3c59008f"
+      },
+      "url": "https://cdn.modrinth.com/data/QtFiEb3u/versions/LLyZvI13/blade-held-items-resourcepack_1.0.1.zip",
+      "filename": "blade-held-items-resourcepack_1.0.1.zip",
+      "primary": true,
+      "size": 92084,
+      "file_type": null
+    }
+  ],
+  "dependencies": [
+    {
+      "version_id": null,
+      "project_id": "fsc3VDsD",
+      "file_name": null,
+      "dependency_type": "required"
+    }
+  ]
+}

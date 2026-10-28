@@ -52,7 +52,7 @@ public final class StrongRealmFauna {
                     .build("interstice:upper_sea_charge"));
     public static final DeferredHolder<EntityType<?>, EntityType<VaultHunter>> VAULT_HUNTER =
             ENTITIES.register("vault_hunter", () -> EntityType.Builder.<VaultHunter>of(VaultHunter::new, MobCategory.MONSTER)
-                    .sized(.95F, 2.7F).eyeHeight(1.9F).clientTrackingRange(8).updateInterval(2).build("interstice:vault_hunter"));
+                    .sized(.95F, 2.7F).eyeHeight(1.9F).clientTrackingRange(8).updateInterval(1).build("interstice:vault_hunter"));
     public static final int HUNTER_LOCAL_CAP = 2, HUNTER_WORLD_CAP = 8;
     public static final int SKELETON_LOCAL_CAP = 2, GHAST_LOCAL_CAP = 1;
     public static final int SKELETON_WORLD_CAP = 16, GHAST_WORLD_CAP = 6;

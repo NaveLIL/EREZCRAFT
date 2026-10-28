@@ -1,0 +1,54 @@
+    private static byte[] avatarData;
+    private static final java.nio.file.Path ART=java.nio.file.Path.of("D:/repos/Blender/creations/17_rift_engineer_skin");
+    private static final Map<String,Integer> ELEMENTS=new HashMap<>();
+    private static void compileAvatar()throws Exception{
+        var testConfig=new com.tom.cpl.config.ConfigEntry(new java.util.TreeMap<>(),()->{});
+        var mapField=com.tom.cpl.config.ConfigEntry.class.getDeclaredField("data");mapField.setAccessible(true);
+        require(mapField.get(testConfig).getClass().getName().contains("SynchronizedMap"),"CPM config concurrency guard must be active");
+        var pool=java.util.concurrent.Executors.newFixedThreadPool(8);var checks=new ArrayList<java.util.concurrent.Future<?>>();
+        for(int thread=0;thread<8;thread++){final int worker=thread;checks.add(pool.submit(()->{for(int n=0;n<1000;n++)testConfig.getEntry("servers").getEntry("shared").getEntry("player"+((n+worker)%64)).getEntry("safety").getBoolean("enabled",true);}));}
+        try{for(var task:checks)task.get();}finally{pool.shutdown();}
+        require(testConfig.getEntry("servers").getEntry("shared").keySet().size()==64,"Concurrent configuration entries preserved");REPORT.addProperty("cpm_config_parallel_probe_calls",8000);
+        var e=new com.tom.cpm.shared.editor.Editor();
+        e.ui=(com.tom.cpl.gui.UI)java.lang.reflect.Proxy.newProxyInstance(com.tom.cpl.gui.UI.class.getClassLoader(),new Class[]{com.tom.cpl.gui.UI.class},(p,m,a)->{
+            if(m.getName().equals("i18nFormat"))return a[0].toString();
+            if(m.getName().equals("executeLater")){((Runnable)a[0]).run();return null;}
+            if(m.getReturnType()==boolean.class)return false;if(m.getReturnType()==int.class)return 0;return null;
+        });
+        e.skinType=com.tom.cpm.shared.model.SkinType.DEFAULT;
+        for(var part:com.tom.cpm.shared.model.PlayerModelParts.VALUES)if(part!=com.tom.cpm.shared.model.PlayerModelParts.CUSTOM_PART)
+            e.elements.add(new com.tom.cpm.shared.editor.elements.ModelElement(e,com.tom.cpm.shared.editor.elements.ElementType.ROOT_PART,part));
+        var project=new com.tom.cpm.shared.editor.project.ProjectFile();project.load(ART.resolve("exports/EREZ_Rift_Engineer_S03.cpmproject").toFile()).join();
+        com.tom.cpm.shared.editor.project.ProjectIO.loadProject(e,project);e.restitchTextures();
+        var method=com.tom.cpm.shared.editor.Exporter.class.getDeclaredMethod("prepareDefinition",com.tom.cpm.shared.editor.Editor.class);method.setAccessible(true);
+        var def=(com.tom.cpm.shared.parts.ModelPartDefinition)method.invoke(null,e);
+        com.tom.cpm.shared.editor.Editor.walkElements(e.elements,p->{if(p.type==com.tom.cpm.shared.editor.elements.ElementType.NORMAL)ELEMENTS.put(p.name,p.id);});
+        var bytes=new java.io.ByteArrayOutputStream();bytes.write(com.tom.cpm.shared.definition.ModelDefinitionLoader.HEADER);
+        try(var io=new com.tom.cpm.shared.io.IOHelper(new com.tom.cpm.shared.io.ChecksumOutputStream(bytes))){
+            io.writeObjectBlock(new com.tom.cpm.shared.parts.ModelPartSkinType(e.skinType));def.writeBlocks(io);io.writeObjectBlock(com.tom.cpm.shared.parts.ModelPartEnd.END);
+        }avatarData=bytes.toByteArray();require(avatarData.length<30*1024,"Model must fit self-contained local CPM file");
+        var out=ART.resolve("exports/EREZ_Rift_Engineer_S03.cpmmodel");
+        try(var stream=Files.newOutputStream(out)){
+            stream.write(com.tom.cpm.shared.definition.ModelDefinitionLoader.HEADER);
+            try(var io=new com.tom.cpm.shared.io.IOHelper(new com.tom.cpm.shared.io.ChecksumOutputStream(stream))){io.writeUTF("EREZ — Rift Engineer");io.writeUTF("Original EREZ avatar; equipment-aware volume");io.writeByteArray(avatarData);io.writeVarInt(0);io.writeVarInt(0);}
+        }
+        var file=com.tom.cpm.shared.io.ModelFile.load(out.toFile());require(Arrays.equals(file.getDataBlock(),avatarData),"Official CPM file reader round trip");
+        REPORT.addProperty("cpm_packet_bytes",avatarData.length);REPORT.addProperty("self_contained_model",true);REPORT.addProperty("model_elements",ELEMENTS.size());
+    }
+    @SuppressWarnings("unchecked") private static com.tom.cpm.shared.definition.ModelDefinition definition(Minecraft mc,int i){
+        var loader=com.tom.cpm.shared.MinecraftClientAccess.get().getDefinitionLoader();var p=loader.getLoadedPlayer(actor(mc,i).getGameProfile());
+        require(p!=null,"CPM tracked player absent");var d=p.getModelDefinition();require(d!=null&&d.doRender(),"CPM model not rendered: "+(d==null?"null":d.getResolveState()+" "+d.getError()));return d;
+    }
+    @SuppressWarnings("unchecked") private static void skinFixtures(Minecraft mc)throws Exception{
+        compileAvatar();
+        job=mc.getSingleplayerServer().submit(()->{
+            var network=(com.tom.cpm.shared.network.NetHandler)com.tom.cpm.shared.MinecraftServerAccess.get().getNetHandler();
+            for(var p:ACTORS)network.setSkin(p,avatarData,false);return true;
+        });
+        REPORT.addProperty("skin_fixture","Server assigns self-contained CPM packet to three owned players; unmodified client receives through CPM tracking protocol");
+    }
+    private static void visibility(Minecraft mc,int index,String name,boolean expected){
+        var d=definition(mc,index);var c=d.getElementById(ELEMENTS.get(name));require(c!=null,"Missing cube "+name);
+        require(c.display==expected,"Equipment clearance "+name+" expected="+expected+" actual="+c.display);
+    }
+

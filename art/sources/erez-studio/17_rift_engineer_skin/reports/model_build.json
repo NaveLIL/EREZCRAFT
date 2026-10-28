@@ -1,0 +1,18 @@
+{
+  "parts": 80,
+  "quads_upper_bound": 480,
+  "atlas_size": [
+    256,
+    256
+  ],
+  "atlas_used_height": 97,
+  "equipment_pose_rules": [
+    "v_armor_body_clearance.json",
+    "v_armor_boots_clearance.json",
+    "v_armor_head_clearance.json",
+    "v_armor_legs_clearance.json",
+    "v_wearing_elytra_clearance.json"
+  ],
+  "geometry_sha256": "b046fd06983644194c9e4f3e8ca97638e5724c16cfd59375e6d413e2fd1fa7a9",
+  "native_verified": false
+}

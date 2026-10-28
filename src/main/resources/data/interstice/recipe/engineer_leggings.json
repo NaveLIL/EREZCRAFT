@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "interstice:engineer_assembly_pack"
+  },
+  "base": {
+    "item": "interstice:riftsilver_leggings"
+  },
+  "addition": {
+    "item": "interstice:riftsteel_ingot"
+  },
+  "result": {
+    "id": "interstice:engineer_leggings",
+    "count": 1
+  }
+}

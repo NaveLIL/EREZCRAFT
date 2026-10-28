@@ -1,0 +1,74 @@
+{
+  "revision": "WT07",
+  "source_sha256": "9d21ab43502a87f7f1d62155cbc910891919bb32e0d10813b4b2b19741e271a3",
+  "passed": true,
+  "geometry": [
+    {
+      "item": "riftsilver_pickaxe",
+      "elements": 33,
+      "quads": 198,
+      "one_connected_assembly": true,
+      "no_rotated_segments": true,
+      "model_sha256": "7ac187bf97a720d9c604acb20e4af59d470df22342315b50a075fb3c1b63d208"
+    },
+    {
+      "item": "riftsilver_axe",
+      "elements": 23,
+      "quads": 138,
+      "one_connected_assembly": true,
+      "no_rotated_segments": true,
+      "model_sha256": "f9f823725769093abbc4f72f45835ba44e65c389e07de054277b5c99c57f7cc0"
+    },
+    {
+      "item": "riftsilver_shovel",
+      "elements": 20,
+      "quads": 120,
+      "one_connected_assembly": true,
+      "no_rotated_segments": true,
+      "model_sha256": "b4a3adf279b2a3a1b73ee7bbd8ff1c8b9904c1306d803d1bd56091b16cc05710"
+    },
+    {
+      "item": "riftsilver_hoe",
+      "elements": 19,
+      "quads": 114,
+      "one_connected_assembly": true,
+      "no_rotated_segments": true,
+      "model_sha256": "ca430ecbadeb2f1a1b5c5e6005d7c31bd06e2b929927d2becd5ca231cba50fc2"
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "elements": 35,
+      "quads": 210,
+      "one_connected_assembly": true,
+      "no_rotated_segments": true,
+      "model_sha256": "e9f7c8b8d87c1cb6b3208c2d786cb9c4a5017d8ad5ceb814baaad66d02830530"
+    },
+    {
+      "item": "riftsteel_axe",
+      "elements": 25,
+      "quads": 150,
+      "one_connected_assembly": true,
+      "no_rotated_segments": true,
+      "model_sha256": "02ed116e084c0686529aa85868cd857f013e7f7a9e139cca56ddd9060db16eba"
+    },
+    {
+      "item": "riftsteel_shovel",
+      "elements": 22,
+      "quads": 132,
+      "one_connected_assembly": true,
+      "no_rotated_segments": true,
+      "model_sha256": "7dbfd7797bff34f2b471aa13b833bd096f798085d316b40a9022dd639df9a23b"
+    },
+    {
+      "item": "riftsteel_hoe",
+      "elements": 21,
+      "quads": 126,
+      "one_connected_assembly": true,
+      "no_rotated_segments": true,
+      "model_sha256": "326b5276b6205dc93669f86487f5c8120eb2194c8598e8f6e0466e2c4f198bbc"
+    }
+  ],
+  "palette_only_verified": true,
+  "blender_geometry_matches": true,
+  "gameplay_validation": "See GameTests and native reports separately"
+}

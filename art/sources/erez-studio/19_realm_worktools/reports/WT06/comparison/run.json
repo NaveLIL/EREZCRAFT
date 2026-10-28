@@ -1,0 +1,783 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\si02\\candidate\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\s29c",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "-PstudioMode=comparison",
+    "assemble",
+    "runStudioWorktools"
+  ],
+  "passed": true,
+  "started_utc": "2026-10-27T15:48:38.454826+00:00",
+  "pid": 30712,
+  "exit_code": 0,
+  "duration_seconds": 283.969,
+  "proof": {
+    "skin_fixture": "All three reference players use the same Steve/WIDE body",
+    "native_metrics": [
+      {
+        "item": "iron_pickaxe",
+        "baked_quads": 44,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ],
+          "rotation": [
+            0.0,
+            -90.0,
+            55.0
+          ],
+          "translation": [
+            0.0,
+            0.25,
+            0.03125
+          ],
+          "extent_model_units": [
+            0.8500004,
+            14.20583,
+            10.863112
+          ],
+          "opaque_geometry_diameter_model_units": 14.449999,
+          "max_distance_from_hand_origin_model_units": 10.624028
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ],
+          "rotation": [
+            0.0,
+            -90.0,
+            25.0
+          ],
+          "translation": [
+            0.070625,
+            0.2,
+            0.070625
+          ],
+          "extent_model_units": [
+            0.6800003,
+            10.844036,
+            8.461937
+          ],
+          "opaque_geometry_diameter_model_units": 11.559999,
+          "max_distance_from_hand_origin_model_units": 8.8176155
+        }
+      },
+      {
+        "item": "riftsilver_pickaxe",
+        "baked_quads": 198,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ],
+          "rotation": [
+            75.0,
+            0.0,
+            10.0
+          ],
+          "translation": [
+            -0.027925,
+            0.07011937,
+            0.19339812
+          ],
+          "extent_model_units": [
+            7.542294,
+            4.772474,
+            14.099403
+          ],
+          "opaque_geometry_diameter_model_units": 14.411534,
+          "max_distance_from_hand_origin_model_units": 12.99128
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.496,
+            0.496,
+            0.496
+          ],
+          "rotation": [
+            0.0,
+            -45.0,
+            -20.0
+          ],
+          "translation": [
+            -0.04,
+            0.17952625,
+            -0.15
+          ],
+          "extent_model_units": [
+            4.937999,
+            11.097423,
+            4.937999
+          ],
+          "opaque_geometry_diameter_model_units": 11.529226,
+          "max_distance_from_hand_origin_model_units": 10.415949
+        }
+      },
+      {
+        "item": "riftsteel_pickaxe",
+        "baked_quads": 210,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ],
+          "rotation": [
+            75.0,
+            0.0,
+            10.0
+          ],
+          "translation": [
+            -0.027925,
+            0.07011937,
+            0.19339812
+          ],
+          "extent_model_units": [
+            7.542294,
+            4.8623047,
+            14.123473
+          ],
+          "opaque_geometry_diameter_model_units": 14.418633,
+          "max_distance_from_hand_origin_model_units": 12.996965
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.496,
+            0.496,
+            0.496
+          ],
+          "rotation": [
+            0.0,
+            -45.0,
+            -20.0
+          ],
+          "translation": [
+            -0.04,
+            0.17952625,
+            -0.15
+          ],
+          "extent_model_units": [
+            4.9906077,
+            11.097423,
+            4.990608
+          ],
+          "opaque_geometry_diameter_model_units": 11.534906,
+          "max_distance_from_hand_origin_model_units": 10.427754
+        }
+      },
+      {
+        "item": "iron_axe",
+        "baked_quads": 43,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ],
+          "rotation": [
+            0.0,
+            -90.0,
+            55.0
+          ],
+          "translation": [
+            0.0,
+            0.25,
+            0.03125
+          ],
+          "extent_model_units": [
+            0.8500004,
+            13.30081,
+            7.5203924
+          ],
+          "opaque_geometry_diameter_model_units": 14.172332,
+          "max_distance_from_hand_origin_model_units": 9.946719
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ],
+          "rotation": [
+            0.0,
+            -90.0,
+            25.0
+          ],
+          "translation": [
+            0.070625,
+            0.2,
+            0.070625
+          ],
+          "extent_model_units": [
+            0.6800003,
+            11.214475,
+            6.0798364
+          ],
+          "opaque_geometry_diameter_model_units": 11.337867,
+          "max_distance_from_hand_origin_model_units": 8.559005
+        }
+      },
+      {
+        "item": "riftsilver_axe",
+        "baked_quads": 138,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ],
+          "rotation": [
+            75.0,
+            0.0,
+            10.0
+          ],
+          "translation": [
+            -0.027925,
+            0.07011937,
+            0.19339812
+          ],
+          "extent_model_units": [
+            5.608552,
+            4.5347304,
+            13.397088
+          ],
+          "opaque_geometry_diameter_model_units": 14.111167,
+          "max_distance_from_hand_origin_model_units": 12.624623
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.496,
+            0.496,
+            0.496
+          ],
+          "rotation": [
+            0.0,
+            -45.0,
+            -20.0
+          ],
+          "translation": [
+            -0.04,
+            0.17952625,
+            -0.15
+          ],
+          "extent_model_units": [
+            4.099221,
+            11.087142,
+            4.0992217
+          ],
+          "opaque_geometry_diameter_model_units": 11.288932,
+          "max_distance_from_hand_origin_model_units": 10.457329
+        }
+      },
+      {
+        "item": "riftsteel_axe",
+        "baked_quads": 150,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ],
+          "rotation": [
+            75.0,
+            0.0,
+            10.0
+          ],
+          "translation": [
+            -0.027925,
+            0.07011937,
+            0.19339812
+          ],
+          "extent_model_units": [
+            5.608552,
+            4.624562,
+            13.421158
+          ],
+          "opaque_geometry_diameter_model_units": 14.118417,
+          "max_distance_from_hand_origin_model_units": 12.630473
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.496,
+            0.496,
+            0.496
+          ],
+          "rotation": [
+            0.0,
+            -45.0,
+            -20.0
+          ],
+          "translation": [
+            -0.04,
+            0.17952625,
+            -0.15
+          ],
+          "extent_model_units": [
+            4.1518307,
+            11.087142,
+            4.1518307
+          ],
+          "opaque_geometry_diameter_model_units": 11.294732,
+          "max_distance_from_hand_origin_model_units": 10.469089
+        }
+      },
+      {
+        "item": "iron_shovel",
+        "baked_quads": 42,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ],
+          "rotation": [
+            0.0,
+            -90.0,
+            55.0
+          ],
+          "translation": [
+            0.0,
+            0.25,
+            0.03125
+          ],
+          "extent_model_units": [
+            0.8500004,
+            14.414568,
+            6.1263905
+          ],
+          "opaque_geometry_diameter_model_units": 14.499913,
+          "max_distance_from_hand_origin_model_units": 11.327851
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ],
+          "rotation": [
+            0.0,
+            -90.0,
+            25.0
+          ],
+          "translation": [
+            0.070625,
+            0.2,
+            0.070625
+          ],
+          "extent_model_units": [
+            0.6800003,
+            11.172946,
+            6.287479
+          ],
+          "opaque_geometry_diameter_model_units": 11.599932,
+          "max_distance_from_hand_origin_model_units": 9.327037
+        }
+      },
+      {
+        "item": "riftsilver_shovel",
+        "baked_quads": 120,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ],
+          "rotation": [
+            75.0,
+            0.0,
+            10.0
+          ],
+          "translation": [
+            -0.027925,
+            0.07011937,
+            0.19339812
+          ],
+          "extent_model_units": [
+            4.132094,
+            4.778226,
+            14.305824
+          ],
+          "opaque_geometry_diameter_model_units": 14.627206,
+          "max_distance_from_hand_origin_model_units": 13.207571
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.496,
+            0.496,
+            0.496
+          ],
+          "rotation": [
+            0.0,
+            -45.0,
+            -20.0
+          ],
+          "translation": [
+            -0.04,
+            0.17952625,
+            -0.15
+          ],
+          "extent_model_units": [
+            4.1654997,
+            11.260552,
+            4.1654997
+          ],
+          "opaque_geometry_diameter_model_units": 11.701763,
+          "max_distance_from_hand_origin_model_units": 10.577423
+        }
+      },
+      {
+        "item": "riftsteel_shovel",
+        "baked_quads": 132,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ],
+          "rotation": [
+            75.0,
+            0.0,
+            10.0
+          ],
+          "translation": [
+            -0.027925,
+            0.07011937,
+            0.19339812
+          ],
+          "extent_model_units": [
+            4.132094,
+            4.8680573,
+            14.329895
+          ],
+          "opaque_geometry_diameter_model_units": 14.634201,
+          "max_distance_from_hand_origin_model_units": 13.213162
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.496,
+            0.496,
+            0.496
+          ],
+          "rotation": [
+            0.0,
+            -45.0,
+            -20.0
+          ],
+          "translation": [
+            -0.04,
+            0.17952625,
+            -0.15
+          ],
+          "extent_model_units": [
+            4.218108,
+            11.260552,
+            4.2181087
+          ],
+          "opaque_geometry_diameter_model_units": 11.707359,
+          "max_distance_from_hand_origin_model_units": 10.589049
+        }
+      },
+      {
+        "item": "iron_hoe",
+        "baked_quads": 45,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ],
+          "rotation": [
+            0.0,
+            -90.0,
+            55.0
+          ],
+          "translation": [
+            0.0,
+            0.25,
+            0.03125
+          ],
+          "extent_model_units": [
+            0.8500004,
+            14.20583,
+            8.285289
+          ],
+          "opaque_geometry_diameter_model_units": 14.449999,
+          "max_distance_from_hand_origin_model_units": 10.624028
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ],
+          "rotation": [
+            0.0,
+            -90.0,
+            25.0
+          ],
+          "translation": [
+            0.070625,
+            0.2,
+            0.070625
+          ],
+          "extent_model_units": [
+            0.6800003,
+            10.9270935,
+            6.079837
+          ],
+          "opaque_geometry_diameter_model_units": 11.559999,
+          "max_distance_from_hand_origin_model_units": 8.8176155
+        }
+      },
+      {
+        "item": "riftsilver_hoe",
+        "baked_quads": 114,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ],
+          "rotation": [
+            75.0,
+            0.0,
+            10.0
+          ],
+          "translation": [
+            -0.027925,
+            0.07011937,
+            0.19339812
+          ],
+          "extent_model_units": [
+            6.236828,
+            4.6539516,
+            13.397088
+          ],
+          "opaque_geometry_diameter_model_units": 14.378322,
+          "max_distance_from_hand_origin_model_units": 12.853424
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.496,
+            0.496,
+            0.496
+          ],
+          "rotation": [
+            0.0,
+            -45.0,
+            -20.0
+          ],
+          "translation": [
+            -0.04,
+            0.17952625,
+            -0.15
+          ],
+          "extent_model_units": [
+            3.7893457,
+            11.426425,
+            3.789346
+          ],
+          "opaque_geometry_diameter_model_units": 11.502654,
+          "max_distance_from_hand_origin_model_units": 10.920106
+        }
+      },
+      {
+        "item": "riftsteel_hoe",
+        "baked_quads": 126,
+        "THIRD_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ],
+          "rotation": [
+            75.0,
+            0.0,
+            10.0
+          ],
+          "translation": [
+            -0.027925,
+            0.07011937,
+            0.19339812
+          ],
+          "extent_model_units": [
+            6.236828,
+            4.7437825,
+            13.421158
+          ],
+          "opaque_geometry_diameter_model_units": 14.385439,
+          "max_distance_from_hand_origin_model_units": 12.85917
+        },
+        "FIRST_PERSON_RIGHT_HAND": {
+          "scale": [
+            0.496,
+            0.496,
+            0.496
+          ],
+          "rotation": [
+            0.0,
+            -45.0,
+            -20.0
+          ],
+          "translation": [
+            -0.04,
+            0.17952625,
+            -0.15
+          ],
+          "extent_model_units": [
+            3.8419547,
+            11.426425,
+            3.8419545
+          ],
+          "opaque_geometry_diameter_model_units": 11.5083475,
+          "max_distance_from_hand_origin_model_units": 10.931367
+        }
+      }
+    ],
+    "vanilla_calibration_ratios": [
+      {
+        "item": "riftsilver_pickaxe",
+        "THIRD_PERSON_RIGHT_HAND": 0.9973380934775139,
+        "FIRST_PERSON_RIGHT_HAND": 0.9973379615689032
+      },
+      {
+        "item": "riftsteel_pickaxe",
+        "THIRD_PERSON_RIGHT_HAND": 0.9978293842853732,
+        "FIRST_PERSON_RIGHT_HAND": 0.997829318358776
+      },
+      {
+        "item": "riftsilver_axe",
+        "THIRD_PERSON_RIGHT_HAND": 0.995684206609255,
+        "FIRST_PERSON_RIGHT_HAND": 0.9956839379524024
+      },
+      {
+        "item": "riftsteel_axe",
+        "THIRD_PERSON_RIGHT_HAND": 0.9961957549028256,
+        "FIRST_PERSON_RIGHT_HAND": 0.9961955198313681
+      },
+      {
+        "item": "riftsilver_shovel",
+        "THIRD_PERSON_RIGHT_HAND": 1.0087788548223422,
+        "FIRST_PERSON_RIGHT_HAND": 1.0087786237576468
+      },
+      {
+        "item": "riftsteel_shovel",
+        "THIRD_PERSON_RIGHT_HAND": 1.0092612853725675,
+        "FIRST_PERSON_RIGHT_HAND": 1.0092610542602773
+      },
+      {
+        "item": "riftsilver_hoe",
+        "THIRD_PERSON_RIGHT_HAND": 0.9950396391956083,
+        "FIRST_PERSON_RIGHT_HAND": 0.995039325867724
+      },
+      {
+        "item": "riftsteel_hoe",
+        "THIRD_PERSON_RIGHT_HAND": 0.995532183969796,
+        "FIRST_PERSON_RIGHT_HAND": 0.9955318376265454
+      }
+    ],
+    "calibrated_to_vanilla": true,
+    "measurement_note": "Vanilla opaque boundary excludes transparent sprite canvases; metrics include each item's actual baked display transform. Different silhouette shapes and grips mean diameter is not shaft length.",
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.29-tool-proportions",
+    "same_player_held_views": 12,
+    "same_first_person_camera_views": 12,
+    "first_person_hands_visible": true,
+    "first_person_fov": 70,
+    "minecraft_version": "1.21.1",
+    "passed": true,
+    "reason": "",
+    "phase": 4,
+    "pid": 32524,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "reference-group-0.png",
+      "reference-group-1.png",
+      "reference-group-2.png",
+      "reference-group-3.png",
+      "reference-held-iron_pickaxe.png",
+      "reference-held-riftsilver_pickaxe.png",
+      "reference-held-riftsteel_pickaxe.png",
+      "reference-held-iron_axe.png",
+      "reference-held-riftsilver_axe.png",
+      "reference-held-riftsteel_axe.png",
+      "reference-held-iron_shovel.png",
+      "reference-held-riftsilver_shovel.png",
+      "reference-held-riftsteel_shovel.png",
+      "reference-held-iron_hoe.png",
+      "reference-held-riftsilver_hoe.png",
+      "reference-held-riftsteel_hoe.png",
+      "reference-first-iron_pickaxe.png",
+      "reference-first-riftsilver_pickaxe.png",
+      "reference-first-riftsteel_pickaxe.png",
+      "reference-first-iron_axe.png",
+      "reference-first-riftsilver_axe.png",
+      "reference-first-riftsteel_axe.png",
+      "reference-first-iron_shovel.png",
+      "reference-first-riftsilver_shovel.png",
+      "reference-first-riftsteel_shovel.png",
+      "reference-first-iron_hoe.png",
+      "reference-first-riftsilver_hoe.png",
+      "reference-first-riftsteel_hoe.png",
+      "reference-catalog.png"
+    ],
+    "settled": {
+      "purpose": "armor_player_gallery_shutdown",
+      "server_tick": 1013,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1282,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "screenshots": {
+    "reference-group-0.png": "5fe9f48d1b0322d2b2b480c697048390f4245b85b35bcaf87a597350e67101ab",
+    "reference-group-1.png": "b94bfd4880ddf3194b256a2708bfefb9effe4d21b109bd94bc53332573bcd33e",
+    "reference-group-2.png": "2035bde98d925c69fa2f5f58e4934f84ad6399db06743082955691f5cce0918f",
+    "reference-group-3.png": "04f229645bbb4a185c2e338cf457d8c86272104e9cba844d0ef1550dc9bb9967",
+    "reference-held-iron_pickaxe.png": "063ac98b9bb9c855a1ec799a8da27a09ed617f82e039e66b6e20f25816410a6d",
+    "reference-held-riftsilver_pickaxe.png": "e9b664f5e9d0e474c6aaf52a7c57cd3ae97f463ea1e47716bbd8f09651aa27ec",
+    "reference-held-riftsteel_pickaxe.png": "f2538340dcdcd662638d8ddbbe97bc1309d6d2b2b018742c3cb603bfc50f7eb1",
+    "reference-held-iron_axe.png": "d52438d963e3da4ccc764540c6969686d77d47e870f8cd37a4b367483a750d84",
+    "reference-held-riftsilver_axe.png": "a946fb851ba5cfd10e9d99b6dade42d2504aad9ccfce32368ff1d3dc79e3e01c",
+    "reference-held-riftsteel_axe.png": "2eb608158ccda6041de0244108c57fa947aa769f1eadc7af91abc4e127332737",
+    "reference-held-iron_shovel.png": "fe5e81301c25e42bf928b09edd25c22d97bb8620a43e2c17b2c673fbc9a1f9d7",
+    "reference-held-riftsilver_shovel.png": "7a029cc0d2f1cc563b571055e88d9fcb612a41eb51ef4b36ad703687a827c272",
+    "reference-held-riftsteel_shovel.png": "c868aa3e69aa1479faa30d8d430ac2323c6b3e11af788af13dcbaf84dfe1c678",
+    "reference-held-iron_hoe.png": "e0ae52834c4f03510065962dc8abf62ce414cafb365836297f3858f4c8c4f354",
+    "reference-held-riftsilver_hoe.png": "c978af1a72f8e1ee985021068b0f822dd9a82cf784fa6f760c057e002ff325a8",
+    "reference-held-riftsteel_hoe.png": "12eaaca41f2f8162ed9ca7076be684477d492762803c48e283d3aab54de78dcf",
+    "reference-first-iron_pickaxe.png": "a123758edd6b0e712ae3d01fe5bd791a3a3c54934b669f13697b08e10d7791c0",
+    "reference-first-riftsilver_pickaxe.png": "f32096201a92275295219a343cc85c8ab941e983c3951277058e8177fc639f6d",
+    "reference-first-riftsteel_pickaxe.png": "f1edef9339d3088b7a8c7b03b00b895dc46aa30de07a24d4c10b29f1e3586892",
+    "reference-first-iron_axe.png": "bec7f76941623b565760115b7483095c8767835dd41b64d42f1b6a83841c5f1e",
+    "reference-first-riftsilver_axe.png": "81907648db7354af5f425d923bd78809f79672fa5f6f4b625460abc2305eacda",
+    "reference-first-riftsteel_axe.png": "e677db2912f92123446e088d87810a03f30e440cf649c12bbec511b799d39c60",
+    "reference-first-iron_shovel.png": "ed78e209b4724f02cf81e9a0e7c4f693146fcb63507b649b081e5ff701bea315",
+    "reference-first-riftsilver_shovel.png": "c792039c972cfa46aad983bc415abc2177666c312837f97ccdb06e776fce82ce",
+    "reference-first-riftsteel_shovel.png": "852b3a3c0396272457b8d8fca006f8123119620835d2ff4352f5d2cdd3615ebe",
+    "reference-first-iron_hoe.png": "10872a3d6fef827cfd0aecb57fb09e7a2fc75ffb38585f4bd650d455747e54c3",
+    "reference-first-riftsilver_hoe.png": "ee345a5d641d6d0bcd9794ef821a41434af4f8b7ccfbe8483efb47d65cac9951",
+    "reference-first-riftsteel_hoe.png": "f5f5de2dbb21a78124f55b8a6b8d0b0eb81ec7a71792dd7ae534b22cde4162d5",
+    "reference-catalog.png": "37231fe23157d6a387177986bd096888a0827808167d630328ea51139d11085a"
+  }
+}

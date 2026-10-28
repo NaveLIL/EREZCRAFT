@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsteel_ingot"
+          }
+        ]
+      }
+    },
+    "craft": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "interstice:riftsteel_longsword"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "material",
+      "craft"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "interstice:riftsteel_longsword"
+    ]
+  }
+}

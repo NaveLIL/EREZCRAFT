@@ -10,7 +10,21 @@ DATA = RES / "data/interstice"
 ASSETS = RES / "assets/interstice"
 
 def write(path, value):
+    # Studio-authored tools and instruments keep their reviewed geometry on regeneration.
+    if path.parent == ASSETS / "models/item" and path.exists():
+        current = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(current, dict) and any(
+                isinstance(ref, str) and ref.startswith(("interstice:item/worktools/", "interstice:item/expedition_tools/", "interstice:item/blade/"))
+                for ref in current.get("textures", {}).values()):
+            return
+    # Derived armor miniatures are authored by creations/15_armor_inventory_icons.
+    if path.exists() and value.get("loader") != "interstice:armor_icon":
+        previous = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(previous, dict) and previous.get("loader") == "interstice:armor_icon":
+            return
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists() and json.loads(path.read_text(encoding="utf-8")) == value:
+        return  # Preserve the existing asset bytes when its content did not change.
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 source_root = ROOT / "art/sources/cc-by/armaments"
@@ -58,12 +72,12 @@ def kill(kind, nbt=None):
     if nbt: entity["nbt"] = nbt
     return {"trigger": "minecraft:player_killed_entity", "conditions": {"entity": entity}}
 
-def recipe(id, pattern, key, result=None, count=1):
+def recipe(id, pattern, key, result=None, count=1, unlock_material="riftsilver_ingot"):
     write(DATA / f"recipe/{id}.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": pattern,
           "key": {k: ({"tag": v[1:]} if v.startswith("#") else {"item": v}) for k, v in key.items()},
           "result": {"id": "interstice:" + (result or id), "count": count}})
     write(DATA / f"advancement/recipes/equipment/{id}.json", {"parent": "minecraft:recipes/root",
-          "criteria": {"material": inventory("riftsilver_ingot"), "craft": {"trigger": "minecraft:recipe_unlocked", "conditions": {"recipe": "interstice:" + id}}},
+          "criteria": {"material": inventory(unlock_material), "craft": {"trigger": "minecraft:recipe_unlocked", "conditions": {"recipe": "interstice:" + id}}},
           "requirements": [["material", "craft"]], "rewards": {"recipes": ["interstice:" + id]}})
 
 def tag(namespace, path, values):
@@ -104,6 +118,16 @@ for tier in ["riftsilver", "riftsteel"]:
             tag("minecraft", "enchantable/durability", ["interstice:" + id])
         # Explicit self tags also let other mods discover and classify both native tiers.
         tag("interstice", tier + "_equipment", ["interstice:" + id])
+
+# The longer, stronger sword is additional; the eighteen original recipes stay unchanged.
+recipe("riftsteel_longsword", [" M ", "MMM", " S "],
+       {"M": "interstice:riftsteel_ingot", "S": "interstice:world_stick"},
+       unlock_material="riftsteel_ingot")
+text("item.interstice.riftsteel_longsword", "Длинный меч из рифтстали", "Riftsteel Longsword")
+for namespace, path in [("minecraft", "swords"), ("c", "tools/sword"),
+                        ("minecraft", "enchantable/sword"), ("minecraft", "enchantable/weapon"),
+                        ("minecraft", "enchantable/durability"), ("interstice", "riftsteel_equipment")]:
+    tag(namespace, path, ["interstice:riftsteel_longsword"])
 
 text("item.interstice.riftsteel_ingot", "Слиток рифтстали", "Riftsteel Ingot")
 text("item.interstice.field_journal", "Полевой журнал Междуморья", "Interstice Field Journal")
@@ -232,4 +256,8 @@ for tier in ["riftsilver", "riftsteel"]:
 write(ASSETS / "models/item/field_journal.json", {"parent": "minecraft:item/written_book"})
 write(ASSETS / "models/item/riftsteel_ingot.json", {"parent": "minecraft:item/generated", "textures": {"layer0": "interstice:item/armaments/ingot_steel"}})
 for lang, values in LANG.items(): write(ASSETS / f"lang/{lang}.json", values)
-print("Built 20 trials, 18 equipment recipes, retort alloy, journal and RU/EN resources")
+print("Built 20 trials, 19 equipment recipes, retort alloy, journal and RU/EN resources")
+
+# Armor balance tooltips and enchantments are authored in one dedicated generator.
+import runpy
+runpy.run_path(str(ROOT / "tools/build_realm_armor.py"), run_name="__main__")

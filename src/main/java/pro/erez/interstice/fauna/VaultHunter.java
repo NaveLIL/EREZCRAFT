@@ -72,7 +72,7 @@ public final class VaultHunter extends Monster implements SmartBrainOwner<VaultH
     }
     void beginStrike() {
         entityData.set(STRIKE_END,level().getGameTime()+STRIKE_DURATION);
-        playSound(HunterSounds.WINDUP.get(),.55F,1);
+        playSound(HunterSounds.WINDUP.get(),.45F,1);
     }
     void cancelStrike() { if(entityData.get(STRIKE_END)!=-1L)entityData.set(STRIKE_END,-1L); }
     @Override public void tick() {
@@ -126,6 +126,6 @@ public final class VaultHunter extends Monster implements SmartBrainOwner<VaultH
     @Override protected net.minecraft.sounds.SoundEvent getAmbientSound() { return HunterSounds.AMBIENT.get(); }
     @Override protected net.minecraft.sounds.SoundEvent getHurtSound(DamageSource source) { return HunterSounds.HURT.get(); }
     @Override protected net.minecraft.sounds.SoundEvent getDeathSound() { return HunterSounds.DEATH.get(); }
-    @Override protected float getSoundVolume() { return .6F; }
-    @Override public int getAmbientSoundInterval() { return 200; }
+    @Override protected float getSoundVolume() { return .35F; }
+    @Override public int getAmbientSoundInterval() { return 280; }
 }

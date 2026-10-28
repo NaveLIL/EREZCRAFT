@@ -1,0 +1,12 @@
+{
+  "catalogUrl": "https://files.erezcraft.com/catalog.json",
+  "authBaseUrl": "https://auth.erezcraft.com/",
+  "publicKey": "9SPHLCde2YRxgQrhEoGbwI4HagYaUk/UVMEu232Jcqk=",
+  "downloadOrigins": [
+    "https://files.erezcraft.com/",
+    "https://cdn.modrinth.com/"
+  ],
+  "development": false,
+  "portableData": true,
+  "localClient": true
+}

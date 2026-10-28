@@ -1,0 +1,54 @@
+{
+  "retrieved_utc": "2026-10-27T08:57:22.748367+00:00",
+  "version": {
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "loaders": [
+      "neoforge"
+    ],
+    "environment": "client_or_server_prefers_both",
+    "id": "YXfPij2E",
+    "project_id": "h1E7sQNL",
+    "author_id": "WBSj30w3",
+    "featured": false,
+    "name": "CustomPlayerModels-1.21 v0.6.27a",
+    "version_number": "1.21v0.6.27a-neoforge",
+    "changelog": "Forge 26.2 port  \n26.3 Snapshot 2 port  \nAdded alphabetical sorting to file choosers  \n  \nFixed standing on ladder animations (Closes [#985](https://github.com/tom5454/CustomPlayerModels/issues/985))  \nFixed crash with new versions of ViveCraft (Closes [#992](https://github.com/tom5454/CustomPlayerModels/issues/992))",
+    "changelog_url": null,
+    "date_published": "2026-07-05T15:04:52.094627Z",
+    "downloads": 72489,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "id": "p7usQW17",
+        "hashes": {
+          "sha512": "5af1150d16bfc3adfa942bf606a8e4d829cdcc15d3ec46eb98cdb03bd85db81ceac4b85274b4207a928497d78a4f53afeab1cf5b43ac73219d20147948fea38b",
+          "sha1": "34d57efcc56c043f89c61f169944d7b95c11f504"
+        },
+        "url": "https://cdn.modrinth.com/data/h1E7sQNL/versions/YXfPij2E/CustomPlayerModels-1.21-0.6.27a.jar",
+        "filename": "CustomPlayerModels-1.21-0.6.27a.jar",
+        "primary": true,
+        "size": 2793136,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "t5W7Jfwy",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ]
+  },
+  "sha256": "b5d3a473998648eefdf646e10a48af95dac57add0df681ca4407e83c716d6c84",
+  "catalog_jar": "D:\\repos\\Blender\\catalog\\custom_player_models\\CustomPlayerModels-1.21-0.6.27a.jar",
+  "installed": false,
+  "official_source": "https://github.com/tom5454/CustomPlayerModels",
+  "export_documentation": "https://github.com/tom5454/CustomPlayerModels/wiki/Exporting",
+  "tested_with_pack": false
+}

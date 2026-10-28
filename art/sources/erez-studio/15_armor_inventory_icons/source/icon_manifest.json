@@ -1,0 +1,234 @@
+{
+  "revision": "ARMOR-ICONS-A01",
+  "units": "One item model unit = one block; source armor units divided by 16 and uniformly fitted for GUI",
+  "new_pngs": false,
+  "exact_source_rotations": true,
+  "icons": [
+    {
+      "item": "interstice:riftsilver_helmet",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 12,
+      "quads": 72,
+      "bones": [
+        "head"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/riftsilver_helmet.json",
+      "model_sha256": "815b1a44ef85ff80b039e32af8aa263c9e3e5bb3e3dc5ac838063416a86f63a6",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:riftsilver_chestplate",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 37,
+      "quads": 222,
+      "bones": [
+        "body",
+        "left_arm",
+        "right_arm"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/riftsilver_chestplate.json",
+      "model_sha256": "c81e87ed5afe64d0a36a5339eb3cf2e19c075513fb41b279727d4ae6623c0424",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:riftsilver_leggings",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 10,
+      "quads": 60,
+      "bones": [
+        "left_leg",
+        "right_leg"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/riftsilver_leggings.json",
+      "model_sha256": "a7fcb0911cb0f0599075b1d882c82631a7d596b2232e09ec4b0b514b4256d048",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:riftsilver_boots",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 12,
+      "quads": 72,
+      "bones": [
+        "left_leg",
+        "right_leg"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/riftsilver_boots.json",
+      "model_sha256": "c04f02b25c3068958c091a37b3f2ee75a2d2bc9eaba07b7e9620b68616c49b01",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:riftsteel_helmet",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 17,
+      "quads": 102,
+      "bones": [
+        "head"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/riftsteel_helmet.json",
+      "model_sha256": "95610f3936a4c1de298db55db90104315149779ed2f4f9582d9f87fc8a806d0f",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:riftsteel_chestplate",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 42,
+      "quads": 252,
+      "bones": [
+        "body",
+        "left_arm",
+        "right_arm"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/riftsteel_chestplate.json",
+      "model_sha256": "90b1c637dcb8d33220561390d6a71256528a98b42230403253c4c19202d9f7de",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:riftsteel_leggings",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 10,
+      "quads": 60,
+      "bones": [
+        "left_leg",
+        "right_leg"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/riftsteel_leggings.json",
+      "model_sha256": "0568fb930d6d7be33438fe9e40c722a63bf628b5e605605d342a222457002bec",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:riftsteel_boots",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 12,
+      "quads": 72,
+      "bones": [
+        "left_leg",
+        "right_leg"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/riftsteel_boots.json",
+      "model_sha256": "666ab35619c6a92cf647b7afb7711f0173ae0435f151d2b10d008f6b3cce2699",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:aegis_helmet",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 35,
+      "quads": 210,
+      "bones": [
+        "head"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/aegis_helmet.json",
+      "model_sha256": "cc9b4b49e486fc0272b1d249ce81e93bcc624a90e5579097e4b16db2c37c649e",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:aegis_chestplate",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 56,
+      "quads": 336,
+      "bones": [
+        "body",
+        "left_arm",
+        "right_arm"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/aegis_chestplate.json",
+      "model_sha256": "62247ec949fb1c98e041ed6ad77e8ce5e39f3e926efff846a0e4a646fb766778",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:aegis_leggings",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 17,
+      "quads": 102,
+      "bones": [
+        "body",
+        "left_leg",
+        "right_leg"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/aegis_leggings.json",
+      "model_sha256": "c52d4c716df6fa32e4c0272ea5bb0970274740eb1062d1a27a607227c8466723",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:aegis_boots",
+      "source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\source\\armor_design_A04.json",
+      "source_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+      "cubes": 16,
+      "quads": 96,
+      "bones": [
+        "left_leg",
+        "right_leg"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/aegis_boots.json",
+      "model_sha256": "6c5ac207678af4cc4afb382e30d58d007c1189e06353515aa6c005622c228ca7",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:kotomyaf_helmet",
+      "source": "D:\\repos\\Blender\\creations\\14_kotomyaf_armor\\source\\kotomyaf_design_A04.json",
+      "source_sha256": "2028647f906c3b4f9a1e531914bc57acb8e515c1fb6a653f3e80b43870d3e220",
+      "cubes": 30,
+      "quads": 180,
+      "bones": [
+        "head"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/kotomyaf_helmet.json",
+      "model_sha256": "5743f7ed561b9602628b9dfe1ca7d7dfe57602a5ac411cf82c6716f94e44d6ed",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:kotomyaf_chestplate",
+      "source": "D:\\repos\\Blender\\creations\\14_kotomyaf_armor\\source\\kotomyaf_design_A04.json",
+      "source_sha256": "2028647f906c3b4f9a1e531914bc57acb8e515c1fb6a653f3e80b43870d3e220",
+      "cubes": 26,
+      "quads": 156,
+      "bones": [
+        "body",
+        "left_arm",
+        "right_arm"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/kotomyaf_chestplate.json",
+      "model_sha256": "fb02b108ebe00214ac1688129fcbe3a63c3bba47fc342bef278864d7c5dcc24f",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:kotomyaf_leggings",
+      "source": "D:\\repos\\Blender\\creations\\14_kotomyaf_armor\\source\\kotomyaf_design_A04.json",
+      "source_sha256": "2028647f906c3b4f9a1e531914bc57acb8e515c1fb6a653f3e80b43870d3e220",
+      "cubes": 5,
+      "quads": 30,
+      "bones": [
+        "body",
+        "left_leg",
+        "right_leg"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/kotomyaf_leggings.json",
+      "model_sha256": "da9f998f60e10d681ce3bf9f1e5fd0b05135c8a1358e2bb9879f5233cac39957",
+      "projected_gui_span_pixels": 14.5
+    },
+    {
+      "item": "interstice:kotomyaf_boots",
+      "source": "D:\\repos\\Blender\\creations\\14_kotomyaf_armor\\source\\kotomyaf_design_A04.json",
+      "source_sha256": "2028647f906c3b4f9a1e531914bc57acb8e515c1fb6a653f3e80b43870d3e220",
+      "cubes": 14,
+      "quads": 84,
+      "bones": [
+        "left_leg",
+        "right_leg"
+      ],
+      "model_path": "src/main/resources/assets/interstice/models/item/kotomyaf_boots.json",
+      "model_sha256": "795841242808637b414d34b2929e7a9b7a004c5ed5bbb46727e8ad1fec96facb",
+      "projected_gui_span_pixels": 14.5
+    }
+  ]
+}

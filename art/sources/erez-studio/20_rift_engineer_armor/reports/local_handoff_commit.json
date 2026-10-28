@@ -1,0 +1,15 @@
+{
+  "commit": "ef399dd145564530e3aa12151bbf1b4b15ddaea2",
+  "tracked_snapshot_files": 136,
+  "source_snapshot_bytes_verified_in_git": true,
+  "original_modified_files_unchanged": 60,
+  "archive": {
+    "path": "D:\\repos\\Minecraft\\EREZCRAFT\\art\\generated\\erez-studio-handoff\\EREZ_STUDIO_2026-10-27_FULL.zip",
+    "sha256": "df6efff20f5d5ac5b69b69c1ba846da3d0981f3b0749933bfb856f06f3b35b20",
+    "bytes": 528930455,
+    "files": 1349,
+    "git_ignored": true
+  },
+  "entry_point": "D:\\repos\\Minecraft\\EREZCRAFT\\docs\\HANDOFF_EREZ_STUDIO.md",
+  "no_push": true
+}

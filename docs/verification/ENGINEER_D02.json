@@ -1,0 +1,316 @@
+{
+  "status": "IMPLEMENTED_AND_VERIFIED_LOCALLY_NOT_DEPLOYED",
+  "date": "2026-10-28",
+  "candidate_version": "0.7.0-preview.39-engineer-d02",
+  "appearance": "E12",
+  "specification": "art/designs/engineer_D02.json",
+  "specification_sha256": "2b93cf0fee8cdd3d5205c47869229b317ed0e388f3a72358d99e1f9a60a87c14",
+  "published_release_unchanged": {
+    "release": "alpha.22",
+    "sequence": 22,
+    "version": "0.7.0-preview.38-clock-grip",
+    "jar_sha256": "b11da0ae02dedcb8c4a7b243c9c9f5756bd79125261f8222e0600b5df6130053",
+    "server_restarted": false,
+    "launcher_catalog_modified": false
+  },
+  "static": {
+    "passed": true,
+    "candidate_version": "0.7.0-preview.39-engineer-d02",
+    "candidate_jar": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\libs\\interstice-0.7.0-preview.39-engineer-d02.jar",
+    "candidate_sha256": "01514f05817099db9e5d9353e171ba4681f1dde9df984d5d93fe34aa4d36cb5e",
+    "reference_jar": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\libs\\interstice-0.7.0-preview.38-clock-grip.jar",
+    "reference_sha256": "b11da0ae02dedcb8c4a7b243c9c9f5756bd79125261f8222e0600b5df6130053",
+    "recipes_checked": 10,
+    "no_new_acquisition_cycle": true,
+    "generator_idempotent": true,
+    "changed_existing_classes": [
+      "pro/erez/interstice/ToxicLiquidBlock.class",
+      "pro/erez/interstice/gear/EngineerArmor$Piece.class",
+      "pro/erez/interstice/gear/EngineerArmor.class",
+      "pro/erez/interstice/gear/RealmArmor.class",
+      "pro/erez/interstice/gear/RealmGear$BallastBelt.class",
+      "pro/erez/interstice/gear/RealmGear$ProtectiveCoating.class",
+      "pro/erez/interstice/gear/RealmGear.class",
+      "pro/erez/interstice/gear/RealmWorktools$Axe.class",
+      "pro/erez/interstice/gear/RealmWorktools$Hoe.class",
+      "pro/erez/interstice/gear/RealmWorktools$Pickaxe.class",
+      "pro/erez/interstice/gear/RealmWorktools$Shovel.class",
+      "pro/erez/interstice/gear/RealmWorktools.class",
+      "pro/erez/interstice/gear/RouteMarkers.class",
+      "pro/erez/interstice/mixin/AegisNightVisionMixin.class",
+      "pro/erez/interstice/mixin/AegisOutlineColorMixin.class",
+      "pro/erez/interstice/mixin/AegisOutlineMixin.class"
+    ],
+    "new_classes": [
+      "pro/erez/interstice/client/EngineerClient$Seen.class",
+      "pro/erez/interstice/client/EngineerClient.class",
+      "pro/erez/interstice/client/EngineerScreen.class",
+      "pro/erez/interstice/gear/EngineerArmor$1.class",
+      "pro/erez/interstice/gear/EngineerBreathing$MediumEvent.class",
+      "pro/erez/interstice/gear/EngineerBreathing$Paid.class",
+      "pro/erez/interstice/gear/EngineerBreathing.class",
+      "pro/erez/interstice/gear/EngineerMenu$1.class",
+      "pro/erez/interstice/gear/EngineerMenu$2.class",
+      "pro/erez/interstice/gear/EngineerMenu.class",
+      "pro/erez/interstice/gear/EngineerModules$1.class",
+      "pro/erez/interstice/gear/EngineerModules$ModuleItem.class",
+      "pro/erez/interstice/gear/EngineerModules.class",
+      "pro/erez/interstice/gear/EngineerNetworking$Action.class",
+      "pro/erez/interstice/gear/EngineerNetworking$Pulse.class",
+      "pro/erez/interstice/gear/EngineerNetworking$Status.class",
+      "pro/erez/interstice/gear/EngineerNetworking$Target.class",
+      "pro/erez/interstice/gear/EngineerNetworking.class",
+      "pro/erez/interstice/gear/EngineerRefillRecipe$Serializer.class",
+      "pro/erez/interstice/gear/EngineerRefillRecipe.class",
+      "pro/erez/interstice/gear/EngineerSystems.class",
+      "pro/erez/interstice/mixin/EngineerBreathingMixin.class"
+    ],
+    "unchanged_previous_classes": 522,
+    "preserved_assets": {
+      ".png": 209,
+      ".ogg": 12
+    },
+    "preserved_models_equipment_and_audio": true,
+    "changed_existing_source_files": [
+      "src/main/java/pro/erez/interstice/gear/EngineerArmor.java",
+      "src/main/java/pro/erez/interstice/gear/RealmArmor.java",
+      "src/main/java/pro/erez/interstice/gear/RealmGear.java",
+      "src/main/java/pro/erez/interstice/gear/RealmWorktools.java",
+      "src/main/java/pro/erez/interstice/gear/RouteMarkers.java",
+      "src/main/java/pro/erez/interstice/mixin/AegisNightVisionMixin.java",
+      "src/main/java/pro/erez/interstice/mixin/AegisOutlineColorMixin.java",
+      "src/main/java/pro/erez/interstice/mixin/AegisOutlineMixin.java",
+      "src/main/java/pro/erez/interstice/ToxicLiquidBlock.java",
+      "src/main/resources/assets/interstice/lang/en_us.json",
+      "src/main/resources/assets/interstice/lang/ru_ru.json",
+      "src/main/resources/data/interstice/tags/item/enchantable/rift_boots.json",
+      "src/main/resources/data/interstice/tags/item/enchantable/rift_chest.json",
+      "src/main/resources/data/minecraft/tags/enchantment/in_enchanting_table.json",
+      "src/main/resources/data/minecraft/tags/enchantment/non_treasure.json",
+      "src/main/resources/data/minecraft/tags/enchantment/on_random_loot.json",
+      "src/main/resources/data/minecraft/tags/enchantment/on_traded_equipment.json",
+      "src/main/resources/data/minecraft/tags/enchantment/tradeable.json",
+      "src/main/resources/data/minecraft/tags/item/enchantable/leg_armor.json",
+      "src/main/resources/interstice.mixins.json",
+      "build.gradle"
+    ]
+  },
+  "verification": {
+    "prior_component_receipt": "D:/repos/Minecraft/EREZCRAFT/.verification/engineer-d02-20261028/component03/component-run.json",
+    "prior_required_pass_counts": [
+      15,
+      43,
+      19
+    ],
+    "final_engineer_component_receipt": "D:/repos/Minecraft/EREZCRAFT/.verification/engineer-d02-20261028/component04/component-run.json",
+    "component_dh_exception": "Artificial GameTestServer only, as required by AGENTS.md; full native clients include DH 3.3.3",
+    "native": {
+      "command": [
+        "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+        "-classpath",
+        "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+        "org.gradle.wrapper.GradleWrapperMain",
+        "--no-daemon",
+        "--console=plain",
+        "-Pmod_version=0.7.0-preview.39-engineer-d02",
+        "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\e39n5",
+        "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\tide-release-20261028\\client",
+        "assemble",
+        "runStudioEngineerSystems"
+      ],
+      "passed": true,
+      "started_utc": "2026-10-28T06:51:07.873972+00:00",
+      "pid": 20864,
+      "exit_code": 0,
+      "proof": {
+        "distant_horizons_loaded": true,
+        "mod_count": 106,
+        "mod_version": "0.7.0-preview.39-engineer-d02",
+        "client_shared_3x3_preview": true,
+        "network_pulse_los_and_energy": true,
+        "network_menu_module_conservation": true,
+        "nv_client_flag": true,
+        "nv_client_active": true,
+        "nv_client_camera_self": true,
+        "nv_client_virtual": true,
+        "nv_client_real": false,
+        "nv_client_energy": 1145350,
+        "nv_server_flag": true,
+        "nv_server_active": true,
+        "nv_server_valid_menu": true,
+        "virtual_night_vision_and_real_potion_preserved": true,
+        "real_underwater_breathing_without_battery": true,
+        "held_vanilla_air": 73,
+        "underwater_reserved_ticks_spent": 60,
+        "depletion_and_swaps_never_refill_air": true,
+        "machine_and_paired_marker_hud": true,
+        "saved_fractional_energy": 1234025,
+        "saved_breathing_ticks": 11111,
+        "saved_physical_belt_damage": 37,
+        "passed": true,
+        "reason": "",
+        "phase": 13,
+        "pid": 12500,
+        "owner_profile_used": false,
+        "prepared_fixture_not_survival": true,
+        "screenshots": [
+          "engineer-d02-hud-and-tool-preview.png",
+          "engineer-d02-e12-equipped.png",
+          "engineer-d02-visible-pulse.png",
+          "engineer-d02-modules-menu.png",
+          "engineer-d02-mechanical-breathing-empty-battery.png",
+          "engineer-d02-diagnostic-and-marker.png",
+          "engineer-d02-ready-for-cold-save.png"
+        ],
+        "settled": {
+          "purpose": "engineer_d02_shutdown",
+          "server_tick": 656,
+          "elapsed_actual_server_ticks": 19,
+          "stable_actual_server_ticks": 20,
+          "holders_checked": 1555,
+          "generation_ref_count": 0,
+          "save_futures_pending": 0,
+          "holders_not_ready_for_saving": 0,
+          "pending_generation_tasks": 0,
+          "save_futures_failed": 0,
+          "timed_out": false,
+          "non_quiet_examples": []
+        }
+      },
+      "seconds": 189.29699999999866
+    },
+    "cold": {
+      "command": [
+        "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+        "-classpath",
+        "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+        "org.gradle.wrapper.GradleWrapperMain",
+        "--no-daemon",
+        "--console=plain",
+        "-Pmod_version=0.7.0-preview.39-engineer-d02",
+        "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\e39n5",
+        "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\tide-release-20261028\\client",
+        "-PengineerCold=reload",
+        "runStudioEngineerSystems"
+      ],
+      "passed": true,
+      "started_utc": "2026-10-28T06:56:22.463665+00:00",
+      "pid": 23256,
+      "exit_code": 0,
+      "proof": {
+        "distant_horizons_loaded": true,
+        "mod_count": 106,
+        "mod_version": "0.7.0-preview.39-engineer-d02",
+        "cold_region_items_and_fractional_resources": true,
+        "creation_pid": 12500,
+        "passed": true,
+        "reason": "",
+        "phase": 2,
+        "pid": 27780,
+        "owner_profile_used": false,
+        "prepared_fixture_not_survival": true,
+        "screenshots": [
+          "engineer-d02-cold-reload.png"
+        ],
+        "settled": {
+          "purpose": "engineer_d02_shutdown",
+          "server_tick": 1061,
+          "elapsed_actual_server_ticks": 19,
+          "stable_actual_server_ticks": 20,
+          "holders_checked": 1555,
+          "generation_ref_count": 0,
+          "save_futures_pending": 0,
+          "holders_not_ready_for_saving": 0,
+          "pending_generation_tasks": 0,
+          "save_futures_failed": 0,
+          "timed_out": false,
+          "non_quiet_examples": []
+        }
+      },
+      "seconds": 162.21900000000096
+    },
+    "final_engineer_component": {
+      "command": [
+        "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+        "-classpath",
+        "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+        "org.gradle.wrapper.GradleWrapperMain",
+        "--no-daemon",
+        "--console=plain",
+        "-Pmod_version=0.7.0-preview.39-engineer-d02",
+        "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\e39gt4",
+        "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\blade-release-20261028\\client",
+        "assemble",
+        "runEngineerGameTestServer"
+      ],
+      "passed": true,
+      "started_utc": "2026-10-28T06:59:26.400751+00:00",
+      "pid": 27636,
+      "exit_code": 0,
+      "required_pass_counts": [
+        17
+      ],
+      "seconds": 46.54699999999866
+    },
+    "distinct_component_checks_passed": 79,
+    "regression_component_checks_passed": 62,
+    "counting_note": "17 final engineer checks plus 43 progression and 19 gear regression checks; earlier 15 engineer checks are not double-counted",
+    "git_diff_check_passed": true
+  },
+  "preserved": {
+    "accepted_models": "All previous archive models/equipment/armor byte-identical, including E12/Blade B01/TI02",
+    "png": 209,
+    "ogg": 12,
+    "worldgen_oceans_geometry_fauna_and_dh_runtime": "Byte-identical to alpha.22; 522 of 538 previous classes unchanged; 16 narrowly scoped changes listed by static audit",
+    "owner_profiles_used": false,
+    "backups_created": false,
+    "gradle_properties_changed": false
+  },
+  "service_chemistry_decision": {
+    "cassette": "One depleted existing cassette + one pure vitriolite lining + one charcoal + one phosphorite paste -> same full 600-second cassette; preserves unrelated data",
+    "cell": "One depleted existing cell + one phosphorite paste + two redstone -> same full 1800-unit cell; preserves unrelated data"
+  },
+  "implementation_fixes_verified": [
+    "Real inventory-menu module withdrawal/reinsertion conserves one physical cell",
+    "Vanilla direct player-inventory packets synchronize worn helmet/chest while module menu is open",
+    "Virtual night vision never mutates or removes the real potion map",
+    "Real underwater air remains 73 while 60 ticks of cassette reserve are spent without battery",
+    "Cassette depletion restores vanilla air loss; fresh cassette does not refill lungs",
+    "Actual saved region chest retains 1234025 milli-energy, 11111 breathing ticks, armor wear 27, belt wear 37 plus 17 active ticks and arbitrary module metadata across PID 12500 -> 27780"
+  ],
+  "test_attempts": [
+    {
+      "attempt": "native01",
+      "outcome": "Failed fixture: clearContent removed newly equipped armor; preparation order fixed"
+    },
+    {
+      "attempt": "native02/native03",
+      "outcome": "Failed virtual NV: ordinary inventory container updates were ignored while module menu open; fixed with vanilla direct inventory synchronization",
+      "shutdown_note": "native02 owned failed fixture PID20364 was stopped after a captured thread dump showed a spinning shutdown chunk-unload queue; later runs use NativeChunkSettler and exit normally"
+    },
+    {
+      "attempt": "native04",
+      "outcome": "Functional full-client pass"
+    },
+    {
+      "attempt": "native05",
+      "outcome": "Final pass, additionally asserts nine actual client-selected footprint blocks"
+    },
+    {
+      "attempt": "cold05",
+      "outcome": "Stopped before game launch by fresh-profile-only guard; explicit passed-owned-world reload mode added"
+    },
+    {
+      "attempt": "cold06",
+      "outcome": "Separate JVM native region reload passed"
+    }
+  ],
+  "not_claimed": [
+    "Natural Survival balance acceptance",
+    "10-player capacity and gameplay session on dedicated production server",
+    "Automatic compatibility with arbitrary third-party atmospheres",
+    "Optional future authored ruin loot",
+    "Deployment or new release sequence"
+  ],
+  "passed": true
+}

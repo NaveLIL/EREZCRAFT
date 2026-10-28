@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "interstice:riftsilver_helmet",
-    "interstice:riftsteel_helmet"
+    "interstice:riftsteel_helmet",
+    "interstice:aegis_helmet",
+    "interstice:kotomyaf_helmet",
+    "interstice:engineer_helmet"
   ]
 }

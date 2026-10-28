@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "interstice:riftsilver_chestplate",
+    "interstice:riftsteel_chestplate",
+    "interstice:aegis_chestplate",
+    "interstice:engineer_chestplate"
+  ]
+}

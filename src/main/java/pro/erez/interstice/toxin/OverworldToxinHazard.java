@@ -125,6 +125,7 @@ public final class OverworldToxinHazard {
 
     public static void applyVaporHazard(LivingEntity living, Level level) {
         if (!isHazardousDimension(level)) return;
+        if (pro.erez.interstice.gear.AegisPower.sealed(living)) return;
         living.addEffect(new MobEffectInstance(MobEffects.POISON, 60, 0, false, true, true));
     }
 }

@@ -1,0 +1,171 @@
+{
+  "passed": true,
+  "grip_anchor": [
+    8,
+    3.85,
+    8
+  ],
+  "maximum_drift_model_units": 3.6192544184428706e-06,
+  "rows": [
+    {
+      "item": "riftsilver_pickaxe",
+      "context": "thirdperson_righthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsilver_pickaxe",
+      "context": "thirdperson_lefthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsilver_pickaxe",
+      "context": "firstperson_righthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsilver_pickaxe",
+      "context": "firstperson_lefthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsilver_axe",
+      "context": "thirdperson_righthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsilver_axe",
+      "context": "thirdperson_lefthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsilver_axe",
+      "context": "firstperson_righthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsilver_axe",
+      "context": "firstperson_lefthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsilver_shovel",
+      "context": "thirdperson_righthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsilver_shovel",
+      "context": "thirdperson_lefthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsilver_shovel",
+      "context": "firstperson_righthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsilver_shovel",
+      "context": "firstperson_lefthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsilver_hoe",
+      "context": "thirdperson_righthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsilver_hoe",
+      "context": "thirdperson_lefthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsilver_hoe",
+      "context": "firstperson_righthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsilver_hoe",
+      "context": "firstperson_lefthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "context": "thirdperson_righthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "context": "thirdperson_lefthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "context": "firstperson_righthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "context": "firstperson_lefthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsteel_axe",
+      "context": "thirdperson_righthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsteel_axe",
+      "context": "thirdperson_lefthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsteel_axe",
+      "context": "firstperson_righthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsteel_axe",
+      "context": "firstperson_lefthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsteel_shovel",
+      "context": "thirdperson_righthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsteel_shovel",
+      "context": "thirdperson_lefthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsteel_shovel",
+      "context": "firstperson_righthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsteel_shovel",
+      "context": "firstperson_lefthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsteel_hoe",
+      "context": "thirdperson_righthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsteel_hoe",
+      "context": "thirdperson_lefthand",
+      "grip_anchor_drift_model_units": 0.0
+    },
+    {
+      "item": "riftsteel_hoe",
+      "context": "firstperson_righthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    },
+    {
+      "item": "riftsteel_hoe",
+      "context": "firstperson_lefthand",
+      "grip_anchor_drift_model_units": 3.6192544184428706e-06
+    }
+  ]
+}

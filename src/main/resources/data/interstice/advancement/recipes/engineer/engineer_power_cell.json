@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:riftsteel_ingot"
+          }
+        ]
+      }
+    },
+    "recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "interstice:engineer_power_cell"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "material",
+      "recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "interstice:engineer_power_cell"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "origin": "Installed Minecraft Java 1.21.1 asset index 17",
+  "files": [
+    {
+      "asset": "minecraft/sounds/mob/cat/meow1.ogg",
+      "sha1": "378d2a7a8979bb1291cbf0b1b9dc5f1de978883b",
+      "sample_rate": 48000,
+      "samples": 36000,
+      "seconds": 0.75
+    },
+    {
+      "asset": "minecraft/sounds/mob/cat/meow2.ogg",
+      "sha1": "3dcd387ec1f8412627fc89a73f8ec77e2f2fee45",
+      "sample_rate": 48000,
+      "samples": 30880,
+      "seconds": 0.6433333333333333
+    },
+    {
+      "asset": "minecraft/sounds/mob/cat/meow3.ogg",
+      "sha1": "2917ad37e46f96f1f92b69896da4329e26cdb080",
+      "sample_rate": 48000,
+      "samples": 33632,
+      "seconds": 0.7006666666666667
+    },
+    {
+      "asset": "minecraft/sounds/mob/cat/meow4.ogg",
+      "sha1": "9c553cc46028812df64083bed7c3b02280c9a470",
+      "sample_rate": 48000,
+      "samples": 31123,
+      "seconds": 0.6483958333333333
+    },
+    {
+      "asset": "minecraft/sounds/mob/cat/purr1.ogg",
+      "sha1": "0acdc21b0f56dbe214ae2574d1f02a0ea2e99877",
+      "sample_rate": 48000,
+      "samples": 144001,
+      "seconds": 3.000020833333333
+    },
+    {
+      "asset": "minecraft/sounds/mob/cat/purr2.ogg",
+      "sha1": "e7dbf103c4d53bc6a565e12cc23e7d07774c1c5a",
+      "sample_rate": 48000,
+      "samples": 143837,
+      "seconds": 2.9966041666666667
+    },
+    {
+      "asset": "minecraft/sounds/mob/cat/purr3.ogg",
+      "sha1": "02219a4525e2276a2cf78e5ec6b7e141db1e0d4e",
+      "sample_rate": 48000,
+      "samples": 168000,
+      "seconds": 3.5
+    },
+    {
+      "asset": "minecraft/sounds/mob/cat/purreow1.ogg",
+      "sha1": "a431511c850809ac8aad700e36dbd398f03efe3f",
+      "sample_rate": 48000,
+      "samples": 48000,
+      "seconds": 1.0
+    },
+    {
+      "asset": "minecraft/sounds/mob/cat/purreow2.ogg",
+      "sha1": "25587265091588684eb99d4f99fbdfadf6adac1f",
+      "sample_rate": 48000,
+      "samples": 48000,
+      "seconds": 1.0
+    }
+  ],
+  "copied_into_mod": false
+}

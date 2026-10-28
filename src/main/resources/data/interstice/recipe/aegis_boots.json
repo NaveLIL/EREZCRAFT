@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "interstice:aegis_control_unit"
+  },
+  "base": {
+    "item": "interstice:riftsteel_boots"
+  },
+  "addition": {
+    "item": "interstice:abyssal_plate"
+  },
+  "result": {
+    "id": "interstice:aegis_boots"
+  }
+}

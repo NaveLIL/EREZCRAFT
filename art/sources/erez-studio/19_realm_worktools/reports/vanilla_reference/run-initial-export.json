@@ -1,0 +1,19 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\si01\\candidate\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\vc01",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "-PstudioMode=comparison",
+    "runStudioWorktools"
+  ],
+  "passed": false,
+  "started_utc": "2026-10-27T15:01:13.881437+00:00",
+  "harness_sha256": "75cd7a9e924be674f443a20c46fb10361933553ed251ad5c4a26b47ef64771f5",
+  "production_model_changes": false,
+  "pid": 34116
+}

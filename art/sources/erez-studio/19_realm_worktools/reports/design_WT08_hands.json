@@ -1,0 +1,213 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "item": "riftsilver_pickaxe",
+      "thirdperson_display": {
+        "rotation": [
+          75,
+          0,
+          10
+        ],
+        "translation": [
+          -0.446797,
+          -1.344176,
+          4.447569
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        8,
+        0
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsilver_axe",
+      "thirdperson_display": {
+        "rotation": [
+          75,
+          0,
+          10
+        ],
+        "translation": [
+          -0.446797,
+          -1.344176,
+          4.447569
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        8,
+        0
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsilver_shovel",
+      "thirdperson_display": {
+        "rotation": [
+          75,
+          0,
+          10
+        ],
+        "translation": [
+          -0.446797,
+          -1.344176,
+          4.447569
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        8,
+        0
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsilver_hoe",
+      "thirdperson_display": {
+        "rotation": [
+          75,
+          0,
+          10
+        ],
+        "translation": [
+          -0.446797,
+          -1.344176,
+          4.447569
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        8,
+        0
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "thirdperson_display": {
+        "rotation": [
+          75,
+          0,
+          10
+        ],
+        "translation": [
+          -0.446797,
+          -1.344176,
+          4.447569
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        8,
+        0
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsteel_axe",
+      "thirdperson_display": {
+        "rotation": [
+          75,
+          0,
+          10
+        ],
+        "translation": [
+          -0.446797,
+          -1.344176,
+          4.447569
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        8,
+        0
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsteel_shovel",
+      "thirdperson_display": {
+        "rotation": [
+          75,
+          0,
+          10
+        ],
+        "translation": [
+          -0.446797,
+          -1.344176,
+          4.447569
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        8,
+        0
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsteel_hoe",
+      "thirdperson_display": {
+        "rotation": [
+          75,
+          0,
+          10
+        ],
+        "translation": [
+          -0.446797,
+          -1.344176,
+          4.447569
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        8,
+        0
+      ],
+      "firstperson_right_unchanged": true
+    }
+  ]
+}

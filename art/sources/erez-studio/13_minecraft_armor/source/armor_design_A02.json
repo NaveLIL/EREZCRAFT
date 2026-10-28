@@ -1,0 +1,4212 @@
+{
+  "revision": "ARMOR-A02",
+  "state": "Approved A01 sets plus new Aegis candidate; game validation recorded separately",
+  "style": "Knight silhouette with expedition straps and pouches; restrained vanilla pixel detail",
+  "units": "Minecraft model units; 16 per block. Coordinates x right, y down, front negative z.",
+  "bones": {
+    "head": [
+      0,
+      0,
+      0
+    ],
+    "body": [
+      0,
+      0,
+      0
+    ],
+    "right_arm": [
+      -5,
+      2,
+      0
+    ],
+    "left_arm": [
+      5,
+      2,
+      0
+    ],
+    "right_leg": [
+      -1.9,
+      12,
+      0
+    ],
+    "left_leg": [
+      1.9,
+      12,
+      0
+    ]
+  },
+  "sets": {
+    "riftsilver": {
+      "palette": {
+        "plate": "#b4bdc9",
+        "edge": "#e2e6e7",
+        "shadow": "#657382",
+        "cloth": "#343e49",
+        "strap": "#795b42",
+        "buckle": "#ae9a72",
+        "dark": "#25323d"
+      },
+      "cubes": [
+        {
+          "name": "helmet_crown",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.5,
+            -8.6,
+            -4.5
+          ],
+          "size": [
+            9,
+            1.5,
+            9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "helmet_crest",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -3.5,
+            -9.1,
+            -3.7
+          ],
+          "size": [
+            7,
+            0.5,
+            7.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "helmet_rear",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.5,
+            -7.1,
+            3.6
+          ],
+          "size": [
+            9,
+            6.6,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "temple_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.7,
+            -7.1,
+            -4.5
+          ],
+          "size": [
+            1,
+            5.8,
+            8.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.2,
+            -4.1,
+            -5.1
+          ],
+          "size": [
+            1.7,
+            3.7,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_trim_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.2,
+            -0.7,
+            -5.2
+          ],
+          "size": [
+            1.7,
+            0.5,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "temple_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            3.7,
+            -7.1,
+            -4.5
+          ],
+          "size": [
+            1,
+            5.8,
+            8.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            2.5,
+            -4.1,
+            -5.1
+          ],
+          "size": [
+            1.7,
+            3.7,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_trim_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            2.5,
+            -0.7,
+            -5.2
+          ],
+          "size": [
+            1.7,
+            0.5,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "brow",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.4,
+            -6.1,
+            -5.2
+          ],
+          "size": [
+            8.8,
+            1,
+            1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "brow_plate",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.3,
+            -7.2,
+            -4.9
+          ],
+          "size": [
+            8.6,
+            1.1,
+            0.9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "nose_short",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -0.4,
+            -5.1,
+            -5.2
+          ],
+          "size": [
+            0.8,
+            1.4,
+            0.6
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "chest_underlayer",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.35,
+            -0.1,
+            -2.4
+          ],
+          "size": [
+            8.7,
+            11.7,
+            4.8
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "back_plate",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.5,
+            0.5,
+            2.35
+          ],
+          "size": [
+            9,
+            8.1,
+            1.2
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "gorget_front",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.4,
+            -0.55,
+            -3.2
+          ],
+          "size": [
+            6.8,
+            1.2,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "gorget_rear",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.5,
+            -0.6,
+            2.4
+          ],
+          "size": [
+            7,
+            1.2,
+            1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "breastplate_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.55,
+            1,
+            -3.8
+          ],
+          "size": [
+            4.35,
+            4.5,
+            1.5
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "breastplate_rim_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.55,
+            5.3,
+            -4
+          ],
+          "size": [
+            4.35,
+            0.55,
+            1.6
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "breastplate_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            0.2,
+            1,
+            -3.8
+          ],
+          "size": [
+            4.35,
+            4.5,
+            1.5
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "breastplate_rim_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            0.2,
+            5.3,
+            -4
+          ],
+          "size": [
+            4.35,
+            0.55,
+            1.6
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "sternum",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.45,
+            1.2,
+            -4.05
+          ],
+          "size": [
+            0.9,
+            4.3,
+            0.45
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "abdomen_0",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            5.8,
+            -3.3
+          ],
+          "size": [
+            7.8,
+            1.65,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "abdomen_edge_0",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            7.15,
+            -3.38
+          ],
+          "size": [
+            7.8,
+            0.3,
+            1.1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "abdomen_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            7.3,
+            -3.1399999999999997
+          ],
+          "size": [
+            7.8,
+            1.65,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "abdomen_edge_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            8.65,
+            -3.2199999999999998
+          ],
+          "size": [
+            7.8,
+            0.3,
+            1.1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "belt",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.5,
+            10,
+            -2.85
+          ],
+          "size": [
+            9,
+            1.45,
+            5.7
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "belt_clasp",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -1,
+            10.05,
+            -3.5
+          ],
+          "size": [
+            2,
+            1.3,
+            0.8
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "cross_strap",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.55,
+            -0.1,
+            -4.45
+          ],
+          "size": [
+            1.1,
+            10.1,
+            0.45
+          ],
+          "role": "strap",
+          "rotation": [
+            0,
+            0,
+            30
+          ],
+          "rotation_pivot": [
+            0,
+            5,
+            -4.2
+          ]
+        },
+        {
+          "name": "strap_clasp",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            1.1,
+            2.2,
+            -4.65
+          ],
+          "size": [
+            1.3,
+            1.6,
+            0.55
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "belt_pouch_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.2,
+            8.7,
+            -4.2
+          ],
+          "size": [
+            1.9,
+            2.8,
+            1.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "pouch_flap_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.3,
+            8.6,
+            -4.4
+          ],
+          "size": [
+            2.1,
+            1.05,
+            2
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "belt_pouch_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            2.3,
+            8.7,
+            -4.2
+          ],
+          "size": [
+            1.9,
+            2.8,
+            1.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "pouch_flap_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            2.2,
+            8.6,
+            -4.4
+          ],
+          "size": [
+            2.1,
+            1.05,
+            2
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "arm_underlayer_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.25,
+            -1.7,
+            -2.25
+          ],
+          "size": [
+            4.5,
+            11.8,
+            4.5
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "pauldron_cap_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.65,
+            -2.6,
+            -3
+          ],
+          "size": [
+            5.3,
+            2.1,
+            6
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "pauldron_crown_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -2.95,
+            -3.1,
+            -2.4
+          ],
+          "size": [
+            3.9,
+            0.5,
+            4.8
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "pauldron_rim_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.4499999999999997,
+            0.5,
+            -3.15
+          ],
+          "size": [
+            4.8999999999999995,
+            0.4,
+            6.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "upper_arm_plate_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.15,
+            1.4,
+            -2.8
+          ],
+          "size": [
+            4.3,
+            3.1,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.25,
+            6.1,
+            -2.8
+          ],
+          "size": [
+            4.5,
+            3.9,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_rim_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.35,
+            9.65,
+            -2.95
+          ],
+          "size": [
+            4.7,
+            0.5,
+            5.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "elbow_band_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.3,
+            5.1,
+            -2.4
+          ],
+          "size": [
+            4.6,
+            0.8,
+            4.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "arm_underlayer_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.25,
+            -1.7,
+            -2.25
+          ],
+          "size": [
+            4.5,
+            11.8,
+            4.5
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "pauldron_cap_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.65,
+            -2.6,
+            -3
+          ],
+          "size": [
+            5.3,
+            2.1,
+            6
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "pauldron_crown_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -0.95,
+            -3.1,
+            -2.4
+          ],
+          "size": [
+            3.9,
+            0.5,
+            4.8
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "pauldron_rim_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.45,
+            0.5,
+            -3.15
+          ],
+          "size": [
+            4.8999999999999995,
+            0.4,
+            6.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "upper_arm_plate_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.15,
+            1.4,
+            -2.8
+          ],
+          "size": [
+            4.3,
+            3.1,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.25,
+            6.1,
+            -2.8
+          ],
+          "size": [
+            4.5,
+            3.9,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_rim_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.35,
+            9.65,
+            -2.95
+          ],
+          "size": [
+            4.7,
+            0.5,
+            5.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "elbow_band_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.3,
+            5.1,
+            -2.4
+          ],
+          "size": [
+            4.6,
+            0.8,
+            4.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "leg_cloth_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.1,
+            0,
+            -2.1
+          ],
+          "size": [
+            4.2,
+            10,
+            4.2
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "thigh_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.35,
+            0.4,
+            -2.75
+          ],
+          "size": [
+            4.15,
+            3.6,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "thigh_rim_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.4,
+            3.6,
+            -2.9
+          ],
+          "size": [
+            4.2,
+            0.45,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "kneecap_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.45,
+            4.8,
+            -3.05
+          ],
+          "size": [
+            4.25,
+            1.8,
+            1.45
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "knee_center_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -1.5,
+            5,
+            -3.35
+          ],
+          "size": [
+            3,
+            1.25,
+            0.45
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "boot_underlayer_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.25,
+            7.2,
+            -2.35
+          ],
+          "size": [
+            4.05,
+            4.8,
+            4.7
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "greave_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.45,
+            7,
+            -2.9
+          ],
+          "size": [
+            4.25,
+            3.8,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "ankle_band_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.5,
+            10,
+            -2.95
+          ],
+          "size": [
+            4.3,
+            1,
+            5.9
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "sabatons_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.55,
+            10.7,
+            -3.3
+          ],
+          "size": [
+            4.35,
+            1.5,
+            6.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "toe_plate_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.4,
+            10.5,
+            -3.6
+          ],
+          "size": [
+            4.2,
+            0.8,
+            1.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "sole_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.6,
+            11.85,
+            -3.45
+          ],
+          "size": [
+            4.4,
+            0.55,
+            6.3
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "leg_cloth_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -2.1,
+            0,
+            -2.1
+          ],
+          "size": [
+            4.2,
+            10,
+            4.2
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "thigh_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.8,
+            0.4,
+            -2.75
+          ],
+          "size": [
+            4.15,
+            3.6,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "thigh_rim_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.8,
+            3.6,
+            -2.9
+          ],
+          "size": [
+            4.2,
+            0.45,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "kneecap_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.8,
+            4.8,
+            -3.05
+          ],
+          "size": [
+            4.25,
+            1.8,
+            1.45
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "knee_center_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.5,
+            5,
+            -3.35
+          ],
+          "size": [
+            3.0,
+            1.25,
+            0.45
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "boot_underlayer_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            7.2,
+            -2.35
+          ],
+          "size": [
+            4.05,
+            4.8,
+            4.7
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "greave_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            7,
+            -2.9
+          ],
+          "size": [
+            4.25,
+            3.8,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "ankle_band_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            10,
+            -2.95
+          ],
+          "size": [
+            4.3,
+            1,
+            5.9
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "sabatons_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            10.7,
+            -3.3
+          ],
+          "size": [
+            4.35,
+            1.5,
+            6.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "toe_plate_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            10.5,
+            -3.6
+          ],
+          "size": [
+            4.2,
+            0.8,
+            1.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "sole_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            11.85,
+            -3.45
+          ],
+          "size": [
+            4.4,
+            0.55,
+            6.3
+          ],
+          "role": "dark"
+        }
+      ]
+    },
+    "riftsteel": {
+      "palette": {
+        "plate": "#386369",
+        "edge": "#83a8aa",
+        "shadow": "#253d45",
+        "cloth": "#243238",
+        "strap": "#65503d",
+        "buckle": "#b8a06b",
+        "dark": "#15252c"
+      },
+      "cubes": [
+        {
+          "name": "helmet_crown",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.5,
+            -8.6,
+            -4.5
+          ],
+          "size": [
+            9,
+            1.5,
+            9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "helmet_crest",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -3.5,
+            -9.1,
+            -3.7
+          ],
+          "size": [
+            7,
+            0.5,
+            7.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "helmet_rear",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.5,
+            -7.1,
+            3.6
+          ],
+          "size": [
+            9,
+            6.6,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "temple_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.7,
+            -7.1,
+            -4.5
+          ],
+          "size": [
+            1,
+            5.8,
+            8.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.2,
+            -4.1,
+            -5.1
+          ],
+          "size": [
+            1.7,
+            3.7,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_trim_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.2,
+            -0.7,
+            -5.2
+          ],
+          "size": [
+            1.7,
+            0.5,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "temple_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            3.7,
+            -7.1,
+            -4.5
+          ],
+          "size": [
+            1,
+            5.8,
+            8.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            2.5,
+            -4.1,
+            -5.1
+          ],
+          "size": [
+            1.7,
+            3.7,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_trim_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            2.5,
+            -0.7,
+            -5.2
+          ],
+          "size": [
+            1.7,
+            0.5,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "brow",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.4,
+            -6.1,
+            -5.2
+          ],
+          "size": [
+            8.8,
+            1,
+            1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "brow_plate",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.3,
+            -7.2,
+            -4.9
+          ],
+          "size": [
+            8.6,
+            1.1,
+            0.9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "visor_nose",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -0.5,
+            -5.1,
+            -5.3
+          ],
+          "size": [
+            1,
+            2.7,
+            0.9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "chin_plate",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -2.5,
+            -2.1,
+            -5
+          ],
+          "size": [
+            5,
+            1.6,
+            0.9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "chin_edge",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -2.5,
+            -0.5,
+            -5.2
+          ],
+          "size": [
+            5,
+            0.5,
+            1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "breather_-1.5",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -1.75,
+            -1.8,
+            -5.2
+          ],
+          "size": [
+            0.5,
+            1,
+            0.35
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "breather_0",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -0.25,
+            -1.8,
+            -5.2
+          ],
+          "size": [
+            0.5,
+            1,
+            0.35
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "breather_1.5",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            1.25,
+            -1.8,
+            -5.2
+          ],
+          "size": [
+            0.5,
+            1,
+            0.35
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "chest_underlayer",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.35,
+            -0.1,
+            -2.4
+          ],
+          "size": [
+            8.7,
+            11.7,
+            4.8
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "back_plate",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.5,
+            0.5,
+            2.35
+          ],
+          "size": [
+            9,
+            8.1,
+            1.2
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "back_spine",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.6,
+            0.7,
+            3.5
+          ],
+          "size": [
+            1.2,
+            7.8,
+            0.45
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "gorget_front",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.4,
+            -0.55,
+            -3.2
+          ],
+          "size": [
+            6.8,
+            1.2,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "gorget_rear",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.5,
+            -0.6,
+            2.4
+          ],
+          "size": [
+            7,
+            1.2,
+            1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "breastplate_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.55,
+            1,
+            -3.8
+          ],
+          "size": [
+            4.35,
+            4.5,
+            1.5
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "breastplate_rim_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.55,
+            5.3,
+            -4
+          ],
+          "size": [
+            4.35,
+            0.55,
+            1.6
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "breastplate_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            0.2,
+            1,
+            -3.8
+          ],
+          "size": [
+            4.35,
+            4.5,
+            1.5
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "breastplate_rim_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            0.2,
+            5.3,
+            -4
+          ],
+          "size": [
+            4.35,
+            0.55,
+            1.6
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "sternum",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.45,
+            1.2,
+            -4.05
+          ],
+          "size": [
+            0.9,
+            4.3,
+            0.45
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "abdomen_0",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            5.8,
+            -3.3
+          ],
+          "size": [
+            7.8,
+            1.65,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "abdomen_edge_0",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            7.15,
+            -3.38
+          ],
+          "size": [
+            7.8,
+            0.3,
+            1.1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "abdomen_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            7.3,
+            -3.1399999999999997
+          ],
+          "size": [
+            7.8,
+            1.65,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "abdomen_edge_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            8.65,
+            -3.2199999999999998
+          ],
+          "size": [
+            7.8,
+            0.3,
+            1.1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "abdomen_2",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            8.8,
+            -2.98
+          ],
+          "size": [
+            7.8,
+            1.65,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "abdomen_edge_2",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            10.15,
+            -3.06
+          ],
+          "size": [
+            7.8,
+            0.3,
+            1.1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "belt",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.5,
+            10,
+            -2.85
+          ],
+          "size": [
+            9,
+            1.45,
+            5.7
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "belt_clasp",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -1,
+            10.05,
+            -3.5
+          ],
+          "size": [
+            2,
+            1.3,
+            0.8
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "cross_strap",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.55,
+            -0.1,
+            -4.45
+          ],
+          "size": [
+            1.1,
+            10.1,
+            0.45
+          ],
+          "role": "strap",
+          "rotation": [
+            0,
+            0,
+            30
+          ],
+          "rotation_pivot": [
+            0,
+            5,
+            -4.2
+          ]
+        },
+        {
+          "name": "strap_clasp",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            1.1,
+            2.2,
+            -4.65
+          ],
+          "size": [
+            1.3,
+            1.6,
+            0.55
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "belt_pouch_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.2,
+            8.7,
+            -4.2
+          ],
+          "size": [
+            1.9,
+            2.8,
+            1.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "pouch_flap_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.3,
+            8.6,
+            -4.4
+          ],
+          "size": [
+            2.1,
+            1.05,
+            2
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "belt_pouch_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            2.3,
+            8.7,
+            -4.2
+          ],
+          "size": [
+            1.9,
+            2.8,
+            1.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "pouch_flap_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            2.2,
+            8.6,
+            -4.4
+          ],
+          "size": [
+            2.1,
+            1.05,
+            2
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "arm_underlayer_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.25,
+            -1.7,
+            -2.25
+          ],
+          "size": [
+            4.5,
+            11.8,
+            4.5
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "pauldron_cap_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -4.1,
+            -2.6,
+            -3
+          ],
+          "size": [
+            6.2,
+            2.1,
+            6
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "pauldron_crown_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.3999999999999995,
+            -3.1,
+            -2.4
+          ],
+          "size": [
+            4.800000000000001,
+            0.5,
+            4.8
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "pauldron_lame_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.8999999999999995,
+            -0.6,
+            -3.05
+          ],
+          "size": [
+            5.8,
+            1.35,
+            6.1
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "pauldron_rim_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.8999999999999995,
+            0.5,
+            -3.15
+          ],
+          "size": [
+            5.8,
+            0.4,
+            6.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "upper_arm_plate_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.15,
+            1.4,
+            -2.8
+          ],
+          "size": [
+            4.3,
+            3.1,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.25,
+            6.1,
+            -2.8
+          ],
+          "size": [
+            4.5,
+            3.9,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_rim_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.35,
+            9.65,
+            -2.95
+          ],
+          "size": [
+            4.7,
+            0.5,
+            5.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "elbow_band_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.3,
+            5.1,
+            -2.4
+          ],
+          "size": [
+            4.6,
+            0.8,
+            4.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "arm_underlayer_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.25,
+            -1.7,
+            -2.25
+          ],
+          "size": [
+            4.5,
+            11.8,
+            4.5
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "pauldron_cap_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -2.1,
+            -2.6,
+            -3
+          ],
+          "size": [
+            6.2,
+            2.1,
+            6
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "pauldron_crown_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.4000000000000001,
+            -3.1,
+            -2.4
+          ],
+          "size": [
+            4.800000000000001,
+            0.5,
+            4.8
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "pauldron_lame_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.9000000000000001,
+            -0.6,
+            -3.05
+          ],
+          "size": [
+            5.8,
+            1.35,
+            6.1
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "pauldron_rim_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.9000000000000001,
+            0.5,
+            -3.15
+          ],
+          "size": [
+            5.8,
+            0.4,
+            6.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "upper_arm_plate_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.15,
+            1.4,
+            -2.8
+          ],
+          "size": [
+            4.3,
+            3.1,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.25,
+            6.1,
+            -2.8
+          ],
+          "size": [
+            4.5,
+            3.9,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_rim_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.35,
+            9.65,
+            -2.95
+          ],
+          "size": [
+            4.7,
+            0.5,
+            5.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "elbow_band_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.3,
+            5.1,
+            -2.4
+          ],
+          "size": [
+            4.6,
+            0.8,
+            4.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "leg_cloth_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.1,
+            0,
+            -2.1
+          ],
+          "size": [
+            4.2,
+            10,
+            4.2
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "thigh_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.35,
+            0.4,
+            -2.75
+          ],
+          "size": [
+            4.15,
+            3.6,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "thigh_rim_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.4,
+            3.6,
+            -2.9
+          ],
+          "size": [
+            4.2,
+            0.45,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "kneecap_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.45,
+            4.8,
+            -3.05
+          ],
+          "size": [
+            4.25,
+            1.8,
+            1.45
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "knee_center_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -1.5,
+            5,
+            -3.35
+          ],
+          "size": [
+            3,
+            1.25,
+            0.45
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "boot_underlayer_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.25,
+            7.2,
+            -2.35
+          ],
+          "size": [
+            4.05,
+            4.8,
+            4.7
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "greave_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.45,
+            7,
+            -2.9
+          ],
+          "size": [
+            4.25,
+            3.8,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "ankle_band_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.5,
+            10,
+            -2.95
+          ],
+          "size": [
+            4.3,
+            1,
+            5.9
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "sabatons_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.55,
+            10.7,
+            -3.3
+          ],
+          "size": [
+            4.35,
+            1.5,
+            6.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "toe_plate_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.4,
+            10.5,
+            -3.6
+          ],
+          "size": [
+            4.2,
+            0.8,
+            1.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "sole_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.6,
+            11.85,
+            -3.45
+          ],
+          "size": [
+            4.4,
+            0.55,
+            6.3
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "leg_cloth_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -2.1,
+            0,
+            -2.1
+          ],
+          "size": [
+            4.2,
+            10,
+            4.2
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "thigh_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.8,
+            0.4,
+            -2.75
+          ],
+          "size": [
+            4.15,
+            3.6,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "thigh_rim_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.8,
+            3.6,
+            -2.9
+          ],
+          "size": [
+            4.2,
+            0.45,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "kneecap_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.8,
+            4.8,
+            -3.05
+          ],
+          "size": [
+            4.25,
+            1.8,
+            1.45
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "knee_center_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.5,
+            5,
+            -3.35
+          ],
+          "size": [
+            3.0,
+            1.25,
+            0.45
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "boot_underlayer_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            7.2,
+            -2.35
+          ],
+          "size": [
+            4.05,
+            4.8,
+            4.7
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "greave_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            7,
+            -2.9
+          ],
+          "size": [
+            4.25,
+            3.8,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "ankle_band_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            10,
+            -2.95
+          ],
+          "size": [
+            4.3,
+            1,
+            5.9
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "sabatons_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            10.7,
+            -3.3
+          ],
+          "size": [
+            4.35,
+            1.5,
+            6.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "toe_plate_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            10.5,
+            -3.6
+          ],
+          "size": [
+            4.2,
+            0.8,
+            1.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "sole_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            11.85,
+            -3.45
+          ],
+          "size": [
+            4.4,
+            0.55,
+            6.3
+          ],
+          "role": "dark"
+        }
+      ]
+    },
+    "aegis": {
+      "palette": {
+        "plate": "#303c50",
+        "edge": "#8dabb8",
+        "shadow": "#1b263b",
+        "cloth": "#202838",
+        "strap": "#4e4850",
+        "buckle": "#67d9cd",
+        "dark": "#102334"
+      },
+      "cubes": [
+        {
+          "name": "helmet_crown",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.5,
+            -8.6,
+            -4.5
+          ],
+          "size": [
+            9,
+            1.5,
+            9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "helmet_crest",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -3.5,
+            -9.1,
+            -3.7
+          ],
+          "size": [
+            7,
+            0.5,
+            7.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "helmet_rear",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.5,
+            -7.1,
+            3.6
+          ],
+          "size": [
+            9,
+            6.6,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "temple_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.7,
+            -7.1,
+            -4.5
+          ],
+          "size": [
+            1,
+            5.8,
+            8.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.2,
+            -4.1,
+            -5.1
+          ],
+          "size": [
+            1.7,
+            3.7,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_trim_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.2,
+            -0.7,
+            -5.2
+          ],
+          "size": [
+            1.7,
+            0.5,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "temple_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            3.7,
+            -7.1,
+            -4.5
+          ],
+          "size": [
+            1,
+            5.8,
+            8.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            2.5,
+            -4.1,
+            -5.1
+          ],
+          "size": [
+            1.7,
+            3.7,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "cheek_trim_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            2.5,
+            -0.7,
+            -5.2
+          ],
+          "size": [
+            1.7,
+            0.5,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "brow",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.4,
+            -6.1,
+            -5.2
+          ],
+          "size": [
+            8.8,
+            1,
+            1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "brow_plate",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -4.3,
+            -7.2,
+            -4.9
+          ],
+          "size": [
+            8.6,
+            1.1,
+            0.9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "visor_nose",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -0.5,
+            -5.1,
+            -5.3
+          ],
+          "size": [
+            1,
+            2.7,
+            0.9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "chin_plate",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -2.5,
+            -2.1,
+            -5
+          ],
+          "size": [
+            5,
+            1.6,
+            0.9
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "chin_edge",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -2.5,
+            -0.5,
+            -5.2
+          ],
+          "size": [
+            5,
+            0.5,
+            1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "breather_-1.5",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -1.75,
+            -1.8,
+            -5.2
+          ],
+          "size": [
+            0.5,
+            1,
+            0.35
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "breather_0",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -0.25,
+            -1.8,
+            -5.2
+          ],
+          "size": [
+            0.5,
+            1,
+            0.35
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "breather_1.5",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            1.25,
+            -1.8,
+            -5.2
+          ],
+          "size": [
+            0.5,
+            1,
+            0.35
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "chest_underlayer",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.35,
+            -0.1,
+            -2.4
+          ],
+          "size": [
+            8.7,
+            11.7,
+            4.8
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "back_plate",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.5,
+            0.5,
+            2.35
+          ],
+          "size": [
+            9,
+            8.1,
+            1.2
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "back_spine",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.6,
+            0.7,
+            3.5
+          ],
+          "size": [
+            1.2,
+            7.8,
+            0.45
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "gorget_front",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.4,
+            -0.55,
+            -3.2
+          ],
+          "size": [
+            6.8,
+            1.2,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "gorget_rear",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.5,
+            -0.6,
+            2.4
+          ],
+          "size": [
+            7,
+            1.2,
+            1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "breastplate_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.55,
+            1,
+            -3.8
+          ],
+          "size": [
+            4.35,
+            4.5,
+            1.5
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "breastplate_rim_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.55,
+            5.3,
+            -4
+          ],
+          "size": [
+            4.35,
+            0.55,
+            1.6
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "breastplate_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            0.2,
+            1,
+            -3.8
+          ],
+          "size": [
+            4.35,
+            4.5,
+            1.5
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "breastplate_rim_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            0.2,
+            5.3,
+            -4
+          ],
+          "size": [
+            4.35,
+            0.55,
+            1.6
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "sternum",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.45,
+            1.2,
+            -4.05
+          ],
+          "size": [
+            0.9,
+            4.3,
+            0.45
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "abdomen_0",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            5.8,
+            -3.3
+          ],
+          "size": [
+            7.8,
+            1.65,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "abdomen_edge_0",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            7.15,
+            -3.38
+          ],
+          "size": [
+            7.8,
+            0.3,
+            1.1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "abdomen_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            7.3,
+            -3.1399999999999997
+          ],
+          "size": [
+            7.8,
+            1.65,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "abdomen_edge_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            8.65,
+            -3.2199999999999998
+          ],
+          "size": [
+            7.8,
+            0.3,
+            1.1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "abdomen_2",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            8.8,
+            -2.98
+          ],
+          "size": [
+            7.8,
+            1.65,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "abdomen_edge_2",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -3.9,
+            10.15,
+            -3.06
+          ],
+          "size": [
+            7.8,
+            0.3,
+            1.1
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "belt",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.5,
+            10,
+            -2.85
+          ],
+          "size": [
+            9,
+            1.45,
+            5.7
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "belt_clasp",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -1,
+            10.05,
+            -3.5
+          ],
+          "size": [
+            2,
+            1.3,
+            0.8
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "cross_strap",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.55,
+            -0.1,
+            -4.45
+          ],
+          "size": [
+            1.1,
+            10.1,
+            0.45
+          ],
+          "role": "strap",
+          "rotation": [
+            0,
+            0,
+            30
+          ],
+          "rotation_pivot": [
+            0,
+            5,
+            -4.2
+          ]
+        },
+        {
+          "name": "strap_clasp",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            1.1,
+            2.2,
+            -4.65
+          ],
+          "size": [
+            1.3,
+            1.6,
+            0.55
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "belt_pouch_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.2,
+            8.7,
+            -4.2
+          ],
+          "size": [
+            1.9,
+            2.8,
+            1.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "pouch_flap_-1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -4.3,
+            8.6,
+            -4.4
+          ],
+          "size": [
+            2.1,
+            1.05,
+            2
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "belt_pouch_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            2.3,
+            8.7,
+            -4.2
+          ],
+          "size": [
+            1.9,
+            2.8,
+            1.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "pouch_flap_1",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            2.2,
+            8.6,
+            -4.4
+          ],
+          "size": [
+            2.1,
+            1.05,
+            2
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "arm_underlayer_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.25,
+            -1.7,
+            -2.25
+          ],
+          "size": [
+            4.5,
+            11.8,
+            4.5
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "pauldron_cap_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -4.1,
+            -2.6,
+            -3
+          ],
+          "size": [
+            6.2,
+            2.1,
+            6
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "pauldron_crown_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.3999999999999995,
+            -3.1,
+            -2.4
+          ],
+          "size": [
+            4.800000000000001,
+            0.5,
+            4.8
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "pauldron_lame_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.8999999999999995,
+            -0.6,
+            -3.05
+          ],
+          "size": [
+            5.8,
+            1.35,
+            6.1
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "pauldron_rim_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.8999999999999995,
+            0.5,
+            -3.15
+          ],
+          "size": [
+            5.8,
+            0.4,
+            6.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "upper_arm_plate_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.15,
+            1.4,
+            -2.8
+          ],
+          "size": [
+            4.3,
+            3.1,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.25,
+            6.1,
+            -2.8
+          ],
+          "size": [
+            4.5,
+            3.9,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_rim_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.35,
+            9.65,
+            -2.95
+          ],
+          "size": [
+            4.7,
+            0.5,
+            5.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "elbow_band_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -3.3,
+            5.1,
+            -2.4
+          ],
+          "size": [
+            4.6,
+            0.8,
+            4.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "arm_underlayer_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.25,
+            -1.7,
+            -2.25
+          ],
+          "size": [
+            4.5,
+            11.8,
+            4.5
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "pauldron_cap_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -2.1,
+            -2.6,
+            -3
+          ],
+          "size": [
+            6.2,
+            2.1,
+            6
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "pauldron_crown_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.4000000000000001,
+            -3.1,
+            -2.4
+          ],
+          "size": [
+            4.800000000000001,
+            0.5,
+            4.8
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "pauldron_lame_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.9000000000000001,
+            -0.6,
+            -3.05
+          ],
+          "size": [
+            5.8,
+            1.35,
+            6.1
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "pauldron_rim_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.9000000000000001,
+            0.5,
+            -3.15
+          ],
+          "size": [
+            5.8,
+            0.4,
+            6.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "upper_arm_plate_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.15,
+            1.4,
+            -2.8
+          ],
+          "size": [
+            4.3,
+            3.1,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.25,
+            6.1,
+            -2.8
+          ],
+          "size": [
+            4.5,
+            3.9,
+            1.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "vambrace_rim_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.35,
+            9.65,
+            -2.95
+          ],
+          "size": [
+            4.7,
+            0.5,
+            5.3
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "elbow_band_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            -1.3,
+            5.1,
+            -2.4
+          ],
+          "size": [
+            4.6,
+            0.8,
+            4.8
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "leg_cloth_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.1,
+            0,
+            -2.1
+          ],
+          "size": [
+            4.2,
+            10,
+            4.2
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "thigh_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.35,
+            0.4,
+            -2.75
+          ],
+          "size": [
+            4.15,
+            3.6,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "thigh_rim_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.4,
+            3.6,
+            -2.9
+          ],
+          "size": [
+            4.2,
+            0.45,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "kneecap_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -2.45,
+            4.8,
+            -3.05
+          ],
+          "size": [
+            4.25,
+            1.8,
+            1.45
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "knee_center_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -1.5,
+            5,
+            -3.35
+          ],
+          "size": [
+            3,
+            1.25,
+            0.45
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "boot_underlayer_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.25,
+            7.2,
+            -2.35
+          ],
+          "size": [
+            4.05,
+            4.8,
+            4.7
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "greave_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.45,
+            7,
+            -2.9
+          ],
+          "size": [
+            4.25,
+            3.8,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "ankle_band_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.5,
+            10,
+            -2.95
+          ],
+          "size": [
+            4.3,
+            1,
+            5.9
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "sabatons_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.55,
+            10.7,
+            -3.3
+          ],
+          "size": [
+            4.35,
+            1.5,
+            6.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "toe_plate_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.4,
+            10.5,
+            -3.6
+          ],
+          "size": [
+            4.2,
+            0.8,
+            1.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "sole_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -2.6,
+            11.85,
+            -3.45
+          ],
+          "size": [
+            4.4,
+            0.55,
+            6.3
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "leg_cloth_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -2.1,
+            0,
+            -2.1
+          ],
+          "size": [
+            4.2,
+            10,
+            4.2
+          ],
+          "role": "cloth"
+        },
+        {
+          "name": "thigh_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.8,
+            0.4,
+            -2.75
+          ],
+          "size": [
+            4.15,
+            3.6,
+            1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "thigh_rim_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.8,
+            3.6,
+            -2.9
+          ],
+          "size": [
+            4.2,
+            0.45,
+            1.2
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "kneecap_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.8,
+            4.8,
+            -3.05
+          ],
+          "size": [
+            4.25,
+            1.8,
+            1.45
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "knee_center_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.5,
+            5,
+            -3.35
+          ],
+          "size": [
+            3.0,
+            1.25,
+            0.45
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "boot_underlayer_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            7.2,
+            -2.35
+          ],
+          "size": [
+            4.05,
+            4.8,
+            4.7
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "greave_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            7,
+            -2.9
+          ],
+          "size": [
+            4.25,
+            3.8,
+            1.1
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "ankle_band_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            10,
+            -2.95
+          ],
+          "size": [
+            4.3,
+            1,
+            5.9
+          ],
+          "role": "strap"
+        },
+        {
+          "name": "sabatons_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            10.7,
+            -3.3
+          ],
+          "size": [
+            4.35,
+            1.5,
+            6.05
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "toe_plate_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            10.5,
+            -3.6
+          ],
+          "size": [
+            4.2,
+            0.8,
+            1.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "sole_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.8,
+            11.85,
+            -3.45
+          ],
+          "size": [
+            4.4,
+            0.55,
+            6.3
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "optic_recess",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -3.2,
+            -5.1,
+            -5.35
+          ],
+          "size": [
+            6.4,
+            0.85,
+            0.35
+          ],
+          "role": "dark"
+        },
+        {
+          "name": "optic_lens_-2.8",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -2.8,
+            -4.95,
+            -5.55
+          ],
+          "size": [
+            1,
+            0.5,
+            0.3
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "optic_lens_1.8",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            1.8,
+            -4.95,
+            -5.55
+          ],
+          "size": [
+            1,
+            0.5,
+            0.3
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "sensor_pod_-1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            -5.25,
+            -5.8,
+            -1.4
+          ],
+          "size": [
+            0.7,
+            2.4,
+            2.8
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "shoulder_outer_plate_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -4,
+            -2.6,
+            -2.8
+          ],
+          "size": [
+            2.2,
+            4.3,
+            5.6
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "shoulder_sensor_-1",
+          "bone": "right_arm",
+          "slot": "chest",
+          "from": [
+            -4.15,
+            -1.9,
+            -1.5
+          ],
+          "size": [
+            0.35,
+            1,
+            2.5
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "thigh_extra_-1",
+          "bone": "right_leg",
+          "slot": "legs",
+          "from": [
+            -1.65,
+            1,
+            -3.3
+          ],
+          "size": [
+            3.3,
+            2.8,
+            0.65
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "boot_power_strip_-1",
+          "bone": "right_leg",
+          "slot": "feet",
+          "from": [
+            -1.4,
+            9,
+            -3.25
+          ],
+          "size": [
+            2.8,
+            0.5,
+            0.35
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "sensor_pod_1",
+          "bone": "head",
+          "slot": "head",
+          "from": [
+            4.55,
+            -5.8,
+            -1.4
+          ],
+          "size": [
+            0.7,
+            2.4,
+            2.8
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "shoulder_outer_plate_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            1.8,
+            -2.6,
+            -2.8
+          ],
+          "size": [
+            2.2,
+            4.3,
+            5.6
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "shoulder_sensor_1",
+          "bone": "left_arm",
+          "slot": "chest",
+          "from": [
+            3.8,
+            -1.9,
+            -1.5
+          ],
+          "size": [
+            0.35,
+            1,
+            2.5
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "thigh_extra_1",
+          "bone": "left_leg",
+          "slot": "legs",
+          "from": [
+            -1.65,
+            1,
+            -3.3
+          ],
+          "size": [
+            3.3,
+            2.8,
+            0.65
+          ],
+          "role": "plate"
+        },
+        {
+          "name": "boot_power_strip_1",
+          "bone": "left_leg",
+          "slot": "feet",
+          "from": [
+            -1.4,
+            9,
+            -3.25
+          ],
+          "size": [
+            2.8,
+            0.5,
+            0.35
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "chest_controller",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -1.1,
+            2.2,
+            -4.7
+          ],
+          "size": [
+            2.2,
+            2.1,
+            0.65
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "chest_reactor_window",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.65,
+            2.65,
+            -4.9
+          ],
+          "size": [
+            1.3,
+            1.2,
+            0.35
+          ],
+          "role": "buckle"
+        },
+        {
+          "name": "back_gravity_harvester",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -2.1,
+            1,
+            3.8
+          ],
+          "size": [
+            4.2,
+            5.9,
+            1.2
+          ],
+          "role": "shadow"
+        },
+        {
+          "name": "harvester_rib_1.5",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -1.7,
+            1.5,
+            4.85
+          ],
+          "size": [
+            3.4,
+            0.5,
+            0.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "harvester_rib_3",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -1.7,
+            3,
+            4.85
+          ],
+          "size": [
+            3.4,
+            0.5,
+            0.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "harvester_rib_4.5",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -1.7,
+            4.5,
+            4.85
+          ],
+          "size": [
+            3.4,
+            0.5,
+            0.4
+          ],
+          "role": "edge"
+        },
+        {
+          "name": "back_energy_indicator",
+          "bone": "body",
+          "slot": "chest",
+          "from": [
+            -0.4,
+            1.4,
+            5.05
+          ],
+          "size": [
+            0.8,
+            4.4,
+            0.35
+          ],
+          "role": "buckle"
+        }
+      ]
+    }
+  },
+  "baseline_tints": {
+    "riftsteel": "#386369",
+    "riftsilver": "#b4bdc9"
+  },
+  "textures_reference_catalog": "D:\\repos\\Blender\\catalog\\minecraft_1_21_1_reference",
+  "reference_sources": [
+    {
+      "minecraft_resource": "minecraft:textures/models/armor/leather_layer_1.png",
+      "local_path": "D:\\repos\\Blender\\catalog\\minecraft_1_21_1_reference\\models\\armor\\leather_layer_1.png",
+      "sha256": "6c96099472fc44dc11b5823a81c57ec7c207203050cd088a15d2358b3df6b5e7",
+      "operation": "unchanged local reference extraction"
+    },
+    {
+      "minecraft_resource": "minecraft:textures/models/armor/leather_layer_2.png",
+      "local_path": "D:\\repos\\Blender\\catalog\\minecraft_1_21_1_reference\\models\\armor\\leather_layer_2.png",
+      "sha256": "72e7df28fae9ee52cff987967f4a61996827271045d99bed3dd364a9ba41f839",
+      "operation": "unchanged local reference extraction"
+    },
+    {
+      "minecraft_resource": "minecraft:textures/models/armor/leather_layer_1_overlay.png",
+      "local_path": "D:\\repos\\Blender\\catalog\\minecraft_1_21_1_reference\\models\\armor\\leather_layer_1_overlay.png",
+      "sha256": "45f68c68cf1106e35d34cd2a35fc5f46d685ec6a10331b50b3bab47c7db6304c",
+      "operation": "unchanged local reference extraction"
+    },
+    {
+      "minecraft_resource": "minecraft:textures/models/armor/leather_layer_2_overlay.png",
+      "local_path": "D:\\repos\\Blender\\catalog\\minecraft_1_21_1_reference\\models\\armor\\leather_layer_2_overlay.png",
+      "sha256": "965703d1efd6fa8245ae0d288383d41194813db8259b3a4c01ad215b9e44385a",
+      "operation": "unchanged local reference extraction"
+    },
+    {
+      "minecraft_resource": "minecraft:textures/models/armor/iron_layer_1.png",
+      "local_path": "D:\\repos\\Blender\\catalog\\minecraft_1_21_1_reference\\models\\armor\\iron_layer_1.png",
+      "sha256": "4ab8a988d646e8a22a78fe71d0bc293579c65a663e3c1755cac698acbbdc2a66",
+      "operation": "unchanged local reference extraction"
+    },
+    {
+      "minecraft_resource": "minecraft:textures/models/armor/iron_layer_2.png",
+      "local_path": "D:\\repos\\Blender\\catalog\\minecraft_1_21_1_reference\\models\\armor\\iron_layer_2.png",
+      "sha256": "bc36923b5c049b2730840b8529df127d6877891897a8c11db42a62c882f3d42e",
+      "operation": "unchanged local reference extraction"
+    },
+    {
+      "minecraft_resource": "minecraft:textures/entity/player/wide/steve.png",
+      "local_path": "D:\\repos\\Blender\\catalog\\minecraft_1_21_1_reference\\entity\\player\\wide\\steve.png",
+      "sha256": "d876e0c88f4b3de71040966ed94a614f315b888592b520b993399fd2738418d0",
+      "operation": "unchanged local reference extraction"
+    }
+  ],
+  "gameplay": "Existing item IDs, recipes, protection, durability, enchantments and spider resistance are not modified.",
+  "limitations": [
+    "Blender visual proposal, not a native game screenshot.",
+    "Wearable renderer, trims, dye behavior, slim arms, first-person arms and animation clipping remain unverified.",
+    "Pouches are visual details, not additional inventory slots."
+  ]
+}

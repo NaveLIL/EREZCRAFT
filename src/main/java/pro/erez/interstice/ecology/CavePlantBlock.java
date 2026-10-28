@@ -63,7 +63,7 @@ public final class CavePlantBlock extends Block {
                     pos.getY() + (hanging ? .35 : .65), pos.getZ() + .25 + random.nextDouble() * .5, 0, .006, 0);
     }
     @Override public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if (!stinging || level.isClientSide || entity instanceof pro.erez.interstice.entity.CaveRiftSpiderEntity || !(entity instanceof LivingEntity victim) || !victim.isAlive()
+        if (!stinging || level.isClientSide || pro.erez.interstice.fauna.RealmFaunaHazards.adaptedToFlora(entity) || !(entity instanceof LivingEntity victim) || !victim.isAlive()
                 || victim instanceof Player player && (player.isCreative() || player.isSpectator())) return;
         long now = level.getServer().overworld().getGameTime();
         CompoundTag data = victim.getPersistentData();

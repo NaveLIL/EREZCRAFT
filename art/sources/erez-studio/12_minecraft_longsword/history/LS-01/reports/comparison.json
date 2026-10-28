@@ -1,0 +1,12 @@
+{
+  "baseline": "Existing 32x32 sprite generated into a 16-model-unit square with 1-unit depth",
+  "candidate": "Exact candidate JSON mesh",
+  "same_camera": true,
+  "same_scale": true,
+  "same_material_shader": true,
+  "alignment": "Centres of brown grip texels aligned; this is not a hand-transform verification",
+  "minecraft_resources_modified": false,
+  "native_game_screenshot": false,
+  "baseline_texture_sha256": "eeeb1f0503d70a9a3a68a4d43cf71f314b927a4480572866ebf43188e500ccea",
+  "candidate_model_sha256": "66815202db28e6bc3af3595dffed04e6c51be843527c027bfb13c6cee1a4216a"
+}

@@ -1,0 +1,219 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\si02\\candidate\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\s33w",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "-PstudioMode=worktools",
+    "assemble",
+    "runStudioWorktools"
+  ],
+  "passed": true,
+  "started_utc": "2026-10-27T16:35:39.500549+00:00",
+  "pid": 35724,
+  "exit_code": 0,
+  "duration_seconds": 362.422,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "native_models": [
+      {
+        "item": "riftsilver_pickaxe",
+        "quads": 198,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsilver_axe",
+        "quads": 138,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsilver_shovel",
+        "quads": 120,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsilver_hoe",
+        "quads": 114,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsteel_pickaxe",
+        "quads": 210,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsteel_axe",
+        "quads": 150,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsteel_shovel",
+        "quads": 132,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsteel_hoe",
+        "quads": 126,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      }
+    ],
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.33-tool-palm",
+    "confirmed_left_hand_sync_group_0": [
+      {
+        "actor": "EREZ_Silver",
+        "expected": "riftsilver_pickaxe",
+        "main": "minecraft:air",
+        "off": "interstice:riftsilver_pickaxe"
+      },
+      {
+        "actor": "EREZ_Steel",
+        "expected": "riftsilver_axe",
+        "main": "minecraft:air",
+        "off": "interstice:riftsilver_axe"
+      },
+      {
+        "actor": "EREZ_Magen",
+        "expected": "riftsilver_shovel",
+        "main": "minecraft:air",
+        "off": "interstice:riftsilver_shovel"
+      }
+    ],
+    "confirmed_left_hand_sync_group_1": [
+      {
+        "actor": "EREZ_Silver",
+        "expected": "riftsilver_hoe",
+        "main": "minecraft:air",
+        "off": "interstice:riftsilver_hoe"
+      },
+      {
+        "actor": "EREZ_Steel",
+        "expected": "riftsteel_pickaxe",
+        "main": "minecraft:air",
+        "off": "interstice:riftsteel_pickaxe"
+      },
+      {
+        "actor": "EREZ_Magen",
+        "expected": "riftsteel_axe",
+        "main": "minecraft:air",
+        "off": "interstice:riftsteel_axe"
+      }
+    ],
+    "confirmed_left_hand_sync_group_2": [
+      {
+        "actor": "EREZ_Silver",
+        "expected": "riftsteel_shovel",
+        "main": "minecraft:air",
+        "off": "interstice:riftsteel_shovel"
+      },
+      {
+        "actor": "EREZ_Steel",
+        "expected": "riftsteel_hoe",
+        "main": "minecraft:air",
+        "off": "interstice:riftsteel_hoe"
+      },
+      {
+        "actor": "EREZ_Magen",
+        "expected": "riftsilver_pickaxe",
+        "main": "minecraft:air",
+        "off": "interstice:riftsilver_pickaxe"
+      }
+    ],
+    "all_eight_third_person_both_hands_checked": true,
+    "first_person_fov": 70,
+    "all_eight_first_person_both_hands_checked": true,
+    "resource_reload_checked": true,
+    "glint_checked": true,
+    "native_full_pack_mode_and_excavation_checked": true,
+    "wide_slim_palm_closeups_checked": true,
+    "passed": true,
+    "reason": "",
+    "phase": 14,
+    "pid": 25900,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "worktools-group-0-right.png",
+      "worktools-group-0-quarter.png",
+      "worktools-group-0-left.png",
+      "worktools-group-1-right.png",
+      "worktools-group-1-quarter.png",
+      "worktools-group-1-left.png",
+      "worktools-group-2-right.png",
+      "worktools-group-2-quarter.png",
+      "worktools-group-2-left.png",
+      "worktools-inventory.png",
+      "worktools-catalog.png",
+      "worktools-first-person-riftsilver_pickaxe.png",
+      "worktools-first-person-riftsilver_axe.png",
+      "worktools-first-person-riftsilver_shovel.png",
+      "worktools-first-person-riftsilver_hoe.png",
+      "worktools-first-person-riftsteel_pickaxe.png",
+      "worktools-first-person-riftsteel_axe.png",
+      "worktools-first-person-riftsteel_shovel.png",
+      "worktools-first-person-riftsteel_hoe.png",
+      "worktools-after-reload.png",
+      "worktools-glint.png",
+      "worktools-excavation-result.png",
+      "worktools-palm-wide-right.png",
+      "worktools-palm-wide-left.png",
+      "worktools-palm-slim-right.png",
+      "worktools-palm-slim-left.png"
+    ],
+    "settled": {
+      "purpose": "armor_player_gallery_shutdown",
+      "server_tick": 1046,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1282,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "screenshots": {
+    "worktools-group-0-right.png": "d81e446ad1b0a98a76c5e961686ba9a323171e925b10cf9e714a530d64c283cb",
+    "worktools-group-0-quarter.png": "3ffded4e70a06e7f57734cd4e5241750281b7b313b4f37c86efbc0f4ca0d0aea",
+    "worktools-group-0-left.png": "82b7672d203df44643bff1f86d88e53aed2f6ab10cb6a9030d4baf1154504817",
+    "worktools-group-1-right.png": "f50c05f855965bb350e2e46d5efdd7ab029540c892b613e6ee691f3157984ab1",
+    "worktools-group-1-quarter.png": "a2e06bea011f81a20bc34f4a374b1713815a348759b3c6ba861bd8252433e314",
+    "worktools-group-1-left.png": "21ee025b64192eb247ce3c1678c396257e08c8f1475bcbd3d3b3250b27eb0a5a",
+    "worktools-group-2-right.png": "b50329aba30bf5d9032cdb79cdda968435f1da5fcf5f952230117b1456b0d7ae",
+    "worktools-group-2-quarter.png": "2e7d979bf15d53f6b51ab8586848a3ad363843db4c38f1c324937fcf8b12de44",
+    "worktools-group-2-left.png": "be0a7191de466dc78f07ee2029aa3b9285be0af11e51fbeacff7433bf2a9991a",
+    "worktools-inventory.png": "de9360880a8101f447f1586d11ba4088660f323b0ebb390cd336cd02a7a91b16",
+    "worktools-catalog.png": "b7b37198f2e0420f547bef30a58d3c09e2145d058c8a6ac6601c32710508373a",
+    "worktools-first-person-riftsilver_pickaxe.png": "ba4a07c2da5c36b11868b5d0f964320d47d64469a0ffc74b44e5339fee2cdc3a",
+    "worktools-first-person-riftsilver_axe.png": "8037eb135a64c99b410a1f233b2bfa30da8fa0a9aae0a5adcc8f4458ec180011",
+    "worktools-first-person-riftsilver_shovel.png": "cf9a27eaecd0596e60cc10482924d49a9f70db8dec5fb088ab2b7819c2e846b0",
+    "worktools-first-person-riftsilver_hoe.png": "5727ba98d61e32b8eeb2e897132b095f70c00cee659adcf87dd7e2cd95b5b85e",
+    "worktools-first-person-riftsteel_pickaxe.png": "07ded700ad4b42bc2da9a038923175dfd549402c13de1dc675739f0fdd749f5a",
+    "worktools-first-person-riftsteel_axe.png": "4179c71a7d5e16acc9c2e1801bba0c8968bbae0e364c5e8c268234985c10999c",
+    "worktools-first-person-riftsteel_shovel.png": "edf92a20acdc1b44336c5b8d3ff8c693a482402582989696f9efef4eb2f7deed",
+    "worktools-first-person-riftsteel_hoe.png": "7f5fd450c602e992b963fd2862ae18e958c3eea3c1c0a108f94f65a4e77907ed",
+    "worktools-after-reload.png": "647f30fc5a1bd77e5f9775cc047bebb231cc36becda09fec3a0a3cbab73b8226",
+    "worktools-glint.png": "843f1459a91118ffb3403e320a4c08c8c9ce01c040f24ed1bcf07f883922167b",
+    "worktools-excavation-result.png": "70b3b09d591c3e0b88b039ab7b3010e65fc327486674d3e467d39f9366b9b8e8",
+    "worktools-palm-wide-right.png": "d989808e808400105d90a8e0e6b066c42773fd86273df5c9c93941e42f331bff",
+    "worktools-palm-wide-left.png": "906de78613ed2c2a9917734db82b0e563c75d04a3173a9b90a209cbda24fd1b5",
+    "worktools-palm-slim-right.png": "8973fc88da2a9e00d2fc77bdf93272bc779dae4751a539e2e8fda7928f1c6dee",
+    "worktools-palm-slim-left.png": "b98c5fa2b6afeaeea721b7215f2d08ad86043fbb3b70928ca39eeffaa51e558b"
+  }
+}

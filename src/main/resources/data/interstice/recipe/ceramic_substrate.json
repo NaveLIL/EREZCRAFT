@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " B ",
+    "BLB",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:brick"
+    },
+    "L": {
+      "item": "interstice:pure_vitriolite_lining"
+    }
+  },
+  "result": {
+    "id": "interstice:ceramic_substrate",
+    "count": 2
+  }
+}

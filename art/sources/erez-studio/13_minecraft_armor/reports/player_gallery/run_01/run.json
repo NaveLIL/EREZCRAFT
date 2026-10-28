@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-10-27T05:54:11.047538+00:00",
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g01",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "profile": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g01\\progressionNative",
+  "harness_sha256": "08d516c9d4638b18c2ea61b1264c95f31abaf567b48ef5f5e8e685104b81c813",
+  "owner_profile_used": false,
+  "pid": 7696,
+  "exit_code": 0,
+  "duration_seconds": 176.343,
+  "ended_utc": "2026-10-27T05:57:07.398306+00:00",
+  "passed": false,
+  "proof": {
+    "passed": false,
+    "reason": "java.lang.IllegalStateException: Both native arm widths required",
+    "phase": 1,
+    "pid": 19936,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "gallery-failure.png"
+    ]
+  }
+}

@@ -13,34 +13,38 @@ OUT = ASSETS / 'sounds/vault_hunter'
 OUT.mkdir(parents=True, exist_ok=True)
 files = {}
 for i, (name, duration, base) in enumerate([
-    ('ambient', 1.35, 56), ('alert', 1.05, 96), ('windup', .32, 140),
-    ('attack', .23, 80), ('hurt', .45, 125), ('death', 1.7, 72)
+    ('ambient', .8, 520), ('alert', .72, 760), ('windup', .28, 1150),
+    ('attack', .22, 430), ('hurt', .36, 920), ('death', 1.2, 360)
 ]):
     rng = np.random.default_rng(231023 + i)
     t = np.arange(round(44100 * duration)) / 44100
     progress = t / duration
-    frequency = base * (1 - .4 * progress) * (1 + .08 * np.sin(t * 28))
-    if name == 'windup':
-        frequency = base * (1 + progress)
-    phase = np.cumsum(frequency) * (2 * np.pi / 44100)
-    voice = .5 * np.sin(phase) + .23 * np.sin(phase * 2.01) + .15 * np.sin(phase * 4.03)
-    noise = np.convolve(rng.normal(size=len(t)), np.ones(7) / 7, mode='same')
-    rasp = noise * (.45 + .35 * np.sin(t * 18)**2)
-    if name in ('attack', 'windup'):
-        voice = .15 * voice + 1.1 * rasp
-    else:
-        voice += .65 * rasp
-    envelope = np.minimum(t / .025, 1) * (1-progress)**.8
-    if name == 'ambient':
-        envelope *= .6 + .4 * np.sin(t * 6)**2
-    data = np.tanh(voice * 1.8) * envelope * .66
+    # Aperiodic filtered breath and irregular clicks, without a motor oscillator.
+    frequency = np.fft.rfftfreq(len(t), 1 / 44100)
+    spectrum = np.fft.rfft(rng.normal(size=len(t)))
+    shaping = np.exp(-.5*((frequency-base)/(base*.7))**2)
+    shaping += .25*np.exp(-.5*((frequency-base*3)/(base*1.1))**2)
+    shaping *= 1-np.exp(-(frequency/150)**4)
+    breath = np.fft.irfft(spectrum*shaping,n=len(t))
+    breath /= max(.001,np.max(np.abs(breath)))
+    knots=np.linspace(0,duration,11)
+    texture=np.interp(t,knots,rng.uniform(.25,1,len(knots)))
+    envelope=np.sin(np.pi*progress)**.8
+    if name in ('windup','attack','hurt'):envelope=np.minimum(t/.008,1)*np.exp(-progress*4)
+    voice=breath*texture*envelope
+    for onset in rng.uniform(.02,duration*.7,3 if name in ('alert','windup') else 1):
+        dt=np.maximum(t-onset,0)
+        click=rng.normal(size=len(t))*np.exp(-dt/.008)*(t>=onset)
+        voice+=click*.08
+    data=np.tanh(voice*1.3)
+    data*=.65/max(.001,np.max(np.abs(data)))
     path = OUT / (name + '.ogg')
     sf.write(path, data, 44100, format='OGG', subtype='VORBIS')
     decoded, rate = sf.read(path)
     assert len(decoded) == len(data) and rate == 44100 and np.isfinite(decoded).all() and np.max(np.abs(decoded)) < 1
     files[path.name] = {'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'seconds': duration, 'sample_rate': rate, 'channels': 1}
 (ASSETS/'provenance/vault-hunter-audio.json').write_text(json.dumps({
-    'creator': 'EREZ Dev', 'license': 'CC0-1.0', 'origin': 'Original deterministic synthesis, no sampled recordings',
+    'creator': 'EREZ Dev', 'license': 'CC0-1.0', 'origin': 'Original deterministic aperiodic breath and dry transient synthesis, no sampled recordings', 'revision': 2,
     'generator': 'tools/generate_hunter_sounds.py', 'files': files
 }, indent=2)+'\n', encoding='utf-8')
 sounds = json.loads((ASSETS/'sounds.json').read_text(encoding='utf-8'))

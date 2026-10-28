@@ -1,0 +1,20 @@
+{
+  "source_sha256": "d639dc507cdba7ed2371c70265d0f3dad2fac53e7c3eec34ad077ec2b92cc9f7",
+  "models": [
+    {
+      "item": "field_backpack",
+      "worn_quads": 318,
+      "item_quads": 242
+    },
+    {
+      "item": "expedition_backpack",
+      "worn_quads": 368,
+      "item_quads": 292
+    },
+    {
+      "item": "rift_backpack",
+      "worn_quads": 372,
+      "item_quads": 296
+    }
+  ]
+}

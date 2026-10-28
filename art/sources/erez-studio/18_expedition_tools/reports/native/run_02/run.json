@@ -1,0 +1,20 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\et01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\et01\\.verification\\tools02",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "started_utc": "2026-10-27T10:06:17.496540+00:00",
+  "harness_sha256": "51994ff60ad783029c57998a9ed28179245f90dbb2f45d4a0a26b7681fe539be",
+  "owner_profile_used": false,
+  "passed": false,
+  "pid": 9648,
+  "exit_code": 4294967295,
+  "duration_seconds": 150.391
+}

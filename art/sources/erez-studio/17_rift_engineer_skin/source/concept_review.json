@@ -1,0 +1,14 @@
+{
+  "revision": "S01",
+  "asset": "preview/rift_engineer_S01_concept.png",
+  "method": "Built-in image_gen using imagegen skill",
+  "visual_direction": "Closed respirator mask, dark engineer coat, cyan instruments, brass hardware, Star of David and unmirrored Hebrew ארז",
+  "approval": "Pending user review",
+  "is_importable_skin": false,
+  "limitations": [
+    "Illustration exceeds standard 64x64 skin pixel density",
+    "Pockets, collar, mask and coat are depicted with geometry beyond the standard skin overlay",
+    "The final vanilla skin must translate these details into pixel shading and standard overlay thickness",
+    "Hebrew is shown in correct reading order but final low-resolution glyph readability remains unverified"
+  ]
+}

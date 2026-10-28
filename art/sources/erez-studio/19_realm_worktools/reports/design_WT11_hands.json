@@ -1,0 +1,213 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "item": "riftsilver_pickaxe",
+      "thirdperson_display": {
+        "rotation": [
+          35,
+          0,
+          -35
+        ],
+        "translation": [
+          1.475812,
+          0.976509,
+          1.708915
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        9.5,
+        -1.25
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsilver_axe",
+      "thirdperson_display": {
+        "rotation": [
+          35,
+          0,
+          -35
+        ],
+        "translation": [
+          1.475812,
+          0.976509,
+          1.708915
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        9.5,
+        -1.25
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsilver_shovel",
+      "thirdperson_display": {
+        "rotation": [
+          35,
+          0,
+          -35
+        ],
+        "translation": [
+          1.475812,
+          0.976509,
+          1.708915
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        9.5,
+        -1.25
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsilver_hoe",
+      "thirdperson_display": {
+        "rotation": [
+          35,
+          0,
+          -35
+        ],
+        "translation": [
+          1.475812,
+          0.976509,
+          1.708915
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        9.5,
+        -1.25
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "thirdperson_display": {
+        "rotation": [
+          35,
+          0,
+          -35
+        ],
+        "translation": [
+          1.475812,
+          0.976509,
+          1.708915
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        9.5,
+        -1.25
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsteel_axe",
+      "thirdperson_display": {
+        "rotation": [
+          35,
+          0,
+          -35
+        ],
+        "translation": [
+          1.475812,
+          0.976509,
+          1.708915
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        9.5,
+        -1.25
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsteel_shovel",
+      "thirdperson_display": {
+        "rotation": [
+          35,
+          0,
+          -35
+        ],
+        "translation": [
+          1.475812,
+          0.976509,
+          1.708915
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        9.5,
+        -1.25
+      ],
+      "firstperson_right_unchanged": true
+    },
+    {
+      "item": "riftsteel_hoe",
+      "thirdperson_display": {
+        "rotation": [
+          35,
+          0,
+          -35
+        ],
+        "translation": [
+          1.475812,
+          0.976509,
+          1.708915
+        ],
+        "scale": [
+          0.62,
+          0.62,
+          0.62
+        ]
+      },
+      "palm_anchor_arm_local": [
+        -1,
+        9.5,
+        -1.25
+      ],
+      "firstperson_right_unchanged": true
+    }
+  ]
+}

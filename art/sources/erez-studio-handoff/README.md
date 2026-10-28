@@ -1,3 +1,5 @@
+Актуальные исходники всех Minecraft-проектов Blender 12–22 сохранены отдельно в ../erez-studio/ вместе с .blend, GLB, эскизами, инструментами и SHA-256-манифестом. Этот каталог остаётся исторической передачей; старые патчи не накладывать на текущий src.
+
 # EREZ studio handoff source snapshots
 
 Start with `../../../docs/HANDOFF_EREZ_STUDIO.md` and

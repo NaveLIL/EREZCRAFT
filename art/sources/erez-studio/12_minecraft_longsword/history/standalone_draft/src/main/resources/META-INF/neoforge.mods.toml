@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="erez_arms"
+version="0.1.0"
+displayName="EREZ Arms"
+authors="Dimon / EREZ"
+description='''An original, vanilla-style iron longsword. Separate item; no vanilla replacements.'''
+
+[[dependencies.erez_arms]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.252,21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.erez_arms]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="BOTH"

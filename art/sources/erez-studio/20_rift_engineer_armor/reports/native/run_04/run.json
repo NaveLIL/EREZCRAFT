@@ -1,0 +1,38 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ea01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ea01\\.verification\\engineer04",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "started_utc": "2026-10-27T12:48:46.304054+00:00",
+  "harness_sha256": "c4f1c4843844c215ff8abc35bd4627972b3d650e5189527c2561d7e4bbd2a9f2",
+  "owner_profile_used": false,
+  "passed": false,
+  "pid": 25020,
+  "exit_code": 0,
+  "duration_seconds": 149.625,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "loaded_mesh_sha256": "127b41cf8c0c85c1793d6d2e331c767fd410194e14474805de03354a4fecf21d",
+    "source_parts": 208,
+    "source_faces": 4281,
+    "submitted_vertices_last_wearer": 27484,
+    "native_cloth_waist_error": 0.0,
+    "native_cloth_contact_penetration": 0.0,
+    "passed": false,
+    "reason": "java.lang.IllegalStateException: Real 3D icon chestplate",
+    "phase": 1,
+    "pid": 8164,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "engineer-failure.png"
+    ]
+  }
+}

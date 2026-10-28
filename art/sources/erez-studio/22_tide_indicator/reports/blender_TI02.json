@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "blender_version": "5.2.2 LTS",
+  "canonical_source_sha256": "fcbd0f4ae2ee1586f51af4e6575eb28d3e887e2999914d4a4b43f7037d337af4",
+  "maximum_case_depth": 0.88,
+  "game_verified": false,
+  "native_elements": 53
+}

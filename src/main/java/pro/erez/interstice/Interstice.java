@@ -74,6 +74,7 @@ public final class Interstice {
             ENTITY_TYPES.register("cave_rift_spider", () -> net.minecraft.world.entity.EntityType.Builder.of(pro.erez.interstice.entity.CaveRiftSpiderEntity::new, net.minecraft.world.entity.MobCategory.MONSTER)
                     .sized(1.2F, 1.2F)
                     .clientTrackingRange(8)
+                    .updateInterval(1)
                     .build("cave_rift_spider"));
     public static final DeferredHolder<net.minecraft.world.entity.EntityType<?>, net.minecraft.world.entity.EntityType<pro.erez.interstice.entity.ToxinSpitEntity>> TOXIN_SPIT =
             ENTITY_TYPES.register("toxin_spit", () -> net.minecraft.world.entity.EntityType.Builder.<pro.erez.interstice.entity.ToxinSpitEntity>of(pro.erez.interstice.entity.ToxinSpitEntity::new, net.minecraft.world.entity.MobCategory.MISC)

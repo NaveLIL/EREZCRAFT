@@ -1,0 +1,73 @@
+{
+  "started_utc": "2026-10-27T06:19:47.955242+00:00",
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g05",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "profile": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g05\\progressionNative",
+  "harness_sha256": "c40c82d7465d6c0eca3878b6a888995dbbb301a73ec80bb5ab6890acc1ab14f5",
+  "owner_profile_used": false,
+  "geometry_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+  "pid": 10660,
+  "exit_code": 0,
+  "duration_seconds": 153.5,
+  "ended_utc": "2026-10-27T06:22:21.450383+00:00",
+  "passed": false,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "players": [
+      {
+        "tier": "riftsilver",
+        "name": "EREZ_Silver",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 414072
+      },
+      {
+        "tier": "riftsteel",
+        "name": "EREZ_Steel",
+        "skin_model": "slim",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 472392
+      },
+      {
+        "tier": "aegis",
+        "name": "EREZ_Magen",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 714240
+      }
+    ],
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.18-armor",
+    "render_width": 1920,
+    "render_height": 1080,
+    "crouching_checked": true,
+    "walking_checked": true,
+    "passed": false,
+    "reason": "java.lang.IllegalStateException: Held bow must arrive before use",
+    "phase": 90,
+    "pid": 22580,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "gallery-all-front.png",
+      "gallery-all-back.png",
+      "gallery-all-quarter.png",
+      "gallery-silver-close.png",
+      "gallery-steel-close.png",
+      "gallery-magen-close.png",
+      "gallery-all-crouching.png",
+      "gallery-all-walking.png",
+      "gallery-failure.png"
+    ]
+  }
+}

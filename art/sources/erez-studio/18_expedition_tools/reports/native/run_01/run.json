@@ -1,0 +1,91 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\et01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\et01\\.verification\\tools01",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "started_utc": "2026-10-27T09:59:46.970742+00:00",
+  "harness_sha256": "8144561416c4c34139f8a84e7cc0d67423d28005f4314b0de892e157dbc62bfe",
+  "owner_profile_used": false,
+  "passed": true,
+  "pid": 20224,
+  "exit_code": 0,
+  "duration_seconds": 205.954,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "native_models": [
+      {
+        "item": "tether_spool",
+        "quads": 252,
+        "gui_3d": true
+      },
+      {
+        "item": "lift_controller",
+        "quads": 180,
+        "gui_3d": true
+      },
+      {
+        "item": "structure_surveyor",
+        "quads": 222,
+        "gui_3d": true
+      }
+    ],
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.22-tools",
+    "third_person_both_hands_checked": true,
+    "first_person_both_hands_captured": true,
+    "resource_reload_checked": true,
+    "glint_checked": true,
+    "passed": true,
+    "reason": "",
+    "phase": 10,
+    "pid": 25380,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "tools-held-front.png",
+      "tools-held-quarter.png",
+      "tools-held-left.png",
+      "tools-inventory.png",
+      "tools-catalog.png",
+      "tools-first-person-tether_spool.png",
+      "tools-first-person-lift_controller.png",
+      "tools-first-person-structure_surveyor.png",
+      "tools-after-reload.png",
+      "tools-glint-inventory.png"
+    ],
+    "settled": {
+      "purpose": "armor_player_gallery_shutdown",
+      "server_tick": 452,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1282,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "screenshot_sha256": {
+    "tools-held-front.png": "f1065fb7f8a9542331ca094fb6bfe8f6a0add878399647a0f2c9a57400740c4b",
+    "tools-held-quarter.png": "49c10f283ab3a3e48ccd714616dd33aa24b39d3fa7d282d74dd3b22b9bd8bdef",
+    "tools-held-left.png": "f22179f1c8c05c2ecd0467eedee2a22dc8b61295b7875febb92a4ad3b8787474",
+    "tools-inventory.png": "ca9d4aac6cec083eda7bef887c3cc89b0fd15cdeb77230d789996a6da1bffc57",
+    "tools-catalog.png": "5ecca0393989b756a776198d0f16ae04070878532d28e76461c544ab84f848f1",
+    "tools-first-person-tether_spool.png": "3c0c01775d36bb0e6316ca415dbb9a3b6d0cc371941896f526dd7f43b45669aa",
+    "tools-first-person-lift_controller.png": "82adfd27bf9d8201af47e8f1663e2e9c993abc5a843bb2e230137cf6527690bd",
+    "tools-first-person-structure_surveyor.png": "ee2cf05ca2ee3710e5b060fe20c8bceadca705aa3b6fe1604bdc34a52f8db295",
+    "tools-after-reload.png": "8353bb5deb66e7283c70ac270d9ca05aa4a8d22fb9a1165329b4a26912e5bc67",
+    "tools-glint-inventory.png": "e2762b3807ea25070cf034e57cc7c0addbcb54afbbfc40fa740feacde81989f1"
+  }
+}

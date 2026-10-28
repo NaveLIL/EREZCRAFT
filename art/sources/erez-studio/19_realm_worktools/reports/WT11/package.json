@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "jar_sha256": "a8225001d0c6a763dcc375968a8526640f2a695e4f63d11e42dd6737c78032a8",
+  "jar_bytes": 3117296,
+  "runtime_classes_byte_identical": 538,
+  "changed_entries": [
+    "META-INF/neoforge.mods.toml",
+    "assets/interstice/models/item/riftsilver_axe.json",
+    "assets/interstice/models/item/riftsilver_hoe.json",
+    "assets/interstice/models/item/riftsilver_pickaxe.json",
+    "assets/interstice/models/item/riftsilver_shovel.json",
+    "assets/interstice/models/item/riftsteel_axe.json",
+    "assets/interstice/models/item/riftsteel_hoe.json",
+    "assets/interstice/models/item/riftsteel_pickaxe.json",
+    "assets/interstice/models/item/riftsteel_shovel.json"
+  ],
+  "added": [],
+  "removed": [],
+  "gameplay_changed": false
+}

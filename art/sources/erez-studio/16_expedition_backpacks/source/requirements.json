@@ -1,0 +1,37 @@
+{
+  "project": "EREZ expedition equipment — backpack redesign",
+  "revision": "BACKPACKS-B02",
+  "authoritative_geometry": "source/backpacks_B02.json",
+  "units": "Minecraft torso model pixels, 16 per block; cosmetic geometry, not a manufactured product",
+  "user_request": "Organize item-model improvement; completely redesign all backpacks because players rejected their appearance",
+  "review_rule": "Show old and proposed appearance before approving the replacement, preserving the user's earlier before/after requirement",
+  "approval": "Visual direction accepted; native B02 scenes inspected",
+  "requirements": [
+    "Three distinctly readable silhouettes within one coherent expedition/technomagic family",
+    "Field: compact canvas roll-top, leather closures, canteen and bedroll",
+    "Expedition: taller weather flap, split pockets, map case and sample flask",
+    "Rift: dark soft cargo body in a faceted protective frame with a restrained contained anomaly core",
+    "Every strap, seam, pocket and clasp must have a visual purpose; avoid arbitrary repeated trim",
+    "Keep the models legible in ordinary Minecraft scale, not only close-up renders",
+    "Use one geometry source for worn appearance, inventory miniature and Blender review",
+    "Keep field/expedition/rift capacities 54/72/84, module rules, crafting and saved contents unchanged",
+    "Retain the separate back slot and all existing backpack inventory behavior",
+    "Check bare skin, standard armor, Magen, Kotomyaf, wide/slim arms and native animated poses before release",
+    "Check elytra interaction explicitly; an attractive static picture is not evidence of compatibility",
+    "Use unchanged known texture references and native geometry; no new painted PNG",
+    "No live server or owner-profile installation during the design review"
+  ],
+  "review_outputs": [
+    "Three proposed backpacks together on reference players",
+    "Equivalent old appearance from the same camera",
+    "Isolated views of all three new packs",
+    "Front harness view",
+    "Editable Blender scene and GLB exports",
+    "Full-pack native screenshots before replacement is released"
+  ],
+  "not_implied": [
+    "Decorative canteens, rolled bedding and anomaly core do not add new gameplay mechanics",
+    "Visual approval does not certify pose or clipping tests that have not run",
+    "This is an art redesign, not new storage balance or progression"
+  ]
+}

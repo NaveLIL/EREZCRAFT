@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-10-27T04:08:30.676109+00:00",
+  "duration_seconds": 34.171,
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ls03\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-Pmod_version=0.7.0-preview.16-longsword",
+    "assemble"
+  ],
+  "exit_code": 0,
+  "native_tested_version": "0.7.0-preview.15",
+  "packaged_version": "0.7.0-preview.16-longsword",
+  "payload_equivalence": "Every JAR entry is byte-identical to the native-tested build except the single mod-version string.",
+  "changed_entries": [
+    "META-INF/neoforge.mods.toml"
+  ],
+  "jar": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ls03\\build\\libs\\interstice-0.7.0-preview.16-longsword.jar",
+  "jar_sha256": "cc2434d4f69acbc20e8889f874fced0591a21f0ca23e2d6a420b924d790dc0e6",
+  "native_tested_jar_sha256": "968016288c84b41e41dd116c169e6c6fd388eb26b2f2e921a76becb0c539606d",
+  "source_jar_sha256": "5e04eb7335899858f4091431f3dee6634a310a192eaa82448ea3a2c00c52b991",
+  "source_classes_and_resources_unchanged": true,
+  "original_sword_unchanged": true,
+  "published": false,
+  "installed_in_owner_profile": false
+}

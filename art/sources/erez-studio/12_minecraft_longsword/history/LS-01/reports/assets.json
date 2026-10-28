@@ -1,0 +1,36 @@
+{
+  "revision": "LS-01",
+  "item_id": "interstice:riftsteel_sword",
+  "geometry_units": "1/16 Minecraft block",
+  "cells": 119,
+  "connected": true,
+  "thickness": 1,
+  "length_model_units": 28,
+  "texture_unchanged": true,
+  "texture_sha256": "eeeb1f0503d70a9a3a68a4d43cf71f314b927a4480572866ebf43188e500ccea",
+  "rotated_xy_bounds": [
+    [
+      4.110912703473988,
+      3.403805922287441
+    ],
+    [
+      24.617009357883866,
+      24.617009357883866
+    ]
+  ],
+  "gui_scale": 0.6599663291074443,
+  "inputs": {
+    "D:\\repos\\Blender\\creations\\12_minecraft_longsword\\source\\design.json": "d2ded37e12708744e1ca93b7b70fb0f1710fda57c40eaa30f87722221ec668e5",
+    "D:\\repos\\Blender\\creations\\12_minecraft_longsword\\tools\\build_assets.py": "212f873787dc297e475bb6029504746da6c73d71522e7c0e2fde963eb451d89a",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\src\\main\\resources\\assets\\interstice\\textures\\item\\armaments\\tool_greatsword_steel.png": "eeeb1f0503d70a9a3a68a4d43cf71f314b927a4480572866ebf43188e500ccea"
+  },
+  "outputs": {
+    "exports\\assets\\interstice\\models\\item\\riftsteel_sword.json": "66815202db28e6bc3af3595dffed04e6c51be843527c027bfb13c6cee1a4216a",
+    "exports\\Mezhdumorye_Riftsteel_LS01_Preview_1.21.1.zip": "054fc535232b9ac69e52b665ea0088c6d8059f8b04f2c8c606c5f818e9599f72",
+    "preview\\sword_concept.png": "1df124d356c917b0410da58bc6080a00d56a7a3189c40da296d84a237059618e"
+  },
+  "installed": false,
+  "destination": "D:\\repos\\Minecraft\\EREZCRAFT\\src\\main\\resources\\assets\\interstice\\models\\item\\riftsteel_sword.json",
+  "game_runtime_verified": false,
+  "scope": "Geometry only; no published pack, Java registration, recipes, stats, saves or textures changed."
+}

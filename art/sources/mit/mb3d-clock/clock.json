@@ -1,0 +1,36 @@
+{
+	"parent": "item/display/clock",
+	"elements": [
+		{
+			"from": [3, 6.5, 3],
+			"to": [13, 9.5, 13],
+			"faces": {
+				"north": {"uv": [11.5, 0, 6.5, 1.5], "rotation": 180, "texture": "#all"},
+				"east": {"uv": [0, 1.5, 1.5, 6.5], "rotation": 270, "texture": "#all"},
+				"south": {"uv": [6.5, 1.5, 1.5, 0], "texture": "#all"},
+				"west": {"uv": [6.5, 1.5, 8, 6.5], "rotation": 90, "texture": "#all"},
+				"up": {"uv": [1.5, 1.5, 6.5, 6.5], "rotation": 180, "texture": "#all"},
+				"down": {"uv": [8, 1.5, 13, 6.5], "texture": "#all"}
+			}
+		},
+		{
+			"from": [12.99, 9.49, 12.99],
+			"to": [3.01, 6.51, 3.01],
+			"faces": {
+				"north": {"uv": [6.5, 0, 1.5, 1.5], "texture": "#all"},
+				"east": {"uv": [8, 1.5, 6.5, 6.5], "rotation": 90, "texture": "#all"},
+				"south": {"uv": [11.5, 1.5, 6.5, 0], "rotation": 180, "texture": "#all"},
+				"west": {"uv": [1.5, 1.5, 0, 6.5], "rotation": 270, "texture": "#all"},
+				"up": {"uv": [13, 1.5, 8, 6.5], "texture": "#all"},
+				"down": {"uv": [6.5, 1.5, 1.5, 6.5], "rotation": 180, "texture": "#all"}
+			}
+		},
+		{
+			"from": [3, 8.5, 3],
+			"to": [13, 8.5, 13],
+			"faces": {
+				"up": {"uv": [0, 6.5, 5, 11.5], "rotation": 180, "texture": "#all"}
+			}
+		}
+	]
+}

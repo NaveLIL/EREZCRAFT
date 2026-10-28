@@ -47,6 +47,7 @@ public final class BuoyancyController {
             if (gravityAttr == null) return;
 
             boolean eligible = intensity > 0.0F
+                    && !pro.erez.interstice.gear.AegisPower.protectsTide(living)
                     && !ShelterDetector.isSheltered(living.level(), living)
                     && !living.isInWater()
                     && !living.isInFluidType()

@@ -1,0 +1,9 @@
+{
+  "geometry_sha256": "d639dc507cdba7ed2371c70265d0f3dad2fac53e7c3eec34ad077ec2b92cc9f7",
+  "parts": {
+    "field_backpack": 33,
+    "expedition_backpack": 36,
+    "rift_backpack": 38
+  },
+  "game_files_changed": false
+}

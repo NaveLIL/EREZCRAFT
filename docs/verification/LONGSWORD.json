@@ -1,0 +1,139 @@
+{
+  "status": "local_verified_candidate",
+  "item_ids": [
+    "interstice:riftsteel_sword",
+    "interstice:riftsteel_longsword"
+  ],
+  "balance": {
+    "original": {
+      "damage": 7,
+      "ingots": 2
+    },
+    "longsword": {
+      "damage": 11,
+      "ingots": 4
+    },
+    "both": {
+      "attack_speed": 1.6,
+      "durability": 1792,
+      "native_sticks": 1,
+      "reach": "unchanged"
+    }
+  },
+  "source_commit": "e54c21422aa920c28aa18518c964428de9b63822",
+  "isolated_candidate": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ls03",
+  "component_tests": {
+    "passed": true,
+    "required_tests_passed": 10,
+    "receipt": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ls03\\.verification\\20261027T035921.492540Z-longsword-components-fixed\\runProgressionGameTestServer.json"
+  },
+  "native_tests": {
+    "passed": true,
+    "receipt": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ls03\\.verification\\20261027T040135.612048Z-longsword-native\\runProgressionNativeSmoke.json",
+    "proofs": {
+      "create": {
+        "native_book_pages": 16,
+        "maximum_page_lines": 14,
+        "longsword_baked_quads": 704,
+        "models_checked": 19,
+        "mod_version": "0.7.0-preview.15",
+        "distant_horizons_loaded": true,
+        "mod_count": 106,
+        "both_sword_hand_views": true,
+        "passed": true,
+        "reason": "",
+        "pid": 18340,
+        "stage": 10,
+        "owner_world_used": false,
+        "prepared_fixture_not_survival": true,
+        "settled": {
+          "purpose": "progression_native_shutdown",
+          "server_tick": 551,
+          "elapsed_actual_server_ticks": 56,
+          "stable_actual_server_ticks": 20,
+          "holders_checked": 1802,
+          "generation_ref_count": 0,
+          "save_futures_pending": 0,
+          "holders_not_ready_for_saving": 0,
+          "pending_generation_tasks": 0,
+          "save_futures_failed": 0,
+          "timed_out": false,
+          "non_quiet_examples": []
+        }
+      },
+      "reload": {
+        "cold_distinct_swords": true,
+        "cold_equipment_advancement_and_journal": true,
+        "native_book_pages": 16,
+        "maximum_page_lines": 14,
+        "longsword_baked_quads": 704,
+        "models_checked": 19,
+        "mod_version": "0.7.0-preview.15",
+        "distant_horizons_loaded": true,
+        "mod_count": 106,
+        "both_sword_hand_views": true,
+        "passed": true,
+        "reason": "",
+        "pid": 11828,
+        "stage": 10,
+        "owner_world_used": false,
+        "prepared_fixture_not_survival": true,
+        "settled": {
+          "purpose": "progression_native_shutdown",
+          "server_tick": 887,
+          "elapsed_actual_server_ticks": 19,
+          "stable_actual_server_ticks": 20,
+          "holders_checked": 1802,
+          "generation_ref_count": 0,
+          "save_futures_pending": 0,
+          "holders_not_ready_for_saving": 0,
+          "pending_generation_tasks": 0,
+          "save_futures_failed": 0,
+          "timed_out": false,
+          "non_quiet_examples": []
+        }
+      }
+    }
+  },
+  "packaging": {
+    "started_utc": "2026-10-27T04:08:30.676109+00:00",
+    "duration_seconds": 34.171,
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ls03\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-Pmod_version=0.7.0-preview.16-longsword",
+      "assemble"
+    ],
+    "exit_code": 0,
+    "native_tested_version": "0.7.0-preview.15",
+    "packaged_version": "0.7.0-preview.16-longsword",
+    "payload_equivalence": "Every JAR entry is byte-identical to the native-tested build except the single mod-version string.",
+    "changed_entries": [
+      "META-INF/neoforge.mods.toml"
+    ],
+    "jar": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ls03\\build\\libs\\interstice-0.7.0-preview.16-longsword.jar",
+    "jar_sha256": "cc2434d4f69acbc20e8889f874fced0591a21f0ca23e2d6a420b924d790dc0e6",
+    "native_tested_jar_sha256": "968016288c84b41e41dd116c169e6c6fd388eb26b2f2e921a76becb0c539606d",
+    "source_jar_sha256": "5e04eb7335899858f4091431f3dee6634a310a192eaa82448ea3a2c00c52b991",
+    "source_classes_and_resources_unchanged": true,
+    "original_sword_unchanged": true,
+    "published": false,
+    "installed_in_owner_profile": false
+  },
+  "preservation": {
+    "unrelated_baseline_files_preserved": true,
+    "unexpected_changes": [],
+    "original_sword_model_and_recipe_byte_identical": true,
+    "existing_texture_pngs_unchanged": 170,
+    "source_audit_baseline": "D:\\repos\\Blender\\creations\\12_minecraft_longsword\\reports\\integration_baseline\\source_sha256.json"
+  },
+  "limits": [
+    "Prepared native test world, not unassisted Survival balance acceptance.",
+    "Production server, launcher catalogue and owner game profiles were not updated.",
+    "Final JAR differs from native-tested payload only in its mod-version string; entry equality verified."
+  ]
+}

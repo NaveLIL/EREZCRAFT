@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "interstice:item/aegis/part_electronic_magic_circuit_2"
+  }
+}

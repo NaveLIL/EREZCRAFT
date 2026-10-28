@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "revision": "WT05",
+  "source_sha256": "954c85cb435ecda520af0a486be2f958f0e1a2496909a16cda2df4f62ee9d2c2",
+  "rows": [
+    {
+      "item": "riftsilver_pickaxe",
+      "shaft_extension": 6.75,
+      "third_person_target": 14.449999,
+      "third_person_predicted": 14.411532916383322,
+      "percent_of_vanilla_predicted": 99.73379871087411,
+      "width_depth_unchanged": true,
+      "grip_geometry_unchanged": true,
+      "first_person_scale": 0.496,
+      "first_person_grip_anchor_preserved": true
+    },
+    {
+      "item": "riftsilver_axe",
+      "shaft_extension": 5.0,
+      "third_person_target": 14.172332,
+      "third_person_predicted": 14.111164586950292,
+      "percent_of_vanilla_predicted": 99.56840262386099,
+      "width_depth_unchanged": true,
+      "grip_geometry_unchanged": true,
+      "first_person_scale": 0.496,
+      "first_person_grip_anchor_preserved": true
+    },
+    {
+      "item": "riftsilver_shovel",
+      "shaft_extension": 7.75,
+      "third_person_target": 14.499913,
+      "third_person_predicted": 14.534769107213226,
+      "percent_of_vanilla_predicted": 100.24038838862846,
+      "width_depth_unchanged": true,
+      "grip_geometry_unchanged": true,
+      "first_person_scale": 0.496,
+      "first_person_grip_anchor_preserved": true
+    },
+    {
+      "item": "riftsilver_hoe",
+      "shaft_extension": 6.0,
+      "third_person_target": 14.449999,
+      "third_person_predicted": 14.37831999922105,
+      "percent_of_vanilla_predicted": 99.50395151737416,
+      "width_depth_unchanged": true,
+      "grip_geometry_unchanged": true,
+      "first_person_scale": 0.496,
+      "first_person_grip_anchor_preserved": true
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "shaft_extension": 6.75,
+      "third_person_target": 14.449999,
+      "third_person_predicted": 14.41863287555377,
+      "percent_of_vanilla_predicted": 99.78293337981387,
+      "width_depth_unchanged": true,
+      "grip_geometry_unchanged": true,
+      "first_person_scale": 0.496,
+      "first_person_grip_anchor_preserved": true
+    },
+    {
+      "item": "riftsteel_axe",
+      "shaft_extension": 5.0,
+      "third_person_target": 14.172332,
+      "third_person_predicted": 14.118415598076153,
+      "percent_of_vanilla_predicted": 99.6195657713646,
+      "width_depth_unchanged": true,
+      "grip_geometry_unchanged": true,
+      "first_person_scale": 0.496,
+      "first_person_grip_anchor_preserved": true
+    },
+    {
+      "item": "riftsteel_shovel",
+      "shaft_extension": 7.75,
+      "third_person_target": 14.499913,
+      "third_person_predicted": 14.541808897107678,
+      "percent_of_vanilla_predicted": 100.28893895506602,
+      "width_depth_unchanged": true,
+      "grip_geometry_unchanged": true,
+      "first_person_scale": 0.496,
+      "first_person_grip_anchor_preserved": true
+    },
+    {
+      "item": "riftsteel_hoe",
+      "shaft_extension": 6.0,
+      "third_person_target": 14.449999,
+      "third_person_predicted": 14.385436350698578,
+      "percent_of_vanilla_predicted": 99.55319962789325,
+      "width_depth_unchanged": true,
+      "grip_geometry_unchanged": true,
+      "first_person_scale": 0.496,
+      "first_person_grip_anchor_preserved": true
+    }
+  ],
+  "textures_changed": false,
+  "gameplay_changed": false,
+  "measurement_source": "reports/vanilla_reference/run.json"
+}

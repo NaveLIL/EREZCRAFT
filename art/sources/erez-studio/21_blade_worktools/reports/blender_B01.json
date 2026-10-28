@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": "2e82d7ebf2c6eeadf38b93e58eda3714703468531f0cc1d3ac05893ccc1614ec",
+  "geometry_and_uv_unchanged": true,
+  "game_verified": false,
+  "models": {
+    "riftsilver_pickaxe": {
+      "elements": 7,
+      "mesh_objects": 7
+    },
+    "riftsteel_pickaxe": {
+      "elements": 7,
+      "mesh_objects": 7
+    },
+    "riftsilver_axe": {
+      "elements": 6,
+      "mesh_objects": 6
+    },
+    "riftsteel_axe": {
+      "elements": 6,
+      "mesh_objects": 6
+    },
+    "riftsilver_shovel": {
+      "elements": 4,
+      "mesh_objects": 4
+    },
+    "riftsteel_shovel": {
+      "elements": 4,
+      "mesh_objects": 4
+    },
+    "riftsilver_hoe": {
+      "elements": 3,
+      "mesh_objects": 3
+    },
+    "riftsteel_hoe": {
+      "elements": 3,
+      "mesh_objects": 3
+    }
+  }
+}

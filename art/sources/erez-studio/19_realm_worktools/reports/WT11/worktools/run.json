@@ -1,0 +1,114 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\si02\\candidate\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\s34w",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "-PstudioMode=worktools",
+    "-PstudioPalmFocus=true",
+    "assemble",
+    "runStudioWorktools"
+  ],
+  "passed": true,
+  "started_utc": "2026-10-27T16:45:59.383307+00:00",
+  "pid": 10800,
+  "exit_code": 0,
+  "duration_seconds": 358.703,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "native_models": [
+      {
+        "item": "riftsilver_pickaxe",
+        "quads": 198,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsilver_axe",
+        "quads": 138,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsilver_shovel",
+        "quads": 120,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsilver_hoe",
+        "quads": 114,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsteel_pickaxe",
+        "quads": 210,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsteel_axe",
+        "quads": 150,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsteel_shovel",
+        "quads": 132,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      },
+      {
+        "item": "riftsteel_hoe",
+        "quads": 126,
+        "gui_3d": true,
+        "baked_palm_grip_both_hands": true
+      }
+    ],
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.34-tool-grasp",
+    "focus_palm_only": true,
+    "resource_reload_checked": true,
+    "wide_slim_palm_closeups_checked": true,
+    "passed": true,
+    "reason": "",
+    "phase": 14,
+    "pid": 36708,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "worktools-palm-after-reload.png",
+      "worktools-palm-wide-right.png",
+      "worktools-palm-wide-left.png",
+      "worktools-palm-slim-right.png",
+      "worktools-palm-slim-left.png"
+    ],
+    "settled": {
+      "purpose": "armor_player_gallery_shutdown",
+      "server_tick": 278,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1282,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "screenshots": {
+    "worktools-palm-after-reload.png": "ded29727a01f84613465e438342125d2bbd4dcb5898d012d4d09eab550c175b3",
+    "worktools-palm-wide-right.png": "2bd375c0231ae746954bba845a6a28a93e45f8062d9049f7bf64571b793005aa",
+    "worktools-palm-wide-left.png": "c1336b1e053e77c888abde5a2c24b142cd3ad32229fd7424c028977f6cdc9ea8",
+    "worktools-palm-slim-right.png": "db4138715512bc676bc36036922e7f016623e184f4aea628501f939e9d59df28",
+    "worktools-palm-slim-left.png": "b40dcaefe345d6d151cfb9e182230d93f0df8ae5a3b78c51f4bbbbcd33883d4e"
+  }
+}

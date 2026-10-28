@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "source_sha256": "86f362f940a0420345ec59ddc74a9f0f2e2f9a3f7a737caf626e766ecc01b637",
+  "rows": [
+    {
+      "item": "riftsilver_pickaxe",
+      "width_depth_unchanged": true,
+      "shovel_blade_height_multiplier": 1,
+      "thirdperson_pitch": 75,
+      "thirdperson_yaw": 0,
+      "firstperson_yaw_absolute": 45,
+      "firstperson_translation_x": -0.64,
+      "firstperson_translation_z": -2.4
+    },
+    {
+      "item": "riftsilver_axe",
+      "width_depth_unchanged": true,
+      "shovel_blade_height_multiplier": 1,
+      "thirdperson_pitch": 75,
+      "thirdperson_yaw": 0,
+      "firstperson_yaw_absolute": 45,
+      "firstperson_translation_x": -0.64,
+      "firstperson_translation_z": -2.4
+    },
+    {
+      "item": "riftsilver_shovel",
+      "width_depth_unchanged": true,
+      "shovel_blade_height_multiplier": 1.8,
+      "thirdperson_pitch": 75,
+      "thirdperson_yaw": 0,
+      "firstperson_yaw_absolute": 45,
+      "firstperson_translation_x": -0.64,
+      "firstperson_translation_z": -2.4
+    },
+    {
+      "item": "riftsilver_hoe",
+      "width_depth_unchanged": true,
+      "shovel_blade_height_multiplier": 1,
+      "thirdperson_pitch": 75,
+      "thirdperson_yaw": 0,
+      "firstperson_yaw_absolute": 45,
+      "firstperson_translation_x": -0.64,
+      "firstperson_translation_z": -2.4
+    },
+    {
+      "item": "riftsteel_pickaxe",
+      "width_depth_unchanged": true,
+      "shovel_blade_height_multiplier": 1,
+      "thirdperson_pitch": 75,
+      "thirdperson_yaw": 0,
+      "firstperson_yaw_absolute": 45,
+      "firstperson_translation_x": -0.64,
+      "firstperson_translation_z": -2.4
+    },
+    {
+      "item": "riftsteel_axe",
+      "width_depth_unchanged": true,
+      "shovel_blade_height_multiplier": 1,
+      "thirdperson_pitch": 75,
+      "thirdperson_yaw": 0,
+      "firstperson_yaw_absolute": 45,
+      "firstperson_translation_x": -0.64,
+      "firstperson_translation_z": -2.4
+    },
+    {
+      "item": "riftsteel_shovel",
+      "width_depth_unchanged": true,
+      "shovel_blade_height_multiplier": 1.8,
+      "thirdperson_pitch": 75,
+      "thirdperson_yaw": 0,
+      "firstperson_yaw_absolute": 45,
+      "firstperson_translation_x": -0.64,
+      "firstperson_translation_z": -2.4
+    },
+    {
+      "item": "riftsteel_hoe",
+      "width_depth_unchanged": true,
+      "shovel_blade_height_multiplier": 1,
+      "thirdperson_pitch": 75,
+      "thirdperson_yaw": 0,
+      "firstperson_yaw_absolute": 45,
+      "firstperson_translation_x": -0.64,
+      "firstperson_translation_z": -2.4
+    }
+  ]
+}

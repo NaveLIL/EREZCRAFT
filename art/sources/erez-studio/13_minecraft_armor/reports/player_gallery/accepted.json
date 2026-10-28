@@ -1,0 +1,137 @@
+{
+  "recorded_utc": "2026-10-27T06:29:35.883714+00:00",
+  "version": "0.7.0-preview.18-armor",
+  "geometry": "ARMOR-A04",
+  "gallery_evidence": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\reports\\player_gallery\\run_06",
+  "component_evidence": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\20261027T062750.704589Z-armor-a04-gallery-components",
+  "component_game_tests": 23,
+  "gallery": {
+    "started_utc": "2026-10-27T06:22:27.620097+00:00",
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g06",
+      "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+      "runProgressionCreate"
+    ],
+    "profile": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g06\\progressionNative",
+    "harness_sha256": "74bcf3a3e08cad0c353adc1427ddf6e14ba5a3b4af1ee5365e8d4f5f367420c7",
+    "owner_profile_used": false,
+    "geometry_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+    "pid": 4788,
+    "exit_code": 0,
+    "duration_seconds": 165.422,
+    "ended_utc": "2026-10-27T06:25:13.043966+00:00",
+    "passed": true,
+    "proof": {
+      "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+      "players": [
+        {
+          "tier": "riftsilver",
+          "name": "EREZ_Silver",
+          "skin_model": "default",
+          "entity_class": "net.minecraft.client.player.RemotePlayer",
+          "native_armor_vertices": 2970072
+        },
+        {
+          "tier": "riftsteel",
+          "name": "EREZ_Steel",
+          "skin_model": "slim",
+          "entity_class": "net.minecraft.client.player.RemotePlayer",
+          "native_armor_vertices": 3388392
+        },
+        {
+          "tier": "aegis",
+          "name": "EREZ_Magen",
+          "skin_model": "default",
+          "entity_class": "net.minecraft.client.player.RemotePlayer",
+          "native_armor_vertices": 5538336
+        }
+      ],
+      "mod_count": 106,
+      "distant_horizons_loaded": true,
+      "mod_version": "0.7.0-preview.18-armor",
+      "render_width": 1920,
+      "render_height": 1080,
+      "crouching_checked": true,
+      "walking_checked": true,
+      "bow_pose_checked": true,
+      "trim_dye_glint_checked": true,
+      "backpack_visual_checked": true,
+      "swimming_checked": true,
+      "passed": true,
+      "reason": "",
+      "phase": 12,
+      "pid": 19192,
+      "prepared_fixture_not_survival": true,
+      "owner_profile_used": false,
+      "screenshots": [
+        "gallery-all-front.png",
+        "gallery-all-back.png",
+        "gallery-all-quarter.png",
+        "gallery-silver-close.png",
+        "gallery-steel-close.png",
+        "gallery-magen-close.png",
+        "gallery-all-crouching.png",
+        "gallery-all-walking.png",
+        "gallery-all-bow.png",
+        "gallery-trim-dye-glint.png",
+        "gallery-all-backpacks.png",
+        "gallery-all-swimming.png"
+      ],
+      "settled": {
+        "purpose": "armor_player_gallery_shutdown",
+        "server_tick": 660,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1282,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "released_runtime_classes_identical": 495,
+    "screenshot_sha256": {
+      "gallery-all-front.png": "48e6b50fba2e69999427bbf333613a1929b3d70fb74873e9a41b69ace73394d8",
+      "gallery-all-back.png": "55f05b9c3621604aeca85edac0c932b73d93d81a057893258f3bceb31008eea2",
+      "gallery-all-quarter.png": "d6bf26202cc52314e41691365cc34256e5378d467b9a6d56c401fcfe020fab71",
+      "gallery-silver-close.png": "604c70db5f48d126eabfd5573e4cff21d6a45443927bd02f4389af7afd9506e4",
+      "gallery-steel-close.png": "595587aef1a5acfa3e6959cf548735a05979429edbe339c436a68397a795b05b",
+      "gallery-magen-close.png": "7b8b0c1fbc892635f9118fe335df1253cd583ed9deff399d7f5cba12d2b353b2",
+      "gallery-all-crouching.png": "86567cbcbe9fcc3d7c54e783667852d754185d3cd30c880974fb43306398ff4a",
+      "gallery-all-walking.png": "0c24fc060df0294e4fe1fc37b418751f92d34c73d72de7e1b4c5dc90ce492b49",
+      "gallery-all-bow.png": "f7b1d47ea929ae83c9e18670bf54f748fdd54682935edc5b23a8ab926c18cea7",
+      "gallery-trim-dye-glint.png": "03ee080f72ce6d7f74f241148bc9b5f8832a076f12d036e4ed8b3fb8558a717b",
+      "gallery-all-backpacks.png": "ba18037aac02a603a2d41e3cdd33b1063fa441195615c020d046b18f422677b2",
+      "gallery-all-swimming.png": "47e0c037fa3d846a20b0d2d073869f1c4d6ef7595c18fe6813d0a059154b789b"
+    }
+  },
+  "jar_sha256": "8e33676d32695efe63fb41601b98eceb7ff8ca75fb0c11c41c38e47e90e441d6",
+  "jar_bytes": 2644510,
+  "changed_jar_entries": [
+    "META-INF/neoforge.mods.toml",
+    "assets/interstice/armor/armor_design.json"
+  ],
+  "runtime_code_identical_to_previous_tested_release": true,
+  "cosmetic_changes": [
+    "Closed Magen neck skin gap",
+    "Closed Magen waist skin gap"
+  ],
+  "other_two_armor_geometries_unchanged": true,
+  "published": false,
+  "owner_profile_used": false,
+  "limits": [
+    "Controlled player/pose test, not a long natural Survival balance playthrough",
+    "One real client and three server-connected mock test players; not a capacity or real multi-client network acceptance test",
+    "Vanilla local skin fixtures; external skin services are outside this check",
+    "Not every third-party shader or trim combination was exhaustively tested"
+  ]
+}

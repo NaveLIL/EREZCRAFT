@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "stage": "Blender visual prototype only",
+  "source_sha256": "261f7a0f815f281ce76684a1505781dc967a2edd96e237c4c3071bc0fb30c292",
+  "actual_blender_version": "5.2.2 LTS",
+  "same_native_model_elements": true,
+  "native_model_limits_checked": true,
+  "resolved_texture_paths": true,
+  "palette_variant_size_alpha_preserved": true,
+  "models": [
+    {
+      "item": "tether_spool",
+      "elements": 42,
+      "max_quads": 252
+    },
+    {
+      "item": "lift_controller",
+      "elements": 30,
+      "max_quads": 180
+    },
+    {
+      "item": "structure_surveyor",
+      "elements": 37,
+      "max_quads": 222
+    }
+  ],
+  "owner_approved": false,
+  "game_verified": false,
+  "installed": false,
+  "published": false
+}

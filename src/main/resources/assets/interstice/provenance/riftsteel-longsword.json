@@ -1,0 +1,15 @@
+{
+  "author_geometry": "Dimon / EREZ",
+  "revision": "LS-03",
+  "item_id": "interstice:riftsteel_longsword",
+  "source_project": "D:\\repos\\Blender\\creations\\12_minecraft_longsword",
+  "geometry_generator": "tools/build_refined.py",
+  "model_sha256": "d5571b69e3d667ba4649ca21b89046e4246bb5a480d491d3cdffdc6ea28c60fa",
+  "texture": "item/armaments/tool_greatsword_steel.png",
+  "texture_author": "Malcolm Riley",
+  "texture_license": "CC-BY-4.0",
+  "texture_source": "https://github.com/MalcolmRiley/unused-textures/tree/8b85ad732023174d9a9da74e6bf2272d6c0bef17",
+  "texture_provenance": "armaments.json",
+  "texture_unchanged": true,
+  "scope": "New model for an additional custom item; original sword model unchanged"
+}

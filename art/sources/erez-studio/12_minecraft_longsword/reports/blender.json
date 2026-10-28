@@ -1,0 +1,15 @@
+{
+  "scene": "Mezhdumorye / Riftsteel LS-03",
+  "item_id": "interstice:riftsteel_longsword",
+  "source_model_sha256": "d5571b69e3d667ba4649ca21b89046e4246bb5a480d491d3cdffdc6ea28c60fa",
+  "vertices": 2000,
+  "faces": 704,
+  "voxel_elements": 250,
+  "units": "1 Blender unit = 1 Minecraft model unit = 1/16 game block",
+  "outputs": {
+    "assembly\\mezhdumorye_riftsteel_longsword.blend": "582078ba0c008130802c578c4a011e9ea26205e14dcb699fb0029afa112568fa",
+    "exports\\riftsteel_longsword.glb": "39c1bda9b98915ec1277779868c93a4b7884063095e6454d65ecae16b57e7fad",
+    "preview\\sword_3d.png": "245ecfd5b8497f2156259246bd6f1fc9e5dd8c176da159dbe05f4330caa16063",
+    "preview\\sword_model_front.png": "242d24c0321ea3a9afbeb46516b378b42eea3a0486766e24eb176563648d31a8"
+  }
+}

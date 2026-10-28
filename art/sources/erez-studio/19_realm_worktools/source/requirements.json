@@ -1,0 +1,40 @@
+{
+  "project": "EREZ realm worktools",
+  "revision": "WT03",
+  "scope": ["Eight existing silver and steel worktools", "Native Blender geometry and exact game export", "Switchable steel area modes", "Silver material resonance"],
+  "owner_decisions": [
+    "First work on pickaxes, axes, shovels and hoes; defer expedition gadgets",
+    "Steel area modes approved with explicit switching and per-block durability",
+    "WT01 rejected: ugly, crooked, fragmented",
+    "WT02 direction closer to desired appearance; continue",
+    "Correct the hand orientation, especially left hand; make the shapes smoother and the pickaxe narrower"
+  ],
+  "visual_contract": [
+    "A complete connected head and continuous shaft; no floating tips",
+    "Minecraft pixel silhouette, no decorative render-only bevel or subdivision",
+    "Same native geometry and texture images in Blender and game",
+    "Moderate held scale; preserve readability in inventory",
+    "Only original or palette-only textures, with retained dimensions and alpha"
+  ],
+  "gameplay_contract": [
+    "Default single block; shift-use in air switches steel modes",
+    "Crouching while working temporarily suppresses area processing",
+    "Steel pickaxe and shovel operate on an explicit allowed material plane",
+    "Pickaxe extra blocks skip ores and all block entities",
+    "Axe fells connected same-species unstripped logs upward, maximum16 including original",
+    "Hoe uses normal per-block tool modification and player interaction hooks",
+    "Existing harvest tiers, durability capacities, stats, recipes and repair materials preserved",
+    "Standard enchantment and drop processing per affected block",
+    "Do not start area work if original removal failed",
+    "Respect cancellation, world border, loaded chunks and player permissions",
+    "No area processing in Creative or Adventure; no forced loading",
+    "Mode and unrelated item data survive save/load"
+  ],
+  "validation_limits": [
+    "GameTests are controlled fixtures, not a full Survival playthrough",
+    "GameTestServer excludes DH under the repository's known harness exception; native client includes DH",
+    "Third-party protection compatibility uses ordinary events but cannot guarantee every plugin implementation",
+    "Blender and game lighting are different",
+    "No live server or launcher deployment in this iteration"
+  ]
+}

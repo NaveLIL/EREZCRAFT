@@ -1,0 +1,45 @@
+{
+  "revision": "WT04",
+  "version": "0.7.0-preview.27-workheads",
+  "source_sha256": "5a79608e307041fc9897cb08996445d48f52a39a92349d88307b9ddd58917db8",
+  "request": {
+    "source": "D:/repos/Blender/creations/19_realm_worktools/source/worktools_WT04.json",
+    "source_sha256": "5a79608e307041fc9897cb08996445d48f52a39a92349d88307b9ddd58917db8",
+    "blender": "D:/repos/Blender/creations/19_realm_worktools/assembly/realm_worktools_WT04.blend",
+    "height_factor": 2,
+    "width_factor": 1,
+    "depth_factor": 1,
+    "handles_unchanged": true,
+    "both_shovels_unchanged": true,
+    "textures_unchanged": true,
+    "gameplay_unchanged": true,
+    "final_visual_approval_recorded": false,
+    "design_verification": "D:/repos/Blender/creations/19_realm_worktools/reports/design_verification_WT04.json"
+  },
+  "native": {
+    "passed": true,
+    "mod_count": 106,
+    "screenshots": 22,
+    "evidence": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/native-worktools-wt04/run.json"
+  },
+  "package_equivalence": {
+    "passed": true,
+    "changed_entries": [
+      "META-INF/neoforge.mods.toml",
+      "assets/interstice/models/item/riftsilver_axe.json",
+      "assets/interstice/models/item/riftsilver_hoe.json",
+      "assets/interstice/models/item/riftsilver_pickaxe.json",
+      "assets/interstice/models/item/riftsteel_axe.json",
+      "assets/interstice/models/item/riftsteel_hoe.json",
+      "assets/interstice/models/item/riftsteel_pickaxe.json"
+    ],
+    "added_entries": [],
+    "removed_entries": [],
+    "all_runtime_classes_identical": true,
+    "runtime_classes": 538,
+    "jar_sha256": "99dbb71d91200e88e492c40204c95c9b4db8db87b79a3d1adb1f2551847be1c3",
+    "jar_bytes": 3116872
+  },
+  "integration_report": "D:/repos/Minecraft/EREZCRAFT/docs/verification/STUDIO_INTEGRATION.json",
+  "published": false
+}

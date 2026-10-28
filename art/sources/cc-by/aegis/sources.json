@@ -1,0 +1,85 @@
+{
+  "author": "Malcolm Riley",
+  "license": "CC-BY-4.0",
+  "repository": "https://github.com/MalcolmRiley/unused-textures",
+  "revision": "8b85ad732023174d9a9da74e6bf2272d6c0bef17",
+  "sources": [
+    {
+      "item": "abyssal_alloy",
+      "sprite": "ingot_abyssium",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/ingot_abyssium.png",
+      "sha256": "aebda846ad3ee951a4f9e88e7f9ec686d6e7711a890c3b438dc37d0e50bfce42",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "abyssal_plate",
+      "sprite": "part_plate_abyssium",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/part_plate_abyssium.png",
+      "sha256": "cf01e462b1567cceaa9fca73546f913ad7c9a50438a4f9fee8c1cb83c83f3c99",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "ceramic_substrate",
+      "sprite": "part_plate_small_ceramic",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/part_plate_small_ceramic.png",
+      "sha256": "70719349e8a0f8e85666e08b43d3079c307ebbee3de9a5ad8b5cbe65bb952d18",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "etched_circuit_board",
+      "sprite": "part_electronic_circuit_printed",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/part_electronic_circuit_printed.png",
+      "sha256": "303a1f02653c55ecf70da3327825a79518f9735cd4f5aec14cec9459658f99ff",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "resonant_processor",
+      "sprite": "part_electronic_circuit_integrated",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/part_electronic_circuit_integrated.png",
+      "sha256": "f86eabb1e8642fb7e296245e021d8b021082fe843bc39cabb3925c7eca07a3e9",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "aegis_optics",
+      "sprite": "gem_lens",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/gem_lens.png",
+      "sha256": "e184f9bd0a1b2f8c24064d50d0766e869d3e343dacfc266dfa349f997bf0eda5",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "aegis_control_unit",
+      "sprite": "part_electronic_magic_circuit_2",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/part_electronic_magic_circuit_2.png",
+      "sha256": "22391a92c62495e799bff14ac1e2b24dca3b9622095cad12765758b67667aa00",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "aegis_helmet",
+      "sprite": "armor_helmet_adamantium",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_helmet_adamantium.png",
+      "sha256": "7cf208d5739c0fb69295388a26a90697293d80423999465bb4ba683c5e26060d",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "aegis_chestplate",
+      "sprite": "armor_chest_adamantium",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_chest_adamantium.png",
+      "sha256": "2f84d2df828c46e7b6305dc34cbdbd050484b6aeacd25ce193ec5810d15051d1",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "aegis_leggings",
+      "sprite": "armor_legs_adamantium",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_legs_adamantium.png",
+      "sha256": "757c4035390edd4c789db5b891d14ce8cdca6a8ed79b49c203dd2d7f6a07055f",
+      "operation": "unchanged original bytes"
+    },
+    {
+      "item": "aegis_boots",
+      "sprite": "armor_boots_adamantium",
+      "source_url": "https://raw.githubusercontent.com/MalcolmRiley/unused-textures/8b85ad732023174d9a9da74e6bf2272d6c0bef17/items/armor_boots_adamantium.png",
+      "sha256": "1dcaaee59dd1627bd7ed648a3b8c0ef7053f86c52d8989bc7086713f8844ea06",
+      "operation": "unchanged original bytes"
+    }
+  ]
+}

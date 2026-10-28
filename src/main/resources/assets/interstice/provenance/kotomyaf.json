@@ -1,0 +1,10 @@
+{
+  "author": "EREZ / Codex for the Kotomyaf request",
+  "geometry": "Original KOTOMYAF-A04 box geometry, open face",
+  "texture_policy": "Runtime references to installed Minecraft textures, no copied PNG or OGG in this mod",
+  "sounds": [
+    "minecraft:entity.cat.ambient",
+    "minecraft:entity.cat.purr"
+  ],
+  "sound_policy": "Finite native instances, queued at completion, never explicitly stopped by this feature"
+}

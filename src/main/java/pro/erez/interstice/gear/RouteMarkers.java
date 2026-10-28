@@ -38,7 +38,10 @@ public final class RouteMarkers {
 
     public static Marker marker(ItemStack stack) {
         if (!stack.is(Interstice.TIDE_INDICATOR.get())) return null;
-        var tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getCompound(KEY);
+        return parse(stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getCompound(KEY));
+    }
+
+    public static Marker parse(CompoundTag tag) {
         var dimension = ResourceLocation.tryParse(tag.getString("Dimension"));
         if (dimension == null || !tag.contains("Pos", net.minecraft.nbt.Tag.TAG_LONG) || !tag.hasUUID("MarkerId")) return null;
         return new Marker(dimension, BlockPos.of(tag.getLong("Pos")), tag.getUUID("MarkerId"), tag.getString("Name"));
@@ -95,7 +98,9 @@ public final class RouteMarkers {
     }
 
     public static Component describe(Level level, Player player, ItemStack stack) {
-        var marker = marker(stack);
+        return describe(level,player,marker(stack));
+    }
+    public static Component describe(Level level,Player player,Marker marker) {
         if (marker == null) return null;
         if (!level.dimension().location().equals(marker.dimension()))
             return Component.translatable("message.interstice.marker.other_dimension", marker.label(), marker.dimension().toString());

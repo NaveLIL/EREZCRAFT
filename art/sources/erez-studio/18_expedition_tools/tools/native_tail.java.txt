@@ -1,0 +1,57 @@
+    private static void inspectTools(Minecraft mc){
+        var rows=new JsonArray();int[] expected={252,180,222};
+        for(int i=0;i<3;i++){
+            var stack=new ItemStack(tool(i));var model=mc.getItemRenderer().getModel(stack,mc.level,mc.player,0);
+            var quads=model.getQuads(null,null,net.minecraft.util.RandomSource.create(0));require(quads.size()==expected[i],"Exact native element quads "+TOOLS[i]+" got "+quads.size());
+            for(var q:quads)require(!q.getSprite().contents().name().equals(net.minecraft.client.renderer.texture.MissingTextureAtlasSprite.getLocation()),"Missing face texture");
+            require(!model.getParticleIcon().contents().name().equals(net.minecraft.client.renderer.texture.MissingTextureAtlasSprite.getLocation()),"Missing particle texture");
+            require(model.isGui3d(),"Actual native 3D item required");var row=new JsonObject();row.addProperty("item",TOOLS[i]);row.addProperty("quads",quads.size());row.addProperty("gui_3d",true);rows.add(row);
+        }REPORT.add("native_models",rows);
+    }
+    private static class Catalog extends net.minecraft.client.gui.screens.Screen{
+        Catalog(){super(net.minecraft.network.chat.Component.literal("Экспедиционные приборы — T01"));}
+        @Override public boolean isPauseScreen(){return false;}
+        private ItemStack stack(int i){var actual=minecraft.player.getInventory().getItem(i);return actual.is(tool(i))?actual:new ItemStack(tool(i));}
+        @Override public void render(net.minecraft.client.gui.GuiGraphics g,int mx,int my,float dt){
+            g.fill(0,0,width,height,0xff17232d);g.drawCenteredString(font,title,width/2,18,0xffdeecee);
+            String[] labels={"Катушка","Пульт подъёмника","Искатель структур"};
+            for(int i=0;i<3;i++){int x=width*(i+1)/4;g.drawCenteredString(font,labels[i],x,53,0xffbcd1d9);
+                g.pose().pushPose();g.pose().translate(x-48,75,0);g.pose().scale(6,6,6);g.renderItem(stack(i),0,0);g.pose().popPose();
+                g.renderItem(stack(i),x-8,190);
+            }
+        }
+    }
+    private static void selectTool(Minecraft mc,int index){job=mc.getSingleplayerServer().submit(()->{var p=mc.getSingleplayerServer().getPlayerList().getPlayer(observer);p.getInventory().selected=0;p.setItemSlot(EquipmentSlot.MAINHAND,new ItemStack(tool(index)));p.setItemSlot(EquipmentSlot.OFFHAND,new ItemStack(tool(index)));p.inventoryMenu.broadcastChanges();p.connection.send(new net.minecraft.network.protocol.game.ClientboundSetCarriedItemPacket(0));return true;});ticks=0;}
+    @SubscribeEvent public static void tick(ClientTickEvent.Post event){
+        if(!ACTIVE||finished)return;var mc=Minecraft.getInstance();
+        try{
+            if(closing){if(job!=null&&job.isDone())job.join();if(settling.failed())throw new IllegalStateException(settling.failure());if(settling.ready()){REPORT.add("settled",settling.report());finished=true;write(mc);mc.stop();}return;}
+            if(!started&&mc.screen instanceof TitleScreen&&mc.getOverlay()==null){
+                require(mc.gameDirectory.toPath().toRealPath().toString().replace('\\','/').contains("/.verification/"),"Owned profile required");
+                require(ModList.get().isLoaded("distanthorizons")&&ModList.get().isLoaded("create")&&ModList.get().isLoaded("sable"),"Full pack and DH required");require(!ModList.get().isLoaded("cpm"),"Rejected avatar dependency must not enter this candidate");
+                started=true;deadline=System.nanoTime()+TimeUnit.MINUTES.toNanos(8);profiles=new UUID[]{profile("wide/steve.png",10),profile("slim/alex.png",100),profile("wide/steve.png",200)};
+                mc.options.pauseOnLostFocus=false;mc.options.renderDistance().set(3);mc.options.simulationDistance().set(5);mc.options.fov().set(42);mc.options.fovEffectScale().set(0D);mc.options.bobView().set(false);mc.options.hideGui=true;mc.options.setCameraType(CameraType.FIRST_PERSON);
+                require(!Files.exists(mc.gameDirectory.toPath().resolve("saves/tools-native")),"Fresh tool gallery required");
+                mc.createWorldOpenFlows().createFreshLevel("tools-native",new LevelSettings("EREZ tool geometry checks",GameType.CREATIVE,false,Difficulty.NORMAL,true,new GameRules(),WorldDataConfiguration.DEFAULT),new WorldOptions(20261027L,false,false),WorldPresets::createNormalWorldDimensions,mc.screen);return;
+            }
+            if(!started)return;require(System.nanoTime()<deadline,"Tool deadline phase="+phase);
+            if(SmokeWorldPrompts.advance(mc)||mc.player==null||mc.level==null||mc.getSingleplayerServer()==null)return;
+            if(skinsFixed)for(int i=0;i<3;i++){var p=actor(mc,i);p.yBodyRot=p.yBodyRotO=p.yHeadRot=p.yHeadRotO=180;}
+            var server=mc.getSingleplayerServer();
+            if(phase==0){observer=mc.player.getUUID();job=server.submit(()->{prepare(server.getPlayerList().getPlayer(observer));return true;});phase=1;ticks=0;return;}
+            if(job!=null&&!job.isDone())return;if(job!=null)job.join();if(++ticks<(phase==1?70:30))return;ticks=0;
+            if(phase==1){if(mc.level.getPlayerByUUID(profiles[0])==null||mc.level.getPlayerByUUID(profiles[1])==null||mc.level.getPlayerByUUID(profiles[2])==null)return;
+                if(!skinsFixed){skinFixtures(mc);skinsFixed=true;return;}inspectTools(mc);for(int i=0;i<3;i++)require(actor(mc,i).getMainHandItem().is(tool(i)),"Held item synchronization");
+                REPORT.addProperty("mod_count",ModList.get().getMods().size());REPORT.addProperty("distant_horizons_loaded",true);REPORT.addProperty("mod_version",ModList.get().getModContainerById(Interstice.ID).orElseThrow().getModInfo().getVersion().toString());
+                shot(mc,"held-front");camera(mc,28,201.05,26,-34,0);phase=2;
+            }else if(phase==2){shot(mc,"held-quarter");job=server.submit(()->{for(int i=0;i<3;i++){ACTORS.get(i).setItemSlot(EquipmentSlot.MAINHAND,ItemStack.EMPTY);ACTORS.get(i).setItemSlot(EquipmentSlot.OFFHAND,new ItemStack(tool(i)));}return true;});camera(mc,32,201.02,25,0,0);phase=3;
+            }else if(phase==3){for(int i=0;i<3;i++)require(actor(mc,i).getOffhandItem().is(tool(i)),"Offhand synchronization");shot(mc,"held-left");REPORT.addProperty("third_person_both_hands_checked",true);
+                job=server.submit(()->{var p=server.getPlayerList().getPlayer(observer);p.setGameMode(GameType.SURVIVAL);p.setNoGravity(true);p.setInvulnerable(true);p.getInventory().clearContent();p.getInventory().selected=0;for(int i=0;i<3;i++)p.getInventory().setItem(i,new ItemStack(tool(i)));p.inventoryMenu.broadcastChanges();p.connection.send(new net.minecraft.network.protocol.game.ClientboundSetCarriedItemPacket(0));return true;});mc.options.hideGui=false;mc.setScreen(new net.minecraft.client.gui.screens.inventory.InventoryScreen(mc.player));phase=4;
+            }else if(phase==4){for(int i=0;i<3;i++)require(mc.player.getInventory().getItem(i).is(tool(i)),"Inventory synchronization");shot(mc,"inventory");mc.options.guiScale().set(4);mc.resizeDisplay();mc.setScreen(new Catalog());phase=5;
+            }else if(phase==5){shot(mc,"catalog");mc.setScreen(null);mc.options.fov().set(70);mc.options.guiScale().set(2);mc.resizeDisplay();REPORT.addProperty("first_person_fov",70);camera(mc,32,201.62,25,0,20);selectTool(mc,0);phase=6;
+            }else if(phase>=6&&phase<=8){int i=phase-6;require(mc.player.getMainHandItem().is(tool(i))&&mc.player.getOffhandItem().is(tool(i)),"Both first-person items arrived");shot(mc,"first-person-"+TOOLS[i]);if(i<2){selectTool(mc,i+1);phase++;}else{REPORT.addProperty("first_person_both_hands_captured",true);mc.options.guiScale().set(4);mc.resizeDisplay();mc.setScreen(new Catalog());job=mc.reloadResourcePacks();phase=9;}
+            }else if(phase==9){inspectTools(mc);shot(mc,"after-reload");REPORT.addProperty("resource_reload_checked",true);job=server.submit(()->{var p=server.getPlayerList().getPlayer(observer);for(int i=0;i<3;i++){var stack=new ItemStack(tool(i));stack.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE,true);p.getInventory().setItem(i,stack);}p.inventoryMenu.broadcastChanges();return true;});phase=10;
+            }else if(phase==10){for(int i=0;i<3;i++)require(mc.player.getInventory().getItem(i).hasFoil(),"Glint arrived");shot(mc,"glint-inventory");REPORT.addProperty("glint_checked",true);finish(mc,true,"");}
+        }catch(Throwable e){e.printStackTrace();if(mc.level!=null)shot(mc,"failure");finish(mc,false,e.toString());}
+    }
+}

@@ -1,0 +1,253 @@
+{
+  "status": "local_candidate_verified_not_published",
+  "revision": "TI01",
+  "version": "0.7.0-preview.37-thin-tide",
+  "published_release_unchanged": "alpha.21 / sequence21 / preview.36-blade-tools",
+  "jar": "D:/repos/Minecraft/EREZCRAFT/build/libs/interstice-0.7.0-preview.37-thin-tide.jar",
+  "geometry": {
+    "maximum_depth": 0.88,
+    "dial_diameter": 10.5,
+    "depth_to_diameter": 0.0838095238095238,
+    "elements": 53,
+    "quads": 313
+  },
+  "resource_audit": {
+    "passed": true,
+    "maximum_depth_model_units": 0.8800000000000008,
+    "unchanged_runtime_classes": 538,
+    "unchanged_pngs": 209,
+    "unchanged_tide_predicates": 16,
+    "deterministic_generated_files": 19,
+    "changed_preexisting_source_files": [
+      "src/main/resources/assets/interstice/models/item/tide_indicator.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_00.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_01.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_02.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_03.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_04.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_05.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_06.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_07.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_08.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_09.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_10.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_11.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_12.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_13.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_14.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_15.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_base.json",
+      "build.gradle"
+    ],
+    "changed_jar_entries": [
+      "META-INF/neoforge.mods.toml",
+      "assets/interstice/models/item/tide_indicator.json",
+      "assets/interstice/models/item/tide_indicator_00.json",
+      "assets/interstice/models/item/tide_indicator_01.json",
+      "assets/interstice/models/item/tide_indicator_02.json",
+      "assets/interstice/models/item/tide_indicator_03.json",
+      "assets/interstice/models/item/tide_indicator_04.json",
+      "assets/interstice/models/item/tide_indicator_05.json",
+      "assets/interstice/models/item/tide_indicator_06.json",
+      "assets/interstice/models/item/tide_indicator_07.json",
+      "assets/interstice/models/item/tide_indicator_08.json",
+      "assets/interstice/models/item/tide_indicator_09.json",
+      "assets/interstice/models/item/tide_indicator_10.json",
+      "assets/interstice/models/item/tide_indicator_11.json",
+      "assets/interstice/models/item/tide_indicator_12.json",
+      "assets/interstice/models/item/tide_indicator_13.json",
+      "assets/interstice/models/item/tide_indicator_14.json",
+      "assets/interstice/models/item/tide_indicator_15.json",
+      "assets/interstice/models/item/tide_indicator_base.json"
+    ],
+    "added_jar_entries": [
+      "assets/interstice/provenance/tide-indicator-ti01.json"
+    ],
+    "candidate_sha256": "fb755b61cc1090f951494cd985dcd306836d79bfdda240ec14c3b78c7c8405eb"
+  },
+  "blender": {
+    "passed": true,
+    "blender_version": "5.2.2 LTS",
+    "canonical_source_sha256": "e6ffdd75ba5fd80035cb35be0e3adf0b1521879ed4f8ab3def17f03e5daff661",
+    "maximum_case_depth": 0.88,
+    "game_verified": false,
+    "native_elements": 53
+  },
+  "blender_project": "D:/repos/Blender/creations/22_tide_indicator",
+  "blender_source_sha256": "e6ffdd75ba5fd80035cb35be0e3adf0b1521879ed4f8ab3def17f03e5daff661",
+  "native": {
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-Pmod_version=0.7.0-preview.37-thin-tide",
+      "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\t37j",
+      "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\blade-release-20261028\\client",
+      "assemble",
+      "runStudioTideIndicator"
+    ],
+    "passed": true,
+    "started_utc": "2026-10-28T04:22:26.164857+00:00",
+    "pid": 5868,
+    "exit_code": 0,
+    "proof": {
+      "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+      "all_16_native_states": [
+        {
+          "state": 0,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 1,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 2,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 3,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 4,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 5,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 6,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 7,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 8,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 9,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 10,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 11,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 12,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 13,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 14,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 15,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        }
+      ],
+      "mod_count": 106,
+      "distant_horizons_loaded": true,
+      "mod_version": "0.7.0-preview.37-thin-tide",
+      "third_person_both_hands_checked": true,
+      "first_person_fov": 70,
+      "first_person_both_hands_captured": true,
+      "resource_reload_checked": true,
+      "glint_checked": true,
+      "frame_uuid": "1899658f-9865-4081-97ec-0afb0ce51bfa",
+      "native_wall_mount_checked": true,
+      "passed": true,
+      "reason": "",
+      "phase": 12,
+      "pid": 16304,
+      "prepared_fixture_not_survival": true,
+      "owner_profile_used": false,
+      "screenshots": [
+        "tide-indicator-held-front.png",
+        "tide-indicator-held-quarter.png",
+        "tide-indicator-held-left.png",
+        "tide-indicator-inventory.png",
+        "tide-indicator-catalog.png",
+        "tide-indicator-first-person-both-hands.png",
+        "tide-indicator-after-reload.png",
+        "tide-indicator-glint-inventory.png",
+        "tide-indicator-wall-mounted.png"
+      ],
+      "settled": {
+        "purpose": "armor_player_gallery_shutdown",
+        "server_tick": 501,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1282,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "seconds": 236.48400000000038
+  },
+  "visual_review": {
+    "first_person_both_hands_full_dial_visible": true,
+    "wide_and_slim_players_both_hands": true,
+    "wall_dial_facing_viewer": true,
+    "all_16_states_and_glint": true,
+    "reload_capture_no_overlay": true,
+    "first_iteration": "Programmatic checks passed; rejected its first-person framing because the lower dial was cropped. Final run raised and reduced both hand display transforms."
+  },
+  "limits": [
+    "Prepared Overworld gallery, not natural Survival or a full tide cycle.",
+    "The 16 needle angles were injected into the existing client smoothing field in the smoke fixture only; the actual registered model predicate was checked.",
+    "Public server, launcher delivery and owner profiles were not updated or tested for this local visual change."
+  ]
+}

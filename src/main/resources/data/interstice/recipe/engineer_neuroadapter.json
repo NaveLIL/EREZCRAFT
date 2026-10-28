@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "interstice:etched_circuit_board"
+    },
+    {
+      "item": "interstice:etched_circuit_board"
+    },
+    {
+      "item": "interstice:rift_lens"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "interstice:riftsilver_wire"
+    },
+    {
+      "item": "interstice:riftsilver_wire"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "interstice:riftsteel_ingot"
+    }
+  ],
+  "result": {
+    "id": "interstice:engineer_neuroadapter",
+    "count": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "source_sha256": "492a4c482d21a8ba9d9c3ead88bd3d082b4682921ae4c9fda7fb05d21483e34a",
+  "base_jar_sha256": "1a7eab56b0f2210aaaa1a6946cfc03a9722e2c84ec7f8a1484108170101e3c23",
+  "models": {
+    "tether_spool": {
+      "elements": 42,
+      "max_quads": 252
+    },
+    "lift_controller": {
+      "elements": 30,
+      "max_quads": 180
+    },
+    "structure_surveyor": {
+      "elements": 37,
+      "max_quads": 222
+    }
+  },
+  "native_game_verified": false
+}

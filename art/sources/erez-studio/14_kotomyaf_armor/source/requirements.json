@@ -1,0 +1,54 @@
+{
+  "project": "Котомяф / Kotomyaf",
+  "game": "Minecraft Java 1.21.1, NeoForge 21.1.252",
+  "version": "0.7.0-preview.19-kotomyaf",
+  "geometry_source": "source/kotomyaf_design_A04.json",
+  "visual_approval": {
+    "approved": true,
+    "date": "2026-10-27",
+    "evidence": "User: Продолжай, строгая приемка одобрила)",
+    "approved_revision": "KOTOMYAF-A04",
+    "correction": "A02 open face/ears/whiskers approved. The later explicit request removes the tail completely; A04 is the approved design minus the tail.",
+    "latest_user_instruction": "Продолжай, этот хвост еще более странный, давай пока хвост вообще уберем?)"
+  },
+  "requirements": [
+    "A separate four-piece Siamese-cat armor set named Котомяф",
+    "Cream wool with chocolate ears, cuffs and paws; six dimensional whiskers; no tail",
+    "The player skin remains visible through the open face of the hood",
+    "Craft each piece from wool and fish; repair with wool",
+    "Meow on a real jump while the full set is worn",
+    "Purr while moving in crouch, not while merely holding Shift stationary",
+    "Sound instances are finite and play to their natural end, without manual stop/restart",
+    "Repeated jumps queue at most one next meow; a pending meow takes priority over starting another purr",
+    "No fall damage with a valid full set; a missing, broken or wrong-slot piece disables the bonus",
+    "Creepers and baby zombies avoid a Survival wearer within eight blocks, using pathfinding",
+    "Adult zombies remain dangerous; no immunity to lava, toxin, other attacks or void",
+    "Native armor enchantment, repair, ordinary durability and save data remain available",
+    "Remove the tail completely from the wearable geometry, item model and current Blender scene",
+    "Existing silver, steel, Magen and both sword designs are preserved"
+  ],
+  "initial_balance": {
+    "defense_head_chest_legs_feet": [2, 5, 3, 2],
+    "total_armor": 12,
+    "toughness": 0,
+    "enchantability": 18,
+    "durability_multiplier": 16,
+    "fear_range_blocks": 8,
+    "fear_limitations": "Needs a navigable escape path. Does not disarm a creeper deliberately ignited by flint and steel."
+  },
+  "sound_assets": {
+    "jump": "minecraft:entity.cat.ambient",
+    "sneak_movement": "minecraft:entity.cat.purr",
+    "delivery": "One server-authoritative cue to tracking clients and wearer; finite client instances serialized per wearer",
+    "no_new_audio_files": true,
+    "engine_limits": "World unloading, device failure, muting or a user stopping all sounds can still stop Minecraft audio."
+  },
+  "acceptance": [
+    "Approved open-face visual A02, with the later explicitly requested tail removal in A04",
+    "Native player screenshots for wide and slim skins and normal poses",
+    "Component GameTests for real recipes, fall damage, fear targeting, repair/enchant/save and mixed sets",
+    "Full pack native check with Distant Horizons, actual mob retreat and SoundEngine completion",
+    "JAR assembled from the same runtime classes and geometry used in the accepted checks"
+  ],
+  "scope": "Local implementation and review artifact; no live server or owner-profile deployment is authorized by this task."
+}

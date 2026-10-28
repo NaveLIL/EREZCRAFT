@@ -27,6 +27,7 @@ ALLOWED.add("runEtherealComplexSmoke")
 ALLOWED.add("runPaletteGallery")
 ALLOWED.add("runFaunaGameTestServer")
 ALLOWED.add("runHunterGameTestServer")
+ALLOWED.add("runFaunaNetworkSmoke")
 ALLOWED.update(("runHunterColdCreateGameTestServer", "runHunterColdReloadGameTestServer"))
 ALLOWED.add("runSpiderMovementSmoke")
 ALLOWED.add("runRealmExpansionGameTestServer")
@@ -357,7 +358,7 @@ def main():
             parser.error("progression pack must be an owned .verification copy")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", args.label):
         parser.error("label must contain only letters, digits, - and _")
-    if "runSpiderMovementSmoke" in args.tasks:
+    if any(task in args.tasks for task in ("runSpiderMovementSmoke", "runFaunaNetworkSmoke")):
         if args.spider_pack_source is None:
             parser.error("runSpiderMovementSmoke requires --spider-pack-source")
         args.spider_pack_source = args.spider_pack_source.resolve(strict=True)
@@ -399,7 +400,7 @@ def main():
                 write(evidence / "profile-root.json", {"root": str(profile_root)})
             command = launcher + ["--no-daemon", "--console=plain",
                        "-PintersticeRunRoot=" + str(profile_root), task]
-            if task == "runSpiderMovementSmoke":
+            if task in ("runSpiderMovementSmoke", "runFaunaNetworkSmoke"):
                 command.append("-PspiderPackSource=" + str(args.spider_pack_source))
             if task == "runProgressionNativeSmoke":
                 command.append("-PprogressionPackSource=" + str(args.progression_pack_source))
@@ -418,7 +419,7 @@ def main():
                 try:
                     proofs = [json.loads((profile_root / "progressionNative" / ("progression-" + mode + ".json")).read_text(encoding="utf-8")) for mode in ("create", "reload")]
                     record["validations"] = proofs
-                    accepted = all(p.get("passed") is True and p.get("distant_horizons_loaded") is True and p.get("models_checked") == 18 and p.get("native_book_pages") == 16 for p in proofs) and proofs[0]["pid"] != proofs[1]["pid"] and proofs[1].get("cold_equipment_advancement_and_journal") is True
+                    accepted = all(p.get("passed") is True and p.get("distant_horizons_loaded") is True and p.get("models_checked") == 19 and p.get("native_book_pages") == 16 and p.get("both_sword_hand_views") is True for p in proofs) and proofs[0]["pid"] != proofs[1]["pid"] and proofs[1].get("cold_equipment_advancement_and_journal") is True and proofs[1].get("cold_distinct_swords") is True
                 except (OSError, ValueError, KeyError) as error:
                     record["validation_error"] = str(error); accepted = False
             if code == 0 and (task == "build" or GAME_TEST_TASK.fullmatch(task)):
@@ -508,6 +509,14 @@ def main():
                         accepted = accepted and result.get("foundation_components", 0) >= 20
                         accepted = accepted and result.get("max_heap_bytes") == 10 * 1024 ** 3
                         accepted = accepted and "-XX:+UseZGC" in result.get("jvm_arguments", "") and "-XX:+ZGenerational" in result.get("jvm_arguments", "")
+                except (OSError, ValueError) as error:
+                    record["validation_error"] = str(error); accepted = False
+            if code == 0 and task == "runFaunaNetworkSmoke":
+                try:
+                    result = json.loads((evidence / "profiles" / "faunaNetworkSmoke" / "fauna-network-client.json").read_text(encoding="utf-8"))
+                    record["validation"] = result
+                    accepted = accepted and all(result.get(key) is True for key in ("passed", "tcp_separate_dedicated", "dh_loaded", "singleplayer_server_absent"))
+                    accepted = accepted and all(result.get(key, {}).get("samples", 0) >= 350 for key in ("probe-hunter", "probe-spitter", "probe-vanilla"))
                 except (OSError, ValueError) as error:
                     record["validation_error"] = str(error); accepted = False
             if code == 0 and task == "runSpiderMovementSmoke":

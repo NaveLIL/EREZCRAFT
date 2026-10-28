@@ -1,0 +1,76 @@
+{
+  "published": true,
+  "release": "alpha.22",
+  "sequence": 22,
+  "release_id": "techmagic-0-1-0-alpha-22-tide-indicator",
+  "version": "0.7.0-preview.38-clock-grip",
+  "jar_sha256": "b11da0ae02dedcb8c4a7b243c9c9f5756bd79125261f8222e0600b5df6130053",
+  "server": {
+    "passed": true,
+    "server_jars": 67,
+    "old_jars_unchanged": 66,
+    "mod_version": "0.7.0-preview.38-clock-grip",
+    "healthy": true,
+    "online_auth_required": true,
+    "owner_only_op4": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false,
+    "backups_created": false,
+    "started_at": "2026-10-28T04:55:54.44509753Z"
+  },
+  "public_status": {
+    "passed": true,
+    "host": "mc.erezcraft.com",
+    "port": 25565,
+    "protocol": {
+      "name": "1.21.1",
+      "protocol": 767
+    },
+    "players": {
+      "max": 10,
+      "online": 0
+    },
+    "seconds": 0.15600000000085856,
+    "status_only_not_authenticated_login": true
+  },
+  "delivery": {
+    "sourceSequence": 21,
+    "sequence": 22,
+    "releaseId": "techmagic-0-1-0-alpha-22-tide-indicator",
+    "oldCatalogSha256": "beda6fde7fd36c774ef9eaca8953448ec323e50f82acec681d96a71a614877c6",
+    "newCatalogSha256": "9993e5e9c6592fe99745b74ab3dc42482007d5098d79a3361554d3d94985ce3d",
+    "files": 89,
+    "clientJars": 79,
+    "unchangedBaseFiles": 87,
+    "removed": [
+      "mods/interstice-0.7.0-preview.36-blade-tools.jar"
+    ],
+    "changed": [
+      {
+        "path": "config/erezcraft-pack.json",
+        "size": 173,
+        "sha256": "98dfdfa48895fe36f85dc62c9c99864c25b02b606f8d7b766cad3abff68c57d6",
+        "url": "https://files.erezcraft.com/blobs/98dfdfa48895fe36f85dc62c9c99864c25b02b606f8d7b766cad3abff68c57d6",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/interstice-0.7.0-preview.38-clock-grip.jar",
+        "size": 3124909,
+        "sha256": "b11da0ae02dedcb8c4a7b243c9c9f5756bd79125261f8222e0600b5df6130053",
+        "url": "https://files.erezcraft.com/blobs/b11da0ae02dedcb8c4a7b243c9c9f5756bd79125261f8222e0600b5df6130053",
+        "policy": "managed"
+      }
+    ],
+    "stage": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\tide-release-20261028",
+    "public_https_verified": true,
+    "signatures_verified": true,
+    "uploaded_files": 4,
+    "uploaded_bytes": 3158028,
+    "game_server_restarted": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false
+  },
+  "installer_delivery_run": false,
+  "owner_profile_updated": false,
+  "backups_created": false
+}

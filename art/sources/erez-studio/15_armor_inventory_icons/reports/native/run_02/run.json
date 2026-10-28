@@ -1,0 +1,158 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ai01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ai01\\.verification\\icons02",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "started_utc": "2026-10-27T07:36:20.515756+00:00",
+  "harness_sha256": "f8ec482e5a479914a92b01d057068094ee600e679ab706bc8b811223a9d55f2c",
+  "owner_profile_used": false,
+  "passed": true,
+  "pid": 6728,
+  "exit_code": 0,
+  "duration_seconds": 179.297,
+  "proof": {
+    "items": [
+      {
+        "item": "riftsilver_helmet",
+        "quads": 72,
+        "cube_count": 12,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "riftsilver_chestplate",
+        "quads": 222,
+        "cube_count": 37,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "riftsilver_leggings",
+        "quads": 60,
+        "cube_count": 10,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "riftsilver_boots",
+        "quads": 72,
+        "cube_count": 12,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "riftsteel_helmet",
+        "quads": 102,
+        "cube_count": 17,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "riftsteel_chestplate",
+        "quads": 252,
+        "cube_count": 42,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "riftsteel_leggings",
+        "quads": 60,
+        "cube_count": 10,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "riftsteel_boots",
+        "quads": 72,
+        "cube_count": 12,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "aegis_helmet",
+        "quads": 210,
+        "cube_count": 35,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "aegis_chestplate",
+        "quads": 336,
+        "cube_count": 56,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "aegis_leggings",
+        "quads": 102,
+        "cube_count": 17,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "aegis_boots",
+        "quads": 96,
+        "cube_count": 16,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "kotomyaf_helmet",
+        "quads": 180,
+        "cube_count": 30,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "kotomyaf_chestplate",
+        "quads": 156,
+        "cube_count": 26,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "kotomyaf_leggings",
+        "quads": 30,
+        "cube_count": 5,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      },
+      {
+        "item": "kotomyaf_boots",
+        "quads": 84,
+        "cube_count": 14,
+        "baked_model": "net.minecraft.client.resources.model.SimpleBakedModel"
+      }
+    ],
+    "all_16_native_models_checked": true,
+    "version": "0.7.0-preview.20-icons",
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "actual_inventory_screenshot": true,
+    "resource_reload_checked": true,
+    "dye_and_glint_checked": true,
+    "passed": true,
+    "reason": "",
+    "phase": 6,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "armor-icons-inventory.png",
+      "armor-icons-catalog.png",
+      "armor-icons-after-reload.png",
+      "armor-icons-dye-glint.png"
+    ],
+    "settled": {
+      "purpose": "armor_icons_shutdown",
+      "server_tick": 256,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1552,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "screenshot_sha256": {
+    "armor-icons-inventory.png": "faf1e6db1e235329247f46d093bda283637f2edbc3cb8cf3cabe1cf5f6f9563a",
+    "armor-icons-catalog.png": "7c878c77fd34292316609e32b63bfadc7f0fa36ede4c5fc3859f255207dd0747",
+    "armor-icons-after-reload.png": "da4e261d525378d75d58a1124974b00e83d50ec37823266d7fd0f642cb9131fb",
+    "armor-icons-dye-glint.png": "81b0c51237dadd6c6ad96a48c34c786babf8b7762c1555399d81ceb323817f54"
+  }
+}

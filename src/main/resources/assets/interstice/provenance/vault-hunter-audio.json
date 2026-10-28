@@ -1,42 +1,43 @@
 {
   "creator": "EREZ Dev",
   "license": "CC0-1.0",
-  "origin": "Original deterministic synthesis, no sampled recordings",
+  "origin": "Original deterministic aperiodic breath and dry transient synthesis, no sampled recordings",
+  "revision": 2,
   "generator": "tools/generate_hunter_sounds.py",
   "files": {
     "ambient.ogg": {
-      "sha256": "3cae936da9af110a298679e7eca05ed0a531478d421094129dc170830076a008",
-      "seconds": 1.35,
+      "sha256": "1fcb4049ff26c151e577bd1e56ad0bde21e1e9116b25737bf69f4933d6ffa1ba",
+      "seconds": 0.8,
       "sample_rate": 44100,
       "channels": 1
     },
     "alert.ogg": {
-      "sha256": "79634c266469441a4c62b5d51113a772091126f548495048a04716d413b41130",
-      "seconds": 1.05,
+      "sha256": "9ffaf564bee0e8084d4c5708a201f8108cc4eff73afd7f9fc84c4ca5a73fd507",
+      "seconds": 0.72,
       "sample_rate": 44100,
       "channels": 1
     },
     "windup.ogg": {
-      "sha256": "16670e21df6f1132edfab452c4c7f91c867f87aaa18afe30c483ddd856b317f6",
-      "seconds": 0.32,
+      "sha256": "2996bce33f5cecb00d0fde3177caabcb78307bc2858d4f4d5022fc823da8cbeb",
+      "seconds": 0.28,
       "sample_rate": 44100,
       "channels": 1
     },
     "attack.ogg": {
-      "sha256": "985a201f046f63ad6e1bee819630ab7f190c3f365637dffe23460e9dbd183d3a",
-      "seconds": 0.23,
+      "sha256": "0ebf59d1c29138baa947caa3b21495d0e3a60c32589b1ad3d1e4850fe1326b42",
+      "seconds": 0.22,
       "sample_rate": 44100,
       "channels": 1
     },
     "hurt.ogg": {
-      "sha256": "58e3a60bf0675de590c252938eff71106c86d48899aacfe9506e0578facb36ce",
-      "seconds": 0.45,
+      "sha256": "ad1a4bd188e71b81659ad50408d98ec4b3b6975c7a1bc97cd8aa118b07fb9c69",
+      "seconds": 0.36,
       "sample_rate": 44100,
       "channels": 1
     },
     "death.ogg": {
-      "sha256": "4124b930cc4a6632e89f25ee17099289a6d9feba3e5ac2ab5bd03f7c6e33e071",
-      "seconds": 1.7,
+      "sha256": "4026c02f1a4d0cad9f63f87f189b19c97b44b4f2c929ed6f043bcc04face7e86",
+      "seconds": 1.2,
       "sample_rate": 44100,
       "channels": 1
     }

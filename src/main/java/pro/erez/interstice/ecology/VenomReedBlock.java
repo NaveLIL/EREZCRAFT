@@ -25,7 +25,7 @@ public final class VenomReedBlock extends Block {
     @Override protected boolean canSurvive(BlockState state,LevelReader level,BlockPos pos){return supported(level,pos);}
     @Override protected BlockState updateShape(BlockState state,Direction direction,BlockState neighbor,LevelAccessor level,BlockPos pos,BlockPos other){return direction==Direction.DOWN&&!canSurvive(state,level,pos)?Blocks.AIR.defaultBlockState():state;}
     @Override protected void entityInside(BlockState state,Level level,BlockPos pos,Entity entity){
-        if(level.isClientSide||entity instanceof pro.erez.interstice.entity.CaveRiftSpiderEntity||!(entity instanceof LivingEntity victim)||!victim.isAlive()||victim instanceof Player p&&(p.isCreative()||p.isSpectator()))return;
+        if(level.isClientSide||pro.erez.interstice.fauna.RealmFaunaHazards.adaptedToFlora(entity)||!(entity instanceof LivingEntity victim)||!victim.isAlive()||victim instanceof Player p&&(p.isCreative()||p.isSpectator()))return;
         long now=level.getServer().overworld().getGameTime();var data=victim.getPersistentData();if(data.getLong(CavePlantBlock.STING_COOLDOWN_TAG)>now)return;
         data.putLong(CavePlantBlock.STING_COOLDOWN_TAG,now+40);if(victim instanceof net.minecraft.server.level.ServerPlayer player&&pro.erez.interstice.gear.RealmGear.protect(player,pro.erez.interstice.gear.RealmGear.HazardKind.STINGING_PLANT))return;victim.hurt(level.damageSources().sweetBerryBush(),2);
         victim.addEffect(new MobEffectInstance(MobEffects.POISON,100));victim.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,60));

@@ -1,0 +1,29 @@
+{
+  "method": "Built-in image_gen",
+  "prompt": "generation_E07_prompt.txt",
+  "original": "materials_E07_generated.png",
+  "original_sha256": "ee93172abaeec135a55a5a2e8f7d9a2740ea31b7398bcbe7f70eaa243cbf8bb1",
+  "normalization": "Sample 32x32 logical pixel centers in each of four generated quadrants; preserve original layouts",
+  "tiles": [
+    {
+      "material": "metal",
+      "file": "E07_metal_pixels32.png",
+      "sha256": "c5ac52648e3101df8accc392ba1a5946efa7b3155ebab543b6e7d71828bd7be8"
+    },
+    {
+      "material": "leather",
+      "file": "E07_leather_pixels32.png",
+      "sha256": "40db9e78f4e54c65fb5404cd3797fddabb03d38b1555f3641bb64615142522c2"
+    },
+    {
+      "material": "rubber",
+      "file": "E07_rubber_pixels32.png",
+      "sha256": "7941f5e6c7d2105e8ce47c28f16890ac878c22ce4fd5b72850ce4226fdf30b5a"
+    },
+    {
+      "material": "lining",
+      "file": "E07_lining_pixels32.png",
+      "sha256": "a5ab28d2669af62ebdcc58640cf6c9036d663f984bda7350a26ce4c2d311aa27"
+    }
+  ]
+}

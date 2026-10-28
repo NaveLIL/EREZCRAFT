@@ -1,0 +1,24 @@
+{
+  "revision": "LS-02",
+  "cells": 250,
+  "connected": true,
+  "cell_size": 0.5,
+  "thickness": 1,
+  "original_lower_blade_guard_grip_preserved": true,
+  "texture_unchanged": true,
+  "original_axial_extent": 20.506096654409873,
+  "candidate_axial_extent": 24.74873734152916,
+  "length_increase_percent": 20.69,
+  "inputs": {
+    "D:\\repos\\Blender\\creations\\12_minecraft_longsword\\tools\\build_refined.py": "e342ecbdb2c70a036e7403a325c3733cea25487985f0ca65982bb9a8dfb430bb",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\src\\main\\resources\\assets\\interstice\\textures\\item\\armaments\\tool_greatsword_steel.png": "eeeb1f0503d70a9a3a68a4d43cf71f314b927a4480572866ebf43188e500ccea"
+  },
+  "outputs": {
+    "exports\\assets\\interstice\\models\\item\\riftsteel_sword.json": "a42866a07c6a409dc949b806c7b8eb686f6b68c8d13f740cb7b6b8c41e259055",
+    "exports\\Mezhdumorye_Riftsteel_LS02_Preview_1.21.1.zip": "95d501f60f5fc3ce5f1263de1241f5490412f6960c91a3a70e7b5473270c4b56",
+    "source\\design.json": "c507f7e114ae5ce272b3b52cb52951410fafeaaae072f21e413bfe397a6456ab"
+  },
+  "installed": false,
+  "native_game_verified": false,
+  "approval": "Pending owner visual review"
+}

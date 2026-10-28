@@ -1,0 +1,19 @@
+{
+  "compat_jar_from_verified_local_cache": true,
+  "corruption_repaired": 1,
+  "first_repaired": 2,
+  "focused_installer_fixture_files": 2,
+  "full_candidate_files": 91,
+  "limitation": "Installer behavior tested with a two-mod fixture; CPM fetched over HTTPS, owned compatibility JAR supplied via verified local cache. The full unsigned candidate is schema-validated but is not a published or fully installed pack release.",
+  "live_instance_used": false,
+  "manifest_schema_validated": true,
+  "passed": true,
+  "personal_model_and_options_preserved": true,
+  "production_signature_created": false,
+  "published": false,
+  "real_https_cpm_download": true,
+  "real_launcher_installer": true,
+  "repeat_quarantined": 0,
+  "repeat_repaired": 0,
+  "unlisted_fixture_mod_quarantined": 1
+}

@@ -1,0 +1,36 @@
+{
+  "type": "interstice:retort",
+  "inputs": [
+    {
+      "ingredient": {
+        "item": "interstice:riftsteel_ingot"
+      },
+      "count": 8
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:netherite_ingot"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:echo_shard"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "interstice:pure_vitriolite_lining"
+      },
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "id": "interstice:abyssal_alloy",
+      "count": 4
+    }
+  ],
+  "ticks": 2400
+}

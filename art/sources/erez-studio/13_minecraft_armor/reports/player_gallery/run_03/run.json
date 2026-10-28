@@ -1,0 +1,69 @@
+{
+  "started_utc": "2026-10-27T06:06:01.286163+00:00",
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g03",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "profile": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g03\\progressionNative",
+  "harness_sha256": "9f013409a76be4b9b8bd120291ca0f3088027fa65954e13619fd74d4e6a454c2",
+  "owner_profile_used": false,
+  "pid": 24708,
+  "exit_code": 0,
+  "duration_seconds": 162.422,
+  "ended_utc": "2026-10-27T06:08:43.710586+00:00",
+  "passed": false,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "players": [
+      {
+        "tier": "riftsilver",
+        "name": "EREZ_Silver",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 368064
+      },
+      {
+        "tier": "riftsteel",
+        "name": "EREZ_Steel",
+        "skin_model": "slim",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 419904
+      },
+      {
+        "tier": "aegis",
+        "name": "EREZ_Magen",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 629520
+      }
+    ],
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "render_width": 1920,
+    "render_height": 1080,
+    "crouching_checked": true,
+    "passed": false,
+    "reason": "java.lang.IllegalStateException: Tracked native player missing: EREZ_Silver",
+    "phase": 8,
+    "pid": 22284,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "gallery-all-front.png",
+      "gallery-all-back.png",
+      "gallery-all-quarter.png",
+      "gallery-silver-close.png",
+      "gallery-steel-close.png",
+      "gallery-magen-close.png",
+      "gallery-all-crouching.png",
+      "gallery-failure.png"
+    ]
+  }
+}

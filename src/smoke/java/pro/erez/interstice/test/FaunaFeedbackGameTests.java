@@ -1,49 +1,105 @@
 package pro.erez.interstice.test;
 
+import java.util.*;
 import net.minecraft.core.BlockPos;
-import net.minecraft.gametest.framework.GameTest;
-import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.gametest.framework.*;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.monster.Zombie;
-import net.neoforged.neoforge.event.tick.EntityTickEvent;
-import net.neoforged.neoforge.gametest.GameTestHolder;
-import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
+import net.minecraft.world.effect.*;
+import net.minecraft.world.level.GameType;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.gametest.*;
 import pro.erez.interstice.Interstice;
-import pro.erez.interstice.ToxicLiquidBlock;
-import pro.erez.interstice.entity.CaveRiftSpiderEntity;
-import pro.erez.interstice.ecology.CaveEcology;
-import pro.erez.interstice.fauna.UpperSeaCharge;
+import pro.erez.interstice.entity.*;
+import pro.erez.interstice.fauna.*;
+import pro.erez.interstice.ecology.*;
 
-@GameTestHolder("interstice_strong_fauna")
+@GameTestHolder("interstice_hunters")
 @PrefixGameTestTemplate(false)
 public final class FaunaFeedbackGameTests {
-    @GameTest(template="empty")
-    public static void nativeSpiderIgnoresLocalPlantAndLowerSeaButKeepsCombatAndUpperSeaDamage(GameTestHelper h){
-        var level=h.getLevel();var pos=h.absolutePos(new BlockPos(8,3,8));
-        var spider=new CaveRiftSpiderEntity(Interstice.CAVE_RIFT_SPIDER.get(),level);spider.setVariant(CaveRiftSpiderEntity.Variant.SKIRMISHER);spider.setNoAi(true);spider.moveTo(pos.getX()+.5,pos.getY(),pos.getZ()+.5);level.addFreshEntity(spider);
-        var plant=CaveEcology.STING_FROND.get();float health=spider.getHealth();
-        plant.entityInside(plant.defaultBlockState(),level,pos,spider);
-        h.assertTrue(spider.getHealth()==health&&!spider.hasEffect(net.minecraft.world.effect.MobEffects.MOVEMENT_SLOWDOWN),"Local flora harms native spider");
-        for(int x=-1;x<=1;x++)for(int z=-1;z<=1;z++)level.setBlock(pos.offset(x,0,z),Interstice.HEAVY_BLOCK.get().defaultBlockState(),3);
-        ToxicLiquidBlock.onEntityTick(new EntityTickEvent.Post(spider));
-        h.assertTrue(spider.getHealth()==health,"Lower sea harms native spider");
-        var zombie=new Zombie(EntityType.ZOMBIE,level);zombie.setNoAi(true);zombie.moveTo(spider.position());level.addFreshEntity(zombie);
-        ToxicLiquidBlock.onEntityTick(new EntityTickEvent.Post(zombie));h.assertTrue(zombie.getHealth()<20,"Lower-sea immunity leaked to other mobs");
-        // Do not trigger the separate upper/lower mixing explosion in this contact test.
-        for(int x=-1;x<=1;x++)for(int z=-1;z<=1;z++)level.setBlock(pos.offset(x,0,z),net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(),3);
-        for(int x=-1;x<=1;x++)for(int z=-1;z<=1;z++)level.setBlock(pos.offset(x,0,z),Interstice.LIGHT_BLOCK.get().defaultBlockState(),3);
-        ToxicLiquidBlock.onEntityTick(new EntityTickEvent.Post(spider));h.assertTrue(spider.getHealth()<health,"Upper-sea damage was globally disabled");
-        var combatSpider=new CaveRiftSpiderEntity(Interstice.CAVE_RIFT_SPIDER.get(),level);combatSpider.setVariant(CaveRiftSpiderEntity.Variant.SKIRMISHER);combatSpider.moveTo(pos.getX()+5,pos.getY()+2,pos.getZ());level.addFreshEntity(combatSpider);
-        float before=combatSpider.getHealth();boolean hit=combatSpider.hurt(level.damageSources().generic(),3);
-        System.out.println("SPIDER_ENVIRONMENT_CONTROL lower_immune=true upper_health="+spider.getHealth()+" combat_before="+before+" combat_after="+combatSpider.getHealth()+" hit="+hit);
-        h.assertTrue(hit&&combatSpider.getHealth()<before,"Fresh healthy native spider ignores ordinary combat");combatSpider.discard();
-        spider.discard();zombie.discard();h.succeed();
+    private static void cleanup(GameTestHelper h,Entity e){
+        h.testInfo.addListener(new GameTestListener(){
+            void close(){if(e instanceof net.minecraft.server.level.ServerPlayer p)TestPlayers.remove(p);else e.discard();}
+            public void testStructureLoaded(GameTestInfo i){}
+            public void testPassed(GameTestInfo i,GameTestRunner r){close();}
+            public void testFailed(GameTestInfo i,GameTestRunner r){close();}
+            public void testAddedForRerun(GameTestInfo i,GameTestInfo r,GameTestRunner runner){close();}
+        });
     }
-    @GameTest(template="empty")
-    public static void fastGhastChargeAndOriginalSoundEventsAreRegistered(GameTestHelper h){
-        h.assertTrue(Math.abs(UpperSeaCharge.SPEED-5*1.1)<1e-9,"Requested projectile speed is not fivefold");
-        for(var sound:java.util.List.of(pro.erez.interstice.sound.ModSounds.GHAST_AMBIENT,pro.erez.interstice.sound.ModSounds.GHAST_HURT,pro.erez.interstice.sound.ModSounds.GHAST_DEATH,pro.erez.interstice.sound.ModSounds.GHAST_WARN,pro.erez.interstice.sound.ModSounds.GHAST_SHOOT,pro.erez.interstice.sound.ModSounds.GHAST_SPLASH))
-            h.assertTrue(sound.get().getLocation().getNamespace().equals(Interstice.ID),"Ghast still uses a vanilla sound event");
-        h.succeed();
+    private static CaveRiftSpiderEntity spider(GameTestHelper h){
+        var e=Interstice.CAVE_RIFT_SPIDER.get().create(h.getLevel());
+        e.setNoAi(true);e.setNoGravity(true);e.setPersistenceRequired();
+        e.moveTo(h.absoluteVec(new Vec3(3.5,3,3.5)));h.getLevel().addFreshEntity(e);cleanup(h,e);return e;
+    }
+    @GameTest(template="empty",batch="feedback_flora",timeoutTicks=30)
+    public static void nativeHunterIgnoresLocalPlantsButKeepsCombatAndPotionDamage(GameTestHelper h){
+        var level=h.getLevel();var pos=h.absolutePos(new BlockPos(3,3,3));
+        var hunter=StrongRealmFauna.VAULT_HUNTER.get().create(level);hunter.setNoAi(true);hunter.setNoGravity(true);hunter.moveTo(pos.getCenter());level.addFreshEntity(hunter);cleanup(h,hunter);
+        var victim=new net.minecraft.world.entity.npc.Villager(EntityType.VILLAGER,level);victim.setNoAi(true);victim.setNoGravity(true);victim.moveTo(pos.getCenter());level.addFreshEntity(victim);cleanup(h,victim);
+        for(var block:List.of(CaveEcology.STING_FROND.get(),RealmEcology.VENOM_REED.get())){
+            victim.setHealth(20);victim.invulnerableTime=0;victim.getPersistentData().remove(CavePlantBlock.STING_COOLDOWN_TAG);victim.removeAllEffects();
+            var state=block.defaultBlockState();state.entityInside(level,pos,hunter);state.entityInside(level,pos,victim);
+            h.assertTrue(hunter.getHealth()==36&&!hunter.hasEffect(MobEffects.POISON)&&!hunter.hasEffect(MobEffects.MOVEMENT_SLOWDOWN),"Native hunter harmed by local plant");
+            h.assertTrue(victim.getHealth()<20&&victim.hasEffect(MobEffects.POISON)&&victim.hasEffect(MobEffects.MOVEMENT_SLOWDOWN),"Plant ceased affecting ordinary prey");
+        }
+        h.assertTrue(hunter.hurt(level.damageSources().mobAttack(victim),4)&&hunter.getHealth()==32,"Local adaptation made hunter immune to combat");
+        h.assertTrue(hunter.addEffect(new MobEffectInstance(MobEffects.POISON,100)),"Local adaptation blocked an unrelated poison effect");h.succeed();
+    }
+    @GameTest(template="empty",batch="feedback_spore",timeoutTicks=35)
+    public static void localSporeGasSkipsHunterAndStillPoisonsOrdinaryPrey(GameTestHelper h){
+        var level=h.getLevel();var pos=h.absolutePos(new BlockPos(4,3,4));
+        var hunter=StrongRealmFauna.VAULT_HUNTER.get().create(level);hunter.setNoAi(true);hunter.setNoGravity(true);hunter.moveTo(pos.getCenter());level.addFreshEntity(hunter);cleanup(h,hunter);
+        var victim=new net.minecraft.world.entity.npc.Villager(EntityType.VILLAGER,level);victim.setNoAi(true);victim.setNoGravity(true);victim.moveTo(pos.getCenter());level.addFreshEntity(victim);cleanup(h,victim);
+        h.assertTrue(SporePodGas.emit(level,pos,0),"No test gas emitted");
+        var clouds=level.getEntitiesOfClass(AreaEffectCloud.class,new net.minecraft.world.phys.AABB(pos).inflate(4));clouds.forEach(e->cleanup(h,e));
+        h.runAtTickTime(12,()->{
+            h.assertTrue(!hunter.hasEffect(MobEffects.POISON)&&!hunter.hasEffect(MobEffects.WEAKNESS)&&!hunter.hasEffect(MobEffects.MOVEMENT_SLOWDOWN),"Hunter inhaled local spore hazard");
+            h.assertTrue(victim.hasEffect(MobEffects.POISON)&&victim.hasEffect(MobEffects.WEAKNESS),"Gas ceased affecting ordinary prey");h.succeed();
+        });
+    }
+    @GameTest(template="empty",batch="feedback_local_cap",timeoutTicks=30)
+    public static void localPopulationAndRepeatedNestBurstsCannotExceedSix(GameTestHelper h){
+        var pos=h.absolutePos(new BlockPos(3,3,3));
+        for(int i=0;i<5;i++)spider(h);
+        h.assertTrue(SpiderPopulation.hasRoom(h.getLevel(),pos),"Sixth local slot unavailable");
+        for(int i=0;i<8;i++)pro.erez.interstice.block.SpiderEggSacBlock.burstEggSac(h.getLevel(),pos,null);
+        var all=h.getLevel().getEntitiesOfClass(CaveRiftSpiderEntity.class,new net.minecraft.world.phys.AABB(pos).inflate(48));all.forEach(e->cleanup(h,e));
+        h.assertTrue(all.size()==6&&!SpiderPopulation.hasRoom(h.getLevel(),pos),"Repeated nest bursts exceeded local population limit");
+        all.getFirst().discard();h.assertTrue(SpiderPopulation.hasRoom(h.getLevel(),pos),"Freed local slot did not reopen");h.succeed();
+    }
+    @GameTest(template="empty",batch="feedback_loaded_cap",timeoutTicks=30)
+    public static void loadedLimitCountsImmediateAdditionsAndReleasesRemovedSpiders(GameTestHelper h){
+        var all=new ArrayList<CaveRiftSpiderEntity>();for(int i=0;i<32;i++)all.add(spider(h));
+        var far=h.absolutePos(new BlockPos(120,3,3));
+        h.assertTrue(!SpiderPopulation.hasRoom(h.getLevel(),far),"Loaded limit missed immediate entities outside local box");
+        all.getFirst().discard();h.assertTrue(SpiderPopulation.hasRoom(h.getLevel(),far),"Removed spider still consumed loaded slot");h.succeed();
+    }
+    @GameTest(template="empty",batch="feedback_continuous_hunt",timeoutTicks=360)
+    public static void longVisiblePursuitDoesNotPauseForBehaviourTimeout(GameTestHelper h){
+        var level=h.getLevel();var origin=h.absolutePos(BlockPos.ZERO);
+        for(int x=-48;x<=48;x+=16)for(int z=-48;z<=48;z+=16)level.getChunkAt(origin.offset(x,0,z));
+        for(int x=0;x<=16;x++)for(int z=0;z<=16;z++){
+            h.setBlock(new BlockPos(x,1,z),Blocks.STONE);for(int y=2;y<=7;y++)h.setBlock(new BlockPos(x,y,z),Blocks.AIR);
+        }
+        var hunter=StrongRealmFauna.VAULT_HUNTER.get().create(level);hunter.moveTo(h.absoluteVec(new Vec3(3.5,2,5.5)));hunter.setPersistenceRequired();level.addFreshEntity(hunter);cleanup(h,hunter);
+        var player=TestPlayers.create(h,new BlockPos(12,2,5),GameType.SURVIVAL);cleanup(h,player);
+        Vec3[] previous={hunter.position()};double[] travelled={0};int[] age={0},stalled={0},longest={0};
+        h.onEachTick(()->{
+            // Stay inside the template's entity-ticking area. A long straight
+            // fixture exits GameTest's ticking tickets and freezes its actor.
+            double angle=age[0]*.075;
+            Vec3 target=h.absoluteVec(new Vec3(8+Math.cos(angle)*6,2,8+Math.sin(angle)*6));
+            player.teleportTo(level,target.x,target.y,target.z,Set.of(),0,0);
+            double step=hunter.position().subtract(previous[0]).horizontalDistance();
+            if(++age[0]>30){
+                travelled[0]+=step;stalled[0]=step<.005?stalled[0]+1:0;longest[0]=Math.max(longest[0],stalled[0]);
+                h.assertTrue(hunter.phase()==VaultHunter.Phase.CHASE&&hunter.getTarget()==player,"Visible moving prey lost during pursuit");
+            }previous[0]=hunter.position();
+        });
+        h.runAtTickTime(320,()->{
+            h.assertTrue(travelled[0]>30,"Pursuit distance="+travelled[0]+" pause="+longest[0]+" path="+hunter.getNavigation().getPath());
+            h.assertTrue(longest[0]<=2,"Continuous visible pursuit inserted "+longest[0]+" idle ticks");h.succeed();
+        });
     }
 }

@@ -1,0 +1,27 @@
+{
+  "type": "interstice:engineer_refill",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "interstice:engineer_breathing_cassette"
+    },
+    {
+      "item": "interstice:pure_vitriolite_lining"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "interstice:phosphorite_paste"
+    }
+  ],
+  "result": {
+    "id": "interstice:engineer_breathing_cassette",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "interstice_engineer_air_ticks": 12000
+      }
+    }
+  }
+}

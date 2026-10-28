@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-27",
+  "status": "published",
+  "pack_sequence": 20,
+  "pack_release": "0.1.0-alpha.20",
+  "release_id": "techmagic-0-1-0-alpha-20-studio-fauna",
+  "mod_version": "0.7.0-preview.35-fauna-studio",
+  "jar_sha256": "62b4f04791f12739d6153c4d3aea994a3e1355f49a890de45c47c79316e36231",
+  "server": {
+    "passed": true,
+    "server_jars": 67,
+    "old_jars_unchanged": 66,
+    "mod_version": "0.7.0-preview.35-fauna-studio",
+    "backup_destination": "server_local_only",
+    "pc_transfer_skipped_by_owner": true,
+    "online_auth_required": true,
+    "owner_only_op4": true,
+    "healthy": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false,
+    "fauna_included": true,
+    "tcp_motion_acceptance": "open",
+    "started_at": "2026-10-27T17:54:12.81477467Z"
+  },
+  "publication": {
+    "sequence": 20,
+    "files": 89,
+    "client_jars": 79,
+    "unchanged_base_files": 87,
+    "signatures_verified": true,
+    "public_https_verified": true
+  },
+  "fauna": {
+    "component_tests": 99,
+    "components_passed": true,
+    "native_full_pack_dh_passed": true,
+    "tcp_motion_acceptance": "open",
+    "survival_balance_and_capacity": "open"
+  },
+  "studio": {
+    "engineer": "E12",
+    "worktools": "WT11",
+    "backpacks": "B02",
+    "d02_mechanics_implemented": false
+  },
+  "preservation": {
+    "passed": true,
+    "old_pngs_unchanged": 170,
+    "protected_geometry_classes_unchanged": 130,
+    "changed_existing_classes": [
+      "pro/erez/interstice/Interstice.class",
+      "pro/erez/interstice/ToxicLiquidBlock.class",
+      "pro/erez/interstice/block/SpiderEggSacBlock.class",
+      "pro/erez/interstice/client/BackpackLayer.class",
+      "pro/erez/interstice/client/VaultHunterModel.class",
+      "pro/erez/interstice/ecology/CavePlantBlock.class",
+      "pro/erez/interstice/ecology/SporePodGas.class",
+      "pro/erez/interstice/ecology/VenomReedBlock.class",
+      "pro/erez/interstice/entity/CaveRiftSpiderEntity.class",
+      "pro/erez/interstice/fauna/HunterBrain$Movement.class",
+      "pro/erez/interstice/fauna/HunterBrain$Strike.class",
+      "pro/erez/interstice/fauna/HunterBrain$Wander.class",
+      "pro/erez/interstice/fauna/HunterBrain.class",
+      "pro/erez/interstice/fauna/StrongRealmFauna.class",
+      "pro/erez/interstice/fauna/VaultHunter.class",
+      "pro/erez/interstice/gear/RealmArmaments.class",
+      "pro/erez/interstice/tide/BuoyancyController.class",
+      "pro/erez/interstice/toxin/OverworldToxinHazard.class"
+    ],
+    "removed_old_entries": [
+      "pro/erez/interstice/gear/RealmArmaments$2.class"
+    ]
+  },
+  "admission": {
+    "passed": true,
+    "encrypted_rsa_aes_login": true,
+    "missing_session_rejected": true,
+    "reason": "unverified_username",
+    "owner_credentials_used": false,
+    "positive_multiplayer_not_tested": true
+  },
+  "pc_backup_transfer": "stopped_on_owner_request; no further backups",
+  "download_verification": "Automatic isolated verification had already completed before the stop request was handled; owner performs final check; no further automatic checks",
+  "user_windows_controlled_during_deployment": false,
+  "user_worlds_used_for_tests": false,
+  "delivery": {
+    "client_jars": 79,
+    "corruption_repaired": 1,
+    "files": 89,
+    "fixture_world_options_and_client_preference_preserved": true,
+    "game_server_contacted": false,
+    "new_sequence": 20,
+    "old_sequence": 19,
+    "passed": true,
+    "real_https_studio_fauna_download": true,
+    "repeat_quarantined": 0,
+    "repeat_repaired": 0,
+    "same_size_mtime_repair": true,
+    "update_quarantined": 1,
+    "update_repaired": 2,
+    "user_worlds_used": false
+  }
+}

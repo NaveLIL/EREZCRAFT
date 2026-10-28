@@ -1,0 +1,10 @@
+{
+  "revision": "ARMOR-A01",
+  "cubes": {
+    "riftsilver": 71,
+    "riftsteel": 81
+  },
+  "source_sha256": "e75c45a5f6bcb0ec2aa43e05c0b9b46da1296108b00d39421b21057264b09ddd",
+  "mod_files_modified": false,
+  "native_game_verified": false
+}

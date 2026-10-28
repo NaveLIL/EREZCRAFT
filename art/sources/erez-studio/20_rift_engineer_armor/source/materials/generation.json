@@ -1,0 +1,8 @@
+{
+  "method": "Built-in image_gen",
+  "reference": "../reference/owner_reference.jpg",
+  "asset": "Flat unlit seamless 32x32 logical-pixel charcoal fabric tile only; not a character render",
+  "original_sha256": "4ae0c8ae75b9bf74d16825ace8d0e1c39f1048661872547df501d6931e34a169",
+  "normalization": "Sample logical pixel centers to32x32 for a native nearest-filtered texture; retain generated pixel layout",
+  "normalized_sha256": "dc2624f200a9c1d15aa99dfeaf461d7a4a72f8841f16a73028fae6d6b4072af7"
+}

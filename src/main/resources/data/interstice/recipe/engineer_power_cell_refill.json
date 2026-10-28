@@ -1,0 +1,27 @@
+{
+  "type": "interstice:engineer_refill",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "interstice:engineer_power_cell"
+    },
+    {
+      "item": "interstice:phosphorite_paste"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "id": "interstice:engineer_power_cell",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "interstice_engineer_energy_milli": 1800000
+      }
+    }
+  }
+}

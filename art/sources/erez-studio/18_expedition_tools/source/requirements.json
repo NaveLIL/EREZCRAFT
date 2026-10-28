@@ -1,0 +1,32 @@
+{
+  "revision": "EXPEDITION-TOOLS-T01",
+  "scope": [
+    "tether_spool",
+    "lift_controller",
+    "structure_surveyor"
+  ],
+  "approval": "Candidate shown for final visual assessment",
+  "authoritative_geometry": "tools_T01.json models[].model; native exports and Blender derive from this geometry",
+  "units": "16 Minecraft model units per block",
+  "blender_required": true,
+  "invariants": [
+    "Existing item identities, recipes, durability, stored data and actions preserved",
+    "No new functional controls or dynamic status indicators implied by decorative geometry",
+    "Do not change launcher or server for this visual review",
+    "Use native model geometry without render-only subdivisions or bevels"
+  ],
+  "textures": "Existing Minecraft sources and pointwise palette variants only, original pixels and alpha preserved",
+  "acceptance": [
+    "Recognizable silhouettes at inventory scale",
+    "Practical visible grip areas",
+    "Exact Blender/native export element agreement",
+    "Blender front and three-quarter views of all three items",
+    "Before/after comparison",
+    "Native hand transforms deferred until approved game integration"
+  ],
+  "unknowns": [
+    "Final owner visual assessment",
+    "Behavior under untested third-party shaders or item-rendering replacements"
+  ],
+  "stage": "Blender and native review completed"
+}

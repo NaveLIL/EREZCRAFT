@@ -1,0 +1,27 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-Pmod_version=0.7.0-preview.39-engineer-d02",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\e39gt3",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\blade-release-20261028\\client",
+    "assemble",
+    "runEngineerGameTestServer",
+    "runProgressionGameTestServer",
+    "runGearGameTestServer"
+  ],
+  "passed": true,
+  "started_utc": "2026-10-28T06:24:53.215792+00:00",
+  "pid": 17200,
+  "exit_code": 0,
+  "required_pass_counts": [
+    15,
+    43,
+    19
+  ],
+  "seconds": 232.89099999999962
+}

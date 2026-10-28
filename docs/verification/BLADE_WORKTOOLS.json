@@ -1,0 +1,243 @@
+{
+  "date": "2026-10-28",
+  "status": "published",
+  "revision": "B01",
+  "mod_version": "0.7.0-preview.36-blade-tools",
+  "jar": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\libs\\interstice-0.7.0-preview.36-blade-tools.jar",
+  "jar_sha256": "8a4cf389dc28022a0282e32092f818204768dbe204e22edc620b8225b89731c2",
+  "source": {
+    "author": "TimmyChips",
+    "license": "CC0-1.0",
+    "project": "QtFiEb3u",
+    "version": "LLyZvI13",
+    "url": "https://modrinth.com/resourcepack/blade-held-items"
+  },
+  "resources": {
+    "passed": true,
+    "models": 8,
+    "source_archive_sha256": "b886506212c0efd5f5ad524f24a046b19f7a38ad0245bcc6a5c88c3b66e705a7",
+    "original_elements_rotations_faces_and_uvs_unchanged": true,
+    "original_hand_transforms_unchanged": true,
+    "source_texture_dimensions_and_alpha_unchanged": true,
+    "deterministic_rebuild": true,
+    "progression_generator_preserves_blade": true,
+    "verified_paths": [
+      "src/main/resources/assets/interstice/models/item/riftsilver_axe.json",
+      "src/main/resources/assets/interstice/models/item/riftsilver_hoe.json",
+      "src/main/resources/assets/interstice/models/item/riftsilver_pickaxe.json",
+      "src/main/resources/assets/interstice/models/item/riftsilver_shovel.json",
+      "src/main/resources/assets/interstice/models/item/riftsteel_axe.json",
+      "src/main/resources/assets/interstice/models/item/riftsteel_hoe.json",
+      "src/main/resources/assets/interstice/models/item/riftsteel_pickaxe.json",
+      "src/main/resources/assets/interstice/models/item/riftsteel_shovel.json",
+      "src/main/resources/assets/interstice/provenance/blade-worktools.json",
+      "src/main/resources/assets/interstice/textures/item/blade/riftsilver_axe.png",
+      "src/main/resources/assets/interstice/textures/item/blade/riftsilver_hoe.png",
+      "src/main/resources/assets/interstice/textures/item/blade/riftsilver_pickaxe.png",
+      "src/main/resources/assets/interstice/textures/item/blade/riftsilver_shovel.png",
+      "src/main/resources/assets/interstice/textures/item/blade/riftsteel_axe.png",
+      "src/main/resources/assets/interstice/textures/item/blade/riftsteel_hoe.png",
+      "src/main/resources/assets/interstice/textures/item/blade/riftsteel_pickaxe.png",
+      "src/main/resources/assets/interstice/textures/item/blade/riftsteel_shovel.png",
+      "src/main/resources/META-INF/licenses/blade-held-items-CC0-1.0.txt"
+    ],
+    "no_pommel_dependency_added": true
+  },
+  "preservation": {
+    "passed": true,
+    "jar": "D:\\repos\\Minecraft\\EREZCRAFT\\build\\libs\\interstice-0.7.0-preview.36-blade-tools.jar",
+    "sha256": "8a4cf389dc28022a0282e32092f818204768dbe204e22edc620b8225b89731c2",
+    "mod_version": "0.7.0-preview.36-blade-tools",
+    "runtime_classes_unchanged": 538,
+    "old_pngs_unchanged": 201,
+    "unrelated_source_paths_unchanged": 1841,
+    "changed_existing_entries": [
+      "META-INF/neoforge.mods.toml",
+      "assets/interstice/models/item/riftsilver_axe.json",
+      "assets/interstice/models/item/riftsilver_hoe.json",
+      "assets/interstice/models/item/riftsilver_pickaxe.json",
+      "assets/interstice/models/item/riftsilver_shovel.json",
+      "assets/interstice/models/item/riftsteel_axe.json",
+      "assets/interstice/models/item/riftsteel_hoe.json",
+      "assets/interstice/models/item/riftsteel_pickaxe.json",
+      "assets/interstice/models/item/riftsteel_shovel.json"
+    ],
+    "additional_entries": [
+      "META-INF/licenses/blade-held-items-CC0-1.0.txt",
+      "assets/interstice/provenance/blade-worktools.json",
+      "assets/interstice/textures/item/blade/",
+      "assets/interstice/textures/item/blade/riftsilver_axe.png",
+      "assets/interstice/textures/item/blade/riftsilver_hoe.png",
+      "assets/interstice/textures/item/blade/riftsilver_pickaxe.png",
+      "assets/interstice/textures/item/blade/riftsilver_shovel.png",
+      "assets/interstice/textures/item/blade/riftsteel_axe.png",
+      "assets/interstice/textures/item/blade/riftsteel_hoe.png",
+      "assets/interstice/textures/item/blade/riftsteel_pickaxe.png",
+      "assets/interstice/textures/item/blade/riftsteel_shovel.png"
+    ]
+  },
+  "native": {
+    "passed": true,
+    "exit_code": 0,
+    "full_pack_dh": true,
+    "mod_count": 106,
+    "first_person_both_hands": true,
+    "third_person_both_hands": true,
+    "wide_slim_closeups": true,
+    "reload": true,
+    "glint": true,
+    "actual_3x3_and_wear": true,
+    "shots": {
+      "worktools-group-0-right.png": "9743e69fea8ade0487a65a9ad2fe02abf031565433ca09eef2fb39cbf8653fa6",
+      "worktools-group-0-quarter.png": "05a34ab21c7ac3283b83831f62cab021ae7ac8137ea03d0909341546031159a7",
+      "worktools-group-0-left.png": "0c752a3d346e4a1cd73f7092f9a8994c07c94d1b5950553b30f4014a6fec7809",
+      "worktools-group-1-right.png": "5de19573fbae7265a33cd6cad49e6ae6fecd8bbd6004337b410d564f2099f483",
+      "worktools-group-1-quarter.png": "2d7613236871d30c482ca9b20592966e8bf73054bf4b60ac09707e44fbaf2eac",
+      "worktools-group-1-left.png": "4fa7f348e7a9868a51f98b18cc5d7887748bb3e16f9169a583e270b1edc3df69",
+      "worktools-group-2-right.png": "88ec96e1c0262179bbaadd895515133d4ff35e404edb53967ee35e66be5cadee",
+      "worktools-group-2-quarter.png": "e3c281608831236c6ab443dc56a5f9240a5a06cbd6da7d3ca3af1a183034e27a",
+      "worktools-group-2-left.png": "e54e39df3d43eda1d49412a0932ab2fb91f5d536e407daf133cda16d2d4d9640",
+      "worktools-inventory.png": "7c8b4e3fcea39656b6a727329ac30454b29e0279e0f795c180afa49a76b9aa3d",
+      "worktools-catalog.png": "5dccbcbea4bb82e1a4959aa76f735f325f26a8f323a7a7df264dde0c1183a490",
+      "worktools-first-person-riftsilver_pickaxe.png": "75953600ba568d951bfce0efa65653c3ba87f5bc0791f7fbd1c0d45531e66e80",
+      "worktools-first-person-riftsilver_axe.png": "d3c27fc7292352a418d0b3caeb535c68675e695829cb7867bf05050d3e68673f",
+      "worktools-first-person-riftsilver_shovel.png": "bd4eef09b6d79482788049c307593d9ceae76978b692959e9d2764ee5546be2a",
+      "worktools-first-person-riftsilver_hoe.png": "3268a6e0bed8d384e71aeaa3541a51899b1aef29dd21075b0a2aefee8245f169",
+      "worktools-first-person-riftsteel_pickaxe.png": "10f9f31736fabf0c7c53369c686f7e8b34ddc0a40aa956d48d7e9cabe345e443",
+      "worktools-first-person-riftsteel_axe.png": "7bbbe4ce5ffc76b223e9a70e0f4c9b59466cb364fd30a16c09aac5d4c2ee0bf8",
+      "worktools-first-person-riftsteel_shovel.png": "7705459f7dea6cbccb15f7123e2a119ed3d0ec466fa7b6452fdb09311e32173d",
+      "worktools-first-person-riftsteel_hoe.png": "5e16b7169b2df48ed3c5e5999430aa9e0023ad06884b89c430048b5513071522",
+      "worktools-after-reload.png": "890db0a17bd14c13c80ebdd96a95009949ae957c0eea9476eaa7ceeccbb6d7f8",
+      "worktools-glint.png": "4fcec3273c8d6879ef346f3a6e4cf9d74b90b6dd2c4a8e6c2c4522c49017ab21",
+      "worktools-excavation-result.png": "c95aa6838fd1dcfe352f79fcb0f5931cadd0d36877482b3ce0b5605862beb2ac",
+      "worktools-palm-wide-right.png": "32e36b9cc68007d1c48649be67d68edff6d657538ecba38baf468da8151eb66b",
+      "worktools-palm-wide-left.png": "c386579ab77d1fdd20eb9dd702973a79624610d3526b0b9606b2e83b8e663bdf",
+      "worktools-palm-slim-right.png": "9abc83886b8859734af1b3237acc9290a4625e317a23689fb1487f6b4f01ae27",
+      "worktools-palm-slim-left.png": "9f4647407bc7cf6adea7a172a3c379591149211053b2eca598c49823941b7c05"
+    },
+    "source_receipt": ".verification/blade-tools-20261028/native-run.json",
+    "scope": "Prepared disposable client scene, not Survival or multiplayer acceptance"
+  },
+  "blender": {
+    "passed": true,
+    "blender_version": "5.2.2 LTS",
+    "source_sha256": "2e82d7ebf2c6eeadf38b93e58eda3714703468531f0cc1d3ac05893ccc1614ec",
+    "geometry_and_uv_unchanged": true,
+    "game_verified": false,
+    "models": {
+      "riftsilver_pickaxe": {
+        "elements": 7,
+        "mesh_objects": 7
+      },
+      "riftsteel_pickaxe": {
+        "elements": 7,
+        "mesh_objects": 7
+      },
+      "riftsilver_axe": {
+        "elements": 6,
+        "mesh_objects": 6
+      },
+      "riftsteel_axe": {
+        "elements": 6,
+        "mesh_objects": 6
+      },
+      "riftsilver_shovel": {
+        "elements": 4,
+        "mesh_objects": 4
+      },
+      "riftsteel_shovel": {
+        "elements": 4,
+        "mesh_objects": 4
+      },
+      "riftsilver_hoe": {
+        "elements": 3,
+        "mesh_objects": 3
+      },
+      "riftsteel_hoe": {
+        "elements": 3,
+        "mesh_objects": 3
+      }
+    }
+  },
+  "server_updated": true,
+  "public_release_updated": true,
+  "owner_profile_used": false,
+  "backups_created": false,
+  "pack_sequence": 21,
+  "pack_release": "0.1.0-alpha.21",
+  "release_id": "techmagic-0-1-0-alpha-21-blade-tools",
+  "server": {
+    "passed": true,
+    "server_jars": 67,
+    "old_jars_unchanged": 66,
+    "mod_version": "0.7.0-preview.36-blade-tools",
+    "healthy": true,
+    "online_auth_required": true,
+    "owner_only_op4": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false,
+    "backups_created": false,
+    "started_at": "2026-10-28T03:23:39.141037127Z"
+  },
+  "admission": {
+    "passed": true,
+    "encrypted_rsa_aes_login": true,
+    "missing_session_rejected": true,
+    "reason": "unverified_username",
+    "owner_credentials_used": false,
+    "positive_multiplayer_not_tested": true
+  },
+  "publication": {
+    "sequence": 21,
+    "files": 89,
+    "client_jars": 79,
+    "unchanged_base_files": 87,
+    "changed": [
+      {
+        "path": "config/erezcraft-pack.json",
+        "size": 173,
+        "sha256": "5ea52c41caf547452a3ca23981fcecd5631d697d0e0efd2111f47c8870899d0b",
+        "url": "https://files.erezcraft.com/blobs/5ea52c41caf547452a3ca23981fcecd5631d697d0e0efd2111f47c8870899d0b",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/interstice-0.7.0-preview.36-blade-tools.jar",
+        "size": 3120260,
+        "sha256": "8a4cf389dc28022a0282e32092f818204768dbe204e22edc620b8225b89731c2",
+        "url": "https://files.erezcraft.com/blobs/8a4cf389dc28022a0282e32092f818204768dbe204e22edc620b8225b89731c2",
+        "policy": "managed"
+      }
+    ],
+    "public_https_verified": true,
+    "signatures_verified": true,
+    "uploaded_files": 4,
+    "uploaded_bytes": 3153319
+  },
+  "download_installation_verification": "Real HTTPS Installer::synchronize 20→21, same-size/same-mtime corruption repair and repeat passed in owned fixture",
+  "delivery": {
+    "client_jars": 79,
+    "corruption_repaired": 1,
+    "files": 89,
+    "fixture_world_options_and_client_preference_preserved": true,
+    "game_server_contacted": false,
+    "new_sequence": 21,
+    "old_sequence": 20,
+    "passed": true,
+    "real_https_blade_download": true,
+    "repeat_quarantined": 0,
+    "repeat_repaired": 0,
+    "same_size_mtime_repair": true,
+    "update_quarantined": 1,
+    "update_repaired": 2,
+    "user_worlds_used": false
+  },
+  "postrelease_tests": {
+    "passed": true,
+    "report": "docs/verification/ALPHA21_POSTRELEASE_TESTS.json",
+    "delivery": true,
+    "entity_nbt_two_jvms": true,
+    "tcp_motion": true,
+    "visual_gait_acceptance": false,
+    "production_positive_erez_id_login": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-Pmod_version=0.7.0-preview.39-engineer-d02",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\e39n5",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\tide-release-20261028\\client",
+    "-PengineerCold=reload",
+    "runStudioEngineerSystems"
+  ],
+  "passed": true,
+  "started_utc": "2026-10-28T06:56:22.463665+00:00",
+  "pid": 23256,
+  "exit_code": 0,
+  "proof": {
+    "distant_horizons_loaded": true,
+    "mod_count": 106,
+    "mod_version": "0.7.0-preview.39-engineer-d02",
+    "cold_region_items_and_fractional_resources": true,
+    "creation_pid": 12500,
+    "passed": true,
+    "reason": "",
+    "phase": 2,
+    "pid": 27780,
+    "owner_profile_used": false,
+    "prepared_fixture_not_survival": true,
+    "screenshots": [
+      "engineer-d02-cold-reload.png"
+    ],
+    "settled": {
+      "purpose": "engineer_d02_shutdown",
+      "server_tick": 1061,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1555,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "seconds": 162.21900000000096
+}

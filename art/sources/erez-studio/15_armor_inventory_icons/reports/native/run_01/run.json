@@ -1,0 +1,30 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ai01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ai01\\.verification\\icons01",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "started_utc": "2026-10-27T07:31:39.441362+00:00",
+  "harness_sha256": "f8ec482e5a479914a92b01d057068094ee600e679ab706bc8b811223a9d55f2c",
+  "owner_profile_used": false,
+  "passed": false,
+  "pid": 10292,
+  "exit_code": 0,
+  "duration_seconds": 148.344,
+  "proof": {
+    "passed": false,
+    "reason": "java.lang.IllegalStateException: Missing texture: riftsilver_helmet",
+    "phase": 1,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "armor-icons-failure.png"
+    ]
+  }
+}

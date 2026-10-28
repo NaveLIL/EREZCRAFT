@@ -1,0 +1,103 @@
+    private static volatile int benchStage;private static long frameLast;private static int warm;
+    private static final boolean BENCH_ONLY=Boolean.getBoolean("interstice.backpackBenchOnly");
+    private static final Set<UUID> drawnPlayers=new HashSet<>();private static int minDrawn=1000;
+    private static final List<Double> frameSamples=new ArrayList<>();private static final JsonArray benchResults=new JsonArray();
+    @SubscribeEvent public static void frameStart(net.neoforged.neoforge.client.event.RenderFrameEvent.Pre event){if(ACTIVE&&benchStage>0&&benchStage<=3)drawnPlayers.clear();}
+    @SubscribeEvent public static void drawn(net.neoforged.neoforge.client.event.RenderPlayerEvent.Post event){if(ACTIVE&&benchStage>0&&benchStage<=3&&Arrays.asList(profiles).contains(event.getEntity().getUUID()))drawnPlayers.add(event.getEntity().getUUID());}
+    private static void setupBench(Minecraft mc){
+        mc.setScreen(null);mc.options.fov().set(70);var server=mc.getSingleplayerServer();
+        job=server.submit(()->{var level=server.overworld();for(int i=3;i<10;i++)ACTORS.add(connect(level,i));
+            for(int i=0;i<10;i++){var p=ACTORS.get(i);equip(p,"aegis");p.teleportTo(level,32+(i-4.5)*1.35,200,32,Set.of(),180,0);p.hasChangedDimension();p.setDeltaMovement(Vec3.ZERO);}return true;
+        });camera(mc,32,201.1,40,180,0);phase=14;
+    }
+    private static void replaceLayers(boolean legacy)throws Exception{
+        var field=net.minecraft.client.renderer.entity.LivingEntityRenderer.class.getDeclaredField("layers");field.setAccessible(true);
+        for(var entry:Minecraft.getInstance().getEntityRenderDispatcher().getSkinMap().values()){
+            if(!(entry instanceof net.minecraft.client.renderer.entity.player.PlayerRenderer renderer))continue;
+            @SuppressWarnings("unchecked") var layers=(List<Object>)field.get(renderer);
+            for(int i=0;i<layers.size();i++)if(layers.get(i) instanceof BackpackLayer||layers.get(i) instanceof LegacyBackpackLayer)
+                layers.set(i,legacy?new LegacyBackpackLayer(renderer):new BackpackLayer(renderer));
+        }
+    }
+    @SubscribeEvent public static void frames(net.neoforged.neoforge.client.event.RenderFrameEvent.Post event){
+        if(!ACTIVE||benchStage<=0||benchStage>3)return;long now=System.nanoTime();
+        if(frameLast==0){frameLast=now;return;}double ms=(now-frameLast)/1_000_000D;frameLast=now;
+        if(warm++<480)return;minDrawn=Math.min(minDrawn,drawnPlayers.size());frameSamples.add(ms);if(frameSamples.size()<1200)return;
+        try{
+            var sorted=new ArrayList<>(frameSamples);sorted.sort(Double::compare);var row=new JsonObject();
+            row.addProperty("renderer",benchStage==2?"B02_new":"previous_v20");row.addProperty("pass",benchStage);row.addProperty("samples",sorted.size());
+            row.addProperty("median_frame_ms",sorted.get(sorted.size()/2));row.addProperty("p95_frame_ms",sorted.get((int)(sorted.size()*.95)));row.addProperty("median_fps",1000/sorted.get(sorted.size()/2));benchResults.add(row);
+            row.addProperty("minimum_players_drawn",minDrawn);benchStage++;replaceLayers(benchStage==3);warm=0;frameSamples.clear();frameLast=0;minDrawn=1000;
+        }catch(Exception e){throw new IllegalStateException(e);}
+    }
+    private static void beginBench(Minecraft mc)throws Exception{replaceLayers(true);benchStage=1;warm=0;frameLast=0;frameSamples.clear();minDrawn=1000;}
+    private static void packItems(Minecraft mc){
+        var rows=new JsonArray();for(String name:List.of("field_backpack","expedition_backpack","rift_backpack")){
+            var item=net.minecraft.core.registries.BuiltInRegistries.ITEM.get(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(Interstice.ID,name));var stack=new ItemStack(item);
+            var model=mc.getItemRenderer().getModel(stack,mc.level,mc.player,0);var faces=model.getQuads(null,null,net.minecraft.util.RandomSource.create(0));require(model.isGui3d()&&faces.size()>100,"Native 3D pack miniature: "+name);
+            for(var face:faces)require(!face.getSprite().contents().name().equals(net.minecraft.client.renderer.texture.MissingTextureAtlasSprite.getLocation()),"Missing pack miniature texture");
+            var row=new JsonObject();row.addProperty("item",name);row.addProperty("quads",faces.size());rows.add(row);
+        }REPORT.add("native_item_models",rows);
+        for(String tier:List.of("riftsilver","riftsteel","aegis","kotomyaf"))for(String part:List.of("helmet","chestplate","leggings","boots")){
+            String name=tier+"_"+part;var stack=new ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(Interstice.ID,name)));
+            var model=mc.getItemRenderer().getModel(stack,mc.level,mc.player,0);var faces=model.getQuads(null,null,net.minecraft.util.RandomSource.create(0));require(model.isGui3d()&&faces.size()>24,"Previous armor miniature regression: "+name);
+            for(var f:faces)require(!f.getSprite().contents().name().equals(net.minecraft.client.renderer.texture.MissingTextureAtlasSprite.getLocation()),"Previous armor texture regression");
+        }REPORT.addProperty("previous_16_armor_icons_checked",true);
+    }
+    private static final class ItemCatalog extends net.minecraft.client.gui.screens.Screen {
+        ItemCatalog(){super(net.minecraft.network.chat.Component.literal("EREZ backpacks"));}
+        @Override public boolean isPauseScreen(){return false;}
+        @Override public void render(net.minecraft.client.gui.GuiGraphics g,int x,int y,float partial){
+            g.fill(0,0,width,height,0xff101720);g.drawString(font,"EREZ — новые рюкзаки",18,18,0xffe6edf3,false);
+            String[] names={"Полевой","Экспедиционный","Разломный"};String[] ids={"field_backpack","expedition_backpack","rift_backpack"};
+            for(int i=0;i<3;i++){int px=45+i*145;g.drawString(font,names[i],px,70,0xffb9d3df,false);g.pose().pushPose();g.pose().translate(px,98,0);g.pose().scale(5,5,5);g.renderItem(new ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(Interstice.ID,ids[i]))),0,0);g.pose().popPose();}
+        }
+    }
+    @SubscribeEvent public static void tick(ClientTickEvent.Post event){
+        if(!ACTIVE||finished)return;var mc=Minecraft.getInstance();
+        try{
+            if(closing){if(job!=null&&job.isDone())job.join();if(settling.failed())throw new IllegalStateException(settling.failure());if(settling.ready()){REPORT.add("settled",settling.report());finished=true;write(mc);mc.stop();}return;}
+            if(!started&&mc.screen instanceof TitleScreen&&mc.getOverlay()==null){
+                require(mc.gameDirectory.toPath().toRealPath().toString().replace('\\','/').contains("/.verification/"),"Owned test profile required");
+                require(ModList.get().isLoaded("distanthorizons")&&ModList.get().isLoaded("create")&&ModList.get().isLoaded("sable"),"Full EREZCRAFT and DH required");
+                started=true;deadline=System.nanoTime()+TimeUnit.MINUTES.toNanos(12);profiles=new UUID[10];profiles[0]=profile("wide/steve.png",10);profiles[1]=profile("slim/alex.png",100);for(int i=2;i<10;i++)profiles[i]=profile("wide/steve.png",200+i*100);
+                mc.options.pauseOnLostFocus=false;mc.options.renderDistance().set(3);mc.options.simulationDistance().set(5);mc.options.fov().set(32);mc.options.fovEffectScale().set(0D);mc.options.bobView().set(false);mc.options.hideGui=true;mc.options.enableVsync().set(false);mc.getWindow().updateVsync(false);mc.options.framerateLimit().set(260);
+                mc.options.setCameraType(CameraType.FIRST_PERSON);
+                mc.createWorldOpenFlows().createFreshLevel("backpacks-native",new LevelSettings("EREZ backpack QA",GameType.CREATIVE,false,Difficulty.NORMAL,true,new GameRules(),WorldDataConfiguration.DEFAULT),new WorldOptions(20261029L,false,false),WorldPresets::createNormalWorldDimensions,mc.screen);return;
+            }
+            if(!started)return;require(System.nanoTime()<deadline,"Backpack test deadline phase="+phase);
+            if(SmokeWorldPrompts.advance(mc)||mc.player==null||mc.level==null||mc.getSingleplayerServer()==null)return;
+            if(skinsFixed)for(int i=0;i<3;i++){var p=actor(mc,i);p.yBodyRot=180;p.yBodyRotO=180;p.yHeadRot=180;p.yHeadRotO=180;}
+            var server=mc.getSingleplayerServer();
+            if(phase==0){observer=mc.player.getUUID();job=server.submit(()->{prepare(server.getPlayerList().getPlayer(observer));return true;});phase=1;ticks=0;return;}
+            if(job!=null&&!job.isDone())return;if(job!=null)job.join();if(++ticks<(phase==1?70:35))return;ticks=0;
+            if(phase==1){
+                if(mc.level.getPlayerByUUID(profiles[0])==null||mc.level.getPlayerByUUID(profiles[1])==null||mc.level.getPlayerByUUID(profiles[2])==null)return;
+                if(!skinsFixed){skinFixtures(mc);skinsFixed=true;return;}inspect(mc);packItems(mc);
+                require(BackpackModels.renderedQuads>0,"Actual player layer must render the new pack geometry");
+                for(int i=0;i<3;i++)require(BackpackStorage.capacity(BackpackHarness.get(actor(mc,i)))==54+i*18-(i==2?6:0),"Native pack synchronization");
+                REPORT.addProperty("mod_count",ModList.get().getMods().size());REPORT.addProperty("distant_horizons_loaded",true);REPORT.addProperty("mod_version",ModList.get().getModContainerById(Interstice.ID).orElseThrow().getModInfo().getVersion().toString());
+                REPORT.addProperty("benchmark_only",BENCH_ONLY);if(BENCH_ONLY){setupBench(mc);return;}
+                shot(mc,"armor-front");camera(mc,32,201.02,39,180,0);phase=2;
+            }else if(phase==2){shot(mc,"armor-back");camera(mc,27.8,201.05,38.2,-145.9F,0);phase=3;
+            }else if(phase==3){shot(mc,"armor-quarter");closeCamera(mc,0);phase=4;
+            }else if(phase>=4&&phase<=6){shot(mc,new String[]{"field-close","expedition-close","rift-close"}[phase-4]);if(phase<6){closeCamera(mc,phase-3);phase++;}else{job=server.submit(()->{for(int i=0;i<3;i++){reset(ACTORS.get(i),i);ACTORS.get(i).setShiftKeyDown(true);}return true;});camera(mc,32,200.85,39,180,0);phase=7;}
+            }else if(phase==7){for(int i=0;i<3;i++)require(actor(mc,i).isCrouching(),"Native crouch");shot(mc,"crouching");REPORT.addProperty("crouching_checked",true);job=server.submit(()->{for(int i=0;i<3;i++)reset(ACTORS.get(i),i);movement=1;return true;});phase=8;
+            }else if(phase==8){shot(mc,"walking");REPORT.addProperty("walking_checked",true);job=server.submit(()->{movement=0;for(int i=0;i<3;i++){reset(ACTORS.get(i),i);for(var s:RealmArmor.SLOTS)ACTORS.get(i).setItemSlot(s,ItemStack.EMPTY);}return true;});camera(mc,32,201.02,39,180,0);phase=9;
+            }else if(phase==9){shot(mc,"bare-back");job=server.submit(()->{for(var p:ACTORS)for(var s:RealmArmor.SLOTS)p.setItemSlot(s,new ItemStack(KotomyafArmor.item("kotomyaf_"+kind(s))));return true;});phase=10;
+            }else if(phase==10){shot(mc,"kotomyaf-back");REPORT.addProperty("kotomyaf_checked",true);job=server.submit(()->{for(int i=0;i<3;i++){equip(ACTORS.get(i),TIERS[i]);ACTORS.get(i).setItemSlot(EquipmentSlot.CHEST,new ItemStack(Items.ELYTRA));}return true;});phase=11;
+            }else if(phase==11){shot(mc,"elytra-folded");job=server.submit(()->{for(var p:ACTORS){p.setPos(p.getX(),203,p.getZ());p.setOnGround(false);p.startFallFlying();}return true;});camera(mc,32,203.6,41,180,5);phase=12;
+            }else if(phase==12){for(int i=0;i<3;i++)require(actor(mc,i).isFallFlying(),"Native elytra flight pose required");shot(mc,"elytra-flight");REPORT.addProperty("elytra_checked",true);
+                job=server.submit(()->{var level=server.overworld();for(int x=24;x<=40;x++)for(int z=29;z<=37;z++)for(int y=200;y<=203;y++)level.setBlock(new BlockPos(x,y,z),Blocks.WATER.defaultBlockState(),3);
+                    for(int i=0;i<3;i++){var p=ACTORS.get(i);p.stopFallFlying();reset(p,i);equip(p,TIERS[i]);p.setPos(X[i],201,32);p.setSprinting(true);p.setDeltaMovement(new Vec3(0,0,-.01));}return true;
+                });camera(mc,32,201.4,35.8,180,0);phase=1200;
+            }else if(phase==1200){for(int i=0;i<3;i++)require(actor(mc,i).isSwimming(),"Actual swimming pose required");shot(mc,"swimming");REPORT.addProperty("swimming_checked",true);
+                job=server.submit(()->{var level=server.overworld();for(int x=21;x<=43;x++)for(int z=21;z<=43;z++)for(int y=200;y<=204;y++)level.setBlock(new BlockPos(x,y,z),Blocks.AIR.defaultBlockState(),3);
+                    for(int i=0;i<3;i++)reset(ACTORS.get(i),i);return true;
+                });mc.options.guiScale().set(4);mc.resizeDisplay();mc.setScreen(new ItemCatalog());phase=13;
+            }else if(phase==13){shot(mc,"item-miniatures");setupBench(mc);
+            }else if(phase==14){require(mc.level.players().size()>=11,"Ten tracked players plus observer required");shot(mc,"ten-players-before");beginBench(mc);phase=15;
+            }else if(phase==15){if(benchStage<=3)return;replaceLayers(false);REPORT.add("frame_benchmark",benchResults);for(var row:benchResults)require(row.getAsJsonObject().get("minimum_players_drawn").getAsInt()==10,"All ten players must actually render on every sampled frame");REPORT.addProperty("benchmark_players",10);REPORT.addProperty("benchmark_camera_inside_studio",true);REPORT.addProperty("benchmark_vsync",false);REPORT.addProperty("benchmark_frame_cap",260);REPORT.addProperty("gpu",org.lwjgl.opengl.GL11.glGetString(org.lwjgl.opengl.GL11.GL_RENDERER));shot(mc,"ten-players");finish(mc,true,"");}
+        }catch(Throwable e){e.printStackTrace();if(mc.level!=null)shot(mc,"failure");finish(mc,false,e.toString());}
+    }
+}

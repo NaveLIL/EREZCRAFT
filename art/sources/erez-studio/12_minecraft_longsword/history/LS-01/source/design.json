@@ -1,0 +1,97 @@
+{
+  "revision": "LS-01",
+  "name": "Riftsteel Longsword",
+  "item_id": "interstice:riftsteel_sword",
+  "game": "Minecraft Java 1.21.1 / NeoForge 21.1.252",
+  "destination_project": "D:/repos/Minecraft/EREZCRAFT",
+  "intent": "A longer narrow vanilla-detail blade and swept crossguard for the existing Interstice item; preserve identity, progression and mechanics.",
+  "geometry_authority": "This file and tools/build_assets.py. One occupied cell is one model unit; sixteen units equal one game block.",
+  "thickness": 1,
+  "rotation_z_degrees": -45,
+  "origin": [
+    8,
+    8,
+    8
+  ],
+  "x_offset": 2.5,
+  "y_top": 32,
+  "texture": "interstice:item/armaments/tool_greatsword_steel",
+  "texture_sha256": "eeeb1f0503d70a9a3a68a4d43cf71f314b927a4480572866ebf43188e500ccea",
+  "texture_credit": "Malcolm Riley / unused-textures, CC BY 4.0, commit 8b85ad732023174d9a9da74e6bf2272d6c0bef17; existing PNG bytes unchanged. New geometry uses existing solid texels.",
+  "source_texels": {
+    "O": [
+      7,
+      20
+    ],
+    "S": [
+      31,
+      4
+    ],
+    "M": [
+      28,
+      3
+    ],
+    "L": [
+      27,
+      2
+    ],
+    "H": [
+      27,
+      1
+    ],
+    "B": [
+      7,
+      23
+    ],
+    "C": [
+      6,
+      24
+    ],
+    "T": [
+      5,
+      26
+    ]
+  },
+  "rows": [
+    "...........",
+    ".....H.....",
+    "....HLM....",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....HLMS...",
+    "....SLMS...",
+    "....SMMS...",
+    "..SMLMMLS..",
+    ".SMOSCCSOMS",
+    ".SO.SCTB.OS",
+    "....BCTB...",
+    "....BCBB...",
+    "....BCTB...",
+    "....BCBB...",
+    "....SMMS...",
+    ".....MS....",
+    "..........."
+  ],
+  "mechanics": "Existing RealmArmaments.java, tags, recipes, reach, damage, speed, durability and localization remain authoritative and unchanged.",
+  "acceptance": [
+    "Connected silhouette",
+    "One model-unit thickness",
+    "No fractional subpixel decoration",
+    "All coordinates in -16..32",
+    "No new/modified PNG textures",
+    "Existing custom item; no vanilla item replacement",
+    "Native model bake and hand views require verification"
+  ]
+}

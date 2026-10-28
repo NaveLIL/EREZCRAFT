@@ -1,0 +1,132 @@
+{
+  "started_utc": "2026-10-27T06:56:32.514087+00:00",
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\kt01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\kt01\\.verification\\catg02",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "profile": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\kt01\\.verification\\catg02\\progressionNative",
+  "harness_sha256": "704969d0581356ef44eaec9b7d6b08a2665949d46e91491bdbe327f7a23af3a2",
+  "owner_profile_used": false,
+  "geometry_sha256": "08f17eab5773ea250846fbc9fa96ffa0c8402fe77cab5b2c965a1ae3a43d8d2d",
+  "pid": 10608,
+  "exit_code": 0,
+  "duration_seconds": 188.422,
+  "ended_utc": "2026-10-27T06:59:40.949591+00:00",
+  "passed": true,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "players": [
+      {
+        "tier": "kotomyaf",
+        "name": "Kotomyaf_Wide",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 7323360
+      },
+      {
+        "tier": "kotomyaf",
+        "name": "Kotomyaf_Slim",
+        "skin_model": "slim",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 7323360
+      },
+      {
+        "tier": "aegis",
+        "name": "EREZ_Magen",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 6056160
+      }
+    ],
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.19-kotomyaf",
+    "render_width": 1920,
+    "render_height": 1080,
+    "crouching_checked": true,
+    "walking_checked": true,
+    "bow_pose_checked": true,
+    "trim_dye_glint_checked": true,
+    "tail_hidden_with_backpack": true,
+    "backpack_visual_checked": true,
+    "swimming_checked": true,
+    "native_purr_finished_after_shift_release": true,
+    "native_jump_meow_queued_without_cut": true,
+    "purrs_started": 1,
+    "meows_started": 1,
+    "natural_sound_finishes": 1,
+    "shortest_purr_ms": 3095,
+    "fear_distances": [
+      {
+        "type": "minecraft:creeper",
+        "before": 2.299999952316284,
+        "after": 4.168099880218506,
+        "protected_target_cleared": true
+      },
+      {
+        "type": "minecraft:zombie",
+        "before": 2.299999952316284,
+        "after": 7.52705192565918,
+        "protected_target_cleared": true
+      }
+    ],
+    "native_creeper_and_baby_zombie_retreated": true,
+    "passed": true,
+    "reason": "",
+    "phase": 16,
+    "pid": 15364,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "kotomyaf-all-front.png",
+      "kotomyaf-all-back.png",
+      "kotomyaf-all-quarter.png",
+      "kotomyaf-wide-close.png",
+      "kotomyaf-slim-close.png",
+      "kotomyaf-magen-close.png",
+      "kotomyaf-all-crouching.png",
+      "kotomyaf-all-walking.png",
+      "kotomyaf-all-bow.png",
+      "kotomyaf-trim-dye-glint.png",
+      "kotomyaf-all-backpacks.png",
+      "kotomyaf-all-swimming.png",
+      "kotomyaf-creeper-and-baby-zombie-retreat.png"
+    ],
+    "settled": {
+      "purpose": "armor_player_gallery_shutdown",
+      "server_tick": 1062,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1282,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "screenshot_sha256": {
+    "kotomyaf-all-front.png": "0a45388f5091c0e4180bf3608880728e2131fdbcad9b57d4b4dba120e1a39071",
+    "kotomyaf-all-back.png": "050076de90cff09321e3c1d3d58ede6068c4749f0d3ca0feeab9457387cd15c7",
+    "kotomyaf-all-quarter.png": "fb91df2eaec495e7c0ad0f0c74adf409f842dab38549d8dea8a2f1bd95eb7787",
+    "kotomyaf-wide-close.png": "0bb1f4f8b7bb076c8e73703dd0a9670e536212b15161bfe0bedb824bae2b84e2",
+    "kotomyaf-slim-close.png": "5dd4dbdfaa7e2da0b61ec71b7a53be93399ad050e9a87ba714bc8fae8ade3efb",
+    "kotomyaf-magen-close.png": "eb0687c13fbb6ea904010519aadae50812595d9f83ebe8d08cb10f5becf28942",
+    "kotomyaf-all-crouching.png": "284835d277bedd897d680d976d91e1aace527ca3c276fbd0337a728150cf8800",
+    "kotomyaf-all-walking.png": "36e72bf02d2be0f495c7743a5eca924444a8736db237953402472f0136aeceb5",
+    "kotomyaf-all-bow.png": "48659ad76419d47bfb27cccc5224415cc93d7386dfdc7e19c65a1fe569199431",
+    "kotomyaf-trim-dye-glint.png": "2933f2e50d0e483e5da4771d8626946601e9d890683dbebe7d8a589bcf6d86a3",
+    "kotomyaf-all-backpacks.png": "e5e145f3dd657abc0beed69c449b51d694ad218e901e6d4a5589453a26c8829b",
+    "kotomyaf-all-swimming.png": "6c8822ed755c68a7dbbeba726a23c368b821e576b1d4683d94f7a98b6736a5f0",
+    "kotomyaf-creeper-and-baby-zombie-retreat.png": "6a5bf2edf6f127a4efed19e8507cf9995139d2721d3880178df643eaede14a6c"
+  }
+}

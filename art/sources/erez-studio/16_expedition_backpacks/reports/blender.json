@@ -1,0 +1,8 @@
+{
+  "source_sha256": "d639dc507cdba7ed2371c70265d0f3dad2fac53e7c3eec34ad077ec2b92cc9f7",
+  "geometry_revision": "B02",
+  "save_only": true,
+  "verification_reference": "reports/accepted.json",
+  "scenes": 7,
+  "rendered_pngs": []
+}

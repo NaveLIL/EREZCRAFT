@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:models/armor/iron_layer_1",
+      "sprite": "interstice:armor_icons/iron"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "minecraft:models/armor/leather_layer_1",
+      "sprite": "interstice:armor_icons/leather"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "interstice:item/engineer_atlas",
+      "sprite": "interstice:armor_icons/engineer"
+    }
+  ]
+}

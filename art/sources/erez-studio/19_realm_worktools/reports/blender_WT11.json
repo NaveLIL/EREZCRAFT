@@ -1,0 +1,65 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": "dd8bd5e1e8dff16260977134bc7d36ee76bed910b9c3d8575b8b77d9c45b5bb5",
+  "native_json_source": true,
+  "geometry_modifiers": false,
+  "game_verified": false,
+  "sets": {
+    "riftsilver_pickaxe": {
+      "elements": 33,
+      "mesh_objects": 33
+    },
+    "riftsilver_axe": {
+      "elements": 23,
+      "mesh_objects": 23
+    },
+    "riftsilver_shovel": {
+      "elements": 20,
+      "mesh_objects": 20
+    },
+    "riftsilver_hoe": {
+      "elements": 19,
+      "mesh_objects": 19
+    },
+    "riftsteel_pickaxe": {
+      "elements": 35,
+      "mesh_objects": 35
+    },
+    "riftsteel_axe": {
+      "elements": 25,
+      "mesh_objects": 25
+    },
+    "riftsteel_shovel": {
+      "elements": 22,
+      "mesh_objects": 22
+    },
+    "riftsteel_hoe": {
+      "elements": 21,
+      "mesh_objects": 21
+    }
+  },
+  "outputs": {
+    "assembly/realm_worktools_WT11.blend": "5d263dc8073e097ccc6c96520a7d99cfbeb15ea2e01386bb51cc8b987a4e6cd4",
+    "exports/riftsilver_axe_WT11.glb": "317b36f1e8d9551f1f4865b92d2b4a8b82efacdb09cf8f69681bca7bd676c386",
+    "exports/riftsilver_hoe_WT11.glb": "aaaf9996fb6c01d4faafaa7aa54ad383c00cdc1ed4bcc0164ea39e32f5391540",
+    "exports/riftsilver_pickaxe_WT11.glb": "99d93267ff6fefefe9a1058b9a927230852e3e9ebce3f6f605a13db50f3f39e0",
+    "exports/riftsilver_shovel_WT11.glb": "ab2a4a88d9fb93b821197c579c6c68d156871a7b545e0296fa7a3557b58692eb",
+    "exports/riftsteel_axe_WT11.glb": "ebe7b19262969f4e5c194c1a6858d1dd735337efda5b94742ef971a9f736a990",
+    "exports/riftsteel_hoe_WT11.glb": "36afa390ef4f7baf285f6b5924a76fb8472ab31660169caf67d807802048a67e",
+    "exports/riftsteel_pickaxe_WT11.glb": "4a7a88bf629f5b27d9922921d9ae5e69c7a8a785dd06d4d5a73f273007e6866f",
+    "exports/riftsteel_shovel_WT11.glb": "1136e45cd8a8dc41eb3d6270e55fa3de32b14fae620f616271dc7d8407b59b37",
+    "preview/riftsilver_WT11.png": "250c8491cb0b1f6fc69d10a56e2394a85e2e3f621f34128f390052b2c729ca35",
+    "preview/riftsteel_WT11.png": "fcecc8b06028189ef7cbd0473ad14fa6d963ed21ac86b86ac94a7776cf1e4986",
+    "preview/worktools_WT11.png": "fd6ebae6565cee241357d81f4e61fc407dc64e20103a4b61608ec0723e0c477f"
+  },
+  "geometry_unchanged_from_WT07": true,
+  "render_reused_from_WT07": true,
+  "reason": "Only Minecraft display transforms changed; mesh, UV, material, lighting and geometry review images are identical",
+  "blender_sha256": "5d263dc8073e097ccc6c96520a7d99cfbeb15ea2e01386bb51cc8b987a4e6cd4",
+  "geometry_unchanged_from_WT08": true,
+  "render_reused_from_WT08": true,
+  "geometry_unchanged_from_WT09": true,
+  "render_reused_from_WT09": true,
+  "geometry_unchanged_from_WT10": true,
+  "render_reused_from_WT10": true
+}

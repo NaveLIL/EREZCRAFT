@@ -1,8 +1,5 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "interstice:item/tide_indicator_00"
-  },
+  "parent": "interstice:item/tide_indicator_base",
   "overrides": [
     {
       "predicate": {

@@ -1,0 +1,2193 @@
+{
+  "audited_jar": "D:\\repos\\Blender\\creations\\15_armor_inventory_icons\\exports\\interstice-0.7.0-preview.20-icons.jar",
+  "sha256": "7dadbd84da79c284fa06cb1add5a7092e528fb5755c62d00d409800500c57e24",
+  "item_model_json_count": 189,
+  "resolved_categories": {
+    "flat_sprite": 82,
+    "other": 52,
+    "custom_3d": 16,
+    "box_3d": 36,
+    "spawn_egg": 2,
+    "vanilla_book": 1
+  },
+  "count_note": "Model files are not the item registry: the total includes seventeen helper models for barometer states. No new client run was performed for this audit.",
+  "criteria": "Geometry and source inspection. Flatness or a low box count alone does not prove an art defect; redesign priorities are editorial recommendations.",
+  "already_approved": [
+    "riftsilver/steel armor and Magen",
+    "Kotomyaf without muzzle or tail",
+    "Original riftsteel sword retained by user preference",
+    "New riftsteel longsword"
+  ],
+  "priorities": [
+    {
+      "priority": 0,
+      "ids": [
+        "upper_sea_ghast_spawn_egg"
+      ],
+      "finding": "Registered in StrongRealmFauna but item JSON absent; recent native log also reports missing model. Technical repair, not a Blender sculpt."
+    },
+    {
+      "priority": 1,
+      "ids": [
+        "tether_spool"
+      ],
+      "finding": "Flat model references the plant_fiber block texture. Strong mismatch between spool purpose and silhouette.",
+      "proposal": "Distinct spool, axle, wound line and hook; restrained vanilla detail."
+    },
+    {
+      "priority": 1,
+      "ids": [
+        "lift_controller",
+        "structure_surveyor"
+      ],
+      "finding": "Controller has only three boxes; surveyor reuses the rift_lens model. Candidates for recognizable handheld instruments.",
+      "proposal": "Grip, inset controls, visible field core and a distinct surveyor silhouette."
+    },
+    {
+      "priority": 1,
+      "ids": [
+        "echo_rift_anchor"
+      ],
+      "finding": "A flat overlay of vanilla ender_eye and echo_shard.",
+      "proposal": "Original anomalous anchor with a restrained frame around its core."
+    },
+    {
+      "priority": 1,
+      "ids": [
+        "field_backpack",
+        "expedition_backpack",
+        "rift_backpack"
+      ],
+      "finding": "Flat inventory sprites; a separate existing 3D BackpackLayer supplies the wearable shape. Not missing wearable models.",
+      "proposal": "Unify wearable geometry and item miniatures, then distinguish the three tiers by functional shapes."
+    },
+    {
+      "priority": 2,
+      "ids": [
+        "riftsilver_pickaxe",
+        "riftsilver_axe",
+        "riftsilver_shovel",
+        "riftsilver_hoe",
+        "riftsteel_pickaxe",
+        "riftsteel_axe",
+        "riftsteel_shovel",
+        "riftsteel_hoe"
+      ],
+      "finding": "Existing geometry is only two to four boxes per item; all are already 3D.",
+      "proposal": "Improve handles, sockets, head silhouette and differentiate exploration from combat/industrial alloy."
+    },
+    {
+      "priority": 2,
+      "ids": [
+        "tide_indicator"
+      ],
+      "finding": "Flat sprite with sixteen state-dependent overrides. Already functional.",
+      "proposal": "Dimensional barometer housing while preserving all sixteen needle states."
+    },
+    {
+      "priority": 2,
+      "ids": [
+        "rift_lens"
+      ],
+      "finding": "Flat lens sprite, also reused by the structure surveyor.",
+      "proposal": "Volumetric lens/rim with deliberate optical/anomalous appearance."
+    },
+    {
+      "priority": 3,
+      "ids": [
+        "ballast_belt",
+        "protective_coating"
+      ],
+      "finding": "Existing five-box belt and four-box coating container.",
+      "proposal": "Better buckles, weights, applicator and fluid-level readability."
+    },
+    {
+      "priority": 3,
+      "ids": [
+        "blank_module",
+        "magnet_module_tier1",
+        "feeder_module_tier1",
+        "compression_module_tier1",
+        "aegis_optics",
+        "aegis_control_unit"
+      ],
+      "finding": "Flat sprites; useful style refinement after the frequently held equipment.",
+      "proposal": "Shared connector and distinct magnetic, feeding, compression, optical and control silhouettes."
+    }
+  ],
+  "models": [
+    {
+      "id": "interstice:abyssal_alloy",
+      "name_ru": "Абиссальный композит",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/aegis/ingot_abyssium"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:abyssal_plate",
+      "name_ru": "Абиссальная бронепластина",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/aegis/part_plate_abyssium"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:abyssal_turf",
+      "name_ru": "Абиссальный дёрн",
+      "category": "other",
+      "parent": "minecraft:block/cube_bottom_top",
+      "inherited_from": "interstice:block/abyssal_turf",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:aegis_boots",
+      "name_ru": "Ботинки «Маген»",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 96,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:aegis_chestplate",
+      "name_ru": "Нагрудник «Маген»",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 336,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:aegis_control_unit",
+      "name_ru": "Контроллер «Маген»",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/aegis/part_electronic_magic_circuit_2"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:aegis_helmet",
+      "name_ru": "Шлем «Маген»",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 210,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:aegis_leggings",
+      "name_ru": "Поножи «Маген»",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 102,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:aegis_optics",
+      "name_ru": "Оптический модуль «Маген»",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/aegis/gem_lens"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:aerolite",
+      "name_ru": "Аэролит",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/aerolite",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:ash_flour",
+      "name_ru": "Пепельная мука",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/ash_flour"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:ash_grain",
+      "name_ru": "Пепельный колос",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/ash_grain"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:ash_spire",
+      "name_ru": "Пепельный натёк",
+      "category": "box_3d",
+      "elements": 4,
+      "inherited_from": "interstice:block/ash_spire_tip",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:ballast_belt",
+      "name_ru": "Балластный пояс",
+      "category": "box_3d",
+      "elements": 5,
+      "textures": {
+        "particle": "interstice:block/vitriolite",
+        "body": "interstice:block/vitriolite",
+        "lining": "interstice:block/stone/polished_vaultstone"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:bioluminescent_lantern",
+      "name_ru": "Биолюминесцентный фонарь",
+      "category": "box_3d",
+      "elements": 23,
+      "inherited_from": "interstice:block/agriculture/lantern_false",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:blank_module",
+      "name_ru": "Заготовка модуля",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/expedition/blank_module"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:cave_rift_spider_spawn_egg",
+      "name_ru": "Яйцо призыва пещерного разломного паука",
+      "category": "spawn_egg",
+      "parent": "minecraft:item/template_spawn_egg",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:ceramic_substrate",
+      "name_ru": "Изолирующая керамическая подложка",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/aegis/part_plate_small_ceramic"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:chemotrophic_fabric",
+      "name_ru": "Хемотрофная ткань",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/expedition/chemotrophic_fabric"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:clingweed",
+      "name_ru": "Токсичная липучка",
+      "category": "box_3d",
+      "elements": 2,
+      "inherited_from": "interstice:block/cave/clingweed",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:coal_torch",
+      "name_ru": "Угольный факел",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/minerals/coal_torch"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:compression_module_tier1",
+      "name_ru": "Модуль сжатия I",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/expedition/compression_module_tier1"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:crimson_root",
+      "name_ru": "Багровый корень",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/crimson_root"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:crown_fence",
+      "name_ru": "Забор из венечника",
+      "category": "other",
+      "parent": "minecraft:block/fence_inventory",
+      "inherited_from": "interstice:block/crown_fence_inventory",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:crown_fence_gate",
+      "name_ru": "Калитка из венечника",
+      "category": "other",
+      "parent": "minecraft:block/template_fence_gate",
+      "inherited_from": "interstice:block/crown_fence_gate",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:crown_leaves",
+      "name_ru": "Листва венечника",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/crown_leaves",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:crown_log",
+      "name_ru": "Бревно венечника",
+      "category": "other",
+      "parent": "minecraft:block/cube_column",
+      "inherited_from": "interstice:block/crown_log",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:crown_planks",
+      "name_ru": "Доски венечника",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/crown_planks",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:crown_sapling",
+      "name_ru": "Саженец венечника",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/garden/crown_sapling"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:crown_slab",
+      "name_ru": "Плита из венечника",
+      "category": "other",
+      "parent": "minecraft:block/slab",
+      "inherited_from": "interstice:block/crown_slab",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:crown_stairs",
+      "name_ru": "Ступени из венечника",
+      "category": "other",
+      "parent": "minecraft:block/stairs",
+      "inherited_from": "interstice:block/crown_stairs",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:echo_rift_anchor",
+      "name_ru": "Якорь Эхо-разлома",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/ender_eye",
+        "layer1": "minecraft:item/echo_shard"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:echo_shard",
+      "name_ru": "Осколок эха",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/echo_shard"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:etched_circuit_board",
+      "name_ru": "Травлёная печатная плата",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/aegis/part_electronic_circuit_printed"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:expedition_backpack",
+      "name_ru": "Экспедиционный рюкзак",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/expedition/expedition_backpack"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:feeder_module_tier1",
+      "name_ru": "Модуль автокорма I",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/expedition/feeder_module_tier1"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:field_anchor",
+      "name_ru": "Полевой якорь лифта",
+      "category": "box_3d",
+      "elements": 4,
+      "inherited_from": "interstice:block/lift/field_anchor",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:field_backpack",
+      "name_ru": "Полевой рюкзак",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/expedition/field_backpack"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:field_journal",
+      "name_ru": "Полевой журнал Междуморья",
+      "category": "vanilla_book",
+      "parent": "minecraft:item/written_book",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:garden_spire",
+      "name_ru": "Садовый натёк",
+      "category": "box_3d",
+      "elements": 4,
+      "inherited_from": "interstice:block/garden_spire_tip",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:gloomcrown_leaves",
+      "name_ru": "Крона сумракрона",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/gloomcrown_leaves",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:gloomcrown_log",
+      "name_ru": "Бревно сумракрона",
+      "category": "other",
+      "parent": "minecraft:block/cube_column",
+      "inherited_from": "interstice:block/gloomcrown_log",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:gloomcrown_planks",
+      "name_ru": "Доски сумракрона",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/gloomcrown_planks",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:gloomcrown_sapling",
+      "name_ru": "Саженец сумракрона",
+      "category": "box_3d",
+      "elements": 4,
+      "inherited_from": "interstice:block/gloomcrown_sapling",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:glow_bloom",
+      "name_ru": "Тихосвет",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/cave/glow_bloom"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:hanging_glow_bloom",
+      "name_ru": "Свисающий тихосвет",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/cave/glow_bloom"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:heavy_toxin_bucket",
+      "name_ru": "Ведро тяжёлой жидкости (разъедается!)",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/heavy_toxin_bucket"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:kotomyaf_boots",
+      "name_ru": "Мягкие лапки Котомяф",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 84,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:kotomyaf_chestplate",
+      "name_ru": "Шерстяная курточка Котомяф",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 156,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:kotomyaf_helmet",
+      "name_ru": "Ушастый капюшон Котомяф",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 180,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:kotomyaf_leggings",
+      "name_ru": "Шерстяные штанишки Котомяф",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 30,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:lift_controller",
+      "name_ru": "Пульт полевого лифта",
+      "category": "box_3d",
+      "elements": 3,
+      "textures": {
+        "particle": "interstice:block/vitriolite",
+        "body": "interstice:block/vitriolite",
+        "stone": "interstice:block/stone/polished_vaultstone",
+        "wood": "interstice:block/garden/paleheart_log",
+        "core": "interstice:block/tide_sprout_core"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:light_toxin_bucket",
+      "name_ru": "Ведро лёгкой жидкости (разъедается!)",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/light_toxin_bucket"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:living_torch",
+      "name_ru": "Живой факел",
+      "category": "box_3d",
+      "elements": 18,
+      "inherited_from": "interstice:block/minerals/living_torch",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:luminous_bud",
+      "name_ru": "Светящийся бутон",
+      "category": "box_3d",
+      "elements": 17,
+      "inherited_from": "interstice:block/minerals/luminous_bud",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:magnet_module_tier1",
+      "name_ru": "Магнитный модуль I",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/expedition/magnet_module_tier1"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:mineral_fertilizer",
+      "name_ru": "Минеральная подкормка",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/mineral_fertilizer"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:mineral_frost",
+      "name_ru": "Минеральная изморось",
+      "category": "box_3d",
+      "elements": 1,
+      "inherited_from": "interstice:block/minerals/mineral_frost",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:mineral_powder",
+      "name_ru": "Рыхлая минеральная пыль",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/minerals/mineral_powder",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:nutrient_reservoir",
+      "name_ru": "Облицованный питательный канал",
+      "category": "box_3d",
+      "elements": 3,
+      "inherited_from": "interstice:block/agriculture/reservoir_false",
+      "textures": {},
+      "overrides": 1,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:pale_fern",
+      "name_ru": "Пепельная гребёнка",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/garden/pale_fern"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:pale_litter",
+      "name_ru": "Бледная подстилка",
+      "category": "other",
+      "parent": "minecraft:block/carpet",
+      "inherited_from": "interstice:block/pale_litter",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:pale_vine",
+      "name_ru": "Бледная лиана",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/garden/pale_vine"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:paleheart_fence",
+      "name_ru": "Забор из бледносердника",
+      "category": "other",
+      "parent": "minecraft:block/fence_inventory",
+      "inherited_from": "interstice:block/paleheart_fence_inventory",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:paleheart_fence_gate",
+      "name_ru": "Калитка из бледносердника",
+      "category": "other",
+      "parent": "minecraft:block/template_fence_gate",
+      "inherited_from": "interstice:block/paleheart_fence_gate",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:paleheart_leaves",
+      "name_ru": "Листва бледносердника",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/paleheart_leaves",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:paleheart_log",
+      "name_ru": "Бревно бледносердника",
+      "category": "other",
+      "parent": "minecraft:block/cube_column",
+      "inherited_from": "interstice:block/paleheart_log",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:paleheart_planks",
+      "name_ru": "Доски бледносердника",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/paleheart_planks",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:paleheart_sapling",
+      "name_ru": "Саженец бледносердника",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/garden/paleheart_sapling"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:paleheart_slab",
+      "name_ru": "Плита из бледносердника",
+      "category": "other",
+      "parent": "minecraft:block/slab",
+      "inherited_from": "interstice:block/paleheart_slab",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:paleheart_stairs",
+      "name_ru": "Ступени из бледносердника",
+      "category": "other",
+      "parent": "minecraft:block/stairs",
+      "inherited_from": "interstice:block/paleheart_stairs",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:palestone",
+      "name_ru": "Бледный камень",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/palestone",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:palestone_bricks",
+      "name_ru": "Кирпичи бледного камня",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/palestone_bricks",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:palestone_slab",
+      "name_ru": "Плита из бледного камня",
+      "category": "other",
+      "parent": "minecraft:block/slab",
+      "inherited_from": "interstice:block/palestone_slab",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:palestone_stairs",
+      "name_ru": "Ступени из бледного камня",
+      "category": "other",
+      "parent": "minecraft:block/stairs",
+      "inherited_from": "interstice:block/palestone_stairs",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:palestone_wall",
+      "name_ru": "Ограда из бледного камня",
+      "category": "other",
+      "parent": "minecraft:block/wall_inventory",
+      "inherited_from": "interstice:block/palestone_wall_inventory",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:phosphorite",
+      "name_ru": "Фосфорит",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/phosphorite",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:phosphorite_crystal",
+      "name_ru": "Фосфоритовый кристалл",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/minerals/phosphorite"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:phosphorite_ore",
+      "name_ru": "Фосфоритовая руда",
+      "category": "box_3d",
+      "elements": 19,
+      "inherited_from": "interstice:block/minerals/phosphorite_ore_riftstone_0",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:phosphorite_paste",
+      "name_ru": "Фосфоритовая биопаста",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/phosphorite_paste"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:plant_fiber",
+      "name_ru": "Растительное волокно",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/plant_fiber"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:polished_vaultstone",
+      "name_ru": "Полированный сводчатый камень",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/polished_vaultstone",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:polished_vaultstone_slab",
+      "name_ru": "Плита из полированного сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/slab",
+      "inherited_from": "interstice:block/polished_vaultstone_slab",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:polished_vaultstone_stairs",
+      "name_ru": "Ступени из полированного сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/stairs",
+      "inherited_from": "interstice:block/polished_vaultstone_stairs",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:polished_vaultstone_wall",
+      "name_ru": "Ограда из полированного сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/wall_inventory",
+      "inherited_from": "interstice:block/polished_vaultstone_wall_inventory",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:pressure_coupler",
+      "name_ru": "Приливная мембрана",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/pressure_coupler"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:protective_coating",
+      "name_ru": "Защитное покрытие",
+      "category": "box_3d",
+      "elements": 4,
+      "textures": {
+        "particle": "interstice:block/vitriolite",
+        "body": "interstice:block/vitriolite",
+        "contents": "interstice:block/tide_sprout_core",
+        "lid": "interstice:block/stone/polished_vaultstone"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:pure_vitriolite_lining",
+      "name_ru": "Чистая витриолитовая облицовка",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/pure_vitriolite_lining"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:purified_bread",
+      "name_ru": "Очищенный пепельный хлеб",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/purified_bread"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:purified_root",
+      "name_ru": "Очищенный багровый корень",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/purified_root"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:pyrolith",
+      "name_ru": "Пиролит",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/pyrolith",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:raw_riftsilver",
+      "name_ru": "Необработанное разломное серебро",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/raw_riftsilver"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:reaction_retort",
+      "name_ru": "Реакционная реторта",
+      "category": "box_3d",
+      "elements": 5,
+      "inherited_from": "interstice:block/agriculture/retort_false",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:reinforced_fence",
+      "name_ru": "Армированная ограда",
+      "category": "box_3d",
+      "elements": 12,
+      "inherited_from": "interstice:block/agriculture/fence_inventory",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:reinforced_fence_gate",
+      "name_ru": "Армированная калитка",
+      "category": "box_3d",
+      "elements": 18,
+      "inherited_from": "interstice:block/agriculture/gate_closed",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:resonant_processor",
+      "name_ru": "Резонансный процессор",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/aegis/part_electronic_circuit_integrated"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:rift_backpack",
+      "name_ru": "Разломный рюкзак",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/expedition/rift_backpack"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:rift_cobweb",
+      "name_ru": "Разломная паутина",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/rift_cobweb"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:rift_frame",
+      "name_ru": "Рамка разлома",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/rift_frame",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:rift_lens",
+      "name_ru": "Линза разлома",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/rift_lens"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:rift_shale",
+      "name_ru": "Рифтовый сланец",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/minerals/rift_shale",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:rift_winch",
+      "name_ru": "Рифтовая лебёдка",
+      "category": "box_3d",
+      "elements": 5,
+      "inherited_from": "interstice:block/tether/rift_winch",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_axe",
+      "name_ru": "Топор из разломного серебра",
+      "category": "box_3d",
+      "elements": 3,
+      "textures": {
+        "handle": "interstice:block/garden/paleheart_log",
+        "metal": "interstice:block/vitriolite",
+        "particle": "interstice:block/vitriolite"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_boots",
+      "name_ru": "Ботинки из разломного серебра",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 72,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_bucket",
+      "name_ru": "Ведро из разломного серебра",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/riftsilver_bucket"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_chestplate",
+      "name_ru": "Нагрудник из разломного серебра",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 222,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_heavy_bucket",
+      "name_ru": "Ведро из разломного серебра (тяжёлый токсин)",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/riftsilver_heavy_bucket"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_helmet",
+      "name_ru": "Шлем из разломного серебра",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 72,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_hoe",
+      "name_ru": "Мотыга из разломного серебра",
+      "category": "box_3d",
+      "elements": 3,
+      "textures": {
+        "handle": "interstice:block/garden/paleheart_log",
+        "metal": "interstice:block/vitriolite",
+        "particle": "interstice:block/vitriolite"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_ingot",
+      "name_ru": "Слиток разломного серебра",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/riftsilver_ingot"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_inverted_bucket",
+      "name_ru": "Перевёрнутое ведро из разломного серебра (лёгкий токсин)",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/riftsilver_inverted_bucket"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_lava_bucket",
+      "name_ru": "Ведро из разломного серебра с лавой",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/riftsilver_lava_bucket"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_leggings",
+      "name_ru": "Поножи из разломного серебра",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 60,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_mesh",
+      "name_ru": "Рифтосеребряная сетка",
+      "category": "box_3d",
+      "elements": 10,
+      "inherited_from": "interstice:block/agriculture/silver_mesh_component",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_ore",
+      "name_ru": "Руда разломного серебра",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/riftsilver_ore",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_pickaxe",
+      "name_ru": "Кирка из разломного серебра",
+      "category": "box_3d",
+      "elements": 4,
+      "textures": {
+        "handle": "interstice:block/garden/paleheart_log",
+        "metal": "interstice:block/vitriolite",
+        "particle": "interstice:block/vitriolite"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_seam",
+      "name_ru": "Рифтосеребряная жила",
+      "category": "box_3d",
+      "elements": 19,
+      "inherited_from": "interstice:block/minerals/riftsilver_seam_riftstone_0",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_shovel",
+      "name_ru": "Лопата из разломного серебра",
+      "category": "box_3d",
+      "elements": 2,
+      "textures": {
+        "handle": "interstice:block/garden/paleheart_log",
+        "metal": "interstice:block/vitriolite",
+        "particle": "interstice:block/vitriolite"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_sword",
+      "name_ru": "Меч из разломного серебра",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/handheld",
+      "textures": {
+        "layer0": "interstice:item/armaments/tool_greatsword_silver"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_water_bucket",
+      "name_ru": "Ведро из разломного серебра с водой",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/riftsilver_water_bucket"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsilver_wire",
+      "name_ru": "Рифтосеребряная проволока",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/riftsilver_wire"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_axe",
+      "name_ru": "Топор из рифтстали",
+      "category": "box_3d",
+      "elements": 3,
+      "textures": {
+        "handle": "interstice:block/garden/paleheart_log",
+        "metal": "interstice:block/stone/polished_vaultstone",
+        "particle": "interstice:block/stone/polished_vaultstone"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_boots",
+      "name_ru": "Ботинки из рифтстали",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 72,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_chestplate",
+      "name_ru": "Нагрудник из рифтстали",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 252,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_helmet",
+      "name_ru": "Шлем из рифтстали",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 102,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_hoe",
+      "name_ru": "Мотыга из рифтстали",
+      "category": "box_3d",
+      "elements": 3,
+      "textures": {
+        "handle": "interstice:block/garden/paleheart_log",
+        "metal": "interstice:block/stone/polished_vaultstone",
+        "particle": "interstice:block/stone/polished_vaultstone"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_ingot",
+      "name_ru": "Слиток рифтстали",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/armaments/ingot_steel"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_leggings",
+      "name_ru": "Поножи из рифтстали",
+      "category": "custom_3d",
+      "loader": "interstice:armor_icon",
+      "quads": 60,
+      "textures": {
+        "armor": "interstice:armor_icons/iron",
+        "strap": "interstice:armor_icons/leather",
+        "particle": "interstice:armor_icons/iron"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_longsword",
+      "name_ru": "Длинный меч из рифтстали",
+      "category": "box_3d",
+      "elements": 250,
+      "textures": {
+        "layer0": "interstice:item/armaments/tool_greatsword_steel",
+        "particle": "interstice:item/armaments/tool_greatsword_steel"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_pickaxe",
+      "name_ru": "Кирка из рифтстали",
+      "category": "box_3d",
+      "elements": 4,
+      "textures": {
+        "handle": "interstice:block/garden/paleheart_log",
+        "metal": "interstice:block/stone/polished_vaultstone",
+        "particle": "interstice:block/stone/polished_vaultstone"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_shovel",
+      "name_ru": "Лопата из рифтстали",
+      "category": "box_3d",
+      "elements": 2,
+      "textures": {
+        "handle": "interstice:block/garden/paleheart_log",
+        "metal": "interstice:block/stone/polished_vaultstone",
+        "particle": "interstice:block/stone/polished_vaultstone"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftsteel_sword",
+      "name_ru": "Меч из рифтстали",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/handheld",
+      "textures": {
+        "layer0": "interstice:item/armaments/tool_greatsword_steel"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:riftstone",
+      "name_ru": "Разломный сланец",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/riftstone",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:root_loam",
+      "name_ru": "Корневой суглинок",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/minerals/root_loam",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:route_beacon",
+      "name_ru": "Маршрутный маяк",
+      "category": "box_3d",
+      "elements": 9,
+      "inherited_from": "interstice:block/gear/beacon_false",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:slicing_cultivator",
+      "name_ru": "Срезной культиватор",
+      "category": "box_3d",
+      "elements": 3,
+      "inherited_from": "interstice:block/agriculture/cultivator",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:spider_egg_sac",
+      "name_ru": "Паучий кокон с кладкой",
+      "category": "box_3d",
+      "elements": 17,
+      "inherited_from": "interstice:block/spider_egg_sac",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:spore_pod_shell",
+      "name_ru": "Обезвреженная оболочка",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/forest/spore_pod_spent"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:sting_frond",
+      "name_ru": "Жалящее перо",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/cave/sting_frond"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:stripped_crown_log",
+      "name_ru": "Обтёсанное бревно венечника",
+      "category": "other",
+      "parent": "minecraft:block/cube_column",
+      "inherited_from": "interstice:block/stripped_crown_log",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:stripped_gloomcrown_log",
+      "name_ru": "Обтёсанное бревно сумракрона",
+      "category": "other",
+      "parent": "minecraft:block/cube_column",
+      "inherited_from": "interstice:block/stripped_gloomcrown_log",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:stripped_paleheart_log",
+      "name_ru": "Обтёсанное бревно бледносердника",
+      "category": "other",
+      "parent": "minecraft:block/cube_column",
+      "inherited_from": "interstice:block/stripped_paleheart_log",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:structure_surveyor",
+      "name_ru": "Разведочный указатель",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "inherited_from": "interstice:item/rift_lens",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:tether_spool",
+      "name_ru": "Страховочная катушка",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/plant_fiber"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:tide_heart",
+      "name_ru": "Приливное сердце",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/garden/tide_heart"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:tide_indicator",
+      "name_ru": "Приливный барометр",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_00"
+      },
+      "overrides": 16,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:tide_indicator_00",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_00"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_01",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_01"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_02",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_02"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_03",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_03"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_04",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_04"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_05",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_05"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_06",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_06"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_07",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_07"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_08",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_08"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_09",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_09"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_10",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_10"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_11",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_11"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_12",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_12"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_13",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_13"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_14",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_14"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_15",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_15"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_indicator_base",
+      "name_ru": null,
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/tide_indicator_00"
+      },
+      "overrides": 0,
+      "auxiliary_model": true
+    },
+    {
+      "id": "interstice:tide_sprout",
+      "name_ru": "Приливной побег",
+      "category": "box_3d",
+      "elements": 11,
+      "inherited_from": "interstice:block/tide_sprout_bud",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:toxic_farmland",
+      "name_ru": "Хемотрофная грядка",
+      "category": "other",
+      "parent": "minecraft:block/farmland",
+      "inherited_from": "interstice:block/agriculture/farmland_false",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:toxic_sand",
+      "name_ru": "Токсичный песок",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/minerals/toxic_sand",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:umbral_coal",
+      "name_ru": "Сумрачный уголь",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/minerals/umbral_coal"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:umbral_coal_ore",
+      "name_ru": "Руда сумрачного угля",
+      "category": "box_3d",
+      "elements": 19,
+      "inherited_from": "interstice:block/minerals/umbral_coal_ore_riftstone_0",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:umbral_sorbent",
+      "name_ru": "Сумрачный сорбент",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/umbral_sorbent"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:unstable_rift_initiator",
+      "name_ru": "Нестабильный инициатор разлома",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/rift_lens",
+        "layer1": "minecraft:item/redstone"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vault_hunter_spawn_egg",
+      "name_ru": "Яйцо призыва сводника",
+      "category": "spawn_egg",
+      "parent": "minecraft:item/template_spawn_egg",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vault_spire",
+      "name_ru": "Сводовый натёк",
+      "category": "box_3d",
+      "elements": 4,
+      "inherited_from": "interstice:block/vault_spire_tip",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vaultstone",
+      "name_ru": "Сводчатый камень",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/vaultstone",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vaultstone_bricks",
+      "name_ru": "Кирпичи сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/vaultstone_bricks",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vaultstone_bricks_slab",
+      "name_ru": "Плита из кирпичей сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/slab",
+      "inherited_from": "interstice:block/vaultstone_bricks_slab",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vaultstone_bricks_stairs",
+      "name_ru": "Ступени из кирпичей сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/stairs",
+      "inherited_from": "interstice:block/vaultstone_bricks_stairs",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vaultstone_bricks_wall",
+      "name_ru": "Ограда из кирпичей сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/wall_inventory",
+      "inherited_from": "interstice:block/vaultstone_bricks_wall_inventory",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vaultstone_slab",
+      "name_ru": "Плита из сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/slab",
+      "inherited_from": "interstice:block/vaultstone_slab",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vaultstone_stairs",
+      "name_ru": "Ступени из сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/stairs",
+      "inherited_from": "interstice:block/vaultstone_stairs",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vaultstone_wall",
+      "name_ru": "Ограда из сводчатого камня",
+      "category": "other",
+      "parent": "minecraft:block/wall_inventory",
+      "inherited_from": "interstice:block/vaultstone_wall_inventory",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:venom_fiber",
+      "name_ru": "Ядовитое волокно",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/forest/venom_fiber"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:venom_reed",
+      "name_ru": "Жалящий камыш",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/forest/venom_reed"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vitriolite",
+      "name_ru": "Витриолит",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/vitriolite",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vitriolite_lining",
+      "name_ru": "Витриолитовая облицовка",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/agriculture/vitriolite_lining"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vitriolite_ore",
+      "name_ru": "Витриолитовая руда",
+      "category": "box_3d",
+      "elements": 19,
+      "inherited_from": "interstice:block/minerals/vitriolite_ore_riftstone_0",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:vitriolite_shard",
+      "name_ru": "Витриолитовый осколок",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/minerals/vitriolite"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:wayfarer_key",
+      "name_ru": "Путевой ключ",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:item/wayfarer_key"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:weathered_vaultstone",
+      "name_ru": "Выветренный сводчатый камень",
+      "category": "other",
+      "parent": "minecraft:block/cube_all",
+      "inherited_from": "interstice:block/weathered_vaultstone",
+      "textures": {},
+      "overrides": 0,
+      "auxiliary_model": false
+    },
+    {
+      "id": "interstice:world_stick",
+      "name_ru": "Палочка Междуморья",
+      "category": "flat_sprite",
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "interstice:block/minerals/world_stick"
+      },
+      "overrides": 0,
+      "auxiliary_model": false
+    }
+  ],
+  "game_files_modified": false
+}

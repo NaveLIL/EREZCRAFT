@@ -6,6 +6,16 @@ run/
 __pycache__/
 *.py[cod]
 
+# Local chat attachments and credentials are not project sources.
+/.codex-remote-attachments/
+/.env
+/.env.*
+!/.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
 # Local baseline verification, recovery bundles, and runtime data.
 /.m00/
 /.verification/

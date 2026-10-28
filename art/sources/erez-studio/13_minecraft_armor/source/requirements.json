@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-27",
+  "game": "Minecraft Java 1.21.1 / NeoForge 21.1.252",
+  "mod": "Interstice / Междуморье, EREZCRAFT",
+  "approved_visual_baseline": "ARMOR-A01: riftsilver and riftsteel, knight forms with expedition details",
+  "authoritative_geometry": "armor_design_A04.json",
+  "new_endgame_name": "Маген / Magen",
+  "name_choice": "Explicit user selection: Маген — «щит» на иврите",
+  "new_endgame_visual_requirements": [
+    "Heavy enclosed power armor with a strongly protected silhouette",
+    "Large shoulder, chest, forearm and leg plates with articulated joints",
+    "David's star on the central chest plate",
+    "Gravity energy harvester on the back and active optical details"
+  ],
+  "functional_requirements": [
+    "Native tiers exceed vanilla armor and remain useful in other dimensions",
+    "Ordinary enchantments remain available; add native specializations",
+    "Endgame helmet: continuous night vision and local creature outlines",
+    "Complex new alloy and first usable electronics manufacturing chain",
+    "No energy consumption in Interstice, powered by anomalous gravity",
+    "Faster charging in exposed tide capture zones",
+    "Battery discharge in other dimensions",
+    "Full powered endgame suit protects from tide capture and toxin",
+    "Full powered endgame suit protects from lava, fire and drowning",
+    "Keep original and long sword as distinct items with existing damage and crafting costs"
+  ],
+  "implementation_choices": {
+    "energy_capacity_per_piece": 7200,
+    "outside_energy_per_worn_second": -1,
+    "calm_realm_energy_per_worn_second": 4,
+    "exposed_surge_energy_per_worn_second": 120,
+    "scanner_range_blocks": 24,
+    "scanner_scope": "Client-tracked living entities, local outlines only",
+    "new_armor_defense": [
+      5,
+      11,
+      9,
+      5
+    ],
+    "new_armor_toughness_per_piece": 5,
+    "new_armor_durability_multiplier": 75,
+    "seal_wear_limit": "At most one ordinary durability attempt per piece per 20 server ticks across environmental sources",
+    "deployment": "Local source and JAR only; owner profiles and production server are outside this task's actions"
+  },
+  "native_qa_fixes": [
+    "Close exposed skin below the rear helmet edge",
+    "Close exposed skin at the waist with a flexible undersuit band"
+  ]
+}

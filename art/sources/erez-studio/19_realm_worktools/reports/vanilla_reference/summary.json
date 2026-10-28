@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "purpose": "Native vanilla-vs-WT04 proportional reference; no production model changes",
+  "rows": [
+    {
+      "kind": "pickaxe",
+      "vanilla_display_diameter": 14.449999,
+      "WT04_riftsteel_display_diameter": 10.273075,
+      "WT04_percent_of_vanilla": 71.1,
+      "same_body_same_camera": true
+    },
+    {
+      "kind": "axe",
+      "vanilla_display_diameter": 14.172332,
+      "WT04_riftsteel_display_diameter": 11.09172,
+      "WT04_percent_of_vanilla": 78.3,
+      "same_body_same_camera": true
+    },
+    {
+      "kind": "shovel",
+      "vanilla_display_diameter": 14.499913,
+      "WT04_riftsteel_display_diameter": 9.783977,
+      "WT04_percent_of_vanilla": 67.5,
+      "same_body_same_camera": true
+    },
+    {
+      "kind": "hoe",
+      "vanilla_display_diameter": 14.449999,
+      "WT04_riftsteel_display_diameter": 10.848186,
+      "WT04_percent_of_vanilla": 75.1,
+      "same_body_same_camera": true
+    }
+  ],
+  "same_crop_for_every_held_frame": [
+    540,
+    180,
+    1380,
+    1020
+  ],
+  "same_resize_for_every_frame": [
+    420,
+    420
+  ],
+  "native_screenshots": 29,
+  "models_changed": false,
+  "measurement_note": "Maximum pairwise distance between opaque-boundary baked vertices after actual display transform; a whole-tool linear-size measure, not shaft length, pixel area, or block reach.",
+  "native_evidence": "run.json",
+  "static_vanilla_provenance": "static-reference.json",
+  "figures": {
+    "comparison_axe.png": "86078447741ef9dc342c7bf2f76877f5348127e68df5c7c80271bfe85834560c",
+    "comparison_hoe.png": "18187ba50c5e02d0cc3dfd9898ada26b8aac2f58c6fec9daec622bd3dbff2065",
+    "comparison_pickaxe.png": "a9bd820be9efb95fb3e05425c74798728145968213d64a6c7b03bf7fad328e2b",
+    "comparison_shovel.png": "916ea10da6fb3edd34e027cf1bc226ebc4ac2d91811462fd2124c940cb0c92cf",
+    "comparison_shovel_hoe.png": "384c4e384d6b2d596fba9e7503c96c3c1cdcf71470b5ba050b7fdfcfcd7b5c97"
+  },
+  "first_person_visual_limitation": "The original 12 first-person captures used hideGui=true and hide the held items. Item synchronization and numeric metrics remain valid; these frames are not valid visual evidence. Superseded by corrected comparison.",
+  "valid_held_comparison_frames": 12,
+  "valid_first_person_comparison_frames": 0
+}

@@ -1,0 +1,11 @@
+{
+  "reviewer": "Codex visual inspection",
+  "findings": [
+    "Fabric too noisy",
+    "Visor too wide",
+    "Wrist device square rather than tall",
+    "Collar piping did not follow its depth slope",
+    "Boots touch in neutral pose"
+  ],
+  "next_revision": "E02"
+}

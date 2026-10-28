@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "interstice:engineer_assembly_pack"
+          }
+        ]
+      }
+    },
+    "recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "interstice:engineer_leggings"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "material",
+      "recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "interstice:engineer_leggings"
+    ]
+  }
+}

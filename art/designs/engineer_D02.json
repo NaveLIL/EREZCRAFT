@@ -1,0 +1,271 @@
+{
+  "status": "DESIGN_PROPOSAL_NOT_IMPLEMENTED",
+  "name": "Разломный инженер",
+  "role": "Midgame expedition and technical reconnaissance; a parallel utility branch after riftsteel chemistry, before Magen endgame",
+  "current_runtime": "Visual-test iron armor only. None of the proposed abilities, materials or recipes below are active.",
+  "proposed_balance": {
+    "armor": {
+      "helmet": 4,
+      "chestplate": 8,
+      "leggings": 7,
+      "boots": 3,
+      "total": 22
+    },
+    "toughness_per_piece": 3.5,
+    "toughness_total": 14,
+    "knockback_resistance_per_piece": 0.08,
+    "durability": {
+      "helmet": 495,
+      "chestplate": 720,
+      "leggings": 675,
+      "boots": 585
+    },
+    "enchantability": 22,
+    "helmet_oxygen_bonus": 1,
+    "leggings_speed_bonus_base": 0.08,
+    "boots_step_height_bonus": 0.5,
+    "boots_fall_damage_reduction": 0.35,
+    "extra_health": 0,
+    "extra_generic_damage_reduction": 0
+  },
+  "hazards": {
+    "native_spider_bite_and_spit_reduction_per_piece": 0.06,
+    "native_spider_bite_and_spit_full_set_reduction": 0.24,
+    "lower_sea_emergency_reduction": {
+      "fraction": 0.6,
+      "requires": "four intact pieces with serviceable chemical lining; separate from breathing reserve",
+      "still_causes_damage": true,
+      "shared_native_damage_reduction_cap": 0.6,
+      "no_multiplicative_extra_toxin_bonus": true,
+      "source": "chemical lining, never oxygen supply"
+    },
+    "upper_sea_suit_protection": false,
+    "lava_immunity": false,
+    "unlimited_underwater_air": false,
+    "tide": {
+      "free_immunity": false,
+      "optional_real_ballast_belt_in_chest_mount": true,
+      "native_force_multiplier": 0.62,
+      "stacking": "choose one strongest eligible real belt, never multiply or duplicate wear",
+      "wear": "existing one durability per second of actual active native buoyancy; 240 active seconds at full durability",
+      "physical_belt_data_preserved": true
+    },
+    "breathing_loop": {
+      "name": "Контур замкнутого дыхания",
+      "requires": [
+        "intact engineer helmet",
+        "intact engineer chestplate",
+        "loaded usable regenerative breathing cassette"
+      ],
+      "reserve_seconds": 600,
+      "battery_independent": true,
+      "mechanical_reserve_indicator_without_visor_power": true,
+      "media": [
+        "underwater",
+        "explicit future nonrespirable atmosphere",
+        "future supported inhalation hazard"
+      ],
+      "one_reserve_second_per_real_hazard_second": true,
+      "no_drain_in_clean_breathable_air": true,
+      "resource_meaning": "Stored breathing mixture and CO2 regeneration capacity; not a passive filter that creates air",
+      "lava": "Breathing support does not cancel fire or lava damage. Heat protection requires a separate valid source such as Fire Resistance or Magen.",
+      "future_atmosphere_integration": "Explicit nonrespirable-medium hook or adapter; never infer support for arbitrary third-party vacuum or gas systems",
+      "no_global_poison_immunity": true,
+      "no_thermal_or_contact_toxin_immunity": true,
+      "no_free_air_from_equipping": "Preserve vanilla air budget across equip/unequip; reserve and clean-air recovery must not reset from item swaps",
+      "regenerative_cassette_refill": "Recharge existing cassette in camp, return the same cassette and preserve unrelated data; exact replenishment chemistry remains design work"
+    }
+  },
+  "neurointerface": {
+    "helmet_works_without_full_set": true,
+    "hud": [
+      "current tide phase and existing timer",
+      "existing sea clearances",
+      "breathing reserve, breathing seal and charge",
+      "held tool durability and existing mode",
+      "explicitly paired or previously discovered route markers"
+    ],
+    "diagnostics": "look at supported Interstice machines to see fuel, blocked output and operating state; no promise of all third-party machine integrations",
+    "worktool_preview": "show the actual planned 3x3 tool footprint before use; share selection rules with the server, never break blocks on the client or promise protection-plugin permissions",
+    "night_vision": "user-toggleable powered mode; do not overwrite real potion effects",
+    "entity_pulse": {
+      "radius_blocks": 16,
+      "visible_targets_only": true,
+      "outline_seconds": 3,
+      "cooldown_seconds": 12,
+      "energy_cost": 40,
+      "no_wall_scan": true,
+      "no_worldwide_entity_search": true
+    },
+    "power": {
+      "capacity": 1800,
+      "hud_drain_per_second": 1,
+      "hud_and_night_vision_total_drain_per_second": 2,
+      "swap_actual_cells": true,
+      "finite_in_every_dimension": true,
+      "automatic_realm_power": true,
+      "camp_recharge_proposal": "one depleted cell + one phosphorite paste + two redstone -> same cell fully recharged; preserve unrelated data; no free cell output",
+      "finite_means": "Finite cell capacity and finite harvesting rate, rather than Magen-style unconditional powered state inside the realm",
+      "realm_harvesting": {
+        "realm_predicate": "same intended realm family as existing AegisPower.realm; no change to Magen",
+        "ambient_units_per_second": 0.5,
+        "exposed_surge_bonus_max_units_per_second": 2.5,
+        "surge_bonus_formula": "2.5 * clamp(native_buoyancy_intensity,0,1) only during eligible exposed SURGE",
+        "maximum_total_units_per_second": 3,
+        "bonus_exclusions": [
+          "shelter",
+          "water or other fluid immersion",
+          "climbing",
+          "passenger",
+          "elytra flight"
+        ],
+        "ambient_can_charge_with_visor_off": true,
+        "outside_realm_units_per_second": 0,
+        "accounting": "Server tick accounting in fixed-point units, bounded by cell capacity; no offline or dimension-swap windfall",
+        "initial_tuning_not_survival_verified": true
+      },
+      "example_continuous_rates": {
+        "outside_hud_minutes": 30,
+        "outside_hud_nv_minutes": 15,
+        "calm_hud_minutes": 60,
+        "calm_hud_nv_minutes": 20,
+        "calm_visor_off_empty_to_full_minutes": 60,
+        "constant_max_surge_hud_net_units_per_second": 2,
+        "constant_max_surge_hud_nv_net_units_per_second": 1,
+        "note": "Examples exclude pulses and assume stated conditions stay constant; a whole tide phase is not guaranteed to last long enough for a full recharge"
+      }
+    },
+    "controls": "one configurable visor action; pulse from normal press, night-vision toggle in visor settings; check modpack bindings before assigning a default"
+  },
+  "progression": {
+    "prerequisites": [
+      "riftsilver armor",
+      "reaction retort",
+      "riftsteel recipe",
+      "ceramic substrates and etched circuit boards",
+      "native fabrics and pure lining"
+    ],
+    "not_required": [
+      "echo_shard",
+      "resonant_processor",
+      "heart_of_the_sea",
+      "netherite",
+      "nether_star",
+      "aegis_control_unit",
+      "abyssal_alloy"
+    ],
+    "upgrade_base": "each matching riftsilver armor piece, preserving name, enchantments, damage and unrelated data",
+    "no_consumption_of_riftsteel_combat_set": true,
+    "research_location": "recipe journal unlock follows riftsteel/basic electronics; known recipes remain usable without loot-only templates",
+    "ruin_role": "optional authored Interstice ruin loot can later supply repair parts, breathing cassettes and worn pieces; not the only source and not a fresh worldgen requirement"
+  },
+  "proposed_recipes": {
+    "interstice:engineer_assembly_pack": {
+      "count": 1,
+      "ingredients": {
+        "interstice:riftsteel_ingot": 2,
+        "interstice:chemotrophic_fabric": 3,
+        "interstice:pure_vitriolite_lining": 2,
+        "minecraft:leather": 2
+      }
+    },
+    "interstice:engineer_neuroadapter": {
+      "count": 1,
+      "ingredients": {
+        "interstice:etched_circuit_board": 2,
+        "interstice:rift_lens": 1,
+        "minecraft:amethyst_shard": 1,
+        "interstice:riftsilver_wire": 2,
+        "minecraft:redstone": 2,
+        "interstice:riftsteel_ingot": 1
+      }
+    },
+    "interstice:engineer_power_cell": {
+      "count": 1,
+      "ingredients": {
+        "minecraft:copper_ingot": 4,
+        "minecraft:redstone": 2,
+        "interstice:phosphorite_paste": 2,
+        "interstice:riftsilver_wire": 1
+      }
+    },
+    "armor_upgrades": [
+      {
+        "slot": "helmet",
+        "base": "interstice:riftsilver_helmet",
+        "template": "interstice:engineer_assembly_pack",
+        "addition": "interstice:engineer_neuroadapter"
+      },
+      {
+        "slot": "chestplate",
+        "base": "interstice:riftsilver_chestplate",
+        "template": "interstice:engineer_assembly_pack",
+        "addition": "interstice:riftsteel_ingot"
+      },
+      {
+        "slot": "leggings",
+        "base": "interstice:riftsilver_leggings",
+        "template": "interstice:engineer_assembly_pack",
+        "addition": "interstice:riftsteel_ingot"
+      },
+      {
+        "slot": "boots",
+        "base": "interstice:riftsilver_boots",
+        "template": "interstice:engineer_assembly_pack",
+        "addition": "interstice:riftsteel_ingot"
+      }
+    ],
+    "interstice:engineer_breathing_cassette": {
+      "count": 1,
+      "ingredients": {
+        "minecraft:copper_ingot": 2,
+        "interstice:pure_vitriolite_lining": 1,
+        "minecraft:charcoal": 1,
+        "interstice:chemotrophic_fabric": 1,
+        "interstice:phosphorite_paste": 1
+      },
+      "lore": "Regenerative breathing chemistry using the fictional materials of Interstice; not a real respirator recipe"
+    }
+  },
+  "enchantments": {
+    "ordinary_applicable_armor_enchantments": true,
+    "mending_repairs_physical_armor_only": "Breathing mixture/regeneration reserve and battery charge are independent resources; Mending does not refill either",
+    "native_rift_ward": "support explicitly, honoring existing 60 percent native-hazard cap",
+    "optional_later_helmet_enchantment": {
+      "name": "Согласование",
+      "levels": 3,
+      "energy_cost_reduction": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "minimum_positive_cost": 1,
+      "not_required_for_base_suit": true
+    }
+  },
+  "acceptance_before_gameplay_release": [
+    "Separate material from temporary iron baseline; exact total defense, toughness, durability and ordinary enchantments",
+    "A broken or removed piece revokes full-set sealing immediately",
+    "Lower-sea protection is bounded at 60 percent including enchantments; upper sea remains dangerous",
+    "Use actual ballast module, actual wear and strongest-only composition; preserve shelter, fluid and movement exemptions",
+    "LOS-limited pulse, server cooldown and energy validation, no scanning unloaded chunks or other dimensions",
+    "Visor and night vision removal never deletes a legitimate potion effect",
+    "Names, damage, enchantments and unrelated data survive upgrades, repair, swaps and reconnect",
+    "Recipe ingredient existence, quantities, no dependency cycle and no loot-only critical path",
+    "GameTests plus a fresh full client with Distant Horizons; actual Survival tuning remains a separate balance acceptance",
+    "Closed breathing works underwater only with valid helmet, chestplate and reserve; helmet visor remains independently usable",
+    "Overlapping nonrespirable media consume at most one reserve second per second; clean breathable air consumes none",
+    "Battery depletion does not disable mechanical breathing; mechanical reserve indication remains readable",
+    "Equip swaps, reconnect, cassette swaps and changing medium never create free air or restore spent reserve",
+    "Breathing cancels only supported suffocation/inhalation hazards; lava heat, contact toxin and injected poison remain distinct",
+    "Finite-rate realm harvesting uses native phase/intensity and all eligibility exclusions; no charge bonus from standing in lava",
+    "Fractional 0.5-unit charging survives save/load exactly; no overflow, negative charge, offline grant or dimension-swap grant",
+    "Cassette and cell refills conserve actual items and preserve unrelated metadata; no duplication or free refills"
+  ],
+  "design_revision": "D02_closed_breathing_and_realm_harvesting",
+  "owner_decisions": {
+    "slow_realm_harvesting": "Approved concept, initial numeric tuning below",
+    "closed_circuit_breathing": "Owner requested; adopted as the primary mask function",
+    "runtime_implementation": "Pending; no gameplay classes changed"
+  }
+}

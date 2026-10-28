@@ -1,0 +1,89 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\si02\\candidate\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\s29w",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "-PstudioMode=worktools",
+    "runStudioWorktools"
+  ],
+  "passed": false,
+  "started_utc": "2026-10-27T15:53:22.642610+00:00",
+  "pid": 33324,
+  "exit_code": 0,
+  "duration_seconds": 223.718,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "native_models": [
+      {
+        "item": "riftsilver_pickaxe",
+        "quads": 198,
+        "gui_3d": true
+      },
+      {
+        "item": "riftsilver_axe",
+        "quads": 138,
+        "gui_3d": true
+      },
+      {
+        "item": "riftsilver_shovel",
+        "quads": 120,
+        "gui_3d": true
+      },
+      {
+        "item": "riftsilver_hoe",
+        "quads": 114,
+        "gui_3d": true
+      },
+      {
+        "item": "riftsteel_pickaxe",
+        "quads": 210,
+        "gui_3d": true
+      },
+      {
+        "item": "riftsteel_axe",
+        "quads": 150,
+        "gui_3d": true
+      },
+      {
+        "item": "riftsteel_shovel",
+        "quads": 132,
+        "gui_3d": true
+      },
+      {
+        "item": "riftsteel_hoe",
+        "quads": 126,
+        "gui_3d": true
+      }
+    ],
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.29-tool-proportions",
+    "passed": false,
+    "reason": "java.lang.IllegalStateException: Tracked left hand",
+    "phase": 3,
+    "pid": 34316,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "worktools-group-0-right.png",
+      "worktools-group-0-quarter.png",
+      "worktools-group-0-left.png",
+      "worktools-group-1-right.png",
+      "worktools-group-1-quarter.png",
+      "worktools-failure.png"
+    ]
+  },
+  "screenshots": {
+    "worktools-group-0-right.png": "bf12bd96ddb54e10284b213a95238bfef2432ea50ddc07f67d778a1b9697d97e",
+    "worktools-group-0-quarter.png": "b359587900284c3dc4506ce087740a97a8e37de543082636069742d4652b35a3",
+    "worktools-group-0-left.png": "1f1cf082ed0c91d092676baf11fee615419621f38ec69ddbf27405dcabeff45b",
+    "worktools-group-1-right.png": "4a3c250a195063b74c502d26338d69d1bd1a69ea2456d2e58c2c599f6178693e",
+    "worktools-group-1-quarter.png": "ec4d4a97924ad331bf78dd126d63640dfee10fde0c14a983bdb3182b256ab593",
+    "worktools-failure.png": "9cd789a7d6d1575effe257f0d83a042d332e8dbc5e47af36f348d64e7104ba93"
+  }
+}

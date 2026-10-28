@@ -1,0 +1,1007 @@
+{
+  "minecraft": "1.21.1",
+  "source_jar": "C:\\Users\\Dimon\\.gradle\\caches\\neoformruntime\\artifacts\\minecraft_1.21.1_client.jar",
+  "source_jar_sha256": "499f6897d1837516680f3114072d8106e11c9adcd933fe5cf051b551089b0c99",
+  "rows": [
+    {
+      "kind": "pickaxe",
+      "vanilla_model_chain": [
+        {
+          "path": "assets/minecraft/models/item/iron_pickaxe.json",
+          "sha256": "64101677bf620826cf960580dcae163059367420cdc589f5579c0bdebd946557"
+        },
+        {
+          "path": "assets/minecraft/models/item/handheld.json",
+          "sha256": "8fe990d1c011429e27df2d49d35cf8571946370eac8d0fb7497aacede4ff20f5"
+        },
+        {
+          "path": "assets/minecraft/models/item/generated.json",
+          "sha256": "63190611202e75ad7b812bc9a4b31bd53f3e186895d7b53e5e280b0d1e30a67a"
+        }
+      ],
+      "vanilla_texture_sha256": "b211a9b920d8f22ce5451780855155644d14ca7b85ab16d31f9c0b572cdda7ee",
+      "vanilla_texture_size": [
+        16,
+        16
+      ],
+      "vanilla_alpha_bounds": [
+        2,
+        2,
+        15,
+        15
+      ],
+      "vanilla_display": {
+        "ground": {
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "head": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "translation": [
+            0,
+            13,
+            7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            55
+          ],
+          "translation": [
+            0,
+            4.0,
+            0.5
+          ],
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            25
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -55
+          ],
+          "translation": [
+            0,
+            4.0,
+            0.5
+          ],
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -25
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ]
+        }
+      },
+      "WT04_display": {
+        "gui": {
+          "rotation": [
+            12,
+            -25,
+            -35
+          ],
+          "scale": [
+            0.83,
+            0.83,
+            0.83
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            10
+          ],
+          "translation": [
+            0,
+            3,
+            0.2
+          ],
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -10
+          ],
+          "translation": [
+            0,
+            3,
+            0.2
+          ],
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            -20
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.58,
+            0.58,
+            0.58
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            20
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.58,
+            0.58,
+            0.58
+          ]
+        },
+        "ground": {
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.45,
+            0.45,
+            0.45
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "scale": [
+            0.8,
+            0.8,
+            0.8
+          ]
+        }
+      }
+    },
+    {
+      "kind": "axe",
+      "vanilla_model_chain": [
+        {
+          "path": "assets/minecraft/models/item/iron_axe.json",
+          "sha256": "d2f87e9cb80b95fa959f3955a8b76680a6f41adbfa0f821634f0a04a97d5181c"
+        },
+        {
+          "path": "assets/minecraft/models/item/handheld.json",
+          "sha256": "8fe990d1c011429e27df2d49d35cf8571946370eac8d0fb7497aacede4ff20f5"
+        },
+        {
+          "path": "assets/minecraft/models/item/generated.json",
+          "sha256": "63190611202e75ad7b812bc9a4b31bd53f3e186895d7b53e5e280b0d1e30a67a"
+        }
+      ],
+      "vanilla_texture_sha256": "8dea40bac06c6f14bb0ad9e8b47de63250f6d6a46ae9439b85ddd1377f1edb49",
+      "vanilla_texture_size": [
+        16,
+        16
+      ],
+      "vanilla_alpha_bounds": [
+        2,
+        1,
+        14,
+        15
+      ],
+      "vanilla_display": {
+        "ground": {
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "head": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "translation": [
+            0,
+            13,
+            7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            55
+          ],
+          "translation": [
+            0,
+            4.0,
+            0.5
+          ],
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            25
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -55
+          ],
+          "translation": [
+            0,
+            4.0,
+            0.5
+          ],
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -25
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ]
+        }
+      },
+      "WT04_display": {
+        "gui": {
+          "rotation": [
+            12,
+            -25,
+            -35
+          ],
+          "scale": [
+            0.83,
+            0.83,
+            0.83
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            10
+          ],
+          "translation": [
+            0,
+            3,
+            0.2
+          ],
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -10
+          ],
+          "translation": [
+            0,
+            3,
+            0.2
+          ],
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            -20
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.58,
+            0.58,
+            0.58
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            20
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.58,
+            0.58,
+            0.58
+          ]
+        },
+        "ground": {
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.45,
+            0.45,
+            0.45
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "scale": [
+            0.8,
+            0.8,
+            0.8
+          ]
+        }
+      }
+    },
+    {
+      "kind": "shovel",
+      "vanilla_model_chain": [
+        {
+          "path": "assets/minecraft/models/item/iron_shovel.json",
+          "sha256": "97309d76ed8df57323d524fd6661bfd3d3db557f54023b298ea52e89b8f42f59"
+        },
+        {
+          "path": "assets/minecraft/models/item/handheld.json",
+          "sha256": "8fe990d1c011429e27df2d49d35cf8571946370eac8d0fb7497aacede4ff20f5"
+        },
+        {
+          "path": "assets/minecraft/models/item/generated.json",
+          "sha256": "63190611202e75ad7b812bc9a4b31bd53f3e186895d7b53e5e280b0d1e30a67a"
+        }
+      ],
+      "vanilla_texture_sha256": "c9d36d59ec53ebc631bd24930f62087c316eef39bd237d8bb69cb2bb629dfae5",
+      "vanilla_texture_size": [
+        16,
+        16
+      ],
+      "vanilla_alpha_bounds": [
+        2,
+        2,
+        15,
+        15
+      ],
+      "vanilla_display": {
+        "ground": {
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "head": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "translation": [
+            0,
+            13,
+            7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            55
+          ],
+          "translation": [
+            0,
+            4.0,
+            0.5
+          ],
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            25
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -55
+          ],
+          "translation": [
+            0,
+            4.0,
+            0.5
+          ],
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -25
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ]
+        }
+      },
+      "WT04_display": {
+        "gui": {
+          "rotation": [
+            12,
+            -25,
+            -35
+          ],
+          "scale": [
+            0.83,
+            0.83,
+            0.83
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            10
+          ],
+          "translation": [
+            0,
+            3,
+            0.2
+          ],
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -10
+          ],
+          "translation": [
+            0,
+            3,
+            0.2
+          ],
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            -20
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.58,
+            0.58,
+            0.58
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            20
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.58,
+            0.58,
+            0.58
+          ]
+        },
+        "ground": {
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.45,
+            0.45,
+            0.45
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "scale": [
+            0.8,
+            0.8,
+            0.8
+          ]
+        }
+      }
+    },
+    {
+      "kind": "hoe",
+      "vanilla_model_chain": [
+        {
+          "path": "assets/minecraft/models/item/iron_hoe.json",
+          "sha256": "3d8a188313b6975a10c8e0b875702373accd7922d004a58bf3bcecfc38910278"
+        },
+        {
+          "path": "assets/minecraft/models/item/handheld.json",
+          "sha256": "8fe990d1c011429e27df2d49d35cf8571946370eac8d0fb7497aacede4ff20f5"
+        },
+        {
+          "path": "assets/minecraft/models/item/generated.json",
+          "sha256": "63190611202e75ad7b812bc9a4b31bd53f3e186895d7b53e5e280b0d1e30a67a"
+        }
+      ],
+      "vanilla_texture_sha256": "4ed88a87c141168b4552041174e83105e5d5825ea9b96836dd4869c674848d69",
+      "vanilla_texture_size": [
+        16,
+        16
+      ],
+      "vanilla_alpha_bounds": [
+        2,
+        1,
+        14,
+        15
+      ],
+      "vanilla_display": {
+        "ground": {
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "head": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "translation": [
+            0,
+            13,
+            7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            55
+          ],
+          "translation": [
+            0,
+            4.0,
+            0.5
+          ],
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            25
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -55
+          ],
+          "translation": [
+            0,
+            4.0,
+            0.5
+          ],
+          "scale": [
+            0.85,
+            0.85,
+            0.85
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -25
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.68,
+            0.68,
+            0.68
+          ]
+        }
+      },
+      "WT04_display": {
+        "gui": {
+          "rotation": [
+            12,
+            -25,
+            -35
+          ],
+          "scale": [
+            0.83,
+            0.83,
+            0.83
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            10
+          ],
+          "translation": [
+            0,
+            3,
+            0.2
+          ],
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -10
+          ],
+          "translation": [
+            0,
+            3,
+            0.2
+          ],
+          "scale": [
+            0.62,
+            0.62,
+            0.62
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            -20
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.58,
+            0.58,
+            0.58
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            20
+          ],
+          "translation": [
+            1.13,
+            3.2,
+            1.13
+          ],
+          "scale": [
+            0.58,
+            0.58,
+            0.58
+          ]
+        },
+        "ground": {
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.45,
+            0.45,
+            0.45
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "scale": [
+            0.8,
+            0.8,
+            0.8
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "#interstice:mineral_ores",
+    "#interstice:forest_floor",
+    "#interstice:crown_logs",
+    "#interstice:paleheart_logs",
+    "interstice:gloomcrown_log",
+    "interstice:stripped_gloomcrown_log",
+    "interstice:gloomcrown_leaves",
+    "interstice:riftstone",
+    "interstice:rift_shale",
+    "interstice:vaultstone",
+    "interstice:palestone"
+  ]
+}

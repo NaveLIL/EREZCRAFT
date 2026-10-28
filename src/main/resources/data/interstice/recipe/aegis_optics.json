@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "GLG",
+    "BPB",
+    "FLF"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "L": {
+      "item": "interstice:rift_lens"
+    },
+    "B": {
+      "item": "interstice:etched_circuit_board"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
+    },
+    "F": {
+      "item": "interstice:phosphorite_paste"
+    }
+  },
+  "result": {
+    "id": "interstice:aegis_optics",
+    "count": 1
+  }
+}

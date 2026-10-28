@@ -1,0 +1,96 @@
+{
+  "scope": "Visual improvements of Interstice items; no automatic gameplay or recipe changes",
+  "source_audit": "../15_armor_inventory_icons/reports/item_visual_audit.json",
+  "workflow": [
+    "Inspect current item and its actual use",
+    "Make a coherent dimensional prototype",
+    "Show old/new for visual review",
+    "Use one source for item and worn/world geometry",
+    "Check in the full game pack",
+    "Deliver a scoped version with provenance"
+  ],
+  "queue": [
+    {
+      "order": 1,
+      "group": "All three backpacks",
+      "ids": [
+        "field_backpack",
+        "expedition_backpack",
+        "rift_backpack"
+      ],
+      "status": "B02 implemented and native checked; local version 21, not installed",
+      "focus": "New silhouettes, real fabric/material mapping, purposeful closures, matching inventory miniatures"
+    },
+    {
+      "order": 2,
+      "group": "Frequently held expedition tools",
+      "ids": [
+        "tether_spool",
+        "lift_controller",
+        "structure_surveyor"
+      ],
+      "status": "T01 built in Blender and full native client; local preview.22 review candidate, not installed",
+      "focus": "Coherent spool, field controller and surveying instrument, differentiated grips and functional silhouettes",
+      "project": "../18_expedition_tools"
+    },
+    {
+      "order": 3,
+      "group": "Anomalous navigation",
+      "ids": [
+        "echo_rift_anchor",
+        "rift_lens",
+        "tide_indicator"
+      ],
+      "status": "Queued",
+      "focus": "Original anchor and lens geometry; preserve the barometer's sixteen working states"
+    },
+    {
+      "order": 4,
+      "group": "Silver and steel tools",
+      "ids": [
+        "riftsilver_pickaxe",
+        "riftsilver_axe",
+        "riftsilver_shovel",
+        "riftsilver_hoe",
+        "riftsteel_pickaxe",
+        "riftsteel_axe",
+        "riftsteel_shovel",
+        "riftsteel_hoe"
+      ],
+      "status": "WT03 Blender and native checked; switchable steel modes and silver resonance; local preview.23, awaiting final visual review, not installed",
+      "focus": "Sockets, heads, handles and tier differentiation while retaining vanilla pixel density",
+      "project": "../19_realm_worktools"
+    },
+    {
+      "order": 5,
+      "group": "Utility and modular electronics",
+      "ids": [
+        "ballast_belt",
+        "protective_coating",
+        "blank_module",
+        "magnet_module_tier1",
+        "feeder_module_tier1",
+        "compression_module_tier1",
+        "aegis_optics",
+        "aegis_control_unit"
+      ],
+      "status": "Queued",
+      "focus": "Recognizable functions and a common connector/design language"
+    }
+  ],
+  "small_technical_repair": {
+    "id": "upper_sea_ghast_spawn_egg",
+    "issue": "Registered item lacks item model JSON",
+    "status": "Queued separately from art redesign"
+  },
+  "already_approved": [
+    "All four armor sets, including Kotomyaf without muzzle or tail",
+    "Both steel swords retained according to user choice",
+    "Sixteen new armor inventory miniatures"
+  ],
+  "defer_3d_by_default": [
+    "Powders",
+    "Ingots",
+    "Small crafting ingredients whose flat icons already read clearly"
+  ]
+}

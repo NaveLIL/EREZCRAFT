@@ -1,0 +1,5 @@
+{
+  "accepted_for_performance": false,
+  "reason": "Camera at z=46 is beyond the studio wall at z=44. A corrected in-room view is required before performance evidence may be accepted.",
+  "action": "Keep run 01 only as functional/visual diagnostic; re-run in a fresh profile with camera z=40."
+}

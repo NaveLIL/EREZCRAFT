@@ -1,0 +1,36 @@
+{
+  "recorded_utc": "2026-10-27T13:41:38.718830+00:00",
+  "scope": "Design arithmetic, ingredient references and source traceability only; no gameplay implementation or Survival balance verification",
+  "passed": true,
+  "proposal_sha256": "dc29f0fd4a98c2c9217d6a0db2a95a78e5dea989e10d259f6ed86a5a891d54de",
+  "direct_assembly_materials": {
+    "interstice:riftsteel_ingot": 12,
+    "interstice:chemotrophic_fabric": 13,
+    "interstice:pure_vitriolite_lining": 9,
+    "minecraft:leather": 8,
+    "interstice:etched_circuit_board": 2,
+    "interstice:rift_lens": 1,
+    "minecraft:amethyst_shard": 1,
+    "interstice:riftsilver_wire": 3,
+    "minecraft:redstone": 4,
+    "minecraft:copper_ingot": 6,
+    "interstice:phosphorite_paste": 3,
+    "minecraft:charcoal": 1
+  },
+  "additional_bases": "Four riftsilver armor parts, standard 24-ingot base; upstream intermediate manufacture not recursively expanded",
+  "code_sources": {
+    "src/main/java/pro/erez/interstice/gear/RealmArmaments.java": "67ad049038e60c25bdd3e5e5a41d33f71fe7b6cbf3579d6425058827f91a5896",
+    "src/main/java/pro/erez/interstice/gear/RealmArmor.java": "894dbe610fdec99c067d63df08c22a60f7156c7cc0330797f4c96cd0dfd1553a",
+    "src/main/java/pro/erez/interstice/gear/AegisArmor.java": "f55fa6cde6dd320e3578b0b7f7a10e6ce266003d42f41764ee98523d13fd10db",
+    "src/main/java/pro/erez/interstice/gear/AegisPower.java": "07e586f69d5c02b817df227ce5c42405d0b74152e38bc984990692cfe01f3e97",
+    "src/main/java/pro/erez/interstice/gear/RealmGear.java": "9895b417f741b4d4bf6c07886b7913eb19aac598144e28c5491d90f2f57a28c5",
+    "src/main/java/pro/erez/interstice/gear/GearHazards.java": "82067a7a5225bc9eb7695e0b941c7f484fb43fa6fd08f5ecfd95802c0a88c2ea",
+    "src/main/java/pro/erez/interstice/ToxicLiquidBlock.java": "03b0538dfda5fc76e2e11c40597d792de9f2cb600fcdba3cf7875cf41e91caf1",
+    "src/main/java/pro/erez/interstice/tide/BuoyancyController.java": "f0aadde946929a5e1e7ff6a6c7a7b69de356fd27831d92222a2e3fa5c2d9b024",
+    "src/main/resources/data/interstice/recipe/resonant_processor.json": "9a10fe5a7aed857ebea27328e4c88997536fdcad3a0dc5fdc5c66b41ced89a57",
+    "src/main/resources/data/interstice/recipe/rift_lens.json": "3a2283ff811f354adacd07ccd863482992258ed3d99c07c9c8002997c79d44c2",
+    "src/main/resources/data/interstice/recipe/retort_etched_circuit_board.json": "e7b894f2faa3247a622db4646543e52aa7209acc4b7a64b6e63c1367959020d0",
+    "src/main/resources/data/interstice/recipe/aegis_control_unit.json": "adf8d64649c5d9253add87ca284616869d53146aa3f72f4a6f78ec8bcb84cd13"
+  },
+  "gameplay_implemented": false
+}

@@ -1,0 +1,71 @@
+{
+  "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+  "players": [
+    {
+      "tier": "riftsilver",
+      "name": "EREZ_Silver",
+      "skin_model": "default",
+      "entity_class": "net.minecraft.client.player.RemotePlayer",
+      "native_armor_vertices": 2970072
+    },
+    {
+      "tier": "riftsteel",
+      "name": "EREZ_Steel",
+      "skin_model": "slim",
+      "entity_class": "net.minecraft.client.player.RemotePlayer",
+      "native_armor_vertices": 3388392
+    },
+    {
+      "tier": "aegis",
+      "name": "EREZ_Magen",
+      "skin_model": "default",
+      "entity_class": "net.minecraft.client.player.RemotePlayer",
+      "native_armor_vertices": 5538336
+    }
+  ],
+  "mod_count": 106,
+  "distant_horizons_loaded": true,
+  "mod_version": "0.7.0-preview.18-armor",
+  "render_width": 1920,
+  "render_height": 1080,
+  "crouching_checked": true,
+  "walking_checked": true,
+  "bow_pose_checked": true,
+  "trim_dye_glint_checked": true,
+  "backpack_visual_checked": true,
+  "swimming_checked": true,
+  "passed": true,
+  "reason": "",
+  "phase": 12,
+  "pid": 19192,
+  "prepared_fixture_not_survival": true,
+  "owner_profile_used": false,
+  "screenshots": [
+    "gallery-all-front.png",
+    "gallery-all-back.png",
+    "gallery-all-quarter.png",
+    "gallery-silver-close.png",
+    "gallery-steel-close.png",
+    "gallery-magen-close.png",
+    "gallery-all-crouching.png",
+    "gallery-all-walking.png",
+    "gallery-all-bow.png",
+    "gallery-trim-dye-glint.png",
+    "gallery-all-backpacks.png",
+    "gallery-all-swimming.png"
+  ],
+  "settled": {
+    "purpose": "armor_player_gallery_shutdown",
+    "server_tick": 660,
+    "elapsed_actual_server_ticks": 19,
+    "stable_actual_server_ticks": 20,
+    "holders_checked": 1282,
+    "generation_ref_count": 0,
+    "save_futures_pending": 0,
+    "holders_not_ready_for_saving": 0,
+    "pending_generation_tasks": 0,
+    "save_futures_failed": 0,
+    "timed_out": false,
+    "non_quiet_examples": []
+  }
+}

@@ -1,0 +1,469 @@
+{
+  "recorded_utc": "2026-10-27T16:52:32.912Z",
+  "passed": true,
+  "revision": "WT11",
+  "version": "0.7.0-preview.34-tool-grasp",
+  "source": "D:/repos/Blender/creations/19_realm_worktools/source/worktools_WT11.json",
+  "source_sha256": "dd8bd5e1e8dff16260977134bc7d36ee76bed910b9c3d8575b8b77d9c45b5bb5",
+  "blender": "D:/repos/Blender/creations/19_realm_worktools/assembly/realm_worktools_WT11.blend",
+  "blender_sha256": "5d263dc8073e097ccc6c96520a7d99cfbeb15ea2e01386bb51cc8b987a4e6cd4",
+  "model_hashes": {
+    "riftsilver_pickaxe": "dfa89003918b0d8ed0b500b613c1b1e112337fb87408aae01fc4440b90ac9c6c",
+    "riftsilver_axe": "c1bfc529e83312a91a18dbfd5f57f971d1ed9578104caa13660ccff2b26f9dd2",
+    "riftsilver_shovel": "3a75f14409bd9b3dd3255c4d715354866f45e8a7819916b4908beebfa0af6e4f",
+    "riftsilver_hoe": "70b8e40c28fd60345ffc30cfc622d51598739e01b53af1c1109fb83742c1cfc3",
+    "riftsteel_pickaxe": "ce614c6e94e6b2c6b78dc59fd956f27e3aef1ba610573e03e849aee589ce099a",
+    "riftsteel_axe": "bd98f9d25825f7f01aed3302150ce7589dca1a68855ce825ade0ea3aad73d78b",
+    "riftsteel_shovel": "1c61acaf08bab72d506c18766532577f2c40468c155cce06766121405d3397eb",
+    "riftsteel_hoe": "85c3ce513d4c2a90736cd4583fce1d22c8c967d293957b56eaf1f15064233a4d"
+  },
+  "owner_feedback": {
+    "WT06_rejected": true,
+    "WT07_right_firstperson_accepted": true,
+    "accepted_words": "В правой руке норм",
+    "general_WT11_visual_approval_recorded": false
+  },
+  "changes": {
+    "geometry_unchanged_since_WT06": true,
+    "width_depth_unchanged_from_WT04": true,
+    "shovel_blade_length_factor": 1.8,
+    "firstperson_right_preserved_from_accepted_WT07": true,
+    "both_firstperson_transforms_identical_to_WT10": true,
+    "thirdperson_rotation": [
+      35,
+      0,
+      -35
+    ],
+    "thirdperson_translation": [
+      1.475812,
+      0.976509,
+      1.708915
+    ],
+    "grip_model_anchor": [
+      8,
+      3.85,
+      8
+    ],
+    "grip_arm_local_right": [
+      -1,
+      9.5,
+      -1.25
+    ],
+    "grip_arm_local_left": [
+      1,
+      9.5,
+      -1.25
+    ]
+  },
+  "checks": {
+    "final_palm_native": {
+      "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+      "native_models": [
+        {
+          "item": "riftsilver_pickaxe",
+          "quads": 198,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsilver_axe",
+          "quads": 138,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsilver_shovel",
+          "quads": 120,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsilver_hoe",
+          "quads": 114,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsteel_pickaxe",
+          "quads": 210,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsteel_axe",
+          "quads": 150,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsteel_shovel",
+          "quads": 132,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsteel_hoe",
+          "quads": 126,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        }
+      ],
+      "mod_count": 106,
+      "distant_horizons_loaded": true,
+      "mod_version": "0.7.0-preview.34-tool-grasp",
+      "focus_palm_only": true,
+      "resource_reload_checked": true,
+      "wide_slim_palm_closeups_checked": true,
+      "passed": true,
+      "reason": "",
+      "phase": 14,
+      "pid": 36708,
+      "prepared_fixture_not_survival": true,
+      "owner_profile_used": false,
+      "screenshots": [
+        "worktools-palm-after-reload.png",
+        "worktools-palm-wide-right.png",
+        "worktools-palm-wide-left.png",
+        "worktools-palm-slim-right.png",
+        "worktools-palm-slim-left.png"
+      ],
+      "settled": {
+        "purpose": "armor_player_gallery_shutdown",
+        "server_tick": 278,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1282,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "previous_full_native_WT10": {
+      "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+      "native_models": [
+        {
+          "item": "riftsilver_pickaxe",
+          "quads": 198,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsilver_axe",
+          "quads": 138,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsilver_shovel",
+          "quads": 120,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsilver_hoe",
+          "quads": 114,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsteel_pickaxe",
+          "quads": 210,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsteel_axe",
+          "quads": 150,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsteel_shovel",
+          "quads": 132,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        },
+        {
+          "item": "riftsteel_hoe",
+          "quads": 126,
+          "gui_3d": true,
+          "baked_palm_grip_both_hands": true
+        }
+      ],
+      "mod_count": 106,
+      "distant_horizons_loaded": true,
+      "mod_version": "0.7.0-preview.33-tool-palm",
+      "confirmed_left_hand_sync_group_0": [
+        {
+          "actor": "EREZ_Silver",
+          "expected": "riftsilver_pickaxe",
+          "main": "minecraft:air",
+          "off": "interstice:riftsilver_pickaxe"
+        },
+        {
+          "actor": "EREZ_Steel",
+          "expected": "riftsilver_axe",
+          "main": "minecraft:air",
+          "off": "interstice:riftsilver_axe"
+        },
+        {
+          "actor": "EREZ_Magen",
+          "expected": "riftsilver_shovel",
+          "main": "minecraft:air",
+          "off": "interstice:riftsilver_shovel"
+        }
+      ],
+      "confirmed_left_hand_sync_group_1": [
+        {
+          "actor": "EREZ_Silver",
+          "expected": "riftsilver_hoe",
+          "main": "minecraft:air",
+          "off": "interstice:riftsilver_hoe"
+        },
+        {
+          "actor": "EREZ_Steel",
+          "expected": "riftsteel_pickaxe",
+          "main": "minecraft:air",
+          "off": "interstice:riftsteel_pickaxe"
+        },
+        {
+          "actor": "EREZ_Magen",
+          "expected": "riftsteel_axe",
+          "main": "minecraft:air",
+          "off": "interstice:riftsteel_axe"
+        }
+      ],
+      "confirmed_left_hand_sync_group_2": [
+        {
+          "actor": "EREZ_Silver",
+          "expected": "riftsteel_shovel",
+          "main": "minecraft:air",
+          "off": "interstice:riftsteel_shovel"
+        },
+        {
+          "actor": "EREZ_Steel",
+          "expected": "riftsteel_hoe",
+          "main": "minecraft:air",
+          "off": "interstice:riftsteel_hoe"
+        },
+        {
+          "actor": "EREZ_Magen",
+          "expected": "riftsilver_pickaxe",
+          "main": "minecraft:air",
+          "off": "interstice:riftsilver_pickaxe"
+        }
+      ],
+      "all_eight_third_person_both_hands_checked": true,
+      "first_person_fov": 70,
+      "all_eight_first_person_both_hands_checked": true,
+      "resource_reload_checked": true,
+      "glint_checked": true,
+      "native_full_pack_mode_and_excavation_checked": true,
+      "wide_slim_palm_closeups_checked": true,
+      "passed": true,
+      "reason": "",
+      "phase": 14,
+      "pid": 25900,
+      "prepared_fixture_not_survival": true,
+      "owner_profile_used": false,
+      "screenshots": [
+        "worktools-group-0-right.png",
+        "worktools-group-0-quarter.png",
+        "worktools-group-0-left.png",
+        "worktools-group-1-right.png",
+        "worktools-group-1-quarter.png",
+        "worktools-group-1-left.png",
+        "worktools-group-2-right.png",
+        "worktools-group-2-quarter.png",
+        "worktools-group-2-left.png",
+        "worktools-inventory.png",
+        "worktools-catalog.png",
+        "worktools-first-person-riftsilver_pickaxe.png",
+        "worktools-first-person-riftsilver_axe.png",
+        "worktools-first-person-riftsilver_shovel.png",
+        "worktools-first-person-riftsilver_hoe.png",
+        "worktools-first-person-riftsteel_pickaxe.png",
+        "worktools-first-person-riftsteel_axe.png",
+        "worktools-first-person-riftsteel_shovel.png",
+        "worktools-first-person-riftsteel_hoe.png",
+        "worktools-after-reload.png",
+        "worktools-glint.png",
+        "worktools-excavation-result.png",
+        "worktools-palm-wide-right.png",
+        "worktools-palm-wide-left.png",
+        "worktools-palm-slim-right.png",
+        "worktools-palm-slim-left.png"
+      ],
+      "settled": {
+        "purpose": "armor_player_gallery_shutdown",
+        "server_tick": 1046,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1282,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "design": {
+      "revision": "WT11",
+      "source_sha256": "dd8bd5e1e8dff16260977134bc7d36ee76bed910b9c3d8575b8b77d9c45b5bb5",
+      "passed": true,
+      "geometry": [
+        {
+          "item": "riftsilver_pickaxe",
+          "elements": 33,
+          "quads": 198,
+          "one_connected_assembly": true,
+          "no_rotated_segments": true,
+          "model_sha256": "dfa89003918b0d8ed0b500b613c1b1e112337fb87408aae01fc4440b90ac9c6c"
+        },
+        {
+          "item": "riftsilver_axe",
+          "elements": 23,
+          "quads": 138,
+          "one_connected_assembly": true,
+          "no_rotated_segments": true,
+          "model_sha256": "c1bfc529e83312a91a18dbfd5f57f971d1ed9578104caa13660ccff2b26f9dd2"
+        },
+        {
+          "item": "riftsilver_shovel",
+          "elements": 20,
+          "quads": 120,
+          "one_connected_assembly": true,
+          "no_rotated_segments": true,
+          "model_sha256": "3a75f14409bd9b3dd3255c4d715354866f45e8a7819916b4908beebfa0af6e4f"
+        },
+        {
+          "item": "riftsilver_hoe",
+          "elements": 19,
+          "quads": 114,
+          "one_connected_assembly": true,
+          "no_rotated_segments": true,
+          "model_sha256": "70b8e40c28fd60345ffc30cfc622d51598739e01b53af1c1109fb83742c1cfc3"
+        },
+        {
+          "item": "riftsteel_pickaxe",
+          "elements": 35,
+          "quads": 210,
+          "one_connected_assembly": true,
+          "no_rotated_segments": true,
+          "model_sha256": "ce614c6e94e6b2c6b78dc59fd956f27e3aef1ba610573e03e849aee589ce099a"
+        },
+        {
+          "item": "riftsteel_axe",
+          "elements": 25,
+          "quads": 150,
+          "one_connected_assembly": true,
+          "no_rotated_segments": true,
+          "model_sha256": "bd98f9d25825f7f01aed3302150ce7589dca1a68855ce825ade0ea3aad73d78b"
+        },
+        {
+          "item": "riftsteel_shovel",
+          "elements": 22,
+          "quads": 132,
+          "one_connected_assembly": true,
+          "no_rotated_segments": true,
+          "model_sha256": "1c61acaf08bab72d506c18766532577f2c40468c155cce06766121405d3397eb"
+        },
+        {
+          "item": "riftsteel_hoe",
+          "elements": 21,
+          "quads": 126,
+          "one_connected_assembly": true,
+          "no_rotated_segments": true,
+          "model_sha256": "85c3ce513d4c2a90736cd4583fce1d22c8c967d293957b56eaf1f15064233a4d"
+        }
+      ],
+      "palette_only_verified": true,
+      "blender_geometry_matches": true,
+      "gameplay_validation": "See GameTests and native reports separately"
+    },
+    "package": {
+      "passed": true,
+      "jar_sha256": "a8225001d0c6a763dcc375968a8526640f2a695e4f63d11e42dd6737c78032a8",
+      "jar_bytes": 3117296,
+      "runtime_classes_byte_identical": 538,
+      "changed_entries": [
+        "META-INF/neoforge.mods.toml",
+        "assets/interstice/models/item/riftsilver_axe.json",
+        "assets/interstice/models/item/riftsilver_hoe.json",
+        "assets/interstice/models/item/riftsilver_pickaxe.json",
+        "assets/interstice/models/item/riftsilver_shovel.json",
+        "assets/interstice/models/item/riftsteel_axe.json",
+        "assets/interstice/models/item/riftsteel_hoe.json",
+        "assets/interstice/models/item/riftsteel_pickaxe.json",
+        "assets/interstice/models/item/riftsteel_shovel.json"
+      ],
+      "added": [],
+      "removed": [],
+      "gameplay_changed": false
+    },
+    "regeneration": {
+      "passed": true,
+      "files_checked": 1394,
+      "changed": []
+    },
+    "preservation": {
+      "passed": true,
+      "unchanged": 1841,
+      "changed": [
+        "src/main/resources/assets/interstice/models/item/riftsilver_axe.json",
+        "src/main/resources/assets/interstice/models/item/riftsilver_hoe.json",
+        "src/main/resources/assets/interstice/models/item/riftsilver_pickaxe.json",
+        "src/main/resources/assets/interstice/models/item/riftsilver_shovel.json",
+        "src/main/resources/assets/interstice/models/item/riftsteel_axe.json",
+        "src/main/resources/assets/interstice/models/item/riftsteel_hoe.json",
+        "src/main/resources/assets/interstice/models/item/riftsteel_pickaxe.json",
+        "src/main/resources/assets/interstice/models/item/riftsteel_shovel.json",
+        "src/smoke/java/pro/erez/interstice/client/WorktoolsNative.java"
+      ],
+      "both_firstperson_transforms_unchanged_from_WT10": true,
+      "properties_unchanged": true,
+      "build_unchanged": true
+    },
+    "user_save_hash_checkpoint": {
+      "passed": true,
+      "files": 1156,
+      "changed": [],
+      "baseline": "D:/repos/Minecraft/EREZCRAFT/.verification/si01/protected-saves-before.json",
+      "hash_checkpoint": "After WT08 native tests; later tests used only s32w and s33w isolated profiles, no owner save writes"
+    }
+  },
+  "historical_integration_tests": {
+    "component": 43,
+    "runner": 68,
+    "not_rerun_for_display_changes": true,
+    "evidence": "D:/repos/Minecraft/EREZCRAFT/docs/verification/STUDIO_INTEGRATION.json"
+  },
+  "evidence": {
+    "final_palm": "D:/repos/Blender/creations/19_realm_worktools/reports/WT11/worktools/run.json",
+    "full_unchanged_firstperson_and_mechanics": "D:/repos/Blender/creations/19_realm_worktools/reports/WT10/worktools/run.json",
+    "calibration": "D:/repos/Blender/creations/19_realm_worktools/reports/WT07/calibration/run.json"
+  },
+  "figures": {
+    "review": "D:/repos/Blender/creations/19_realm_worktools/preview/WT11/hands_review_WT11.png",
+    "palm": "D:/repos/Blender/creations/19_realm_worktools/preview/WT11/palm_comparison_WT11.png",
+    "firstperson": "D:/repos/Blender/creations/19_realm_worktools/preview/WT11/first_shovel_both_WT11.png",
+    "firstperson_reused_from": "WT10; both first-person JSON transforms and geometry are identical"
+  },
+  "artifact": "D:/repos/Minecraft/EREZCRAFT/build/libs/interstice-0.7.0-preview.34-tool-grasp.jar",
+  "jar_sha256": "a8225001d0c6a763dcc375968a8526640f2a695e4f63d11e42dd6737c78032a8",
+  "rollback": "D:/repos/Minecraft/EREZCRAFT/.verification/si02/before",
+  "published": false,
+  "owner_profiles_used": false,
+  "limits": [
+    "Prepared native scenes are not long-term Survival/multiplayer acceptance",
+    "Final WT11 run focuses on all eight baked palm anchors and WIDE/SLIM closeups after reload; unchanged first-person and mechanics use the previous full WT10 evidence",
+    "E12 and existing unfinished fauna retained; D02 remains a design",
+    "Earlier WT04 and first WT05 first-person frames hid items via hideGui and are not valid visual evidence"
+  ]
+}

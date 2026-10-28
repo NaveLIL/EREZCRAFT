@@ -1,0 +1,37 @@
+{
+  "project": "EREZ Rift Engineer personal Minecraft skin",
+  "revision": "3D direction rejected; stopped",
+  "target": "Future work: actual standard 2D Minecraft skin",
+  "user_direction": [
+    "Sinister and mysterious",
+    "Mask, long coat and anomalous devices",
+    "Star of David and Hebrew ארז",
+    "Real 3D volume is important; investigate server support rather than flattening the concept"
+  ],
+  "concept_only": false,
+  "approval_required_before_final_skin": false,
+  "constraints": [
+    "Preserve normal player proportions and gameplay hitbox",
+    "Real 3D respirator, collar, coat panels, belt pouches and instruments",
+    "Mod must be present on viewing clients; server model-file mode requires server installation",
+    "Armor and equipment must remain visible and functional",
+    "Mask/collar must not intersect helmets; coat must handle leggings, sneaking and elytra",
+    "No server deployment, live-profile changes or public model uploads in preparation phase"
+  ],
+  "unknowns": [
+    "CPM interoperability with the custom RealmArmor renderer not yet tested",
+    "Automatic per-slot cosmetic visibility mechanism needs source/API verification",
+    "Multiplayer model synchronization not yet tested with EREZ ID"
+  ],
+  "verification_plan": [
+    "Native CPM model loading and viewer synchronization in isolated profiles",
+    "Bare player front/back/sides and Hebrew legibility",
+    "Walk, crouch, swim, first-person arms and elytra",
+    "Vanilla armor and silver, steel, Magen, Kotomyaf, mixed armor slots",
+    "Backpacks and resource reload",
+    "Bound geometry/texture cost and compare render performance"
+  ],
+  "visual_direction_approved": false,
+  "authoritative_geometry": "Not authored yet; will be declared when the CPM model is created",
+  "approval": "S01 illustration liked, but actual S02/S03 rejected; do not publish or install"
+}

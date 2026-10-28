@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "status": "OWNER_APPROVED_VISUAL_STANDARD",
+  "approved_on": "2026-10-28",
+  "name": "EREZCRAFT / Interstice UI",
+  "owner_decision": "Такого дизайна интерфейса стоит придерживаться во всём нашем моде.",
+  "scope": [
+    "Все собственные экраны Interstice",
+    "HUD брони, визора и приборов",
+    "Кнопки Interstice в инвентаре",
+    "Собственные слоты, вкладки, списки, индикаторы и подсказки",
+    "Все новые интерфейсы модулей Магена"
+  ],
+  "reference": {
+    "palette_source": "src/clientUi/java/pro/erez/clientui/ErezcraftTab.java",
+    "palette_source_sha256": "7ccf77bf759499aed23c32ee36b242b353c465f2fcf683da97858b9a54083953",
+    "approved_card": "art/designs/ui-v1/approved-card.png",
+    "approved_equipment": "art/designs/ui-v1/approved-equipment.png",
+    "note": "Оба макета утверждают общий визуальный язык. Выбор компоновки зависит от задачи; демонстрационные модули и уровни не являются реализацией механик.",
+    "interactive_source": "art/designs/ui-v1/interactive-study.html"
+  },
+  "palette_argb": {
+    "overlay": "0xF2181C22",
+    "panel": "0xFF181C22",
+    "header": "0xFF222A30",
+    "edge": "0xFF45515D",
+    "accent": "0xFF9CBFCA",
+    "text": "0xFFE8EDF1",
+    "muted": "0xFFADB9C3",
+    "selected_row": "0xFF29333C",
+    "warning": "0xFFE2A48E"
+  },
+  "visual_rules": [
+    "Тёмные графитовые плоские панели; приглушённый голубой акцент.",
+    "Прямоугольные формы, тонкая рамка в 1 GUI-пиксель и спокойные разделители.",
+    "Выбранная строка выделяется фоном и узкой левой акцентной полосой.",
+    "Цвет сообщает состояние; основные строки и числа остаются читаемыми.",
+    "Один общий стиль кнопок, вкладок, слотов, списков, шкал и подсказок.",
+    "Текстура предмета сохраняет собственные цвета; оформление вокруг слота подчиняется общей палитре.",
+    "Без заклёпок, кожаных рамок, крупных фасок и шумной текстуры на фоне текста.",
+    "Логотип/название EREZCRAFT уместны в основном заголовке; HUD и подсказки не дублируют бренд."
+  ],
+  "layout": {
+    "units": "Minecraft logical GUI pixels, scaled by the existing user GUI scale",
+    "inset": 10,
+    "gap": 10,
+    "border": 1,
+    "compact_list_row_height": 18,
+    "item_icon": 16,
+    "inventory_slot_pitch": 18,
+    "typography": "Штатный шрифт Minecraft с русским переводом. Шрифт HTML-эскизов — приближение, не новый шрифт игры.",
+    "compact": "Карточка для короткого списка или небольшого прибора.",
+    "equipment": "Вкладки частей/категорий, список модулей и описание выбранного — для оснащения и сложных машин.",
+    "hud": "Минимум постоянных строк; подробности по требованию. Не перекрывать хотбар, эффекты, миникарту и кнопки других модов."
+  },
+  "interaction_rules": [
+    "Явные состояния: обычное, наведение, фокус клавиатуры, выбранное, отключённое.",
+    "Недоступная операция объясняется текстом/подсказкой, а не одним цветом.",
+    "Длинный перевод переносится или сокращается с доступной полной подписью.",
+    "Слоты сохраняют нативные операции мыши/Shift, серверную проверку и данные предметов.",
+    "Масштаб GUI и небольшой экран учитываются адаптивной компоновкой; настройки владельца не перезаписываются.",
+    "Модальные экраны и HUD показывают только относящиеся к действию элементы."
+  ],
+  "component_inventory": [
+    {
+      "source": "src/main/java/pro/erez/interstice/client/GuiMaterials.java",
+      "role": "Общие панели и слоты",
+      "migration": "pending"
+    },
+    {
+      "source": "src/main/java/pro/erez/interstice/client/EngineerScreen.java",
+      "role": "Визор и модули инженера",
+      "migration": "pending"
+    },
+    {
+      "source": "src/main/java/pro/erez/interstice/client/EngineerClient.java",
+      "role": "HUD инженера и кнопка инвентаря",
+      "migration": "pending"
+    },
+    {
+      "source": "src/main/java/pro/erez/interstice/client/AegisHud.java",
+      "role": "HUD Магена",
+      "migration": "pending"
+    },
+    {
+      "source": "src/main/java/pro/erez/interstice/client/RetortScreen.java",
+      "role": "Реторта и библиотека рецептов",
+      "migration": "pending"
+    },
+    {
+      "source": "src/main/java/pro/erez/interstice/client/BackpackScreen.java",
+      "role": "Рюкзаки и вкладки",
+      "migration": "pending"
+    },
+    {
+      "source": "src/main/java/pro/erez/interstice/client/HarnessScreen.java",
+      "role": "Экран спины и креплений",
+      "migration": "pending"
+    },
+    {
+      "source": "src/main/java/pro/erez/interstice/client/BackpackClient.java",
+      "role": "Кнопка спины в инвентаре",
+      "migration": "pending"
+    },
+    {
+      "source": "src/main/java/pro/erez/interstice/client/FieldLiftScreen.java",
+      "role": "Подъёмник",
+      "migration": "pending"
+    },
+    {
+      "source": "src/clientUi/java/pro/erez/clientui/ErezcraftTab.java",
+      "role": "Утверждённая основа палитры и компактной карточки",
+      "migration": "reference"
+    }
+  ],
+  "adoption": {
+    "current_step": "Зафиксирован стандарт и сохранены утверждённые изображения. Массовая замена работающих экранов ещё не выполнена.",
+    "next_steps": [
+      "Выделить общий набор компонентов и палитру вместо цветов, разбросанных по отдельным экранам.",
+      "Применить компоненты к визору инженера; проверить реальный экран с DH и полным модпаком.",
+      "Последовательно привести к стандарту машины, рюкзаки/крепления, подъёмник и HUD.",
+      "Новые экраны Магена сразу строить на общих компонентах."
+    ],
+    "verification_on_migration": [
+      "Полная сборка с DH; существующие контейнерные и сетевые операции.",
+      "Русский текст, длинные имена, disabled/hover/focus и маленькое окно.",
+      "Сочетание с JEI, IPN, эффектами, миникартой и разными масштабами GUI.",
+      "Сохранность игровых механик, данных предметов и настроек."
+    ]
+  },
+  "unchanged_this_step": [
+    "Java gameplay/rendering source",
+    "Published alpha.22 and server",
+    "Engineer D02 candidate preview.39 and its verification",
+    "Owner profiles and settings"
+  ],
+  "derived_tokens": {
+    "panel": "Непрозрачный вариант overlay: тот же RGB 181C22, alpha FF для самостоятельного окна."
+  },
+  "validation": {
+    "palette": "PASS: exact Tab tokens and one opaque variant with identical RGB",
+    "component_paths": "PASS",
+    "approved_references": "PASS"
+  }
+}

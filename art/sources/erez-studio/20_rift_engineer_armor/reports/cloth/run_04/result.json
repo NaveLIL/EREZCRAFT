@@ -1,0 +1,41 @@
+{
+  "poses": [
+    {
+      "pose": "idle",
+      "maximum_vertex_penetration_model_units": 0.0
+    },
+    {
+      "pose": "walk",
+      "maximum_vertex_penetration_model_units": 0.0
+    },
+    {
+      "pose": "sprint",
+      "maximum_vertex_penetration_model_units": 0.0
+    },
+    {
+      "pose": "crouch",
+      "maximum_vertex_penetration_model_units": 0.0
+    },
+    {
+      "pose": "jump",
+      "maximum_vertex_penetration_model_units": 0.0
+    },
+    {
+      "pose": "swim",
+      "maximum_vertex_penetration_model_units": 0.0
+    },
+    {
+      "pose": "flight",
+      "maximum_vertex_penetration_model_units": 0.0
+    },
+    {
+      "pose": "rapid_turn",
+      "maximum_vertex_penetration_model_units": 0.0
+    }
+  ],
+  "sampled_surface_points": 2534400,
+  "maximum_vertex_penetration_model_units": 0.0,
+  "maximum_waist_pin_error": 0.0,
+  "maximum_cage_displacement": 10.03702,
+  "passed": true
+}

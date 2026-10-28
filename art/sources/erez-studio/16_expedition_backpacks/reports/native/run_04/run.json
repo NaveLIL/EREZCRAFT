@@ -1,0 +1,160 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\bp01\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\bp01\\.verification\\packs04",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "started_utc": "2026-10-27T08:37:43.887858+00:00",
+  "harness_sha256": "81fb8d44f38737028f5d676ee5f1c9eb8987e92b083a1b09384ec047de434973",
+  "owner_profile_used": false,
+  "passed": true,
+  "pid": 16220,
+  "exit_code": 0,
+  "duration_seconds": 187.641,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "players": [
+      {
+        "tier": "riftsilver",
+        "name": "Pack_Field",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 926976
+      },
+      {
+        "tier": "riftsteel",
+        "name": "Pack_Expedition",
+        "skin_model": "slim",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 1057536
+      },
+      {
+        "tier": "aegis",
+        "name": "Pack_Rift",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 1618944
+      }
+    ],
+    "native_item_models": [
+      {
+        "item": "field_backpack",
+        "quads": 242
+      },
+      {
+        "item": "expedition_backpack",
+        "quads": 292
+      },
+      {
+        "item": "rift_backpack",
+        "quads": 296
+      }
+    ],
+    "previous_16_armor_icons_checked": true,
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.21-backpacks",
+    "benchmark_only": false,
+    "crouching_checked": true,
+    "walking_checked": true,
+    "kotomyaf_checked": true,
+    "elytra_checked": true,
+    "swimming_checked": true,
+    "frame_benchmark": [
+      {
+        "renderer": "previous_v20",
+        "pass": 1,
+        "samples": 1200,
+        "median_frame_ms": 3.8367,
+        "p95_frame_ms": 6.5246,
+        "median_fps": 260.6406547293247,
+        "minimum_players_drawn": 10
+      },
+      {
+        "renderer": "B02_new",
+        "pass": 2,
+        "samples": 1200,
+        "median_frame_ms": 4.3416,
+        "p95_frame_ms": 6.6633,
+        "median_fps": 230.3298323198821,
+        "minimum_players_drawn": 10
+      },
+      {
+        "renderer": "previous_v20",
+        "pass": 3,
+        "samples": 1200,
+        "median_frame_ms": 3.7128,
+        "p95_frame_ms": 5.7152,
+        "median_fps": 269.3385046326223,
+        "minimum_players_drawn": 10
+      }
+    ],
+    "benchmark_players": 10,
+    "benchmark_camera_inside_studio": true,
+    "benchmark_vsync": false,
+    "benchmark_frame_cap": 260,
+    "gpu": "AMD Radeon RX 6800 XT",
+    "passed": true,
+    "reason": "",
+    "phase": 15,
+    "pid": 20284,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "backpacks-armor-front.png",
+      "backpacks-armor-back.png",
+      "backpacks-armor-quarter.png",
+      "backpacks-field-close.png",
+      "backpacks-expedition-close.png",
+      "backpacks-rift-close.png",
+      "backpacks-crouching.png",
+      "backpacks-walking.png",
+      "backpacks-bare-back.png",
+      "backpacks-kotomyaf-back.png",
+      "backpacks-elytra-folded.png",
+      "backpacks-elytra-flight.png",
+      "backpacks-swimming.png",
+      "backpacks-item-miniatures.png",
+      "backpacks-ten-players-before.png",
+      "backpacks-ten-players.png"
+    ],
+    "settled": {
+      "purpose": "armor_player_gallery_shutdown",
+      "server_tick": 1149,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1118,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "screenshot_sha256": {
+    "backpacks-armor-front.png": "7a6fca98bd8601974b883c7090ca2de646f83048403470e0d938dd914587973e",
+    "backpacks-armor-back.png": "18634c3995c4edfca51e50bd2b262b8b7f44a77f6ba4dd69f82754a90268faf0",
+    "backpacks-armor-quarter.png": "9ddfc62bf410caa4ec87fa3e2fffd53c3e01db5c20ee5ecddd71ac34e7cf5d63",
+    "backpacks-field-close.png": "1109e1586f97ed7abd592c0dd4bffc2471613749cd2a1855729d9e1da3c0bfcc",
+    "backpacks-expedition-close.png": "541a903ec70d592f4e14184703a3df73a80331ea0fd6bd1d7c1c77d5ae446f02",
+    "backpacks-rift-close.png": "881fff9eed6bea484ed08f9d29e28744c383d9b7b050813f6b33a39c901a61fe",
+    "backpacks-crouching.png": "e8ce438b1d465251a86193aa49b8a3c06984b87b95a1b035d257225405512c2e",
+    "backpacks-walking.png": "fdf93f862302f843d75cabca6d6d10bec034a7639757e70b4ee578a869a25766",
+    "backpacks-bare-back.png": "b551f0a68f7c6c66270ac02f92f89d49cedeb8cf4fe6c01e3674fd8d3e0e91b5",
+    "backpacks-kotomyaf-back.png": "f42a0a893eba68ab4cd33b836438bf8e943f3a29151a3ecdd6a7e55a16869783",
+    "backpacks-elytra-folded.png": "b825b2ccac34d2723ff2af57dfddaddb6d8739d59c0d0b8c2b4fc463e38403ab",
+    "backpacks-elytra-flight.png": "0d967691debd1865e0ed0c2fb4fa42cf8564eec8ab69958cb9653b7e2f906f13",
+    "backpacks-swimming.png": "f2677220022c49f6c73bb0c8def201459fa45732490618491d6e0b0c0d3ed42c",
+    "backpacks-item-miniatures.png": "d6cca953898e3f74c062e71ff6512b6727779c28cb6d2300d6d6405300b57188",
+    "backpacks-ten-players-before.png": "6f301b85f3b1f016add85e7c3276ea0a92b3c5ccc1e74b9901adcd70dcb53b90",
+    "backpacks-ten-players.png": "07154a3186e4d2d2f2c035ae81714d38ce0f59326364b1faedf0795ce1106947"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "started_utc": "2026-10-27T06:14:01.462554+00:00",
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g04",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\armor_a01\\.verification\\pack-source",
+    "runProgressionCreate"
+  ],
+  "profile": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03\\.verification\\g04\\progressionNative",
+  "harness_sha256": "fb0d162c95cbbf99761a957e3818cd3ad6c4ad8c58f59cbd9d0ef7d9b616d4ec",
+  "owner_profile_used": false,
+  "geometry_sha256": "b80b6842d9aaddf491e108c4e142e8a73c30db81945f5b46336c9a71b5b4f240",
+  "pid": 6004,
+  "exit_code": 0,
+  "duration_seconds": 186.954,
+  "ended_utc": "2026-10-27T06:17:08.423723+00:00",
+  "passed": false,
+  "proof": {
+    "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+    "players": [
+      {
+        "tier": "riftsilver",
+        "name": "EREZ_Silver",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 434520
+      },
+      {
+        "tier": "riftsteel",
+        "name": "EREZ_Steel",
+        "skin_model": "slim",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 495720
+      },
+      {
+        "tier": "aegis",
+        "name": "EREZ_Magen",
+        "skin_model": "default",
+        "entity_class": "net.minecraft.client.player.RemotePlayer",
+        "native_armor_vertices": 726144
+      }
+    ],
+    "mod_count": 106,
+    "distant_horizons_loaded": true,
+    "mod_version": "0.7.0-preview.18-armor",
+    "render_width": 1920,
+    "render_height": 1080,
+    "crouching_checked": true,
+    "walking_checked": true,
+    "passed": false,
+    "reason": "java.lang.IllegalStateException: Native bow pose must synchronize",
+    "phase": 9,
+    "pid": 10292,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "gallery-all-front.png",
+      "gallery-all-back.png",
+      "gallery-all-quarter.png",
+      "gallery-silver-close.png",
+      "gallery-steel-close.png",
+      "gallery-magen-close.png",
+      "gallery-all-crouching.png",
+      "gallery-all-walking.png",
+      "gallery-failure.png"
+    ]
+  }
+}

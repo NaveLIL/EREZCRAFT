@@ -23,11 +23,13 @@ public final class VaultHunterModel extends HierarchicalModel<VaultHunter> {
     @Override public void setupAnim(VaultHunter entity, float walk, float amount, float age, float yaw, float pitch) {
         root.getAllParts().forEach(ModelPart::resetPose);
         float breath = Mth.sin(age * .07F);
-        float movement = Mth.clamp(amount, 0, 1);
+        float movement = Mth.clamp(amount * 1.7F, 0, 1);
         boolean running = entity.phase() == VaultHunter.Phase.CHASE || entity.phase() == VaultHunter.Phase.RETREAT;
         boolean waiting = entity.phase() == VaultHunter.Phase.AMBUSH || entity.phase() == VaultHunter.Phase.COOLDOWN;
-        float gait = walk * (running ? .67F : .52F);
-        float stride = Mth.cos(gait) * movement * (running ? .9F : .55F);
+        // Vanilla walk phase already advances with actual displacement. Match
+        // this model's long legs to that distance instead of a small idle shuffle.
+        float gait = walk * (running ? .95F : .8F);
+        float stride = Mth.cos(gait) * movement * (running ? 1.05F : .8F);
         // Lower the source's spread arms to a hanging stance; preserve its curved claws.
         leftArm.zRot = 1.02F; rightArm.zRot = -1.02F;
         leftElbow.xRot = rightElbow.xRot = -.2F;

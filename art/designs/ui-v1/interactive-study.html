@@ -1,0 +1,96 @@
+<style>
+#erez-ui-study{color-scheme:dark;font-family:ui-monospace,Consolas,monospace;font-size:14px;line-height:1.45}
+#erez-ui-study .stage{min-height:530px;padding:18px 12px;box-sizing:border-box}
+#erez-ui-study .erez-window{--erez-panel:#181c22;--erez-head:#222a30;--erez-edge:#45515d;--erez-accent:#9cbfca;--erez-text:#e8edf1;--erez-muted:#adb9c3;--erez-row:#29333c;--erez-gap:10px;max-width:610px;margin:auto;background:var(--erez-panel);color:var(--erez-text);box-shadow:3px 4px 0 #0005;border:1px solid var(--erez-edge)}
+#erez-ui-study .erez-header{padding:14px 108px 12px 18px;background:var(--erez-head);border-bottom:1px solid var(--erez-accent)}
+#erez-ui-study .erez-brand{color:var(--erez-accent);letter-spacing:2px;font-weight:500}
+#erez-ui-study .erez-subtitle{color:var(--erez-muted);margin-top:5px;font-size:12px}
+#erez-ui-study .erez-body{padding:16px}
+#erez-ui-study button{font:inherit;color:inherit;border-radius:0;background:var(--erez-head);border:1px solid var(--erez-edge);padding:8px 10px;text-align:left;box-sizing:border-box}
+#erez-ui-study button:hover{background:var(--erez-row)}
+#erez-ui-study button[aria-pressed=true]{border-left:2px solid var(--erez-accent);background:var(--erez-row)}
+#erez-ui-study .erez-module{display:flex;width:100%;align-items:center;gap:12px;margin-bottom:var(--erez-gap)}
+#erez-ui-study .erez-module i,#erez-ui-study .erez-module svg{width:18px;height:18px;flex-shrink:0;color:var(--erez-accent)}
+#erez-ui-study .erez-module strong{font-weight:500}
+#erez-ui-study .erez-module small{display:block;color:var(--erez-muted);font-size:12px;margin-top:3px}
+#erez-ui-study .erez-rank{margin-left:auto;white-space:nowrap;color:var(--erez-accent);font-variant-numeric:tabular-nums}
+#erez-ui-study .erez-detail{margin-top:16px;padding-top:14px;border-top:1px solid var(--erez-edge)}
+#erez-ui-study .erez-detail-title{font-weight:500;color:var(--erez-accent)}
+#erez-ui-study .erez-detail-text{color:var(--erez-muted);margin:8px 0 14px;min-height:42px}
+#erez-ui-study .erez-actions{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#erez-ui-study .erez-action{background:var(--erez-accent);color:var(--erez-panel);border-color:var(--erez-accent)}
+#erez-ui-study .erez-action:hover{background:var(--erez-text);color:var(--erez-panel)}
+#erez-ui-study .erez-infinite{color:var(--erez-muted);font-size:12px}
+#erez-ui-study .erez-footer{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;border-top:1px solid var(--erez-edge);margin:0 16px;padding:9px 0;color:var(--erez-muted);font-size:12px}
+#erez-ui-study .erez-footer span:last-child{color:var(--erez-accent)}
+#erez-ui-study .erez-parts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:16px}
+#erez-ui-study .erez-parts button{text-align:center;font-size:12px;padding:9px 4px}
+#erez-ui-study .erez-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:16px}
+#erez-ui-study .erez-split .erez-detail{margin:0;border-top:0;border-left:1px solid var(--erez-edge);padding:0 0 0 16px}
+#erez-ui-study .erez-split .erez-module{align-items:flex-start;flex-wrap:wrap;gap:8px}
+#erez-ui-study .erez-split .erez-module strong{display:block}
+#erez-ui-study .erez-split .erez-rank{width:100%;margin:0 0 0 26px;font-size:12px}
+@media(max-width:520px){#erez-ui-study .stage{min-height:690px;padding:12px 0}#erez-ui-study .erez-split{grid-template-columns:1fr}#erez-ui-study .erez-split .erez-detail{border-left:0;border-top:1px solid var(--erez-edge);padding:14px 0 0}#erez-ui-study .erez-header{padding-left:12px}#erez-ui-study .erez-body{padding:12px}#erez-ui-study .erez-brand{letter-spacing:1px}}
+@media(pointer:coarse){#erez-ui-study button{min-height:44px}}
+</style>
+<div id="erez-ui-study">
+  <div class="viz-carousel viz-dotted-background" aria-label="Варианты интерфейса Магена на основе Tab" data-previous-label="Назад" data-next-label="Далее">
+    <section class="stage" data-variant="Карточка" aria-label="Компактная карточка модулей">
+      <div class="erez-window" data-layout="Карточка" aria-label="Маген: компактный интерфейс">
+        <div class="erez-header"><div class="erez-brand">EREZCRAFT</div><div class="erez-subtitle">Маген · модули · эскиз</div></div>
+        <div class="erez-body">
+          <div class="erez-modules"></div>
+          <div class="erez-detail" aria-live="polite"><div class="erez-detail-title"></div><div class="erez-detail-text"></div><div class="erez-actions"><button type="button" class="erez-action cursor-interaction">Показать +1 уровень</button><span class="erez-infinite">Развитие без последнего уровня</span></div></div>
+        </div>
+        <div class="erez-footer"><span>Макет будущих функций</span><span>EREZ Dev</span></div>
+      </div>
+    </section>
+    <section class="stage" data-variant="Оснащение" aria-label="Экран оснащения с разделением по частям" hidden>
+      <div class="erez-window" data-layout="Оснащение" aria-label="Маген: оснащение">
+        <div class="erez-header"><div class="erez-brand">EREZCRAFT</div><div class="erez-subtitle">Маген · оснащение · эскиз</div></div>
+        <div class="erez-body">
+          <div class="erez-parts" aria-label="Часть комплекта"><button type="button" class="cursor-interaction" data-part="head" aria-pressed="false">Шлем</button><button type="button" class="cursor-interaction" data-part="chest" aria-pressed="true">Нагрудник</button><button type="button" class="cursor-interaction" data-part="legs" aria-pressed="false">Поножи</button><button type="button" class="cursor-interaction" data-part="feet" aria-pressed="false">Ботинки</button></div>
+          <div class="erez-split"><div class="erez-modules"></div><div class="erez-detail" aria-live="polite"><div class="erez-detail-title"></div><div class="erez-detail-text"></div><div class="erez-actions"><button type="button" class="erez-action cursor-interaction">Показать +1 уровень</button><span class="erez-infinite">Развитие без последнего уровня</span></div></div></div>
+        </div>
+        <div class="erez-footer"><span>Макет будущих функций</span><span>EREZ Dev</span></div>
+      </div>
+    </section>
+  </div>
+</div>
+<script>
+(()=>{
+ const root=document.getElementById('erez-ui-study');
+ const modules=[
+  {id:'barrier',name:'Силовой барьер',short:'Поглощение урона',icon:'shield',part:'chest',rank:8,text:'Рост запаса щита и его восстановления. Высокие ступени приближают к почти полной неуязвимости.'},
+  {id:'reactor',name:'Полевой реактор',short:'Питание модулей',icon:'battery-charging',part:'chest',rank:4,text:'Рост выработки и накопителя энергии. Обеспечивает работу всё более мощного барьера.'},
+  {id:'life',name:'Страховка жизни',short:'Аварийное восстановление',icon:'heart-pulse',part:'head',rank:2,text:'Предлагаемая защита от смертельного удара. Улучшения сокращают восстановление и увеличивают запас срабатываний.'},
+  {id:'drive',name:'Инерционный привод',short:'Полёт и перемещение',icon:'wind',part:'feet',rank:3,text:'Предлагаемые полёт и управление инерцией. Режимы скорости переключаются, чтобы оставалось удобно строить.'},
+  {id:'stability',name:'Стабилизатор',short:'Управление приливом',icon:'anchor',part:'legs',rank:3,text:'Предлагаемое управление устойчивостью и направлением тяги. Новые режимы открываются на ступенях развития.'}
+ ];
+ const saved=globalThis.openai?.widgetState?.privateContent;
+ const ranks=Object.fromEntries(modules.map(m=>[m.id,Number.isSafeInteger(saved?.ranks?.[m.id])?Math.max(0,saved.ranks[m.id]):m.rank]));
+ function save(id,layout){globalThis.openai?.setWidgetState?.({modelContent:{selectedModule:id,layout},privateContent:{ranks:{...ranks}}})?.catch(()=>{});}
+ const views=[];
+ root.querySelectorAll('.erez-window').forEach(win=>{
+   const state={selected:'barrier',part:'chest',gap:10,descriptions:true};
+   const list=win.querySelector('.erez-modules');
+   function render(){
+     const items=win.dataset.layout==='Оснащение'?modules.filter(m=>m.part===state.part):modules.slice(0,4);
+     if(!items.some(m=>m.id===state.selected))state.selected=items[0].id;
+     list.replaceChildren();
+     for(const m of items){const button=document.createElement('button');button.type='button';button.className='erez-module cursor-interaction';button.setAttribute('aria-pressed',String(m.id===state.selected));
+       const icon=document.createElement('i');icon.dataset.lucide=m.icon;icon.setAttribute('aria-hidden','true');button.append(icon);
+       const label=document.createElement('span');const title=document.createElement('strong');title.textContent=m.name;label.append(title);if(state.descriptions){const sub=document.createElement('small');sub.textContent=m.short;label.append(sub);}button.append(label);
+       const rank=document.createElement('span');rank.className='erez-rank';rank.textContent='ур. '+ranks[m.id]+' / ∞';button.append(rank);
+       button.addEventListener('click',()=>{state.selected=m.id;render();save(m.id,win.dataset.layout);});list.append(button);
+     }
+     const selected=modules.find(m=>m.id===state.selected);win.querySelector('.erez-detail-title').textContent=selected.name+' · уровень '+ranks[selected.id];win.querySelector('.erez-detail-text').textContent=selected.text;
+     win.style.setProperty('--erez-gap',state.gap+'px');globalThis.lucide?.createIcons({attrs:{width:18,height:18}});
+   }
+   win.querySelector('.erez-action').addEventListener('click',()=>{ranks[state.selected]++;views.forEach(v=>v.render());save(state.selected,win.dataset.layout);});
+   win.querySelectorAll('[data-part]').forEach(button=>button.addEventListener('click',()=>{state.part=button.dataset.part;win.querySelectorAll('[data-part]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));render();save(state.selected,win.dataset.layout);}));
+   views.push({render,state});render();
+   if(globalThis.Tweak){const tweak=new Tweak({container:win,onChange:render});tweak.addSlider(state,'gap',{label:'Интервал строк',min:6,max:16,step:2,unit:'px'});tweak.addToggle(state,'descriptions',{label:'Подписи модулей'});}
+ });
+})();
+</script>

@@ -1,0 +1,349 @@
+{
+  "status": "published",
+  "revision": "TI02",
+  "version": "0.7.0-preview.38-clock-grip",
+  "jar": "D:/repos/Minecraft/EREZCRAFT/build/libs/interstice-0.7.0-preview.38-clock-grip.jar",
+  "geometry": {
+    "maximum_depth": 0.88,
+    "dial_diameter": 10.5,
+    "depth_to_diameter": 0.0838095238095238,
+    "elements": 53,
+    "quads": 313,
+    "rear": "Existing brass cover explicitly retained by owner",
+    "coordinate_alignment": "Ry(180) Rx(-90) about [8,8,8]; 313 textured quads preserved"
+  },
+  "source": {
+    "name": "MB-3D Items Pack",
+    "author": "mbanders",
+    "license": "MIT",
+    "project": "jZM0fp9Q",
+    "version": "eL9owlE1",
+    "version_number": "2.4.0",
+    "url": "https://modrinth.com/resourcepack/mb3d-items-pack",
+    "archive_sha256": "e43566f88ff864ab9aab32b3f6f5cde2a21c5806b9f2e89979aeb15cc74bf482",
+    "hand_transform_values_modified": false,
+    "source_geometry_shipped": false,
+    "source_png_shipped": false
+  },
+  "resource_audit": {
+    "passed": true,
+    "maximum_depth_model_units": 0.8800000000000008,
+    "unchanged_runtime_classes": 538,
+    "unchanged_pngs": 209,
+    "unchanged_tide_predicates": 16,
+    "deterministic_generated_files": 20,
+    "exact_imported_clock_hand_poses": 4,
+    "rigidly_aligned_unchanged_textured_quads": 313,
+    "changed_preexisting_source_files": [
+      "src/main/resources/assets/interstice/models/item/tide_indicator.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_00.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_01.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_02.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_03.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_04.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_05.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_06.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_07.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_08.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_09.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_10.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_11.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_12.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_13.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_14.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_15.json",
+      "src/main/resources/assets/interstice/models/item/tide_indicator_base.json",
+      "build.gradle"
+    ],
+    "changed_jar_entries": [
+      "META-INF/neoforge.mods.toml",
+      "assets/interstice/models/item/tide_indicator.json",
+      "assets/interstice/models/item/tide_indicator_00.json",
+      "assets/interstice/models/item/tide_indicator_01.json",
+      "assets/interstice/models/item/tide_indicator_02.json",
+      "assets/interstice/models/item/tide_indicator_03.json",
+      "assets/interstice/models/item/tide_indicator_04.json",
+      "assets/interstice/models/item/tide_indicator_05.json",
+      "assets/interstice/models/item/tide_indicator_06.json",
+      "assets/interstice/models/item/tide_indicator_07.json",
+      "assets/interstice/models/item/tide_indicator_08.json",
+      "assets/interstice/models/item/tide_indicator_09.json",
+      "assets/interstice/models/item/tide_indicator_10.json",
+      "assets/interstice/models/item/tide_indicator_11.json",
+      "assets/interstice/models/item/tide_indicator_12.json",
+      "assets/interstice/models/item/tide_indicator_13.json",
+      "assets/interstice/models/item/tide_indicator_14.json",
+      "assets/interstice/models/item/tide_indicator_15.json",
+      "assets/interstice/models/item/tide_indicator_base.json"
+    ],
+    "added_jar_entries": [
+      "assets/interstice/licenses/MB3D-MIT.txt",
+      "assets/interstice/provenance/tide-indicator-ti01.json"
+    ],
+    "candidate_sha256": "b11da0ae02dedcb8c4a7b243c9c9f5756bd79125261f8222e0600b5df6130053"
+  },
+  "blender": {
+    "passed": true,
+    "blender_version": "5.2.2 LTS",
+    "canonical_source_sha256": "fcbd0f4ae2ee1586f51af4e6575eb28d3e887e2999914d4a4b43f7037d337af4",
+    "maximum_case_depth": 0.88,
+    "game_verified": false,
+    "native_elements": 53
+  },
+  "blender_source_sha256": "fcbd0f4ae2ee1586f51af4e6575eb28d3e887e2999914d4a4b43f7037d337af4",
+  "native": {
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-Pmod_version=0.7.0-preview.38-clock-grip",
+      "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\t38d",
+      "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\blade-release-20261028\\client",
+      "assemble",
+      "runStudioTideIndicator"
+    ],
+    "passed": true,
+    "started_utc": "2026-10-28T04:40:48.718641+00:00",
+    "pid": 7632,
+    "exit_code": 0,
+    "proof": {
+      "skin_fixture": "Local vanilla Steve/WIDE and Alex/SLIM on the three test profiles only",
+      "all_16_native_states": [
+        {
+          "state": 0,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 1,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 2,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 3,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 4,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 5,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 6,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 7,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 8,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 9,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 10,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 11,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 12,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 13,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 14,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        },
+        {
+          "state": 15,
+          "quads": 313,
+          "depth_model_units": 0.8800001,
+          "registered_predicate_selected_expected_texture": true
+        }
+      ],
+      "all_four_baked_hand_transforms_equal_original_mb3d_clock": true,
+      "mod_count": 106,
+      "distant_horizons_loaded": true,
+      "mod_version": "0.7.0-preview.38-clock-grip",
+      "third_person_both_hands_checked": true,
+      "first_person_fov": 70,
+      "first_person_both_hands_captured": true,
+      "resource_reload_checked": true,
+      "glint_checked": true,
+      "frame_uuid": "11887be4-a55b-4477-901a-e98a5aa3aafb",
+      "native_wall_mount_checked": true,
+      "passed": true,
+      "reason": "",
+      "phase": 12,
+      "pid": 9084,
+      "prepared_fixture_not_survival": true,
+      "owner_profile_used": false,
+      "screenshots": [
+        "tide-indicator-held-front.png",
+        "tide-indicator-held-quarter.png",
+        "tide-indicator-held-left.png",
+        "tide-indicator-inventory.png",
+        "tide-indicator-catalog.png",
+        "tide-indicator-donor-clock-both-hands.png",
+        "tide-indicator-first-person-both-hands.png",
+        "tide-indicator-after-reload.png",
+        "tide-indicator-glint-inventory.png",
+        "tide-indicator-wall-mounted.png"
+      ],
+      "settled": {
+        "purpose": "armor_player_gallery_shutdown",
+        "server_tick": 563,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1282,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "seconds": 255.14099999999962
+  },
+  "visual_review": {
+    "donor_clock_material_present": true,
+    "original_clock_and_indicator_same_hand_poses": true,
+    "indicator_upright_to_observer": true,
+    "gui_all_16_states_upright": true,
+    "wall_dial_facing_viewer_and_upright": true,
+    "rear_and_depth_preserved": true
+  },
+  "limits": [
+    "Prepared singleplayer Overworld gallery with server-tracked test players, not natural Survival or a complete tide cycle.",
+    "16 angles injected into the preexisting smoothing field by smoke code only; real registered predicate checked.",
+    "Reference clock is substituted only in the ACTIVE smoke fixture and is not present in the runtime JAR.",
+    "First-person placement intentionally equals the donor, including its normal position near the lower screen edge.",
+    "Production server and signed delivery published; owner profile untouched, no new authenticated gameplay login or natural Survival test in this deployment."
+  ],
+  "publication": {
+    "published": true,
+    "release": "alpha.22",
+    "sequence": 22,
+    "release_id": "techmagic-0-1-0-alpha-22-tide-indicator",
+    "version": "0.7.0-preview.38-clock-grip",
+    "jar_sha256": "b11da0ae02dedcb8c4a7b243c9c9f5756bd79125261f8222e0600b5df6130053",
+    "server": {
+      "passed": true,
+      "server_jars": 67,
+      "old_jars_unchanged": 66,
+      "mod_version": "0.7.0-preview.38-clock-grip",
+      "healthy": true,
+      "online_auth_required": true,
+      "owner_only_op4": true,
+      "world_regenerated": false,
+      "player_worlds_replaced": false,
+      "backups_created": false,
+      "started_at": "2026-10-28T04:55:54.44509753Z"
+    },
+    "public_status": {
+      "passed": true,
+      "host": "mc.erezcraft.com",
+      "port": 25565,
+      "protocol": {
+        "name": "1.21.1",
+        "protocol": 767
+      },
+      "players": {
+        "max": 10,
+        "online": 0
+      },
+      "seconds": 0.15600000000085856,
+      "status_only_not_authenticated_login": true
+    },
+    "delivery": {
+      "sourceSequence": 21,
+      "sequence": 22,
+      "releaseId": "techmagic-0-1-0-alpha-22-tide-indicator",
+      "oldCatalogSha256": "beda6fde7fd36c774ef9eaca8953448ec323e50f82acec681d96a71a614877c6",
+      "newCatalogSha256": "9993e5e9c6592fe99745b74ab3dc42482007d5098d79a3361554d3d94985ce3d",
+      "files": 89,
+      "clientJars": 79,
+      "unchangedBaseFiles": 87,
+      "removed": [
+        "mods/interstice-0.7.0-preview.36-blade-tools.jar"
+      ],
+      "changed": [
+        {
+          "path": "config/erezcraft-pack.json",
+          "size": 173,
+          "sha256": "98dfdfa48895fe36f85dc62c9c99864c25b02b606f8d7b766cad3abff68c57d6",
+          "url": "https://files.erezcraft.com/blobs/98dfdfa48895fe36f85dc62c9c99864c25b02b606f8d7b766cad3abff68c57d6",
+          "policy": "managed"
+        },
+        {
+          "path": "mods/interstice-0.7.0-preview.38-clock-grip.jar",
+          "size": 3124909,
+          "sha256": "b11da0ae02dedcb8c4a7b243c9c9f5756bd79125261f8222e0600b5df6130053",
+          "url": "https://files.erezcraft.com/blobs/b11da0ae02dedcb8c4a7b243c9c9f5756bd79125261f8222e0600b5df6130053",
+          "policy": "managed"
+        }
+      ],
+      "stage": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\tide-release-20261028",
+      "public_https_verified": true,
+      "signatures_verified": true,
+      "uploaded_files": 4,
+      "uploaded_bytes": 3158028,
+      "game_server_restarted": true,
+      "world_regenerated": false,
+      "player_worlds_replaced": false
+    },
+    "installer_delivery_run": false,
+    "owner_profile_updated": false,
+    "backups_created": false
+  }
+}

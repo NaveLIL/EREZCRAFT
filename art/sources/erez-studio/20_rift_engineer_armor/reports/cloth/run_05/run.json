@@ -1,0 +1,28 @@
+{
+  "commands": [
+    [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\javac.exe",
+      "-encoding",
+      "UTF-8",
+      "-cp",
+      "C:\\Users\\Dimon\\.gradle\\caches\\modules-2\\files-2.1\\org.joml\\joml\\1.10.5\\22566d58af70ad3d72308bab63b8339906deb649\\joml-1.10.5.jar;C:\\Users\\Dimon\\.gradle\\caches\\modules-2\\files-2.1\\com.google.code.gson\\gson\\2.10.1\\b3add478d4382b78ea20b1671390a858002feb6c\\gson-2.10.1.jar",
+      "-d",
+      "D:\\repos\\Blender\\creations\\20_rift_engineer_armor\\reports\\cloth\\run_05\\classes",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ea01\\src\\main\\java\\pro\\erez\\interstice\\client\\EngineerCloth.java",
+      "D:\\repos\\Blender\\creations\\20_rift_engineer_armor\\tools\\EngineerClothProbe.java"
+    ],
+    [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-Xmx1G",
+      "-cp",
+      "D:\\repos\\Blender\\creations\\20_rift_engineer_armor\\reports\\cloth\\run_05\\classes;C:\\Users\\Dimon\\.gradle\\caches\\modules-2\\files-2.1\\org.joml\\joml\\1.10.5\\22566d58af70ad3d72308bab63b8339906deb649\\joml-1.10.5.jar;C:\\Users\\Dimon\\.gradle\\caches\\modules-2\\files-2.1\\com.google.code.gson\\gson\\2.10.1\\b3add478d4382b78ea20b1671390a858002feb6c\\gson-2.10.1.jar",
+      "EngineerClothProbe",
+      "D:\\repos\\Blender\\creations\\20_rift_engineer_armor\\source\\armor_E07.json",
+      "D:\\repos\\Blender\\creations\\20_rift_engineer_armor\\reports\\cloth\\run_05\\result.json"
+    ]
+  ],
+  "source_sha256": "3fb3183a7413d6349425d882485a0bd803a69e0d55d2a12a2e9afdd9ef2fd6ce",
+  "probe_sha256": "f43202cab2ba5fcc56ac8fe749eb918cf74343080c57f89d331de144e5771f9c",
+  "passed": true,
+  "exit_code": 0
+}

@@ -1,0 +1,28 @@
+{
+  "revision": "E12",
+  "icons": [
+    {
+      "item": "engineer_helmet",
+      "quads": 928,
+      "sha256": "a201675601031653954eb4377c717a5bb26af49b40e55ce52ce32c9af8858ea2"
+    },
+    {
+      "item": "engineer_chestplate",
+      "quads": 2659,
+      "sha256": "644aaf7ae4920c7852291660193eca155b52ff8624d931e056533d2dcd801a72"
+    },
+    {
+      "item": "engineer_leggings",
+      "quads": 378,
+      "sha256": "ea176845918742b8107846c645016e02197f4ed5d1e1468e461a0c58936a9a5c"
+    },
+    {
+      "item": "engineer_boots",
+      "quads": 208,
+      "sha256": "f84a5f32563156c1129923ba4a480af60dce54aad733f9f19f0b308fa8f864a0"
+    }
+  ],
+  "wearable_atlas_sha256": "aaf6b13f4f67649e16c67681d875b1c96439034b06a3305ad7d7c93dae0747e3",
+  "atlas_matches_blender": true,
+  "balance": "Vanilla iron placeholder for visual acceptance; no special properties or recipes"
+}

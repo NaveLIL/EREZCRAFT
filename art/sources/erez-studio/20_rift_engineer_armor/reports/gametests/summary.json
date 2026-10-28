@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "source_commit": "e54c21422aa920c28aa18518c964428de9b63822",
+  "tasks": [
+    "runProgressionGameTestServer",
+    "assemble"
+  ],
+  "completed_tasks": [
+    "runProgressionGameTestServer",
+    "assemble"
+  ],
+  "failure": null,
+  "saves_unchanged": true,
+  "inactive_saves_unchanged": true,
+  "active_user_worlds": [],
+  "evidence": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ea01\\.verification\\20261027T123204.122899Z-engineer24"
+}

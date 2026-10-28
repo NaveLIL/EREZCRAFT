@@ -1,0 +1,50 @@
+{
+  "prepared_utc": "2026-10-27T09:32:20.866663+00:00",
+  "base_catalog_sequence": 19,
+  "base_manifest_sha256": "7531b419c8691e9450cb8ec97cee2dd588d39e1b4cef64a2de9c2f5bd8c020d5",
+  "base_release": "techmagic-0-1-0-alpha-19-progression",
+  "base_files": 89,
+  "candidate_files": 91,
+  "delta": [
+    {
+      "path": "mods/CustomPlayerModels-1.21-0.6.27a.jar",
+      "size": 2793136,
+      "sha256": "b5d3a473998648eefdf646e10a48af95dac57add0df681ca4407e83c716d6c84",
+      "url": "https://cdn.modrinth.com/data/h1E7sQNL/versions/YXfPij2E/CustomPlayerModels-1.21-0.6.27a.jar",
+      "policy": "managed"
+    },
+    {
+      "path": "mods/erez-avatar-compat-0.1.0.jar",
+      "size": 7467,
+      "sha256": "5186feec3c2955114bdc228f62bb01c57f00367361d4fbce39343b06f4534746",
+      "url": "https://files.erezcraft.com/blobs/5186feec3c2955114bdc228f62bb01c57f00367361d4fbce39343b06f4534746",
+      "policy": "managed"
+    }
+  ],
+  "all_existing_entries_preserved": true,
+  "signature_verified": true,
+  "published": false,
+  "signed": false,
+  "sequence_note": "Candidate only; re-read the current signed catalog and choose a fresh sequence immediately before an authorized release.",
+  "client_model_delivery": "CPM server tracking protocol, or manual local import into player_models; this directory is outside launcher managed roots.",
+  "server_overlay": [
+    {
+      "path": "mods/CustomPlayerModels-1.21-0.6.27a.jar",
+      "size": 2793136,
+      "sha256": "b5d3a473998648eefdf646e10a48af95dac57add0df681ca4407e83c716d6c84",
+      "url": "https://cdn.modrinth.com/data/h1E7sQNL/versions/YXfPij2E/CustomPlayerModels-1.21-0.6.27a.jar",
+      "policy": "managed"
+    },
+    {
+      "path": "mods/erez-avatar-compat-0.1.0.jar",
+      "size": 7467,
+      "sha256": "5186feec3c2955114bdc228f62bb01c57f00367361d4fbce39343b06f4534746",
+      "url": "https://files.erezcraft.com/blobs/5186feec3c2955114bdc228f62bb01c57f00367361d4fbce39343b06f4534746",
+      "policy": "managed"
+    }
+  ],
+  "personal_data_policy": "Do not add player_models to managed roots; do not ship a global CPM config that resets player choices.",
+  "activation": "Publish a newly signed manifest containing CPM; install the same upstream mod on the server; assign/import the authored .cpmmodel. No live action performed.",
+  "status": "Withdrawn after owner rejected 3D direction",
+  "release_allowed": false
+}

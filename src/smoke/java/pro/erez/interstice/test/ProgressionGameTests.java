@@ -72,7 +72,7 @@ public final class ProgressionGameTests {
         for(int i=0;i<1200;i++)retort.process();
         h.assertTrue(retort.getItem(7).getCount()==4,"Empty inputs cannot duplicate ingots");h.succeed();
     }
-    @GameTest(template="empty",timeoutTicks=160) public static void spiderProtectionIsFiniteAndOrdinarySilverStillGetsPierced(GameTestHelper h) {
+    @GameTest(template="empty",timeoutTicks=160) public static void spiderLiningProtectsBothNativeTiersAndStillWears(GameTestHelper h) {
         var silver=player(h);var steel=player(h);var partial=player(h);var vanilla=player(h);
         for(var p:List.of(silver,steel,partial,vanilla)){p.setNoGravity(true);p.setInvulnerable(false);}
         equip(silver,"riftsilver");equip(steel,"riftsteel");partial.setItemSlot(EquipmentSlot.CHEST,new ItemStack(RealmArmaments.item("riftsteel_chestplate")));
@@ -81,7 +81,7 @@ public final class ProgressionGameTests {
             try {
                 var type=h.getLevel().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE,id("spider_bite")));
                 for(var p:List.of(silver,steel,partial,vanilla)){p.invulnerableTime=0;p.hurt(new net.minecraft.world.damagesource.DamageSource(type),8);}
-                h.assertTrue(Math.abs(silver.getHealth()-12)<.01 && Math.abs(vanilla.getHealth()-12)<.01,"Silver and vanilla armour must still be pierced");
+                h.assertTrue(Math.abs(silver.getHealth()-13.28)<.01 && Math.abs(vanilla.getHealth()-12)<.01,"Silver lining reduces 16 percent; vanilla remains pierced");
                 h.assertTrue(Math.abs(steel.getHealth()-14.56)<.01,"Four native pieces must reduce only 32 percent");
                 h.assertTrue(Math.abs(partial.getHealth()-12.64)<.01,"One piece must reduce exactly eight percent");
                 h.assertTrue(steel.getItemBySlot(EquipmentSlot.CHEST).getDamageValue()>0,"Specialised armour must spend durability on bypass damage");

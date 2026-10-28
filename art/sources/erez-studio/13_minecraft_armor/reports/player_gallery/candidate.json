@@ -1,0 +1,7 @@
+{
+  "checkout": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\ag03",
+  "base_commit": "e54c21422aa920c28aa18518c964428de9b63822",
+  "released_jar_sha256": "f813711c9352e3a00b3edc2bde6621e967841d6c8b5aa495872ccf3cc0446a7e",
+  "released_runtime_sources_unchanged": true,
+  "test_harness_source": "D:\\repos\\Blender\\creations\\13_minecraft_armor\\tools\\gallery_java\\ArmorPlayerGallery.java"
+}

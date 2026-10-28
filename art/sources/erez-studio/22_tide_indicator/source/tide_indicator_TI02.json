@@ -1,0 +1,4395 @@
+{
+  "revision": "TI02",
+  "units": "16 model units per Minecraft block",
+  "scope": "Visual geometry only; no mechanics, recipes, tide timing or new PNGs",
+  "maximum_case_depth": 0.88,
+  "depth_axis": "y",
+  "nominal_dial_width": 12,
+  "maximum_depth_to_nominal_width": 0.07333333333333333,
+  "axis_alignment": "Rigid Ry(180) Rx(-90) about [8,8,8]; matches donor up-face heading; preserves all textured corners",
+  "hand_pose_source": {
+    "project": "jZM0fp9Q",
+    "version": "eL9owlE1",
+    "name": "MB-3D Items Pack 2.4.0",
+    "author": "mbanders",
+    "license": "MIT",
+    "url": "https://modrinth.com/resourcepack/mb3d-items-pack",
+    "archive_sha256": "e43566f88ff864ab9aab32b3f6f5cde2a21c5806b9f2e89979aeb15cc74bf482",
+    "model": "assets/minecraft/models/item/display/clock.json",
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [
+          75,
+          168.75,
+          0
+        ],
+        "translation": [
+          0,
+          2,
+          0
+        ],
+        "scale": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "firstperson_righthand": {
+        "rotation": [
+          22.5,
+          157.5,
+          -22.5
+        ],
+        "translation": [
+          0,
+          2,
+          0
+        ],
+        "scale": [
+          0.375,
+          0.375,
+          0.375
+        ]
+      },
+      "gui": {
+        "rotation": [
+          67.5,
+          180,
+          0
+        ],
+        "scale": [
+          1.25,
+          1.25,
+          1.25
+        ]
+      },
+      "head": {
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "translation": [
+          0,
+          7.75,
+          0
+        ]
+      },
+      "fixed": {
+        "rotation": [
+          -90,
+          0,
+          0
+        ],
+        "translation": [
+          0,
+          0,
+          -1
+        ],
+        "scale": [
+          1.25,
+          1.25,
+          1.25
+        ]
+      },
+      "on_shelf": {
+        "rotation": [
+          90,
+          180,
+          0
+        ],
+        "translation": [
+          0,
+          0,
+          -1
+        ],
+        "scale": [
+          1.75,
+          1.75,
+          1.75
+        ]
+      }
+    },
+    "hand_values_modified": false
+  },
+  "case_outline": "Unmodified alpha silhouette of original 16x16 dial, including loop",
+  "dial_textures": {
+    "tide_indicator_00": "86932eab3d38cfb4eff6c098c67f8a7e1bb74b803c53b72edfe13cd9713a8fd6",
+    "tide_indicator_01": "0164be53a299127918c1edef8b6d629ec0e72771094681839e6495c4f2d40dac",
+    "tide_indicator_02": "4c1d58f05ad00683412b32131f00c941534cb512a64b477abb97cf485ee108a5",
+    "tide_indicator_03": "98986e5439adafbc337f27c2f0d6196d6a788911172d56a19d35888f188b8da1",
+    "tide_indicator_04": "0c82c29ad9772d27f8c65abda99d3c763a3084495364af4bc55d6936e543ac24",
+    "tide_indicator_05": "3b739884e91929c206e733af094bd9bb0eeb2690bd1dc9b349e718f2b81e5f7b",
+    "tide_indicator_06": "e5e967edf6125442170f574c3ca73c4448b9d73a3cd7ab269f539d246eb67196",
+    "tide_indicator_07": "b291d2f853ee12cd6ceb623b0695a876975c2bae7867c1e74ae4073814e37fc3",
+    "tide_indicator_08": "6c3515abdd10e153a7ff6c9dadfd443d601c4eab5b53cdf7955e352397a56c97",
+    "tide_indicator_09": "dfa9a17f542415710023133e3cb36792f423feadc87346178e22b00e4f248b2c",
+    "tide_indicator_10": "0c7f579f7bae6d40c27ea1f3e67a0e7a40cdbb04d592bddf2407d6b473e4a974",
+    "tide_indicator_11": "be6ef3f86e8fafe119dc77cb16d115cc3279c8d6edaa1af42af68faf80c9decd",
+    "tide_indicator_12": "d68e92f8061b29161eda24516cec654adc78d56cc0c9c8ec072822a510b6c246",
+    "tide_indicator_13": "cb14baeb5a2a25b1689cf325791b1df010a2b1baf5d1e46b55de3c678e0189e9",
+    "tide_indicator_14": "e8a95e84efd84b2ac3c0678034ebe29f16846c9bce6e40a94a8fc3024c88381e",
+    "tide_indicator_15": "8ca5f31f7037a3814f77e516e75cd4009cba685f8016755e9edf2f9e08391ebf"
+  },
+  "case_texture": {
+    "reference": "interstice:item/expedition_tools/brass",
+    "sha256": "1dcd833edc20c15a2a98008674d2b1593d3e40eac5effb6dde829760110c6d7f",
+    "origin": "Existing T01 palette-only iron-block material; unchanged"
+  },
+  "rim_pixels": 40,
+  "quads": 313,
+  "models": {
+    "tide_indicator_base": {
+      "parent": "minecraft:block/block",
+      "gui_light": "front",
+      "ambientocclusion": false,
+      "render_type": "minecraft:cutout",
+      "credit": "EREZCRAFT TI02; clock hand poses: MB-3D Items Pack / mbanders / MIT",
+      "textures": {
+        "case": "interstice:item/expedition_tools/brass",
+        "dial": "interstice:item/tide_indicator_00",
+        "particle": "#case"
+      },
+      "elements": [
+        {
+          "name": "thin_case",
+          "from": [
+            7.25,
+            7.59,
+            13.25
+          ],
+          "to": [
+            8.75,
+            8.39,
+            14.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            7.25,
+            7.59,
+            11.75
+          ],
+          "to": [
+            8.75,
+            8.39,
+            12.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            7.25,
+            7.59,
+            2.0
+          ],
+          "to": [
+            8.75,
+            8.39,
+            2.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            8.75,
+            7.59,
+            12.5
+          ],
+          "to": [
+            9.5,
+            8.39,
+            13.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            6.5,
+            7.59,
+            12.5
+          ],
+          "to": [
+            7.25,
+            8.39,
+            13.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            5.0,
+            7.59,
+            11.0
+          ],
+          "to": [
+            11.0,
+            8.39,
+            11.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            5.0,
+            7.59,
+            2.75
+          ],
+          "to": [
+            11.0,
+            8.39,
+            3.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            4.25,
+            7.59,
+            10.25
+          ],
+          "to": [
+            11.75,
+            8.39,
+            11.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            4.25,
+            7.59,
+            3.5
+          ],
+          "to": [
+            11.75,
+            8.39,
+            4.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            3.5,
+            7.59,
+            8.0
+          ],
+          "to": [
+            12.5,
+            8.39,
+            10.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            3.5,
+            7.59,
+            4.25
+          ],
+          "to": [
+            12.5,
+            8.39,
+            6.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "thin_case",
+          "from": [
+            2.75,
+            7.59,
+            6.5
+          ],
+          "to": [
+            13.25,
+            8.39,
+            8.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "recessed_dial",
+          "from": [
+            2,
+            8.41,
+            2
+          ],
+          "to": [
+            14,
+            8.41,
+            14
+          ],
+          "faces": {
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            8.0,
+            8.4,
+            13.25
+          ],
+          "to": [
+            8.75,
+            8.47,
+            14.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                7,
+                0,
+                8,
+                1
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            7.25,
+            8.4,
+            13.25
+          ],
+          "to": [
+            8.0,
+            8.47,
+            14.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                8,
+                0,
+                9,
+                1
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            8.75,
+            8.4,
+            12.5
+          ],
+          "to": [
+            9.5,
+            8.47,
+            13.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                6,
+                1,
+                7,
+                2
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            6.5,
+            8.4,
+            12.5
+          ],
+          "to": [
+            7.25,
+            8.47,
+            13.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                9,
+                1,
+                10,
+                2
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            8.0,
+            8.4,
+            11.75
+          ],
+          "to": [
+            8.75,
+            8.47,
+            12.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                7,
+                2,
+                8,
+                3
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            7.25,
+            8.4,
+            11.75
+          ],
+          "to": [
+            8.0,
+            8.47,
+            12.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                8,
+                2,
+                9,
+                3
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            10.25,
+            8.4,
+            11.0
+          ],
+          "to": [
+            11.0,
+            8.47,
+            11.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                4,
+                3,
+                5,
+                4
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            9.5,
+            8.4,
+            11.0
+          ],
+          "to": [
+            10.25,
+            8.47,
+            11.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                5,
+                3,
+                6,
+                4
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            8.75,
+            8.4,
+            11.0
+          ],
+          "to": [
+            9.5,
+            8.47,
+            11.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                6,
+                3,
+                7,
+                4
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            6.5,
+            8.4,
+            11.0
+          ],
+          "to": [
+            7.25,
+            8.47,
+            11.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                9,
+                3,
+                10,
+                4
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            5.75,
+            8.4,
+            11.0
+          ],
+          "to": [
+            6.5,
+            8.47,
+            11.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                10,
+                3,
+                11,
+                4
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            5.0,
+            8.4,
+            11.0
+          ],
+          "to": [
+            5.75,
+            8.47,
+            11.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                11,
+                3,
+                12,
+                4
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            11.0,
+            8.4,
+            10.25
+          ],
+          "to": [
+            11.75,
+            8.47,
+            11.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                3,
+                4,
+                4,
+                5
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            4.25,
+            8.4,
+            10.25
+          ],
+          "to": [
+            5.0,
+            8.47,
+            11.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                12,
+                4,
+                13,
+                5
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            11.75,
+            8.4,
+            9.5
+          ],
+          "to": [
+            12.5,
+            8.47,
+            10.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                2,
+                5,
+                3,
+                6
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            3.5,
+            8.4,
+            9.5
+          ],
+          "to": [
+            4.25,
+            8.47,
+            10.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                13,
+                5,
+                14,
+                6
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            11.75,
+            8.4,
+            8.75
+          ],
+          "to": [
+            12.5,
+            8.47,
+            9.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                2,
+                6,
+                3,
+                7
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            3.5,
+            8.4,
+            8.75
+          ],
+          "to": [
+            4.25,
+            8.47,
+            9.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                13,
+                6,
+                14,
+                7
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            11.75,
+            8.4,
+            8.0
+          ],
+          "to": [
+            12.5,
+            8.47,
+            8.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                2,
+                7,
+                3,
+                8
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            3.5,
+            8.4,
+            8.0
+          ],
+          "to": [
+            4.25,
+            8.47,
+            8.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                13,
+                7,
+                14,
+                8
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            12.5,
+            8.4,
+            7.25
+          ],
+          "to": [
+            13.25,
+            8.47,
+            8.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                1,
+                8,
+                2,
+                9
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            2.75,
+            8.4,
+            7.25
+          ],
+          "to": [
+            3.5,
+            8.47,
+            8.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                14,
+                8,
+                15,
+                9
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            12.5,
+            8.4,
+            6.5
+          ],
+          "to": [
+            13.25,
+            8.47,
+            7.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                1,
+                9,
+                2,
+                10
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            2.75,
+            8.4,
+            6.5
+          ],
+          "to": [
+            3.5,
+            8.47,
+            7.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                14,
+                9,
+                15,
+                10
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            11.75,
+            8.4,
+            5.75
+          ],
+          "to": [
+            12.5,
+            8.47,
+            6.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                2,
+                10,
+                3,
+                11
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            3.5,
+            8.4,
+            5.75
+          ],
+          "to": [
+            4.25,
+            8.47,
+            6.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                13,
+                10,
+                14,
+                11
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            11.75,
+            8.4,
+            5.0
+          ],
+          "to": [
+            12.5,
+            8.47,
+            5.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                2,
+                11,
+                3,
+                12
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            3.5,
+            8.4,
+            5.0
+          ],
+          "to": [
+            4.25,
+            8.47,
+            5.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                13,
+                11,
+                14,
+                12
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            11.75,
+            8.4,
+            4.25
+          ],
+          "to": [
+            12.5,
+            8.47,
+            5.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                2,
+                12,
+                3,
+                13
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            3.5,
+            8.4,
+            4.25
+          ],
+          "to": [
+            4.25,
+            8.47,
+            5.0
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                13,
+                12,
+                14,
+                13
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            11.0,
+            8.4,
+            3.5
+          ],
+          "to": [
+            11.75,
+            8.47,
+            4.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                3,
+                13,
+                4,
+                14
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            4.25,
+            8.4,
+            3.5
+          ],
+          "to": [
+            5.0,
+            8.47,
+            4.25
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                12,
+                13,
+                13,
+                14
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            10.25,
+            8.4,
+            2.75
+          ],
+          "to": [
+            11.0,
+            8.47,
+            3.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                4,
+                14,
+                5,
+                15
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            9.5,
+            8.4,
+            2.75
+          ],
+          "to": [
+            10.25,
+            8.47,
+            3.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                5,
+                14,
+                6,
+                15
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            8.75,
+            8.4,
+            2.75
+          ],
+          "to": [
+            9.5,
+            8.47,
+            3.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                6,
+                14,
+                7,
+                15
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            6.5,
+            8.4,
+            2.75
+          ],
+          "to": [
+            7.25,
+            8.47,
+            3.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                9,
+                14,
+                10,
+                15
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            5.75,
+            8.4,
+            2.75
+          ],
+          "to": [
+            6.5,
+            8.47,
+            3.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                10,
+                14,
+                11,
+                15
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            5.0,
+            8.4,
+            2.75
+          ],
+          "to": [
+            5.75,
+            8.47,
+            3.5
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                11,
+                14,
+                12,
+                15
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            8.0,
+            8.4,
+            2.0
+          ],
+          "to": [
+            8.75,
+            8.47,
+            2.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                7,
+                15,
+                8,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        },
+        {
+          "name": "fine_rim",
+          "from": [
+            7.25,
+            8.4,
+            2.0
+          ],
+          "to": [
+            8.0,
+            8.47,
+            2.75
+          ],
+          "faces": {
+            "down": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            },
+            "up": {
+              "texture": "#dial",
+              "uv": [
+                8,
+                15,
+                9,
+                16
+              ],
+              "rotation": 180
+            },
+            "west": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 90
+            },
+            "east": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 270
+            },
+            "south": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 180
+            },
+            "north": {
+              "texture": "#case",
+              "uv": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "rotation": 0
+            }
+          }
+        }
+      ],
+      "display": {
+        "gui": {
+          "rotation": [
+            90,
+            180,
+            0
+          ],
+          "translation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.25,
+            1.25,
+            1.25
+          ]
+        },
+        "ground": {
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.45,
+            0.45,
+            0.45
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            -90,
+            0,
+            0
+          ],
+          "translation": [
+            0,
+            0,
+            -1
+          ],
+          "scale": [
+            1.25,
+            1.25,
+            1.25
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            22.5,
+            157.5,
+            -22.5
+          ],
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.375,
+            0.375,
+            0.375
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            22.5,
+            157.5,
+            -22.5
+          ],
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.375,
+            0.375,
+            0.375
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            75,
+            168.75,
+            0
+          ],
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            75,
+            168.75,
+            0
+          ],
+          "translation": [
+            0,
+            2,
+            0
+          ],
+          "scale": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        }
+      }
+    },
+    "tide_indicator": {
+      "parent": "interstice:item/tide_indicator_base",
+      "overrides": [
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.0
+          },
+          "model": "interstice:item/tide_indicator_00"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.0625
+          },
+          "model": "interstice:item/tide_indicator_01"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.125
+          },
+          "model": "interstice:item/tide_indicator_02"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.1875
+          },
+          "model": "interstice:item/tide_indicator_03"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.25
+          },
+          "model": "interstice:item/tide_indicator_04"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.3125
+          },
+          "model": "interstice:item/tide_indicator_05"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.375
+          },
+          "model": "interstice:item/tide_indicator_06"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.4375
+          },
+          "model": "interstice:item/tide_indicator_07"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.5
+          },
+          "model": "interstice:item/tide_indicator_08"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.5625
+          },
+          "model": "interstice:item/tide_indicator_09"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.625
+          },
+          "model": "interstice:item/tide_indicator_10"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.6875
+          },
+          "model": "interstice:item/tide_indicator_11"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.75
+          },
+          "model": "interstice:item/tide_indicator_12"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.8125
+          },
+          "model": "interstice:item/tide_indicator_13"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.875
+          },
+          "model": "interstice:item/tide_indicator_14"
+        },
+        {
+          "predicate": {
+            "interstice:tide_angle": 0.9375
+          },
+          "model": "interstice:item/tide_indicator_15"
+        }
+      ]
+    },
+    "tide_indicator_00": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_00"
+      }
+    },
+    "tide_indicator_01": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_01"
+      }
+    },
+    "tide_indicator_02": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_02"
+      }
+    },
+    "tide_indicator_03": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_03"
+      }
+    },
+    "tide_indicator_04": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_04"
+      }
+    },
+    "tide_indicator_05": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_05"
+      }
+    },
+    "tide_indicator_06": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_06"
+      }
+    },
+    "tide_indicator_07": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_07"
+      }
+    },
+    "tide_indicator_08": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_08"
+      }
+    },
+    "tide_indicator_09": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_09"
+      }
+    },
+    "tide_indicator_10": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_10"
+      }
+    },
+    "tide_indicator_11": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_11"
+      }
+    },
+    "tide_indicator_12": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_12"
+      }
+    },
+    "tide_indicator_13": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_13"
+      }
+    },
+    "tide_indicator_14": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_14"
+      }
+    },
+    "tide_indicator_15": {
+      "parent": "interstice:item/tide_indicator_base",
+      "textures": {
+        "dial": "interstice:item/tide_indicator_15"
+      }
+    }
+  }
+}

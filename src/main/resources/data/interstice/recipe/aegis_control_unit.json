@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ARB",
+    "PHO",
+    "BRA"
+  ],
+  "key": {
+    "A": {
+      "item": "interstice:abyssal_alloy"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "B": {
+      "item": "interstice:etched_circuit_board"
+    },
+    "P": {
+      "item": "interstice:resonant_processor"
+    },
+    "H": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "O": {
+      "item": "interstice:aegis_optics"
+    }
+  },
+  "result": {
+    "id": "interstice:aegis_control_unit",
+    "count": 1
+  }
+}

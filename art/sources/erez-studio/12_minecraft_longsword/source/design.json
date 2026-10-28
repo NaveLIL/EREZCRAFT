@@ -1,0 +1,90 @@
+{
+  "revision": "LS-03",
+  "item_id": "interstice:riftsteel_longsword",
+  "name": "Riftsteel Longsword / original-detail revision",
+  "destination_project": "D:/repos/Minecraft/EREZCRAFT",
+  "geometry_authority": "tools/build_refined.py and the original read-only source PNG; each cell is 0.5 model units, identical to the existing generated item.",
+  "thickness": 1,
+  "cell_size": 0.5,
+  "texture": "interstice:item/armaments/tool_greatsword_steel",
+  "texture_sha256": "eeeb1f0503d70a9a3a68a4d43cf71f314b927a4480572866ebf43188e500ccea",
+  "texture_credit": "Malcolm Riley / unused-textures, CC BY 4.0, commit 8b85ad732023174d9a9da74e6bf2272d6c0bef17. PNG unchanged; original hilt, guard and lower blade geometry preserved. New upper-blade geometry reuses original straight-blade texels.",
+  "operations": {
+    "unchanged_original_rows": [
+      7,
+      31
+    ],
+    "straight_extension_rows": [
+      [
+        6,
+        21
+      ],
+      [
+        5,
+        22
+      ],
+      [
+        4,
+        23
+      ],
+      [
+        3,
+        24
+      ]
+    ],
+    "tip_rows": [
+      [
+        2,
+        25,
+        "JPOOLLKE"
+      ],
+      [
+        1,
+        26,
+        "JPOOLLKE"
+      ],
+      [
+        0,
+        27,
+        "JPOOLKE"
+      ],
+      [
+        -1,
+        29,
+        "JPOLKE"
+      ],
+      [
+        -2,
+        30,
+        "JPOKE"
+      ],
+      [
+        -3,
+        32,
+        "JPLE"
+      ],
+      [
+        -4,
+        33,
+        "JPE"
+      ],
+      [
+        -5,
+        35,
+        "J"
+      ]
+    ]
+  },
+  "tip_alignment": {
+    "row_center_x_plus_y": 30.5,
+    "cell_center_x_plus_y": 31.5,
+    "method": "Reposition odd-width tip rows by half a texel in X; retain cell size, source UVs and row height."
+  },
+  "acceptance": [
+    "Original hilt and guard identical in shape, texels, position and thickness",
+    "Original 0.5 model-unit pixel density preserved",
+    "No game PNG changes",
+    "No game resources installed",
+    "Preview approval pending; native hand poses not verified"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "interstice:pure_vitriolite_lining"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "interstice:chemotrophic_fabric"
+    },
+    {
+      "item": "interstice:phosphorite_paste"
+    }
+  ],
+  "result": {
+    "id": "interstice:engineer_breathing_cassette",
+    "count": 1
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": "261f7a0f815f281ce76684a1505781dc967a2edd96e237c4c3071bc0fb30c292",
+  "geometry_modifiers": false,
+  "native_json_source": true,
+  "game_verified": false,
+  "sets": {
+    "tether_spool": {
+      "elements": 42,
+      "mesh_objects": 42
+    },
+    "lift_controller": {
+      "elements": 30,
+      "mesh_objects": 30
+    },
+    "structure_surveyor": {
+      "elements": 37,
+      "mesh_objects": 37
+    }
+  },
+  "outputs": {
+    "assembly/expedition_tools_T01.blend": "3e5d1522f51e2f686364b32419e63bd6e1437fcef3d75cf955a07eebf15ae43b",
+    "preview/lift_controller_T01.png": "b790f3977cd3e3b651ead2df596d1e0ea834345791eaaa7bf3c33724264b7c00",
+    "preview/structure_surveyor_T01.png": "2f8b35f44551c300b68b26f8ddc79b498078391ace3c926036e508249ffa65ba",
+    "preview/tether_spool_T01.png": "f6717448e42c6c3a381b67792d4643d85d883f9a4082bd2b64e3a3e9da0052e4",
+    "preview/tools_T01.png": "7bce5c81de45b12a0940687c57d76138e5cca6175508eb09340985eb0b992ccc",
+    "preview/tools_T01_front.png": "f933aed24bfabd02bd05fca7bdc48ca4820eeec19fda000d275504f12e1e685e",
+    "preview/tools_previous.png": "45b095cf4b78465762de6438b6cdc14b8c34c339cd0d6b7d42543584e58d816b",
+    "exports/lift_controller_T01.glb": "2f4d8dad14c3c4d419f86a31acd10288cb6dbc6bf859ef343213938f72b94002",
+    "exports/structure_surveyor_T01.glb": "b89005c3077048ba7e43d4bacc4a526d74d1409dcfa74e29d0d80e5fdab1d16e",
+    "exports/tether_spool_T01.glb": "ae44fc0b89f1d27abf51739ac7ae3a076cb984917a56a48f9c7f9c465ca57ac2"
+  },
+  "rendered_dependency_sha256": "9c3829cbc6830fc3a0c4649054b7e9236c94625205568f9f478c2c2b1d2c16eb",
+  "save_only_display_metadata_update": true
+}
