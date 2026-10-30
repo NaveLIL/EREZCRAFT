@@ -1,0 +1,78 @@
+{
+  "README.md": {
+    "bytes": 4643,
+    "sha256": "3ef3368171a6e89b9ffc131b44c4b229afb553d6931f821fdd2ed6094eb28e0d"
+  },
+  "assembly/calico_MC01.blend": {
+    "bytes": 199121,
+    "sha256": "47afc5f883978db1aad6f34e6454bf27bfb4f315a35a03261cf42ab5da947833"
+  },
+  "exports/calico_MC01.glb": {
+    "bytes": 252296,
+    "sha256": "84ad962f7f93ae7cbce5084e99b0a455a21571c9fedce07010a6f8ab5e500345"
+  },
+  "source/calico_MC01.json": {
+    "bytes": 105230,
+    "sha256": "9f5301f522a0a73466b5d37bf7296609e3ceb3c4aea8ecc26b4a72d4192a8834"
+  },
+  "source/selection.json": {
+    "bytes": 488,
+    "sha256": "f8f17dcb31ab171c8b44ac3d5552c88bd23b96b283a135dd88a25b7ff513dbcf"
+  },
+  "references/owner_calico_sketch.jpg": {
+    "bytes": 41708,
+    "sha256": "5795cb559ba6aedfa041792dd3b4f3a2b6e33bd68927e4c3f6e859489d578b8a"
+  },
+  "source/sound_design.json": {
+    "bytes": 371,
+    "sha256": "115d90198b31524f0c27c054fa252f23310c213233ec647422fdb3846f697dbd"
+  },
+  "preview/calico_MC01_aft.png": {
+    "bytes": 2241981,
+    "sha256": "17aff00ebd49e70e8cacbac37a6fba36337a8ca9da33fdd29a22541d8c97da49"
+  },
+  "preview/calico_MC01_deck.png": {
+    "bytes": 2116665,
+    "sha256": "f58053d5b7dd19d13f3f8752c6d9e51a498c77873f915c6cd1c6c285f938e167"
+  },
+  "preview/calico_MC01_face.png": {
+    "bytes": 2213550,
+    "sha256": "08ab5c666f33bc696e2a6f0e83458a42892c917243a3c135bb3a2ab1d12778ec"
+  },
+  "preview/calico_MC01_front.png": {
+    "bytes": 2038891,
+    "sha256": "2db795f2f77b9d91588f556af34d47e75fe147e75d210ab0919572d8387f7e7c"
+  },
+  "preview/calico_MC01_hero.png": {
+    "bytes": 2199837,
+    "sha256": "87e8a175bc89c1efc65db736acf8d09f1d2efe0542fb7c24302f31d727ddd8d1"
+  },
+  "preview/calico_MC01_side.png": {
+    "bytes": 2005054,
+    "sha256": "24f811fcfeeb5bfddf50009de409cd9b5e1ed4d9f7500946aac690cd968c76e4"
+  },
+  "reports/BLENDER_BUILD.json": {
+    "bytes": 795,
+    "sha256": "865b6ea8010913b8c8e4488e5a6b9b824bb5fee876a02a594d4e5986b4682295"
+  },
+  "reports/GEOMETRY_CHECK.json": {
+    "bytes": 505,
+    "sha256": "43b782b0c800ebaab6a0abdad847823e0cc2db59a367eb4b2c3f9f265aa524ce"
+  },
+  "tools/build_design.py": {
+    "bytes": 11837,
+    "sha256": "70be1a515d9c8020cc931067256329ac55308b47985992c7551bc37b76f48293"
+  },
+  "tools/build_scene.py": {
+    "bytes": 9218,
+    "sha256": "4835bcc721ac4b0a21f79d820a5b6e55dd0f06810498a4932795dcace03b23ba"
+  },
+  "tools/package_review.py": {
+    "bytes": 6405,
+    "sha256": "36f4d662db1279587b72038c94745d847060f922f070310f613f771f9d2b6761"
+  },
+  "tools/verify_model.py": {
+    "bytes": 2770,
+    "sha256": "3d8576034ac9c46520acd45f71059b32b41805256603771b91ec8b672832bfb1"
+  }
+}

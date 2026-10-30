@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-29T21:46:08.220117+00:00",
+  "objective": "Skat full speed around 50 km/h; measured physical movement",
+  "mod_version": "0.7.0-preview.110-skat-thrust",
+  "sequence": 25,
+  "pack": "0.1.0-alpha.25",
+  "jar_sha256": "f12579ba8140c341d02c8d77519e796231432fa1e633287e2414c1e60e1437ec",
+  "native_proof": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\skat-thrust-isolated\\.verification\\c09\\studioSkat\\skat-thrust-create.json",
+  "native_proof_sha256": "7a252565558dc8a3d71bb131dd9256be2e1540d065d8387afcd2a07cea14301a",
+  "native_dh_loaded": true,
+  "actual_dimension": "interstice:islands_v6",
+  "owner_profile_used": false,
+  "measured": {
+    "straight_ticks": 600,
+    "path_m": 359.5977616201491,
+    "last_10s_mean_kmh": 47.05773864549072,
+    "last_10s_min_kmh": 45.13491804821946,
+    "last_10s_max_kmh": 49.72505462867878,
+    "maximum_kmh": 49.72505462867878,
+    "max_tilt_degrees": 7.148645146740703,
+    "neutral_last_5s_mean_kmh": 0.176484375,
+    "turn_radians": 0.18072284597681904,
+    "reverse_final_kmh": 15.35836373839632,
+    "reverse_signed_mps": -4.270524987839051,
+    "reverse_last_5s_mean_kmh": 18.130688082253574
+  },
+  "actual_keyboard_network_seat_and_native_forces": true,
+  "reverse_control_passed": true,
+  "pilot_failsafe_passed": true,
+  "structure_cells": 1509,
+  "cargo_containers": 24,
+  "cargo_slots": 1296,
+  "component_contracts": {
+    "passed": true,
+    "checks": 16,
+    "entrypoint": "tools/VerifySkatPropulsion.java",
+    "source_sha256": "23a38b11705f7997a9378f16d19b9fe0d6d72f9e6bee9a7ab9ed9e63140ea54a"
+  },
+  "source_sha256": {
+    "pro/erez/interstice/ship/SkatPropellerEntity.java": "592cd87dba63d73fecd901c56c3403c2f9e0761d9b2405f3fafafb6b63a762a3",
+    "pro/erez/interstice/ship/SkatHelmEntity.java": "e95865c2d1b1a4be791cb29bf61111e04ce8549abb93d92fa8386a9c8cfa133b",
+    "pro/erez/interstice/ship/SkatPropulsion.java": "45207da09a668bbeb3c0db4d2d820a6f4fc81ba15c0f3826832f2f2f413669b2"
+  },
+  "class_sha256": {
+    "pro/erez/interstice/ship/SkatPropellerEntity.class": "6a32712964412aa68bfdd5d940785daf67998d37f079da2c74dde47b88448daf",
+    "pro/erez/interstice/ship/SkatHelmEntity.class": "85f5b9e99c8d468264c717c421ee4f98dc6099e67bc35b16e6179ab356e08324",
+    "pro/erez/interstice/ship/SkatPropulsion.class": "d3fe0436eeb5a5217210e86877c16a1da1919dffe6c8104fc40cec235fc2dba4"
+  },
+  "preserved_jar_entries": 3838,
+  "server": {
+    "passed": true,
+    "mod_version": "0.7.0-preview.110-skat-thrust",
+    "jar_sha256": "f12579ba8140c341d02c8d77519e796231432fa1e633287e2414c1e60e1437ec",
+    "server_jars": 67,
+    "old_jars_unchanged": 66,
+    "healthy": true,
+    "world_regenerated": false,
+    "world_files_replaced": false,
+    "backups_created": false,
+    "settings_auth_ops_preserved": true,
+    "players": "There are 0 of a max of 10 players online: \n\u001b[0m"
+  },
+  "private_dedicated": {
+    "running": true,
+    "health": "healthy",
+    "candidate": true,
+    "dh": true,
+    "done": true,
+    "passed": true,
+    "ships": "Found 1 sub-levels:\n\u001b[0mdf704f00-67f9-476d-a37b-cfc90d430eb0:\n\u001b[0m    Position: 3.7873408794403076 37.034934997558594 0.00943976640701294\n\u001b[0m    Orientation: -0.011219281703233719 0.043145522475242615 0.03864051774144173 0.9982582926750183\n\u001b[0m    Mass: 44.86074700000004\n\u001b[0m    Linear Velocity: 0.07400622963905334 0.2879289984703064 0.01689148135483265\n\u001b[0m    Angular Velocity: 0.00731291901320219 -9.089785744436085E-4 -0.03577378764748573\n\u001b[0m",
+    "tps": "interstice:islands_v6: 20.000 TPS (1.921 ms/tick)\n\u001b[0m"
+  },
+  "delivery": {
+    "sourceSequence": 24,
+    "sequence": 25,
+    "releaseId": "techmagic-0-1-0-alpha-25-skat-propulsion",
+    "oldCatalogSha256": "a6d0e020d01660cf0416bff3f3242fa082e6b601e6d85141edc0d8c354b7fd24",
+    "newCatalogSha256": "75b98bdddf19a4656591d2c8a67867326c310aa400e10baac420a07e9232bd33",
+    "files": 89,
+    "clientJars": 79,
+    "unchangedBaseFiles": 87,
+    "removed": [
+      "mods/interstice-0.7.0-preview.100-skat-speed.jar"
+    ],
+    "changed": [
+      {
+        "path": "config/erezcraft-pack.json",
+        "size": 173,
+        "sha256": "165d3a5950f1460eb00b35e8fe496afc03cacf06c3e52796ceee1780d96ea5b0",
+        "url": "https://files.erezcraft.com/blobs/165d3a5950f1460eb00b35e8fe496afc03cacf06c3e52796ceee1780d96ea5b0",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/interstice-0.7.0-preview.110-skat-thrust.jar",
+        "size": 23855361,
+        "sha256": "f12579ba8140c341d02c8d77519e796231432fa1e633287e2414c1e60e1437ec",
+        "url": "https://files.erezcraft.com/blobs/f12579ba8140c341d02c8d77519e796231432fa1e633287e2414c1e60e1437ec",
+        "policy": "managed"
+      }
+    ],
+    "stage": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\skat-thrust-release-20261030",
+    "public_https_verified": true,
+    "signatures_verified": true,
+    "uploaded_files": 4,
+    "uploaded_bytes": 23888376,
+    "game_server_restarted": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false
+  },
+  "screenshot": {
+    "file": ".verification\\skat-thrust-isolated\\.verification\\c09\\studioSkat\\screenshots\\skat-underway.png",
+    "sha256": "2b44945dec2ddf39e3571ef0ab4bf00e38dd474b4ca9d662e8792f31789a48bb",
+    "unmodified_capture": true,
+    "night_vision_during_trial": true
+  },
+  "limitations": [
+    "Controlled fresh native scene; not Survival or a real-server crew sailing trial.",
+    "Dedicated acceptance is boot/idle saved test-body loading, not capacity for ten players.",
+    "Signed HTTPS release verified; owner profile and launcher UI were not automated.",
+    "Cruising turns are deliberately gentle; reduce throttle for confined maneuvers."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "revision": "MC01",
+  "source_parts": 168,
+  "closed_source_meshes": 168,
+  "finite_vertices": true,
+  "zero_area_faces": 0,
+  "source_triangles_before_bevel": 3072,
+  "raised_nose_projection_blocks": 0.95,
+  "glb_round_trip_meshes": 168,
+  "glb_bounds_max_difference_blocks": 0.049773216247558594,
+  "existing_skat_files_checked": 12,
+  "existing_skat_files_unchanged": true,
+  "native_blender_art_verified": true,
+  "minecraft_runtime_verified": false,
+  "physics_verified": false
+}

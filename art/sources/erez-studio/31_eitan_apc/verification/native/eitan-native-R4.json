@@ -1,0 +1,21 @@
+{
+  "dh_loaded": true,
+  "started_utc": "2026-10-29T16:34:00.785202900Z",
+  "native_cells": 120,
+  "night_vision": false,
+  "crouched_aisle_box_clear": true,
+  "standing_aisle_box_clear": false,
+  "crouch_walk_distance_m": 2.641944025858049,
+  "crouch_walk_ticks": 43,
+  "native_player_pose": "CROUCHING",
+  "world_save_completed": true,
+  "passed": true,
+  "error": "",
+  "phase": 7,
+  "owner_profile_used": false,
+  "driving_tested": false,
+  "independent_gameplay_mechanisms_tested": false,
+  "model_revision": "E01-R4",
+  "geometry_sha256": "507a194fa39c7255ccd7b41f3b546bd0ea9eb48090fcdab6ff342831f161a4b8",
+  "process_exit_code": 0
+}

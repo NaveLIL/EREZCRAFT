@@ -1,0 +1,190 @@
+{
+  "date": "2026-10-28",
+  "candidate": "0.7.0-preview.45-root-motion",
+  "technical_pass": true,
+  "preservation": {
+    "passed": true,
+    "candidate_sha256": "8e3d34206008cb8162b491f6f08673237f9c8989347a9e354db1303a7ee5bf93",
+    "unchanged_assets_and_data": 1558,
+    "changed_classes": [
+      "pro/erez/interstice/entity/client/LozhnokorenModel$1.class",
+      "pro/erez/interstice/entity/client/LozhnokorenModel.class",
+      "pro/erez/interstice/fauna/Lozhnokoren$1.class",
+      "pro/erez/interstice/fauna/Lozhnokoren$Section.class",
+      "pro/erez/interstice/fauna/Lozhnokoren.class"
+    ],
+    "unchanged_classes": 577
+  },
+  "components": {
+    "required_passed": 17,
+    "log": ".verification/lozhnokoren-motion-20261028/component-final.log",
+    "artificial_gametest_without_DH": true
+  },
+  "native": {
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-Pmod_version=0.7.0-preview.45-root-motion",
+      "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\lk45n3",
+      "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\tide-release-20261028\\client",
+      "assemble",
+      "runStudioLozhnokoren"
+    ],
+    "passed": true,
+    "started_utc": "2026-10-28T13:52:16.290914+00:00",
+    "pid": 28572,
+    "exit_code": 0,
+    "proof": {
+      "distant_horizons_loaded": true,
+      "mod_count": 106,
+      "version": "0.7.0-preview.45-root-motion",
+      "live_phase": 15,
+      "initial": {
+        "cuboids": 357,
+        "bones": 88,
+        "vertices": 8568,
+        "source_sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3",
+        "mesh_sha256": "0bdf71d36f67c6e50db9bc0d4cb80c29c22fe399355f888b0adecd85840b1d44",
+        "source_threat_key_exact": true,
+        "parts": 15
+      },
+      "animation_continuity": {
+        "samples": 656,
+        "max_shoulder_step_radians": 0.036767602,
+        "warning_pursuit_strike_recovery_cancel": true
+      },
+      "after_reload": {
+        "cuboids": 357,
+        "bones": 88,
+        "vertices": 8568,
+        "source_sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3",
+        "mesh_sha256": "0bdf71d36f67c6e50db9bc0d4cb80c29c22fe399355f888b0adecd85840b1d44",
+        "source_threat_key_exact": true,
+        "parts": 15
+      },
+      "resource_reload_checked": true,
+      "actual_attack_health_lost": 21.64801,
+      "actual_attack_hits": 1,
+      "actual_tree_blocks_broken": 4,
+      "actual_forward_walk_blocks": 11.220766006886226,
+      "turn_diagnostics": "(8.5, 70.0, 19.720766006886226) yaw=-45.0 phase=WARNING target=Zombie['Зомби'/151, l='ServerLevel[LK01 owner review]', x=20.50, y=70.00, z=29.72] peak=35.0",
+      "actual_turn_tail_lag_degrees": 35,
+      "actual_client_tail_lag_degrees": 35,
+      "lower_contact_server_ticks": 160,
+      "lower_sea_contact_80_ticks": true,
+      "upper_contact_server_ticks": 129,
+      "upper_sea_contact_80_ticks": true,
+      "natural_spawn_pipeline_controlled_forest_fixture": true,
+      "natural_spawn_rate_or_survival_acceptance": false,
+      "review_world_ready": true,
+      "actual_dimension": "interstice:islands_v6",
+      "passed": true,
+      "reason": "",
+      "pid": 16048,
+      "phase": 15,
+      "owner_profile_used": false,
+      "prepared_fixture_not_survival": true,
+      "screenshots": [
+        "lozhnokoren-gallery-scale.png",
+        "lozhnokoren-front.png",
+        "lozhnokoren-side.png",
+        "lozhnokoren-warning-graspers.png",
+        "lozhnokoren-impact.png",
+        "lozhnokoren-crawl.png",
+        "lozhnokoren-curved-body.png",
+        "lozhnokoren-lower-sea.png",
+        "lozhnokoren-upper-sea.png"
+      ],
+      "settled": {
+        "purpose": "lozhnokoren_shutdown",
+        "server_tick": 1567,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1225,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "seconds": 307.75
+  },
+  "images": [
+    {
+      "path": "lozhnokoren-motion/lozhnokoren-gallery-scale.png",
+      "sha256": "71319fc33510b74f4981d1c7f06b4f9279e2e812cbd7ba172eebd1fde35f1140"
+    },
+    {
+      "path": "lozhnokoren-motion/lozhnokoren-front.png",
+      "sha256": "76ce7a14259144eeef3dbdc0ed25902001ac82dc8c3fc50b6ea65420ccc1bbb1"
+    },
+    {
+      "path": "lozhnokoren-motion/lozhnokoren-side.png",
+      "sha256": "bb49558244564d5779e6da705be70647d38fd8636aeb2e97a58c0588de897835"
+    },
+    {
+      "path": "lozhnokoren-motion/lozhnokoren-warning-graspers.png",
+      "sha256": "8888cd0cb8eaae5218ef7e05149e9c171285c099fe370b86be5361ababb79a8c"
+    },
+    {
+      "path": "lozhnokoren-motion/lozhnokoren-impact.png",
+      "sha256": "05bf3e2b7c78c9a75ead8f76fd7b1a08c5b39d9ae21b204c23012fb44c37f93d"
+    },
+    {
+      "path": "lozhnokoren-motion/lozhnokoren-crawl.png",
+      "sha256": "4fbf5f0ae5adb579d7a5676d16fe2a00c15fc664cc8c6e272f718ec30f1e7c05"
+    },
+    {
+      "path": "lozhnokoren-motion/lozhnokoren-curved-body.png",
+      "sha256": "ba9645a1ba9696db18e41c42b8c768b0927e754e06ee1d83eaf29ba32a99530a"
+    },
+    {
+      "path": "lozhnokoren-motion/lozhnokoren-lower-sea.png",
+      "sha256": "5a216b06b8d4816ee3efe98813b7ab32a4d44c31b40cb792738579b613cf2673"
+    },
+    {
+      "path": "lozhnokoren-motion/lozhnokoren-upper-sea.png",
+      "sha256": "15753072c5c290811f91c25679a55bf66fe482be54c607549f78dc694562ee18"
+    }
+  ],
+  "prior_attempts": [
+    {
+      "profile": "lk45n1",
+      "passed": false,
+      "reason": "40-tick polling missed transient bend; no pass claimed"
+    },
+    {
+      "profile": "lk45n2",
+      "passed": true,
+      "reason": "Per-server-tick sample observed34.8deg; final variant further distributes sustained bends"
+    }
+  ],
+  "review_profile": ".verification/lk45n3/studioLozhnokoren",
+  "review_profile_owner_protected": true,
+  "previous_owner_profile_preserved": ".verification/lk44n2/studioLozhnokoren",
+  "owner_final_motion_approval_received": false,
+  "production_updated": false,
+  "limitations": [
+    "Prepared scenario is not Survival balance acceptance",
+    "Approximate multipart collision envelopes; no new articulated obstacle pathfinding",
+    "Automated detached camera screenshots have muted colours; original textures unchanged"
+  ],
+  "cold_review": {
+    "passed": true,
+    "different_jvm_from_test": true,
+    "pid": 13316,
+    "distant_horizons_loaded": true,
+    "actual_dimension": "interstice:islands_v6",
+    "saved_health": 240,
+    "multipart_ids": 15,
+    "player_has_control": true,
+    "production_updated": false
+  }
+}

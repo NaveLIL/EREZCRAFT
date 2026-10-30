@@ -1,0 +1,35 @@
+{
+  "revision": "LK01",
+  "blender_version": "5.2.2 LTS",
+  "mesh_objects": 357,
+  "articulated_groups": 88,
+  "dimensions_blocks_xyz": [
+    4.325760841369629,
+    10.661991119384766,
+    3.202927827835083
+  ],
+  "review_animation_export_mode": "SCENE",
+  "source_clips": [
+    "Idle",
+    "Crawl",
+    "Threat"
+  ],
+  "blender_review_timeline": {
+    "Idle": [
+      1,
+      49
+    ],
+    "Crawl": [
+      61,
+      109
+    ],
+    "Threat": [
+      121,
+      155
+    ]
+  },
+  "scale_figure_height_blocks": 1.8,
+  "all_images_packed": true,
+  "rendered_studio_not_minecraft": true,
+  "game_verified": false
+}

@@ -1,0 +1,55 @@
+{
+  "revision": "LK01",
+  "files": {
+    "references/lozhnokoren_concept_LK01.png": {
+      "bytes": 2338536,
+      "sha256": "0f6f05598975414803f4816720b6976876d81b4bf2dd61bfddf5330e2739c9d1"
+    },
+    "references/imagegen_prompt.txt": {
+      "bytes": 2304,
+      "sha256": "919d09cb7de9ac60b92335643f17c72bf7d71544205505c5625689486b2df793"
+    },
+    "source/lozhnokoren_LK01.bbmodel": {
+      "bytes": 892310,
+      "sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3"
+    },
+    "assembly/lozhnokoren_LK01.blend": {
+      "bytes": 410441,
+      "sha256": "fc251015e07762caba5c59bea0411301dfcdc777380ca1c99666e076b4ebb0a9"
+    },
+    "exports/lozhnokoren_LK01.glb": {
+      "bytes": 703804,
+      "sha256": "1f737b8f097b678db0f1a832c52089ff61e3e9d71e0926731449d218719ac297"
+    },
+    "preview/lozhnokoren_LK01_review.jpg": {
+      "bytes": 299776,
+      "sha256": "c68f249ad2dd31a7c5403c78c118c37ea23fd31e09951f7322fb299a7779c31a"
+    },
+    "preview/lozhnokoren_LK01_crawl.gif": {
+      "bytes": 1686549,
+      "sha256": "14b4e6dd88fc8861c6db6e92041c532f9027cb2bb3c32a3ea4a528fd163d37e9"
+    }
+  },
+  "cuboids": 357,
+  "articulated_groups": 88,
+  "all_elements_and_groups_referenced_once": true,
+  "source_animation_loops_closed": true,
+  "textures_cc0_verified": true,
+  "all_game_textures_16x16": true,
+  "palette_only_derived_pngs": true,
+  "alpha_preserved": true,
+  "gltf_meshes": 357,
+  "gltf_animations": 1,
+  "gltf_animation_names": [
+    "LK01 Review - Idle, Crawl, Threat"
+  ],
+  "gltf_synchronized_source_tracks": 67,
+  "glb_self_contained": true,
+  "saved_blend_verified": true,
+  "crawl_preview_frames": 8,
+  "glb_reimport_and_animation_verified": true,
+  "top_view_full_creature_inside_frame": true,
+  "concept_tool_mode": "Built-in imagegen",
+  "game_verified": false,
+  "registered_in_game": false
+}

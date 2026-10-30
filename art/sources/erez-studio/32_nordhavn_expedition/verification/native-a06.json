@@ -1,0 +1,30 @@
+{
+  "method": "inspection",
+  "result": "pass",
+  "observations": {
+    "GAME-WALK": {
+      "metric": "native_walk_passed",
+      "unit": "bool",
+      "value": true
+    },
+    "ME-COLD": {
+      "metric": "native_me_cold_passed",
+      "unit": "bool",
+      "value": true
+    }
+  },
+  "dependencies": [
+    "reports/NATIVE_A06.json",
+    "exports/minecraft/ne01_runtime.json",
+    "assembly/ne01.blend"
+  ],
+  "details": {
+    "setup": "Inspection of isolated complete Minecraft 1.21.1 / NeoForge / DH / Sable / AE2 create and cold-reload proofs. Four ordinary keyboard stair routes, 24 native menus, actual storage cells, finite coal power. Physics paused; 40m body teleport is not propulsion."
+  },
+  "limitations": [
+    "Profile proportions adapted from public drawing, not a factory CAD reproduction.",
+    "Native tests use paused Sable bodies and controlled relocation, not propulsion.",
+    "50 km/h sea speed and live navigation panels remain separate required work.",
+    "No Survival, multiplayer, every-route or mechanism swept-volume acceptance."
+  ]
+}

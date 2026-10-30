@@ -1,0 +1,30 @@
+{
+  "revision": "NE01-A06",
+  "source_project": "D:\\repos\\Blender\\creations\\32_nordhavn_expedition",
+  "runtime_sha256": "a39a24a6164917809dab1399c4908f959d8be37c04447a0405668ca0a373d0e2",
+  "geometry_sha256": "525402529f2f2747b66b3465f9ad0f9073bf8b943b90a25e6b545064f09a4ae6",
+  "assembly_sha256": "dfec079317b04cb897ed6970c3886e1a51fd49d1eae74e3445f5a0b8cea4f853",
+  "texture_sha256": {
+    "hull_ivory": "0a1c4d9cea403c4a934daa8b1d7586d2253f618c35fffd761f494d8536483df5",
+    "superstructure_white": "929df774bd9ffb6a1686dbadfb5ddc9792f175a03989036cf0e00e79a5bc95a8",
+    "interior_white": "e34f5e60a24dd3256c5f5bdd0d207e3eb963cfba76531204c29000e4f9dec07c",
+    "teak": "2eda57586edc3b39365d3b313693eb8c68a05af923685dac2086941574cefd95",
+    "interior_floor": "ad711f020b9e6133ab6e80cdd1a453dd6bef4947324529e1a8d34782c548f835",
+    "interior_wood": "0654dd9f2089f0524951b617705f9105f897b9934fe12e05581e40e7ccf159c6",
+    "fabric": "5b8454888d343a039915c2a77bed062e8d5f6c231c3f798a1930bc31005913dd",
+    "brushed_steel": "cb3ba81391efbcf8d2d4cde4c8d495de0d3e9992f52d1519b45766c67ea88026",
+    "brass": "1d98f97d5d648700f98490e2c8818ace870e361838f3d655d70d42a068330f57",
+    "window_frame": "f277ccc5c04bea481ede1e0a701fc3169366e444b9e7e4b5deae99a9feb8eaee",
+    "glass": "2ab2b791759ab5ec90ff828fcfe6da3d2354eb5db57de1ef062c857f6692567e",
+    "engine_metal": "cb6029cbb8d8dee91b7115731bdf2fc276b09d792e81bdc5c8ca8ad7f0e37fff",
+    "console": "e5e263aeef7e6d8e20896f51a6606148a3572aa3a14bf4bf316348b52c7f14f3",
+    "countertop": "1187e949d37bff0c4a65d0bd685d7454a8ea0a257bf3c2e5a18559cd3f32ed29",
+    "display": "6aaeddbfb8e0be126731ad7c0f50a71cc4f13dcd86d177f0c2664176277ec37e",
+    "me_display": "1596213c1494785aed71e6b31d35e94f64ef18b75c1a84a9ddb72d9b5a31fb00",
+    "lamp": "66ac9e8c93b274d55711216a68b7a885ca8e3a5e6724531a0da0bf3b3d0f8426",
+    "port_lamp": "ecf7ab3bf964e12f6fdc1b767a01f5e3360e94776a36c03ca7ef75d9bc4e1cf8",
+    "starboard_lamp": "00ba03d3b494a409471bf8792cd4d985d416ee2c362072c6467f0c5532d07806"
+  },
+  "pixels": "Original authored NE01 textures; no Minecraft or manufacturer image pixels",
+  "status": "preview import, native whole-vessel acceptance pending"
+}

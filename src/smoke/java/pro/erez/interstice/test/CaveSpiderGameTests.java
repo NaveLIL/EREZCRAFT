@@ -16,6 +16,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.GoalSelector;
 import net.minecraft.world.entity.ambient.Bat;
@@ -115,7 +116,7 @@ public final class CaveSpiderGameTests {
 
     @GameTest(template="empty",batch="spider_ranged_geometry",timeoutTicks=100)
     public static void serverRangedAttackRequiresActualRangeAndUnobstructedSight(GameTestHelper h) {
-        corridor(h);var owner=spider(h,CaveRiftSpiderEntity.Variant.SPITTER,new BlockPos(3,2,5));owner.setNoAi(true);h.getLevel().addFreshEntity(owner);var prey=TestPlayers.create(h,new BlockPos(23,2,5),GameType.SURVIVAL);cleanup(h,owner,prey);
+        corridor(h);var owner=spider(h,CaveRiftSpiderEntity.Variant.SPITTER,new BlockPos(3,2,5));owner.setNoAi(true);owner.setYRot(-90);owner.yBodyRot=owner.yHeadRot=-90;h.getLevel().addFreshEntity(owner);var prey=TestPlayers.create(h,new BlockPos(23,2,5),GameType.SURVIVAL);cleanup(h,owner,prey);
         var bounds=new AABB(Vec3.atLowerCornerOf(h.absolutePos(new BlockPos(0,1,0))),Vec3.atLowerCornerOf(h.absolutePos(new BlockPos(26,8,10))));
         owner.performRangedAttack(prey,1);h.assertTrue(h.getLevel().getEntitiesOfClass(ToxinSpitEntity.class,bounds,e->e.getOwner()==owner).isEmpty(),"Out-of-range target received a server shot");
         var near=h.absolutePos(new BlockPos(10,2,5));prey.teleportTo(h.getLevel(),near.getX()+.5,near.getY(),near.getZ()+.5,Set.of(),0,0);prey.hasChangedDimension();
@@ -330,6 +331,7 @@ public final class CaveSpiderGameTests {
     public static void spiderAttackBypassesArmorAndDealsTrueDamage(GameTestHelper h) {
         var spider = new CaveRiftSpiderEntity(Interstice.CAVE_RIFT_SPIDER.get(), h.getLevel());
         spider.setVariant(CaveRiftSpiderEntity.Variant.SKIRMISHER); // 5.0 damage
+        spider.setNoAi(true);spider.setNoGravity(true);spider.moveTo(h.absoluteVec(new Vec3(3.5,2,3.5)));
         h.getLevel().addFreshEntity(spider);
 
         // Player 1: completely unarmored
@@ -349,7 +351,9 @@ public final class CaveSpiderGameTests {
                 armoredPlayer.invulnerableTime = 0;
 
                 // Attack both players
+                faceForDamageFixture(spider,nakedPlayer);
                 spider.doHurtTarget(nakedPlayer);
+                faceForDamageFixture(spider,armoredPlayer);
                 spider.doHurtTarget(armoredPlayer);
 
                 float damageToNaked = 20.0F - nakedPlayer.getHealth();
@@ -474,5 +478,10 @@ public final class CaveSpiderGameTests {
 
         TestPlayers.remove(player);
         h.succeed();
+    }
+
+    private static void faceForDamageFixture(CaveRiftSpiderEntity s,LivingEntity target){
+        Vec3 delta=target.position().subtract(s.position());float yaw=(float)Math.toDegrees(Math.atan2(-delta.x,delta.z));
+        s.setYRot(yaw);s.yBodyRot=s.yHeadRot=yaw;
     }
 }

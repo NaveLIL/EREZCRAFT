@@ -11,7 +11,7 @@ public final class ToxicFluidType extends FluidType {
     public ToxicFluidType(boolean light) {
         super(Properties.create().density(light ? -800 : 2400).viscosity(light ? 700 : 2400)
                 .lightLevel(light ? 15 : 0).canSwim(true).canDrown(false)
-                .canConvertToSource(false).canPushEntity(!light).supportsBoating(false));
+                .canConvertToSource(false).canPushEntity(!light).supportsBoating(!light));
         this.light = light;
     }
     @Override

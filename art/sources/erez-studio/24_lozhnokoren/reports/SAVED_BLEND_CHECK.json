@@ -1,0 +1,67 @@
+{
+  "saved_blend_opened": true,
+  "mesh_objects_match_source": true,
+  "uv_layers_present": true,
+  "flat_shading": true,
+  "cuboids": 357,
+  "packed_textures": [
+    {
+      "file": "source\\textures\\bark.png",
+      "packed_bytes_match": true
+    },
+    {
+      "file": "source\\textures\\dark_bark.png",
+      "packed_bytes_match": true
+    },
+    {
+      "file": "source\\textures\\joints.png",
+      "packed_bytes_match": true
+    },
+    {
+      "file": "source\\textures\\cut_wood.png",
+      "packed_bytes_match": true
+    },
+    {
+      "file": "source\\textures\\moss.png",
+      "packed_bytes_match": true
+    },
+    {
+      "file": "source\\textures\\horn.png",
+      "packed_bytes_match": true
+    },
+    {
+      "file": "source\\textures\\eyes.png",
+      "packed_bytes_match": true
+    }
+  ],
+  "moving_crawl_feet_out_of_20": 20,
+  "foot_travel_blocks": {
+    "segment_00_left_foot": 0.2556005909103722,
+    "segment_00_right_foot": 0.1760374268796222,
+    "segment_01_left_foot": 0.05997324782808501,
+    "segment_01_right_foot": 0.07729487459015583,
+    "segment_02_left_foot": 0.35382324081034916,
+    "segment_02_right_foot": 0.32573254344665153,
+    "segment_03_left_foot": 0.41839907677738464,
+    "segment_03_right_foot": 0.45762520285281216,
+    "segment_04_left_foot": 0.2795996350456957,
+    "segment_04_right_foot": 0.35166663243613183,
+    "segment_05_left_foot": 0.10563247324579615,
+    "segment_05_right_foot": 0.11238746002853141,
+    "segment_06_left_foot": 0.16699577785697947,
+    "segment_06_right_foot": 0.2527806431357192,
+    "segment_07_left_foot": 0.22874184431314581,
+    "segment_07_right_foot": 0.26845709983761323,
+    "segment_08_left_foot": 0.13557862557857003,
+    "segment_08_right_foot": 0.18044548214948497,
+    "segment_09_left_foot": 0.2535474745826851,
+    "segment_09_right_foot": 0.19695628124551967
+  },
+  "head_threat_travel_blocks": 0.13491898255817877,
+  "grasp_threat_travel_blocks": {
+    "left": 1.2043958796935381,
+    "right": 1.2043958796935381
+  },
+  "animation_checked_at_saved_scene_frames": true,
+  "native_game_verified": false
+}

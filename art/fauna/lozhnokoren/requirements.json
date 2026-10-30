@@ -1,0 +1,21 @@
+{
+  "revision": "LK01",
+  "user_request": "Имба, давай сначала нарисуем и создадим его, пауки например идеально встали))",
+  "character": "Ложнокорень / Lozhnokoren / False Root",
+  "design": "Root-mimicking segmented forest animal combining an armored centipede, velvet worm and fallen root; angular Minecraft-compatible form.",
+  "required_features": [
+    "Long segmented low body with overlapping bark carapace",
+    "Many short jointed walking legs",
+    "Exactly two large grasping forelimbs with opposing fingers",
+    "Small withdrawn head with tiny deep-set eyes",
+    "Root stubs, sparse moss and forked root-like tail",
+    "Dark bark, muted burgundy joints, olive moss and pale wood tips",
+    "Low-resolution ready-made verified CC0 textures with palette changes only",
+    "Editable source and independent idle/crawl/threat animation clips"
+  ],
+  "authoritative_geometry": "lozhnokoren_LK01.bbmodel",
+  "concept": "../references/lozhnokoren_concept_LK01.png",
+  "concept_mode": "Built-in imagegen, separate drawing reference; not used as a game texture",
+  "status": "First complete local design asset for owner review",
+  "registered_in_game": false
+}

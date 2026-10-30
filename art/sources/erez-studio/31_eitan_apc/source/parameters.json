@@ -1,0 +1,34 @@
+{
+  "revision": "E01-R7",
+  "length_m": 8.0,
+  "width_m": 3.0,
+  "nominal_height_m": 3.0,
+  "roof_z_m": 2.6,
+  "floor_z_m": 0.88,
+  "ceiling_z_m": 2.5,
+  "wheel_radius_m": 0.68,
+  "wheel_width_m": 0.4,
+  "wheel_x_m": 1.26,
+  "axles_y_m": [
+    -2.68,
+    -0.92,
+    0.84,
+    2.6
+  ],
+  "ramp_hinge_m": [
+    0,
+    3.27,
+    0.88
+  ],
+  "ramp_length_m": 1.62,
+  "ramp_width_m": 1.4,
+  "rear_shoulder_aft_y_m": 3.97,
+  "rear_shoulder_top_z_m": 2.77,
+  "rear_recess_status": "Photo-based adaptation: shoulders extend 0.70 m aft of the ramp hinge plane, about 0.59 m aft of the closed frame face. Estimated, not factory data.",
+  "ramp_tip_open_z_m": 0.005,
+  "troop_aisle_width_m": 1.1,
+  "unit_policy": "Model metres: 1 Blender unit = 1 m = 1 Minecraft block. Register measurements are mm.",
+  "height_scope": "Body, folded mirrors and compact RCWS envelope; flexible antennas excluded.",
+  "dimension_status": "8x3x3m is a working nominal target from the owner-linked public overview, not a detailed manufacturer drawing.",
+  "ramp_open_deg": 118.72311373330247
+}

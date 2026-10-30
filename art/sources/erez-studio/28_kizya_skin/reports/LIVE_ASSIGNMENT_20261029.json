@@ -1,0 +1,17 @@
+{
+  "assigned": true,
+  "utc": "2026-10-29T18:02:15.540888+00:00",
+  "name": "kizya",
+  "uuid": "f644c73e-3c3f-4bbd-83e5-074e8c552b31",
+  "revision": "PK02",
+  "variant": "slim",
+  "signed_public_profile": true,
+  "texture_url": "https://auth.erezcraft.com/textures/texture/skin/dff45c41b5dba627f827c8c081291a6de25c5e79379ef2333ac5a2eb2b694874",
+  "server_restarted": false,
+  "other_profiles_unchanged": true,
+  "cape_preserved": true,
+  "previous_skin_snapshot": "/opt/erezcraft/auth/data/skin-changes/kizya-PK02-20261029",
+  "delivered_pixels_match": true,
+  "source_sha256": "dff45c41b5dba627f827c8c081291a6de25c5e79379ef2333ac5a2eb2b694874",
+  "delivered_sha256": "dff45c41b5dba627f827c8c081291a6de25c5e79379ef2333ac5a2eb2b694874"
+}

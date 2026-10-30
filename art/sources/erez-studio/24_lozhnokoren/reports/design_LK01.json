@@ -1,0 +1,27 @@
+{
+  "revision": "LK01",
+  "authoritative_source": "D:\\repos\\Blender\\creations\\24_lozhnokoren\\source\\lozhnokoren_LK01.bbmodel",
+  "model_sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3",
+  "cuboids": 357,
+  "articulated_groups": 88,
+  "body_segments": 11,
+  "walking_leg_pairs": 10,
+  "grasping_forelimbs": 2,
+  "animation_clips": [
+    {
+      "name": "Idle",
+      "seconds": 2
+    },
+    {
+      "name": "Crawl",
+      "seconds": 2
+    },
+    {
+      "name": "Threat",
+      "seconds": 1.4
+    }
+  ],
+  "all_game_textures_16x16": true,
+  "registered_in_game": false,
+  "native_game_verified": false
+}

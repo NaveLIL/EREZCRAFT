@@ -1,0 +1,27 @@
+{
+  "revision": "BN01",
+  "blender_version": "5.2.2 LTS",
+  "native_blender_render": true,
+  "imagegen_used": false,
+  "resolution": [
+    3200,
+    1400
+  ],
+  "objects": 2115,
+  "editable_text_objects": 6,
+  "all_external_images_packed": true,
+  "logo_sha256": "940adeeb393ca9cd32e869149d8dd3289c7c9a0ac56de8fc16c8470646892139",
+  "ship_visible_geometry_frame_bounds": {
+    "minimum": [
+      0.5754765272140503,
+      0.057670168578624725
+    ],
+    "maximum": [
+      0.7609192132949829,
+      0.3756486475467682
+    ]
+  },
+  "future_entities_are_concept_geometry": true,
+  "published": false,
+  "game_verified": false
+}

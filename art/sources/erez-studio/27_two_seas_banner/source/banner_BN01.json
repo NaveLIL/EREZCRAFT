@@ -1,0 +1,21 @@
+{
+  "revision": "BN01",
+  "user_request_ru": "Уже целая экосистема вырисовывается)) Можешь в блендере сделать банер типа как анонс будущего обновления))",
+  "authoritative_scene_source": "tools/build_banner.py and this parameter file",
+  "medium": "Native Blender geometry, materials and editable typography. No imagegen or generated background plates.",
+  "title": ["ДВА", "МОРЯ"],
+  "brand": "EREZCRAFT / МЕЖДУМОРЬЕ",
+  "strapline": "ЭКСПЕДИЦИИ В НЕИЗВЕДАННОЕ",
+  "feature_line": "ЖИВЫЕ МОРЯ  /  НОВАЯ ФАУНА  /  НОВЫЙ ТРАНСПОРТ",
+  "status_line": "КОНЦЕПТ БУДУЩЕГО ОБНОВЛЕНИЯ",
+  "resolution": [3200,1400],
+  "sources": {
+    "skat": "D:/repos/Blender/creations/25_skat/assembly/skat_SK02.blend",
+    "ocean": "D:/repos/Blender/creations/26_lower_ocean/assembly/lower_ocean_OC01.blend",
+    "emblem": "D:/repos/Minecraft/EREZCRAFT/art/branding/v1/erezcraft-emblem.png"
+  },
+  "new_concept_geometry": ["upper-sea hanging jellyfish", "suspended Strizh survey craft", "lower-sea Plastun back and fins", "small upper-sea swimmers", "floating rock islands"],
+  "meaning": "Future-update teaser. All newly illustrated wildlife and the Strizh are concept-stage art, not implemented game entities.",
+  "game_or_server_modified": false,
+  "published": false
+}

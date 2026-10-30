@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "project_id": "32_nordhavn_expedition",
+  "revision": "NE01-A06",
+  "level": "engineering",
+  "ready": false,
+  "blockers": [
+    "GAME-SEAMS: missing",
+    "SEA-SPEED: missing",
+    "LIVE-NAV: missing",
+    "Open risks: RUNTIME-OPEN"
+  ],
+  "requirements": [
+    {
+      "id": "TOPOLOGY",
+      "text": "Evaluated source solids are manifold",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "INSPECTION-A06",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "FACE-AREA",
+      "text": "No zero-area mesh faces",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "INSPECTION-A06",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "WINDOWS",
+      "text": "Sampled window edges and glass panes have a near shell hit",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "INSPECTION-A06",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "ROUTES",
+      "text": "Static 0.60m body / 2.20m headroom samples pass in the model, with explicit stepping allowance",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "INSPECTION-A06",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "BERTHS",
+      "text": "Ten authored berth positions; not Minecraft sleeping acceptance",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "INSPECTION-A06",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "TERMINALS",
+      "text": "Six reserved terminal positions; no working network claimed",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "INSPECTION-A06",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "MATERIALS",
+      "text": "Nineteen original custom material textures, no third-party pixels",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "INSPECTION-A06",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "LAYER-SPLIT",
+      "text": "Render cells keep opaque paint and transparent glazing separate",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "INSPECTION-A06",
+          "status": "pass",
+          "reason": "Exact categorical comparison"
+        }
+      ]
+    },
+    {
+      "id": "EXPORT-SEAMS",
+      "text": "Cell boundary positions snap to exact 0/1 after serialization",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "INSPECTION-A06",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "GAME-WALK",
+      "text": "Four full-client stair routes without flight, grounded at each upper landing",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "NATIVE-A06",
+          "status": "pass",
+          "reason": "Exact categorical comparison"
+        }
+      ]
+    },
+    {
+      "id": "ME-COLD",
+      "text": "Real powered AE2 network survives controlled body relocation and clean cold reload",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "NATIVE-A06",
+          "status": "pass",
+          "reason": "Exact categorical comparison"
+        }
+      ]
+    },
+    {
+      "id": "GAME-SEAMS",
+      "text": "No exterior sky cracks after actual Minecraft export and rendering",
+      "required": true,
+      "status": "missing",
+      "attempts": []
+    },
+    {
+      "id": "SEA-SPEED",
+      "text": "Measured actual sea propulsion reaches at least 50 km/h",
+      "required": true,
+      "status": "missing",
+      "attempts": []
+    },
+    {
+      "id": "LIVE-NAV",
+      "text": "Bridge navigation displays show real server data in EREZ UI",
+      "required": true,
+      "status": "missing",
+      "attempts": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "INSPECTION-A06",
+      "usable": true,
+      "reasons": []
+    },
+    {
+      "id": "NATIVE-A06",
+      "usable": true,
+      "reasons": []
+    }
+  ],
+  "manufacturing_profile": "fdm_unqualified",
+  "basis_sha256": "88ce140e4f6a0bd386c3869629db11c260be7f07a9217ad087842f8223caebff",
+  "tool_sha256": "f827ee741f4643bd11ddd5caeb986c88ac7460b7934256d5dcf5cbffb069279e",
+  "generated_at": "2026-10-29T15:46:34+00:00",
+  "scope": "Local evidence consistency gate; no certification, independent review, or authenticity guarantee"
+}

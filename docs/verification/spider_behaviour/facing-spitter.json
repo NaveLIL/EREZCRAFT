@@ -1,0 +1,46 @@
+{
+  "variant": "SPITTER",
+  "combat_kind": "RANGED",
+  "live_ai": true,
+  "target_injected": false,
+  "attacks_called_by_fixture": false,
+  "position_and_orientation_pinned_for_diagnostic": true,
+  "front_hits": 1,
+  "side_hits": 1,
+  "rear_hits": 2,
+  "front_only_contract_passed": false,
+  "impacts": [
+    {
+      "tick": 7,
+      "position": "FRONT",
+      "body_yaw": 0.0,
+      "head_yaw": -10.0,
+      "forward_dot_target": 1.0,
+      "damage": 3.0
+    },
+    {
+      "tick": 45,
+      "position": "SIDE",
+      "body_yaw": 10.0,
+      "head_yaw": 10.0,
+      "forward_dot_target": -0.17364817766693033,
+      "damage": 3.0
+    },
+    {
+      "tick": 83,
+      "position": "REAR",
+      "body_yaw": 10.0,
+      "head_yaw": 10.0,
+      "forward_dot_target": -0.984807753012208,
+      "damage": 3.0
+    },
+    {
+      "tick": 121,
+      "position": "REAR",
+      "body_yaw": 0.0,
+      "head_yaw": 0.0,
+      "forward_dot_target": -1.0,
+      "damage": 3.0
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+{
+  "revision": "NE01-A05",
+  "geometry_sha256": "1302b87854b8e968047928a20a2ce38128d40e21a6c346b128eb28bb4fcae057",
+  "assembly_sha256": "9c6c87e5cfeb78ffef81a3955de28a92584dc99ca1243785615d3d6653a44935",
+  "runtime_sha256": "899628f5e4971bc83712ab505ba3955f81f17a0e2d2d43aa3aa9bbaf89fd3261",
+  "scope": "Six real AE2 addon terminal hosts, two native DriveBlockEntity subclasses, finite fuel/power, native player rays and native quick-move packet; paused Sable body controlled 40m displacement, create and clean cold reload.",
+  "records": {
+    "create": {
+      "mode": "create",
+      "started_utc": "2026-10-29T14:18:17.702666400Z",
+      "dh_loaded": true,
+      "controlled_paused_body_not_propulsion": true,
+      "two_real_clients": false,
+      "native_ae2_addon_hosts": true,
+      "phase": 12,
+      "owner_profile_used": false,
+      "native_menus": [
+        {
+          "index": 0,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 1,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 2,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 3,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 4,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 5,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 0,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 1,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 2,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 3,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 4,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 5,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        }
+      ],
+      "ship_uuid": "3609b63d-ed49-4b4a-890f-6c6337a55fdd",
+      "grid_diagnostics": {
+        "server_tick": 1853,
+        "ready_at": 193,
+        "generator_energy": 13413.75,
+        "generator_burn": 1,
+        "generator_fuel": 63,
+        "generator_ticks": 1599,
+        "core_ready": true,
+        "core_powered": true,
+        "core_booted": true,
+        "core_connections": 8,
+        "terminals": [
+          {
+            "position": "-2, 8, 2",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-1, 5, -9",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-2, 5, -8",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-2, 5, 0",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-1, 2, 3",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-2, 2, 0",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          }
+        ]
+      },
+      "six_terminals_same_grid": true,
+      "diamonds": 336,
+      "gold_ingots": 64,
+      "finite_power_ae": 17829.3125,
+      "native_shift_click_insertion": true,
+      "controlled_move_distance": 40.0,
+      "offline_count_source": "native AE2 cells",
+      "induced_battery_drain": true,
+      "power_loss_preserved_items": true,
+      "offline_native_transfer_rejected": true,
+      "native_menu_opens": 12,
+      "finite_fuel_remaining": 63,
+      "generator_burn_ticks": 1,
+      "stored_energy_ae": 13413.75,
+      "chunk_settlement": {
+        "purpose": "NE01 full ME final save",
+        "server_tick": 1873,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1937,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "sable_virtual_storage_holders": 7,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      },
+      "passed": true,
+      "error": "",
+      "process_exit_code": 0
+    },
+    "reload": {
+      "mode": "reload",
+      "started_utc": "2026-10-29T14:25:15.676374Z",
+      "dh_loaded": true,
+      "controlled_paused_body_not_propulsion": true,
+      "two_real_clients": false,
+      "native_ae2_addon_hosts": true,
+      "phase": 12,
+      "owner_profile_used": false,
+      "native_menus": [
+        {
+          "index": 0,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 1,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 2,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 3,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 4,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 5,
+          "round": 0,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 0,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 1,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 2,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 3,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 4,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        },
+        {
+          "index": 5,
+          "round": 1,
+          "screen": "appeng.client.gui.me.common.MEStorageScreen",
+          "player_ray_picked_native_cell": true
+        }
+      ],
+      "ship_uuid": "3609b63d-ed49-4b4a-890f-6c6337a55fdd",
+      "grid_diagnostics": {
+        "server_tick": 3675,
+        "ready_at": 2055,
+        "generator_energy": 13413.75,
+        "generator_burn": 2,
+        "generator_fuel": 62,
+        "generator_ticks": 3198,
+        "core_ready": true,
+        "core_powered": true,
+        "core_booted": true,
+        "core_connections": 8,
+        "terminals": [
+          {
+            "position": "-2, 8, 2",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-1, 5, -9",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-2, 5, -8",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-2, 5, 0",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-1, 2, 3",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          },
+          {
+            "position": "-2, 2, 0",
+            "ready": true,
+            "active": true,
+            "powered": true,
+            "booted": true
+          }
+        ]
+      },
+      "six_terminals_same_grid": true,
+      "diamonds": 336,
+      "gold_ingots": 64,
+      "finite_power_ae": 35682.65625,
+      "controlled_move_distance": 40.0,
+      "offline_count_source": "native AE2 cells",
+      "induced_battery_drain": true,
+      "power_loss_preserved_items": true,
+      "offline_native_transfer_rejected": true,
+      "native_menu_opens": 12,
+      "finite_fuel_remaining": 62,
+      "generator_burn_ticks": 2,
+      "stored_energy_ae": 13413.75,
+      "chunk_settlement": {
+        "purpose": "NE01 full ME final save",
+        "server_tick": 3695,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1937,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "sable_virtual_storage_holders": 7,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      },
+      "passed": true,
+      "error": "",
+      "process_exit_code": 0
+    }
+  },
+  "dependency_sha256": {
+    "appliedenergistics2-19.2.18.jar": "df15a07f86ca1ca93aa66373f9d5d84dd3d4586631fceb38f4fbc85dad591e39",
+    "sable-neoforge-1.21.1-2.0.6.jar": "9c199157843bf953a47dff625fc5bb41c01a90538d35ad18e6996bbcb8a617c2"
+  },
+  "copied_artifact_sha256": {
+    "marine-fullme-create.json": "0f06e251b9bcaa8c4227db6131784fffccfc35be6f6cd0730f858b74dcc7dc10",
+    "ne01-fullme-create-terminal-0-0.png": "a786674dbfd0b4bad881a2fb111fd1cd2239292ecfd9ea9a41425822ca9559b7",
+    "ne01-fullme-create-terminal-0-1.png": "4ef861b07acf67f5969fb504b90d313f323d0661d5f349c4be799dbf80138a9a",
+    "ne01-fullme-create-terminal-0-2.png": "7c9b017da2fa883e5e1f9916755bfb35a2ffb4ed3efbafd4a1cdf7e8b7146d9e",
+    "ne01-fullme-create-terminal-0-3.png": "8fb3dcef229313f02ef2e76acce462555af3a11ac98d94b9c32f2859cb64f0b4",
+    "ne01-fullme-create-terminal-0-4.png": "6ff781a8434e0606c54d402554ed522cf2135bc45765ac8f493d2907f83f9ea6",
+    "ne01-fullme-create-terminal-0-5.png": "0393498622f08c99c96802074bc7da050f54348890f9aa9f5db84c9efca0766e",
+    "ne01-fullme-create-terminal-1-0.png": "8fa69e67d8998609530ac6ecc7947b403203f1b56328b4a25332a3c6352c221e",
+    "ne01-fullme-create-terminal-1-1.png": "815c649782c1657840a829b71d75ea27bb999616cd332e81a6ca4327cdb74f92",
+    "ne01-fullme-create-terminal-1-2.png": "0e69cfe2cfcc1a3772557e89b3fd353650e461206c73bcaf7f69ad63b160e75b",
+    "ne01-fullme-create-terminal-1-3.png": "447490bad9c0cf4b72523ef1a85ef32e6a0a17811ce392a1e063f41f3abcd08b",
+    "ne01-fullme-create-terminal-1-4.png": "8c5168f7b1ebc6c25d04d3c97be5d52713a0f8d804ad27035f64420ebf95066d",
+    "ne01-fullme-create-terminal-1-5.png": "978ed26e0c8de7c2dd11018ccec3b007cd5f5f981142acf0c47dd437e3331804",
+    "marine-fullme-reload.json": "0fc44ade85e6202bd4be00ebdd362f4bfe56ae631ddd4c21e99fd72ac0a170a9",
+    "ne01-fullme-reload-terminal-0-0.png": "59615c050af04536b08e521acdac124d523d9974a760fdd39c732f1a4584f0b8",
+    "ne01-fullme-reload-terminal-0-1.png": "5fa8c146febee428b831028822c6c61b466bcd8025769353ba07537739826dad",
+    "ne01-fullme-reload-terminal-0-2.png": "f30f849fdb99033950e358a2d74e786901912eab7fe7e43c07fd60419dbfcb14",
+    "ne01-fullme-reload-terminal-0-3.png": "7dddb99076fd10472a681ab78e37c109fc280869f3264916db8965044986a3c3",
+    "ne01-fullme-reload-terminal-0-4.png": "5b317511d2f93e496fb8ab899d7ae223e6da90627b0110f501c886f0123a6874",
+    "ne01-fullme-reload-terminal-0-5.png": "f280bee3a5105d66c1f40c2e2832b4e035759b8459030a2395af41822e7e0310",
+    "ne01-fullme-reload-terminal-1-0.png": "16d6755cfb1ea9111d177012d98589cdeeffdbede7ec9454992aa7db08b23eb2",
+    "ne01-fullme-reload-terminal-1-1.png": "3cd006c0b37a694515a42afa3fe05c9334672eaed05444a64dc4aa673e5be8e8",
+    "ne01-fullme-reload-terminal-1-2.png": "db9c679d34202f3be53dcf1c223b8eb4031bc1e1fd33197de639086e5ceacd19",
+    "ne01-fullme-reload-terminal-1-3.png": "45c25420b4d4bcc6b83d52fc574e41de761ed4388173f69da7cec0b84c816eb5",
+    "ne01-fullme-reload-terminal-1-4.png": "878411222353f135690da5caa9777a2d0dbfc936af64dd796ad637c23ce01c4f",
+    "ne01-fullme-reload-terminal-1-5.png": "0ff47e7c403b7fa8a64140b58ae19a1906c49ba162e14970fc93301e5302e889"
+  },
+  "attempts": [
+    {
+      "profile": "ne01m01",
+      "result": "Early network assertion after client ticks; added actual server-tick boot wait."
+    },
+    {
+      "profile": "ne01m02",
+      "result": "Missing drive links and storage-power notification; fixed using the pinned AE2 node interface and power event API."
+    },
+    {
+      "profile": "ne01m03",
+      "result": "Five screens worked; sixth crossed render cells. Added complete-screen routing to one authoritative host."
+    },
+    {
+      "profile": "ne01m04",
+      "result": "Create and cold reload passed, clean exits 0, 24 total native menu opens."
+    }
+  ],
+  "limitations": [
+    "No two-client/concurrent multiplayer proof.",
+    "No sailing speed or propulsion acceptance in this fixture.",
+    "Off-grid hidden wiring loom uses actual AE2 connections; it is a custom ship backplane, not a run of visible cable blocks.",
+    "Fuel is a Minecraft solid-fuel adaptation, not a real diesel thermodynamic model."
+  ]
+}

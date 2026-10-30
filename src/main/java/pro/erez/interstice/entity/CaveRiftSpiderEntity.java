@@ -68,6 +68,12 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
     private static final EntityDataAccessor<Float> CRAWL_FORWARD_X=SynchedEntityData.defineId(CaveRiftSpiderEntity.class,EntityDataSerializers.FLOAT),
             CRAWL_FORWARD_Y=SynchedEntityData.defineId(CaveRiftSpiderEntity.class,EntityDataSerializers.FLOAT),
             CRAWL_FORWARD_Z=SynchedEntityData.defineId(CaveRiftSpiderEntity.class,EntityDataSerializers.FLOAT);
+    private static final EntityDataAccessor<Float> ATTACK_FORWARD_X=SynchedEntityData.defineId(CaveRiftSpiderEntity.class,EntityDataSerializers.FLOAT),
+            ATTACK_FORWARD_Y=SynchedEntityData.defineId(CaveRiftSpiderEntity.class,EntityDataSerializers.FLOAT),
+            ATTACK_FORWARD_Z=SynchedEntityData.defineId(CaveRiftSpiderEntity.class,EntityDataSerializers.FLOAT);
+    private Vec3 visualAttackForward=new Vec3(0,0,1),previousVisualAttackForward=visualAttackForward;
+    private boolean visualAttackActive;
+    private int attackAlignedTicks;
     private java.util.List<SpiderSurfacePath.Step> surfacePath = java.util.List.of();
     private int surfaceStep, detachTicks, nextSurfacePlan, nextSurfaceSpitAttempt, nextSpitTick;
     private Vec3 surfaceGoal;
@@ -213,6 +219,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         builder.define(DATA_VARIANT, (byte) Variant.SKIRMISHER.id);
         builder.define(DATA_SURFACE, (byte) Direction.DOWN.get3DDataValue());
         builder.define(CRAWL_FORWARD_X,0F);builder.define(CRAWL_FORWARD_Y,0F);builder.define(CRAWL_FORWARD_Z,1F);
+        builder.define(ATTACK_FORWARD_X,0F);builder.define(ATTACK_FORWARD_Y,0F);builder.define(ATTACK_FORWARD_Z,1F);
     }
 
     public Variant getVariant() {
@@ -277,7 +284,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
             SpiderBrain.burstStarted(this);
             this.burstTicks = 160; // 8 seconds burst sprint
             this.setBursting(true);
-            this.playSound(SoundEvents.SPIDER_HURT, 1.3F, 1.6F);
+            this.playSound(SoundEvents.SPIDER_HURT, 0.15F, 1.6F);
             if (this.getTarget() != null) {
                 performAmbushLunge(this.getTarget());
             }
@@ -297,7 +304,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         this.hasImpulse = true;
 
         this.getNavigation().moveTo(target, 1.35);
-        this.playSound(SoundEvents.SPIDER_HURT, 1.1F, 1.4F);
+        this.playSound(SoundEvents.SPIDER_HURT, 0.15F, 1.4F);
 
         if (this.level() instanceof ServerLevel serverLevel) {
             serverLevel.sendParticles(ParticleTypes.SWEEP_ATTACK,
@@ -318,12 +325,60 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
     @Override public BrainActivityGroup<CaveRiftSpiderEntity> getCoreTasks(){return SpiderBrain.core();}
     @Override public BrainActivityGroup<CaveRiftSpiderEntity> getIdleTasks(){return SpiderBrain.idle();}
     @Override public BrainActivityGroup<CaveRiftSpiderEntity> getFightTasks(){return SpiderBrain.fight();}
-    @Override protected void customServerAiStep(){super.customServerAiStep();tickBrain(this);}
+    @Override protected void customServerAiStep(){super.customServerAiStep();updateAttackFacing();tickBrain(this);}
     @Override public LivingEntity getTarget(){return getBrain().getMemory(MemoryModuleType.ATTACK_TARGET).orElse(null);}
     public String combatTactic(){return SpiderBrain.tactic(this);}
     public int spitCooldownRemaining(){return Math.max(0,nextSpitTick-tickCount);}
     @Override public boolean isWallCrawling(){return isClimbingWall()||isClimbingCeiling();}
     @Override public void setWallCrawling(boolean value){if(!value)attach(Direction.DOWN);else crawlGrace=4;}
+
+    /** The rigid mouth faces with the body, not the vanilla independently rotating head. */
+    public boolean isAttackAiming(){return (entityData.get(DATA_FLAGS)&8)!=0;}
+    private void setAttackAiming(boolean value){byte flags=entityData.get(DATA_FLAGS);entityData.set(DATA_FLAGS,value?(byte)(flags|8):(byte)(flags&~8));}
+    private Vec3 attackNormal(){return Vec3.atLowerCornerOf(getSurface().getOpposite().getNormal());}
+    private static Vec3 tangent(Vec3 v,Vec3 normal){return v.subtract(normal.scale(v.dot(normal)));}
+    private Vec3 bodyForward(){
+        if(getSurface()!=Direction.DOWN||previousSurface!=Direction.DOWN)return getCrawlForward();
+        double yaw=Math.toRadians(yBodyRot);return new Vec3(-Math.sin(yaw),0,Math.cos(yaw));
+    }
+    public Vec3 getAttackForward(){return isAttackAiming()?new Vec3(entityData.get(ATTACK_FORWARD_X),entityData.get(ATTACK_FORWARD_Y),entityData.get(ATTACK_FORWARD_Z)):bodyForward();}
+    public Vec3 getVisualAttackForward(float partial){return previousVisualAttackForward.lerp(visualAttackForward,partial).normalize();}
+    public double attackAlignment(LivingEntity target){
+        if(target==null)return -1;Vec3 normal=attackNormal();
+        Vec3 to=tangent(target.getBoundingBox().getCenter().subtract(getBoundingBox().getCenter()),normal);
+        Vec3 forward=tangent(getAttackForward(),normal);
+        return to.lengthSqr()<.000001||forward.lengthSqr()<.000001?-1:to.normalize().dot(forward.normalize());
+    }
+    public boolean isFacingAttackTarget(LivingEntity target){
+        return surfaceTransition>=1&&attackAlignment(target)>=Math.cos(Math.toRadians(45))
+                &&(!isAttackAiming()||attackAlignedTicks>=3);
+    }
+    private static Vec3 turnInPlane(Vec3 from,Vec3 to,Vec3 normal,double limit){
+        from=tangent(from,normal);to=tangent(to,normal);
+        if(to.lengthSqr()<.000001)return from.normalize();
+        if(from.lengthSqr()<.000001)from=tangent(Math.abs(normal.y)<.5?new Vec3(0,1,0):new Vec3(0,0,1),normal);
+        from=from.normalize();to=to.normalize();double angle=Math.atan2(normal.dot(from.cross(to)),from.dot(to));
+        double step=Math.max(-limit,Math.min(limit,angle));return from.scale(Math.cos(step)).add(normal.cross(from).scale(Math.sin(step))).normalize();
+    }
+    private void updateAttackFacing(){
+        LivingEntity target=getTarget();
+        if(!isAlive()||isNoAi()||!SpiderBrain.eligible(this,target)||target.isInvisible()||!getSensing().hasLineOfSight(target)){
+            setAttackAiming(false);attackAlignedTicks=0;return;
+        }
+        Vec3 normal=attackNormal(),desired=tangent(target.getBoundingBox().getCenter().subtract(getBoundingBox().getCenter()),normal);
+        if(desired.lengthSqr()<.000001){setAttackAiming(false);attackAlignedTicks=0;return;}
+        Vec3 facing=turnInPlane(getAttackForward(),desired,normal,Math.toRadians(18));
+        entityData.set(ATTACK_FORWARD_X,(float)facing.x);entityData.set(ATTACK_FORWARD_Y,(float)facing.y);entityData.set(ATTACK_FORWARD_Z,(float)facing.z);setAttackAiming(true);
+        attackAlignedTicks=surfaceTransition>=1&&facing.dot(desired.normalize())>=Math.cos(Math.toRadians(10))?attackAlignedTicks+1:0;
+    }
+    private void updateVisualAttackFacing(){
+        if(!level().isClientSide)return;
+        if(isAttackAiming()&&!visualAttackActive)visualAttackForward=bodyForward();
+        previousVisualAttackForward=visualAttackForward;
+        visualAttackForward=isAttackAiming()?turnInPlane(visualAttackForward,getAttackForward(),attackNormal(),Math.toRadians(18)):bodyForward();
+        visualAttackActive=isAttackAiming();
+    }
+
     @Override public int getWallCrawlGraceTicks(){return crawlGrace;}
     @Override public void setWallCrawlGraceTicks(int value){crawlGrace=value;}
     @Override public Vec3 getCrawlForward(){return new Vec3(entityData.get(CRAWL_FORWARD_X),entityData.get(CRAWL_FORWARD_Y),entityData.get(CRAWL_FORWARD_Z));}
@@ -449,6 +504,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
 
     @Override
     public void tick() {
+        updateVisualAttackFacing();
         oldCrawlForward=getCrawlForward();
         if(crawlGrace>0)crawlGrace--;
         fitResizedBody();
@@ -461,6 +517,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
             this.idleAnimationState.startIfStopped(this.tickCount);
         } else {
             if(!isAlive()||isNoAi()){
+                setAttackAiming(false);attackAlignedTicks=0;
                 if(!brainPaused){getBrain().stopAll((ServerLevel)level(),this);getNavigation().stop();surfacePath=java.util.List.of();brainPaused=true;}
             }else brainPaused=false;
             // Burst timer countdown & dynamic lunges during burst
@@ -474,6 +531,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
 
     @Override
     public boolean doHurtTarget(Entity target) {
+        if(!(target instanceof LivingEntity livingTarget)||!isFacingAttackTarget(livingTarget))return false;
         float damage = (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE);
         if (this.level() instanceof ServerLevel serverLevel) {
             DamageSource source = new DamageSource(
@@ -496,7 +554,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
                 }
                 EnchantmentHelper.doPostAttackEffects(serverLevel, target, source);
                 this.setLastHurtMob(target);
-                this.playSound(SoundEvents.SPIDER_HURT, 1.0F, 1.2F);
+                this.playSound(SoundEvents.SPIDER_HURT, 0.15F, 1.2F);
             }
             return hurt;
         }
@@ -508,12 +566,13 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
         if (tickCount < nextSpitTick || !(this.level() instanceof ServerLevel) || this.getVariant() != Variant.SPITTER
                 || target == null || !target.isAlive() || target.isRemoved() || target.level() != this.level()
                 || target instanceof CaveRiftSpiderEntity || !this.canAttack(target)
-                || this.distanceToSqr(target) > 14.0 * 14.0 || !this.getSensing().hasLineOfSight(target)) return;
+                || this.distanceToSqr(target) > 14.0 * 14.0 || !this.getSensing().hasLineOfSight(target)
+                || !isFacingAttackTarget(target)) return;
         ToxinSpitEntity spit = new ToxinSpitEntity(this.level(), this, 0, 0, 0);
         if (!spit.aimAt(target.getBoundingBox().getCenter())) return;
         this.level().addFreshEntity(spit);
         nextSpitTick = tickCount + 38;
-        this.playSound(SoundEvents.LLAMA_SPIT, 1.0F, 1.4F);
+        this.playSound(SoundEvents.LLAMA_SPIT, 0.15F, 1.4F);
     }
 
     @Override
@@ -600,8 +659,11 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.SPIDER_AMBIENT;
+        // No continuous vanilla monster chatter during the still ambush/rest state.
+        return null;
     }
+
+    @Override protected float getSoundVolume() { return 0.15F; }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
@@ -615,7 +677,7 @@ public final class CaveRiftSpiderEntity extends Monster implements RangedAttackM
 
     @Override
     protected void playStepSound(BlockPos pos, net.minecraft.world.level.block.state.BlockState state) {
-        this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
+        this.playSound(SoundEvents.SPIDER_STEP, 0.015F, 1.0F);
     }
 
 }

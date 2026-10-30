@@ -1,0 +1,13 @@
+{
+  "vessel": "Mikan",
+  "revision": "MC01",
+  "horn": {
+    "sound": "meow",
+    "owner_approved": true,
+    "required_for_game_integration": true,
+    "owner_instruction_ru": "На гудок мяу это прям закрепить надо 😆",
+    "status": "approved_requirement_not_implemented",
+    "audio_asset": null,
+    "minecraft_registered": false
+  }
+}

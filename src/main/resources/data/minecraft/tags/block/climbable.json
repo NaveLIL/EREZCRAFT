@@ -1,6 +1,1 @@
-{
-  "replace": false,
-  "values": [
-    "interstice:pale_vine"
-  ]
-}
+{"replace":false,"values":[{"id":"interstice:skat_boarding","required":false}]}

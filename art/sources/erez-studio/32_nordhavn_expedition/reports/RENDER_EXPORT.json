@@ -1,0 +1,17 @@
+{
+  "revision": "NE01-A06",
+  "geometry_sha256": "525402529f2f2747b66b3465f9ad0f9073bf8b943b90a25e6b545064f09a4ae6",
+  "assembly_sha256": "dfec079317b04cb897ed6970c3886e1a51fd49d1eae74e3445f5a0b8cea4f853",
+  "source_meshes": 909,
+  "cells": 1625,
+  "opaque_quads": 89702,
+  "glass_quads": 2444,
+  "mixed_cells": 183,
+  "moving_groups": 22,
+  "collapsed_slivers_discarded": 156,
+  "max_float32_reconstruction_error_m": 9.5367431640625e-07,
+  "boundary_snap_violations": [],
+  "opaque_and_glass_separate": true,
+  "runtime_registered": false,
+  "collision_accepted": false
+}

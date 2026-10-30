@@ -1,0 +1,1023 @@
+{
+  "design": "LS04",
+  "baseline": "LS03",
+  "source": "D:\\repos\\Blender\\creations\\23_lurker_spider\\source\\lurker_LS03.bbmodel",
+  "geometry_identical_to_LS03": true,
+  "eyes_positions_identical": true,
+  "groups_identical": true,
+  "animations_identical": true,
+  "uv_identical": true,
+  "leg_lengths_all_preserved": true,
+  "leg_lengths": [
+    {
+      "part": "left_first_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg2",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_first_leg2",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_first_leg3",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg3",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_first_leg4",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg4",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_second_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_second_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_left_fourth_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.1000000000000005,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.1000000000000005,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_third_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_third_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg4",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_leftfourth_leg2",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_leftfourth_leg",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_left_fourth_leg",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg2",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg3",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_third_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_second_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_third_leg3",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_second_leg3",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_third_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_second_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_second_leg3",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_third_leg3",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_second_leg4",
+      "factor": 1.12,
+      "axis": 2,
+      "length": 16,
+      "width_before": 1.8499999999999999,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_third_leg4",
+      "factor": 1.12,
+      "axis": 2,
+      "length": 16,
+      "width_before": 1.8499999999999996,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_second_leg4",
+      "factor": 1.12,
+      "axis": 2,
+      "length": 16,
+      "width_before": 1.8499999999999999,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_third_leg4",
+      "factor": 1.12,
+      "axis": 2,
+      "length": 16,
+      "width_before": 1.8499999999999996,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_first_leg5",
+      "factor": 1.12,
+      "axis": 0,
+      "length": 16,
+      "width_before": 1.8500000000000014,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg5",
+      "factor": 1.12,
+      "axis": 0,
+      "length": 16,
+      "width_before": 1.8500000000000014,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_leftfourth_leg3",
+      "factor": 1.12,
+      "axis": 0,
+      "length": 16,
+      "width_before": 1.8500000000000014,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg5",
+      "factor": 1.12,
+      "axis": 0,
+      "length": 16,
+      "width_before": 1.8500000000000014,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    }
+  ],
+  "prototype_cubes": 309,
+  "texture_bytes_identical": false,
+  "texture_alpha_and_size_identical": true,
+  "palette_reference": "User photograph 2-36816.jpg: dark body, copper/orange knee markings",
+  "original_palette": [
+    [
+      67,
+      78,
+      85
+    ],
+    [
+      70,
+      82,
+      89
+    ],
+    [
+      75,
+      87,
+      95
+    ],
+    [
+      105,
+      131,
+      153
+    ],
+    [
+      112,
+      140,
+      162
+    ]
+  ],
+  "palettes": {
+    "legs": [
+      "161316",
+      "201b1c",
+      "2c2322",
+      "3c2d25",
+      "4c382b"
+    ],
+    "abdomen": [
+      "1b1716",
+      "241d19",
+      "30241e",
+      "403027",
+      "584034"
+    ],
+    "carapace": [
+      "33241c",
+      "453024",
+      "5a3d2b",
+      "735036",
+      "8a6344"
+    ],
+    "knee": [
+      "744023",
+      "99512a",
+      "b76c35",
+      "d58b45",
+      "e2aa60"
+    ],
+    "hair": [
+      "423024",
+      "5c4030",
+      "79563b",
+      "a4774f",
+      "bb9161"
+    ],
+    "eyes": [
+      "080909",
+      "0c0d0c",
+      "111211",
+      "181916",
+      "28251d"
+    ],
+    "fangs": [
+      "0d0d0e",
+      "141314",
+      "1e1b1a",
+      "29231f",
+      "3a3027"
+    ]
+  },
+  "textures": [
+    {
+      "file": "lurker_LS04_carapace.png",
+      "role": "carapace",
+      "copper_texel_count": 0,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "1c69d2f80ef555aa64c31e44f1c1fb57ce06764a2e8b4e2c30cdbb4bef13e94a"
+    },
+    {
+      "file": "lurker_LS04_abdomen.png",
+      "role": "abdomen",
+      "copper_texel_count": 0,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "888ae809a178b74315bf3f36a5bafd708fe8aa27fb66768271db80b2a82040f4"
+    },
+    {
+      "file": "lurker_LS04_legs.png",
+      "role": "legs",
+      "copper_texel_count": 0,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "ba74cfbd148a715f2159114e4a5715d194ae49d85db895b1ea2700d709cd5e0e"
+    },
+    {
+      "file": "lurker_LS04_knee_b8a07280.png",
+      "role": "legs",
+      "copper_texel_count": 68,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "1e32a74c56ed84321b9d6617586921e6d32271131440f826716bed32315c5de8"
+    },
+    {
+      "file": "lurker_LS04_knee_db61b267.png",
+      "role": "legs",
+      "copper_texel_count": 68,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "1e32a74c56ed84321b9d6617586921e6d32271131440f826716bed32315c5de8"
+    },
+    {
+      "file": "lurker_LS04_knee_a6aaeebf.png",
+      "role": "legs",
+      "copper_texel_count": 4,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "a06ae8fb500b39b6e9b80e98b65a88d29e0c29ce6c4096dab61bf6d3c790b4e0"
+    },
+    {
+      "file": "lurker_LS04_knee_afdcf1ac.png",
+      "role": "legs",
+      "copper_texel_count": 4,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "a06ae8fb500b39b6e9b80e98b65a88d29e0c29ce6c4096dab61bf6d3c790b4e0"
+    },
+    {
+      "file": "lurker_LS04_knee_ba6d967a.png",
+      "role": "legs",
+      "copper_texel_count": 4,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "bc3bb2730444006f23a44b21edd776fb9078d5b723c2475fa325f7804ab434d5"
+    },
+    {
+      "file": "lurker_LS04_knee_23396947.png",
+      "role": "legs",
+      "copper_texel_count": 68,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "6f2042b70c4bf27567bccfb075edc51ecc8caedefb923dbc937bfbe4e749465f"
+    },
+    {
+      "file": "lurker_LS04_knee_b86ffb08.png",
+      "role": "legs",
+      "copper_texel_count": 68,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "6f2042b70c4bf27567bccfb075edc51ecc8caedefb923dbc937bfbe4e749465f"
+    },
+    {
+      "file": "lurker_LS04_knee_d9200491.png",
+      "role": "legs",
+      "copper_texel_count": 4,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "bc3bb2730444006f23a44b21edd776fb9078d5b723c2475fa325f7804ab434d5"
+    },
+    {
+      "file": "lurker_LS04_knee_cfde820b.png",
+      "role": "legs",
+      "copper_texel_count": 68,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "f3f9955ada1deea23bb52dc6ad28cef49077d0abb0de3b58b5dae782c6ac5a7a"
+    },
+    {
+      "file": "lurker_LS04_knee_93827777.png",
+      "role": "legs",
+      "copper_texel_count": 68,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "f3f9955ada1deea23bb52dc6ad28cef49077d0abb0de3b58b5dae782c6ac5a7a"
+    },
+    {
+      "file": "lurker_LS04_knee_2cb3375d.png",
+      "role": "legs",
+      "copper_texel_count": 4,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "7f345db5f453466132828d2380ab558b7ee0c6ee02245372aa4efb2b79969111"
+    },
+    {
+      "file": "lurker_LS04_knee_9e184af3.png",
+      "role": "legs",
+      "copper_texel_count": 4,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "7f345db5f453466132828d2380ab558b7ee0c6ee02245372aa4efb2b79969111"
+    },
+    {
+      "file": "lurker_LS04_knee_9c16bf06.png",
+      "role": "legs",
+      "copper_texel_count": 68,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "14c5685af299434624c34acb038c71cf08c757a314c1aea2c11443463174e118"
+    },
+    {
+      "file": "lurker_LS04_knee_01bb0c8d.png",
+      "role": "legs",
+      "copper_texel_count": 68,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "14c5685af299434624c34acb038c71cf08c757a314c1aea2c11443463174e118"
+    },
+    {
+      "file": "lurker_LS04_knee_26bd0432.png",
+      "role": "legs",
+      "copper_texel_count": 4,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "4baa4dbe92b8991f2c4efbde1be9eb8677d8893da5d4534b8a1a7d3f88ea3f3e"
+    },
+    {
+      "file": "lurker_LS04_knee_b66db3ea.png",
+      "role": "legs",
+      "copper_texel_count": 4,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "4baa4dbe92b8991f2c4efbde1be9eb8677d8893da5d4534b8a1a7d3f88ea3f3e"
+    },
+    {
+      "file": "lurker_LS04_fangs.png",
+      "role": "fangs",
+      "copper_texel_count": 0,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "13d1e6ba41816ed02fa90b8808173864d9627a78bff380beb5a988fada618e4c"
+    },
+    {
+      "file": "lurker_LS04_eyes.png",
+      "role": "eyes",
+      "copper_texel_count": 0,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "492fa18479cefb3ee660a49f16e8b71e1181a3557bac4b42c6bdba125bd141ac"
+    },
+    {
+      "file": "lurker_LS04_hair.png",
+      "role": "hair",
+      "copper_texel_count": 0,
+      "size": [
+        128,
+        128
+      ],
+      "alpha_identical": true,
+      "original_pixel_structure_preserved": true,
+      "sha256": "8125bd5757150cc07117a57b244acdb9169f26397c50716e56252486c8123b13"
+    }
+  ],
+  "leg_assignments": [
+    {
+      "group": "left_first_leg",
+      "depth": 0,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_first_leg",
+      "depth": 0,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_first_leg2",
+      "depth": 1,
+      "texture": 3,
+      "joint_coordinate": -22,
+      "band_width": 4.1
+    },
+    {
+      "group": "left_first_leg2",
+      "depth": 1,
+      "texture": 4,
+      "joint_coordinate": -22,
+      "band_width": 4.1
+    },
+    {
+      "group": "left_first_leg3",
+      "depth": 2,
+      "texture": 5,
+      "joint_coordinate": -22,
+      "band_width": 2.65
+    },
+    {
+      "group": "right_first_leg3",
+      "depth": 2,
+      "texture": 6,
+      "joint_coordinate": -22,
+      "band_width": 2.65
+    },
+    {
+      "group": "left_first_leg4",
+      "depth": 3,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_first_leg4",
+      "depth": 3,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "left_second_leg",
+      "depth": 0,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_second_leg",
+      "depth": 0,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "_left_fourth_leg2",
+      "depth": 0,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_fourth_leg",
+      "depth": 0,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "left_third_leg",
+      "depth": 0,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_third_leg",
+      "depth": 0,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_fourth_leg4",
+      "depth": 3,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "_leftfourth_leg2",
+      "depth": 3,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "_leftfourth_leg",
+      "depth": 2,
+      "texture": 7,
+      "joint_coordinate": 26,
+      "band_width": 2.65
+    },
+    {
+      "group": "_left_fourth_leg",
+      "depth": 1,
+      "texture": 8,
+      "joint_coordinate": 26,
+      "band_width": 4.1
+    },
+    {
+      "group": "right_fourth_leg2",
+      "depth": 1,
+      "texture": 9,
+      "joint_coordinate": 26,
+      "band_width": 4.1
+    },
+    {
+      "group": "right_fourth_leg3",
+      "depth": 2,
+      "texture": 10,
+      "joint_coordinate": 26,
+      "band_width": 2.65
+    },
+    {
+      "group": "right_third_leg2",
+      "depth": 1,
+      "texture": 11,
+      "joint_coordinate": -27,
+      "band_width": 4.1
+    },
+    {
+      "group": "right_second_leg2",
+      "depth": 1,
+      "texture": 12,
+      "joint_coordinate": -27,
+      "band_width": 4.1
+    },
+    {
+      "group": "right_third_leg3",
+      "depth": 2,
+      "texture": 13,
+      "joint_coordinate": -27,
+      "band_width": 2.65
+    },
+    {
+      "group": "right_second_leg3",
+      "depth": 2,
+      "texture": 14,
+      "joint_coordinate": -27,
+      "band_width": 2.65
+    },
+    {
+      "group": "left_third_leg2",
+      "depth": 1,
+      "texture": 15,
+      "joint_coordinate": 27,
+      "band_width": 4.1
+    },
+    {
+      "group": "left_second_leg2",
+      "depth": 1,
+      "texture": 16,
+      "joint_coordinate": 27,
+      "band_width": 4.1
+    },
+    {
+      "group": "left_second_leg3",
+      "depth": 2,
+      "texture": 17,
+      "joint_coordinate": 27,
+      "band_width": 2.65
+    },
+    {
+      "group": "left_third_leg3",
+      "depth": 2,
+      "texture": 18,
+      "joint_coordinate": 27,
+      "band_width": 2.65
+    },
+    {
+      "group": "right_second_leg4",
+      "depth": 3,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_third_leg4",
+      "depth": 3,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "left_second_leg4",
+      "depth": 3,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "left_third_leg4",
+      "depth": 3,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "left_first_leg5",
+      "depth": 4,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_first_leg5",
+      "depth": 4,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "_leftfourth_leg3",
+      "depth": 4,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    },
+    {
+      "group": "right_fourth_leg5",
+      "depth": 4,
+      "texture": 2,
+      "joint_coordinate": null,
+      "band_width": null
+    }
+  ],
+  "knee_locations": [
+    {
+      "leg": "left_second_leg",
+      "knee": "left_second_leg3",
+      "incoming": "left_second_leg2",
+      "rest_position_model_units": [
+        -5.73059217639592,
+        -4.999999999999999,
+        24.338322357426275
+      ]
+    },
+    {
+      "leg": "left_third_leg",
+      "knee": "left_third_leg3",
+      "incoming": "left_third_leg2",
+      "rest_position_model_units": [
+        9.73059217639592,
+        -4.999999999999999,
+        24.338322357426275
+      ]
+    },
+    {
+      "leg": "left_first_leg",
+      "knee": "left_first_leg3",
+      "incoming": "left_first_leg2",
+      "rest_position_model_units": [
+        -18.400633241938642,
+        -8.313699053718594,
+        14.741327881944379
+      ]
+    },
+    {
+      "leg": "_left_fourth_leg2",
+      "knee": "_leftfourth_leg",
+      "incoming": "_left_fourth_leg",
+      "rest_position_model_units": [
+        23.234087598885935,
+        -8.313699015616317,
+        12.953974228099277
+      ]
+    },
+    {
+      "leg": "right_second_leg",
+      "knee": "right_second_leg3",
+      "incoming": "right_second_leg2",
+      "rest_position_model_units": [
+        -5.73059217639592,
+        -4.999999999999999,
+        -24.338322357426275
+      ]
+    },
+    {
+      "leg": "right_third_leg",
+      "knee": "right_third_leg3",
+      "incoming": "right_third_leg2",
+      "rest_position_model_units": [
+        9.73059217639592,
+        -4.999999999999999,
+        -24.338322357426275
+      ]
+    },
+    {
+      "leg": "right_first_leg",
+      "knee": "right_first_leg3",
+      "incoming": "right_first_leg2",
+      "rest_position_model_units": [
+        -18.400633241938642,
+        -8.313699053718594,
+        -14.741327881944379
+      ]
+    },
+    {
+      "leg": "right_fourth_leg",
+      "knee": "right_fourth_leg3",
+      "incoming": "right_fourth_leg2",
+      "rest_position_model_units": [
+        23.234087598885935,
+        -8.313699015616317,
+        -12.953974228099277
+      ]
+    }
+  ],
+  "model_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+  "game_verified": false
+}

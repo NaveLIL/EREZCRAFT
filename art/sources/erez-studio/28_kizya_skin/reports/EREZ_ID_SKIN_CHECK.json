@@ -1,0 +1,12 @@
+{
+  "revision": "PK02",
+  "actual_erez_id_validator_passed": true,
+  "variant": "slim",
+  "dimensions": [
+    64,
+    64
+  ],
+  "bytes": 3848,
+  "validator_preserves_bytes": true,
+  "account_skin_changed": false
+}

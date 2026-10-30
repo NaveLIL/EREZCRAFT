@@ -1,0 +1,17 @@
+{
+  "revision": "E01-R7",
+  "runtime_revision": "vehicle-v1",
+  "geometry_sha256": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c",
+  "assembly_sha256": "3649d0f8e9131a9af6064817185eb7cf92082de270ee1e81439fa3b20d5e3407",
+  "steps": 16,
+  "max_integer_snap_error_m": 4.4286251068115234e-05,
+  "render_triangles_all_models": 67182,
+  "collision_method": "Conservative 1/16 solids; swept samples include radius*half-angle bound; stock wheel contacts replace tyre solids.",
+  "cells": 124,
+  "bones": 36,
+  "collision_groups": 14,
+  "monitors": 6,
+  "wheel_mounts": 8,
+  "runtime_sha256": "d79615d909dc937d7017309e6bfffa5a71130772477f4e73b321563c50809a9b",
+  "script_sha256": "56f5ba9b7425ef36874505f542045c1b98ed2f14d9581d10eb8dbcf5ef5886d3"
+}

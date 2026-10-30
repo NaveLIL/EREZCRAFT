@@ -1,0 +1,10 @@
+{
+  "revision": "SK02",
+  "self_contained_glb": true,
+  "mesh_count": 1615,
+  "embedded_images": 12,
+  "imported_in_blender": true,
+  "static_export": true,
+  "animated_rotors_in_native_blend_only": true,
+  "studio_excluded": true
+}

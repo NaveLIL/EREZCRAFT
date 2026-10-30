@@ -1,0 +1,1592 @@
+{
+  "dh_loaded": true,
+  "offroad_loaded": true,
+  "started_utc": "2026-10-30T01:53:02.262485700Z",
+  "mode": "fleet",
+  "phase": 15,
+  "owner_profile_used": false,
+  "geometry_sha256": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c",
+  "samples": [
+    {
+      "x": -0.0013780056147260356,
+      "y": 200.32973587466742,
+      "z": 0.00023025814916076415,
+      "speed": 0.0000978923,
+      "client_fps": 45,
+      "spring": 5,
+      "anchor": 0.8839196043075852,
+      "brake": true
+    },
+    {
+      "x": -0.0027764661993295303,
+      "y": 200.32801161729415,
+      "z": -0.08061785028265608,
+      "speed": 0.36942267,
+      "client_fps": 44,
+      "spring": 5,
+      "anchor": 0.8857235984863572,
+      "brake": false
+    },
+    {
+      "x": -0.03514980737615922,
+      "y": 200.3599450455778,
+      "z": -0.968163411357517,
+      "speed": 2.3935578,
+      "client_fps": 41,
+      "spring": 5,
+      "anchor": 0.9009327666820817,
+      "brake": false
+    },
+    {
+      "x": -0.05453874680757276,
+      "y": 200.55634612461517,
+      "z": -3.110707336353287,
+      "speed": 4.858822,
+      "client_fps": 41,
+      "spring": 5,
+      "anchor": 0.9609328733743958,
+      "brake": false
+    },
+    {
+      "x": -0.01776419857807615,
+      "y": 200.77983640087834,
+      "z": -6.439911724790571,
+      "speed": 7.052913,
+      "client_fps": 44,
+      "spring": 5,
+      "anchor": 1.0209328459562592,
+      "brake": false
+    },
+    {
+      "x": 0.06235825427933028,
+      "y": 201.15912986475956,
+      "z": -10.321177577297483,
+      "speed": 7.8448257,
+      "client_fps": 44,
+      "spring": 5,
+      "anchor": 1.0809328185381226,
+      "brake": false
+    },
+    {
+      "x": 0.14221861231142535,
+      "y": 201.3373486548333,
+      "z": -14.595718287304006,
+      "speed": 7.8994837,
+      "client_fps": 40,
+      "spring": 5,
+      "anchor": 1.140932791119986,
+      "brake": false
+    },
+    {
+      "x": 0.18167193195534995,
+      "y": 200.6708525968511,
+      "z": -17.92342822057381,
+      "speed": 7.8383765,
+      "client_fps": 40,
+      "spring": 5,
+      "anchor": 1.2009327990921073,
+      "brake": false
+    },
+    {
+      "x": 0.1994460352060471,
+      "y": 200.390071384258,
+      "z": -19.527093484745624,
+      "speed": 7.968532,
+      "client_fps": 40,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": 0.23476025729191155,
+      "y": 200.2825857206082,
+      "z": -20.809409870236657,
+      "speed": 0.49265093,
+      "client_fps": 39,
+      "spring": 5,
+      "anchor": 1.164057463592463,
+      "brake": true
+    },
+    {
+      "x": 0.23464371125950684,
+      "y": 200.23214615681653,
+      "z": -20.799660154882194,
+      "speed": 0.024699194,
+      "client_fps": 39,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": true
+    },
+    {
+      "x": 0.2353338290482826,
+      "y": 200.22794810303412,
+      "z": -20.792785784131574,
+      "speed": 0.011990144,
+      "client_fps": 48,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": true
+    },
+    {
+      "x": 0.23525092690597268,
+      "y": 200.22912997408295,
+      "z": -20.78656615387058,
+      "speed": 0.011538024,
+      "client_fps": 48,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": true
+    },
+    {
+      "x": 0.23515264372127748,
+      "y": 200.23034101064238,
+      "z": -20.78036581225284,
+      "speed": 0.011517383,
+      "client_fps": 49,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": true
+    },
+    {
+      "x": 0.2350548601823439,
+      "y": 200.23150387216126,
+      "z": -20.774185470357203,
+      "speed": 0.011502182,
+      "client_fps": 49,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": true
+    },
+    {
+      "x": 0.23495742017012794,
+      "y": 200.23263388178367,
+      "z": -20.768024702637433,
+      "speed": 0.011487278,
+      "client_fps": 51,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": true
+    },
+    {
+      "x": 0.2198211867165688,
+      "y": 200.2089749582839,
+      "z": -20.936592491078613,
+      "speed": 0.65090144,
+      "client_fps": 51,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -0.02503532352662549,
+      "y": 200.11958820611133,
+      "z": -21.962801872739114,
+      "speed": 2.6411946,
+      "client_fps": 52,
+      "spring": 5,
+      "anchor": 1.2064992438057296,
+      "brake": false
+    },
+    {
+      "x": -0.8522596039208783,
+      "y": 200.03313448541945,
+      "z": -24.0656722129241,
+      "speed": 5.1524305,
+      "client_fps": 52,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -2.6928439634507915,
+      "y": 200.00647170025366,
+      "z": -26.88709690047648,
+      "speed": 7.102409,
+      "client_fps": 49,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -5.478354188699334,
+      "y": 200.00633820214807,
+      "z": -29.48282406027416,
+      "speed": 7.7390447,
+      "client_fps": 49,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -8.927792997209767,
+      "y": 200.00631270442523,
+      "z": -31.368817227373025,
+      "speed": 7.911983,
+      "client_fps": 48,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -12.770234930450291,
+      "y": 200.0062987648594,
+      "z": -32.343712199858714,
+      "speed": 7.9576783,
+      "client_fps": 48,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -16.743163496702923,
+      "y": 200.00629909836215,
+      "z": -32.32846339854774,
+      "speed": 7.9699087,
+      "client_fps": 46,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -19.480245967613616,
+      "y": 200.0061883041976,
+      "z": -31.72136456811676,
+      "speed": 0.0000012924726,
+      "client_fps": 53,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": true
+    },
+    {
+      "x": -19.364350947498608,
+      "y": 200.0062273435937,
+      "z": -31.74585986181119,
+      "speed": 0.5044412,
+      "client_fps": 53,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -18.52087476707152,
+      "y": 200.00625711424266,
+      "z": -31.925247471141898,
+      "speed": 2.101218,
+      "client_fps": 53,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -17.246228649648543,
+      "y": 200.0062420462802,
+      "z": -32.197620104492906,
+      "speed": 2.7015674,
+      "client_fps": 53,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -15.861926219617022,
+      "y": 200.00623829633545,
+      "z": -32.49397899879398,
+      "speed": 2.8549855,
+      "client_fps": 52,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -14.450366034209715,
+      "y": 200.00622210369298,
+      "z": -32.79645454541161,
+      "speed": 2.8929904,
+      "client_fps": 52,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -13.031960303478986,
+      "y": 200.00622186817392,
+      "z": -33.10051070770967,
+      "speed": 2.9029455,
+      "client_fps": 50,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -11.611868595092766,
+      "y": 200.00622180907317,
+      "z": -33.40539164178723,
+      "speed": 2.9052417,
+      "client_fps": 50,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -10.191415467503914,
+      "y": 200.0062217943005,
+      "z": -33.71027278066988,
+      "speed": 2.905891,
+      "client_fps": 45,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    },
+    {
+      "x": -8.770738949787823,
+      "y": 200.00622179058212,
+      "z": -34.01515397019711,
+      "speed": 2.9060428,
+      "client_fps": 45,
+      "spring": 5,
+      "anchor": 1.2074816005291276,
+      "brake": false
+    }
+  ],
+  "mass": 23.135683812499988,
+  "physical_hubs_checked": 8,
+  "boarded_by_walking": true,
+  "boarding_walk_ticks": 81,
+  "seat_hit_pos": "20481031, 129, 20481029",
+  "seat_hit_location": "(2.048103156190762E7, 129.41373586941006, 2.04810299375E7)",
+  "seat_client_pose": "CROUCHING",
+  "driver_mounted_by_native_click": true,
+  "cruise_display_kmh": 28.241372680664064,
+  "forward_distance_m": 19.12931857834218,
+  "forward_ticks": 73,
+  "turn_degrees": 97.34192690173427,
+  "reverse_distance_m": 12.260068232816616,
+  "simultaneous_passenger_actors": 12,
+  "independent_hatches_checked": true,
+  "closed_roof_checked": true,
+  "floor_candidate_grass_pixels": 0,
+  "camera_sector_marker_pixels": [
+    5924,
+    4734,
+    135617
+  ],
+  "camera_captures": 912,
+  "camera_cpu_mean_ms": 2.2473533991228067,
+  "camera_cpu_max_ms": 12.392,
+  "monitor_native_hit": "net.minecraft.world.phys.BlockHitResult@33ef6ba3",
+  "physical_monitor_native_click": true,
+  "rear_camera_yellow_pixels": 2924,
+  "camera_gui_view_switch_checked": true,
+  "access_checks": {
+    "unauthorized_controls_denied": true,
+    "unauthorized_boarding_denied": true,
+    "native_pickaxe_break_denied": true,
+    "pin_and_lockout_checked": true,
+    "private_pin_and_persistent_crew": true,
+    "owner_only_temporary_maintenance": true,
+    "pin_rotation_revokes_crew": true,
+    "passed": true
+  },
+  "pin_set_by_native_gui": true,
+  "real_network_troop_seats": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "bunker_checks": {
+    "both_engines": true,
+    "coal_conserved": true,
+    "foreign_items_preserved": true,
+    "inventory_uuid_and_nbt": true,
+    "fuel_cap_does_not_eat_items": true,
+    "cargo_containers": 26,
+    "passed": true
+  },
+  "saved_real_driver_root_vehicle": true,
+  "saved_fuel": 11537,
+  "saved_lights": true,
+  "saved_motion": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "saved_x": -7.06096925840866,
+  "saved_y": 200.00618830434175,
+  "saved_z": -34.381007602490826,
+  "saved": true,
+  "passed": true,
+  "error": "",
+  "peak_speed_m_s": 8.039030075073242,
+  "max_tilt_rad": 0.14471721231008175,
+  "max_front_wheel_rise_m": 0.02782066564545682,
+  "view_trace": {
+    "frames": 2941,
+    "max_eye_residual_m": 0,
+    "rest_max_eye_residual_m": 0,
+    "phase_max_m": {
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
+      "25": 0,
+      "26": 0,
+      "27": 0,
+      "60": 0,
+      "61": 0,
+      "62": 0,
+      "63": 0,
+      "141": 0,
+      "142": 0,
+      "601": 0,
+      "602": 0
+    },
+    "series": [
+      {
+        "phase": 5,
+        "frame": 20,
+        "speed": 0.000007734334,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 5,
+        "frame": 40,
+        "speed": 0.00001190361,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 6,
+        "frame": 60,
+        "speed": 0.000041363248,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 6,
+        "frame": 80,
+        "speed": 0.0000636296,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 6,
+        "frame": 100,
+        "speed": 0.00004135919,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 6,
+        "frame": 120,
+        "speed": 0.00004135919,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 6,
+        "frame": 140,
+        "speed": 0.0000047988683,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 6,
+        "frame": 160,
+        "speed": 0.000007382874,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 6,
+        "frame": 180,
+        "speed": 1.5291346e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 7,
+        "frame": 200,
+        "speed": 0.00009789158,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 7,
+        "frame": 220,
+        "speed": 0.93060493,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 7,
+        "frame": 240,
+        "speed": 3.0644262,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 7,
+        "frame": 260,
+        "speed": 5.353733,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 7,
+        "frame": 280,
+        "speed": 7.1449804,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 7,
+        "frame": 300,
+        "speed": 7.8737216,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 7,
+        "frame": 320,
+        "speed": 7.925878,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 8,
+        "frame": 340,
+        "speed": 8.11741,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 8,
+        "frame": 360,
+        "speed": 1.7382283,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 8,
+        "frame": 380,
+        "speed": 0.07480154,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 8,
+        "frame": 400,
+        "speed": 0.0165718,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 8,
+        "frame": 420,
+        "speed": 0.010317475,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 8,
+        "frame": 440,
+        "speed": 0.009126474,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 8,
+        "frame": 460,
+        "speed": 0.0074893725,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 8,
+        "frame": 480,
+        "speed": 0.012493784,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 8,
+        "frame": 500,
+        "speed": 0.013205804,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 9,
+        "frame": 520,
+        "speed": 0.008767814,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 9,
+        "frame": 540,
+        "speed": 0.5008275,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 9,
+        "frame": 560,
+        "speed": 1.8325332,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 9,
+        "frame": 580,
+        "speed": 3.85749,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 9,
+        "frame": 600,
+        "speed": 6.149491,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 9,
+        "frame": 620,
+        "speed": 7.3000407,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 9,
+        "frame": 640,
+        "speed": 7.739275,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 9,
+        "frame": 660,
+        "speed": 7.8936396,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 9,
+        "frame": 680,
+        "speed": 7.819819,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 9,
+        "frame": 700,
+        "speed": 7.9677167,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 10,
+        "frame": 720,
+        "speed": 7.972607,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 10,
+        "frame": 740,
+        "speed": 0.47589278,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 10,
+        "frame": 760,
+        "speed": 0.016209904,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 10,
+        "frame": 780,
+        "speed": 0.0005165769,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 10,
+        "frame": 800,
+        "speed": 0.000010699407,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 10,
+        "frame": 820,
+        "speed": 3.4093102e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 10,
+        "frame": 840,
+        "speed": 1.6713216e-8,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 10,
+        "frame": 860,
+        "speed": 5.3255805e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 10,
+        "frame": 880,
+        "speed": 2.610721e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 11,
+        "frame": 900,
+        "speed": 5.4606966e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 11,
+        "frame": 920,
+        "speed": 0.3145701,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 940,
+        "speed": 1.6733658,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 960,
+        "speed": 2.4763775,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 980,
+        "speed": 2.7672184,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 1000,
+        "speed": 2.8549855,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 1020,
+        "speed": 2.8905692,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 1040,
+        "speed": 2.913935,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 1060,
+        "speed": 2.9044232,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 1080,
+        "speed": 2.9329998,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 1100,
+        "speed": 2.6133034,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 11,
+        "frame": 1120,
+        "speed": 2.9217558,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 12,
+        "frame": 1140,
+        "speed": 2.929242,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 12,
+        "frame": 1160,
+        "speed": 0.4355247,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 12,
+        "frame": 1180,
+        "speed": 0.021153187,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 12,
+        "frame": 1200,
+        "speed": 0.0006827314,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 12,
+        "frame": 1220,
+        "speed": 0.00003346905,
+        "eye_residual_m": 0,
+        "rest": false
+      },
+      {
+        "phase": 12,
+        "frame": 1240,
+        "speed": 0.000001066474,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 12,
+        "frame": 1260,
+        "speed": 5.2282687e-8,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 12,
+        "frame": 1280,
+        "speed": 0.00064744824,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 12,
+        "frame": 1300,
+        "speed": 0.000020630603,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 12,
+        "frame": 1320,
+        "speed": 0.0000022384545,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 13,
+        "frame": 1340,
+        "speed": 1.0973415e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 13,
+        "frame": 1360,
+        "speed": 3.4968866e-9,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 13,
+        "frame": 1380,
+        "speed": 1.11426486e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 13,
+        "frame": 1400,
+        "speed": 5.462381e-12,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 14,
+        "frame": 1420,
+        "speed": 0.000017187152,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 14,
+        "frame": 1440,
+        "speed": 5.497368e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 14,
+        "frame": 1460,
+        "speed": 1.529838e-8,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 14,
+        "frame": 1480,
+        "speed": 6.2470645e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 14,
+        "frame": 1500,
+        "speed": 1.9905947e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 14,
+        "frame": 1520,
+        "speed": 4.0574922e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 14,
+        "frame": 1540,
+        "speed": 1.2928985e-12,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 141,
+        "frame": 1560,
+        "speed": 4.1197538e-14,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 141,
+        "frame": 1580,
+        "speed": 5.5463183e-16,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 141,
+        "frame": 1600,
+        "speed": 1.1487486e-17,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 141,
+        "frame": 1620,
+        "speed": 5.6314275e-19,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 141,
+        "frame": 1640,
+        "speed": 2.760654e-20,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 141,
+        "frame": 1660,
+        "speed": 8.796681e-22,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 142,
+        "frame": 1680,
+        "speed": 4.312333e-23,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 142,
+        "frame": 1700,
+        "speed": 2.1140039e-24,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 16,
+        "frame": 1720,
+        "speed": 6.7361634e-26,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 16,
+        "frame": 1740,
+        "speed": 2.1464435e-27,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 16,
+        "frame": 1760,
+        "speed": 1.0522357e-28,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 16,
+        "frame": 1780,
+        "speed": 4.6417323e-8,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1800,
+        "speed": 9.613916e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1820,
+        "speed": 2.2082584e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1840,
+        "speed": 1.0825387e-12,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1860,
+        "speed": 5.490027e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1880,
+        "speed": 2.6913364e-8,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1900,
+        "speed": 8.575803e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1920,
+        "speed": 7.8893764e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1940,
+        "speed": 2.5139089e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1960,
+        "speed": 1.2323754e-12,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 1980,
+        "speed": 0.0000022370323,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 2000,
+        "speed": 1.0966443e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 2020,
+        "speed": 6.1927965e-9,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 21,
+        "frame": 2040,
+        "speed": 3.0358505e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 22,
+        "frame": 2060,
+        "speed": 4.087087e-12,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 22,
+        "frame": 2080,
+        "speed": 0.0000070151623,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 23,
+        "frame": 2100,
+        "speed": 1.5302354e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 23,
+        "frame": 2120,
+        "speed": 2.5628635e-9,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 23,
+        "frame": 2140,
+        "speed": 8.166432e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 24,
+        "frame": 2160,
+        "speed": 0.0009867987,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 24,
+        "frame": 2180,
+        "speed": 0.00004837512,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 24,
+        "frame": 2200,
+        "speed": 0.0000010019412,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 25,
+        "frame": 2220,
+        "speed": 4.6721752e-8,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 25,
+        "frame": 2240,
+        "speed": 1.4887646e-9,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 25,
+        "frame": 2260,
+        "speed": 2.6418978e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 25,
+        "frame": 2280,
+        "speed": 1.2951186e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 26,
+        "frame": 2300,
+        "speed": 4.126828e-13,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 26,
+        "frame": 2320,
+        "speed": 2.023065e-14,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 26,
+        "frame": 2340,
+        "speed": 6.4463924e-16,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 27,
+        "frame": 2360,
+        "speed": 2.0541095e-17,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 27,
+        "frame": 2380,
+        "speed": 6.144223e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 27,
+        "frame": 2400,
+        "speed": 1.9578247e-8,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 601,
+        "frame": 2420,
+        "speed": 2.0592104e-9,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 601,
+        "frame": 2440,
+        "speed": 7.9359e-9,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 601,
+        "frame": 2460,
+        "speed": 7.6510415e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 602,
+        "frame": 2480,
+        "speed": 2.253566e-9,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 602,
+        "frame": 2500,
+        "speed": 7.180872e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 602,
+        "frame": 2520,
+        "speed": 9.512412e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 602,
+        "frame": 2540,
+        "speed": 4.663201e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 63,
+        "frame": 2560,
+        "speed": 3.162361e-12,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 63,
+        "frame": 2580,
+        "speed": 1.5502615e-13,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 63,
+        "frame": 2600,
+        "speed": 0.0000052994806,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2620,
+        "speed": 1.6886518e-7,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2640,
+        "speed": 8.278156e-9,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2660,
+        "speed": 4.0581408e-10,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2680,
+        "speed": 1.9893927e-11,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2700,
+        "speed": 6.3390965e-13,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2720,
+        "speed": 2.0199201e-14,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2740,
+        "speed": 9.902108e-16,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2760,
+        "speed": 4.854239e-17,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2780,
+        "speed": 2.3796584e-18,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2800,
+        "speed": 1.1665627e-19,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2820,
+        "speed": 3.7171917e-21,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2840,
+        "speed": 1.8222519e-22,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2860,
+        "speed": 8.9330956e-24,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2880,
+        "speed": 4.3792075e-25,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2900,
+        "speed": 1.3954117e-26,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2920,
+        "speed": 6.840627e-28,
+        "eye_residual_m": 0,
+        "rest": true
+      },
+      {
+        "phase": 15,
+        "frame": 2940,
+        "speed": 3.3534313e-29,
+        "eye_residual_m": 0,
+        "rest": true
+      }
+    ]
+  },
+  "fuel_ticks": 11537,
+  "controller": "20481032, 129, 20481030",
+  "origin": "20481032, 128, 20481032",
+  "body_uuid": "8bb3e5ee-6136-45ab-8b4e-c7faa23786d9",
+  "process_exit_code": 0,
+  "runtime_source_sha256": {
+    "src/main/java/pro/erez/interstice/ship/SkatAssembly.java": "fccc0f392b70b04b120270dcc8fe489d5479ed69d0f78f2e4d3efe8953d26029",
+    "src/main/java/pro/erez/interstice/ship/SkatSeatEntity.java": "c797282a63459de2fcacab1ff391a6513e67d03822612cef2963a2043c1c902d",
+    "src/main/java/pro/erez/interstice/ship/SkatPlayerLogin.java": "40f3b1c7bd4baf606e4458e08bd44913d31ec9918e94ee3dd0e8a447026f34f0",
+    "src/main/java/pro/erez/interstice/client/SkatLightsClient.java": "6a47ba0a4450248f1693c1ed2f9f85fe20651eafe8e1a488856d05ed1342243b",
+    "src/main/java/pro/erez/interstice/ship/SkatBlueprintItem.java": "85b3c664f35dbacf9b30d6e2b8ae2d74f51a70788b6757d47c4f65b08e3cb8c0",
+    "src/main/java/pro/erez/interstice/mixin/SkatPlayerLoginMixin.java": "a3ede4347c8ce25724f32644c816eb3bd90320ae8688c07bf38499c2b3460644",
+    "src/main/java/pro/erez/interstice/ship/SkatPlotLighting.java": "05b66bb47441e475323d090dfa7f2e93c5b66f6e597b12526863f87c646cfabb",
+    "src/main/java/pro/erez/interstice/ship/SkatContainerBlock.java": "bc2d7b2dd757b4f70daf8673f52dd870d5166c524f8a7f5583ab4647816ad910",
+    "src/main/java/pro/erez/interstice/mixin/EitanCameraAccess.java": "be2a4315c4a6211cfe4d19f37247d13c71d57881a56b1402b953d8bd097798b4",
+    "src/main/java/pro/erez/interstice/vehicle/VehicleCommands.java": "264b806e6f610b7aa4d4a91a9ebd925c1ba2a9d708230059fcfefb0429400d52",
+    "src/main/java/pro/erez/interstice/client/EitanVehicleModels.java": "536a7d0602468ae724426027ca63273fd063c80268569b6564c312e12acf4cc7",
+    "src/main/java/pro/erez/interstice/vehicle/EitanController.java": "2d0324030876cc658a00215529eaf4c3f06e91705eb97eb890d06f4e6f18548e",
+    "src/main/java/pro/erez/interstice/ship/SkatLampBlock.java": "25528f5b290c411bc81e54e48e17ef77b36b5158b0d66c38f898fb282cdc4880",
+    "src/main/java/pro/erez/interstice/mixin/EitanCameraProjectionMixin.java": "f7c6251d0c8ba55210881a28a200845727d9282f3dbec2d7c2edb1a0e0eb34bb",
+    "src/main/java/pro/erez/interstice/vehicle/EitanBlueprintItem.java": "deabd93f70d61f747c429ffe545b34cb07d16e4236d036231f36830e5f83a571",
+    "src/main/java/pro/erez/interstice/vehicle/VehicleNetwork.java": "2c467d8ad782e01b19d86bc1c9a0ce4622021b09c7cdf5e1da4634861f421b5e",
+    "src/main/java/pro/erez/interstice/ship/SkatOpeningBlock.java": "874cc320d23a35a18966e71b0eb633be9c4c1659549f60359a79e9a61b2fcba5",
+    "src/main/java/pro/erez/interstice/ship/SkatCargoMenu.java": "64ecf2d2ff38475e5f9f540ad7560448e78335170059e6f73034617ccf5b9930",
+    "src/main/java/pro/erez/interstice/vehicle/VehicleMetrics.java": "64f551e092c0e63aebda1db60eef7d7bf6eec49c10bdd1e6bccc73d0da4c3400",
+    "src/main/java/pro/erez/interstice/vehicle/EitanDynamics.java": "50d340db6b45386f02a5d47234550d49d11291616bca00023c19d415ac40c862",
+    "src/main/java/pro/erez/interstice/client/EitanCameraOptics.java": "465b8ca17cc2827f6632794d8bb8d6726913c6793c5e0c04438dce104c8c8d2e",
+    "src/main/java/pro/erez/interstice/vehicle/EitanWheelEntity.java": "2b8ba8c085ad3d96f789491992a068a15733e7a3d7321fbe3c24e83e3088cd2c",
+    "src/main/java/pro/erez/interstice/ship/SkatEngineBlock.java": "eb69c7f3affb576aac0e87c36fc6c1a256827db4d8893405a012098560fbb527",
+    "src/main/java/pro/erez/interstice/client/EitanClient.java": "49851587eca842d5bd09d839d03c0dd4a625ef8c2173397083c0425684d7cd6d",
+    "src/main/java/pro/erez/interstice/ship/SkatPropellerBlock.java": "57e153eb74a7c6290d0ab2d946da9948e262be141dc6f8ca208826005a6d9bf2",
+    "src/main/resources/interstice.mixins.json": "57f20a3e29df87a3ed13c524b654b4833eb565b521d9d4c69caf1b2429345093",
+    "src/main/java/pro/erez/interstice/vehicle/VehiclesBootstrap.java": "14232f8c961ce246b37787d07331a929bc252fa7d2788f0bf91de1655adc59dc",
+    "src/main/java/pro/erez/interstice/ship/SkatShips.java": "37069de30387d00d719a4b5ca76d8317bbf71b9f6a586fda1bd54c293dc097f0",
+    "src/main/java/pro/erez/interstice/vehicle/VehicleAccess.java": "2e7caf21e430a96aa4bea9069cf701739aa48ecaaf3ba9ea57898b6aaac6c9f6",
+    "src/main/java/pro/erez/interstice/ship/SkatPropulsion.java": "45207da09a668bbeb3c0db4d2d820a6f4fc81ba15c0f3826832f2f2f413669b2",
+    "src/main/java/pro/erez/interstice/ship/SkatPropellerEntity.java": "592cd87dba63d73fecd901c56c3403c2f9e0761d9b2405f3fafafb6b63a762a3",
+    "src/main/java/pro/erez/interstice/vehicle/EitanClearance.java": "7032228d504c01a7c09435b06a4596c6569a7421dfa6fb87975817e10f51c193",
+    "src/main/java/pro/erez/interstice/mixin/EitanMinecraftAccess.java": "f1684a4549b34488b07d57ed1e6fd5d371f544fec0f30ece707e90bda725d1c1",
+    "src/main/java/pro/erez/interstice/vehicle/EitanBlock.java": "1fd441f4199231de547844f7e88eb50c7f607da1f6f9b3033c489d67440b2d78",
+    "src/main/java/pro/erez/interstice/vehicle/EitanTerrainContact.java": "018a7697901280768ee3796d2012749baa68eb6c275ee241c55f3b6924ffd9bb",
+    "src/main/java/pro/erez/interstice/client/VehicleHighlight.java": "d01eced22eab61c1a73cfb06503ffb841486c4944b19d0dddc70c9c3593e6a00",
+    "src/main/java/pro/erez/interstice/Interstice.java": "a787154345f906636941209aee26ef8302273c55ea6950580df0b6fc76780b62",
+    "src/main/java/pro/erez/interstice/mixin/EitanPassengerLoadMixin.java": "d727c2e1d4ecfb43af37527c53650ef07f7b54b0be8162258f18518844da2a97",
+    "src/main/java/pro/erez/interstice/mixin/EitanIrisCameraMixin.java": "8a304d5256a7d4b674bfb45afaadf9b01d11f3e78393f3ceee2e1f9d158756ea",
+    "src/main/java/pro/erez/interstice/ship/SkatEngineEntity.java": "141e39be9fba044f755b2c3b7f7da7cfcb16ade2c0f60a91bc3732d775cadcad",
+    "src/main/java/pro/erez/interstice/vehicle/VehicleSecurity.java": "bade16de62c639b34c5fb71e5f144a6efce407e612f998319898a2c462f47c31",
+    "src/main/java/pro/erez/interstice/client/VehicleAccessScreen.java": "6368536a1ab9ba2325ef9addf73e6770c576bb82d5f50354e6c091733a9a773c",
+    "src/main/java/pro/erez/interstice/ship/SkatHelmEntity.java": "0841ca3e920c1d4fc9ac80f1de1ecaeb5a8d0c54f8b9d95552ce1a1c551bbade",
+    "src/main/java/pro/erez/interstice/client/EitanRenderer.java": "55148a2e33bbc6a906479c715e9ba9ccc6b00e5e0ba9ffb6683e80371303407c",
+    "src/main/java/pro/erez/interstice/mixin/EitanGameRendererAccess.java": "1f22aeca485f2d39223701d02d7a8eb2ed7356f51351fd699a2e7711584c3880",
+    "src/main/java/pro/erez/interstice/client/SkatModels.java": "ce0e5f4234fc0f15b4df7f87507428928ad823017e8b4e4fb1dce20ea26bc800",
+    "src/main/java/pro/erez/interstice/client/SkatLightingScreen.java": "a0559192d203461040435644437981cc2035d0ed5a88023f882ad8bebd8fc4f4",
+    "src/main/java/pro/erez/interstice/vehicle/EitanSeatEntity.java": "c0a7738613d7cc9ccc25ddb720c556f2099c753e0688d17316603b3f55e7a168",
+    "src/main/java/pro/erez/interstice/ship/SkatSpeedometer.java": "48a49bd795cb93c0bddbc6b7180ece1754493d3d14344cda7d094f3f549cdbd2",
+    "src/main/java/pro/erez/interstice/mixin/EitanSensorSkyMixin.java": "b0a99bd14d76c84f4bced6187212d9ffd2ef186ff32c4fdabe9042bce75715a9",
+    "src/main/java/pro/erez/interstice/mixin/EitanDhCameraMixin.java": "bdc24a77f0dfdf871ebaa1b19914cdd34fcf8ea16def008b45f3ebb8213914f4",
+    "src/main/java/pro/erez/interstice/mixin/SkatLightDiagnosticMixin.java": "772e6f02e16a76a433dfed6e6ff052c89545385f7a14970cf40cda40a6ab777f",
+    "src/main/java/pro/erez/interstice/client/SkatClient.java": "642f634e6bc9465e440b444319a96708f9cd01162ce4ce1a04a971e752434f0d",
+    "src/main/java/pro/erez/interstice/vehicle/EitanData.java": "6c8ac383864487cc51e54e4a362bd010e8d195e98842cf8d71cee1ae284ad4a5",
+    "src/main/java/pro/erez/interstice/ship/SkatNetwork.java": "91ef63c6d2d4113f255f19eeb4fb3a2be3ca2e589448e5e4cadb8795a07e64d3",
+    "src/main/java/pro/erez/interstice/ship/SkatLighting.java": "66561d6df50dbe7e98c9d1c05dfc24ef2c2967e049d2e7b49345676f5b02eecd",
+    "src/main/java/pro/erez/interstice/client/SkatCargoScreen.java": "d124fd9bc4f2903d16854dde02b624bbc5837bf729e1aee6e83132c7c8afc0de",
+    "src/main/java/pro/erez/interstice/mixin/EitanLevelRendererAccess.java": "bb70952dcd86b500b0985a4aac0a38a3fe21c4f07c504c79bd30c01c6129992b",
+    "src/main/java/pro/erez/interstice/vehicle/EitanPreview.java": "d67fae093cb1feb9dc0b10f51b5ba3be68c13cb0b6d285412ad034dadd553218",
+    "src/main/java/pro/erez/interstice/mixin/SkatPlotLightMixin.java": "63dcbee657d7a2be699cae09a23221be0e6102009579d2fdaa94835000897be5",
+    "src/main/java/pro/erez/interstice/client/EitanScreen.java": "8d5a62370bf0e7f52740b612571827445ee983cd36731e5e0b65f42e3d3f72c6",
+    "src/main/java/pro/erez/interstice/ship/SkatCargoEntity.java": "7da46f2533b5b40b0261fbb44756a5defe4fbde23daaf117c4e484019410c2c0",
+    "src/main/java/pro/erez/interstice/vehicle/EitanAssembly.java": "28b3acb9f22e38e83ab5f2c32c3a1400c4f5ecb7fb23c1a24a99fd7d9134894e",
+    "src/main/java/pro/erez/interstice/ship/SkatData.java": "b54efc218ad6a7d9cfe96afc6528806d2d30708e6a51098b564176d675b0009c",
+    "src/main/java/pro/erez/interstice/ship/SkatShelter.java": "f84bd42a03d2cade9eda91ae1544aa6bd1814db008abaec15ec4adf22af0cbe8",
+    "src/main/java/pro/erez/interstice/ship/SkatSeatBlock.java": "5bff7d09fe0b1b970613777003c79c63a4a02e54373bbd6f4703616a82fad7b7",
+    "src/main/java/pro/erez/interstice/client/EitanModels.java": "baaa5fde9615cbf0890c861ef2443299c808e7c6721156aed93c7c31fb1ac62f",
+    "src/main/java/pro/erez/interstice/vehicle/EitanNetwork.java": "5e8ff04f6e06c00fa90e6371d5280cd49cc84c54dfd6eb18916965b8fa116e76",
+    "src/main/java/pro/erez/interstice/mixin/EitanCameraViewMixin.java": "8c83b4ab31daf28e314b97aa09c7624e357b3a68b39203ae3b63ae160d2c3e83",
+    "src/main/java/pro/erez/interstice/vehicle/EitanVehicles.java": "fb676054e354bc0de8352aabf94843c2ac4a0ea4180a56dbb05a353b7cf0692b",
+    "src/main/java/pro/erez/interstice/ship/SkatBlock.java": "5ae78f89529c8fea865d8df79c066df1e03936fe36b53c86f574162be96c7b6b",
+    "src/main/java/pro/erez/interstice/mixin/EitanStepClearanceMixin.java": "86ea3f8d56def2bf1737d0b167adc0fb5e0f96fbcf018d302c2a40db454443e3",
+    "src/main/java/pro/erez/interstice/ship/SkatLightField.java": "dac890ee320c99b251157f3747cc41aea2da6c0b1506ae3a1ab6a9733689aa36",
+    "src/main/java/pro/erez/interstice/mixin/SkatChunkMapAccessor.java": "d525612d0665cdd0029a29eab9bd67755fd72ae82e35eac76e75b9452e2e3d8f",
+    "src/main/java/pro/erez/interstice/vehicle/EitanPreviewData.java": "5fbecce8fdb7f7b994a853980dd4e270daaa0a395c3b8c4242031c2911a21d62",
+    "src/main/java/pro/erez/interstice/vehicle/EitanWheelBlock.java": "f822c98e1437e685ffec06dcba0852b5c29732583a253e8c8172f59418b2c3dc",
+    "src/main/java/pro/erez/interstice/mixin/EitanWheelContactMixin.java": "1f3f4ff6e559f7724a3d155ae388c4f819a968ed41b0dad966db849213d4582d",
+    "src/main/java/pro/erez/interstice/client/EitanCameras.java": "2e3403f52c54d6ea7857d454d1cfbe7aeb08744925e03d3f7ca1e0c36dcabd26"
+  },
+  "source_changed_during_run": false
+}

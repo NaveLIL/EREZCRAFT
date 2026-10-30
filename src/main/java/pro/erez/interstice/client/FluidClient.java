@@ -60,8 +60,8 @@ public final class FluidClient {
     private static final class Appearance implements IClientFluidTypeExtensions {
         private final boolean light;
         Appearance(boolean light) { this.light = light; }
-        @Override public ResourceLocation getStillTexture() { return ResourceLocation.fromNamespaceAndPath(Interstice.ID, light ? "block/light_still_v3" : "block/heavy_still_v2"); }
-        @Override public ResourceLocation getFlowingTexture() { return ResourceLocation.fromNamespaceAndPath(Interstice.ID, light ? "block/light_flow_v3" : "block/heavy_flow_v2"); }
+        @Override public ResourceLocation getStillTexture() { return ResourceLocation.fromNamespaceAndPath(Interstice.ID, light ? "block/light_still_v3" : "block/heavy_oc01"); }
+        @Override public ResourceLocation getFlowingTexture() { return ResourceLocation.fromNamespaceAndPath(Interstice.ID, light ? "block/light_flow_v3" : "block/heavy_oc01"); }
         @Override public int getTintColor() { return light ? 0xD8FFFFFF : 0xFFFFFFFF; }
         @Override public Vector3f modifyFogColor(Camera camera, float partial, ClientLevel world, int distance, float darkness, Vector3f color) {
             return light ? new Vector3f(0.70F, 0.69F, 0.47F) : new Vector3f(0.23F, 0.02F, 0.055F);

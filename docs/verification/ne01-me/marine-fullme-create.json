@@ -1,0 +1,173 @@
+{
+  "mode": "create",
+  "started_utc": "2026-10-29T14:18:17.702666400Z",
+  "dh_loaded": true,
+  "controlled_paused_body_not_propulsion": true,
+  "two_real_clients": false,
+  "native_ae2_addon_hosts": true,
+  "phase": 12,
+  "owner_profile_used": false,
+  "native_menus": [
+    {
+      "index": 0,
+      "round": 0,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 1,
+      "round": 0,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 2,
+      "round": 0,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 3,
+      "round": 0,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 4,
+      "round": 0,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 5,
+      "round": 0,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 0,
+      "round": 1,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 1,
+      "round": 1,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 2,
+      "round": 1,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 3,
+      "round": 1,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 4,
+      "round": 1,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    },
+    {
+      "index": 5,
+      "round": 1,
+      "screen": "appeng.client.gui.me.common.MEStorageScreen",
+      "player_ray_picked_native_cell": true
+    }
+  ],
+  "ship_uuid": "3609b63d-ed49-4b4a-890f-6c6337a55fdd",
+  "grid_diagnostics": {
+    "server_tick": 1853,
+    "ready_at": 193,
+    "generator_energy": 13413.75,
+    "generator_burn": 1,
+    "generator_fuel": 63,
+    "generator_ticks": 1599,
+    "core_ready": true,
+    "core_powered": true,
+    "core_booted": true,
+    "core_connections": 8,
+    "terminals": [
+      {
+        "position": "-2, 8, 2",
+        "ready": true,
+        "active": true,
+        "powered": true,
+        "booted": true
+      },
+      {
+        "position": "-1, 5, -9",
+        "ready": true,
+        "active": true,
+        "powered": true,
+        "booted": true
+      },
+      {
+        "position": "-2, 5, -8",
+        "ready": true,
+        "active": true,
+        "powered": true,
+        "booted": true
+      },
+      {
+        "position": "-2, 5, 0",
+        "ready": true,
+        "active": true,
+        "powered": true,
+        "booted": true
+      },
+      {
+        "position": "-1, 2, 3",
+        "ready": true,
+        "active": true,
+        "powered": true,
+        "booted": true
+      },
+      {
+        "position": "-2, 2, 0",
+        "ready": true,
+        "active": true,
+        "powered": true,
+        "booted": true
+      }
+    ]
+  },
+  "six_terminals_same_grid": true,
+  "diamonds": 336,
+  "gold_ingots": 64,
+  "finite_power_ae": 17829.3125,
+  "native_shift_click_insertion": true,
+  "controlled_move_distance": 40.0,
+  "offline_count_source": "native AE2 cells",
+  "induced_battery_drain": true,
+  "power_loss_preserved_items": true,
+  "offline_native_transfer_rejected": true,
+  "native_menu_opens": 12,
+  "finite_fuel_remaining": 63,
+  "generator_burn_ticks": 1,
+  "stored_energy_ae": 13413.75,
+  "chunk_settlement": {
+    "purpose": "NE01 full ME final save",
+    "server_tick": 1873,
+    "elapsed_actual_server_ticks": 19,
+    "stable_actual_server_ticks": 20,
+    "holders_checked": 1937,
+    "generation_ref_count": 0,
+    "save_futures_pending": 0,
+    "holders_not_ready_for_saving": 0,
+    "pending_generation_tasks": 0,
+    "sable_virtual_storage_holders": 7,
+    "save_futures_failed": 0,
+    "timed_out": false,
+    "non_quiet_examples": []
+  },
+  "passed": true,
+  "error": "",
+  "process_exit_code": 0
+}

@@ -1,0 +1,28 @@
+{
+  "revision": "SK03",
+  "candidate": "0.7.0-preview.98-skat-server",
+  "jar_sha256": "2bf65b335c51b52b7c2ece95a29878a4e6d68c584328738e549d68e38676d2dd",
+  "game_art_only": true,
+  "manufacturing_verified": false,
+  "source_meshes": 1702,
+  "cells": 1509,
+  "light_parts": 37,
+  "full_DH_V6": true,
+  "cold_passed": true,
+  "login_health": 20,
+  "component_checks": 7,
+  "report": "D:/repos/Minecraft/EREZCRAFT/docs/verification/SKAT_SK03.json",
+  "limitations": [
+    "Owner visual acceptance",
+    "Dedicated server with two real players",
+    "Natural Survival voyage, balance and multiple-ship capacity",
+    "New lighting with Complementary enabled; these native runs used shaders OFF",
+    "Open hatch leaf has no moving collision",
+    "Cargo weight does not affect mass; crane remains decorative per SK02 design"
+  ],
+  "production_changed": true,
+  "final_client_opened": false,
+  "release_sequence": 23,
+  "dedicated_active_hull_verified": true,
+  "release_report": "D:/repos/Minecraft/EREZCRAFT/docs/verification/STUDIO_UPDATES_RELEASE.json"
+}

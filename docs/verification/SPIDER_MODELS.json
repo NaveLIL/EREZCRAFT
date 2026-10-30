@@ -1,0 +1,558 @@
+{
+  "status": "IMPLEMENTED_AND_VERIFIED_LOCALLY",
+  "version": "0.7.0-preview.40-studio-spiders",
+  "selected": {
+    "lurker": "LS04",
+    "skirmisher": "SK01",
+    "spitter": "SP02"
+  },
+  "owner_constraints": [
+    "Models, proportions, geometry, UV and source pixels unchanged",
+    "No visible breathing or persistent idle fidgeting",
+    "Quiet resting behaviour"
+  ],
+  "static": {
+    "passed": true,
+    "candidate_sha256": "baaf75bcd1220d4d68ab97f23fa26081443786abf179d50473d53962d270c42f",
+    "reference_sha256": "01514f05817099db9e5d9353e171ba4681f1dde9df984d5d93fe34aa4d36cb5e",
+    "models": [
+      {
+        "variant": "lurker",
+        "revision": "lurker_LS04",
+        "cuboids": 309,
+        "bones": 53,
+        "quads": 1854,
+        "source_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+        "mesh_sha256": "11c8ad2bf2e614f8b1fa7c1612f5a15d7cb1999eeb7e13ac0fd00e84b2297761",
+        "atlas_sha256": "71105ab5152a678cbd305fbc9ff0c756f4a6a5c4ee37b8f35b570722ad5ad720",
+        "exact_rgba_tiles": 22
+      },
+      {
+        "variant": "skirmisher",
+        "revision": "skirmisher_SK01",
+        "cuboids": 309,
+        "bones": 53,
+        "quads": 1854,
+        "source_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+        "mesh_sha256": "89e3db4ae106e88788bf382e651a310015093eab9dced24b13f6609bf9af35b6",
+        "atlas_sha256": "8de4c651cada18575adb3b56eb8ec9bd911f2e2a841080655deadfa87823abf0",
+        "exact_rgba_tiles": 22
+      },
+      {
+        "variant": "spitter",
+        "revision": "spitter_SP02",
+        "cuboids": 309,
+        "bones": 53,
+        "quads": 1854,
+        "source_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+        "mesh_sha256": "ed2be578a1017f27f1e27b8b1644fc41f57dc1530ed08ff14f1e5f563a815754",
+        "atlas_sha256": "6d3ce33f8cb16e79ebddf07ef842e6f5aae541a4407de33e2ca4b51fe662b46f",
+        "exact_rgba_tiles": 22
+      }
+    ],
+    "changed_previous_classes": [
+      "pro/erez/interstice/entity/CaveRiftSpiderEntity.class",
+      "pro/erez/interstice/entity/client/CaveRiftSpiderModel.class",
+      "pro/erez/interstice/entity/client/CaveRiftSpiderRenderer.class"
+    ],
+    "new_classes": [
+      "pro/erez/interstice/entity/client/CaveRiftSpiderModel$Bone.class",
+      "pro/erez/interstice/entity/client/CaveRiftSpiderModel$Face.class",
+      "pro/erez/interstice/entity/client/CaveRiftSpiderModel$Mesh.class"
+    ],
+    "previous_classes_preserved": 557,
+    "previous_png_preserved": 209,
+    "previous_ogg_preserved": 12,
+    "exact_total_quads": 5562,
+    "real_biological_simulation_claimed": false
+  },
+  "blender_mesh": {
+    "passed": true,
+    "models": [
+      {
+        "variant": "lurker",
+        "cuboids": 309,
+        "faces": 1854,
+        "max_local_vertex_error": 0.0000014080697887663973,
+        "max_uv_error": 2.384185793236071e-8,
+        "same_face_winding": true
+      },
+      {
+        "variant": "skirmisher",
+        "cuboids": 309,
+        "faces": 1854,
+        "max_local_vertex_error": 0.0000014080697887663973,
+        "max_uv_error": 2.384185793236071e-8,
+        "same_face_winding": true
+      },
+      {
+        "variant": "spitter",
+        "cuboids": 309,
+        "faces": 1854,
+        "max_local_vertex_error": 0.0000014080697887663973,
+        "max_uv_error": 2.384185793236071e-8,
+        "same_face_winding": true
+      }
+    ],
+    "private_photographs_exported": false
+  },
+  "component": {
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-Pmod_version=0.7.0-preview.40-studio-spiders",
+      "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\s40gt1",
+      "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\blade-release-20261028\\client",
+      "assemble",
+      "runFaunaGameTestServer",
+      "runHunterGameTestServer"
+    ],
+    "passed": true,
+    "started_utc": "2026-10-28T09:27:32.332666+00:00",
+    "pid": 16540,
+    "exit_code": 0,
+    "required_pass_counts": [
+      15,
+      47
+    ],
+    "seconds": 90.125
+  },
+  "native_first": {
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-Pmod_version=0.7.0-preview.40-studio-spiders",
+      "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\s40n1",
+      "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\tide-release-20261028\\client",
+      "assemble",
+      "runStudioSpiders"
+    ],
+    "passed": true,
+    "started_utc": "2026-10-28T09:22:19.596442+00:00",
+    "pid": 9864,
+    "exit_code": 0,
+    "proof": {
+      "distant_horizons_loaded": true,
+      "mod_count": 106,
+      "version": "0.7.0-preview.40-studio-spiders",
+      "initial": [
+        {
+          "variant": "SKIRMISHER",
+          "source_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+          "mesh_sha256": "89e3db4ae106e88788bf382e651a310015093eab9dced24b13f6609bf9af35b6",
+          "texture": "interstice:textures/entity/spider/skirmisher_sk01.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "neutral_min_y_model": -1.1970022,
+          "neutral_max_y_model": 1.5409042
+        },
+        {
+          "variant": "LURKER",
+          "source_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+          "mesh_sha256": "11c8ad2bf2e614f8b1fa7c1612f5a15d7cb1999eeb7e13ac0fd00e84b2297761",
+          "texture": "interstice:textures/entity/spider/lurker_ls04.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "neutral_min_y_model": -1.1970022,
+          "neutral_max_y_model": 1.5409042
+        },
+        {
+          "variant": "SPITTER",
+          "source_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+          "mesh_sha256": "ed2be578a1017f27f1e27b8b1644fc41f57dc1530ed08ff14f1e5f563a815754",
+          "texture": "interstice:textures/entity/spider/spitter_sp02.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "neutral_min_y_model": -1.1970022,
+          "neutral_max_y_model": 1.5409042
+        }
+      ],
+      "actual_dimension": "interstice:islands_v6",
+      "after_reload": [
+        {
+          "variant": "SKIRMISHER",
+          "source_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+          "mesh_sha256": "89e3db4ae106e88788bf382e651a310015093eab9dced24b13f6609bf9af35b6",
+          "texture": "interstice:textures/entity/spider/skirmisher_sk01.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "neutral_min_y_model": -1.1970022,
+          "neutral_max_y_model": 1.5409042
+        },
+        {
+          "variant": "LURKER",
+          "source_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+          "mesh_sha256": "11c8ad2bf2e614f8b1fa7c1612f5a15d7cb1999eeb7e13ac0fd00e84b2297761",
+          "texture": "interstice:textures/entity/spider/lurker_ls04.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "neutral_min_y_model": -1.1970022,
+          "neutral_max_y_model": 1.5409042
+        },
+        {
+          "variant": "SPITTER",
+          "source_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+          "mesh_sha256": "ed2be578a1017f27f1e27b8b1644fc41f57dc1530ed08ff14f1e5f563a815754",
+          "texture": "interstice:textures/entity/spider/spitter_sp02.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "neutral_min_y_model": -1.1970022,
+          "neutral_max_y_model": 1.5409042
+        }
+      ],
+      "resource_reload_checked": true,
+      "actual_routes": [
+        {
+          "variant": "SKIRMISHER",
+          "wall": true,
+          "ceiling": true
+        },
+        {
+          "variant": "LURKER",
+          "wall": true,
+          "ceiling": true
+        },
+        {
+          "variant": "SPITTER",
+          "wall": true,
+          "ceiling": true
+        }
+      ],
+      "ceiling": [
+        {
+          "variant": "SKIRMISHER",
+          "source_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+          "mesh_sha256": "89e3db4ae106e88788bf382e651a310015093eab9dced24b13f6609bf9af35b6",
+          "texture": "interstice:textures/entity/spider/skirmisher_sk01.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "neutral_min_y_model": -1.1970022,
+          "neutral_max_y_model": 1.5409042
+        },
+        {
+          "variant": "LURKER",
+          "source_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+          "mesh_sha256": "11c8ad2bf2e614f8b1fa7c1612f5a15d7cb1999eeb7e13ac0fd00e84b2297761",
+          "texture": "interstice:textures/entity/spider/lurker_ls04.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "neutral_min_y_model": -1.1970022,
+          "neutral_max_y_model": 1.5409042
+        },
+        {
+          "variant": "SPITTER",
+          "source_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+          "mesh_sha256": "ed2be578a1017f27f1e27b8b1644fc41f57dc1530ed08ff14f1e5f563a815754",
+          "texture": "interstice:textures/entity/spider/spitter_sp02.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "neutral_min_y_model": -1.1970022,
+          "neutral_max_y_model": 1.5409042
+        }
+      ],
+      "passed": true,
+      "reason": "",
+      "phase": 7,
+      "pid": 25232,
+      "owner_profile_used": false,
+      "prepared_fixture_not_survival": true,
+      "screenshots": [
+        "spider-models-gallery.png",
+        "spider-models-portrait-skirmisher.png",
+        "spider-models-portrait-lurker.png",
+        "spider-models-portrait-spitter.png",
+        "spider-models-after-reload.png",
+        "spider-models-crawl-0.png",
+        "spider-models-crawl-1.png",
+        "spider-models-crawl-2.png",
+        "spider-models-ceiling.png"
+      ],
+      "settled": {
+        "purpose": "spider_models_shutdown",
+        "server_tick": 928,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1089,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "seconds": 262.64100000000326
+  },
+  "existing_source_changes": [
+    "src/main/java/pro/erez/interstice/entity/CaveRiftSpiderEntity.java",
+    "src/main/java/pro/erez/interstice/entity/client/CaveRiftSpiderModel.java",
+    "src/main/java/pro/erez/interstice/entity/client/CaveRiftSpiderRenderer.java",
+    "src/smoke/java/pro/erez/interstice/test/FaunaFeedbackGameTests.java"
+  ],
+  "scope": {
+    "AI": "unchanged",
+    "damage_targeting_navigation_hitboxes": "unchanged",
+    "surfaces_and_worldgen": "unchanged",
+    "aegis_engineer_and_other_gear": "unchanged",
+    "audio": "No ambient chatter; footsteps .15 -> .015; explicit attack/spit .15; hurt/death base volume .15",
+    "idle": "Authored rest pose; legacy perpetual idle clip not played. MOVE clip and pivots preserved.",
+    "textures": "22 original RGBA tiles per variant copied without resizing into 512x768 atlas; original files remain intact"
+  },
+  "limitations": [
+    "Prepared isolated scene, not Survival or multiplayer capacity acceptance",
+    "No natural burrow construction or complete life-stage simulation",
+    "Pterinochilus and Ephebopus biology informs the adaptation; fantasy bite/spit/combat roles remain",
+    "No production deployment, owner profile installation or new GitHub push"
+  ],
+  "production_unchanged": {
+    "release": "alpha.22",
+    "sequence": 22,
+    "version": "0.7.0-preview.38-clock-grip"
+  },
+  "research": "art/fauna/erez-spiders/behaviour_research.json",
+  "passed": true,
+  "checked_on": "2026-10-28",
+  "native_final": {
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-Pmod_version=0.7.0-preview.40-studio-spiders",
+      "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\s40n2",
+      "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\tide-release-20261028\\client",
+      "assemble",
+      "runStudioSpiders"
+    ],
+    "passed": true,
+    "started_utc": "2026-10-28T09:30:13.730484+00:00",
+    "pid": 24480,
+    "exit_code": 0,
+    "proof": {
+      "distant_horizons_loaded": true,
+      "mod_count": 106,
+      "version": "0.7.0-preview.40-studio-spiders",
+      "initial": [
+        {
+          "variant": "SKIRMISHER",
+          "source_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+          "mesh_sha256": "89e3db4ae106e88788bf382e651a310015093eab9dced24b13f6609bf9af35b6",
+          "texture": "interstice:textures/entity/spider/skirmisher_sk01.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "walking_pose_min_y_model": -1.1970022,
+          "walking_pose_max_y_model": 1.5409042
+        },
+        {
+          "variant": "LURKER",
+          "source_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+          "mesh_sha256": "11c8ad2bf2e614f8b1fa7c1612f5a15d7cb1999eeb7e13ac0fd00e84b2297761",
+          "texture": "interstice:textures/entity/spider/lurker_ls04.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "walking_pose_min_y_model": -1.1970022,
+          "walking_pose_max_y_model": 1.5409042
+        },
+        {
+          "variant": "SPITTER",
+          "source_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+          "mesh_sha256": "ed2be578a1017f27f1e27b8b1644fc41f57dc1530ed08ff14f1e5f563a815754",
+          "texture": "interstice:textures/entity/spider/spitter_sp02.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "walking_pose_min_y_model": -1.1970022,
+          "walking_pose_max_y_model": 1.5409042
+        }
+      ],
+      "actual_dimension": "interstice:islands_v6",
+      "after_reload": [
+        {
+          "variant": "SKIRMISHER",
+          "source_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+          "mesh_sha256": "89e3db4ae106e88788bf382e651a310015093eab9dced24b13f6609bf9af35b6",
+          "texture": "interstice:textures/entity/spider/skirmisher_sk01.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "walking_pose_min_y_model": -1.1970022,
+          "walking_pose_max_y_model": 1.5409042
+        },
+        {
+          "variant": "LURKER",
+          "source_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+          "mesh_sha256": "11c8ad2bf2e614f8b1fa7c1612f5a15d7cb1999eeb7e13ac0fd00e84b2297761",
+          "texture": "interstice:textures/entity/spider/lurker_ls04.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "walking_pose_min_y_model": -1.1970022,
+          "walking_pose_max_y_model": 1.5409042
+        },
+        {
+          "variant": "SPITTER",
+          "source_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+          "mesh_sha256": "ed2be578a1017f27f1e27b8b1644fc41f57dc1530ed08ff14f1e5f563a815754",
+          "texture": "interstice:textures/entity/spider/spitter_sp02.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "walking_pose_min_y_model": -1.1970022,
+          "walking_pose_max_y_model": 1.5409042
+        }
+      ],
+      "resource_reload_checked": true,
+      "actual_routes": [
+        {
+          "variant": "SKIRMISHER",
+          "wall": true,
+          "ceiling": true
+        },
+        {
+          "variant": "LURKER",
+          "wall": true,
+          "ceiling": true
+        },
+        {
+          "variant": "SPITTER",
+          "wall": true,
+          "ceiling": true
+        }
+      ],
+      "ceiling": [
+        {
+          "variant": "SKIRMISHER",
+          "source_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+          "mesh_sha256": "89e3db4ae106e88788bf382e651a310015093eab9dced24b13f6609bf9af35b6",
+          "texture": "interstice:textures/entity/spider/skirmisher_sk01.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "walking_pose_min_y_model": -1.1970022,
+          "walking_pose_max_y_model": 1.5409042
+        },
+        {
+          "variant": "LURKER",
+          "source_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+          "mesh_sha256": "11c8ad2bf2e614f8b1fa7c1612f5a15d7cb1999eeb7e13ac0fd00e84b2297761",
+          "texture": "interstice:textures/entity/spider/lurker_ls04.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "walking_pose_min_y_model": -1.1970022,
+          "walking_pose_max_y_model": 1.5409042
+        },
+        {
+          "variant": "SPITTER",
+          "source_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+          "mesh_sha256": "ed2be578a1017f27f1e27b8b1644fc41f57dc1530ed08ff14f1e5f563a815754",
+          "texture": "interstice:textures/entity/spider/spitter_sp02.png",
+          "vertices": 7416,
+          "stationary_pose_exactly_static": true,
+          "walk_changes_joints_without_scaling": true,
+          "walking_pose_min_y_model": -1.1970022,
+          "walking_pose_max_y_model": 1.5409042
+        }
+      ],
+      "passed": true,
+      "reason": "",
+      "phase": 7,
+      "pid": 11488,
+      "owner_profile_used": false,
+      "prepared_fixture_not_survival": true,
+      "screenshots": [
+        "spider-models-gallery.png",
+        "spider-models-portrait-skirmisher.png",
+        "spider-models-portrait-lurker.png",
+        "spider-models-portrait-spitter.png",
+        "spider-models-after-reload.png",
+        "spider-models-crawl-0.png",
+        "spider-models-crawl-1.png",
+        "spider-models-crawl-2.png",
+        "spider-models-ceiling.png"
+      ],
+      "settled": {
+        "purpose": "spider_models_shutdown",
+        "server_tick": 960,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1089,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "seconds": 230.25
+  },
+  "original_source_comparison": [
+    {
+      "variant": "lurker",
+      "original_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+      "repository_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af"
+    },
+    {
+      "variant": "skirmisher",
+      "original_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+      "repository_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231"
+    },
+    {
+      "variant": "spitter",
+      "original_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+      "repository_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7"
+    }
+  ],
+  "review_images": [
+    {
+      "file": "docs/verification/spider_models/portrait-skirmisher.png",
+      "sha256": "ba992dd04f5f3187f7867fed2b6da9317980e4d4341d0d9869b28ffb77a7852f",
+      "reviewed": true
+    },
+    {
+      "file": "docs/verification/spider_models/portrait-lurker.png",
+      "sha256": "97c0e9d58c5c7b809ba37af1cd41ff4e1d065e4301a9d4a6acc9e46c7308c406",
+      "reviewed": true
+    },
+    {
+      "file": "docs/verification/spider_models/portrait-spitter.png",
+      "sha256": "b7cc01ec7d09f8ddf8e5532a71a9e5e9958176839c154e1966592f2a46dffc07",
+      "reviewed": true
+    },
+    {
+      "file": "docs/verification/spider_models/ceiling.png",
+      "sha256": "2868381c60648621bff5b8ab94bd92e9a2fea0f1ee512c1d6ba97df9cd64abe5",
+      "reviewed": true
+    }
+  ],
+  "image_review_notes": "Native portraits and underside ceiling attachment reviewed. Gallery is diagnostic only: a floating observer attachment remains in its distant background, unrelated to spider mesh. Crawl frames are telemetry snapshots, not a continuous locomotion film.",
+  "behaviour_followup": {
+    "report": "docs/verification/SPIDER_BEHAVIOUR.json",
+    "version": "0.7.0-preview.41-spider-behaviour",
+    "note": "Later audit corrected sound instrumentation to include positional events with a positive control, fixed remaining loud burst sound and identified unrestricted attack angles. Original visual/mesh checks remain historical evidence."
+  }
+}

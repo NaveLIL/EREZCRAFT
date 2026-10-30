@@ -1,0 +1,13 @@
+{
+  "full_creature_inside_frame": true,
+  "normalized_bounds": {
+    "minimum": [
+      0.3880119323730469,
+      0.07160315662622452
+    ],
+    "maximum": [
+      0.6098650097846985,
+      0.946742594242096
+    ]
+  }
+}

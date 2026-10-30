@@ -22,12 +22,16 @@ public abstract class EntityFluidContactMixin {
         Entity entity = (Entity) (Object) this;
         FluidType light = Interstice.LIGHT_TYPE.get();
         forgeFluidTypeHeight.removeDouble(light);
+        if(pro.erez.interstice.ocean.LowerToxinSurface.active(entity.level())&&Math.abs(entity.getY()-pro.erez.interstice.ocean.LowerToxinSurface.base(entity.level()))<1.5){double lower=pro.erez.interstice.ocean.LowerToxinSurface.overlap(entity.level(),entity.getBoundingBox().deflate(.001));forgeFluidTypeHeight.removeDouble(Interstice.HEAVY_TYPE.get());if(lower>0)forgeFluidTypeHeight.put(Interstice.HEAVY_TYPE.get(),lower);}
+        if(pro.erez.interstice.ocean.ToxinHullOcclusion.dry(entity.level(),entity.getX(),entity.getY()+.01,entity.getZ()))forgeFluidTypeHeight.removeDouble(Interstice.HEAVY_TYPE.get());
         double depth = FluidContact.lightOverlap(entity.level(), entity.getBoundingBox().deflate(0.001));
         if (depth > 0) forgeFluidTypeHeight.put(light, depth);
     }
     @Inject(method = "updateFluidOnEyes", at = @At("TAIL"))
     private void interstice$correctEyeContact(CallbackInfo ci) {
         Entity entity = (Entity) (Object) this;
+        if(pro.erez.interstice.ocean.LowerToxinSurface.active(entity.level())&&Math.abs(entity.getEyeY()-pro.erez.interstice.ocean.LowerToxinSurface.base(entity.level()))<1&&pro.erez.interstice.ocean.LowerToxinSurface.cell(entity.level(),entity.blockPosition().getX(),entity.blockPosition().getZ())){if(!pro.erez.interstice.ocean.ToxinHullOcclusion.dry(entity.level(),entity.getX(),entity.getEyeY(),entity.getZ())&&entity.getEyeY()<pro.erez.interstice.ocean.LowerToxinSurface.sample(entity.level(),entity.getX(),entity.getZ(),0).height())forgeFluidTypeOnEyes=Interstice.HEAVY_TYPE.get();else if(forgeFluidTypeOnEyes==Interstice.HEAVY_TYPE.get())forgeFluidTypeOnEyes=NeoForgeMod.EMPTY_TYPE.value();}
+        if(forgeFluidTypeOnEyes==Interstice.HEAVY_TYPE.get()&&pro.erez.interstice.ocean.ToxinHullOcclusion.dry(entity.level(),entity.getX(),entity.getEyeY(),entity.getZ()))forgeFluidTypeOnEyes=NeoForgeMod.EMPTY_TYPE.value();
         if (FluidContact.pointInLight(entity.level(), entity.getX(), entity.getEyeY(), entity.getZ())) {
             forgeFluidTypeOnEyes = Interstice.LIGHT_TYPE.get();
         } else if (forgeFluidTypeOnEyes == Interstice.LIGHT_TYPE.get()) {

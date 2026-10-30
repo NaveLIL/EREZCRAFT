@@ -36,7 +36,8 @@ public final class V6ShaderBridge {
                     || !probe.contains("vec3 GetMinimumLighting(float lightmapYM)")) return original;
             boolean darkness = IntersticeClientConfig.V6_DARKNESS.get();
             patchedSources = 0;
-            Function<Object, String> adapted = sourcePath -> adapt(provider.apply(sourcePath), darkness);
+            var pathName=pathClass.getMethod("getPathString");
+            Function<Object, String> adapted = sourcePath -> {try{return IrisOceanAdapter.adapt((String)pathName.invoke(sourcePath),adapt(provider.apply(sourcePath), darkness));}catch(ReflectiveOperationException e){throw new IllegalStateException(e);}};
             var properties = Class.forName("net.irisshaders.iris.shaderpack.properties.ShaderProperties");
             var packClass = Class.forName("net.irisshaders.iris.shaderpack.ShaderPack");
             var setClass = Class.forName("net.irisshaders.iris.shaderpack.programs.ProgramSet");

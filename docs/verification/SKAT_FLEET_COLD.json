@@ -1,0 +1,817 @@
+{
+  "dh_loaded": true,
+  "version": "0.7.0-preview.120-vehicle-fleet",
+  "started_utc": "2026-10-30T03:16:43.197362400Z",
+  "phase": 9,
+  "mode": "reload",
+  "owner_profile_used": false,
+  "max_tilt_all_phases": 0.08954644459540322,
+  "cold_login_trace": [
+    {
+      "tick": 12662,
+      "health": 20,
+      "position": "(-1475.4548363742078, 36.5447313765294, -5402.115192538911)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12663,
+      "health": 20,
+      "position": "(-1475.454874144319, 36.51941024004165, -5402.115131841945)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12664,
+      "health": 20,
+      "position": "(-1475.4550253784573, 36.4405683384031, -5402.114748510676)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12665,
+      "health": 20,
+      "position": "(-1475.4552500356176, 36.31241998388899, -5402.114152020065)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12666,
+      "health": 20,
+      "position": "(-1475.4359792755367, 36.15845513548942, -5402.105097558968)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12667,
+      "health": 20,
+      "position": "(-1475.4069502220418, 35.99933678374795, -5402.089611582325)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12668,
+      "health": 20,
+      "position": "(-1475.3867192242033, 35.85327857519171, -5402.081269962777)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12669,
+      "health": 20,
+      "position": "(-1475.3702360392217, 35.73251739886915, -5402.080313712855)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12670,
+      "health": 20,
+      "position": "(-1475.358063438901, 35.63989297785018, -5402.078721144795)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12671,
+      "health": 20,
+      "position": "(-1475.3500374052492, 35.572769720400274, -5402.078741201554)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12672,
+      "health": 20,
+      "position": "(-1475.3842137617594, 35.52325216970562, -5402.086504455334)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12673,
+      "health": 20,
+      "position": "(-1475.3806811738023, 35.48456851620613, -5402.086007729953)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12674,
+      "health": 20,
+      "position": "(-1475.3769527250179, 35.45318745252968, -5402.086059922967)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12675,
+      "health": 20,
+      "position": "(-1475.3732049901578, 35.42613558187636, -5402.086301533718)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12676,
+      "health": 20,
+      "position": "(-1475.3695721200493, 35.40235097731125, -5402.086327429079)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12677,
+      "health": 20,
+      "position": "(-1475.3659079777358, 35.38111610629547, -5402.086335585076)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12678,
+      "health": 20,
+      "position": "(-1475.3633129928762, 35.36203915061686, -5402.086554501539)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12679,
+      "health": 20,
+      "position": "(-1475.36133946589, 35.34476711796392, -5402.0864546519915)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12680,
+      "health": 20,
+      "position": "(-1475.3597024657497, 35.328962910097836, -5402.086408280811)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12681,
+      "health": 20,
+      "position": "(-1475.3598748340205, 35.31459362113977, -5402.086512715603)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12682,
+      "health": 20,
+      "position": "(-1475.3600344319552, 35.30150713374311, -5402.086529827062)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12683,
+      "health": 20,
+      "position": "(-1475.3601676399753, 35.28966641752266, -5402.086660151921)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12684,
+      "health": 20,
+      "position": "(-1475.3759694900339, 35.20106642987858, -5402.087522904772)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12685,
+      "health": 20,
+      "position": "(-1475.3760696060292, 35.191171621937556, -5402.0878852798905)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12686,
+      "health": 20,
+      "position": "(-1475.3778085866024, 35.067695146578494, -5402.087922037531)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12687,
+      "health": 20,
+      "position": "(-1475.3780170942036, 35.060287288459385, -5402.087881667937)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12688,
+      "health": 20,
+      "position": "(-1475.378172747597, 35.05364537798176, -5402.087876340659)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12689,
+      "health": 20,
+      "position": "(-1475.3783141257209, 35.04801624989414, -5402.087987434918)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12690,
+      "health": 20,
+      "position": "(-1475.380114242431, 35.04353785676354, -5402.087588042081)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12691,
+      "health": 20,
+      "position": "(-1475.3802006550247, 35.03966202538357, -5402.0876944660795)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12692,
+      "health": 20,
+      "position": "(-1475.3807474084574, 35.036976198317774, -5402.087776649552)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12693,
+      "health": 20,
+      "position": "(-1475.3807894367387, 35.03472718609683, -5402.087871061789)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12694,
+      "health": 20,
+      "position": "(-1475.3808164218822, 35.03336511348067, -5402.087960802275)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12695,
+      "health": 20,
+      "position": "(-1475.3808258506565, 35.03278719045058, -5402.088043976395)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12696,
+      "health": 20,
+      "position": "(-1475.3808047783732, 35.03295595801954, -5402.088122339397)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12697,
+      "health": 20,
+      "position": "(-1475.380769403704, 35.03397217864706, -5402.088213341382)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12698,
+      "health": 20,
+      "position": "(-1475.3807127439395, 35.03575950774119, -5402.088315779811)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12699,
+      "health": 20,
+      "position": "(-1475.3806386768229, 35.03831700532959, -5402.088394543978)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12700,
+      "health": 20,
+      "position": "(-1475.380543262996, 35.04164009803864, -5402.0884749992165)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12701,
+      "health": 20,
+      "position": "(-1475.3805508186701, 35.045735218802236, -5402.0885562221065)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12702,
+      "health": 20,
+      "position": "(-1475.3805363495535, 35.050582552494404, -5402.088648966466)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12703,
+      "health": 20,
+      "position": "(-1475.3805096556584, 35.056177840908816, -5402.08872003201)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12704,
+      "health": 20,
+      "position": "(-1475.3805882910324, 35.06249867627311, -5402.088755840101)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12705,
+      "health": 20,
+      "position": "(-1475.3806533984348, 35.06957796754442, -5402.088776255832)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12706,
+      "health": 20,
+      "position": "(-1475.3806986021623, 35.077396134550966, -5402.088791253023)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12707,
+      "health": 20,
+      "position": "(-1475.3807259306618, 35.08592092588053, -5402.0888030092265)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12708,
+      "health": 20,
+      "position": "(-1475.3807377956805, 35.09516111619979, -5402.088812332668)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12709,
+      "health": 20,
+      "position": "(-1475.380729277765, 35.10514037127582, -5402.088816168589)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12710,
+      "health": 20,
+      "position": "(-1475.3807020488152, 35.11590042258655, -5402.088830651397)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12711,
+      "health": 20,
+      "position": "(-1475.3805364137174, 35.1274237655098, -5402.088842615665)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12712,
+      "health": 20,
+      "position": "(-1475.3804684408055, 35.13972535553569, -5402.08884244585)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12713,
+      "health": 20,
+      "position": "(-1475.3803890237382, 35.15279716664476, -5402.088873720551)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12714,
+      "health": 20,
+      "position": "(-1475.3737790902521, 35.166161953992045, -5402.089007273744)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12715,
+      "health": 20,
+      "position": "(-1475.3736613029453, 35.18080147849871, -5402.089037442935)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12716,
+      "health": 20,
+      "position": "(-1475.3718773332716, 35.19579280620839, -5402.089058568396)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12717,
+      "health": 20,
+      "position": "(-1475.3709542528231, 35.21130830532134, -5402.089039781182)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12718,
+      "health": 20,
+      "position": "(-1475.3707987026355, 35.22795306150955, -5402.089088287761)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12719,
+      "health": 20,
+      "position": "(-1475.37086060015, 35.24515136547295, -5402.089084068135)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12720,
+      "health": 20,
+      "position": "(-1475.3706759391407, 35.26305746084219, -5402.089133030182)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12721,
+      "health": 20,
+      "position": "(-1475.3707113894943, 35.281478022046215, -5402.089148288451)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12722,
+      "health": 20,
+      "position": "(-1475.365623567608, 35.30018315482544, -5402.08925582003)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12723,
+      "health": 20,
+      "position": "(-1475.36564110451, 35.3195822469829, -5402.089166626261)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12724,
+      "health": 20,
+      "position": "(-1475.363409941874, 35.33871849254788, -5402.089083068242)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12725,
+      "health": 20,
+      "position": "(-1475.3633073963467, 35.35910544661158, -5402.08917017913)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12726,
+      "health": 20,
+      "position": "(-1475.3632100637403, 35.379953949968666, -5402.089035138799)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12727,
+      "health": 20,
+      "position": "(-1475.3597049644397, 35.40077674056497, -5402.089220935901)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12728,
+      "health": 20,
+      "position": "(-1475.3589022473209, 35.42238054920764, -5402.089417166933)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12729,
+      "health": 20,
+      "position": "(-1475.360570997884, 35.44469017271607, -5402.089539579021)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12730,
+      "health": 20,
+      "position": "(-1475.3610130249992, 35.46702713280296, -5402.088574895264)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12731,
+      "health": 20,
+      "position": "(-1475.3586803425005, 35.4891440194158, -5402.085371676177)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12732,
+      "health": 20,
+      "position": "(-1475.3595087814435, 35.51239966665549, -5402.080815661098)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12733,
+      "health": 20,
+      "position": "(-1475.360393314017, 35.53605870990721, -5402.075664774178)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12734,
+      "health": 20,
+      "position": "(-1475.3630069894548, 35.55998714152652, -5402.078188897105)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12735,
+      "health": 20,
+      "position": "(-1475.3634582804773, 35.58526281671029, -5402.076353477517)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12736,
+      "health": 20,
+      "position": "(-1475.3655149887861, 35.61098821972202, -5402.078068232251)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12737,
+      "health": 20,
+      "position": "(-1475.3675146910346, 35.6375322318105, -5402.079012063727)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12738,
+      "health": 20,
+      "position": "(-1475.3694880634257, 35.66480418474513, -5402.079220474529)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12739,
+      "health": 20,
+      "position": "(-1475.3714521803545, 35.692524717862774, -5402.078240410969)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12740,
+      "health": 20,
+      "position": "(-1475.3734328077146, 35.720628369508034, -5402.0765614048205)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    },
+    {
+      "tick": 12741,
+      "health": 20,
+      "position": "(-1475.3754339489838, 35.74898219090753, -5402.073732939556)",
+      "frozen_ship": "null",
+      "tracking": "ServerSubLevel[name=Скат SK04, id=a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3, global_plot=10000,10000]"
+    }
+  ],
+  "cold_login_dimension_restores": 1,
+  "native_vehicle_highlight_cancelled": 3761,
+  "survival_cold_login_health": 20,
+  "survival_cold_login_client_ticks": 159,
+  "saved_pose_loaded_from_sable_index": {
+    "uuid": "a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3",
+    "x": -1477.2216796875,
+    "y": 37.531253814697266,
+    "z": -5402.34033203125,
+    "source": "r.-3.-11.0.slvls",
+    "slot": 1,
+    "sha256": "7b1442e3521f7ed54d127e2a55ae5a39d3afa5504c3a78088191a7131b637a99",
+    "world_modified": false
+  },
+  "cold_load_at_saved_ship": "-1478, 35, -5403",
+  "cargo_containers": 26,
+  "cargo_slots": 1404,
+  "lighting_loaded_mask": 6,
+  "ship_uuid": "a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3",
+  "mass": 44.95574699999996,
+  "initial_fuel_-3": 63167,
+  "initial_fuel_3": 767,
+  "loaded_engine_saved_rpm_-3": 96,
+  "loaded_propeller_saved_rpm_-3": 96,
+  "loaded_engine_saved_rpm_3": 96,
+  "loaded_propeller_saved_rpm_3": 96,
+  "structure_cells_checked": 1509,
+  "initial_total_fuel_budget": 161534,
+  "inventory_ids": [
+    "be5108f6-fc96-4092-bc8f-856460e21b85",
+    "9a97d32d-b76f-4a8d-af89-163614977a30",
+    "7750294c-0422-4a4e-9193-71e3a378d972",
+    "80285bc0-f391-4657-9140-c2e00f5ec53f",
+    "85cc5958-bf83-4ac9-a3d1-9f924a29e3bc",
+    "7f3d519b-8053-4912-97a2-389cb76d587b",
+    "a5f80ebe-a12a-4a6d-bda1-aca919a497f0",
+    "7ea6331d-a475-4d72-8e13-cbe0ddeec76d",
+    "11e148ad-9eb5-4137-a960-94020fe8c42d",
+    "1c0e8690-d7f5-4458-9355-80d049ef158b",
+    "a5631323-5558-455c-ae1b-c156569c5bb4",
+    "bc0944be-a1e6-44c5-b8f3-8d9280453499",
+    "a3366af6-824a-417d-bf71-9c3292f789ef",
+    "382bf9f6-1ab3-4398-be0c-124da40afcc4",
+    "dad70f22-7293-411a-9d40-2b844dd09557",
+    "0ab2a0f1-58bc-44f4-90bd-85328bca0484",
+    "9edb2dd8-219e-41c8-8501-2d1b077ce320",
+    "c848bfb9-c54f-4ba0-8d01-3e6243de0a09",
+    "ee63bcb1-7af1-455f-a88b-421fc4f951e7",
+    "72a3dcbe-0631-4481-a179-a242e08de35f",
+    "ba16359c-76db-42fa-821c-c0bd12007b1f",
+    "c9854969-4c1a-4843-9a17-25015f4cf6ea",
+    "d109d711-4593-4406-97d9-c943643f7f3f",
+    "9112f0e1-c2c4-44b2-919b-8f3c3425dbd0",
+    "35fe18f9-24c1-4784-883d-4480d020e6c4",
+    "b41d582a-92e0-4ad0-89c9-44a64992b0bd"
+  ],
+  "complete_plot_before_setup": true,
+  "settled_position": "(-1,477E+3  3,674E+1 -5,402E+3)",
+  "min_y": 36.515464782714844,
+  "max_y": 37.77220153808594,
+  "max_tilt": 0.06986200901036953,
+  "hold_floor_freeboard": 0.813832786887879,
+  "input_timeout_stops_but_retains_seated_pilot": true,
+  "drive_direction": -1,
+  "pulsed_throttle": true,
+  "client_control_state": "Status[helm=BlockPos{x=20481032, y=132, z=20481026}, active=true, rpm=-96, turn=5, leftFuel=62732, rightFuel=332]",
+  "client_passenger": true,
+  "client_up": false,
+  "server_pilot": "380df991-f603-344c-a090-369bad2a924a",
+  "server_passenger": true,
+  "forward_rpm_-3": -96,
+  "forward_rpm_3": -96,
+  "prop_rpm_-3": -96,
+  "prop_thrust_-3": -4562.302912261964,
+  "prop_rpm_3": -96,
+  "prop_thrust_3": -4562.302912261964,
+  "terrain_in_world_bounds": [],
+  "native_thrust_distance": 38.931963452070164,
+  "fuel_ticks_spent": 404,
+  "neutral_coast_before_turn_ticks": 120,
+  "turn_entry_angular_velocity": "( 1,787E-3  7,272E-5  1,205E-2)",
+  "turn_observed_ticks": 240,
+  "turn_observed_radians": 0.17070457609730275,
+  "turn_rpm_-3": -90.54173,
+  "turn_thrust_-3": -4302.985801635743,
+  "turn_rpm_3": -101.45827,
+  "turn_thrust_3": -4821.621835784913,
+  "turn_radians": 0.17070457609730275,
+  "bunker_remaining_coal": 61,
+  "native_bunker_supplies_both": true,
+  "pilot_failsafe": true,
+  "passed_runtime": true,
+  "dedicated_two_players": false,
+  "systems": {
+    "opening_fixture_reset": true,
+    "walk_20": {
+      "local": "( 5,004E-1  1,635E+0  9,973E-1)",
+      "health": 20,
+      "dry": true,
+      "fluid": 0
+    },
+    "walk_40": {
+      "local": "( 4,997E-1  1,626E+0 -3,440E+0)",
+      "health": 20,
+      "dry": true,
+      "fluid": 0
+    },
+    "walk_60": {
+      "local": "( 5,051E-1  1,629E+0 -5,485E+0)",
+      "health": 20,
+      "dry": true,
+      "fluid": 0
+    },
+    "walk_80": {
+      "local": "( 5,044E-1  1,630E+0 -5,487E+0)",
+      "health": 20,
+      "dry": true,
+      "fluid": 0
+    },
+    "walk_100": {
+      "local": "( 5,045E-1  1,627E+0 -5,487E+0)",
+      "health": 20,
+      "dry": true,
+      "fluid": 0
+    },
+    "walk_120": {
+      "local": "( 5,498E-1  1,621E+0 -5,327E+0)",
+      "health": 20,
+      "dry": true,
+      "fluid": 0
+    },
+    "real_hold_walk_blocks": 10.12672841846943,
+    "forehold_reached": true,
+    "hold_health_preserved": true,
+    "door_client_interaction": true,
+    "real_cabin_entry": true,
+    "cabin_surge_shelter": true,
+    "lighting": {
+      "real_console_panel": true,
+      "lamp_cells_checked": 94,
+      "hold_aisle_block_light": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "hold_aisle_min_light": 12,
+      "all_off": true,
+      "world_headlight_level": 10.657272855433776,
+      "dynamic_api": true,
+      "independent_circuits": true,
+      "saved_mask": 6,
+      "invalid_channel_denied": true,
+      "remote_control_denied": true,
+      "toxin_dark_patch_red": 16.93359375,
+      "toxin_lit_patch_red": 35.1728515625,
+      "toxin_gpu_illumination": true,
+      "torch_dark_patch_red": 16.93359375,
+      "offhand_torch_patch_red": 34.6396484375,
+      "ocean_entity_lights": 1,
+      "mainhand_torch_patch_red": 32.208984375,
+      "torch_removed_patch_red": 16.93359375,
+      "both_hand_toxin_light": true,
+      "beauty_no_night_vision": true,
+      "beauty_no_hud": true,
+      "beauty_lighting_mask": 7,
+      "gpu_atlas_bytes": 228480,
+      "mass_preserved": true,
+      "shared_atlas_uploads": 1,
+      "passed": true,
+      "stage": 14,
+      "observed_mask": 6,
+      "helm_removed": false,
+      "observed_player": "(-1387.1800544491398, 39.0351460784811, -5358.442930314022)"
+    },
+    "hatch_client_interaction": true,
+    "hatch_occupant_veto": true,
+    "stair_descent_20": "( 4,881E-1  2,580E+0  6,199E+0)",
+    "stair_descent_40": "( 4,829E-1  1,635E+0  4,726E+0)",
+    "stair_descent_60": "( 5,528E-1  1,641E+0  4,882E+0)",
+    "stair_descent_80": "( 5,506E-1  1,633E+0  4,884E+0)",
+    "stair_descent_100": "( 5,517E-1  1,627E+0  4,883E+0)",
+    "real_stair_descent": true,
+    "stair_crouch_required": false,
+    "stair_ascent_20": "( 5,555E-1  2,680E+0  6,666E+0)",
+    "stair_ascent_40": "( 5,478E-1  2,674E+0  6,668E+0)",
+    "stair_ascent_60": "( 5,470E-1  3,125E+0  7,263E+0)",
+    "stair_ascent_80": "( 4,871E-1  4,083E+0  9,630E+0)",
+    "stair_ascent_100": "( 4,473E-1  4,089E+0  9,612E+0)",
+    "stair_ascent_120": "( 4,775E-1  4,093E+0  9,551E+0)",
+    "real_stair_ascent": true,
+    "cargo_real_client_quick_move": true,
+    "cargo_automation": true,
+    "bulk_refuel": true,
+    "bulk_coal_accepted": 0,
+    "boarding_pier_blocks_1": 6,
+    "boarding_climbed_1": true,
+    "boarding_local_1": "( 5,209E+0  4,503E+0  6,890E-1)",
+    "boarding_passed_1": true,
+    "boarding_pier_blocks_-1": 7,
+    "boarding_climbed_-1": true,
+    "boarding_local_-1": "(-4,138E+0  5,145E+0  7,389E-1)",
+    "boarding_passed_-1": true,
+    "deck_crate_native_gui_24": true,
+    "deck_crate_native_gui_25": true,
+    "skat_pin_actual_gui": true,
+    "full_frame_one_ship": {
+      "scope": "whole_frame_including_DH",
+      "gpu_samples": 300,
+      "cpu_samples": 301,
+      "gpu_p50_ms": 4.04396,
+      "gpu_p95_ms": 4.3358,
+      "gpu_p99_ms": 7.348,
+      "cpu_p50_ms": 2.1598,
+      "cpu_p95_ms": 4.8533,
+      "frame_p50_ms": 16.6993,
+      "frame_p95_ms": 27.728,
+      "frame_p99_ms": 31.1433
+    },
+    "passed": true,
+    "saved_survival_inside_hold": true,
+    "step": 11,
+    "ticks": 105
+  },
+  "lighting_saved_mask": 6,
+  "final_chunk_settlement": {
+    "purpose": "Skat systems final native quiet",
+    "server_tick": 16425,
+    "elapsed_actual_server_ticks": 43,
+    "stable_actual_server_ticks": 39,
+    "holders_checked": 1935,
+    "generation_ref_count": 0,
+    "save_futures_pending": 0,
+    "holders_not_ready_for_saving": 0,
+    "pending_generation_tasks": 0,
+    "sable_virtual_storage_holders": 5,
+    "save_futures_failed": 0,
+    "timed_out": false,
+    "non_quiet_examples": []
+  },
+  "cold_powered_drivetrain": true,
+  "saved_world_x": -1382.81787109375,
+  "saved_world_z": -5355.09326171875,
+  "passed": true,
+  "error": "",
+  "process_exit_code": 0
+}

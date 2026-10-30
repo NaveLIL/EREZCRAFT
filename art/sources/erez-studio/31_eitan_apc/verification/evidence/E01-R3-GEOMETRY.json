@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "id": "E01-R3-GEOMETRY",
+  "created_at": "2026-10-29T09:02:28+00:00",
+  "method": "inspection",
+  "result": "pass",
+  "origin": "operator_record",
+  "observations": {
+    "DIM-L": {
+      "metric": "length_mm",
+      "value": 8014.499664306641,
+      "unit": "mm"
+    },
+    "DIM-W": {
+      "metric": "width_mm",
+      "value": 3000.0,
+      "unit": "mm"
+    },
+    "DIM-H": {
+      "metric": "height_mm",
+      "value": 3000.0264644622803,
+      "unit": "mm"
+    },
+    "SEATS": {
+      "metric": "seats",
+      "value": 12,
+      "unit": "count"
+    },
+    "WHEELS": {
+      "metric": "wheels",
+      "value": 8,
+      "unit": "count"
+    },
+    "RAMP-GROUND": {
+      "metric": "ramp_continuous_min_z_mm",
+      "value": 6.7671403174819345,
+      "unit": "mm"
+    },
+    "SEAT-FOLD": {
+      "metric": "folded_pans_rising",
+      "value": 9,
+      "unit": "count"
+    },
+    "STATE": {
+      "metric": "state_contract_passed",
+      "value": true,
+      "unit": "bool"
+    },
+    "EXPORT": {
+      "metric": "glb_round_trip_passed",
+      "value": true,
+      "unit": "bool"
+    },
+    "REAR-RECESS": {
+      "metric": "rear_recess_mm",
+      "value": 589.9999141693115,
+      "unit": "mm"
+    },
+    "REAR-RISE": {
+      "metric": "rear_shoulder_rise_mm",
+      "value": 167.39597320556632,
+      "unit": "mm"
+    },
+    "REAR-MOTION": {
+      "metric": "rear_sampled_surface_intersections",
+      "value": 0,
+      "unit": "count"
+    }
+  },
+  "dependencies": {
+    "assembly/eitan_E01.blend": "c152abbf8fdd19610c3333e42f4f20586ceaf5a6a5516c61a718cd7ec7fbe366",
+    "docs/ASSUMPTIONS.md": "a8046b47501c61b299ff05beae6266e89a9c03ac5afd73754e9ca04cc2292060",
+    "exports/eitan_E01_boarding.glb": "ceb93f0b0deabc7881e6b063ef57ca8b912e1f64fa2a97208372984c5bf9c57c",
+    "exports/eitan_E01_closed.glb": "ceb93f0b0deabc7881e6b063ef57ca8b912e1f64fa2a97208372984c5bf9c57c",
+    "reports/MODEL_CHECK.json": "e2ee56afecc0799f70bf62a34e7a0c635fb7e251722204a60a9c7152c7b0b935",
+    "source/eitan_E01.json": "2be60f4845c623efe148d6d5b0b442f5ce6a46bbb1537e5b89ee7dae0fe1a842",
+    "source/game_integration.json": "54d1469b33d83ff793280f00ad08df5651b693e5beb12a10bca4d116278c8210",
+    "source/parameters.json": "41761be126fe7451c4c2569eeffd284a2477918cb72258e73e5b2f60046923d3",
+    "source/sources.json": "76b7cd112d7179553464075340330745c61e9aaf42cc11057367c31759b38159",
+    "tools/build_design.py": "0dfe392437a076429f460735cfb35864bf3cf9a384eed677594a546c3daa3fa2",
+    "tools/build_scene.py": "1bf63b36e65616ce60a3e1cabdbfa80135f572bdd860e783c1839e901c655d68",
+    "tools/mechanism_state.py": "e8db935cd9fe6afac810a1e70f147ea94d48d3bbd68cd5ff7b2f1cd3f7f8bb61",
+    "tools/verify_model.py": "7b6a581d79707509570837e49421568dee144023a5785f7ce425864a37650a7b",
+    "verification/model-inspection.json": "5dae95e74a7c9b014cf9af1d0121e735d19562b5c86c0e2282e7b4de1bee7d24"
+  },
+  "basis_sha256": "9830b6d96f0cc8caee577618a9505bbd4cba175d04b06926624563f87fda5b33",
+  "tool_sha256": "f827ee741f4643bd11ddd5caeb986c88ac7460b7934256d5dcf5cbffb069279e",
+  "tool_version": "0.1.0",
+  "limitations": [
+    "Opening directions/angles and detailed dimensions are documented adaptations, not a factory drawing.",
+    "No complete continuous collision proof between all vehicle parts, occupants and terrain.",
+    "Actuator linkage sampled at listed poses; not force/friction/hydraulic simulation.",
+    "No Minecraft runtime integration or driving test."
+  ],
+  "details": {
+    "setup": "Blender 5.2.2 LTS evaluated mesh + native driver + GLB round trip; virtual model inspection only"
+  }
+}

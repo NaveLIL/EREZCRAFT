@@ -1,0 +1,343 @@
+{
+  "design": "LS03",
+  "baseline": "LS02",
+  "base_sha256": "c2ba24e96532cba56ac782103f0982cf4610d6dbf6b1a434b81e40b3f2d2d7ac",
+  "model_sha256": "ac1303da83b72284a4d569bea20fc41beb6d0426bd90ca5cd159ea40620a703b",
+  "leg_lengths": [
+    {
+      "part": "left_first_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg2",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_first_leg2",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_first_leg3",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg3",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_first_leg4",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg4",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_second_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_second_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_left_fourth_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.1000000000000005,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.1000000000000005,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_third_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_third_leg",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 8,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg4",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_leftfourth_leg2",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_leftfourth_leg",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_left_fourth_leg",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg2",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg3",
+      "factor": 1.18,
+      "axis": 0,
+      "length": 16,
+      "width_before": 3.1000000000000014,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_third_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_second_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_third_leg3",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_second_leg3",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_third_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_second_leg2",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_second_leg3",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_third_leg3",
+      "factor": 1.18,
+      "axis": 2,
+      "length": 16,
+      "width_before": 3.0999999999999996,
+      "width_after": 3.658,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_second_leg4",
+      "factor": 1.12,
+      "axis": 2,
+      "length": 16,
+      "width_before": 1.8499999999999999,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_third_leg4",
+      "factor": 1.12,
+      "axis": 2,
+      "length": 16,
+      "width_before": 1.8499999999999996,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_second_leg4",
+      "factor": 1.12,
+      "axis": 2,
+      "length": 16,
+      "width_before": 1.8499999999999999,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_third_leg4",
+      "factor": 1.12,
+      "axis": 2,
+      "length": 16,
+      "width_before": 1.8499999999999996,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "left_first_leg5",
+      "factor": 1.12,
+      "axis": 0,
+      "length": 16,
+      "width_before": 1.8500000000000014,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_first_leg5",
+      "factor": 1.12,
+      "axis": 0,
+      "length": 16,
+      "width_before": 1.8500000000000014,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "_leftfourth_leg3",
+      "factor": 1.12,
+      "axis": 0,
+      "length": 16,
+      "width_before": 1.8500000000000014,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    },
+    {
+      "part": "right_fourth_leg5",
+      "factor": 1.12,
+      "axis": 0,
+      "length": 16,
+      "width_before": 1.8500000000000014,
+      "width_after": 2.072,
+      "longitudinal_endpoints_preserved": true
+    }
+  ],
+  "main_leg_thickness_increase_percent": 18,
+  "tip_thickness_increase_percent": 12,
+  "leg_lengths_all_preserved": true,
+  "groups_identical": true,
+  "animations_identical": true,
+  "texture_bytes_identical": true,
+  "non_leg_geometry_identical_to_LS02": true,
+  "bristle_dimensions_preserved": true,
+  "prototype_cubes": 309,
+  "source": "D:\\repos\\Blender\\creations\\23_lurker_spider\\source\\lurker_LS02.bbmodel",
+  "game_verified": false
+}

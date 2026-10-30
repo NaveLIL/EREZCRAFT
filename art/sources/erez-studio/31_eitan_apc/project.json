@@ -1,0 +1,535 @@
+{
+  "schema_version": 1,
+  "id": "31_eitan_apc",
+  "title": "Eitan APC E01 — Minecraft dimensional and articulated model",
+  "revision": "E01-R7",
+  "purpose": "1:1 nominal Eitan game model, documented estimates, interior and prescribed opening kinematics. No real manufacturing or operational vehicle certification.",
+  "units": {
+    "length": "mm",
+    "force": "N",
+    "stress": "MPa",
+    "torque": "N*m",
+    "angle": "deg",
+    "time": "s"
+  },
+  "manufacturing": {
+    "profile_id": "fdm_unqualified",
+    "qualification_evidence": [],
+    "applicable": false,
+    "rationale": "Virtual game asset only. Default unqualified template profile is not used to assert any manufacturing process."
+  },
+  "requirements": [
+    {
+      "id": "DIM-L",
+      "text": "Nominal model length 8000mm, excluding deployed mechanisms",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "length_mm",
+        "unit": "mm",
+        "operator": "between",
+        "lower": 7975,
+        "upper": 8025
+      }
+    },
+    {
+      "id": "DIM-W",
+      "text": "Nominal model width 3000mm",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "width_mm",
+        "unit": "mm",
+        "operator": "between",
+        "lower": 2975,
+        "upper": 3025
+      }
+    },
+    {
+      "id": "DIM-H",
+      "text": "Nominal height 3000mm excluding flexible antennas",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "height_mm",
+        "unit": "mm",
+        "operator": "between",
+        "lower": 2975,
+        "upper": 3025
+      }
+    },
+    {
+      "id": "SEATS",
+      "text": "Twelve distinct seating positions",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "seats",
+        "unit": "count",
+        "operator": "equals",
+        "value": 12
+      }
+    },
+    {
+      "id": "WHEELS",
+      "text": "Eight wheel hub pivots",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "wheels",
+        "unit": "count",
+        "operator": "equals",
+        "value": 8
+      }
+    },
+    {
+      "id": "RAMP-GROUND",
+      "text": "Ramp shell remains above ground over the prescribed continuous rotation",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "ramp_continuous_min_z_mm",
+        "unit": "mm",
+        "operator": "min",
+        "value": 5
+      }
+    },
+    {
+      "id": "SEAT-FOLD",
+      "text": "All nine folding pans rise in stowed pose",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "folded_pans_rising",
+        "unit": "count",
+        "operator": "equals",
+        "value": 9
+      }
+    },
+    {
+      "id": "STATE",
+      "text": "Interaction contract passes mutual-exclusion and stationary-opening cases",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "state_contract_passed",
+        "unit": "bool",
+        "operator": "equals",
+        "value": true
+      }
+    },
+    {
+      "id": "EXPORT",
+      "text": "Both GLB states reopen as geometry",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "glb_round_trip_passed",
+        "unit": "bool",
+        "operator": "equals",
+        "value": true
+      }
+    },
+    {
+      "id": "REAR-RECESS",
+      "text": "Photo-informed projecting aft shoulders: ramp outer face recessed at least 550mm; design estimate, not manufacturer dimension",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "rear_recess_mm",
+        "unit": "mm",
+        "operator": "min",
+        "value": 550
+      }
+    },
+    {
+      "id": "REAR-RISE",
+      "text": "Raised faceted aft shoulders above nominal 2600mm roof; photo-informed design estimate",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "rear_shoulder_rise_mm",
+        "unit": "mm",
+        "operator": "min",
+        "value": 140
+      }
+    },
+    {
+      "id": "REAR-MOTION",
+      "text": "No triangle-surface intersections with the changed rear bay at prescribed ramp/door sample poses; no continuous collision claim",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "rear_sampled_surface_intersections",
+        "unit": "count",
+        "operator": "equals",
+        "value": 0
+      }
+    },
+    {
+      "id": "ROOF-FIT",
+      "text": "Supported hatch rims, unobstructed apertures, sealed centre seam and sampled lid-to-roof clearance",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "roof_fit_passed",
+        "unit": "bool",
+        "operator": "equals",
+        "value": true
+      }
+    },
+    {
+      "id": "BOW-JOINT",
+      "text": "Adjacent bow/main patches agree in transverse outer plane within 1mm virtual mesh comparison",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "bow_main_side_offset_mm",
+        "unit": "mm",
+        "operator": "max",
+        "value": 1
+      }
+    },
+    {
+      "id": "HATCH-VISIBILITY",
+      "text": "Closed roof has no outward visibility rays in the sampled fan; not a fluid-seal certification",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "roof_visibility_misses",
+        "unit": "count",
+        "operator": "equals",
+        "value": 0
+      }
+    },
+    {
+      "id": "FOOTWELL-VISIBILITY",
+      "text": "Sampled driver floor and wheelhouse rays are blocked",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "footwell_visibility_misses",
+        "unit": "count",
+        "operator": "equals",
+        "value": 0
+      }
+    },
+    {
+      "id": "GAME-NATIVE",
+      "text": "Fresh drive, cold reload, Complementary and one dedicated TCP/UDP driver passed with DH",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "game_native_passed",
+        "unit": "bool",
+        "operator": "equals",
+        "value": true
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "PUBLIC-GEOMETRY",
+      "text": "Nominal dimensions and image-based interior assumptions are bounded in docs/ASSUMPTIONS.md.",
+      "state": "accepted",
+      "rationale": "Owner explicitly authorized adapting unknown information; numerical estimates are not labelled manufacturer dimensions.",
+      "required_for": [
+        "concept"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "GAME-ADAPTER",
+      "description": "Runtime validation is separate from the geometric concept gate.",
+      "state": "accepted",
+      "rationale": "Local full-pack DH driving, cold state, Complementary and one dedicated Survival driver over TCP/UDP passed. See source/game_integration.json; no many-player capacity or real manufacturing claim.",
+      "required_for": [
+        "concept"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "PARAMETERS",
+      "path": "source/parameters.json",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "GEOMETRY",
+      "path": "source/eitan_E01.json",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "SOURCES",
+      "path": "source/sources.json",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "ADAPTER",
+      "path": "source/game_integration.json",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "ASSUMPTIONS",
+      "path": "docs/ASSUMPTIONS.md",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "DESIGN",
+      "path": "tools/build_design.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "BUILD",
+      "path": "tools/build_scene.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "VERIFY",
+      "path": "tools/verify_model.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "STATE-CONTRACT",
+      "path": "tools/mechanism_state.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "ASSEMBLY",
+      "path": "assembly/eitan_E01.blend",
+      "role": "assembly",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "BOM",
+      "path": "docs/bom.csv",
+      "role": "bom",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "INSTRUCTIONS",
+      "path": "docs/assembly.md",
+      "role": "instructions",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "GLB-CLOSED",
+      "path": "exports/eitan_E01_closed.glb",
+      "role": "export",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "GLB-BOARDING",
+      "path": "exports/eitan_E01_boarding.glb",
+      "role": "export",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "INSPECTION",
+      "path": "reports/MODEL_CHECK.json",
+      "role": "report",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "ROOF-VERIFY",
+      "path": "tools/verify_roof_fit.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "MC-EXPORTER",
+      "path": "tools/export_minecraft.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "RECORDS",
+      "path": "tools/prepare_records.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "ROOF-CHECK",
+      "path": "reports/ROOF_FIT.json",
+      "role": "report",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "MC-EXPORT",
+      "path": "reports/MINECRAFT_EXPORT.json",
+      "role": "report",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "GAME-RECORDER",
+      "path": "tools/record_runtime.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "RUNTIME-EXPORTER",
+      "path": "tools/export_vehicle.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "RUNTIME-BUILDER",
+      "path": "tools/build_runtime.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "HATCH-VERIFY",
+      "path": "tools/verify_hatch_seal.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "FOOTWELL-VERIFY",
+      "path": "tools/verify_footwell.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "VEHICLE-EXPORT",
+      "path": "reports/VEHICLE_EXPORT.json",
+      "role": "report",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "HATCH-SEAL",
+      "path": "reports/HATCH_SEAL.json",
+      "role": "report",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "FOOTWELL",
+      "path": "reports/FOOTWELL.json",
+      "role": "report",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "GAME-RUNTIME",
+      "path": "reports/GAME_RUNTIME.json",
+      "role": "report",
+      "required_for": [
+        "concept"
+      ]
+    }
+  ],
+  "calculations": [],
+  "evidence": [
+    {
+      "id": "E01-R3-GEOMETRY",
+      "record": "verification/evidence/E01-R3-GEOMETRY.json"
+    },
+    {
+      "id": "E01-R4-GEOMETRY",
+      "record": "verification/evidence/E01-R4-GEOMETRY.json"
+    },
+    {
+      "id": "E01-R7-GAME",
+      "record": "verification/evidence/E01-R7-GAME.json"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "status": "E01-R7_native_drive_cold_Complementary_and_dedicated_TCP_UDP_accepted",
+  "preview_registry_flag": "interstice.eitanPreview",
+  "minecraft_source": "D:/repos/Minecraft/EREZCRAFT/src/main/java/pro/erez/interstice/vehicle",
+  "scale": "1 m = 1 block",
+  "body_dimensions_m": [
+    8,
+    3,
+    3
+  ],
+  "backend": {
+    "create": "6.0.10",
+    "offroad": "1.3.2",
+    "sable": "2.0.6"
+  },
+  "wheel_radius_m": 0.68,
+  "wheel_centres_m": [
+    [
+      -1.26,
+      -2.68,
+      0.68
+    ],
+    [
+      -1.26,
+      -0.92,
+      0.68
+    ],
+    [
+      -1.26,
+      0.84,
+      0.68
+    ],
+    [
+      -1.26,
+      2.6,
+      0.68
+    ],
+    [
+      1.26,
+      -2.68,
+      0.68
+    ],
+    [
+      1.26,
+      -0.92,
+      0.68
+    ],
+    [
+      1.26,
+      0.84,
+      0.68
+    ],
+    [
+      1.26,
+      2.6,
+      0.68
+    ]
+  ],
+  "mechanisms": {
+    "ramp": {
+      "group": "RAMP",
+      "axis": "X",
+      "pivot_m": [
+        0,
+        3.27,
+        0.88
+      ],
+      "open_deg": -118.72311373330247
+    },
+    "door": "RAMP_DOOR; Z axis; opens +95 deg only with ramp up",
+    "roof": [
+      "DRIVER_HATCH",
+      "COMMANDER_HATCH",
+      "TROOP_HATCH_L",
+      "TROOP_HATCH_R"
+    ],
+    "seat_pans": 9
+  },
+  "state_contract": "tools/mechanism_state.py",
+  "occupancy": {
+    "driver": 1,
+    "commander": 1,
+    "station_operator": 1,
+    "troops": 9
+  },
+  "access": {
+    "standing_player_height_m": 1.8,
+    "crouched_player_height_m": 1.5,
+    "interior_nominal_clear_height_m": 1.62,
+    "policy": "Crouch through aisle/rear opening, then interact to occupy seats; no body enlargement."
+  },
+  "required_work": [],
+  "not_implemented": [
+    "public deployment",
+    "weapons",
+    "armour simulation",
+    "APS",
+    "recipes and progression"
+  ],
+  "revision": "E01-R7",
+  "runtime_registry": "interstice:eitan_controller; conditional Create+Offroad+Sable",
+  "runtime_report": "D:/repos/Minecraft/EREZCRAFT/docs/EITAN_DRIVE.md",
+  "implemented": [
+    "8 fractional .68m tyre contacts",
+    "two-front-axle Ackermann steering",
+    "mass-adapted suspension with analytic circular edge support",
+    "engine fuel reverse service and parking brakes",
+    "12 passenger seats and 15 independently animated channels",
+    "sweep-aware dynamic colliders and occupancy interlocks",
+    "3 real exterior video sectors and fourth instrument screen"
+  ],
+  "open_validation": [
+    "multiple real passengers and internet latency",
+    "production server capacity",
+    "unprepared Survival terrain and progression balance"
+  ],
+  "verification_report": "D:/repos/Minecraft/EREZCRAFT/docs/verification/EITAN_DRIVE.json"
+}

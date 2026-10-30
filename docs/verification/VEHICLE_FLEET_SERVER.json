@@ -1,0 +1,1016 @@
+{
+  "started": "2026-10-30T03:30:26.645517688Z",
+  "simulated_crew": true,
+  "real_network_capacity_test": false,
+  "sea_route_attempts": 7,
+  "sea_origin": "-1024, 35, -640",
+  "temporary_forced": [
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -52
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -52
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -52
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -52
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -52
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -52
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -52
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -52
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -52
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -51
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -51
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -51
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -51
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -51
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -51
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -51
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -51
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -51
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -50
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -50
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -50
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -50
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -50
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -50
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -50
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -50
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -50
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -49
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -49
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -49
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -49
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -49
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -49
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -49
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -49
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -49
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -48
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -48
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -48
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -48
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -48
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -48
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -48
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -48
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -48
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -47
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -47
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -47
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -47
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -47
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -47
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -47
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -47
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -47
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -46
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -46
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -46
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -46
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -46
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -46
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -46
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -46
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -46
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -45
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -45
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -45
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -45
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -45
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -45
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -45
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -45
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -45
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -44
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -44
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -44
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -44
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -44
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -44
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -44
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -44
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -44
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -43
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -43
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -43
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -43
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -43
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -43
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -43
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -43
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -43
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -42
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -42
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -42
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -42
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -42
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -42
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -42
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -42
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -42
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -41
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -41
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -41
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -41
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -41
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -41
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -41
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -41
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -41
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -40
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -40
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -40
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -40
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -40
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -40
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -40
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -40
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -40
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -39
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -39
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -39
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -39
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -39
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -39
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -39
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -39
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -39
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -38
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -38
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -38
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -38
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -38
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -38
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -38
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -38
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -38
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -37
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -37
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -37
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -37
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -37
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -37
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -37
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -37
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -37
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -68,
+      "z": -36
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -67,
+      "z": -36
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -66,
+      "z": -36
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -65,
+      "z": -36
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -64,
+      "z": -36
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -63,
+      "z": -36
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -62,
+      "z": -36
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -61,
+      "z": -36
+    },
+    {
+      "dimension": "interstice:islands_v6",
+      "x": -60,
+      "z": -36
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 23,
+      "z": 19
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 23,
+      "z": 20
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 23,
+      "z": 21
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 23,
+      "z": 22
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 23,
+      "z": 23
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 23,
+      "z": 24
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 23,
+      "z": 25
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 23,
+      "z": 26
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 24,
+      "z": 19
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 24,
+      "z": 20
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 24,
+      "z": 21
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 24,
+      "z": 22
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 24,
+      "z": 23
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 24,
+      "z": 24
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 24,
+      "z": 25
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 24,
+      "z": 26
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 25,
+      "z": 19
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 25,
+      "z": 20
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 25,
+      "z": 21
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 25,
+      "z": 22
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 25,
+      "z": 23
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 25,
+      "z": 24
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 25,
+      "z": 25
+    },
+    {
+      "dimension": "minecraft:overworld",
+      "x": 25,
+      "z": 26
+    }
+  ],
+  "phase": 8,
+  "phase_ticks": 300,
+  "eitan_uuid": "43118820-fbca-4b62-9b17-22d9dfa35fba",
+  "skat_uuid": "dd657e24-26ab-4669-a80d-cb01fc820db1",
+  "occupied_idle": {
+    "running": false,
+    "ticks": 300,
+    "mean_ms": 6.52970153,
+    "p95_ms": 8.400434,
+    "p99_ms": 11.024511,
+    "work": {
+      "eitan_clearance_ray": {
+        "calls": 8,
+        "total_ms": 0
+      },
+      "skat_helm": {
+        "calls": 300,
+        "total_ms": 9.238109
+      },
+      "eitan_sync": {
+        "calls": 1,
+        "total_ms": 0
+      },
+      "eitan_wheel_physics": {
+        "calls": 4800,
+        "total_ms": 49.825133
+      },
+      "eitan_controller": {
+        "calls": 300,
+        "total_ms": 5.769505
+      }
+    }
+  },
+  "active_both": {
+    "running": false,
+    "ticks": 600,
+    "mean_ms": 5.977045348333333,
+    "p95_ms": 7.343561,
+    "p99_ms": 10.526859,
+    "work": {
+      "eitan_clearance_ray": {
+        "calls": 596,
+        "total_ms": 0
+      },
+      "skat_helm": {
+        "calls": 600,
+        "total_ms": 15.700382
+      },
+      "eitan_state_read": {
+        "calls": 10,
+        "total_ms": 0
+      },
+      "eitan_sync": {
+        "calls": 120,
+        "total_ms": 0
+      },
+      "eitan_wheel_physics": {
+        "calls": 9600,
+        "total_ms": 94.717414
+      },
+      "eitan_controller": {
+        "calls": 600,
+        "total_ms": 55.96413
+      }
+    }
+  },
+  "eitan_path_m": 94.343500733356,
+  "skat_path_m": 195.7853264551073,
+  "unoccupied_idle": {
+    "running": false,
+    "ticks": 300,
+    "mean_ms": 4.518245973333333,
+    "p95_ms": 6.189475,
+    "p99_ms": 7.759024,
+    "work": {
+      "eitan_clearance_ray": {
+        "calls": 4,
+        "total_ms": 0
+      },
+      "skat_helm": {
+        "calls": 1,
+        "total_ms": 0.037119
+      },
+      "eitan_sync": {
+        "calls": 16,
+        "total_ms": 0
+      },
+      "eitan_wheel_physics": {
+        "calls": 4800,
+        "total_ms": 36.987453
+      },
+      "eitan_controller": {
+        "calls": 300,
+        "total_ms": 3.494957
+      }
+    }
+  },
+  "cargo_containers": 26,
+  "eitan_cells": 124,
+  "skat_cells": 1509,
+  "eitan_fuel": 11721,
+  "bunker_coal": 62,
+  "passed": true,
+  "error": "",
+  "test_bodies_removed": true,
+  "temporary_pad_removed": 1053,
+  "new_forced_chunks_removed": 177,
+  "target": "erezcraft-minecraft-1",
+  "health": "healthy",
+  "players": "There are 0 of a max of 10 players online: \n\u001b[0m",
+  "docker_stats": {
+    "BlockIO": "42.3MB / 41.8MB",
+    "CPUPerc": "14.76%",
+    "Container": "erezcraft-minecraft-1",
+    "ID": "9f17d5b77f2d",
+    "MemPerc": "70.13%",
+    "MemUsage": "11.22GiB / 16GiB",
+    "Name": "erezcraft-minecraft-1",
+    "NetIO": "118kB / 24.4kB",
+    "PIDs": "196"
+  },
+  "neoforge_tps": "Overworld: 20.000 TPS (0.487 ms/tick)\n\u001b[0minterstice:islands: 20.000 TPS (0.160 ms/tick)\n\u001b[0minterstice:relief_lab: 20.000 TPS (0.068 ms/tick)\n\u001b[0minterstice:fluid_lab: 20.000 TPS (0.062 ms/tick)\n\u001b[0minterstice:islands_v5: 20.000 TPS (0.059 ms/tick)\n\u001b[0minterstice:islands_v4: 20.000 TPS (0.053 ms/tick)\n\u001b[0mThe Nether: 20.000 TPS (0.051 ms/tick)\n\u001b[0minterstice:chaotic_lab: 20.000 TPS (0.053 ms/tick)\n\u001b[0minterstice:islands_tall: 20.000 TPS (0.069 ms/tick)\n\u001b[0minterstice:islands_v6: 20.000 TPS (0.053 ms/tick)\n\u001b[0minterstice:islands_v2: 20.000 TPS (0.057 ms/tick)\n\u001b[0minterstice:islands_v3: 20.000 TPS (0.078 ms/tick)\n\u001b[0mThe End: 20.000 TPS (0.054 ms/tick)\n\u001b[0mSpatial Storage: 20.000 TPS (0.059 ms/tick)\n\u001b[0mOverall: 20.000 TPS (1.394 ms/tick)\n\u001b[0m"
+}

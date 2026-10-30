@@ -3,6 +3,7 @@ package pro.erez.interstice;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.AABB;
 import pro.erez.interstice.geometry.GeometryProfiles;
@@ -13,12 +14,14 @@ public final class FluidContact {
         double height = fluid.getHeight(world, pos);
         double bottom = pos.getY() + (fluid.getType() instanceof LightFluid ? 1.0 - height : 0);
         double top = pos.getY() + (fluid.getType() instanceof LightFluid ? 1.0 : height);
+        if(world instanceof Level level&&fluid.getFluidType()==Interstice.HEAVY_TYPE.get()&&pos.getY()==GeometryProfiles.get(world).lowerSeaTop()&&pro.erez.interstice.ocean.LowerToxinSurface.cell(level,pos.getX(),pos.getZ()))top=pro.erez.interstice.ocean.LowerToxinSurface.sample(level,(box.minX+box.maxX)*.5,(box.minZ+box.maxZ)*.5,0).height();
         if (box.maxX <= pos.getX() || box.minX >= pos.getX() + 1
                 || box.maxZ <= pos.getZ() || box.minZ >= pos.getZ() + 1) return 0;
         if (world.getBlockState(pos).getBlock() instanceof OceanLiquidBlock) {
             bottom=Math.max(pos.getY(),SeaSurface.minimumUnderBox(GeometryProfiles.get(world),pos,box.minX,box.maxX,box.minZ,box.maxZ,world.getBlockState(pos).getValue(OceanLiquidBlock.CHAOTIC)));
             top = pos.getY() + 1;
         }
+        if(world instanceof Level level&&fluid.getFluidType()==Interstice.HEAVY_TYPE.get()&&pro.erez.interstice.ocean.ToxinHullOcclusion.dry(level,(box.minX+box.maxX)*.5,(Math.max(box.minY,bottom)+Math.min(box.maxY,top))*.5,(box.minZ+box.maxZ)*.5))return 0;
         return Math.max(0, Math.min(box.maxY, top) - Math.max(box.minY, bottom));
     }
     public static double lightOverlap(BlockGetter world, AABB box) {

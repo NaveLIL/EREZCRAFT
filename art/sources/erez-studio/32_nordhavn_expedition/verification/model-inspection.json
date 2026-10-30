@@ -1,0 +1,67 @@
+{
+  "method": "inspection",
+  "result": "pass",
+  "observations": {
+    "TOPOLOGY": {
+      "metric": "nonmanifold_meshes",
+      "value": 0,
+      "unit": "count"
+    },
+    "FACE-AREA": {
+      "metric": "zero_area_meshes",
+      "value": 0,
+      "unit": "count"
+    },
+    "WINDOWS": {
+      "metric": "window_ray_failures",
+      "value": 0,
+      "unit": "count"
+    },
+    "ROUTES": {
+      "metric": "clearance_failures",
+      "value": 0,
+      "unit": "count"
+    },
+    "BERTHS": {
+      "metric": "berths",
+      "value": 10,
+      "unit": "count"
+    },
+    "TERMINALS": {
+      "metric": "terminal_positions",
+      "value": 6,
+      "unit": "count"
+    },
+    "MATERIALS": {
+      "metric": "original_textures",
+      "value": 19,
+      "unit": "count"
+    },
+    "LAYER-SPLIT": {
+      "metric": "separate_render_layers",
+      "value": true,
+      "unit": "bool"
+    },
+    "EXPORT-SEAMS": {
+      "metric": "boundary_snap_violations",
+      "value": 0,
+      "unit": "count"
+    }
+  },
+  "dependencies": [
+    "reports/MODEL_INSPECTION.json",
+    "reports/RENDER_EXPORT.json",
+    "assembly/ne01.blend",
+    "exports/ne01.glb",
+    "exports/minecraft/ne01_render_cells.json"
+  ],
+  "details": {
+    "setup": "Blender 5.2.2 evaluated mesh, BVH window rays, static body samples and serialized float32 render export; no game test"
+  },
+  "limitations": [
+    "Static evaluated mesh inspection only, not Minecraft walking or exported block collision acceptance.",
+    "Clearance samples use a 0.60m wide box and 2.20m headroom; stair samples exclude the bottom 0.60m to permit normal stepping.",
+    "No continuous swept-volume proof for doors or gangways.",
+    "Small AE2 raft compatibility is separate from full-vessel ME integration."
+  ]
+}

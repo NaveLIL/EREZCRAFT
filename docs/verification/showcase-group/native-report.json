@@ -1,0 +1,482 @@
+{
+  "dh_loaded": true,
+  "pid": 12548,
+  "phase": 10,
+  "ready": true,
+  "base_x": 448,
+  "base_z": 416,
+  "owner_profile_used": false,
+  "native_pixels_no_composite": true,
+  "night_vision": false,
+  "staged_photo_not_survival_test": true,
+  "screenshots": [
+    {
+      "name": "draft",
+      "camera": "35.0,49.0,-47.0",
+      "target": "0.0,40.0,7.0",
+      "fov": 55,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 39.203791621025026,
+      "diamond_2_y": 39.203791621025026
+    },
+    {
+      "name": "composition-01",
+      "camera": "24.0,47.0,-45.0",
+      "target": "0.0,40.0,6.0",
+      "fov": 58,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 45.23548054802836,
+      "diamond_2_y": 43.79116335261425
+    },
+    {
+      "name": "land-side-draft",
+      "camera": "0.0,42.0,32.0",
+      "target": "0.0,39.5,2.0",
+      "fov": 78,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 38.406567635163526,
+      "diamond_2_y": 37.77319564066567
+    },
+    {
+      "name": "diagonal-land",
+      "camera": "38.0,44.0,27.0",
+      "target": "-2.0,40.0,5.0",
+      "fov": 48,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 38.068564331685344,
+      "diamond_2_y": 37.52221950566321
+    },
+    {
+      "name": "diagonal-close",
+      "camera": "28.0,43.0,28.0",
+      "target": "-2.0,40.0,1.0",
+      "fov": 50,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 39.65983357102716,
+      "diamond_2_y": 38.78551722204071
+    },
+    {
+      "name": "bay-composition",
+      "camera": "12.0,44.0,-38.0",
+      "target": "-1.0,40.0,10.0",
+      "fov": 40,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 37,
+      "diamond_2_y": 48.418972780067186
+    },
+    {
+      "name": "wide-lighting-draft",
+      "camera": "12.0,44.0,-38.0",
+      "target": "-1.0,40.8,10.0",
+      "fov": 30,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 44.500195166186394,
+      "diamond_2_y": 43.10946761489372
+    },
+    {
+      "name": "hero-draft-02",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 47.588665918223136,
+      "diamond_2_y": 40.15214747843871
+    },
+    {
+      "name": "group-final-a",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 37.77319564066567,
+      "diamond_2_y": 39.90847695621355
+    },
+    {
+      "name": "group-final-b",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 42.45623509540262,
+      "diamond_2_y": 46.39230044346167
+    },
+    {
+      "name": "group-final-c",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 49.27073072280324,
+      "diamond_2_y": 37.52221950566321
+    },
+    {
+      "name": "group-final-d",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 39.203791621025026,
+      "diamond_2_y": 41.83263941173147
+    },
+    {
+      "name": "hero-threat-01",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 39.65983357102716,
+      "diamond_2_y": 38.78551722204071
+    },
+    {
+      "name": "hero-threat-02",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 45.995979857818135,
+      "diamond_2_y": 44.500195166186394
+    },
+    {
+      "name": "hero-threat-03",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 38.406567635163526,
+      "diamond_2_y": 37.77319564066567
+    },
+    {
+      "name": "hero-threat-04",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 43.10946761489372,
+      "diamond_2_y": 41.83263941173147
+    },
+    {
+      "name": "hero-raised-01",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 38.823663432571045,
+      "diamond_2_y": 37.19440302226568
+    },
+    {
+      "name": "hero-raised-02",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 38.6095786604911,
+      "diamond_2_y": 37.122177020886255
+    },
+    {
+      "name": "hero-raised-03",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 38.6095786604911,
+      "diamond_2_y": 37.122177020886255
+    },
+    {
+      "name": "hero-raised-04",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 38.6095786604911,
+      "diamond_2_y": 37.122177020886255
+    },
+    {
+      "name": "overview-01",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 43.30118011964847,
+      "diamond_2_y": 41.80118011964847
+    },
+    {
+      "name": "overview-02",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 49.62900682919799,
+      "diamond_2_y": 48.12900682919799
+    },
+    {
+      "name": "overview-03",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 39.203791621025026,
+      "diamond_2_y": 38.406567635163526
+    },
+    {
+      "name": "overview-04",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 45.995979857818135,
+      "diamond_2_y": 44.500195166186394
+    },
+    {
+      "name": "overview-05",
+      "camera": "12.0,44.0,-38.0",
+      "target": "1.0,40.8,10.0",
+      "fov": 34,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 37.52221950566321,
+      "diamond_2_y": 37.16084209119095
+    },
+    {
+      "name": "friends-close-01",
+      "camera": "3.5,40.6,-8.0",
+      "target": "0.0,39.9,9.0",
+      "fov": 44,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 42.45623509540262,
+      "diamond_2_y": 41.2399025729857
+    },
+    {
+      "name": "friends-close-02",
+      "camera": "3.5,40.6,-8.0",
+      "target": "0.0,39.9,9.0",
+      "fov": 44,
+      "width": 3840,
+      "height": 1600,
+      "shader_pack_in_use": true,
+      "night_vision": false,
+      "tide_phase": "SURGE",
+      "diamond_1_y": 48.418972780067186,
+      "diamond_2_y": 46.78069462495157
+    }
+  ],
+  "players": 10,
+  "armor_sets": 5,
+  "fauna": "LK01 + three original spider species; ceiling attachment is native",
+  "live": {
+    "tide_intensity": 1,
+    "actors": [
+      {
+        "name": "ErezFriend1",
+        "y": 38,
+        "sheltered": true,
+        "gravity": 0.08,
+        "no_gravity": true
+      },
+      {
+        "name": "ErezFriend2",
+        "y": 38,
+        "sheltered": true,
+        "gravity": 0.08,
+        "no_gravity": true
+      },
+      {
+        "name": "ErezFriend3",
+        "y": 38,
+        "sheltered": true,
+        "gravity": 0.08,
+        "no_gravity": true
+      },
+      {
+        "name": "ErezFriend4",
+        "y": 38,
+        "sheltered": true,
+        "gravity": 0.08,
+        "no_gravity": true
+      },
+      {
+        "name": "ErezFriend5",
+        "y": 38,
+        "sheltered": true,
+        "gravity": 0.08,
+        "no_gravity": true
+      },
+      {
+        "name": "ErezFriend6",
+        "y": 38,
+        "sheltered": true,
+        "gravity": 0.08,
+        "no_gravity": true
+      },
+      {
+        "name": "ErezFriend7",
+        "y": 38,
+        "sheltered": true,
+        "gravity": 0.08,
+        "no_gravity": true
+      },
+      {
+        "name": "ErezFriend8",
+        "y": 38,
+        "sheltered": true,
+        "gravity": 0.08,
+        "no_gravity": true
+      },
+      {
+        "name": "ErezFriend9",
+        "y": 41.2399025729857,
+        "sheltered": false,
+        "gravity": -0.027999999999999997,
+        "no_gravity": false
+      },
+      {
+        "name": "ErezFriend10",
+        "y": 40.15214747843871,
+        "sheltered": false,
+        "gravity": -0.027999999999999997,
+        "no_gravity": false
+      }
+    ],
+    "ceiling_spider": true,
+    "ceiling_support": true,
+    "ceiling_position": "(444.0, 41.9, 425.0)",
+    "ceiling_box": "AABB[443.44999998807907, 41.9, 424.44999998807907] -> [444.55000001192093, 43.00000002384186, 425.55000001192093]",
+    "root_y": 38,
+    "root_phase": "WARNING",
+    "eitan": [
+      {
+        "engine": true,
+        "lights": true,
+        "mechanism_progress": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "engine": true,
+        "lights": true,
+        "mechanism_progress": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "crew_night_vision": false
+  },
+  "last_control": 1793338166561,
+  "finished": true,
+  "process_exit_code": 0,
+  "selected": {
+    "overview": "overview-04",
+    "close": "friends-close-02"
+  },
+  "production_modified": false,
+  "png_processing": "Byte-for-byte copies of Minecraft Screenshot.grab PNGs; no recoloring, cropping, compositing, image generation, or upscaling"
+}

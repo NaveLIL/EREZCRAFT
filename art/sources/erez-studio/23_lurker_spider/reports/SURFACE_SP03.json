@@ -1,0 +1,30 @@
+{
+  "revision": "SP03",
+  "baseline": "SP02",
+  "geometry_uv_rig_and_animations_identical": true,
+  "all_texture_dimensions_and_alpha_preserved": true,
+  "embedded_textures_match": true,
+  "accepted_colour_variant": "SP02",
+  "current_trial": "SP03",
+  "owner_accepted_trial": false,
+  "studio_review_only": true,
+  "game_verified": false,
+  "files": {
+    "source/spitter_SP03.bbmodel": {
+      "bytes": 870770,
+      "sha256": "d0ee659fad1b0385a2ad307b8c5077e59e0401e2cc22d260ee6ab178bee1c898"
+    },
+    "assembly/spitter_SP03.blend": {
+      "bytes": 531387,
+      "sha256": "66887e8b316852a620e4ea4a72f68d705e69aab73d61cac55a5fd8bf2c054ace"
+    },
+    "exports/spitter_SP03.glb": {
+      "bytes": 598336,
+      "sha256": "bf2ffc78f496e372d033dfe629dd4b6e1cbe1fb4dfe7492262c7195cc886688f"
+    },
+    "preview/spitter_SP03_review.jpg": {
+      "bytes": 336900,
+      "sha256": "dfefdfb64e2dea0992b69bb43db72f00dbdf387a0f3af4bd3616384bcf689b88"
+    }
+  }
+}

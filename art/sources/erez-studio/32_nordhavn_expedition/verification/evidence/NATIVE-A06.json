@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "NATIVE-A06",
+  "created_at": "2026-10-29T15:45:54+00:00",
+  "method": "inspection",
+  "result": "pass",
+  "origin": "operator_record",
+  "observations": {
+    "GAME-WALK": {
+      "metric": "native_walk_passed",
+      "unit": "bool",
+      "value": true
+    },
+    "ME-COLD": {
+      "metric": "native_me_cold_passed",
+      "unit": "bool",
+      "value": true
+    }
+  },
+  "dependencies": {
+    "assembly/ne01.blend": "dfec079317b04cb897ed6970c3886e1a51fd49d1eae74e3445f5a0b8cea4f853",
+    "exports/minecraft/ne01_runtime.json": "a39a24a6164917809dab1399c4908f959d8be37c04447a0405668ca0a373d0e2",
+    "reports/NATIVE_A06.json": "2ca590f398115efd30ea7754afb49b382e0cfc960d443e28a33913d13c8e689f",
+    "source/OWNER_A06.md": "e65482c61cc2ce9491d8f74f77a5834cbba94b3f3481ed120ba7e9ab9e85781c",
+    "source/OWNER_DECISIONS.md": "bff5fd610810fe0e1039dc8ea366c5a54c8b53f4f84dc36802c8c768784ec06b",
+    "source/ne01.json": "525402529f2f2747b66b3465f9ad0f9073bf8b943b90a25e6b545064f09a4ae6",
+    "source/parameters.json": "c77533c12da8b65f59d76704478a3ad524dafdd30780fc482403254e496db84c",
+    "source/sources.json": "366a8f7c42cbcf6ce74729d5453efe1e7004eead7ec28ce331cb496f49f93ac0",
+    "source/texture_manifest.json": "164792aef76f917618f74a71306f7bd439edc9939137b771f46d97c64bcafa8e",
+    "textures/brass.png": "1d98f97d5d648700f98490e2c8818ace870e361838f3d655d70d42a068330f57",
+    "textures/brushed_steel.png": "cb3ba81391efbcf8d2d4cde4c8d495de0d3e9992f52d1519b45766c67ea88026",
+    "textures/console.png": "e5e263aeef7e6d8e20896f51a6606148a3572aa3a14bf4bf316348b52c7f14f3",
+    "textures/countertop.png": "1187e949d37bff0c4a65d0bd685d7454a8ea0a257bf3c2e5a18559cd3f32ed29",
+    "textures/display.png": "6aaeddbfb8e0be126731ad7c0f50a71cc4f13dcd86d177f0c2664176277ec37e",
+    "textures/engine_metal.png": "cb6029cbb8d8dee91b7115731bdf2fc276b09d792e81bdc5c8ca8ad7f0e37fff",
+    "textures/fabric.png": "5b8454888d343a039915c2a77bed062e8d5f6c231c3f798a1930bc31005913dd",
+    "textures/glass.png": "2ab2b791759ab5ec90ff828fcfe6da3d2354eb5db57de1ef062c857f6692567e",
+    "textures/hull_ivory.png": "0a1c4d9cea403c4a934daa8b1d7586d2253f618c35fffd761f494d8536483df5",
+    "textures/interior_floor.png": "ad711f020b9e6133ab6e80cdd1a453dd6bef4947324529e1a8d34782c548f835",
+    "textures/interior_white.png": "e34f5e60a24dd3256c5f5bdd0d207e3eb963cfba76531204c29000e4f9dec07c",
+    "textures/interior_wood.png": "0654dd9f2089f0524951b617705f9105f897b9934fe12e05581e40e7ccf159c6",
+    "textures/lamp.png": "66ac9e8c93b274d55711216a68b7a885ca8e3a5e6724531a0da0bf3b3d0f8426",
+    "textures/me_display.png": "1596213c1494785aed71e6b31d35e94f64ef18b75c1a84a9ddb72d9b5a31fb00",
+    "textures/port_lamp.png": "ecf7ab3bf964e12f6fdc1b767a01f5e3360e94776a36c03ca7ef75d9bc4e1cf8",
+    "textures/starboard_lamp.png": "00ba03d3b494a409471bf8792cd4d985d416ee2c362072c6467f0c5532d07806",
+    "textures/superstructure_white.png": "929df774bd9ffb6a1686dbadfb5ddc9792f175a03989036cf0e00e79a5bc95a8",
+    "textures/teak.png": "2eda57586edc3b39365d3b313693eb8c68a05af923685dac2086941574cefd95",
+    "textures/window_frame.png": "f277ccc5c04bea481ede1e0a701fc3169366e444b9e7e4b5deae99a9feb8eaee",
+    "tools/build_design.py": "cfb80f3113c38ff870250c50104486e7db3830086026d44a2ed71a4db257e03f",
+    "tools/build_scene.py": "b55eb31f37bb89387f34538289e284dcb57c1763f7c5d5d50d181d43b3d5e2b7",
+    "tools/export_collision.py": "aa894827ed16a753fd5f4a93d8f21e44c4887a33b12148cde08c0113d835be85",
+    "tools/export_render_cells.py": "c6c76042f4b9141c1e4112b535f17f1e6533277a935a8670edce399e0a10ba4b",
+    "tools/export_runtime.py": "8cd7356375322eb88b10bf3bb090a9e9f67864bae58d98a8c415266d99775de8",
+    "tools/verify_model.py": "f62862d4478189a3a6297c93f128b27de438c32040b0f8f13ecbbb88bd35ccba",
+    "verification/native-a06.json": "5fb504f4d4a4b7da9a834a07ef0c0c3d78e9f4680c29ba8119374769bcb48cee"
+  },
+  "basis_sha256": "88ce140e4f6a0bd386c3869629db11c260be7f07a9217ad087842f8223caebff",
+  "tool_sha256": "f827ee741f4643bd11ddd5caeb986c88ac7460b7934256d5dcf5cbffb069279e",
+  "tool_version": "0.1.0",
+  "limitations": [
+    "Profile proportions adapted from public drawing, not a factory CAD reproduction.",
+    "Native tests use paused Sable bodies and controlled relocation, not propulsion.",
+    "50 km/h sea speed and live navigation panels remain separate required work.",
+    "No Survival, multiplayer, every-route or mechanism swept-volume acceptance."
+  ],
+  "details": {
+    "setup": "Inspection of isolated complete Minecraft 1.21.1 / NeoForge / DH / Sable / AE2 create and cold-reload proofs. Four ordinary keyboard stair routes, 24 native menus, actual storage cells, finite coal power. Physics paused; 40m body teleport is not propulsion."
+  }
+}

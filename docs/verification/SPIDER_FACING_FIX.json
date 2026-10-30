@@ -1,0 +1,265 @@
+{
+  "status": "IMPLEMENTED_AND_VERIFIED_LOCALLY",
+  "version": "0.7.0-preview.42-frontal-spiders",
+  "angle_degrees": 90,
+  "max_turn_degrees_per_tick": 18,
+  "aligned_ticks_before_active_attack": 3,
+  "changed_logic": [
+    "CaveRiftSpiderEntity",
+    "CaveRiftSpiderRenderer"
+  ],
+  "component": {
+    "directional_required": 18,
+    "directional_passed": true,
+    "regression_required": [
+      49,
+      177
+    ],
+    "total_required": 244
+  },
+  "scope": {
+    "geometry_UV_pixels": "unchanged",
+    "path_navigation": "unchanged",
+    "damage_and_effects": "unchanged",
+    "projectile_ballistics": "unchanged",
+    "aim_heading": "server synced; rigid body turns in support plane; independent of movement heading",
+    "cooldown": "blocked side/rear spit creates no projectile and consumes no spit cooldown",
+    "surface_transition": "attacks wait for support rotation and alignment",
+    "normal_axis_target": "not a frontal direction; attack rejected",
+    "production_updated": false,
+    "owner_profile_used": false
+  },
+  "earlier_attempts": [
+    {
+      "run": "component01",
+      "issue": "Two ceiling controls put the taller zombie inside the ceiling slab; fixed fixture clearance and added explicit noCollision assertion."
+    },
+    {
+      "run": "component02",
+      "issue": "Directional 18 passed; unchanged hunter continuous-pursuit regression failed once. Expanded telemetry added; subsequent 49-suite passed without hunter runtime changes. Intermittent failure not independently reproduced."
+    }
+  ],
+  "native_pending": false,
+  "passed": true,
+  "native": {
+    "receipt": "docs/verification/spider_facing/native-run.json",
+    "passed": true,
+    "loaded_mods": 106,
+    "distant_horizons": true,
+    "dimension": "interstice:islands_v6",
+    "scenarios": 30,
+    "checks": 157,
+    "directional_checks": 55,
+    "failed_checks": [],
+    "shutdown_settled": true
+  },
+  "static": {
+    "passed": true,
+    "reference_sha256": "ecaa2a253d56c95d69520490a9645d3387ce0fda90ec1420225a73b791f6e849",
+    "candidate_sha256": "ac927cb2ace1117ecb17d3577bd942e8d4e7343b04d495a0e17a01b7965594a5",
+    "changed_logic_classes": [
+      "pro/erez/interstice/entity/CaveRiftSpiderEntity.class",
+      "pro/erez/interstice/entity/client/CaveRiftSpiderRenderer.class"
+    ],
+    "debug_line_shifts_only": [
+      {
+        "class": "pro/erez/interstice/entity/CaveRiftSpiderEntity$1.class",
+        "javap_code_sha256": "7a89fa1c4d88d8590c6800aebf95961a6f5b6002a827d7eb87a6562640d314e6"
+      },
+      {
+        "class": "pro/erez/interstice/entity/CaveRiftSpiderEntity$Variant.class",
+        "javap_code_sha256": "e70d3a89dfb84477c4b35cd22d2e5bdc8081c5b51add2c05e3bcfdd3ae19a33e"
+      }
+    ],
+    "previous_classes_byte_exact": 559,
+    "previous_classes_same_code": 561,
+    "png_preserved": 212,
+    "ogg_preserved": 12,
+    "mesh_json_preserved": 3
+  },
+  "ai_turn_audits": [
+    {
+      "variant": "LURKER",
+      "combat_kind": "MELEE",
+      "live_ai": true,
+      "target_injected": false,
+      "attacks_called_by_fixture": false,
+      "position_pinned_for_diagnostic": true,
+      "orientation_pinned": false,
+      "front_hits": 2,
+      "side_hits": 2,
+      "rear_hits": 2,
+      "front_only_contract_passed": true,
+      "impacts": [
+        {
+          "tick": 7,
+          "position": "FRONT",
+          "body_yaw": 2.4820635,
+          "head_yaw": 0,
+          "forward_dot_target": 1,
+          "damage": 8
+        },
+        {
+          "tick": 28,
+          "position": "FRONT",
+          "body_yaw": 0,
+          "head_yaw": 0,
+          "forward_dot_target": 1,
+          "damage": 8
+        },
+        {
+          "tick": 49,
+          "position": "SIDE",
+          "body_yaw": -10,
+          "head_yaw": -60,
+          "forward_dot_target": 1,
+          "damage": 8
+        },
+        {
+          "tick": 70,
+          "position": "SIDE",
+          "body_yaw": -82.5,
+          "head_yaw": -90,
+          "forward_dot_target": 1,
+          "damage": 8
+        },
+        {
+          "tick": 91,
+          "position": "REAR",
+          "body_yaw": -90,
+          "head_yaw": -170,
+          "forward_dot_target": 1,
+          "damage": 8
+        },
+        {
+          "tick": 112,
+          "position": "REAR",
+          "body_yaw": -180,
+          "head_yaw": -180,
+          "forward_dot_target": 1,
+          "damage": 8
+        }
+      ]
+    },
+    {
+      "variant": "SKIRMISHER",
+      "combat_kind": "MELEE",
+      "live_ai": true,
+      "target_injected": false,
+      "attacks_called_by_fixture": false,
+      "position_pinned_for_diagnostic": true,
+      "orientation_pinned": false,
+      "front_hits": 2,
+      "side_hits": 2,
+      "rear_hits": 2,
+      "front_only_contract_passed": true,
+      "impacts": [
+        {
+          "tick": 10,
+          "position": "FRONT",
+          "body_yaw": 0,
+          "head_yaw": 0,
+          "forward_dot_target": 1,
+          "damage": 5
+        },
+        {
+          "tick": 31,
+          "position": "FRONT",
+          "body_yaw": 0,
+          "head_yaw": 0,
+          "forward_dot_target": 1,
+          "damage": 5
+        },
+        {
+          "tick": 52,
+          "position": "SIDE",
+          "body_yaw": -10,
+          "head_yaw": -60,
+          "forward_dot_target": 1,
+          "damage": 5
+        },
+        {
+          "tick": 73,
+          "position": "SIDE",
+          "body_yaw": -82.5,
+          "head_yaw": -90,
+          "forward_dot_target": 1,
+          "damage": 5
+        },
+        {
+          "tick": 94,
+          "position": "REAR",
+          "body_yaw": -90,
+          "head_yaw": -170,
+          "forward_dot_target": 1,
+          "damage": 5
+        },
+        {
+          "tick": 115,
+          "position": "REAR",
+          "body_yaw": -180,
+          "head_yaw": -180,
+          "forward_dot_target": 1,
+          "damage": 5
+        }
+      ]
+    },
+    {
+      "variant": "SPITTER",
+      "combat_kind": "RANGED",
+      "live_ai": true,
+      "target_injected": false,
+      "attacks_called_by_fixture": false,
+      "position_pinned_for_diagnostic": true,
+      "orientation_pinned": false,
+      "front_hits": 1,
+      "side_hits": 1,
+      "rear_hits": 1,
+      "front_only_contract_passed": true,
+      "impacts": [
+        {
+          "tick": 15,
+          "position": "FRONT",
+          "body_yaw": -25,
+          "head_yaw": -100,
+          "forward_dot_target": 1,
+          "damage": 4
+        },
+        {
+          "tick": 53,
+          "position": "SIDE",
+          "body_yaw": -190,
+          "head_yaw": -270,
+          "forward_dot_target": 1,
+          "damage": 4
+        },
+        {
+          "tick": 91,
+          "position": "REAR",
+          "body_yaw": -270,
+          "head_yaw": -340,
+          "forward_dot_target": 1,
+          "damage": 4
+        }
+      ]
+    }
+  ],
+  "review_images": [
+    "docs/verification/spider_facing/skirmisher-survival_far.png",
+    "docs/verification/spider_facing/lurker-survival_near.png",
+    "docs/verification/spider_facing/spitter-survival_near.png"
+  ],
+  "review_images_reviewed": true,
+  "limitations": [
+    "Controlled isolated scenes; natural Survival, multiplayer latency and server capacity are not accepted by this run",
+    "The 90-degree sector is measured in the tangent plane of the current support; a target on the pure normal axis is not treated as frontal",
+    "Projectile direction is checked at launch, not again when the already airborne projectile hits",
+    "No production deploy, owner-profile install or GitHub push"
+  ],
+  "check_wiring": {
+    "exit_code": 0,
+    "directional_gate_in_check": true,
+    "real_tests_executed": false,
+    "passed": true
+  }
+}

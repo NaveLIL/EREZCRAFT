@@ -1,0 +1,68 @@
+{
+  "revision": "OC01",
+  "imagegen_mode": "built-in",
+  "prompt": "references/imagegen_prompt.txt",
+  "game_files_modified": false,
+  "artifacts": [
+    {
+      "file": "references/lower_ocean_OC01_concept.png",
+      "bytes": 1810754,
+      "sha256": "7349398a429ba99b99e343f25df8e059f8bc36c972d9a6d25dae140d378633ca"
+    },
+    {
+      "file": "references/imagegen_prompt.txt",
+      "bytes": 2610,
+      "sha256": "686f520affe488c809f9d28121ffef665a42be9a60aa4f60d7d7f9ecfa8f3443"
+    },
+    {
+      "file": "source/material_OC01.json",
+      "bytes": 2176,
+      "sha256": "50d7c26f1e73cd393b59cf6259118193de13fc91c324d4a1e37e5895b61992f1"
+    },
+    {
+      "file": "assembly/lower_ocean_OC01.blend",
+      "bytes": 137090,
+      "sha256": "e7e3581afc594fcf2b2005560f643d0e9b7049b553bbcd79a9bc8bdf294597b5"
+    },
+    {
+      "file": "preview/OC01_native_material.png",
+      "bytes": 1713035,
+      "sha256": "ebf9b075bd5cc7022668741ad81a7c1415193463e3d5202e310ba14a4c4569e1"
+    },
+    {
+      "file": "preview/OC01_patch_control.png",
+      "bytes": 1542577,
+      "sha256": "562e26dbe830695a41ff973fede8872385d709e981ca2b5cfa8841b811f2bf4f"
+    },
+    {
+      "file": "preview/OC01_single_control.png",
+      "bytes": 1542728,
+      "sha256": "7e63692c7c43e6292e04b983cb82c2fcc871b9a8a48a417cc65a37aa08982544"
+    },
+    {
+      "file": "preview/OC01_continuous_motion.gif",
+      "bytes": 6114363,
+      "sha256": "cb3c4bb0aeb7bd35d5fc5204b1f424db591689fd99adc26e5193945b23025bd5"
+    },
+    {
+      "file": "reports/CONTINUITY.json",
+      "bytes": 548,
+      "sha256": "0ef073190f1aa1ee2b1912b046ee48029ee041c9bff7a2810ccda1449dab53a0"
+    },
+    {
+      "file": "reports/RENDER_CONTINUITY.json",
+      "bytes": 801,
+      "sha256": "c51477d2d7cc1dbf4854fd98bb0335f0817aed54363f6546e20663d95833c160"
+    },
+    {
+      "file": "reports/NATIVE_BUILD.json",
+      "bytes": 384,
+      "sha256": "ca01381db6528a4b3eb49855d485e59f73d4062b44951a719456f0a22b8b669c"
+    },
+    {
+      "file": "README.md",
+      "bytes": 5551,
+      "sha256": "6ab996477633aa5f3b1a7e6cb67f2c2d6e3cb65f0a2d32d366966e601094c587"
+    }
+  ]
+}

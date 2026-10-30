@@ -9,11 +9,11 @@ import pro.erez.interstice.entity.CaveRiftSpiderEntity;
 
 public final class CaveRiftSpiderRenderer extends MobRenderer<CaveRiftSpiderEntity, CaveRiftSpiderModel> {
     private static final ResourceLocation SKIRMISHER =
-            ResourceLocation.fromNamespaceAndPath(Interstice.ID, "textures/entity/spider/cave_rift_spider_skirmisher.png");
+            ResourceLocation.fromNamespaceAndPath(Interstice.ID, "textures/entity/spider/skirmisher_sk01.png");
     private static final ResourceLocation LURKER =
-            ResourceLocation.fromNamespaceAndPath(Interstice.ID, "textures/entity/spider/cave_rift_spider_lurker.png");
+            ResourceLocation.fromNamespaceAndPath(Interstice.ID, "textures/entity/spider/lurker_ls04.png");
     private static final ResourceLocation SPITTER =
-            ResourceLocation.fromNamespaceAndPath(Interstice.ID, "textures/entity/spider/cave_rift_spider_spitter.png");
+            ResourceLocation.fromNamespaceAndPath(Interstice.ID, "textures/entity/spider/spitter_sp02.png");
 
     public CaveRiftSpiderRenderer(EntityRendererProvider.Context context) {
         super(context, new CaveRiftSpiderModel(context.bakeLayer(CaveRiftSpiderModel.LAYER_LOCATION)), 0.7F);
@@ -37,6 +37,9 @@ public final class CaveRiftSpiderRenderer extends MobRenderer<CaveRiftSpiderEnti
             // vertical climb. Use the server-synced world tangent instead.
             var forward=entity.getOldCrawlForward().lerp(entity.getCrawlForward(),partialTick);
             bodyYaw=pro.erez.interstice.entity.SpiderSurfaceFrame.bodyYaw(rotation,forward,bodyYaw);
+        }
+        if(entity.isAttackAiming()){
+            bodyYaw=pro.erez.interstice.entity.SpiderSurfaceFrame.bodyYaw(rotation,entity.getVisualAttackForward(partialTick),bodyYaw);
         }
         float center = entity.getBbHeight() / (2*scale);
         poseStack.translate(0, center, 0);

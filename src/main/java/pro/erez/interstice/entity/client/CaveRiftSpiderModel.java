@@ -1,251 +1,87 @@
 package pro.erez.interstice.entity.client;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.google.gson.*;
+import com.mojang.blaze3d.vertex.*;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.util.*;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.*;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
+import org.joml.Vector3f;
 import pro.erez.interstice.Interstice;
 import pro.erez.interstice.entity.CaveRiftSpiderEntity;
 
+/** Authored cuboids and face UVs remain rigid; only the existing native joints move. */
 public final class CaveRiftSpiderModel extends HierarchicalModel<CaveRiftSpiderEntity> {
-    public static final ModelLayerLocation LAYER_LOCATION =
-            new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Interstice.ID, "cave_rift_spider"), "main");
-
+    public static final ModelLayerLocation LAYER_LOCATION=new ModelLayerLocation(id("cave_rift_spider"),"main");
+    private record Bone(String name,String parent,float[] offset,float[] rotation){}
+    private record Face(float[] xyz,float[] uv,float nx,float ny,float nz){}
+    private record Mesh(List<Bone> bones,Map<String,List<Face>> faces,int cubes,int quads,String hash,String source){}
     private final ModelPart root;
-
-    public CaveRiftSpiderModel(ModelPart root) {
-        this.root = root.getChild("root");
+    private final Map<CaveRiftSpiderEntity.Variant,Mesh> meshes=new EnumMap<>(CaveRiftSpiderEntity.Variant.class);
+    private final Map<String,ModelPart> joints=new HashMap<>();
+    private final Map<String,List<String>> children=new HashMap<>();
+    private Mesh current;
+    public int renderedFaces,renderedVertices;
+    public long renderedFrames;
+    public CaveRiftSpiderModel(ModelPart baked){
+        root=baked.getChild("root");
+        for(var variant:CaveRiftSpiderEntity.Variant.values())meshes.put(variant,load(variant));
+        current=meshes.get(CaveRiftSpiderEntity.Variant.LURKER);
+        for(var bone:current.bones){
+            var part=bone.parent==null?root:joints.get(bone.parent).getChild(bone.name);
+            joints.put(bone.name,part);children.put(bone.name,new ArrayList<>());
+            if(bone.parent!=null)children.get(bone.parent).add(bone.name);
+        }
     }
-
-    public static LayerDefinition createBodyLayer() {
-        MeshDefinition mesh = new MeshDefinition();
-        PartDefinition parts = mesh.getRoot();
-
-        PartDefinition root = parts.addOrReplaceChild("root",
-                CubeListBuilder.create(),
-                PartPose.offset(2F, 3.0F, 0F));
-        PartDefinition opisthosoma = root.addOrReplaceChild("opisthosoma",
-                CubeListBuilder.create()
-                .texOffs(106, 25).addBox(-0.75F, -1.8500000000000014F, -2F, 4.0F, 4.000000000000002F, 4F),
-                PartPose.offsetAndRotation(10F, 0F, 0F, -0.00000F, 0.00000F, 0.39270F));
-        PartDefinition opisthosoma2 = opisthosoma.addOrReplaceChild("opisthosoma2",
-                CubeListBuilder.create()
-                .texOffs(72, 68).addBox(0.25F, -3.1000000000000014F, -2.5F, 12.0F, 4.000000000000002F, 5.0F),
-                PartPose.offset(3F, 1.25F, 0F));
-        PartDefinition prosoma = root.addOrReplaceChild("prosoma",
-                CubeListBuilder.create()
-                .texOffs(0, 0).addBox(-8F, -2F, -3F, 20F, 4F, 6F),
-                PartPose.offset(-2F, 0F, 0F));
-        PartDefinition proboscis = prosoma.addOrReplaceChild("proboscis",
-                CubeListBuilder.create()
-                .texOffs(106, 20).addBox(-6.878679999999999F, -1.1213200000000008F, -1.5F, 8F, 2F, 3.0F),
-                PartPose.offsetAndRotation(-8.12132F, 1.1213200000000008F, 0F, -0.00000F, 0.00000F, -0.78540F));
-        PartDefinition palps = prosoma.addOrReplaceChild("palps",
-                CubeListBuilder.create(),
-                PartPose.offset(-3.5F, 2F, 0F));
-        PartDefinition right_palp = palps.addOrReplaceChild("right_palp",
-                CubeListBuilder.create()
-                .texOffs(106, 33).addBox(-0.5F, 0F, -0.5F, 1F, 6F, 1F),
-                PartPose.offsetAndRotation(0.0F, 0F, -2.5F, -0.20203F, 0.08292F, 0.38429F));
-        PartDefinition right_palp2 = right_palp.addOrReplaceChild("right_palp2",
-                CubeListBuilder.create()
-                .texOffs(106, 47).addBox(-0.5F, 0F, -0.5F, 1F, 6F, 1F),
-                PartPose.offsetAndRotation(0.0F, 6F, 0.0F, -0.00000F, 0.00000F, -1.39626F));
-        PartDefinition left_palp = palps.addOrReplaceChild("left_palp",
-                CubeListBuilder.create()
-                .texOffs(106, 40).addBox(-0.5F, 0F, -0.5F, 1F, 6F, 1F),
-                PartPose.offsetAndRotation(0.0F, 0F, 2.5F, 0.20203F, -0.08292F, 0.38429F));
-        PartDefinition left_palp2 = left_palp.addOrReplaceChild("left_palp2",
-                CubeListBuilder.create()
-                .texOffs(106, 54).addBox(-0.5F, 0F, -0.5F, 1F, 6F, 1F),
-                PartPose.offsetAndRotation(0.0F, 6F, 0.0F, -0.00000F, 0.00000F, -1.39626F));
-        PartDefinition chelifores = prosoma.addOrReplaceChild("chelifores",
-                CubeListBuilder.create(),
-                PartPose.offset(0F, 10F, 0F));
-        PartDefinition right_chelifore = chelifores.addOrReplaceChild("right_chelifore",
-                CubeListBuilder.create()
-                .texOffs(20, 100).addBox(-0.5F, 0F, -1F, 1F, 8F, 2F),
-                PartPose.offsetAndRotation(-6.5F, -10F, -3F, -0.39270F, 0.00000F, 0.39270F));
-        PartDefinition right_chelifore2 = right_chelifore.addOrReplaceChild("right_chelifore2",
-                CubeListBuilder.create()
-                .texOffs(106, 61).addBox(-1F, 0F, -0.5F, 2F, 4F, 1F),
-                PartPose.offsetAndRotation(-0.5F, 8F, -0.5F, 0.78540F, 0.00000F, -0.00000F));
-        PartDefinition left_chelifore = chelifores.addOrReplaceChild("left_chelifore",
-                CubeListBuilder.create()
-                .texOffs(26, 100).addBox(-0.5F, 0F, -1F, 1F, 8F, 2F),
-                PartPose.offsetAndRotation(-6.5F, -10F, 3F, 0.39270F, 0.00000F, 0.39270F));
-        PartDefinition left_chelifore2 = left_chelifore.addOrReplaceChild("left_chelifore2",
-                CubeListBuilder.create()
-                .texOffs(106, 66).addBox(-1F, 0F, -0.5F, 2F, 4F, 1F),
-                PartPose.offsetAndRotation(-0.5F, 8F, 0.5F, -0.78540F, 0.00000F, -0.00000F));
-        PartDefinition left_legs = prosoma.addOrReplaceChild("left_legs",
-                CubeListBuilder.create(),
-                PartPose.offset(2F, 0F, 3F));
-        PartDefinition left_second_leg = left_legs.addOrReplaceChild("left_second_leg",
-                CubeListBuilder.create()
-                .texOffs(54, 99).addBox(-1F, -1F, 0F, 2F, 2F, 8F),
-                PartPose.offsetAndRotation(-3F, 0F, 0F, -0.00000F, -0.21817F, -0.00000F));
-        PartDefinition left_second_leg2 = left_second_leg.addOrReplaceChild("left_second_leg2",
-                CubeListBuilder.create()
-                .texOffs(0, 10).addBox(-1F, -1F, 0F, 2F, 2F, 16F),
-                PartPose.offsetAndRotation(0F, 0F, 8F, 0.52360F, 0.00000F, -0.00000F));
-        PartDefinition left_second_leg3 = left_second_leg2.addOrReplaceChild("left_second_leg3",
-                CubeListBuilder.create()
-                .texOffs(36, 10).addBox(-1F, -1F, 0F, 2F, 2F, 16F),
-                PartPose.offsetAndRotation(0F, 0F, 16F, -1.57080F, 0.00000F, -0.00000F));
-        PartDefinition left_second_leg4 = left_second_leg3.addOrReplaceChild("left_second_leg4",
-                CubeListBuilder.create()
-                .texOffs(72, 17).addBox(-0.5F, -0.5F, 0F, 1F, 1F, 16F),
-                PartPose.offsetAndRotation(-0.5F, -0.5F, 16F, -0.52360F, 0.00000F, -0.00000F));
-        PartDefinition left_third_leg = left_legs.addOrReplaceChild("left_third_leg",
-                CubeListBuilder.create()
-                .texOffs(106, 0).addBox(-1F, -1F, 0F, 2F, 2F, 8F),
-                PartPose.offsetAndRotation(3F, 0F, 0F, -0.00000F, 0.21817F, -0.00000F));
-        PartDefinition left_third_leg2 = left_third_leg.addOrReplaceChild("left_third_leg2",
-                CubeListBuilder.create()
-                .texOffs(0, 10).addBox(-1F, -1F, 0F, 2F, 2F, 16F),
-                PartPose.offsetAndRotation(0F, 0F, 8F, 0.52360F, 0.00000F, -0.00000F));
-        PartDefinition left_third_leg3 = left_third_leg2.addOrReplaceChild("left_third_leg3",
-                CubeListBuilder.create()
-                .texOffs(36, 10).addBox(-1F, -1F, 0F, 2F, 2F, 16F),
-                PartPose.offsetAndRotation(0F, 0F, 16F, -1.57080F, 0.00000F, -0.00000F));
-        PartDefinition left_third_leg4 = left_third_leg3.addOrReplaceChild("left_third_leg4",
-                CubeListBuilder.create()
-                .texOffs(72, 17).addBox(-0.5F, -0.5F, 0F, 1F, 1F, 16F),
-                PartPose.offsetAndRotation(0.5F, -0.5F, 16F, -0.52360F, 0.00000F, -0.00000F));
-        PartDefinition left_first_leg = left_legs.addOrReplaceChild("left_first_leg",
-                CubeListBuilder.create()
-                .texOffs(52, 0).addBox(-1F, -1F, 0F, 2F, 2F, 8F),
-                PartPose.offsetAndRotation(-7F, 0F, 0F, -0.00000F, -0.39270F, -0.00000F));
-        PartDefinition left_first_leg2 = left_first_leg.addOrReplaceChild("left_first_leg2",
-                CubeListBuilder.create()
-                .texOffs(36, 90).addBox(-16F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(-1F, 0F, 7F, 0.74458F, 0.59558F, 1.02396F));
-        PartDefinition left_first_leg3 = left_first_leg2.addOrReplaceChild("left_first_leg3",
-                CubeListBuilder.create()
-                .texOffs(0, 90).addBox(-16F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(-16F, 0F, 0F, -0.00000F, 0.00000F, -0.82903F));
-        PartDefinition left_first_leg4 = left_first_leg3.addOrReplaceChild("left_first_leg4",
-                CubeListBuilder.create()
-                .texOffs(72, 89).addBox(-16F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(-16F, 0F, 0F, -0.00000F, 0.00000F, -1.57080F));
-        PartDefinition left_first_leg5 = left_first_leg4.addOrReplaceChild("left_first_leg5",
-                CubeListBuilder.create()
-                .texOffs(70, 97).addBox(-16F, -0.5F, -0.5F, 16F, 1F, 1F),
-                PartPose.offset(-16F, -0.5F, 0.5F));
-        PartDefinition left_fourth_leg2 = left_legs.addOrReplaceChild("_left_fourth_leg2",
-                CubeListBuilder.create()
-                .texOffs(94, 99).addBox(-1F, -1F, 0F, 2F, 2F, 8F),
-                PartPose.offsetAndRotation(7F, 0F, 0F, -0.00000F, 0.39270F, -0.00000F));
-        PartDefinition left_fourth_leg = left_fourth_leg2.addOrReplaceChild("_left_fourth_leg",
-                CubeListBuilder.create()
-                .texOffs(36, 90).addBox(0F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(1F, 0F, 7F, 0.57493F, -0.49805F, -0.93549F));
-        PartDefinition leftfourth_leg = left_fourth_leg.addOrReplaceChild("_leftfourth_leg",
-                CubeListBuilder.create()
-                .texOffs(0, 90).addBox(0F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(16F, 0F, 0F, -0.00000F, 0.00000F, 0.78540F));
-        PartDefinition leftfourth_leg2 = leftfourth_leg.addOrReplaceChild("_leftfourth_leg2",
-                CubeListBuilder.create()
-                .texOffs(72, 89).addBox(0F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(16F, 0F, 0F, -0.00000F, 0.00000F, 1.57080F));
-        PartDefinition leftfourth_leg3 = leftfourth_leg2.addOrReplaceChild("_leftfourth_leg3",
-                CubeListBuilder.create()
-                .texOffs(70, 97).addBox(0F, -0.5F, -0.5F, 16F, 1F, 1F),
-                PartPose.offset(16F, -0.5F, 0.5F));
-        PartDefinition right_legs = prosoma.addOrReplaceChild("right_legs",
-                CubeListBuilder.create(),
-                PartPose.offset(2F, 0F, -3F));
-        PartDefinition right_second_leg = right_legs.addOrReplaceChild("right_second_leg",
-                CubeListBuilder.create()
-                .texOffs(74, 99).addBox(-1F, -1F, -8F, 2F, 2F, 8F),
-                PartPose.offsetAndRotation(-3F, 0F, 0F, -0.00000F, 0.21817F, -0.00000F));
-        PartDefinition right_second_leg2 = right_second_leg.addOrReplaceChild("right_second_leg2",
-                CubeListBuilder.create()
-                .texOffs(0, 10).addBox(-1F, -1F, -16F, 2F, 2F, 16F),
-                PartPose.offsetAndRotation(0F, 0F, -8F, -0.52360F, 0.00000F, -0.00000F));
-        PartDefinition right_second_leg3 = right_second_leg2.addOrReplaceChild("right_second_leg3",
-                CubeListBuilder.create()
-                .texOffs(36, 10).addBox(-1F, -1F, -16F, 2F, 2F, 16F),
-                PartPose.offsetAndRotation(0F, 0F, -16F, 1.57080F, 0.00000F, -0.00000F));
-        PartDefinition right_second_leg4 = right_second_leg3.addOrReplaceChild("right_second_leg4",
-                CubeListBuilder.create()
-                .texOffs(72, 17).addBox(-0.5F, -0.5F, -16F, 1F, 1F, 16F),
-                PartPose.offsetAndRotation(-0.5F, -0.5F, -16F, 0.52360F, 0.00000F, -0.00000F));
-        PartDefinition right_third_leg = right_legs.addOrReplaceChild("right_third_leg",
-                CubeListBuilder.create()
-                .texOffs(106, 10).addBox(-1F, -1F, -8F, 2F, 2F, 8F),
-                PartPose.offsetAndRotation(3F, 0F, 0F, -0.00000F, -0.21817F, -0.00000F));
-        PartDefinition right_third_leg2 = right_third_leg.addOrReplaceChild("right_third_leg2",
-                CubeListBuilder.create()
-                .texOffs(0, 10).addBox(-1F, -1F, -16F, 2F, 2F, 16F),
-                PartPose.offsetAndRotation(0F, 0F, -8F, -0.52360F, 0.00000F, -0.00000F));
-        PartDefinition right_third_leg3 = right_third_leg2.addOrReplaceChild("right_third_leg3",
-                CubeListBuilder.create()
-                .texOffs(36, 10).addBox(-1F, -1F, -16F, 2F, 2F, 16F),
-                PartPose.offsetAndRotation(0F, 0F, -16F, 1.57080F, 0.00000F, -0.00000F));
-        PartDefinition right_third_leg4 = right_third_leg3.addOrReplaceChild("right_third_leg4",
-                CubeListBuilder.create()
-                .texOffs(72, 17).addBox(-0.5F, -0.5F, -16F, 1F, 1F, 16F),
-                PartPose.offsetAndRotation(0.5F, -0.5F, -16F, 0.52360F, 0.00000F, -0.00000F));
-        PartDefinition right_first_leg = right_legs.addOrReplaceChild("right_first_leg",
-                CubeListBuilder.create()
-                .texOffs(34, 98).addBox(-1F, -1F, -8F, 2F, 2F, 8F),
-                PartPose.offsetAndRotation(-7F, 0F, 0F, -0.00000F, 0.39270F, -0.00000F));
-        PartDefinition right_first_leg2 = right_first_leg.addOrReplaceChild("right_first_leg2",
-                CubeListBuilder.create()
-                .texOffs(36, 90).addBox(-16F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(-1F, 0F, -7F, -0.74458F, -0.59558F, 1.02396F));
-        PartDefinition right_first_leg3 = right_first_leg2.addOrReplaceChild("right_first_leg3",
-                CubeListBuilder.create()
-                .texOffs(0, 90).addBox(-16F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(-16F, 0F, 0F, -0.00000F, 0.00000F, -0.82903F));
-        PartDefinition right_first_leg4 = right_first_leg3.addOrReplaceChild("right_first_leg4",
-                CubeListBuilder.create()
-                .texOffs(72, 89).addBox(-16F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(-16F, 0F, 0F, -0.00000F, 0.00000F, -1.57080F));
-        PartDefinition right_first_leg5 = right_first_leg4.addOrReplaceChild("right_first_leg5",
-                CubeListBuilder.create()
-                .texOffs(70, 97).addBox(-16F, -0.5F, -0.5F, 16F, 1F, 1F),
-                PartPose.offset(-16F, -0.5F, -0.5F));
-        PartDefinition right_fourth_leg = right_legs.addOrReplaceChild("right_fourth_leg",
-                CubeListBuilder.create()
-                .texOffs(0, 100).addBox(-1F, -1F, -8F, 2F, 2F, 8F),
-                PartPose.offsetAndRotation(7F, 0F, 0F, -0.00000F, -0.39270F, -0.00000F));
-        PartDefinition right_fourth_leg2 = right_fourth_leg.addOrReplaceChild("right_fourth_leg2",
-                CubeListBuilder.create()
-                .texOffs(36, 90).addBox(0F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(1F, 0F, -7F, -0.57493F, 0.49805F, -0.93549F));
-        PartDefinition right_fourth_leg3 = right_fourth_leg2.addOrReplaceChild("right_fourth_leg3",
-                CubeListBuilder.create()
-                .texOffs(0, 90).addBox(0F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(16F, 0F, 0F, -0.00000F, 0.00000F, 0.78540F));
-        PartDefinition right_fourth_leg4 = right_fourth_leg3.addOrReplaceChild("right_fourth_leg4",
-                CubeListBuilder.create()
-                .texOffs(72, 89).addBox(0F, -1F, -1F, 16F, 2F, 2F),
-                PartPose.offsetAndRotation(16F, 0F, 0F, -0.00000F, 0.00000F, 1.57080F));
-        PartDefinition right_fourth_leg5 = right_fourth_leg4.addOrReplaceChild("right_fourth_leg5",
-                CubeListBuilder.create()
-                .texOffs(70, 97).addBox(0F, -0.5F, -0.5F, 16F, 1F, 1F),
-                PartPose.offset(16F, -0.5F, -0.5F));
-
-        return LayerDefinition.create(mesh, 128, 128);
+    private static ResourceLocation id(String path){return ResourceLocation.fromNamespaceAndPath(Interstice.ID,path);}
+    private static float[] vector(JsonArray a){float[] out=new float[a.size()];for(int i=0;i<a.size();i++)out[i]=a.get(i).getAsFloat();return out;}
+    private static Mesh load(CaveRiftSpiderEntity.Variant variant){
+        try(var stream=Minecraft.getInstance().getResourceManager().open(id("models/entity/spider/"+variant.name().toLowerCase(Locale.ROOT)+".json"))){
+            var bytes=stream.readAllBytes();var json=JsonParser.parseString(new String(bytes,StandardCharsets.UTF_8)).getAsJsonObject();
+            var bones=new ArrayList<Bone>();for(var value:json.getAsJsonArray("bones")){var b=value.getAsJsonObject();bones.add(new Bone(b.get("name").getAsString(),b.get("parent").isJsonNull()?null:b.get("parent").getAsString(),vector(b.getAsJsonArray("offset")),vector(b.getAsJsonArray("rotation"))));}
+            var atlas=json.getAsJsonObject("atlas");float width=atlas.get("width").getAsFloat(),height=atlas.get("height").getAsFloat();
+            var faces=new HashMap<String,List<Face>>();int cubes=0,quads=0;
+            for(var value:json.getAsJsonArray("parts")){
+                var part=value.getAsJsonObject();var positions=part.getAsJsonArray("vertices");var list=faces.computeIfAbsent(part.get("bone").getAsString(),key->new ArrayList<>());cubes++;
+                for(var faceValue:part.getAsJsonArray("faces")){
+                    var face=faceValue.getAsJsonObject();var ids=face.getAsJsonArray("indices");var uvs=face.getAsJsonArray("uv");float[] xyz=new float[12],uv=new float[8];
+                    for(int i=0;i<4;i++){var point=positions.get(ids.get(i).getAsInt()).getAsJsonArray();for(int k=0;k<3;k++)xyz[i*3+k]=point.get(k).getAsFloat()/16;uv[i*2]=uvs.get(i).getAsJsonArray().get(0).getAsFloat()/width;uv[i*2+1]=uvs.get(i).getAsJsonArray().get(1).getAsFloat()/height;}
+                    var normal=new Vector3f(xyz[3]-xyz[0],xyz[4]-xyz[1],xyz[5]-xyz[2]).cross(xyz[6]-xyz[0],xyz[7]-xyz[1],xyz[8]-xyz[2]).normalize();
+                    list.add(new Face(xyz,uv,normal.x,normal.y,normal.z));quads++;
+                }
+            }
+            if(cubes!=309||quads!=1854||bones.size()!=53)throw new IllegalStateException("Incomplete selected spider mesh: "+variant);
+            return new Mesh(List.copyOf(bones),faces,cubes,quads,HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(bytes)),json.get("source_sha256").getAsString());
+        }catch(Exception error){throw new IllegalStateException("Cannot load authored spider "+variant,error);}
     }
-
-    @Override
-    public ModelPart root() {
-        return this.root;
+    public static LayerDefinition createBodyLayer(){
+        var mesh=new MeshDefinition();var parts=new HashMap<String,PartDefinition>();
+        for(var b:load(CaveRiftSpiderEntity.Variant.LURKER).bones){var p=b.parent==null?mesh.getRoot():parts.get(b.parent);parts.put(b.name,p.addOrReplaceChild(b.name,CubeListBuilder.create(),PartPose.offsetAndRotation(b.offset[0],b.offset[1],b.offset[2],b.rotation[0],b.rotation[1],b.rotation[2])));}
+        return LayerDefinition.create(mesh,512,768);
     }
-
-    @Override
-    public void setupAnim(CaveRiftSpiderEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        this.root().getAllParts().forEach(ModelPart::resetPose);
-        this.animate(entity.idleAnimationState, CaveRiftSpiderAnimation.IDLE, ageInTicks, 1.0F);
-        this.animateWalk(CaveRiftSpiderAnimation.MOVE, limbSwing, limbSwingAmount, 2.5F, 2.5F);
+    @Override public ModelPart root(){return root;}
+    public ModelPart joint(String name){return joints.get(name);}
+    public String sourceHash(CaveRiftSpiderEntity.Variant variant){return meshes.get(variant).source;}
+    public String meshHash(CaveRiftSpiderEntity.Variant variant){return meshes.get(variant).hash;}
+    public int sourceCubes(){return current.cubes;}
+    public int sourceQuads(){return current.quads;}
+    @Override public void setupAnim(CaveRiftSpiderEntity entity,float limbSwing,float limbSwingAmount,float age,float yaw,float pitch){
+        current=meshes.get(entity.getVariant());root.getAllParts().forEach(ModelPart::resetPose);
+        // Rest is the authored still pose. A tarantula does not pump its abdomen or fidget continuously.
+        // Native limbSwing includes vertical travel on walls/ceilings (entity calculateEntityAnimation).
+        if(!entity.isDeadOrDying()&&limbSwingAmount>.015F)animateWalk(CaveRiftSpiderAnimation.MOVE,limbSwing,limbSwingAmount,2.5F,2.5F);
     }
+    private void render(String name,PoseStack pose,VertexConsumer out,int light,int overlay,int color){
+        var part=joints.get(name);if(!part.visible)return;pose.pushPose();part.translateAndRotate(pose);
+        if(!part.skipDraw)for(var face:current.faces.getOrDefault(name,List.of())){
+            for(int i=0;i<4;i++)out.addVertex(pose.last(),face.xyz[i*3],face.xyz[i*3+1],face.xyz[i*3+2]).setColor(color).setUv(face.uv[i*2],face.uv[i*2+1]).setOverlay(overlay).setLight(light).setNormal(pose.last(),face.nx,face.ny,face.nz);
+            renderedFaces++;renderedVertices+=4;
+        }
+        for(var child:children.get(name))render(child,pose,out,light,overlay,color);pose.popPose();
+    }
+    @Override public void renderToBuffer(PoseStack pose,VertexConsumer out,int light,int overlay,int color){renderedFaces=renderedVertices=0;render("root",pose,out,light,overlay,color);renderedFrames++;}
 }

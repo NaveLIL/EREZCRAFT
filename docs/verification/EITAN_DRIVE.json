@@ -1,0 +1,2887 @@
+{
+  "passed": true,
+  "utc": "2026-10-29T21:26:55.574783+00:00",
+  "revision": "E01-R7",
+  "source": {
+    "geometry_sha256": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c",
+    "assembly_sha256": "3649d0f8e9131a9af6064817185eb7cf92082de270ee1e81439fa3b20d5e3407",
+    "runtime_sha256": "d79615d909dc937d7017309e6bfffa5a71130772477f4e73b321563c50809a9b",
+    "revision": "E01-R7",
+    "runtime_revision": "vehicle-v1",
+    "cells": 124,
+    "bones": 36,
+    "monitors": 6,
+    "materials": "Unchanged authored E01 palette; no manufacturer image pixels",
+    "native_drive_accepted": true,
+    "verification": "docs/verification/EITAN_DRIVE.json"
+  },
+  "runtime_source_sha256": {
+    "src/main/java/pro/erez/interstice/client/EitanCameraOptics.java": "465b8ca17cc2827f6632794d8bb8d6726913c6793c5e0c04438dce104c8c8d2e",
+    "src/main/java/pro/erez/interstice/client/EitanCameras.java": "2e3403f52c54d6ea7857d454d1cfbe7aeb08744925e03d3f7ca1e0c36dcabd26",
+    "src/main/java/pro/erez/interstice/client/EitanClient.java": "49851587eca842d5bd09d839d03c0dd4a625ef8c2173397083c0425684d7cd6d",
+    "src/main/java/pro/erez/interstice/client/EitanModels.java": "baaa5fde9615cbf0890c861ef2443299c808e7c6721156aed93c7c31fb1ac62f",
+    "src/main/java/pro/erez/interstice/client/EitanRenderer.java": "80bfa698ccd0f933315c9158a13593a63991cf66f59f9668505b1792268e110c",
+    "src/main/java/pro/erez/interstice/client/EitanScreen.java": "662c7bc66afea75853c31bd8dd4822f8be7a3272cb554735cdaf532ca8a4d41b",
+    "src/main/java/pro/erez/interstice/client/EitanVehicleModels.java": "536a7d0602468ae724426027ca63273fd063c80268569b6564c312e12acf4cc7",
+    "src/main/java/pro/erez/interstice/mixin/EitanCameraAccess.java": "be2a4315c4a6211cfe4d19f37247d13c71d57881a56b1402b953d8bd097798b4",
+    "src/main/java/pro/erez/interstice/mixin/EitanCameraProjectionMixin.java": "f7c6251d0c8ba55210881a28a200845727d9282f3dbec2d7c2edb1a0e0eb34bb",
+    "src/main/java/pro/erez/interstice/mixin/EitanCameraViewMixin.java": "0ac447bc23fd2f55807904b8a47cca92f8cbef7cecfe8fe8bdccfdeb56e05729",
+    "src/main/java/pro/erez/interstice/mixin/EitanDhCameraMixin.java": "bdc24a77f0dfdf871ebaa1b19914cdd34fcf8ea16def008b45f3ebb8213914f4",
+    "src/main/java/pro/erez/interstice/mixin/EitanGameRendererAccess.java": "1f22aeca485f2d39223701d02d7a8eb2ed7356f51351fd699a2e7711584c3880",
+    "src/main/java/pro/erez/interstice/mixin/EitanIrisCameraMixin.java": "8a304d5256a7d4b674bfb45afaadf9b01d11f3e78393f3ceee2e1f9d158756ea",
+    "src/main/java/pro/erez/interstice/mixin/EitanLevelRendererAccess.java": "bb70952dcd86b500b0985a4aac0a38a3fe21c4f07c504c79bd30c01c6129992b",
+    "src/main/java/pro/erez/interstice/mixin/EitanMinecraftAccess.java": "f1684a4549b34488b07d57ed1e6fd5d371f544fec0f30ece707e90bda725d1c1",
+    "src/main/java/pro/erez/interstice/mixin/EitanPassengerLoadMixin.java": "d727c2e1d4ecfb43af37527c53650ef07f7b54b0be8162258f18518844da2a97",
+    "src/main/java/pro/erez/interstice/mixin/EitanSensorSkyMixin.java": "b0a99bd14d76c84f4bced6187212d9ffd2ef186ff32c4fdabe9042bce75715a9",
+    "src/main/java/pro/erez/interstice/mixin/EitanStepClearanceMixin.java": "86ea3f8d56def2bf1737d0b167adc0fb5e0f96fbcf018d302c2a40db454443e3",
+    "src/main/java/pro/erez/interstice/mixin/EitanWheelContactMixin.java": "1f3f4ff6e559f7724a3d155ae388c4f819a968ed41b0dad966db849213d4582d",
+    "src/main/java/pro/erez/interstice/ship/SkatPlayerLogin.java": "40f3b1c7bd4baf606e4458e08bd44913d31ec9918e94ee3dd0e8a447026f34f0",
+    "src/main/java/pro/erez/interstice/vehicle/EitanAssembly.java": "6433e12ed621748ccd3f8709d53661a029ee2aa7be6ac70771a346d5db8da8aa",
+    "src/main/java/pro/erez/interstice/vehicle/EitanBlock.java": "c42bafbb9b37b7b765f4cfe1279d2f8805ed5124c20626b5e625bf0079c9a1be",
+    "src/main/java/pro/erez/interstice/vehicle/EitanBlueprintItem.java": "40c39d37e1ff8b09c6c2059344e587124260f96384aa4eca95a219c4be0cb6bf",
+    "src/main/java/pro/erez/interstice/vehicle/EitanController.java": "a8b3e2612b1034a791981aea0748f3b652bbe699a895ff10a5ad3568818dacb2",
+    "src/main/java/pro/erez/interstice/vehicle/EitanData.java": "6c8ac383864487cc51e54e4a362bd010e8d195e98842cf8d71cee1ae284ad4a5",
+    "src/main/java/pro/erez/interstice/vehicle/EitanDynamics.java": "4dd25e1974325d301b76afaac6aa8f322a544a0790e607ffaebb7cbbc699ec3c",
+    "src/main/java/pro/erez/interstice/vehicle/EitanNetwork.java": "5e8ff04f6e06c00fa90e6371d5280cd49cc84c54dfd6eb18916965b8fa116e76",
+    "src/main/java/pro/erez/interstice/vehicle/EitanPreview.java": "d67fae093cb1feb9dc0b10f51b5ba3be68c13cb0b6d285412ad034dadd553218",
+    "src/main/java/pro/erez/interstice/vehicle/EitanPreviewData.java": "5fbecce8fdb7f7b994a853980dd4e270daaa0a395c3b8c4242031c2911a21d62",
+    "src/main/java/pro/erez/interstice/vehicle/EitanSeatEntity.java": "3ae8ebe9803414fb4fb155f732fa98eccacf9c45f7ddb3e19386d2719b5b6fe6",
+    "src/main/java/pro/erez/interstice/vehicle/EitanTerrainContact.java": "018a7697901280768ee3796d2012749baa68eb6c275ee241c55f3b6924ffd9bb",
+    "src/main/java/pro/erez/interstice/vehicle/EitanVehicles.java": "fb676054e354bc0de8352aabf94843c2ac4a0ea4180a56dbb05a353b7cf0692b",
+    "src/main/java/pro/erez/interstice/vehicle/EitanWheelBlock.java": "b300516aecacc2a33642219af1d76d1812f925588beb102f59bffa5480b5a5f7",
+    "src/main/java/pro/erez/interstice/vehicle/EitanWheelEntity.java": "f71b7c5535de0a6838393b533f6f047a32ee51f99feadf0ca8e0f24f8517115b",
+    "src/main/resources/interstice.mixins.json": "57f20a3e29df87a3ed13c524b654b4833eb565b521d9d4c69caf1b2429345093"
+  },
+  "checks": {
+    "full": {
+      "dh_loaded": true,
+      "offroad_loaded": true,
+      "started_utc": "2026-10-29T21:06:44.740650300Z",
+      "mode": "full",
+      "phase": 15,
+      "owner_profile_used": false,
+      "geometry_sha256": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c",
+      "samples": [
+        {
+          "x": -0.002600897407128225,
+          "y": 200.00618824839685,
+          "z": 0.0005335664740376417,
+          "speed": 0.00048169482,
+          "client_fps": 44,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": -0.003983515207355209,
+          "y": 200.00618015152142,
+          "z": -0.1176804580358047,
+          "speed": 0.504464,
+          "client_fps": 41,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -0.04060193322063989,
+          "y": 200.0428039105623,
+          "z": -0.9668589615543478,
+          "speed": 2.39512,
+          "client_fps": 41,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -0.06819529845213179,
+          "y": 200.31146379587167,
+          "z": -3.4227194819459,
+          "speed": 4.899588,
+          "client_fps": 40,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -0.034708520338972926,
+          "y": 200.60112110225367,
+          "z": -6.867338712363377,
+          "speed": 7.2540436,
+          "client_fps": 40,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": 0.07378691220323108,
+          "y": 200.99234275303246,
+          "z": -10.422036041811298,
+          "speed": 7.9026475,
+          "client_fps": 40,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": 0.15141306318909453,
+          "y": 201.2243345620581,
+          "z": -14.337267201262883,
+          "speed": 7.9658113,
+          "client_fps": 40,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": 0.19914680257432632,
+          "y": 200.59799502459637,
+          "z": -18.090047347719135,
+          "speed": 7.908403,
+          "client_fps": 43,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": 0.21464000570366715,
+          "y": 200.40494448118994,
+          "z": -19.29586263649327,
+          "speed": 7.998189,
+          "client_fps": 43,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": 0.24834286665224592,
+          "y": 200.25151986814552,
+          "z": -20.640479976962208,
+          "speed": 0.54950297,
+          "client_fps": 43,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": 0.25005726465414857,
+          "y": 200.25031453898555,
+          "z": -20.63432693793161,
+          "speed": 0.01989653,
+          "client_fps": 43,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": 0.2498919032697834,
+          "y": 200.2508338804075,
+          "z": -20.627840824292438,
+          "speed": 0.012687058,
+          "client_fps": 43,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": 0.24968600169258454,
+          "y": 200.25137183903894,
+          "z": -20.620729015755355,
+          "speed": 0.012575182,
+          "client_fps": 44,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": 0.2495098756697673,
+          "y": 200.25179163380483,
+          "z": -20.614926985938155,
+          "speed": 0.012560708,
+          "client_fps": 44,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": 0.24935507195879436,
+          "y": 200.25214788759519,
+          "z": -20.609161418539017,
+          "speed": 0.009347673,
+          "client_fps": 47,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": 0.2491518325719633,
+          "y": 200.25251753815627,
+          "z": -20.60347380447038,
+          "speed": 0.012451906,
+          "client_fps": 47,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": 0.2456643933851702,
+          "y": 200.2458475482351,
+          "z": -20.678791005675453,
+          "speed": 0.35804772,
+          "client_fps": 48,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": 0.03906830447378001,
+          "y": 200.1523153495657,
+          "z": -21.64314569586043,
+          "speed": 2.1860175,
+          "client_fps": 48,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -0.5842325615365002,
+          "y": 200.06124213224385,
+          "z": -23.400237686966523,
+          "speed": 4.626966,
+          "client_fps": 46,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -2.1964812043438346,
+          "y": 200.00731758141515,
+          "z": -26.17054860789072,
+          "speed": 6.854095,
+          "client_fps": 46,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -5.104415979292734,
+          "y": 200.00633719214815,
+          "z": -29.118748446492546,
+          "speed": 7.704319,
+          "client_fps": 45,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -8.126994694590412,
+          "y": 200.0063121472041,
+          "z": -30.945096867365343,
+          "speed": 7.8924313,
+          "client_fps": 45,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -11.51492813512892,
+          "y": 200.0063137802538,
+          "z": -32.05646495313134,
+          "speed": 7.94959,
+          "client_fps": 42,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -15.87217418517328,
+          "y": 200.00629905941108,
+          "z": -32.338700044068766,
+          "speed": 7.9685664,
+          "client_fps": 42,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -19.023365843398047,
+          "y": 200.00618830412654,
+          "z": -31.78138029865845,
+          "speed": 1.9876938e-06,
+          "client_fps": 45,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": -18.86037830555745,
+          "y": 200.00624620475693,
+          "z": -31.81068383141546,
+          "speed": 0.5046067,
+          "client_fps": 45,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -18.05825267991873,
+          "y": 200.0062571147526,
+          "z": -31.95582133819912,
+          "speed": 2.1011992,
+          "client_fps": 45,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -16.775744738920146,
+          "y": 200.00624204521404,
+          "z": -32.18899552615051,
+          "speed": 2.7016737,
+          "client_fps": 48,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -15.383104063456397,
+          "y": 200.0062382962421,
+          "z": -32.44264727465411,
+          "speed": 2.8547447,
+          "client_fps": 48,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -13.962857661727133,
+          "y": 200.00622210386817,
+          "z": -32.70165834733491,
+          "speed": 2.891309,
+          "client_fps": 45,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -12.392994258044254,
+          "y": 200.0062218578231,
+          "z": -32.9883433544721,
+          "speed": 2.9031558,
+          "client_fps": 45,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -11.107090428998825,
+          "y": 200.00622180892347,
+          "z": -33.22318530280534,
+          "speed": 2.9050007,
+          "client_fps": 40,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -9.534956241931297,
+          "y": 200.00622179349486,
+          "z": -33.51021451705065,
+          "speed": 2.9057553,
+          "client_fps": 40,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -8.248622294795922,
+          "y": 200.00622179056037,
+          "z": -33.7450566415418,
+          "speed": 2.9057672,
+          "client_fps": 42,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        }
+      ],
+      "mass": 23.135683812499988,
+      "physical_hubs_checked": 8,
+      "boarded_by_walking": true,
+      "boarding_walk_ticks": 81,
+      "seat_hit_pos": "20481031, 129, 20481029",
+      "seat_hit_location": "(2.048103156188649E7, 129.41367509292016, 2.04810299375E7)",
+      "seat_client_pose": "CROUCHING",
+      "driver_mounted_by_native_click": true,
+      "cruise_display_kmh": 28.557106018066406,
+      "forward_distance_m": 19.301975696360067,
+      "forward_ticks": 72,
+      "turn_degrees": 95.89082315973269,
+      "reverse_distance_m": 12.259815449107565,
+      "simultaneous_passenger_actors": 12,
+      "independent_hatches_checked": true,
+      "closed_roof_checked": true,
+      "floor_candidate_grass_pixels": 0,
+      "camera_sector_marker_pixels": [
+        6203,
+        4919,
+        135131
+      ],
+      "camera_captures": 916,
+      "camera_cpu_mean_ms": 2.6111534934497818,
+      "camera_cpu_max_ms": 14.9273,
+      "monitor_native_hit": "net.minecraft.world.phys.BlockHitResult@bcf4ed7",
+      "physical_monitor_native_click": true,
+      "rear_camera_yellow_pixels": 2778,
+      "camera_gui_view_switch_checked": true,
+      "saved_real_driver_root_vehicle": true,
+      "saved_fuel": 11802,
+      "saved_lights": true,
+      "saved_motion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_x": -6.385547692437923,
+      "saved_y": 200.00618830428198,
+      "saved_z": -34.084550303978574,
+      "saved": true,
+      "passed": true,
+      "error": "",
+      "peak_speed_m_s": 8.042513847351074,
+      "max_tilt_rad": 0.1310886689787495,
+      "max_front_wheel_rise_m": 0.2401131821019843,
+      "view_trace": {
+        "frames": 2578,
+        "max_eye_residual_m": 0.42313026105677204,
+        "rest_max_eye_residual_m": 0.00031255787122240356,
+        "phase_max_m": {
+          "5": 0.42313026105677204,
+          "6": 6.8776499916106115e-09,
+          "7": 0.0001285790094815599,
+          "8": 6.953084871937046e-06,
+          "9": 1.729476849666949e-05,
+          "10": 2.989211173360824e-05,
+          "11": 4.433029068090104e-09,
+          "12": 1.3882251217170996e-06,
+          "13": 9.966370361921593e-10,
+          "14": 9.966370361921593e-10,
+          "141": 9.966370361921593e-10,
+          "142": 0.0002702864509370918,
+          "16": 0.00031218112078460326,
+          "20": 9.966370361921593e-10,
+          "21": 0.00031255787122240356,
+          "22": 9.966370361921593e-10,
+          "23": 9.966370361921593e-10,
+          "24": 9.966370361921593e-10,
+          "25": 9.966370361921593e-10,
+          "26": 9.966370361921593e-10,
+          "27": 9.966370361921593e-10,
+          "15": 9.966370361921593e-10
+        },
+        "series": [
+          {
+            "phase": 5,
+            "frame": 20,
+            "speed": 4.1377323e-05,
+            "eye_residual_m": 1.8662269421088586e-09,
+            "rest": false
+          },
+          {
+            "phase": 5,
+            "frame": 40,
+            "speed": 4.1359413e-05,
+            "eye_residual_m": 2.007036161043891e-09,
+            "rest": true
+          },
+          {
+            "phase": 6,
+            "frame": 60,
+            "speed": 2.6883461e-05,
+            "eye_residual_m": 2.007036161043891e-09,
+            "rest": true
+          },
+          {
+            "phase": 6,
+            "frame": 80,
+            "speed": 1.7474249e-05,
+            "eye_residual_m": 2.007036161043891e-09,
+            "rest": true
+          },
+          {
+            "phase": 6,
+            "frame": 100,
+            "speed": 1.1358262e-05,
+            "eye_residual_m": 2.007036161043891e-09,
+            "rest": true
+          },
+          {
+            "phase": 6,
+            "frame": 120,
+            "speed": 9.789153e-05,
+            "eye_residual_m": 2.007036161043891e-09,
+            "rest": true
+          },
+          {
+            "phase": 6,
+            "frame": 140,
+            "speed": 6.362949e-05,
+            "eye_residual_m": 2.007036161043891e-09,
+            "rest": true
+          },
+          {
+            "phase": 6,
+            "frame": 160,
+            "speed": 6.362949e-05,
+            "eye_residual_m": 2.007036161043891e-09,
+            "rest": true
+          },
+          {
+            "phase": 7,
+            "frame": 180,
+            "speed": 6.362949e-05,
+            "eye_residual_m": 7.283421943006629e-10,
+            "rest": true
+          },
+          {
+            "phase": 7,
+            "frame": 200,
+            "speed": 0.4871519,
+            "eye_residual_m": 9.8989748363129e-10,
+            "rest": false
+          },
+          {
+            "phase": 7,
+            "frame": 220,
+            "speed": 2.401422,
+            "eye_residual_m": 8.568331524192237e-05,
+            "rest": false
+          },
+          {
+            "phase": 7,
+            "frame": 240,
+            "speed": 4.899588,
+            "eye_residual_m": 3.7580471381449417e-06,
+            "rest": false
+          },
+          {
+            "phase": 7,
+            "frame": 260,
+            "speed": 7.1542664,
+            "eye_residual_m": 6.518912522840002e-07,
+            "rest": false
+          },
+          {
+            "phase": 7,
+            "frame": 280,
+            "speed": 7.8671184,
+            "eye_residual_m": 1.1498748468415004e-06,
+            "rest": false
+          },
+          {
+            "phase": 7,
+            "frame": 300,
+            "speed": 7.967748,
+            "eye_residual_m": 1.2154199252281076e-05,
+            "rest": false
+          },
+          {
+            "phase": 7,
+            "frame": 320,
+            "speed": 7.829713,
+            "eye_residual_m": 2.8713807865813377e-05,
+            "rest": false
+          },
+          {
+            "phase": 8,
+            "frame": 340,
+            "speed": 4.013153,
+            "eye_residual_m": 6.953084871937046e-06,
+            "rest": false
+          },
+          {
+            "phase": 8,
+            "frame": 360,
+            "speed": 0.11080143,
+            "eye_residual_m": 3.65739628602561e-08,
+            "rest": false
+          },
+          {
+            "phase": 8,
+            "frame": 380,
+            "speed": 0.017469645,
+            "eye_residual_m": 1.808804630331755e-09,
+            "rest": false
+          },
+          {
+            "phase": 8,
+            "frame": 400,
+            "speed": 0.008223233,
+            "eye_residual_m": 9.87042093137858e-10,
+            "rest": false
+          },
+          {
+            "phase": 8,
+            "frame": 420,
+            "speed": 0.0147660915,
+            "eye_residual_m": 1.1446902112804526e-09,
+            "rest": true
+          },
+          {
+            "phase": 8,
+            "frame": 440,
+            "speed": 0.013562095,
+            "eye_residual_m": 1.390197712158015e-09,
+            "rest": true
+          },
+          {
+            "phase": 8,
+            "frame": 460,
+            "speed": 0.00815898,
+            "eye_residual_m": 1.694191459817198e-09,
+            "rest": true
+          },
+          {
+            "phase": 8,
+            "frame": 480,
+            "speed": 0.012690299,
+            "eye_residual_m": 3.9165703946944136e-10,
+            "rest": true
+          },
+          {
+            "phase": 9,
+            "frame": 500,
+            "speed": 0.010242735,
+            "eye_residual_m": 1.7392800798642102e-09,
+            "rest": true
+          },
+          {
+            "phase": 9,
+            "frame": 520,
+            "speed": 0.6089126,
+            "eye_residual_m": 5.950282756354112e-07,
+            "rest": false
+          },
+          {
+            "phase": 9,
+            "frame": 540,
+            "speed": 2.3073964,
+            "eye_residual_m": 6.237179188405996e-06,
+            "rest": false
+          },
+          {
+            "phase": 9,
+            "frame": 560,
+            "speed": 4.7685094,
+            "eye_residual_m": 3.9866575203020515e-06,
+            "rest": false
+          },
+          {
+            "phase": 9,
+            "frame": 580,
+            "speed": 6.650195,
+            "eye_residual_m": 8.571644115607427e-06,
+            "rest": false
+          },
+          {
+            "phase": 9,
+            "frame": 600,
+            "speed": 7.6463747,
+            "eye_residual_m": 5.7875287531861996e-08,
+            "rest": false
+          },
+          {
+            "phase": 9,
+            "frame": 620,
+            "speed": 7.884636,
+            "eye_residual_m": 9.425825633564035e-09,
+            "rest": false
+          },
+          {
+            "phase": 9,
+            "frame": 640,
+            "speed": 7.951835,
+            "eye_residual_m": 6.414924835845309e-09,
+            "rest": false
+          },
+          {
+            "phase": 9,
+            "frame": 660,
+            "speed": 8.352377,
+            "eye_residual_m": 3.995316432530923e-09,
+            "rest": false
+          },
+          {
+            "phase": 10,
+            "frame": 680,
+            "speed": 7.9717436,
+            "eye_residual_m": 1.7478694486565475e-09,
+            "rest": false
+          },
+          {
+            "phase": 10,
+            "frame": 700,
+            "speed": 0.49799347,
+            "eye_residual_m": 1.5329859855467179e-09,
+            "rest": false
+          },
+          {
+            "phase": 10,
+            "frame": 720,
+            "speed": 0.006844957,
+            "eye_residual_m": 1.402342131325877e-09,
+            "rest": false
+          },
+          {
+            "phase": 10,
+            "frame": 740,
+            "speed": 0.00021813561,
+            "eye_residual_m": 1.402342131325877e-09,
+            "rest": false
+          },
+          {
+            "phase": 10,
+            "frame": 760,
+            "speed": 2.9367038e-06,
+            "eye_residual_m": 1.402342131325877e-09,
+            "rest": true
+          },
+          {
+            "phase": 10,
+            "frame": 780,
+            "speed": 6.082475e-08,
+            "eye_residual_m": 1.402342131325877e-09,
+            "rest": true
+          },
+          {
+            "phase": 10,
+            "frame": 800,
+            "speed": 5.50254e-05,
+            "eye_residual_m": 9.768349959641698e-10,
+            "rest": true
+          },
+          {
+            "phase": 10,
+            "frame": 820,
+            "speed": 2.6314954e-05,
+            "eye_residual_m": 9.768349959641698e-10,
+            "rest": true
+          },
+          {
+            "phase": 11,
+            "frame": 840,
+            "speed": 5.458704e-07,
+            "eye_residual_m": 9.768349959641698e-10,
+            "rest": true
+          },
+          {
+            "phase": 11,
+            "frame": 860,
+            "speed": 0.65742207,
+            "eye_residual_m": 2.47763001906435e-09,
+            "rest": false
+          },
+          {
+            "phase": 11,
+            "frame": 880,
+            "speed": 2.057418,
+            "eye_residual_m": 2.7787733716312575e-09,
+            "rest": false
+          },
+          {
+            "phase": 11,
+            "frame": 900,
+            "speed": 2.6260335,
+            "eye_residual_m": 2.6614758316886053e-09,
+            "rest": false
+          },
+          {
+            "phase": 11,
+            "frame": 920,
+            "speed": 2.8251624,
+            "eye_residual_m": 4.977556775158773e-10,
+            "rest": false
+          },
+          {
+            "phase": 11,
+            "frame": 940,
+            "speed": 2.8838153,
+            "eye_residual_m": 2.214068456157716e-09,
+            "rest": false
+          },
+          {
+            "phase": 11,
+            "frame": 960,
+            "speed": 2.9372792,
+            "eye_residual_m": 5.302947148647814e-10,
+            "rest": false
+          },
+          {
+            "phase": 11,
+            "frame": 980,
+            "speed": 2.9045827,
+            "eye_residual_m": 2.929164936553592e-09,
+            "rest": false
+          },
+          {
+            "phase": 11,
+            "frame": 1000,
+            "speed": 2.905661,
+            "eye_residual_m": 1.7190692620603931e-09,
+            "rest": false
+          },
+          {
+            "phase": 11,
+            "frame": 1020,
+            "speed": 2.9057655,
+            "eye_residual_m": 1.2634905373809637e-09,
+            "rest": false
+          },
+          {
+            "phase": 11,
+            "frame": 1040,
+            "speed": 2.9057674,
+            "eye_residual_m": 1.4994718147682384e-09,
+            "rest": false
+          },
+          {
+            "phase": 12,
+            "frame": 1060,
+            "speed": 2.9059405,
+            "eye_residual_m": 1.4772312180004544e-09,
+            "rest": false
+          },
+          {
+            "phase": 12,
+            "frame": 1080,
+            "speed": 0.18101773,
+            "eye_residual_m": 1.64909054060316e-09,
+            "rest": false
+          },
+          {
+            "phase": 12,
+            "frame": 1100,
+            "speed": 0.0038234396,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": false
+          },
+          {
+            "phase": 12,
+            "frame": 1120,
+            "speed": 0.00012184776,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": false
+          },
+          {
+            "phase": 12,
+            "frame": 1140,
+            "speed": 3.882616e-06,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 12,
+            "frame": 1160,
+            "speed": 1.2371756e-07,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 12,
+            "frame": 1180,
+            "speed": 6.0649166e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 12,
+            "frame": 1200,
+            "speed": 0.0001057843,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 12,
+            "frame": 1220,
+            "speed": 3.4437685e-06,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 13,
+            "frame": 1240,
+            "speed": 1.6882136e-07,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 13,
+            "frame": 1260,
+            "speed": 3.4966132e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 13,
+            "frame": 1280,
+            "speed": 1.1141777e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 13,
+            "frame": 1300,
+            "speed": 0.00010842866,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 14,
+            "frame": 1320,
+            "speed": 4.709915e-06,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 14,
+            "frame": 1340,
+            "speed": 4.183371e-08,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 14,
+            "frame": 1360,
+            "speed": 2.2161302e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 14,
+            "frame": 1380,
+            "speed": 8.811972e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 14,
+            "frame": 1400,
+            "speed": 2.9405782e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 14,
+            "frame": 1420,
+            "speed": 3.5286671e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 141,
+            "frame": 1440,
+            "speed": 2.3592464e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 141,
+            "frame": 1460,
+            "speed": 1.4431696e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 141,
+            "frame": 1480,
+            "speed": 5.2849334e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 141,
+            "frame": 1500,
+            "speed": 1.5404162e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 141,
+            "frame": 1520,
+            "speed": 2.1678714e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 142,
+            "frame": 1540,
+            "speed": 1.4513748e-09,
+            "eye_residual_m": 0.0002702864509370918,
+            "rest": true
+          },
+          {
+            "phase": 142,
+            "frame": 1560,
+            "speed": 3.3525809e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 142,
+            "frame": 1580,
+            "speed": 1.2136059e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 16,
+            "frame": 1600,
+            "speed": 0.00016472249,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 16,
+            "frame": 1620,
+            "speed": 5.296751e-06,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 16,
+            "frame": 1640,
+            "speed": 1.7072878e-07,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1660,
+            "speed": 5.701397e-09,
+            "eye_residual_m": 0.000268795839711212,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1680,
+            "speed": 9.695313e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1700,
+            "speed": 3.0893614e-11,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1720,
+            "speed": 1.6861037e-05,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1740,
+            "speed": 8.4021127e-07,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1760,
+            "speed": 2.8456068e-08,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1780,
+            "speed": 2.525484e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1800,
+            "speed": 3.6062403e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1820,
+            "speed": 0.0011888692,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1840,
+            "speed": 4.548688e-05,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1860,
+            "speed": 1.4568875e-06,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1880,
+            "speed": 3.0664864e-08,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 1900,
+            "speed": 6.3512795e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 22,
+            "frame": 1920,
+            "speed": 5.455147e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 22,
+            "frame": 1940,
+            "speed": 1.7023134e-05,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 22,
+            "frame": 1960,
+            "speed": 8.385405e-07,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 23,
+            "frame": 1980,
+            "speed": 2.7143281e-08,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 23,
+            "frame": 2000,
+            "speed": 9.1153546e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 23,
+            "frame": 2020,
+            "speed": 1.8879644e-11,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 24,
+            "frame": 2040,
+            "speed": 0.0002329271,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 24,
+            "frame": 2060,
+            "speed": 8.149905e-06,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 24,
+            "frame": 2080,
+            "speed": 2.6044373e-07,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 25,
+            "frame": 2100,
+            "speed": 8.447576e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 25,
+            "frame": 2120,
+            "speed": 1.9023199e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 25,
+            "frame": 2140,
+            "speed": 5.728536e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 26,
+            "frame": 2160,
+            "speed": 1.3713223e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 26,
+            "frame": 2180,
+            "speed": 1.1543328e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 26,
+            "frame": 2200,
+            "speed": 3.678222e-12,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 27,
+            "frame": 2220,
+            "speed": 0.00010791983,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 27,
+            "frame": 2240,
+            "speed": 3.4423929e-06,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 27,
+            "frame": 2260,
+            "speed": 1.1024892e-07,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 27,
+            "frame": 2280,
+            "speed": 5.4046527e-09,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2300,
+            "speed": 1.7221648e-10,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2320,
+            "speed": 5.487588e-12,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2340,
+            "speed": 2.6901406e-13,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2360,
+            "speed": 8.571994e-15,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2380,
+            "speed": 4.2021868e-16,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2400,
+            "speed": 1.3390048e-17,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2420,
+            "speed": 6.5641073e-19,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2440,
+            "speed": 2.0916186e-20,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2460,
+            "speed": 6.664834e-22,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2480,
+            "speed": 3.2672536e-23,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2500,
+            "speed": 1.0410935e-24,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2520,
+            "speed": 5.1036774e-26,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2540,
+            "speed": 2.5019388e-27,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 2560,
+            "speed": 7.972299e-29,
+            "eye_residual_m": 9.966370361921593e-10,
+            "rest": true
+          }
+        ]
+      },
+      "fuel_ticks": 11802,
+      "controller": "20481032, 129, 20481030",
+      "origin": "20481032, 128, 20481032",
+      "body_uuid": "b4afd9c8-dc7f-417d-b3bf-e4a12a929c14",
+      "process_exit_code": 0
+    },
+    "reload": {
+      "dh_loaded": true,
+      "offroad_loaded": true,
+      "started_utc": "2026-10-29T21:24:51.188165200Z",
+      "mode": "reload",
+      "phase": 15,
+      "owner_profile_used": false,
+      "geometry_sha256": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c",
+      "samples": [
+        {
+          "x": 3.1053583683360255,
+          "y": 200.00617304551633,
+          "z": -35.827224845037094,
+          "speed": 1.9838646e-11,
+          "client_fps": 12,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": 2.8863912178712643,
+          "y": 200.00618869448974,
+          "z": -35.78742395420248,
+          "speed": 0.8261385,
+          "client_fps": 12,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": 1.873021108643898,
+          "y": 200.00627911204495,
+          "z": -35.604621033917844,
+          "speed": 2.8161674,
+          "client_fps": 12,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -0.4664078724845402,
+          "y": 200.00642435140608,
+          "z": -35.18847889796534,
+          "speed": 5.4728985,
+          "client_fps": 12,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -3.956621069700613,
+          "y": 200.00629740067947,
+          "z": -34.576176532102025,
+          "speed": 7.453935,
+          "client_fps": 13,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -8.270485554070678,
+          "y": 200.00620591974052,
+          "z": -33.825034044865745,
+          "speed": 8.062725,
+          "client_fps": 13,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -11.89172901014502,
+          "y": 200.00617846192574,
+          "z": -33.19652325259371,
+          "speed": 8.184403,
+          "client_fps": 15,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -15.93926502017642,
+          "y": 200.00617939343948,
+          "z": -32.49611698928324,
+          "speed": 8.220967,
+          "client_fps": 15,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        }
+      ],
+      "cold_emitters_checked": true,
+      "cold_wheel_count": 8,
+      "cold_body_uuid_same": true,
+      "cold_real_player_passenger_restored": true,
+      "cold_direction": 1,
+      "cold_drive_distance_m": 23.03661003060894,
+      "camera_fps_benchmark": {
+        "off_samples": [
+          23,
+          25,
+          23,
+          25,
+          23,
+          25,
+          27,
+          26,
+          26,
+          26
+        ],
+        "on_samples": [
+          23,
+          22,
+          21,
+          25,
+          23
+        ],
+        "off_mean_fps": 24.9,
+        "on_mean_fps": 22.8,
+        "on_to_off_ratio": 0.9156626506024097,
+        "render_distance": 8,
+        "shaders_enabled": true
+      },
+      "control_post_blocks_removed": 486,
+      "saved_real_driver_root_vehicle": true,
+      "saved_fuel": 10837,
+      "saved_lights": true,
+      "saved_motion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_x": -20.818638378590656,
+      "saved_y": 200.0061883042034,
+      "saved_z": -31.652761009006245,
+      "saved": true,
+      "passed": true,
+      "error": "",
+      "peak_speed_m_s": 8.229887008666992,
+      "max_tilt_rad": 0.0010798826865390102,
+      "max_front_wheel_rise_m": 0.0,
+      "view_trace": {
+        "frames": 894,
+        "max_eye_residual_m": 1.943341687266864e-06,
+        "rest_max_eye_residual_m": 3.812169148175319e-09,
+        "phase_max_m": {
+          "30": 1.5578877022733165e-09,
+          "31": 1.7776903897961636e-09,
+          "32": 4.517708861485633e-09,
+          "33": 1.943341687266864e-06,
+          "40": 3.812169148175319e-09,
+          "41": 1.7650226074931806e-09,
+          "15": 1.7650226074931806e-09
+        },
+        "series": [
+          {
+            "phase": 30,
+            "frame": 20,
+            "speed": 1.165173e-08,
+            "eye_residual_m": 6.383429120704423e-10,
+            "rest": false
+          },
+          {
+            "phase": 30,
+            "frame": 40,
+            "speed": 1.9224815e-05,
+            "eye_residual_m": 6.383429120704423e-10,
+            "rest": true
+          },
+          {
+            "phase": 31,
+            "frame": 60,
+            "speed": 4.6961907e-11,
+            "eye_residual_m": 6.383429120704423e-10,
+            "rest": true
+          },
+          {
+            "phase": 31,
+            "frame": 80,
+            "speed": 6.350084e-08,
+            "eye_residual_m": 1.7776903897961636e-09,
+            "rest": true
+          },
+          {
+            "phase": 31,
+            "frame": 100,
+            "speed": 9.4685136e-05,
+            "eye_residual_m": 1.7776903897961636e-09,
+            "rest": true
+          },
+          {
+            "phase": 31,
+            "frame": 120,
+            "speed": 1.4735961e-09,
+            "eye_residual_m": 1.7776903897961636e-09,
+            "rest": true
+          },
+          {
+            "phase": 32,
+            "frame": 140,
+            "speed": 4.6501966,
+            "eye_residual_m": 7.116925442828645e-10,
+            "rest": false
+          },
+          {
+            "phase": 32,
+            "frame": 160,
+            "speed": 8.12113,
+            "eye_residual_m": 1.352905276395326e-09,
+            "rest": false
+          },
+          {
+            "phase": 33,
+            "frame": 180,
+            "speed": 8.199759,
+            "eye_residual_m": 1.4159557528572773e-09,
+            "rest": false
+          },
+          {
+            "phase": 33,
+            "frame": 200,
+            "speed": 0.0008100489,
+            "eye_residual_m": 1.936077418763826e-09,
+            "rest": false
+          },
+          {
+            "phase": 33,
+            "frame": 220,
+            "speed": 6.203047e-08,
+            "eye_residual_m": 1.936077418763826e-09,
+            "rest": true
+          },
+          {
+            "phase": 40,
+            "frame": 240,
+            "speed": 1.9878412e-06,
+            "eye_residual_m": 1.936077418763826e-09,
+            "rest": true
+          },
+          {
+            "phase": 40,
+            "frame": 260,
+            "speed": 1.3119245e-09,
+            "eye_residual_m": 1.936077418763826e-09,
+            "rest": true
+          },
+          {
+            "phase": 40,
+            "frame": 280,
+            "speed": 2.9069393e-05,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 40,
+            "frame": 300,
+            "speed": 4.0078034e-09,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 320,
+            "speed": 0.00082701695,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 340,
+            "speed": 8.4021127e-07,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 360,
+            "speed": 8.946258e-10,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 380,
+            "speed": 4.5962755e-05,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 400,
+            "speed": 3.1562845e-08,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 420,
+            "speed": 2.4752693e-11,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 440,
+            "speed": 7.2371045e-06,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 460,
+            "speed": 3.2066845e-09,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 480,
+            "speed": 7.45393e-05,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 500,
+            "speed": 4.7701477e-08,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 520,
+            "speed": 8.6663426e-10,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 540,
+            "speed": 7.2380717e-06,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 560,
+            "speed": 6.5759327e-09,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 580,
+            "speed": 4.3399472e-12,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 600,
+            "speed": 2.6688278e-07,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 620,
+            "speed": 6.839648e-10,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 640,
+            "speed": 0.00033218449,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 660,
+            "speed": 5.486622e-07,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 680,
+            "speed": 1.069458e-09,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 700,
+            "speed": 6.518676e-05,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 41,
+            "frame": 720,
+            "speed": 7.445363e-08,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 740,
+            "speed": 1.7909357e-09,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 760,
+            "speed": 1.1819716e-12,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 780,
+            "speed": 1.2001089e-15,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 800,
+            "speed": 1.2185246e-18,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 820,
+            "speed": 1.9034203e-21,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 840,
+            "speed": 1.9326286e-24,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 860,
+            "speed": 1.962285e-27,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 880,
+            "speed": 3.0652258e-30,
+            "eye_residual_m": 1.7650226074931806e-09,
+            "rest": true
+          }
+        ]
+      },
+      "fuel_ticks": 10837,
+      "controller": "20481032, 129, 20481030",
+      "origin": "20481032, 128, 20481032",
+      "body_uuid": "b4afd9c8-dc7f-417d-b3bf-e4a12a929c14",
+      "process_exit_code": 0,
+      "runtime_source_sha256": {
+        "src/main/java/pro/erez/interstice/vehicle/EitanBlueprintItem.java": "40c39d37e1ff8b09c6c2059344e587124260f96384aa4eca95a219c4be0cb6bf",
+        "src/main/java/pro/erez/interstice/mixin/EitanGameRendererAccess.java": "1f22aeca485f2d39223701d02d7a8eb2ed7356f51351fd699a2e7711584c3880",
+        "src/main/java/pro/erez/interstice/mixin/EitanPassengerLoadMixin.java": "d727c2e1d4ecfb43af37527c53650ef07f7b54b0be8162258f18518844da2a97",
+        "src/main/java/pro/erez/interstice/mixin/EitanLevelRendererAccess.java": "bb70952dcd86b500b0985a4aac0a38a3fe21c4f07c504c79bd30c01c6129992b",
+        "src/main/java/pro/erez/interstice/vehicle/EitanSeatEntity.java": "3ae8ebe9803414fb4fb155f732fa98eccacf9c45f7ddb3e19386d2719b5b6fe6",
+        "src/main/java/pro/erez/interstice/mixin/EitanIrisCameraMixin.java": "8a304d5256a7d4b674bfb45afaadf9b01d11f3e78393f3ceee2e1f9d158756ea",
+        "src/main/java/pro/erez/interstice/mixin/EitanCameraAccess.java": "be2a4315c4a6211cfe4d19f37247d13c71d57881a56b1402b953d8bd097798b4",
+        "src/main/java/pro/erez/interstice/vehicle/EitanBlock.java": "c42bafbb9b37b7b765f4cfe1279d2f8805ed5124c20626b5e625bf0079c9a1be",
+        "src/main/java/pro/erez/interstice/mixin/EitanSensorSkyMixin.java": "b0a99bd14d76c84f4bced6187212d9ffd2ef186ff32c4fdabe9042bce75715a9",
+        "src/main/java/pro/erez/interstice/mixin/EitanWheelContactMixin.java": "1f3f4ff6e559f7724a3d155ae388c4f819a968ed41b0dad966db849213d4582d",
+        "src/main/java/pro/erez/interstice/vehicle/EitanPreviewData.java": "5fbecce8fdb7f7b994a853980dd4e270daaa0a395c3b8c4242031c2911a21d62",
+        "src/main/java/pro/erez/interstice/client/EitanVehicleModels.java": "536a7d0602468ae724426027ca63273fd063c80268569b6564c312e12acf4cc7",
+        "src/main/java/pro/erez/interstice/vehicle/EitanNetwork.java": "5e8ff04f6e06c00fa90e6371d5280cd49cc84c54dfd6eb18916965b8fa116e76",
+        "src/main/java/pro/erez/interstice/vehicle/EitanTerrainContact.java": "018a7697901280768ee3796d2012749baa68eb6c275ee241c55f3b6924ffd9bb",
+        "src/main/java/pro/erez/interstice/vehicle/EitanWheelBlock.java": "b300516aecacc2a33642219af1d76d1812f925588beb102f59bffa5480b5a5f7",
+        "src/main/java/pro/erez/interstice/mixin/EitanStepClearanceMixin.java": "86ea3f8d56def2bf1737d0b167adc0fb5e0f96fbcf018d302c2a40db454443e3",
+        "src/main/java/pro/erez/interstice/client/EitanCameras.java": "2e3403f52c54d6ea7857d454d1cfbe7aeb08744925e03d3f7ca1e0c36dcabd26",
+        "src/main/java/pro/erez/interstice/client/EitanRenderer.java": "80bfa698ccd0f933315c9158a13593a63991cf66f59f9668505b1792268e110c",
+        "src/main/java/pro/erez/interstice/vehicle/EitanWheelEntity.java": "f71b7c5535de0a6838393b533f6f047a32ee51f99feadf0ca8e0f24f8517115b",
+        "src/main/java/pro/erez/interstice/mixin/EitanMinecraftAccess.java": "f1684a4549b34488b07d57ed1e6fd5d371f544fec0f30ece707e90bda725d1c1",
+        "src/main/java/pro/erez/interstice/ship/SkatPlayerLogin.java": "40f3b1c7bd4baf606e4458e08bd44913d31ec9918e94ee3dd0e8a447026f34f0",
+        "src/main/java/pro/erez/interstice/mixin/EitanCameraProjectionMixin.java": "f7c6251d0c8ba55210881a28a200845727d9282f3dbec2d7c2edb1a0e0eb34bb",
+        "src/main/java/pro/erez/interstice/client/EitanScreen.java": "662c7bc66afea75853c31bd8dd4822f8be7a3272cb554735cdaf532ca8a4d41b",
+        "src/main/java/pro/erez/interstice/client/EitanCameraOptics.java": "465b8ca17cc2827f6632794d8bb8d6726913c6793c5e0c04438dce104c8c8d2e",
+        "src/main/java/pro/erez/interstice/vehicle/EitanAssembly.java": "6433e12ed621748ccd3f8709d53661a029ee2aa7be6ac70771a346d5db8da8aa",
+        "src/main/java/pro/erez/interstice/mixin/EitanDhCameraMixin.java": "bdc24a77f0dfdf871ebaa1b19914cdd34fcf8ea16def008b45f3ebb8213914f4",
+        "src/main/resources/interstice.mixins.json": "57f20a3e29df87a3ed13c524b654b4833eb565b521d9d4c69caf1b2429345093",
+        "src/main/java/pro/erez/interstice/client/EitanClient.java": "49851587eca842d5bd09d839d03c0dd4a625ef8c2173397083c0425684d7cd6d",
+        "src/main/java/pro/erez/interstice/vehicle/EitanController.java": "a8b3e2612b1034a791981aea0748f3b652bbe699a895ff10a5ad3568818dacb2",
+        "src/main/java/pro/erez/interstice/vehicle/EitanDynamics.java": "4dd25e1974325d301b76afaac6aa8f322a544a0790e607ffaebb7cbbc699ec3c",
+        "src/main/java/pro/erez/interstice/vehicle/EitanVehicles.java": "fb676054e354bc0de8352aabf94843c2ac4a0ea4180a56dbb05a353b7cf0692b",
+        "src/main/java/pro/erez/interstice/vehicle/EitanPreview.java": "d67fae093cb1feb9dc0b10f51b5ba3be68c13cb0b6d285412ad034dadd553218",
+        "src/main/java/pro/erez/interstice/mixin/EitanCameraViewMixin.java": "0ac447bc23fd2f55807904b8a47cca92f8cbef7cecfe8fe8bdccfdeb56e05729",
+        "src/main/java/pro/erez/interstice/client/EitanModels.java": "baaa5fde9615cbf0890c861ef2443299c808e7c6721156aed93c7c31fb1ac62f",
+        "src/main/java/pro/erez/interstice/vehicle/EitanData.java": "6c8ac383864487cc51e54e4a362bd010e8d195e98842cf8d71cee1ae284ad4a5"
+      },
+      "source_changed_during_run": false
+    },
+    "shader": {
+      "dh_loaded": true,
+      "offroad_loaded": true,
+      "started_utc": "2026-10-29T21:15:35.310560600Z",
+      "mode": "shader",
+      "phase": 15,
+      "owner_profile_used": false,
+      "geometry_sha256": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c",
+      "samples": [
+        {
+          "x": -6.3855042959166335,
+          "y": 200.00617304557701,
+          "z": -34.08434497883445,
+          "speed": 3.1540694e-11,
+          "client_fps": 17,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": true
+        },
+        {
+          "x": -6.268933659898895,
+          "y": 200.00622733598533,
+          "z": -34.10541672136572,
+          "speed": 0.5045553,
+          "client_fps": 17,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -5.534429127694946,
+          "y": 200.00626012154902,
+          "z": -34.239255114446934,
+          "speed": 1.9864626,
+          "client_fps": 12,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -4.138518529365073,
+          "y": 200.00624204531005,
+          "z": -34.49515386869299,
+          "speed": 2.7017362,
+          "client_fps": 12,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -2.887302545767674,
+          "y": 200.0062384822945,
+          "z": -34.72490944738132,
+          "speed": 2.8472285,
+          "client_fps": 19,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -1.4688461680424167,
+          "y": 200.00622215004523,
+          "z": -34.9857057457947,
+          "speed": 2.8913083,
+          "client_fps": 19,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": -0.04250487170639747,
+          "y": 200.00622187973394,
+          "z": -35.248013688898496,
+          "speed": 2.9021423,
+          "client_fps": 17,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        },
+        {
+          "x": 1.38578655230953,
+          "y": 200.0062218121135,
+          "z": -35.51087174354681,
+          "speed": 2.9051652,
+          "client_fps": 17,
+          "spring": 5,
+          "anchor": 1.2074816005291276,
+          "brake": false
+        }
+      ],
+      "shader_pack_in_use": true,
+      "cold_emitters_checked": true,
+      "cold_wheel_count": 8,
+      "cold_body_uuid_same": true,
+      "cold_real_player_passenger_restored": true,
+      "cold_direction": -1,
+      "cold_drive_distance_m": 9.063426959521495,
+      "iris_settings_preserved": true,
+      "camera_transparent_sky_pixels": 0,
+      "camera_day_sky_pixels": 89088,
+      "camera_sector_marker_pixels": [
+        8590,
+        2803,
+        134091
+      ],
+      "physical_monitor_day_sky_pixels": 8115,
+      "camera_captures": 227,
+      "camera_cpu_mean_ms": 4.843802202643173,
+      "camera_cpu_max_ms": 199.3048,
+      "monitor_native_hit": "net.minecraft.world.phys.BlockHitResult@7c2fcc2e",
+      "physical_monitor_native_click": true,
+      "rear_camera_yellow_pixels": 11318,
+      "camera_gui_view_switch_checked": true,
+      "saved_real_driver_root_vehicle": true,
+      "saved_fuel": 11405,
+      "saved_lights": true,
+      "saved_motion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_x": 3.105314961171827,
+      "saved_y": 200.0061883041321,
+      "saved_z": -35.82743015581886,
+      "saved": true,
+      "passed": true,
+      "error": "",
+      "peak_speed_m_s": 2.905796527862549,
+      "max_tilt_rad": 0.0010952065255792004,
+      "max_front_wheel_rise_m": 0.0,
+      "view_trace": {
+        "frames": 699,
+        "max_eye_residual_m": 2.5562107978968625e-05,
+        "rest_max_eye_residual_m": 2.5562107978968625e-05,
+        "phase_max_m": {
+          "30": 1.3391614276937327e-09,
+          "31": 9.889323704840887e-10,
+          "32": 3.48305632581808e-09,
+          "33": 1.4725481963638047e-06,
+          "20": 1.536147745487187e-09,
+          "21": 2.5562107978968625e-05,
+          "22": 1.536147745487187e-09,
+          "23": 1.536147745487187e-09,
+          "24": 1.536147745487187e-09,
+          "25": 1.536147745487187e-09,
+          "26": 1.536147745487187e-09,
+          "27": 1.536147745487187e-09,
+          "15": 1.536147745487187e-09
+        },
+        "series": [
+          {
+            "phase": 30,
+            "frame": 20,
+            "speed": 3.1014704e-08,
+            "eye_residual_m": 9.889323704840887e-10,
+            "rest": false
+          },
+          {
+            "phase": 30,
+            "frame": 40,
+            "speed": 0.00010310815,
+            "eye_residual_m": 9.889323704840887e-10,
+            "rest": true
+          },
+          {
+            "phase": 31,
+            "frame": 60,
+            "speed": 1.727843e-10,
+            "eye_residual_m": 9.889323704840887e-10,
+            "rest": true
+          },
+          {
+            "phase": 31,
+            "frame": 80,
+            "speed": 3.562801e-07,
+            "eye_residual_m": 9.889323704840887e-10,
+            "rest": true
+          },
+          {
+            "phase": 31,
+            "frame": 100,
+            "speed": 2.1746192e-09,
+            "eye_residual_m": 9.889323704840887e-10,
+            "rest": true
+          },
+          {
+            "phase": 31,
+            "frame": 120,
+            "speed": 6.1347896e-07,
+            "eye_residual_m": 9.889323704840887e-10,
+            "rest": true
+          },
+          {
+            "phase": 32,
+            "frame": 140,
+            "speed": 3.1540694e-11,
+            "eye_residual_m": 9.889323704840887e-10,
+            "rest": true
+          },
+          {
+            "phase": 32,
+            "frame": 160,
+            "speed": 2.632917,
+            "eye_residual_m": 1.0317827355105191e-09,
+            "rest": false
+          },
+          {
+            "phase": 32,
+            "frame": 180,
+            "speed": 2.8966045,
+            "eye_residual_m": 1.2827395058036548e-09,
+            "rest": false
+          },
+          {
+            "phase": 32,
+            "frame": 200,
+            "speed": 2.9087448,
+            "eye_residual_m": 1.539598263832368e-09,
+            "rest": false
+          },
+          {
+            "phase": 33,
+            "frame": 220,
+            "speed": 0.021385258,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": false
+          },
+          {
+            "phase": 33,
+            "frame": 240,
+            "speed": 2.5295512e-06,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 33,
+            "frame": 260,
+            "speed": 9.8358774e-05,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 280,
+            "speed": 8.384189e-09,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 300,
+            "speed": 0.000127099,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 320,
+            "speed": 6.483994e-08,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 340,
+            "speed": 1.1629e-09,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 21,
+            "frame": 360,
+            "speed": 5.2978858e-06,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 22,
+            "frame": 380,
+            "speed": 6.5837167e-09,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 22,
+            "frame": 400,
+            "speed": 3.7583737e-05,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 23,
+            "frame": 420,
+            "speed": 2.2517638e-08,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 24,
+            "frame": 440,
+            "speed": 1.657888e-09,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 24,
+            "frame": 460,
+            "speed": 6.2873096e-10,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 25,
+            "frame": 480,
+            "speed": 3.175307e-09,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 26,
+            "frame": 500,
+            "speed": 1.3335709e-09,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 27,
+            "frame": 520,
+            "speed": 0.000107068605,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 27,
+            "frame": 540,
+            "speed": 7.2339866e-08,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 560,
+            "speed": 3.9603647e-11,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 580,
+            "speed": 4.0211375e-14,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 600,
+            "speed": 9.6635316e-17,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 620,
+            "speed": 9.8118193e-20,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 640,
+            "speed": 9.9623855e-23,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 660,
+            "speed": 1.5561938e-25,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          },
+          {
+            "phase": 15,
+            "frame": 680,
+            "speed": 2.430883e-28,
+            "eye_residual_m": 1.536147745487187e-09,
+            "rest": true
+          }
+        ]
+      },
+      "fuel_ticks": 11405,
+      "controller": "20481032, 129, 20481030",
+      "origin": "20481032, 128, 20481032",
+      "body_uuid": "b4afd9c8-dc7f-417d-b3bf-e4a12a929c14",
+      "process_exit_code": 0
+    },
+    "network": {
+      "passed": true,
+      "server": {
+        "dh_loaded": true,
+        "dedicated": true,
+        "owner_profile_used": false,
+        "body_uuid": "5e918b41-380a-4c75-a83d-6ae8a681efce",
+        "survival_driver": true,
+        "disconnect_brake_checked": true,
+        "passed": true,
+        "error": "",
+        "peak_m_s": 8.234746932983398,
+        "max_distance_m": 40.751954870355405,
+        "powered_ticks": 147,
+        "lights_changed": true,
+        "samples": [
+          {
+            "tick": 10,
+            "speed": 0.000108553846,
+            "distance": 4.5241501537176064e-05,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 20,
+            "speed": 0.00010064616,
+            "distance": 9.55106246860586e-05,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 30,
+            "speed": 0.0001005397,
+            "distance": 0.00014577974783497736,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 40,
+            "speed": 0.00034122422,
+            "distance": 0.0001882024680263271,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 50,
+            "speed": 0.00010358278,
+            "distance": 0.0002375205926162548,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 60,
+            "speed": 0.00010057924,
+            "distance": 0.00028778970057799773,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 70,
+            "speed": 0.0001005388,
+            "distance": 0.0003380588130564001,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 80,
+            "speed": 0.00024904645,
+            "distance": 0.0004092156480532762,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 90,
+            "speed": 9.861938e-05,
+            "distance": 0.0004297997709005602,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 100,
+            "speed": 0.0001005124,
+            "distance": 0.0004800688024807928,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 110,
+            "speed": 0.0001005379,
+            "distance": 0.0005303379093203166,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 120,
+            "speed": 0.00010053824,
+            "distance": 0.0005806070189839836,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 130,
+            "speed": 0.00025301432,
+            "distance": 0.0006224545377738959,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 140,
+            "speed": 0.000102517166,
+            "distance": 0.0006723479042196482,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 150,
+            "speed": 0.00010056489,
+            "distance": 0.0007226170081386933,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 160,
+            "speed": 0.00010053861,
+            "distance": 0.0007728861145592129,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 170,
+            "speed": 0.0002487426,
+            "distance": 0.0008305359653407565,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 180,
+            "speed": 9.9291356e-05,
+            "distance": 0.0008646272408473216,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 190,
+            "speed": 0.00010052146,
+            "distance": 0.0009148963207259389,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 200,
+            "speed": 0.000100538025,
+            "distance": 0.0009651654250666879,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 210,
+            "speed": 0.00010053824,
+            "distance": 0.0010154345312695964,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 220,
+            "speed": 0.00019813521,
+            "distance": 0.0010570657687552002,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 230,
+            "speed": 0.000101824524,
+            "distance": 0.0011071754178457848,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 240,
+            "speed": 0.000100555524,
+            "distance": 0.0011574445004922228,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 250,
+            "speed": 0.00010053844,
+            "distance": 0.001207713584822386,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 260,
+            "speed": 0.00019584114,
+            "distance": 0.0012581583286699989,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 270,
+            "speed": 9.97277e-05,
+            "distance": 0.0012994546795339875,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 280,
+            "speed": 0.00010052711,
+            "distance": 0.0013497231374545763,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 290,
+            "speed": 0.00010053809,
+            "distance": 0.0013999922408218575,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 300,
+            "speed": 0.00010053824,
+            "distance": 0.0014502613455604635,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 310,
+            "speed": 0.00016326316,
+            "distance": 0.0014917912960217903,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 320,
+            "speed": 0.00010137435,
+            "distance": 0.001542002866977882,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 330,
+            "speed": 0.0001005495,
+            "distance": 0.0015922719694087507,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 340,
+            "speed": 0.000100538404,
+            "distance": 0.0016425410731077488,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 350,
+            "speed": 0.00013074625,
+            "distance": 0.0016883251070767293,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 360,
+            "speed": 0.00010000842,
+            "distance": 0.0017342813427494047,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 370,
+            "speed": 0.00010053111,
+            "distance": 0.0017845504393652041,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 380,
+            "speed": 0.00010053815,
+            "distance": 0.0018348195422199873,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 390,
+            "speed": 0.00010053824,
+            "distance": 0.0018850886461571467,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 400,
+            "speed": 0.00014090083,
+            "distance": 0.0019265602621308152,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 410,
+            "speed": 0.15925542,
+            "distance": 0.029247117428252787,
+            "driver": true,
+            "brake": false,
+            "effort": 6.25
+          },
+          {
+            "tick": 420,
+            "speed": 1.8520174,
+            "distance": 0.6721318058593313,
+            "driver": true,
+            "brake": false,
+            "effort": 18.75
+          },
+          {
+            "tick": 430,
+            "speed": 4.38452,
+            "distance": 2.513558820362139,
+            "driver": true,
+            "brake": false,
+            "effort": 31.25
+          },
+          {
+            "tick": 440,
+            "speed": 6.896131,
+            "distance": 5.6661357100730685,
+            "driver": true,
+            "brake": false,
+            "effort": 36.42857
+          },
+          {
+            "tick": 450,
+            "speed": 7.8922434,
+            "distance": 9.533451886154694,
+            "driver": true,
+            "brake": false,
+            "effort": 36.42857
+          },
+          {
+            "tick": 460,
+            "speed": 8.147941,
+            "distance": 13.587773408355467,
+            "driver": true,
+            "brake": false,
+            "effort": 36.42857
+          },
+          {
+            "tick": 470,
+            "speed": 8.212004,
+            "distance": 17.68888600515828,
+            "driver": true,
+            "brake": false,
+            "effort": 36.42857
+          },
+          {
+            "tick": 480,
+            "speed": 8.227982,
+            "distance": 21.80165763032868,
+            "driver": true,
+            "brake": false,
+            "effort": 36.42857
+          },
+          {
+            "tick": 490,
+            "speed": 8.231793,
+            "distance": 25.917362292683503,
+            "driver": true,
+            "brake": false,
+            "effort": 36.42857
+          },
+          {
+            "tick": 500,
+            "speed": 8.233283,
+            "distance": 30.033938455528826,
+            "driver": true,
+            "brake": false,
+            "effort": 36.42857
+          },
+          {
+            "tick": 510,
+            "speed": 8.232102,
+            "distance": 34.1502243012517,
+            "driver": true,
+            "brake": false,
+            "effort": 36.42857
+          },
+          {
+            "tick": 520,
+            "speed": 8.234671,
+            "distance": 38.267375784127104,
+            "driver": true,
+            "brake": false,
+            "effort": 36.42857
+          },
+          {
+            "tick": 530,
+            "speed": 1.7729639,
+            "distance": 40.74412331433091,
+            "driver": true,
+            "brake": true,
+            "effort": 28.92857
+          },
+          {
+            "tick": 540,
+            "speed": 0.025536792,
+            "distance": 40.751946267940795,
+            "driver": true,
+            "brake": true,
+            "effort": 16.42857
+          },
+          {
+            "tick": 550,
+            "speed": 0.00044964027,
+            "distance": 40.75194589540916,
+            "driver": true,
+            "brake": true,
+            "effort": 3.9285698
+          },
+          {
+            "tick": 560,
+            "speed": 0.00011189736,
+            "distance": 40.75194544813858,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 570,
+            "speed": 0.00010735041,
+            "distance": 40.751945000938605,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 580,
+            "speed": 0.00048351704,
+            "distance": 40.75194444714646,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 590,
+            "speed": 0.00011142316,
+            "distance": 40.751944209632775,
+            "driver": true,
+            "brake": true,
+            "effort": 0.0
+          },
+          {
+            "tick": 600,
+            "speed": 0.00010734402,
+            "distance": 40.75194376262839,
+            "driver": true,
+            "brake": false,
+            "effort": 0.0
+          },
+          {
+            "tick": 610,
+            "speed": 0.00010728911,
+            "distance": 40.751943315694625,
+            "driver": true,
+            "brake": false,
+            "effort": 0.0
+          },
+          {
+            "tick": 620,
+            "speed": 0.00010728837,
+            "distance": 40.75194286883147,
+            "driver": true,
+            "brake": false,
+            "effort": 0.0
+          },
+          {
+            "tick": 630,
+            "speed": 0.00010728837,
+            "distance": 40.75194242203892,
+            "driver": true,
+            "brake": false,
+            "effort": 0.0
+          },
+          {
+            "tick": 640,
+            "speed": 0.00010728837,
+            "distance": 40.75194197531698,
+            "driver": true,
+            "brake": false,
+            "effort": 0.0
+          }
+        ],
+        "process_exit_code": 0
+      },
+      "client": {
+        "dedicated_driver_spawn": true,
+        "forward_distance_m": 38.71449408490604,
+        "camera_captures": 221,
+        "sable_udp_channel_active": true,
+        "lights_roundtrip": true,
+        "passed": true,
+        "error": "",
+        "peak_m_s": 8.277470588684082,
+        "real_tcp_dedicated": true,
+        "dh_loaded": true,
+        "owner_profile_used": false,
+        "process_exit_code": 0
+      }
+    },
+    "numerical": {
+      "passed": true,
+      "output": "EITAN_NUMERICAL_CONTRACTS_PASSED 1904",
+      "native_acceptance": false,
+      "utc": "2026-10-29T19:48:01.423Z"
+    }
+  },
+  "production_changed": false,
+  "owner_profile_used": false,
+  "backups_created": false,
+  "limits": [
+    "one real dedicated Survival driver",
+    "11 passenger dummies are not 11 players",
+    "no production capacity claim",
+    "weapons, APS, armour simulation and recipes deferred"
+  ]
+}

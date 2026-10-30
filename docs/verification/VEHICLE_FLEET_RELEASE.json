@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "sequence": 26,
+  "releaseId": "techmagic-0-1-0-alpha-26-vehicle-fleet",
+  "mod_version": "0.7.0-preview.121-vehicle-fleet",
+  "jar_sha256": "156894df634ea49fcf95c48a17ef27ac83f61df9d1bc5725be87ffa408bb94f5",
+  "https_verified": true,
+  "signatures_verified": true,
+  "files": 89,
+  "client_jars": 79,
+  "unchanged_client_files": 87,
+  "server_jars": 67,
+  "unchanged_server_jars": 66,
+  "server_healthy": true,
+  "server_runtime_identical_to_measured_120": true,
+  "native_proofs": [
+    {
+      "path": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\eitan-drive-fleet-01\\studioEitanDrive\\eitan-drive-fleet.json",
+      "sha256": "d61dbd4f62581229a9d3792e53645419736ed039f5a406363be1292ee96a5190"
+    },
+    {
+      "path": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\eitan-drive-fleet-01\\studioEitanDrive\\eitan-drive-reload.json",
+      "sha256": "6256d58bf2e920ed4e1fa4f77bc3d4ce9c68e1651709b5a3be4fbf8ca0191860"
+    },
+    {
+      "path": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\skat-fleet-02\\studioSkat\\skat-thrust-create.json",
+      "sha256": "e18cdef0e1585ed9b8702a7546b50a49274f5a088d2179318f00fe80d88d5cf0"
+    },
+    {
+      "path": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\skat-fleet-02\\studioSkat\\skat-reload.json",
+      "sha256": "9fe67c93ef842227973f0f7b89b28e3cebfc7bb66a4df3af9c42d4d553a9ddb2"
+    },
+    {
+      "path": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\skat-fleet-02\\studioSkat\\skat-glass-shaders-121.json",
+      "sha256": "46473416bebdf9c379260936678466a8a756943450287324b2833f4dc3462015"
+    },
+    {
+      "path": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\skat-fleet-02\\studioSkat\\skat-glass-vanilla-121.json",
+      "sha256": "d857a5cd21870face6285ac5168f78d0d281cdf1697da19ab71c9d59af93aa09"
+    }
+  ],
+  "server_receipt": "VEHICLE_FLEET_SERVER.json",
+  "worlds_replaced": false,
+  "backups_created": false,
+  "owner_installer_run": false
+}

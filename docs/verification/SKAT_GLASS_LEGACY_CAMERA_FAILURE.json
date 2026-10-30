@@ -1,0 +1,114 @@
+{
+  "dh_loaded": true,
+  "version": "0.7.0-preview.120-vehicle-fleet",
+  "started_utc": "2026-10-30T03:23:52.589616700Z",
+  "phase": 10,
+  "mode": "glass",
+  "owner_profile_used": false,
+  "max_tilt_all_phases": 0.035307585547158536,
+  "native_vehicle_highlight_cancelled": 20,
+  "saved_pose_loaded_from_sable_index": {
+    "uuid": "a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3",
+    "x": -1382.81787109375,
+    "y": 36.69949722290039,
+    "z": -5355.09326171875,
+    "source": "r.-3.-11.0.slvls",
+    "slot": 0,
+    "sha256": "269152d8065033f98d5b3158317731e308eaabb5cd48c8c634bdcae899f19462",
+    "world_modified": false
+  },
+  "cold_load_at_saved_ship": "-1383, 35, -5356",
+  "saved_world_x": -1383.093017578125,
+  "saved_world_z": -5355.04296875,
+  "glass": {
+    "actual_skat_glass": true,
+    "same_frozen_pose": true,
+    "diagnostic_night_vision": true,
+    "near_ocean": true,
+    "cases": [
+      {
+        "window": "port",
+        "before": {
+          "red": 60.50058406207133,
+          "green": 51.85137924382716,
+          "blue": 42.180653077846365,
+          "sea_pixels": 237623,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "after": {
+          "red": 60.76415466392318,
+          "green": 51.64800883058985,
+          "blue": 41.98723851165981,
+          "sea_pixels": 249899,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "restored_missing_sea": false
+      },
+      {
+        "window": "front",
+        "before": {
+          "red": 51.68755787037037,
+          "green": 57.27674039780521,
+          "blue": 52.853360768175584,
+          "sea_pixels": 114788,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "after": {
+          "red": 55.26701924725651,
+          "green": 57.84637024176955,
+          "blue": 54.226439257544584,
+          "sea_pixels": 192769,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "restored_missing_sea": true
+      },
+      {
+        "window": "starboard",
+        "before": {
+          "red": 17.241042952674896,
+          "green": 22.224699931412893,
+          "blue": 23.670272848079563,
+          "sea_pixels": 0,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "after": {
+          "red": 17.24105366941015,
+          "green": 22.239882330246914,
+          "blue": 23.91581468621399,
+          "sea_pixels": 0,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "restored_missing_sea": false
+      }
+    ],
+    "stage": 2,
+    "view": 2
+  },
+  "passed": false,
+  "error": "java.lang.IllegalStateException: Too few actual sea fragments through starboard window: {\"window\":\"starboard\",\"before\":{\"red\":17.241042952674896,\"green\":22.224699931412893,\"blue\":23.670272848079563,\"sea_pixels\":0,\"pixels\":933120,\"x0\":96,\"x1\":1824,\"y0\":162,\"y1\":702},\"after\":{\"red\":17.24105366941015,\"green\":22.239882330246914,\"blue\":23.91581468621399,\"sea_pixels\":0,\"pixels\":933120,\"x0\":96,\"x1\":1824,\"y0\":162,\"y1\":702},\"restored_missing_sea\":false}",
+  "process_exit_code": 0
+}

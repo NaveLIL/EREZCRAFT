@@ -1,0 +1,492 @@
+{
+  "technical_checks_passed": true,
+  "visual_status": "Reviewed in actual client; final colour/flow appearance remains for owner assessment. Dark cascade does not meet a saturated-red pixel classifier; its measured colour and contrast are retained, not relabelled as a colour-fidelity pass.",
+  "passed": true,
+  "date": "2026-10-28",
+  "scope": "Local colour-material trial: large still lower toxin and genuine flowing/falling toxin in actual V6. Not production or Survival acceptance.",
+  "candidate": {
+    "version": "0.7.0-preview.43-lower-ocean-oc01",
+    "jar_sha256": "9ab605efda24cd77fcad20b383cdd877cd277975dd62c6bc77a92d74b5d0a5ec"
+  },
+  "source_blender": {
+    "passed": true,
+    "blender": "5.2.2 LTS",
+    "saved_blend_sha256": "e7e3581afc594fcf2b2005560f643d0e9b7049b553bbcd79a9bc8bdf294597b5",
+    "material": "OC01 / shared world-space currents",
+    "node_count": 143,
+    "independent_patches": 64,
+    "world_position_node": true,
+    "frames": [
+      1,
+      385
+    ],
+    "source_unchanged": true,
+    "saved_or_modified": false
+  },
+  "runtime_provenance": {
+    "revision": "OC01",
+    "source_project": "Blender/creations/26_lower_ocean",
+    "author": "EREZCRAFT studio",
+    "material_parameters_sha256": "50d7c26f1e73cd393b59cf6259118193de13fc91c324d4a1e37e5895b61992f1",
+    "source_build_script_sha256": "3c4e8f87ba3b8f61b1b06159c9106838899a59c0b63634a7f0dd8f364493408d",
+    "sources": [
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_00.png",
+        "png_sha256": "08be1fd77c69f7f697c33d649fbddb711b374c72dd0ae4c48fb4a0b6a8bb2cf6",
+        "rgba_sha256": "948c80cbb9c57852dbaa75bdfae64945f0c23ea0ea6e6834ea873cfa46bdeb30"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_01.png",
+        "png_sha256": "11c7b91de12c80736df3c2aeb6c96944207c53fc2e211f16dcace10830df192f",
+        "rgba_sha256": "b38ab4c3aa41aaf0ca6953899e1c0a4bea6fd9c91dbe341c94ae8b8dc8b8eda0"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_02.png",
+        "png_sha256": "948058dd334b2d845197a3d9101346744ff57387ea5ad9ef467883e393d6b85e",
+        "rgba_sha256": "393eaf787b44c1a201d10c154e08a960d8a417d1c2b1024843cb8bcb28c56e49"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_03.png",
+        "png_sha256": "1f1017b56ebab440f740daeb254058ca9f604955b5f3875a5910038e24b8e5b1",
+        "rgba_sha256": "7657867bf82be0b1333140b557817c49d830dee07d19e06f919bd1785229686f"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_04.png",
+        "png_sha256": "7acbe6dadbfdc68ab84461a56d7a0d13d2323850ff29923f0ecf86b130f8a54b",
+        "rgba_sha256": "bbc4204984e1dc5be80cb20afeb60133ed1498852d7323b758e97a1cdde2d98d"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_05.png",
+        "png_sha256": "319567de1a20fb28bd9b7fc31fc3414d8847f35a1edaaf66f6bd23d54124251b",
+        "rgba_sha256": "a6236ece3e1f802e68687b2cf5ffbde285c4c1446923f5bfe4b09336962490d9"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_06.png",
+        "png_sha256": "53a8d8d7ff4a43d9bbe323a22e9cbd37562b947d351806a2dc478149d3cd7510",
+        "rgba_sha256": "8b8c10f1aa104c126dd64fc40b188501e03c3579a2cc13934c9f343cdacb9835"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_07.png",
+        "png_sha256": "add76265de9c3ec4b3765f4799253d2bc0b7e1aa150a1655e47ef49cc01d4438",
+        "rgba_sha256": "2bba2cea72c05633a25ff8f1d2ae0c74cf28b82e0af09e22e75cb00a842e4995"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_08.png",
+        "png_sha256": "e5483eb17690b16678cb8f1f1a37acc8fcac9cdab5d30e6284649fea26303ca0",
+        "rgba_sha256": "fdbd09939d2d0f3cac1d9a13875289c04b0472f90050782bfebf42fca940edee"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_09.png",
+        "png_sha256": "e897a963f48d3f12a5129b3a632a17ede7e7b20482373676644aac7c3b213622",
+        "rgba_sha256": "bfc34890b6cf6b4d2d29aea6a0a55375f4d2c5b9fb09a2792e5f9d25ad8bed5e"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_10.png",
+        "png_sha256": "ac128ad3262b3c44b1a1b21dd14e52b6344b8e1d545162bc66c76b33f1d9fc85",
+        "rgba_sha256": "a33aad5ff341ed9a53160319f9c433dde417cb7d0e6172d63c4500d368ad7aac"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_11.png",
+        "png_sha256": "2a647209515592b5d5976133a7122f8ca03c8565e7168f7b3d8c25c9a73b60f5",
+        "rgba_sha256": "deb399fde114a2c15d7f9b8f695aae0851b1aca66b6a14818d997da95c9abc81"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_12.png",
+        "png_sha256": "1b590e7659b77d862191037cea40f400055ee396788c6d98c69328d5c15bacdc",
+        "rgba_sha256": "4898ac8a5b2e17af397c49492a5c84428b355621ee91b53e8ae776f4f91571b6"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_13.png",
+        "png_sha256": "74f43bfa5f59e15964feb584db2dc3cb89ed39fe2e2cfaf9ba7e5046fa371006",
+        "rgba_sha256": "00fb72fb6fc319aa39d83f2c8749497997e1a8b011dd074587b8e3a150667cde"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_14.png",
+        "png_sha256": "ed66b07484e0015f882c5be54c98ea43d15a577531ec00179cfcd672f00fe260",
+        "rgba_sha256": "06d6d3fdbe0b67003a5c4aad3290b0238c22aef8400c348a65fd96ca45f83083"
+      },
+      {
+        "file": "art/materials/lower-ocean-oc01/source/frames/loop_15.png",
+        "png_sha256": "99a9e50f50ade215da94a543475da459144fa5e2bbca58f403981ce00bc3ab5e",
+        "rgba_sha256": "81b146d6fad1fb4c9a71118d4305650349aa38343cbd056882c07e0910951ed9"
+      }
+    ],
+    "runtime_png_sha256": "dd2f979c3832514ccb824758adb99d89ef8e1401f71c7d082a140d7730c061fd",
+    "frame_size": [
+      1280,
+      1280
+    ],
+    "source_tile_size": [
+      640,
+      640
+    ],
+    "frames": 16,
+    "period_ticks": 320,
+    "period_seconds": 16,
+    "world_period_blocks": 64,
+    "source_texels_per_block": 10,
+    "packing": "Each original unlit material frame copied exactly four times; no resize, repaint, colour or alpha change",
+    "uv_projection": "u=X-0.5*(Y-(lowerSeaTop+8/9)), v=Z-(Y-(lowerSeaTop+8/9)); one shared world field across faces",
+    "sampling": "Quad-local period origin with duplicate tile gutter; exact shared phase across block/chunk boundaries",
+    "scope": "Material colour only. Blender roughness, bump and scene lighting are not baked into this albedo. Concept illustration not used as texture."
+  },
+  "native": {
+    "distant_horizons_loaded": true,
+    "mod_count": 106,
+    "version": "0.7.0-preview.43-lower-ocean-oc01",
+    "live_phase": 13,
+    "test_forced_chunks": 6,
+    "still_pool_blocks": 9216,
+    "pool_width_blocks": 96,
+    "pool_length_blocks": 96,
+    "source_y": 34,
+    "cascade_source_y": 52,
+    "initial": {
+      "source_pixel_checks": 896,
+      "shared_edges_legacy_tall": 18,
+      "actual_vanilla_vertices": 8,
+      "sodium_quads": 26304,
+      "geometry_errors": 0
+    },
+    "actual_dimension": "interstice:islands_v6",
+    "wide-still-96x96_observed_fps": 53,
+    "gpu_animation_crc_before": 3005462368,
+    "gpu_animation_crc_after": 1947644264,
+    "wide-still-animation_observed_fps": 47,
+    "chunk-edge-detail_observed_fps": 49,
+    "actual_flowing_blocks": 138,
+    "actual_falling_blocks": 102,
+    "actual_falling_min_y": 35,
+    "actual_falling_max_y": 51,
+    "cascade_observed_fps": 56,
+    "flowing-channel_observed_fps": 58,
+    "after_reload": {
+      "source_pixel_checks": 896,
+      "shared_edges_legacy_tall": 18,
+      "actual_vanilla_vertices": 8,
+      "sodium_quads": 83492,
+      "geometry_errors": 0
+    },
+    "after-resource-reload_observed_fps": 44,
+    "resource_reload_checked": true,
+    "iris_night_vision_uniform": 1,
+    "complementary_original_pack_active": true,
+    "shader_fallback": false,
+    "shader-flowing-channel_observed_fps": 53,
+    "shader-cascade_observed_fps": 47,
+    "shader-wide-still_observed_fps": 43,
+    "darkness-no-night-vision_observed_fps": 57,
+    "passed": true,
+    "reason": "",
+    "phase": 13,
+    "pid": 18028,
+    "owner_profile_used": false,
+    "prepared_fixture_not_survival": true,
+    "screenshots": [
+      "lower-ocean-wide-still-96x96.png",
+      "lower-ocean-wide-still-animation.png",
+      "lower-ocean-chunk-edge-detail.png",
+      "lower-ocean-cascade.png",
+      "lower-ocean-flowing-channel.png",
+      "lower-ocean-after-resource-reload.png",
+      "lower-ocean-shader-flowing-channel.png",
+      "lower-ocean-shader-cascade.png",
+      "lower-ocean-shader-wide-still.png",
+      "lower-ocean-darkness-no-night-vision.png"
+    ],
+    "sodium_quads_uv_only": 175307,
+    "vanilla_quads_uv_only": 6,
+    "geometry_errors": 0,
+    "test_forced_chunks_released": true,
+    "settled": {
+      "purpose": "lower_ocean_shutdown",
+      "server_tick": 1693,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1521,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "native_process": {
+    "exit_code": 0,
+    "seconds": 297.3440000000046,
+    "profile": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\oc43n4\\studioLowerOcean",
+    "harness_sha256": "df1c996c203238261c6bd6cdac1270d96073eb52984d39940aaf7d8fbf6980b1"
+  },
+  "preservation": {
+    "changed_previous_files": [
+      "META-INF/neoforge.mods.toml",
+      "interstice.mixins.json",
+      "pro/erez/interstice/client/FluidClient$Appearance.class"
+    ],
+    "previous_data_files_byte_exact": 693,
+    "passed": true,
+    "reference_sha256": "ac927cb2ace1117ecb17d3577bd942e8d4e7343b04d495a0e17a01b7965594a5",
+    "candidate_sha256": "9ab605efda24cd77fcad20b383cdd877cd277975dd62c6bc77a92d74b5d0a5ec",
+    "changed_previous_classes": [
+      "pro/erez/interstice/client/FluidClient$Appearance.class"
+    ],
+    "previous_classes_byte_exact": 562,
+    "protected_logic_classes_byte_exact": 170,
+    "previous_png_preserved": 212,
+    "previous_ogg_preserved": 12,
+    "added_classes": [
+      "pro/erez/interstice/client/LowerOceanUv$Access.class",
+      "pro/erez/interstice/client/LowerOceanUv$Consumer.class",
+      "pro/erez/interstice/client/LowerOceanUv$Context.class",
+      "pro/erez/interstice/client/LowerOceanUv.class",
+      "pro/erez/interstice/mixin/LowerOceanSodiumUvMixin.class",
+      "pro/erez/interstice/mixin/LowerOceanVanillaUvMixin.class"
+    ],
+    "new_png": [
+      "assets/interstice/textures/block/heavy_oc01.png"
+    ]
+  },
+  "original_shader_zip_sha256": "fed6c879e732cf7fc7bc6570ebb1def43235aa7e96f62859fbdbdbfa0b484b38",
+  "shader_zip_byte_exact": true,
+  "screenshots": [
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-wide-still-96x96.png",
+      "sha256": "76227dad147bf1cbefdf105afffc2c84e06efe333545b46607886b04f8d12745",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 0,
+      "material_roi_mean_rgb": [
+        33.57288190476191,
+        24.14911619047619,
+        26.48422095238095
+      ],
+      "material_roi_stddev_rgb": [
+        5.425246682068158,
+        4.795857396885537,
+        4.722229757095588
+      ]
+    },
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-wide-still-animation.png",
+      "sha256": "751cb1be6c6cb4750a3e51b1e882fcb2e66399bd022b594f0aca9d6e7d96299d",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 46,
+      "material_roi_mean_rgb": [
+        34.03092380952381,
+        24.457961904761905,
+        26.79483619047619
+      ],
+      "material_roi_stddev_rgb": [
+        5.630573505755763,
+        4.976294704800446,
+        4.872375112800032
+      ]
+    },
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-chunk-edge-detail.png",
+      "sha256": "1f4e085dac1ed9a5d9ef3e99cdf17070e19a3b0638fc54425264dedc6c4a39bc",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 0,
+      "material_roi_mean_rgb": [
+        34.04669523809524,
+        24.45878857142857,
+        26.802758095238094
+      ],
+      "material_roi_stddev_rgb": [
+        5.540878779577958,
+        4.895754496943811,
+        4.824964684060853
+      ]
+    },
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-cascade.png",
+      "sha256": "2e6c923ab50ec793e2bff2767e1425b59c74edd9701846e7dc14acf8251235db",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 1,
+      "material_roi_mean_rgb": [
+        20.5926783625731,
+        14.769637426900585,
+        16.24624561403509
+      ],
+      "material_roi_stddev_rgb": [
+        3.3425112537349335,
+        2.9653333861073685,
+        2.824793207443679
+      ]
+    },
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-flowing-channel.png",
+      "sha256": "99e807f8bd9d64e8abc677047ae5c01ea8693e30d93323086211d9a762a9df76",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 4,
+      "material_roi_mean_rgb": [
+        84.37033333333333,
+        80.0934761904762,
+        79.96226857142857
+      ],
+      "material_roi_stddev_rgb": [
+        45.95088589107508,
+        48.189595827432896,
+        46.70473510364021
+      ]
+    },
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-after-resource-reload.png",
+      "sha256": "961747103b0bed7f04b6661e2862a7f1c921a1d8ad6b4647d2108bca4116e758",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 8,
+      "material_roi_mean_rgb": [
+        85.07820761904762,
+        80.5855238095238,
+        80.50708571428571
+      ],
+      "material_roi_stddev_rgb": [
+        45.05984896035746,
+        47.5628979048436,
+        46.01495557380578
+      ]
+    },
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-shader-flowing-channel.png",
+      "sha256": "62d37d84ad0a93011a1473d0e394921465440f0fe49daa5767ec1bead3cedfcc",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 0,
+      "material_roi_mean_rgb": [
+        61.19049714285714,
+        59.67959428571429,
+        62.506323809523806
+      ],
+      "material_roi_stddev_rgb": [
+        32.698635101563944,
+        34.606401185841264,
+        35.41668810320792
+      ]
+    },
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-shader-cascade.png",
+      "sha256": "06e194d62e90f1b7ad4eb0cb5424eb47d54a2c7ececdadabbdb67c96ab91c4db",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 0,
+      "material_roi_mean_rgb": [
+        18.22766081871345,
+        15.468385964912281,
+        16.798362573099414
+      ],
+      "material_roi_stddev_rgb": [
+        2.098870713245811,
+        1.766906793555603,
+        1.8698587079881195
+      ]
+    },
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-shader-wide-still.png",
+      "sha256": "0c24794cb578ba5c7e418e681aa6e7a1819cffb90ec76dded9c6893fb51707e0",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 0,
+      "material_roi_mean_rgb": [
+        21.584489523809523,
+        17.391638095238097,
+        19.261601904761903
+      ],
+      "material_roi_stddev_rgb": [
+        3.7547314400677325,
+        3.3078657458903127,
+        3.492674874184294
+      ]
+    },
+    {
+      "file": "docs/verification/lower_ocean_oc01/lower-ocean-darkness-no-night-vision.png",
+      "sha256": "3fc399af4ab59bddaae5286580a4bf7f67b8cb5db8338dddfad414d915b834c0",
+      "size": [
+        1920,
+        1080
+      ],
+      "red_pixels_in_192x108_probe": 0,
+      "material_roi_mean_rgb": [
+        0,
+        0,
+        0
+      ],
+      "material_roi_stddev_rgb": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "attempts": [
+    {
+      "run": "native01",
+      "accepted": false,
+      "reason": "Incorrect reflective Sodium normal getter getNormal(int); fixed to verified getVertexNormal(int). Only isolated client crashed."
+    },
+    {
+      "run": "native02",
+      "technical_checks_passed": true,
+      "visual_shader_acceptance": false,
+      "reason": "Iris compiled without fallback, but detached ArmorStand camera had no night vision; shader images too dark to judge material."
+    },
+    {
+      "run": "native03",
+      "accepted": false,
+      "reason": "Moving player behind camera put cascade outside active simulation. Flow correctly paused. Fixture now holds six dedicated chunks and releases them before shutdown."
+    },
+    {
+      "run": "native04",
+      "accepted": true,
+      "reason": "Natural flow, GPU animation, both renderer paths, reload, actual Iris night-vision uniform and visible shader screenshots verified."
+    }
+  ],
+  "limitations": [
+    "Albedo and sampled animation only; Blender bump/roughness/reflections not ported.",
+    "640-pixel tile covers64 blocks;16 original keyframes interpolated by Minecraft over320 ticks. This is not a continuous procedural GPU shader.",
+    "Pattern follows a shared world field, without separate directional advection tied to fluid velocity.",
+    "DH is loaded; detailed material reproduction in distant DH LODs is not established.",
+    "Fixed fixture screenshots and observed FPS are not Survival/server-capacity or comparative performance benchmarks.",
+    "With shader enabled Flywheel switched from indirect to off; moving Create/Sable models were not assessed in this fluid scene.",
+    "Cascade appears more uniform and darker than the broad still surface. With proper camera night vision the rendered material is noticeably muted versus the original unlit albedo. No raw pixels were changed to compensate; colour fidelity and subjective final appearance remain open."
+  ],
+  "production_updated": false,
+  "owner_profile_used": false,
+  "backups_created": false,
+  "cleanup": {
+    "intermediate_profiles_removed": false,
+    "blocked_by_automatic_approval_review": true,
+    "reported_reason": "Command rejected: blocked by policy. No additional reason supplied.",
+    "remaining_profiles": [
+      ".verification/oc43n1",
+      ".verification/oc43n2",
+      ".verification/oc43n3"
+    ],
+    "final_trial_profile": ".verification/oc43n4",
+    "diagnostic_proofs_retained": true
+  }
+}

@@ -62,7 +62,12 @@ repositories {
     }
 }
 def sporeArtifact = file(providers.gradleProperty('sporeJar').getOrElse('research/spore/spore_1.21.1_2.2.0j_neo-original.jar'))
+// Original pinned pack APIs are compile-only; no third-party bytecode is redistributed.
+var skatCompileApis = file('.verification/skat-20261029/apis')
 dependencies {
+    smokeCompileOnly files('D:/EREZCRAFT/data/stable/instances/archipelago/mods/appliedenergistics2-19.2.18.jar')
+    compileOnly files('D:/EREZCRAFT/data/stable/instances/archipelago/mods/appliedenergistics2-19.2.18.jar')
+    compileOnly files(fileTree(skatCompileApis) { include '*.jar'; exclude 'lambdynamiclights-4.8.11+1.21.1.jar', 'lambdynamiclights-api-4.8.11+1.21.1.jar', 'pridelib-1.2.4+1.21.1.jar', 'spruceui-6.2.5+1.21.1.jar', 'yumi-mc-foundation-1.0.0-beta.1+1.21.1.jar' })
     azureCortexArtifact("com.azure.azurecortex:azurecortex-neoforge-1.21.1:0.1.7") { transitive = false }
     implementation("com.azure.azurecortex:azurecortex-neoforge-1.21.1:0.1.7") { transitive = false }
     smartBrainArtifact('maven.modrinth:PuyPazRT:O5EpeqI3') { transitive = false }
@@ -165,6 +170,14 @@ neoForge {
             taskBefore verifySmartBrainArtifact
         }
         client { client() }
+        eitanNetworkServer {
+            server()
+            gameDirectory=file('.verification/eitan-drive-network/eitanNetworkServer')
+            systemProperty 'interstice.eitanNetworkProbe','true'
+            jvmArgument '-Xmx4G'
+            jvmArgument '-XX:ActiveProcessorCount=2'
+            programArgument '--nogui'
+        }
         etherealCreate {
             client()
             gameDirectory = file('.verification/ethereal-smoke')
@@ -887,19 +900,55 @@ neoForge {
 }
 // Explicit studio checks keep the normal progression/persistence harness independent.
 neoForge.runs {
-    ['Tools', 'Worktools', 'Engineer', 'TideIndicator', 'EngineerSystems'].each { kind ->
+    ['Tools', 'Worktools', 'Engineer', 'TideIndicator', 'EngineerSystems', 'Spiders', 'SpiderBehaviour', 'LowerOcean', 'LowerOceanDh', 'ToxinWaves', 'Skat', 'MarineAe2', 'Lozhnokoren', 'Eitan', 'EitanDrive', 'EitanNetwork', 'Showcase'].each { kind ->
         register('studio' + kind) {
             client()
             jvmArgument '-Xms2G'
-            jvmArgument '-Xmx8G'
+            jvmArgument(kind == 'Skat' || kind.startsWith('Eitan') ? '-Xmx6G' : '-Xmx8G')
             gameDirectory = file('.verification/studio-' + kind.toLowerCase())
+            if (kind == 'MarineAe2') { jvmArgument '-Xmx6G'; jvmArgument '-XX:ActiveProcessorCount=4'; jvmArgument '-XX:CICompilerCount=2' }
             systemProperty 'interstice.studioSmoke', kind.toLowerCase()
+            if (kind == 'Showcase') { jvmArgument '-XX:ActiveProcessorCount=6' }
+            if (kind == 'Eitan') { systemProperty 'interstice.eitanPreview','true'; jvmArgument '-XX:ActiveProcessorCount=4' }
+            if (kind == 'EitanDrive') { systemProperty 'interstice.eitanPhase',project.providers.gradleProperty('eitanPhase').getOrElse('chassis'); jvmArgument '-XX:ActiveProcessorCount=4' }
+            if (kind == 'MarineAe2') systemProperty 'interstice.marinePhase', project.providers.gradleProperty('marinePhase').getOrElse('create')
+            if (kind == 'MarineAe2' && (project.providers.gradleProperty('marinePhase').getOrElse('create') == 'vessel' || project.providers.gradleProperty('marinePhase').getOrElse('create').startsWith('wholeme-'))) systemProperty 'interstice.ne01Preview', 'true'
+            if (kind == 'MarineAe2' && project.providers.gradleProperty('marinePhase').getOrElse('create').startsWith('wholeme-')) systemProperty 'interstice.ne01MePreview', 'true'
+            if (kind == 'Skat') { systemProperty 'interstice.skatFleet',project.providers.gradleProperty('skatFleet').getOrElse('false'); systemProperty 'interstice.skatPhase', project.providers.gradleProperty('skatPhase').getOrElse('create'); systemProperty 'interstice.skatFixtureReset', project.providers.gradleProperty('skatFixtureReset').getOrElse('false') }
+            if (kind == 'ToxinWaves') {
+                systemProperty 'interstice.toxinWavesReview', project.providers.gradleProperty('toxinWavesReview').getOrElse('false')
+                systemProperty 'interstice.toxinWavesResume', project.providers.gradleProperty('toxinWavesResume').getOrElse('false')
+                systemProperty 'interstice.toxinWavesCold', project.providers.gradleProperty('toxinWavesCold').getOrElse('false')
+                systemProperty 'interstice.toxinWavesShoreOnly', project.providers.gradleProperty('toxinWavesShoreOnly').getOrElse('false')
+            }
+            if (kind == 'LowerOceanDh') systemProperty 'interstice.oceanDhReview', project.providers.gradleProperty('oceanDhReview').getOrElse('false')
+            if (kind == 'LowerOceanDh') systemProperty 'interstice.oceanDhResume', project.providers.gradleProperty('oceanDhResume').getOrElse('false')
+            if (kind == 'Lozhnokoren') systemProperty 'interstice.lozhnokorenReview', project.providers.gradleProperty('lozhnokorenReview').getOrElse('false')
             if (kind == 'EngineerSystems') systemProperty 'interstice.engineerCold', project.providers.gradleProperty('engineerCold').getOrElse('create')
             programArgument '--width'
             programArgument '1920'
             programArgument '--height'
             programArgument '1080'
         }
+    }
+    register('toxinWaveGameTestServer') {
+        type = 'gameTestServer'
+        gameDirectory = file('.verification/toxin-wave-gametests')
+        loadedMods = [project.neoForge.mods.interstice, project.neoForge.mods.interstice_geometry_fixture]
+        systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_toxin_waves'
+    }
+    register('lozhnokorenGameTestServer') {
+        type = 'gameTestServer'
+        gameDirectory = file('.verification/lozhnokoren-gametests')
+        loadedMods = [project.neoForge.mods.interstice, project.neoForge.mods.interstice_geometry_fixture]
+        systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_lozhnokoren'
+    }
+    register('spiderFacingGameTestServer') {
+        type = 'gameTestServer'
+        gameDirectory = file('.verification/spider-facing-gametests')
+        loadedMods = [project.neoForge.mods.interstice, project.neoForge.mods.interstice_geometry_fixture]
+        systemProperty 'neoforge.enabledGameTestNamespaces', 'interstice_spider_facing'
+        systemProperty 'interstice.facingAuditOutput', providers.gradleProperty('facingAuditOutput').getOrElse(file('.verification/spider-facing-output').absolutePath)
     }
     register('engineerGameTestServer') {
         type = 'gameTestServer'
@@ -1027,6 +1076,7 @@ tasks.matching { it.name in ['prepareForestCaveCreateRun','prepareForestCaveRelo
         def options=new File(directory,'options.txt');if(!options.exists())options.text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\n'
     }
 }
+tasks.withType(Jar).configureEach { if(name!='clientUiJar') from(['distribution/licenses/SecurityCraft-camera-reference-MIT.txt','distribution/licenses/EITAN_CAMERA_NOTICE.txt']) { into 'META-INF/licenses' } }
 tasks.withType(Jar).configureEach { from('LICENSE') { into('META-INF/licenses'); rename { 'interstice-apache-2.0.txt' } } }
 tasks.withType(Jar).configureEach {
     if (name != 'clientUiJar') {
@@ -1207,8 +1257,16 @@ tasks.named('check') { dependsOn tasks.named('runGameTestServer'), tasks.named('
 tasks.named('check') { dependsOn tasks.named('runEtherealGameTestServer') }
 
 tasks.named('check') { dependsOn tasks.named('runHunterGameTestServer') }
+tasks.named('check') { dependsOn tasks.named('runSpiderFacingGameTestServer') }
 tasks.named('check') { dependsOn tasks.named('runProgressionGameTestServer') }
 tasks.register('runProgressionNativeSmoke') { dependsOn tasks.named('runProgressionCreate'), tasks.named('runProgressionReload') }
+
+tasks.register('verifySkatGeometry', JavaExec) {
+    dependsOn tasks.named('smokeClasses')
+    classpath = sourceSets.smoke.runtimeClasspath
+    mainClass = 'pro.erez.interstice.test.SkatGeometryProbe'
+    maxHeapSize = '512m'
+}
 tasks.named('runProgressionReload') {
     mustRunAfter tasks.named('runProgressionCreate')
     doFirst {
@@ -1218,13 +1276,39 @@ tasks.named('runProgressionReload') {
     }
 }
 
-['progressionCreate', 'progressionReload', 'studioTools', 'studioWorktools', 'studioEngineer', 'studioTideIndicator', 'studioEngineerSystems'].each { runName -> tasks.named('prepare' + runName.capitalize() + 'Run') {
+['progressionCreate', 'progressionReload', 'studioTools', 'studioWorktools', 'studioEngineer', 'studioTideIndicator', 'studioEngineerSystems', 'studioSpiders', 'studioSpiderBehaviour', 'studioLowerOcean', 'studioLowerOceanDh', 'studioToxinWaves', 'studioSkat', 'studioMarineAe2', 'studioLozhnokoren', 'studioEitan', 'studioEitanDrive', 'studioEitanNetwork', 'studioShowcase'].each { runName -> tasks.named('prepare' + runName.capitalize() + 'Run') {
     outputs.upToDateWhen { false }
     doLast {
         if (!providers.gradleProperty('intersticeRunRoot').isPresent()) throw new GradleException('New isolated verification root required')
         def target = neoForge.runs.getByName(runName).gameDirectory.get().asFile
         if (!target.toPath().toRealPath().toString().replace('\\','/').contains('/.verification/')) throw new GradleException('Owned verification profile required')
+        def lozhnokorenReview = (runName == 'studioToxinWaves' && providers.gradleProperty('toxinWavesReview').getOrElse('false') == 'true') || (runName == 'studioLozhnokoren' && providers.gradleProperty('lozhnokorenReview').getOrElse('false') == 'true') || (runName == 'studioLowerOceanDh' && providers.gradleProperty('oceanDhReview').getOrElse('false') == 'true')
+        def skatResume = runName == 'studioSkat' && !(providers.gradleProperty('skatPhase').getOrElse('create') in ['create','thrust-create'])
+        if (skatResume && ((new File(target,'skat-owner-profile').exists() && providers.gradleProperty('skatPhase').getOrElse('create') != 'review') || !new File(target,'skat-create.json').isFile())) throw new GradleException('Only a verified automated Skat world may be resumed')
+        def eitanReview=runName=='studioEitanDrive' && providers.gradleProperty('eitanPhase').getOrElse('chassis')=='review'
+        def eitanReload=runName=='studioEitanDrive' && providers.gradleProperty('eitanPhase').getOrElse('chassis') in ['reload','shader','review','fields-reload','fields-route','fields-inspect']
+        if(eitanReload){
+            def phase=providers.gradleProperty('eitanPhase').getOrElse('chassis')
+            def proof=new File(target,phase in ['fields-reload','fields-route','fields-inspect']?'eitan-drive-fields.json':'eitan-drive-full.json');if(phase=='reload' && new File(target,'eitan-drive-fleet.json').isFile())proof=new File(target,'eitan-drive-fleet.json');if(phase in ['fields-reload','fields-inspect'] && new File(target,'eitan-drive-fields-route.json').isFile())proof=new File(target,'eitan-drive-fields-route.json');if(!proof.exists())proof=new File(target,'eitan-drive-chassis.json')
+            def prior=proof.isFile()?new groovy.json.JsonSlurper().parse(proof):null
+            def allowedProof=phase=='fields-inspect'?(prior?.passed==false && prior?.phase==6 && prior?.error?.contains('reverse/return drive stuck')):phase=='fields-route'?(prior?.passed==false && prior?.phase==1 && prior?.error?.contains('No natural rolling route')):prior?.passed==true
+            if(!new File(target,'eitan-automated-profile').isFile() || (!eitanReview && new File(target,'eitan-owner-profile').exists()) || (eitanReview && !new File(target,'eitan-owner-profile').exists()) || !proof.isFile() || !allowedProof)throw new GradleException('Only an explicitly assigned Eitan world may be resumed')
+        }
+        if(eitanReload && providers.gradleProperty('eitanPhase').getOrElse('chassis')=='shader') {
+            def iris=new File(target,'config/iris.properties')
+            iris.text='enableShaders=true\nshaderPack=ComplementaryReimagined_r5.9.3.zip\n'
+        }
         def engineerReload = runName == 'studioEngineerSystems' && providers.gradleProperty('engineerCold').getOrElse('create') == 'reload'
+        def marineReload = runName == 'studioMarineAe2' && providers.gradleProperty('marinePhase').getOrElse('create') == 'reload'
+        if (marineReload && (!new File(target,'marine-create.json').isFile() || new File(target,'marine-owner-profile').exists())) throw new GradleException('Owned successful marine probe required')
+        def marineFullReload = runName == 'studioMarineAe2' && providers.gradleProperty('marinePhase').getOrElse('create') == 'wholeme-reload'
+        if (marineFullReload && (!new File(target,'marine-fullme-create.json').isFile() || new File(target,'marine-owner-profile').exists())) throw new GradleException('Owned successful full marine ME probe required')
+        def oceanResume = (runName == 'studioToxinWaves' && providers.gradleProperty('toxinWavesResume').getOrElse('false') == 'true') || runName == 'studioLowerOceanDh' && providers.gradleProperty('oceanDhResume').getOrElse('false') == 'true'
+        if (oceanResume) {
+            def proof = new File(target, runName == 'studioToxinWaves' ? 'toxin-waves.json' : 'ocean-dh.json')
+            if (!proof.isFile() || new groovy.json.JsonSlurper().parse(proof).owner_profile_used != false || new File(target,'ocean-dh-review.json').exists() || new File(target,'ocean-dh-owner-profile').exists() || new File(target,'toxin-waves-owner-profile').exists())
+                throw new GradleException('Only an automated ocean scene may be resumed')
+        }
         if (engineerReload) {
             def proof = new File(target, 'engineer-d02-create.json')
             if (!proof.isFile() || new groovy.json.JsonSlurper().parse(proof).passed != true || !new File(target, 'saves/engineer-d02-owned/level.dat').isFile())
@@ -1242,12 +1326,23 @@ tasks.named('runProgressionReload') {
                 def metadata = entry ? archive.getInputStream(entry).getText('UTF-8') : ''
                 supplied = (metadata =~ /modId\s*=\s*["'](?:interstice|lootr|distanthorizons|smartbrainlib|azurecortex)["']/).find()
             } finally { archive.close() }
-            if (!supplied) copy { from jar; into new File(target,'mods') }
+            if (!supplied) {
+                def destination=new File(target,'mods/' + jar.name)
+                if ((runName=='studioSkat' || runName=='studioMarineAe2' || runName.startsWith('studioEitan')) && !destination.exists()) {
+                    destination.parentFile.mkdirs()
+                    try { java.nio.file.Files.createLink(destination.toPath(),jar.toPath()) }
+                    catch (IOException | UnsupportedOperationException ignored) { copy { from jar; into destination.parentFile } }
+                } else if (!destination.exists() || !java.nio.file.Files.isSameFile(destination.toPath(),jar.toPath())) {
+                    copy { from jar; into destination.parentFile }
+                }
+            }
         }
-        if (runName != 'progressionReload' && !engineerReload) {
+        if (runName != 'progressionReload' && !(runName == 'studioShowcase' && new File(target,'showcase-automated-profile').isFile()) && !engineerReload && !lozhnokorenReview && !oceanResume && !skatResume && !marineReload && !marineFullReload && !eitanReload) {
             if (new File(target,'saves').exists()) throw new GradleException('New progression profile required')
             ['config','defaultconfigs','resourcepacks','shaderpacks'].each { folder -> copy { from new File(source,folder); into new File(target,folder) } }
             new File(target,'options.txt').text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\nrenderDistance:3\nsimulationDistance:5\nguiScale:2\nmaxFps:60\nfullscreen:false\npauseOnLostFocus:false\nresourcePacks:["mod_resources","file/erezcraft-ru-mc1.21.1.zip"]\n'
+            if(runName=='studioEitanDrive' && providers.gradleProperty('eitanPhase').getOrElse('chassis')!='chassis') new File(target,'options.txt').text=new File(target,'options.txt').text.replace('renderDistance:3','renderDistance:8')+'graphicsMode:2\n'
+            if(runName=='studioShowcase') { new File(target,'options.txt').text += 'renderDistance:10\nsimulationDistance:6\ngamma:1.0\ngraphicsMode:2\nfov:0.0\n'; new File(target,'config/iris.properties').text='enableShaders=false\nshaderPack=ComplementaryReimagined_r5.9.3.zip\n' }
             new File(target,'config/fml.toml').text='earlyWindowControl = false\n'
         }
     }
@@ -1272,4 +1367,33 @@ tasks.named('runProgressionReload') {
         new File(target,'options.txt').text='onboardAccessibility:false\nlang:ru_ru\ntutorialStep:none\nrenderDistance:8\nsimulationDistance:5\npauseOnLostFocus:false\n'
     }
 }
+}
+
+tasks.named('check') { dependsOn tasks.named('runLozhnokorenGameTestServer') }
+
+// Dedicated Eitan scene is staged from immutable original JARs, with no owner data.
+tasks.named('prepareEitanNetworkServerRun') { outputs.upToDateWhen { false };doLast {
+    def target=neoForge.runs.getByName('eitanNetworkServer').gameDirectory.get().asFile
+    if(!target.toPath().toRealPath().toString().replace('\\','/').contains('/.verification/') || !new File(target,'eitan-automated-network-profile').isFile())throw new GradleException('Owned dedicated Eitan root required')
+} }
+// A disposable Skat trial can reserve the next native slot while another
+// already-running trial finishes. Serialize new native runs across checkouts.
+tasks.withType(JavaExec).configureEach {
+    if (name.startsWith('run') && name != 'runGameTestServer') {
+        doFirst {
+            def lease = file('.verification/native-skat-trial-lease.json')
+            boolean announced = false
+            while (lease.isFile()) {
+                def reservation = new groovy.json.JsonSlurper().parse(lease, 'UTF-8')
+                def owner = java.lang.ProcessHandle.of((reservation.pid as Number).longValue())
+                if (System.currentTimeMillis() >= (reservation.expires as Number).longValue()
+                        || owner.isEmpty() || !owner.get().isAlive()) break
+                if (!announced) {
+                    logger.lifecycle('Waiting for the disposable Skat native trial; no second heavy Minecraft JVM')
+                    announced = true
+                }
+                Thread.sleep(1000)
+            }
+        }
+    }
 }

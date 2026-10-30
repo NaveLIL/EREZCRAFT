@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-28",
+  "candidate": "0.7.0-preview.46-root-hitbox-debug",
+  "technical_pass": true,
+  "components": {
+    "required_passed": 18,
+    "log": ".verification/lozhnokoren-hitbox-20261028/components.log",
+    "artificial_gametest_without_DH": true
+  },
+  "preservation": {
+    "passed": true,
+    "candidate_sha256": "67cd522e8581fe624117e803b155c84852eb802644cbf4f3de44fbd0cd9dc7f5",
+    "unchanged_assets_and_data": 1558,
+    "changed_classes": [
+      "pro/erez/interstice/fauna/Lozhnokoren$Section.class",
+      "pro/erez/interstice/fauna/Lozhnokoren.class"
+    ],
+    "unchanged_classes": 581
+  },
+  "native": {
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-Pmod_version=0.7.0-preview.46-root-hitbox-debug",
+      "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\lk46n2",
+      "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\tide-release-20261028\\client",
+      "assemble",
+      "runStudioLozhnokoren"
+    ],
+    "passed": true,
+    "started_utc": "2026-10-28T14:17:04.074221+00:00",
+    "pid": 35456,
+    "exit_code": 0,
+    "proof": {
+      "distant_horizons_loaded": true,
+      "mod_count": 106,
+      "version": "0.7.0-preview.46-root-hitbox-debug",
+      "live_phase": 15,
+      "initial": {
+        "cuboids": 357,
+        "bones": 88,
+        "vertices": 8568,
+        "source_sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3",
+        "mesh_sha256": "0bdf71d36f67c6e50db9bc0d4cb80c29c22fe399355f888b0adecd85840b1d44",
+        "source_threat_key_exact": true,
+        "parts": 15
+      },
+      "animation_continuity": {
+        "samples": 656,
+        "max_shoulder_step_radians": 0.036767602,
+        "warning_pursuit_strike_recovery_cancel": true
+      },
+      "actual_f3b_renderer_five_partial_frames": true,
+      "after_reload": {
+        "cuboids": 357,
+        "bones": 88,
+        "vertices": 8568,
+        "source_sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3",
+        "mesh_sha256": "0bdf71d36f67c6e50db9bc0d4cb80c29c22fe399355f888b0adecd85840b1d44",
+        "source_threat_key_exact": true,
+        "parts": 15
+      },
+      "resource_reload_checked": true,
+      "actual_attack_health_lost": 21.64801,
+      "actual_attack_hits": 1,
+      "actual_tree_blocks_broken": 4,
+      "actual_forward_walk_blocks": 11.220766006886226,
+      "turn_diagnostics": "(8.5, 70.0, 19.720766006886226) yaw=-45.0 phase=WARNING target=Zombie['Зомби'/151, l='ServerLevel[LK01 owner review]', x=20.50, y=70.00, z=29.72] peak=35.0",
+      "actual_turn_tail_lag_degrees": 35,
+      "actual_client_tail_lag_degrees": 35,
+      "lower_contact_server_ticks": 160,
+      "lower_sea_contact_80_ticks": true,
+      "upper_contact_server_ticks": 126,
+      "upper_sea_contact_80_ticks": true,
+      "natural_spawn_pipeline_controlled_forest_fixture": true,
+      "natural_spawn_rate_or_survival_acceptance": false,
+      "review_world_ready": true,
+      "actual_dimension": "interstice:islands_v6",
+      "passed": true,
+      "reason": "",
+      "pid": 33372,
+      "phase": 15,
+      "owner_profile_used": false,
+      "prepared_fixture_not_survival": true,
+      "screenshots": [
+        "lozhnokoren-gallery-scale.png",
+        "lozhnokoren-front.png",
+        "lozhnokoren-side.png",
+        "lozhnokoren-warning-graspers.png",
+        "lozhnokoren-impact.png",
+        "lozhnokoren-crawl.png",
+        "lozhnokoren-curved-body.png",
+        "lozhnokoren-lower-sea.png",
+        "lozhnokoren-upper-sea.png"
+      ],
+      "settled": {
+        "purpose": "lozhnokoren_shutdown",
+        "server_tick": 1563,
+        "elapsed_actual_server_ticks": 19,
+        "stable_actual_server_ticks": 20,
+        "holders_checked": 1225,
+        "generation_ref_count": 0,
+        "save_futures_pending": 0,
+        "holders_not_ready_for_saving": 0,
+        "pending_generation_tasks": 0,
+        "save_futures_failed": 0,
+        "timed_out": false,
+        "non_quiet_examples": []
+      }
+    },
+    "seconds": 351.3119999999981
+  },
+  "first_native_attempt": {
+    "passed": false,
+    "reason": "Surface-normal test was incorrectly applied to debug lines; corrected test, same main JAR"
+  },
+  "owner_profile": ".verification/lk46n2/studioLozhnokoren",
+  "owner_profile_protected": true,
+  "production_updated": false,
+  "cold_review": {
+    "passed": true,
+    "different_jvm_from_test": true,
+    "pid": 3740,
+    "distant_horizons_loaded": true,
+    "actual_dimension": "interstice:islands_v6",
+    "saved_health": 240,
+    "multipart_ids": 15,
+    "player_has_control": true,
+    "production_updated": false
+  }
+}

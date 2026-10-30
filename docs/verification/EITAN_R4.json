@@ -1,0 +1,328 @@
+{
+  "status": "R4_geometry_preview_verified;_drive_and_gameplay_pending",
+  "recorded_utc": "2026-10-29T16:39:29.622Z",
+  "geometry": {
+    "revision": "E01-R4",
+    "passed": true,
+    "assembly_sha256": "d0e65ec99ff2276a9fc3c3f442e5ce5abb6e5b9a89594e6b79aee5fcff324b52",
+    "geometry_sha256": "507a194fa39c7255ccd7b41f3b546bd0ea9eb48090fcdab6ff342831f161a4b8",
+    "mesh_objects": 564,
+    "evaluated_triangles": 53208,
+    "nonmanifold_meshes": [],
+    "zero_area_meshes": [],
+    "bounds_min_m": [
+      -1.5,
+      -4,
+      -0.000026464462280273438
+    ],
+    "bounds_max_m": [
+      1.5,
+      4.014499664306641,
+      3
+    ],
+    "dimensions_m_xyz": [
+      3,
+      8.01449966430664,
+      3.0000264644622803
+    ],
+    "height_excludes_flexible_antennas": true,
+    "seats": 12,
+    "troop_seats": 9,
+    "crew_seats": 3,
+    "wheels": 8,
+    "true_roof_apertures": [
+      "roof centre fore",
+      "crew roof",
+      "troop roof"
+    ],
+    "rear_recess_mm": 589.9999141693115,
+    "rear_shoulder_rise_above_nominal_roof_mm": 167.39597320556632,
+    "last_troop_pan_to_ramp_hinge_mm": 250.00000000000045,
+    "rear_ramp_surface_collision_samples_deg": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      36,
+      40,
+      44,
+      48,
+      52,
+      56,
+      60,
+      64,
+      68,
+      72,
+      76,
+      80,
+      84,
+      88,
+      92,
+      96,
+      100,
+      104,
+      108,
+      112,
+      116,
+      118.72311373330247
+    ],
+    "rear_ramp_sampled_surface_intersections": [],
+    "rear_door_surface_collision_samples_deg": [
+      0,
+      19,
+      38,
+      57,
+      76,
+      95
+    ],
+    "rear_door_sampled_surface_intersections": [],
+    "ramp_continuous_min_z_mm": 6.7671403174819345,
+    "ramp_clearance_method": "Analytic extrema of every evaluated ramp vertex under prescribed X-axis rotation over full interval; flat ground only.",
+    "folded_pans_rising": 9,
+    "actuator_endpoint_max_error_mm": 0.0002384185791015625,
+    "actuator_sample_frames": [
+      1,
+      11,
+      21,
+      31,
+      41,
+      51,
+      61,
+      81,
+      101,
+      121,
+      161
+    ],
+    "state_contract": {
+      "passed": true,
+      "checks": [
+        "door blocked with lowered ramp",
+        "ramp blocked with open door",
+        "ramp blocked while moving",
+        "door blocked while moving",
+        "four independent roof lids",
+        "nine independent seat pans"
+      ],
+      "game_adapter_installed": false
+    },
+    "exports": {
+      "eitan_E01_closed.glb": {
+        "meshes": 564,
+        "bounds_min": [
+          -1.5,
+          -4,
+          -0.000026464462280273438
+        ],
+        "bounds_max": [
+          1.5,
+          4.014499664306641,
+          3
+        ]
+      },
+      "eitan_E01_boarding.glb": {
+        "meshes": 564,
+        "bounds_min": [
+          -1.5,
+          -4,
+          -0.000026464462280273438
+        ],
+        "bounds_max": [
+          1.5,
+          4.014499664306641,
+          3
+        ]
+      }
+    },
+    "glb_round_trip_passed": true,
+    "interior_nominal_clear_height_mm": 1600,
+    "standing_player_1800mm_fits": false,
+    "runtime_registered": false,
+    "offroad_driving_tested": false,
+    "manufacturing_verified": false,
+    "limitations": [
+      "Opening directions/angles and detailed dimensions are documented adaptations, not a factory drawing.",
+      "No complete continuous collision proof between all vehicle parts, occupants and terrain.",
+      "Actuator linkage sampled at listed poses; not force/friction/hydraulic simulation.",
+      "No Minecraft runtime integration or driving test."
+    ]
+  },
+  "roof_fit": {
+    "revision": "E01-R4",
+    "blender": "5.2.2 LTS",
+    "geometry_sha256": "507a194fa39c7255ccd7b41f3b546bd0ea9eb48090fcdab6ff342831f161a4b8",
+    "assembly_sha256": "d0e65ec99ff2276a9fc3c3f442e5ce5abb6e5b9a89594e6b79aee5fcff324b52",
+    "script_sha256": "0d06ab30eb9bbcad428af31395d3798d55f982574c66361b72a2da964e232a10",
+    "checks": {
+      "driver": {
+        "gasket_support_margins_mm": [
+          175.00007152557373,
+          1474.9999940395355,
+          45.000314712524414,
+          154.99985218048096
+        ],
+        "cutout_panel_margins_mm": [
+          220.00001430511463,
+          100.00019073486311,
+          1520.0000143051147,
+          209.99988079071053
+        ],
+        "lid_bottom_minus_roof_top_mm": 19.500017166137695
+      },
+      "commander": {
+        "gasket_support_margins_mm": [
+          180.00006675720215,
+          1460.0000083446503,
+          115.00000953674316,
+          504.9999952316284
+        ],
+        "cutout_panel_margins_mm": [
+          230.00001430511486,
+          155.00009536743153,
+          1510.000014305115,
+          544.999988079071
+        ],
+        "lid_bottom_minus_roof_top_mm": 17.50016212463379
+      },
+      "fore_roof_side_overlap_mm": [
+        21.250009536743164,
+        21.249890327453613
+      ],
+      "bow_main_side_offset_mm": 0.00011920928955078125,
+      "bow_main_longitudinal_separation_mm": 0,
+      "troop_centre_sealed": true,
+      "troop_centre_clear_when_open": true,
+      "lid_surface_collision_samples_deg": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100,
+        105
+      ],
+      "lid_surface_intersections": []
+    },
+    "failures": [],
+    "passed": true,
+    "limitations": [
+      "Virtual game geometry. Named-panel sampling is not exhaustive continuous collision certification."
+    ]
+  },
+  "export": {
+    "revision": "E01-R4",
+    "cells": 120,
+    "triangles": {
+      "render_triangles": 168354
+    },
+    "voxels": {
+      "0": 26335,
+      "1": 27542,
+      "2": 26537,
+      "3": 27814,
+      "static": 79111
+    },
+    "max_integer_plane_snap_error_m": 0.000026464462280273438,
+    "collision_resolution": 16,
+    "maximum_surface_inflation_m": 0.10825317547305482,
+    "geometry_sha256": "507a194fa39c7255ccd7b41f3b546bd0ea9eb48090fcdab6ff342831f161a4b8",
+    "assembly_sha256": "d0e65ec99ff2276a9fc3c3f442e5ce5abb6e5b9a89594e6b79aee5fcff324b52",
+    "runtime_sha256": "8db725d91a68f927cc45bfe84b229f2e9493e5b90f4efc627ccf58076759489d",
+    "limitations": [
+      "Conservative voxel solids; native crouch routes must be checked.",
+      "Four inspection poses are endpoint snapshots, not an animated gameplay controller.",
+      "Wheel collision is included in the stationary preview; Offroad chassis must replace it with tire contacts."
+    ]
+  },
+  "native": {
+    "dh_loaded": true,
+    "started_utc": "2026-10-29T16:34:00.785202900Z",
+    "native_cells": 120,
+    "night_vision": false,
+    "crouched_aisle_box_clear": true,
+    "standing_aisle_box_clear": false,
+    "crouch_walk_distance_m": 2.641944025858049,
+    "crouch_walk_ticks": 43,
+    "native_player_pose": "CROUCHING",
+    "world_save_completed": true,
+    "passed": true,
+    "error": "",
+    "phase": 7,
+    "owner_profile_used": false,
+    "driving_tested": false,
+    "independent_gameplay_mechanisms_tested": false,
+    "model_revision": "E01-R4",
+    "geometry_sha256": "507a194fa39c7255ccd7b41f3b546bd0ea9eb48090fcdab6ff342831f161a4b8",
+    "process_exit_code": 0
+  },
+  "images": [
+    {
+      "file": "eitan-r4/eitan-aisle.png",
+      "sha256": "42fd910f8782f5e0fd348d991e87d1b6fd6aa89a5cfcfbd709df9077aab94fcb"
+    },
+    {
+      "file": "eitan-r4/eitan-boarding.png",
+      "sha256": "9ab974f1042eecb0aa14f19ae297ad0085bdaca0d7545b421cae7c532f206efd"
+    },
+    {
+      "file": "eitan-r4/eitan-door.png",
+      "sha256": "7054cfee3b4b8686c1bf0432a529696d6998979b64b8fe8e12e210ba038da7c0"
+    },
+    {
+      "file": "eitan-r4/eitan-exterior-closed.png",
+      "sha256": "8da85f3dba484f76277fda58fb2857ed0c6fe1d0ec4be69a929b01367167180f"
+    },
+    {
+      "file": "eitan-r4/eitan-service.png",
+      "sha256": "49af3ef062d9c9ce6c6c466d6c572c35390443780fc6b4ee9850630fa75f5353"
+    }
+  ],
+  "shader_config": {
+    "enableShaders": false,
+    "file": "config/iris.properties",
+    "sha256": "32db448ac5efb1babddf493ec18dfec4566fd065d3070b8e7f218b920178b29f"
+  },
+  "compilation": {
+    "passed": true,
+    "log": ".verification/eitan-compile.log",
+    "sha256": "2b0edc06d7978888f413454d288feebbfebc6f26aa2a40ea7600868d4d01edd1"
+  },
+  "geometry_test_profile": ".verification/eitan-r4-native-01/studioEitan",
+  "source_scripts": {
+    "blender": "6766ba9bbea78c108fccf9c871915c6a6d6ec1288ea532d607fdc629ff8969ba",
+    "import": "e469a69c00646dbb4ec5ce4e732c7fe0774004787e117303ada356019b908dc6",
+    "native": "824fca0a3b66eb6b28ed782bec2d701fe1221af614efb0305e4d733e8022d875"
+  },
+  "gameplay_complete": false,
+  "offroad_drive_tested": false,
+  "published": false,
+  "owner_profile_used": false,
+  "reviewed_screenshots": [
+    "exterior-closed",
+    "boarding",
+    "aisle",
+    "door",
+    "service"
+  ],
+  "preview_models": 120,
+  "concept_ready": true
+}

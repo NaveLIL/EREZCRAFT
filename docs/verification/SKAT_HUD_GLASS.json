@@ -1,0 +1,585 @@
+{
+  "scope": "Ground-speed HUD and near opaque sea visibility through actual SK03 glass, shaders OFF. Not a new full-ship/Survival/multiplayer acceptance.",
+  "candidate": "0.7.0-preview.100-skat-speed",
+  "jar_sha256": "3ff24eec51cb3f427195ed164d5ab347be7ba1267f46eba5467be14aee37cd06",
+  "native": {
+    "passed": true,
+    "speed": {
+      "dh_loaded": true,
+      "version": "0.7.0-preview.100-skat-speed",
+      "started_utc": "2026-10-29T11:37:58.220483200Z",
+      "phase": 10,
+      "mode": "speed",
+      "owner_profile_used": false,
+      "max_tilt_all_phases": 0.12554953014637002,
+      "cargo_containers": 24,
+      "cargo_slots": 1296,
+      "lighting_loaded_mask": 6,
+      "ship_uuid": "f4a5cbb6-8400-4519-8909-b05ad7b40621",
+      "mass": 44.86074699999996,
+      "initial_fuel_-3": 63398,
+      "initial_fuel_3": 1042,
+      "loaded_engine_saved_rpm_-3": 0,
+      "loaded_propeller_saved_rpm_-3": 0,
+      "loaded_engine_saved_rpm_3": 0,
+      "loaded_propeller_saved_rpm_3": 0,
+      "structure_cells_checked": 1509,
+      "inventory_ids": [
+        "55689224-b105-4552-9ba2-c8aacae8c0bd",
+        "29bae983-20f4-4746-a14b-194d07e05461",
+        "710dd40e-38b9-4307-8a5f-4b21b1bfe5e7",
+        "d966a431-9f39-4e8e-967a-3018aaff279d",
+        "bb4ebdee-9d26-4059-8183-afbb8653b1f2",
+        "f414189c-4cb3-4839-b06f-1e319a221f0d",
+        "6f4da591-b46a-45c4-a37f-bdad6d4ab744",
+        "a269ed84-c342-4f23-8042-8ee795f2e029",
+        "eab4f0aa-0e20-4783-88db-baa5bc031b65",
+        "2ad78443-89a1-4ac6-9bb6-f004df6df285",
+        "8246c83d-495d-4cc9-8f65-858845e4d515",
+        "fbc922a2-507f-49c2-a56b-7d9a665d28e1",
+        "c750d60b-f258-47bf-a1d9-0b6abf4dd596",
+        "2357b95c-1954-4200-aff2-b8e3665686e1",
+        "f71c84ca-06eb-4b88-8e8a-22aa5a7f9e8d",
+        "2340effc-58d2-4e09-980d-f006f30710cd",
+        "818d6180-3c7a-43fd-b056-634fb17558e8",
+        "1bd93051-c1b6-4e13-8a16-9275454913c5",
+        "0896fa30-58ca-4fec-82f4-4a98c20492e0",
+        "8feda279-b3ce-48dd-b208-f88e4773d4ea",
+        "acabbb9d-055f-4c1d-a3cf-af641f6001a4",
+        "5ee1d598-4e10-4e22-b72d-6e94ffe4fb2d",
+        "7b14f242-1722-4a1f-8652-01331a7fdff4",
+        "e7cb6eb2-a20c-42be-b347-d8f1c4579d79"
+      ],
+      "settled_position": "( 5,049E+1  3,715E+1  6,136E+0)",
+      "min_y": 36.28253173828125,
+      "max_y": 37.70170211791992,
+      "max_tilt": 0.12554953014637002,
+      "hold_floor_freeboard": 1.0885807095953624,
+      "input_timeout_stops_but_retains_seated_pilot": true,
+      "drive_direction": 1,
+      "client_control_state": "Status[helm=BlockPos{x=20481032, y=132, z=20481026}, active=true, rpm=96, turn=64, leftFuel=62972, rightFuel=616]",
+      "client_passenger": true,
+      "client_up": true,
+      "server_pilot": "380df991-f603-344c-a090-369bad2a924a",
+      "server_passenger": true,
+      "forward_rpm_-3": 96,
+      "forward_rpm_3": 96,
+      "prop_rpm_-3": 96,
+      "prop_thrust_-3": 45.62302912261964,
+      "prop_rpm_3": 96,
+      "prop_thrust_3": 45.62302912261964,
+      "terrain_in_world_bounds": [],
+      "native_thrust_distance": 6.137200851006306,
+      "measured_horizontal_distance": 6.099049363569749,
+      "measured_average_mps": 0.6099049363569748,
+      "server_speed_mps": 2.5902002,
+      "hud_max_speed_mps": 1.9192145,
+      "hud_captured": true,
+      "neutral_coast_before_turn_ticks": 120,
+      "turn_entry_angular_velocity": "( 2,320E-3 -1,480E-4  3,274E-2)",
+      "turn_rpm_-3": 128,
+      "turn_thrust_-3": 60.83070187103273,
+      "turn_rpm_3": 32,
+      "turn_thrust_3": 15.207675467758182,
+      "turn_radians": 0.11981079495783457,
+      "pilot_failsafe": true,
+      "passed_runtime": true,
+      "dedicated_two_players": false,
+      "glass": {
+        "actual_skat_glass": true,
+        "same_frozen_pose": true,
+        "diagnostic_night_vision": true,
+        "near_ocean": true,
+        "cases": [
+          {
+            "window": "port",
+            "before": {
+              "red": 70.09248971193415,
+              "green": 62.79832711762688,
+              "blue": 50.87457561728395,
+              "sea_pixels": 206614,
+              "pixels": 933120,
+              "x0": 96,
+              "x1": 1824,
+              "y0": 162,
+              "y1": 702
+            },
+            "after": {
+              "red": 71.47332711762688,
+              "green": 62.89413258744856,
+              "blue": 50.66282471707819,
+              "sea_pixels": 226982,
+              "pixels": 933120,
+              "x0": 96,
+              "x1": 1824,
+              "y0": 162,
+              "y1": 702
+            }
+          },
+          {
+            "window": "front",
+            "before": {
+              "red": 47.06744577331962,
+              "green": 52.1700210048011,
+              "blue": 49.19128943758573,
+              "sea_pixels": 129351,
+              "pixels": 933120,
+              "x0": 96,
+              "x1": 1824,
+              "y0": 162,
+              "y1": 702
+            },
+            "after": {
+              "red": 48.86064814814815,
+              "green": 51.361267575445815,
+              "blue": 49.399353780864196,
+              "sea_pixels": 173987,
+              "pixels": 933120,
+              "x0": 96,
+              "x1": 1824,
+              "y0": 162,
+              "y1": 702
+            }
+          },
+          {
+            "window": "starboard",
+            "before": {
+              "red": 36.520070301783264,
+              "green": 41.33691915294924,
+              "blue": 37.9854348851166,
+              "sea_pixels": 94695,
+              "pixels": 933120,
+              "x0": 96,
+              "x1": 1824,
+              "y0": 162,
+              "y1": 702
+            },
+            "after": {
+              "red": 36.71332090192044,
+              "green": 41.30016396604938,
+              "blue": 37.977330889917695,
+              "sea_pixels": 95416,
+              "pixels": 933120,
+              "x0": 96,
+              "x1": 1824,
+              "y0": 162,
+              "y1": 702
+            }
+          }
+        ],
+        "stage": 2,
+        "view": 2
+      },
+      "passed": false,
+      "error": "java.lang.IllegalStateException: Sea did not appear through starboard glass: {\"window\":\"starboard\",\"before\":{\"red\":36.520070301783264,\"green\":41.33691915294924,\"blue\":37.9854348851166,\"sea_pixels\":94695,\"pixels\":933120,\"x0\":96,\"x1\":1824,\"y0\":162,\"y1\":702},\"after\":{\"red\":36.71332090192044,\"green\":41.30016396604938,\"blue\":37.977330889917695,\"sea_pixels\":95416,\"pixels\":933120,\"x0\":96,\"x1\":1824,\"y0\":162,\"y1\":702}}",
+      "process_exit_code": 0
+    },
+    "glass": {
+      "actual_skat_glass": true,
+      "same_frozen_pose": true,
+      "diagnostic_night_vision": true,
+      "near_ocean": true,
+      "restored_views": 2,
+      "normal_capture_no_night_vision": true,
+      "lighting_mask": 7,
+      "dh_loaded": true,
+      "dry_hull_cells": 17201,
+      "passed": true,
+      "cases": [
+        {
+          "window": "port",
+          "before": {
+            "red": 67.80520404663923,
+            "green": 71.43280606995884,
+            "blue": 63.049040852194786,
+            "sea_pixels": 46850,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "after": {
+            "red": 66.14795417524006,
+            "green": 65.52546081961592,
+            "blue": 58.97516932441701,
+            "sea_pixels": 176402,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "restored_missing_sea": true
+        },
+        {
+          "window": "front",
+          "before": {
+            "red": 45.07078617969822,
+            "green": 49.966516632373114,
+            "blue": 47.368918252743484,
+            "sea_pixels": 151939,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "after": {
+            "red": 49.1414780521262,
+            "green": 50.076111325445815,
+            "blue": 48.643906464334705,
+            "sea_pixels": 213300,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "restored_missing_sea": true
+        },
+        {
+          "window": "starboard",
+          "before": {
+            "red": 35.148717206790124,
+            "green": 38.80572702331962,
+            "blue": 36.832607810356656,
+            "sea_pixels": 94441,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "after": {
+            "red": 36.84236646947874,
+            "green": 39.229951131687244,
+            "blue": 37.86796660665295,
+            "sea_pixels": 110059,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "restored_missing_sea": false
+        }
+      ],
+      "stage": 3,
+      "view": 3
+    }
+  },
+  "glass_run": {
+    "dh_loaded": true,
+    "version": "0.7.0-preview.100-skat-speed",
+    "started_utc": "2026-10-29T11:46:45.971284500Z",
+    "phase": 10,
+    "mode": "glass",
+    "owner_profile_used": false,
+    "max_tilt_all_phases": 0.036231055004291315,
+    "cargo_containers": 24,
+    "cargo_slots": 1296,
+    "lighting_loaded_mask": 7,
+    "ship_uuid": "f4a5cbb6-8400-4519-8909-b05ad7b40621",
+    "mass": 44.86074699999996,
+    "initial_fuel_-3": 62963,
+    "initial_fuel_3": 607,
+    "loaded_engine_saved_rpm_-3": 0,
+    "loaded_propeller_saved_rpm_-3": 0,
+    "loaded_engine_saved_rpm_3": 0,
+    "loaded_propeller_saved_rpm_3": 0,
+    "structure_cells_checked": 1509,
+    "test_refuel_3": true,
+    "inventory_ids": [
+      "55689224-b105-4552-9ba2-c8aacae8c0bd",
+      "29bae983-20f4-4746-a14b-194d07e05461",
+      "710dd40e-38b9-4307-8a5f-4b21b1bfe5e7",
+      "d966a431-9f39-4e8e-967a-3018aaff279d",
+      "bb4ebdee-9d26-4059-8183-afbb8653b1f2",
+      "f414189c-4cb3-4839-b06f-1e319a221f0d",
+      "6f4da591-b46a-45c4-a37f-bdad6d4ab744",
+      "a269ed84-c342-4f23-8042-8ee795f2e029",
+      "eab4f0aa-0e20-4783-88db-baa5bc031b65",
+      "2ad78443-89a1-4ac6-9bb6-f004df6df285",
+      "8246c83d-495d-4cc9-8f65-858845e4d515",
+      "fbc922a2-507f-49c2-a56b-7d9a665d28e1",
+      "c750d60b-f258-47bf-a1d9-0b6abf4dd596",
+      "2357b95c-1954-4200-aff2-b8e3665686e1",
+      "f71c84ca-06eb-4b88-8e8a-22aa5a7f9e8d",
+      "2340effc-58d2-4e09-980d-f006f30710cd",
+      "818d6180-3c7a-43fd-b056-634fb17558e8",
+      "1bd93051-c1b6-4e13-8a16-9275454913c5",
+      "0896fa30-58ca-4fec-82f4-4a98c20492e0",
+      "8feda279-b3ce-48dd-b208-f88e4773d4ea",
+      "acabbb9d-055f-4c1d-a3cf-af641f6001a4",
+      "5ee1d598-4e10-4e22-b72d-6e94ffe4fb2d",
+      "7b14f242-1722-4a1f-8652-01331a7fdff4",
+      "e7cb6eb2-a20c-42be-b347-d8f1c4579d79"
+    ],
+    "glass": {
+      "actual_skat_glass": true,
+      "same_frozen_pose": true,
+      "diagnostic_night_vision": true,
+      "near_ocean": true,
+      "restored_views": 2,
+      "normal_capture_no_night_vision": true,
+      "lighting_mask": 7,
+      "dh_loaded": true,
+      "dry_hull_cells": 17201,
+      "passed": true,
+      "cases": [
+        {
+          "window": "port",
+          "before": {
+            "red": 67.80520404663923,
+            "green": 71.43280606995884,
+            "blue": 63.049040852194786,
+            "sea_pixels": 46850,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "after": {
+            "red": 66.14795417524006,
+            "green": 65.52546081961592,
+            "blue": 58.97516932441701,
+            "sea_pixels": 176402,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "restored_missing_sea": true
+        },
+        {
+          "window": "front",
+          "before": {
+            "red": 45.07078617969822,
+            "green": 49.966516632373114,
+            "blue": 47.368918252743484,
+            "sea_pixels": 151939,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "after": {
+            "red": 49.1414780521262,
+            "green": 50.076111325445815,
+            "blue": 48.643906464334705,
+            "sea_pixels": 213300,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "restored_missing_sea": true
+        },
+        {
+          "window": "starboard",
+          "before": {
+            "red": 35.148717206790124,
+            "green": 38.80572702331962,
+            "blue": 36.832607810356656,
+            "sea_pixels": 94441,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "after": {
+            "red": 36.84236646947874,
+            "green": 39.229951131687244,
+            "blue": 37.86796660665295,
+            "sea_pixels": 110059,
+            "pixels": 933120,
+            "x0": 96,
+            "x1": 1824,
+            "y0": 162,
+            "y1": 702
+          },
+          "restored_missing_sea": false
+        }
+      ],
+      "stage": 3,
+      "view": 3
+    },
+    "passed": true,
+    "error": "",
+    "process_exit_code": 0
+  },
+  "unit_checks": {
+    "passed": 8,
+    "units": "m/s",
+    "fixture_speed_kmh": 14.4
+  },
+  "changed_entries": [
+    "META-INF/neoforge.mods.toml",
+    "assets/interstice/lang/en_us.json",
+    "assets/interstice/lang/ru_ru.json",
+    "pro/erez/interstice/client/LowerToxinRenderer$Registration.class",
+    "pro/erez/interstice/client/LowerToxinRenderer.class",
+    "pro/erez/interstice/client/SkatClient$Bridge.class",
+    "pro/erez/interstice/client/SkatClient$Propeller.class",
+    "pro/erez/interstice/client/SkatClient.class",
+    "pro/erez/interstice/ship/SkatHelmEntity.class",
+    "pro/erez/interstice/ship/SkatNetwork$Input.class",
+    "pro/erez/interstice/ship/SkatNetwork$Lighting.class",
+    "pro/erez/interstice/ship/SkatNetwork$LightingPanel.class",
+    "pro/erez/interstice/ship/SkatNetwork$Status.class",
+    "pro/erez/interstice/ship/SkatNetwork.class"
+  ],
+  "added_entries": [
+    "pro/erez/interstice/ship/SkatNetwork$Speed.class",
+    "pro/erez/interstice/ship/SkatSpeedometer.class"
+  ],
+  "preserved_asset_data_entries": 3128,
+  "runtime_files_match_jar": 3683,
+  "screenshots": [
+    {
+      "file": "docs/verification/skat-hud/skat-speed-hud.png",
+      "sha256": "34a6b95080b7f7ec9b45a8d81f5fa5c6f2864bfc852e795c9467a2ae3ed4a379",
+      "unmodified_capture": true,
+      "night_vision": true
+    },
+    {
+      "file": "docs/verification/skat-hud/skat-glass-port-before.png",
+      "sha256": "f396bb57225a1140f77b67a93125b56e79d424f998143e30f3a3b31dc8dc2b3c",
+      "unmodified_capture": true,
+      "night_vision": true
+    },
+    {
+      "file": "docs/verification/skat-hud/skat-glass-port-after.png",
+      "sha256": "41610261f8ac21d3b4d2bbe12cf2c8f7619a9d67432f98aa1744deea8ddc17ab",
+      "unmodified_capture": true,
+      "night_vision": true
+    },
+    {
+      "file": "docs/verification/skat-hud/skat-glass-front-before.png",
+      "sha256": "c42009179b5400d18641dd53b692c95f21be37a64f871347faa9101d2d46f0be",
+      "unmodified_capture": true,
+      "night_vision": true
+    },
+    {
+      "file": "docs/verification/skat-hud/skat-glass-front-after.png",
+      "sha256": "8353b1c2670b2b68a05accbcd2bb51b1b3a029ff3e419a2f6324725bed89d2c5",
+      "unmodified_capture": true,
+      "night_vision": true
+    },
+    {
+      "file": "docs/verification/skat-hud/skat-glass-starboard-before.png",
+      "sha256": "108a83fbc7d518f01637dd315aa60f92b3d460b0b9b67761081babdc332c1e23",
+      "unmodified_capture": true,
+      "night_vision": true
+    },
+    {
+      "file": "docs/verification/skat-hud/skat-glass-starboard-after.png",
+      "sha256": "633213e89e94be1307c832ee079eb020c8eaf83aa3f53290657f407ef9e24dea",
+      "unmodified_capture": true,
+      "night_vision": true
+    },
+    {
+      "file": "docs/verification/skat-hud/skat-glass-normal-no-night-vision.png",
+      "sha256": "28aa89b0175e21873e4d7df1a9fd1702c432f4911abebfa5bf852fe01556f03e",
+      "unmodified_capture": true,
+      "night_vision": false
+    }
+  ],
+  "production_changed": true,
+  "backups_created": false,
+  "owner_profile_modified": false,
+  "limitations": [
+    "Initial disconnection cause unconfirmed: server recorded Disconnected, allow-flight already true, no movement checks disabled.",
+    "An expanded native run failed standing stair ascent in unchanged geometry; retained in speed100_01_full-probe.json. This feature-specific acceptance does not close that finding.",
+    "Speed captured during short acceleration runs; no steady cruise speed or propulsion balance change.",
+    "Complementary was not retested in this patch; owner corrected shader state to OFF."
+  ],
+  "release_sequence": 24,
+  "publication": {
+    "sourceSequence": 23,
+    "sequence": 24,
+    "releaseId": "techmagic-0-1-0-alpha-24-skat-hud-glass",
+    "oldCatalogSha256": "ea7d9d0d0551f6458e973256d73e1e02343c2220f65f018ee861403e0fbe7d32",
+    "newCatalogSha256": "a6d0e020d01660cf0416bff3f3242fa082e6b601e6d85141edc0d8c354b7fd24",
+    "files": 89,
+    "clientJars": 79,
+    "unchangedBaseFiles": 87,
+    "removed": [
+      "mods/interstice-0.7.0-preview.98-skat-server.jar"
+    ],
+    "changed": [
+      {
+        "path": "config/erezcraft-pack.json",
+        "size": 173,
+        "sha256": "9382dfb79fa4a631273fe21d583810160fa363f2a2ed18891c67cfaee981afb1",
+        "url": "https://files.erezcraft.com/blobs/9382dfb79fa4a631273fe21d583810160fa363f2a2ed18891c67cfaee981afb1",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/interstice-0.7.0-preview.100-skat-speed.jar",
+        "size": 23851384,
+        "sha256": "3ff24eec51cb3f427195ed164d5ab347be7ba1267f46eba5467be14aee37cd06",
+        "url": "https://files.erezcraft.com/blobs/3ff24eec51cb3f427195ed164d5ab347be7ba1267f46eba5467be14aee37cd06",
+        "policy": "managed"
+      }
+    ],
+    "stage": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\skat-hud-release-20261029",
+    "public_https_verified": true,
+    "signatures_verified": true,
+    "uploaded_files": 4,
+    "uploaded_bytes": 23884395,
+    "game_server_restarted": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false
+  },
+  "server": {
+    "passed": true,
+    "mod_version": "0.7.0-preview.100-skat-speed",
+    "jar_sha256": "3ff24eec51cb3f427195ed164d5ab347be7ba1267f46eba5467be14aee37cd06",
+    "server_jars": 67,
+    "old_jars_unchanged": 66,
+    "healthy": true,
+    "world_regenerated": false,
+    "world_files_replaced": false,
+    "backups_created": false,
+    "settings_auth_ops_preserved": true,
+    "players": "There are 0 of a max of 10 players online: \n\u001b[0m"
+  },
+  "public_status": {
+    "passed": true,
+    "host": "mc.erezcraft.com",
+    "port": 25565,
+    "version": {
+      "name": "1.21.1",
+      "protocol": 767
+    },
+    "players_online": 0,
+    "max_players": 10,
+    "scope": "public TCP status, not an authenticated login"
+  },
+  "wire_compatibility": {
+    "passed": true,
+    "old_skat_v1_payloads": {
+      "Status": "existing codec, fields and bytecode unchanged",
+      "Input": "existing codec, fields and bytecode unchanged",
+      "Lighting": "existing codec, fields and bytecode unchanged",
+      "LightingPanel": "existing codec, fields and bytecode unchanged"
+    },
+    "new_speed_channel": "optional, sent only when the connection advertises it"
+  },
+  "owner_download_test": "Owner performs; Installer and owner profiles were not touched",
+  "final_client_opened": false,
+  "validation_history": [
+    "99_01: port window restored; central front ROI was obstructed by the console. Raw failure retained.",
+    "99_02: Windows native commit exhaustion; verification heap reduced to 6G without changing graphics or owner settings.",
+    "100_01: maneuver and HUD passed; expanded unchanged standing-stair ascent failed and remains open.",
+    "100_02: maneuver and HUD passed; initially overstrict window assertion incorrectly required already-visible sea to increase.",
+    "100_03: three-window restoration/nonregression A/B passed, actual dry hull retained, final capture without night vision."
+  ]
+}

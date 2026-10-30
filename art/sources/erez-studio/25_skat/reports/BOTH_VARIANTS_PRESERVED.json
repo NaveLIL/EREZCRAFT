@@ -1,0 +1,68 @@
+{
+  "owner_request": "Preserve small SK01 and large SK02",
+  "small_variant": [
+    {
+      "file": "source/skat_SK01.json",
+      "sha256": "61e968d5b6912bf5d7a7a427d9c3cd747d17d95268ef3d5f69ebc5c41d40ad8f",
+      "bytes": 361826
+    },
+    {
+      "file": "assembly/skat_SK01.blend",
+      "sha256": "403d0fec03d56fb6bbc897451435c8dff8c65fac2a1a12082ec2b836832f988f",
+      "bytes": 777046
+    },
+    {
+      "file": "exports/skat_SK01.glb",
+      "sha256": "ad884c9589152fff15c7e896c778269bd4b3799bb7329440aad02a515619f264",
+      "bytes": 1500020
+    },
+    {
+      "file": "preview/skat_SK01_hero.png",
+      "sha256": "cd6661e3113732f99958d0499296b59cba24a0e64997801e3440a6682f745555",
+      "bytes": 2399111
+    },
+    {
+      "file": "preview/skat_SK01_aft.png",
+      "sha256": "ae07d6cb908503db8dfb9623eb1c514bf8f25341632bf3a170bd08f80182461c",
+      "bytes": 2309730
+    },
+    {
+      "file": "preview/skat_SK01_cutaway.png",
+      "sha256": "dfc803fc474fdb1804cb709f4fb38ff0757026877e1c49de3ec92b46c799b145",
+      "bytes": 2279968
+    },
+    {
+      "file": "preview/skat_SK01_hold.png",
+      "sha256": "8239d0c52b9c00c17eb4415e8e198a1d198fed72d9902576ae97a83d90ab1144",
+      "bytes": 2635300
+    },
+    {
+      "file": "preview/skat_SK01_cabin.png",
+      "sha256": "1147c40f705bd4204231855f2235af9feb85fbf3fccab8213d7268f0b70df1e4",
+      "bytes": 2489598
+    },
+    {
+      "file": "preview/skat_SK01_top.png",
+      "sha256": "b23a8feddd068ced41e7bb7869e55fa5ca488ee323df4b7f6d55764f09ee73a3",
+      "bytes": 1986741
+    },
+    {
+      "file": "preview/skat_SK01_side.png",
+      "sha256": "9f95f074134c2c0c384e56ad39c9fac4d6333517effe55ff39846df7fb2490ed",
+      "bytes": 1838803
+    }
+  ],
+  "as_seen_snapshots": [
+    {
+      "file": "preview/preserved/small_SK01_as_seen.png",
+      "sha256": "cd6661e3113732f99958d0499296b59cba24a0e64997801e3440a6682f745555"
+    },
+    {
+      "file": "preview/preserved/large_SK02_as_seen.png",
+      "sha256": "1c901dc08c74e22093441164fcc3140287c13fa5b645d5fee20f73178b2575d2"
+    }
+  ],
+  "large_report": "reports/SK02_ARTIFACTS.json",
+  "both_variants_exist": true,
+  "small_reopen_check": "reports/PRESERVED_SK01_CHECK.json"
+}

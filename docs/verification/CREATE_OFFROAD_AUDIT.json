@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-29",
+  "module": "offroad",
+  "version": "1.3.2",
+  "outer_jar": "create-aeronautics-bundled-1.21.1-1.3.2.jar",
+  "outer_sha256": "a3f330d4757640f8715d991a43eedb826e4d0e51558d859c843ae6693bd35f1e",
+  "nested_jar": "META-INF/jarjar/dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.3.2.jar",
+  "nested_sha256": "8513726bc5a8383e11f4691f4dbe62d7d03bfc5f2835ec1ca1fbeffefe743f77",
+  "server_bundle_sha256": "a3f330d4757640f8715d991a43eedb826e4d0e51558d859c843ae6693bd35f1e",
+  "client_load_log": ".verification/sk97n1/studioSkat/logs/latest.log:56",
+  "wheel_mount": "offroad:wheel_mount",
+  "tires": [
+    "offroad:small_tire",
+    "offroad:tire",
+    "offroad:large_tire",
+    "offroad:monstrous_tire"
+  ],
+  "tire_radii_blocks": [
+    0.75,
+    0.96875,
+    1.25,
+    2.0
+  ],
+  "kinetic_drive_code_present": true,
+  "suspension_code_present": true,
+  "ground_contact_and_force_code_present": true,
+  "redstone_steering_and_braking": true,
+  "gameplay_wheel_test_performed": false,
+  "server_restarted": false,
+  "production_files_changed": false
+}

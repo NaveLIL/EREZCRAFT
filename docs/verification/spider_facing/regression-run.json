@@ -1,0 +1,27 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "--continue",
+    "-Pmod_version=0.7.0-preview.42-frontal-spiders",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\s42gt4",
+    "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\blade-release-20261028\\client",
+    "assemble",
+    "-PfacingAuditOutput=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\spider-facing-fix-20261028\\component04\\angles",
+    "runHunterGameTestServer",
+    "runGameTestServer"
+  ],
+  "passed": true,
+  "started_utc": "2026-10-28T10:37:37.044365+00:00",
+  "pid": 12628,
+  "exit_code": 0,
+  "required_pass_counts": [
+    49,
+    177
+  ],
+  "seconds": 241.04599999999846
+}

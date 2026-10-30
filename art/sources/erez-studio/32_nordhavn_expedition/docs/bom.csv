@@ -1,0 +1,910 @@
+id,name,group,material,shape
+60ac01a90b46,Continuous watertight hull skin,HULL,hull_ivory,mesh
+1411d53b8c97,Hull rubbing strip -1 0,FITTINGS,brushed_steel,beam
+1049e3e6c0e6,Hull rubbing strip -1 1,FITTINGS,brushed_steel,beam
+124b31135e5d,Hull rubbing strip -1 2,FITTINGS,brushed_steel,beam
+051fc0a54d42,Hull rubbing strip -1 3,FITTINGS,brushed_steel,beam
+ae7d3e841cc7,Hull rubbing strip -1 4,FITTINGS,brushed_steel,beam
+573d919697c5,Hull rubbing strip -1 5,FITTINGS,brushed_steel,beam
+cd7e97de54a0,Hull rubbing strip -1 6,FITTINGS,brushed_steel,beam
+ec1ecea15869,Hull rubbing strip -1 7,FITTINGS,brushed_steel,beam
+ba528c5a10d3,Hull rubbing strip 1 0,FITTINGS,brushed_steel,beam
+c7814dc798ed,Hull rubbing strip 1 1,FITTINGS,brushed_steel,beam
+bbf6b657c64b,Hull rubbing strip 1 2,FITTINGS,brushed_steel,beam
+62074a7ecc4a,Hull rubbing strip 1 3,FITTINGS,brushed_steel,beam
+b7a51b1fb670,Hull rubbing strip 1 4,FITTINGS,brushed_steel,beam
+83b85303b3eb,Hull rubbing strip 1 5,FITTINGS,brushed_steel,beam
+62443b960398,Hull rubbing strip 1 6,FITTINGS,brushed_steel,beam
+d6647e61cfb2,Hull rubbing strip 1 7,FITTINGS,brushed_steel,beam
+202551d7a784,Lower continuous floor,LOWER,interior_floor,mesh
+d7e6597ce054,Main structural deck,MAIN,teak,mesh
+1c1e7109fcc8,Main roof and raised foredeck,UPPER,teak,mesh
+30471762ea1a,Raised forecastle shell 0,HULL,hull_ivory,mesh
+53c41fdb1170,Raised forecastle shell 1,HULL,hull_ivory,mesh
+ba51a640fbd0,Raised forecastle shell 2,HULL,hull_ivory,mesh
+1c5d2ca88d40,Raised forecastle shell 3,HULL,hull_ivory,mesh
+0582c877a7c7,Raised forecastle shell 4,HULL,hull_ivory,mesh
+427438813099,Raised forecastle shell 5,HULL,hull_ivory,mesh
+bc5495f22148,Forecastle shoulder closure -1,HULL,hull_ivory,box
+c814a3990371,Forecastle shoulder closure 1,HULL,hull_ivory,box
+484bbd05583d,Upper roof and flybridge deck,FLY,teak,mesh
+5249abcf7586,AFT_LOWER tread 0,MAIN,teak,box
+654285e6aa77,AFT_LOWER riser 0,MAIN,interior_white,box
+6ef42fe3defd,AFT_LOWER tread 1,MAIN,teak,box
+6c1aa8873525,AFT_LOWER riser 1,MAIN,interior_white,box
+6817b0565ff4,AFT_LOWER tread 2,MAIN,teak,box
+a1deab9e8e32,AFT_LOWER riser 2,MAIN,interior_white,box
+2c0dddf48172,AFT_LOWER tread 3,MAIN,teak,box
+992ca5b16883,AFT_LOWER riser 3,MAIN,interior_white,box
+e3f488bc83ea,AFT_LOWER tread 4,MAIN,teak,box
+03deda75fc19,AFT_LOWER riser 4,MAIN,interior_white,box
+998091a9e1d7,AFT_LOWER tread 5,MAIN,teak,box
+de6ce5db8b78,AFT_LOWER riser 5,MAIN,interior_white,box
+4edecab6633e,AFT_LOWER tread 6,MAIN,teak,box
+64dba7e9f801,AFT_LOWER riser 6,MAIN,interior_white,box
+89ef77c3d891,AFT_LOWER tread 7,MAIN,teak,box
+84b7fd195311,AFT_LOWER riser 7,MAIN,interior_white,box
+3b221f13595b,AFT_LOWER tread 8,MAIN,teak,box
+3a4de3df6978,AFT_LOWER riser 8,MAIN,interior_white,box
+126424da0123,AFT_LOWER tread 9,MAIN,teak,box
+6a18fe9544d9,AFT_LOWER riser 9,MAIN,interior_white,box
+ffb32a162760,AFT_LOWER tread 10,MAIN,teak,box
+f4f03947cd6d,AFT_LOWER riser 10,MAIN,interior_white,box
+d6e0233354d9,AFT_LOWER tread 11,MAIN,teak,box
+02d90576f475,AFT_LOWER riser 11,MAIN,interior_white,box
+660e77c93796,AFT_LOWER handrail -1,MAIN,brushed_steel,beam
+1e29541e4faf,AFT_LOWER baluster -1 0,MAIN,brushed_steel,beam
+c1687b1b1e2a,AFT_LOWER baluster -1 4,MAIN,brushed_steel,beam
+56c886681ee0,AFT_LOWER baluster -1 8,MAIN,brushed_steel,beam
+0d28f8ce7de6,AFT_LOWER baluster -1 12,MAIN,brushed_steel,beam
+a7de4b7c081d,AFT_LOWER handrail 1,MAIN,brushed_steel,beam
+c34680de0010,AFT_LOWER baluster 1 0,MAIN,brushed_steel,beam
+16ce596aca9f,AFT_LOWER baluster 1 4,MAIN,brushed_steel,beam
+4deabe3331e4,AFT_LOWER baluster 1 8,MAIN,brushed_steel,beam
+5e7f407d8288,AFT_LOWER baluster 1 12,MAIN,brushed_steel,beam
+b52649210d5c,AFT_LOWER continuous upper landing,MAIN,teak,box
+1677b44f6b78,AFT_LOWER upper guard top -1,MAIN,brushed_steel,beam
+3b329994bfa0,AFT_LOWER upper guard post -1 -8.9,MAIN,brushed_steel,beam
+422341d6604e,AFT_LOWER upper guard post -1 -7.4,MAIN,brushed_steel,beam
+bc54257fa05b,AFT_LOWER upper guard post -1 -5.9,MAIN,brushed_steel,beam
+2631299e76d6,AFT_LOWER upper guard post -1 -4.16,MAIN,brushed_steel,beam
+4042888c9791,AFT_LOWER upper guard top 1,MAIN,brushed_steel,beam
+9124097333ed,AFT_LOWER upper guard post 1 -8.9,MAIN,brushed_steel,beam
+97f5c87d0a06,AFT_LOWER upper guard post 1 -7.4,MAIN,brushed_steel,beam
+73422554368a,AFT_LOWER upper guard post 1 -5.9,MAIN,brushed_steel,beam
+f9a3141308d4,AFT_LOWER upper guard post 1 -4.16,MAIN,brushed_steel,beam
+32fe661d7477,FORE_LOWER tread 0,MAIN,teak,box
+415a79f7de37,FORE_LOWER riser 0,MAIN,interior_white,box
+82549f0da9c6,FORE_LOWER tread 1,MAIN,teak,box
+a550260e1eb1,FORE_LOWER riser 1,MAIN,interior_white,box
+b2639bca2c95,FORE_LOWER tread 2,MAIN,teak,box
+a5385d14d3da,FORE_LOWER riser 2,MAIN,interior_white,box
+d12edff98ccb,FORE_LOWER tread 3,MAIN,teak,box
+157795b438d5,FORE_LOWER riser 3,MAIN,interior_white,box
+ed159f8af223,FORE_LOWER tread 4,MAIN,teak,box
+d6af2f1cb920,FORE_LOWER riser 4,MAIN,interior_white,box
+85d9dad22862,FORE_LOWER tread 5,MAIN,teak,box
+6d1857999825,FORE_LOWER riser 5,MAIN,interior_white,box
+879812b7574a,FORE_LOWER tread 6,MAIN,teak,box
+0a1e466661ee,FORE_LOWER riser 6,MAIN,interior_white,box
+c8588a9aa29a,FORE_LOWER tread 7,MAIN,teak,box
+c33283fb4792,FORE_LOWER riser 7,MAIN,interior_white,box
+f08f59e56f6e,FORE_LOWER tread 8,MAIN,teak,box
+e5b14817cfde,FORE_LOWER riser 8,MAIN,interior_white,box
+e368d464c2ab,FORE_LOWER tread 9,MAIN,teak,box
+29049c0da86f,FORE_LOWER riser 9,MAIN,interior_white,box
+f84b43bfcbcb,FORE_LOWER tread 10,MAIN,teak,box
+9092a073e6b7,FORE_LOWER riser 10,MAIN,interior_white,box
+fb9e60bb0749,FORE_LOWER tread 11,MAIN,teak,box
+94de685e24b7,FORE_LOWER riser 11,MAIN,interior_white,box
+559c97ec5747,FORE_LOWER handrail -1,MAIN,brushed_steel,beam
+a93e24432516,FORE_LOWER baluster -1 0,MAIN,brushed_steel,beam
+f7cc4afb0393,FORE_LOWER baluster -1 4,MAIN,brushed_steel,beam
+da17a6df0927,FORE_LOWER baluster -1 8,MAIN,brushed_steel,beam
+6abf0f88d43d,FORE_LOWER baluster -1 12,MAIN,brushed_steel,beam
+e63d9fa06b7f,FORE_LOWER handrail 1,MAIN,brushed_steel,beam
+47a5fa8796bb,FORE_LOWER baluster 1 0,MAIN,brushed_steel,beam
+506ee81560cf,FORE_LOWER baluster 1 4,MAIN,brushed_steel,beam
+62e931a57048,FORE_LOWER baluster 1 8,MAIN,brushed_steel,beam
+9ec6f1510e92,FORE_LOWER baluster 1 12,MAIN,brushed_steel,beam
+21353fbcb969,FORE_LOWER continuous upper landing,MAIN,teak,box
+5579b561d7fa,FORE_LOWER upper guard top -1,MAIN,brushed_steel,beam
+923a261f1b25,FORE_LOWER upper guard post -1 7.05,MAIN,brushed_steel,beam
+d6b926554321,FORE_LOWER upper guard post -1 8.55,MAIN,brushed_steel,beam
+60ffe6c89693,FORE_LOWER upper guard post -1 10.05,MAIN,brushed_steel,beam
+f1561ec1660d,FORE_LOWER upper guard post -1 11.79,MAIN,brushed_steel,beam
+28d7853b8b8b,FORE_LOWER upper guard top 1,MAIN,brushed_steel,beam
+0c7de18d58a1,FORE_LOWER upper guard post 1 7.05,MAIN,brushed_steel,beam
+dd87690d683d,FORE_LOWER upper guard post 1 8.55,MAIN,brushed_steel,beam
+81d22cd3fc83,FORE_LOWER upper guard post 1 10.05,MAIN,brushed_steel,beam
+999db856d289,FORE_LOWER upper guard post 1 11.79,MAIN,brushed_steel,beam
+9b7fb629d346,FORE_LOWER upper guard rear,MAIN,brushed_steel,beam
+db90d35b65d4,MAIN_UP tread 0,UPPER,teak,box
+0259ffaa119a,MAIN_UP riser 0,UPPER,interior_white,box
+3ef028da8076,MAIN_UP tread 1,UPPER,teak,box
+a23a3ae0ba9d,MAIN_UP riser 1,UPPER,interior_white,box
+3492144490ab,MAIN_UP tread 2,UPPER,teak,box
+009528059f6f,MAIN_UP riser 2,UPPER,interior_white,box
+40b70f720ea9,MAIN_UP tread 3,UPPER,teak,box
+ed9a938adbb3,MAIN_UP riser 3,UPPER,interior_white,box
+7a34e5464775,MAIN_UP tread 4,UPPER,teak,box
+e9399662e7ca,MAIN_UP riser 4,UPPER,interior_white,box
+703c936e4b24,MAIN_UP tread 5,UPPER,teak,box
+8d2394bab88b,MAIN_UP riser 5,UPPER,interior_white,box
+44806fec6d19,MAIN_UP tread 6,UPPER,teak,box
+9be64acca92a,MAIN_UP riser 6,UPPER,interior_white,box
+f6e3d2db4ed6,MAIN_UP tread 7,UPPER,teak,box
+36ef7d2d0ea4,MAIN_UP riser 7,UPPER,interior_white,box
+1eaceff50b16,MAIN_UP tread 8,UPPER,teak,box
+c9206e807643,MAIN_UP riser 8,UPPER,interior_white,box
+c6f89bdf53e7,MAIN_UP tread 9,UPPER,teak,box
+219525613666,MAIN_UP riser 9,UPPER,interior_white,box
+ec0bcda2ec53,MAIN_UP tread 10,UPPER,teak,box
+3e9add73602d,MAIN_UP riser 10,UPPER,interior_white,box
+6e53df1721ee,MAIN_UP tread 11,UPPER,teak,box
+d21d51bbed2a,MAIN_UP riser 11,UPPER,interior_white,box
+0b7dbc35b06c,MAIN_UP handrail -1,UPPER,brushed_steel,beam
+5f2fe19553c3,MAIN_UP baluster -1 0,UPPER,brushed_steel,beam
+b8d8a4943270,MAIN_UP baluster -1 4,UPPER,brushed_steel,beam
+502f385b302e,MAIN_UP baluster -1 8,UPPER,brushed_steel,beam
+dc1b31e7e418,MAIN_UP baluster -1 12,UPPER,brushed_steel,beam
+3e063c6acbcd,MAIN_UP handrail 1,UPPER,brushed_steel,beam
+ac8259f231a6,MAIN_UP baluster 1 0,UPPER,brushed_steel,beam
+20f2cd7e5664,MAIN_UP baluster 1 4,UPPER,brushed_steel,beam
+6376cd1299eb,MAIN_UP baluster 1 8,UPPER,brushed_steel,beam
+239e59b13406,MAIN_UP baluster 1 12,UPPER,brushed_steel,beam
+c5d0ced0b64b,MAIN_UP continuous upper landing,UPPER,teak,box
+81e3c04108b6,MAIN_UP upper guard top -1,UPPER,brushed_steel,beam
+33727fe0a36f,MAIN_UP upper guard post -1 -9.8,UPPER,brushed_steel,beam
+f5aa701e270b,MAIN_UP upper guard post -1 -8.3,UPPER,brushed_steel,beam
+2d1cb793e7d9,MAIN_UP upper guard post -1 -6.800000000000001,UPPER,brushed_steel,beam
+e398fee023e3,MAIN_UP upper guard post -1 -5.300000000000001,UPPER,brushed_steel,beam
+56ec854e7073,MAIN_UP upper guard top 1,UPPER,brushed_steel,beam
+95ed5dd86e96,MAIN_UP upper guard post 1 -9.8,UPPER,brushed_steel,beam
+aaf6aa7ece6e,MAIN_UP upper guard post 1 -8.3,UPPER,brushed_steel,beam
+d98334ef5008,MAIN_UP upper guard post 1 -6.800000000000001,UPPER,brushed_steel,beam
+6d315aaa0d4b,MAIN_UP upper guard post 1 -5.300000000000001,UPPER,brushed_steel,beam
+c73662dfcedb,MAIN_UP upper guard rear,UPPER,brushed_steel,beam
+2fef1c1ae1ea,FLY_UP tread 0,FLY,teak,box
+76f68f6788dc,FLY_UP riser 0,FLY,interior_white,box
+91092134cd95,FLY_UP tread 1,FLY,teak,box
+219d25132f07,FLY_UP riser 1,FLY,interior_white,box
+bbdc1aec59ab,FLY_UP tread 2,FLY,teak,box
+3f62a317c94f,FLY_UP riser 2,FLY,interior_white,box
+c594c7f5baae,FLY_UP tread 3,FLY,teak,box
+4c16ee51cd66,FLY_UP riser 3,FLY,interior_white,box
+5887039c07fb,FLY_UP tread 4,FLY,teak,box
+72b228801a9b,FLY_UP riser 4,FLY,interior_white,box
+5662dd12fcd1,FLY_UP tread 5,FLY,teak,box
+e58953b4f880,FLY_UP riser 5,FLY,interior_white,box
+7fa2e8e0d93f,FLY_UP tread 6,FLY,teak,box
+49eda6ad8715,FLY_UP riser 6,FLY,interior_white,box
+cd8d078b737d,FLY_UP tread 7,FLY,teak,box
+0528174ea8c6,FLY_UP riser 7,FLY,interior_white,box
+a8f824ec78c9,FLY_UP tread 8,FLY,teak,box
+4a2cf1ae381b,FLY_UP riser 8,FLY,interior_white,box
+157a4cbbcef5,FLY_UP tread 9,FLY,teak,box
+22e8f21116a0,FLY_UP riser 9,FLY,interior_white,box
+5ca97de97efa,FLY_UP tread 10,FLY,teak,box
+257dd690c873,FLY_UP riser 10,FLY,interior_white,box
+d043581ef827,FLY_UP tread 11,FLY,teak,box
+8046cbce2086,FLY_UP riser 11,FLY,interior_white,box
+4d34c79a428d,FLY_UP handrail -1,FLY,brushed_steel,beam
+475ae371010a,FLY_UP baluster -1 0,FLY,brushed_steel,beam
+a61b2795f226,FLY_UP baluster -1 4,FLY,brushed_steel,beam
+a73522ce2b91,FLY_UP baluster -1 8,FLY,brushed_steel,beam
+087540f5ea02,FLY_UP baluster -1 12,FLY,brushed_steel,beam
+2a131390c963,FLY_UP handrail 1,FLY,brushed_steel,beam
+e55d3c32b67f,FLY_UP baluster 1 0,FLY,brushed_steel,beam
+b60cdf591e9b,FLY_UP baluster 1 4,FLY,brushed_steel,beam
+83a48447b6d7,FLY_UP baluster 1 8,FLY,brushed_steel,beam
+2a6f97127787,FLY_UP baluster 1 12,FLY,brushed_steel,beam
+273ea20f9b9c,FLY_UP continuous upper landing,FLY,teak,box
+6ab8eabe1cbe,FLY_UP upper guard top -1,FLY,brushed_steel,beam
+a06caca4a7e9,FLY_UP upper guard post -1 -4.7,FLY,brushed_steel,beam
+06f49b849386,FLY_UP upper guard post -1 -3.2,FLY,brushed_steel,beam
+8ea79b9dc2b6,FLY_UP upper guard post -1 -1.7000000000000002,FLY,brushed_steel,beam
+ec712a952ca4,FLY_UP upper guard post -1 0.040000000000000036,FLY,brushed_steel,beam
+3a167bb406ee,FLY_UP upper guard top 1,FLY,brushed_steel,beam
+b195f136af60,FLY_UP upper guard post 1 -4.7,FLY,brushed_steel,beam
+55b3e272dd3f,FLY_UP upper guard post 1 -3.2,FLY,brushed_steel,beam
+22a2ed0d08dc,FLY_UP upper guard post 1 -1.7000000000000002,FLY,brushed_steel,beam
+88db8f90aed3,FLY_UP upper guard post 1 0.040000000000000036,FLY,brushed_steel,beam
+cc516fa29329,FLY_UP upper guard rear,FLY,brushed_steel,beam
+25a739111dab,Main side -1 skin 0 0,MAIN,superstructure_white,box
+d7125907808d,Main side -1 skin 0 1,MAIN,superstructure_white,box
+caf10a6e6d41,Main side -1 skin 0 2,MAIN,superstructure_white,box
+f48729020782,Main side -1 skin 0 3,MAIN,superstructure_white,box
+36e73be2a577,Main side -1 skin 0 4,MAIN,superstructure_white,box
+1724f9d14f7d,Main side -1 skin 1 0,MAIN,superstructure_white,box
+9ed8ede0cb13,Main side -1 skin 1 3,MAIN,superstructure_white,box
+049207054ad7,Main side -1 skin 1 4,MAIN,superstructure_white,box
+f8c63bf168a8,Main side -1 skin 2 0,MAIN,superstructure_white,box
+a08356223646,Main side -1 skin 2 1,MAIN,superstructure_white,box
+8e821562c66e,Main side -1 skin 2 2,MAIN,superstructure_white,box
+0fbbbf155e5f,Main side -1 skin 2 3,MAIN,superstructure_white,box
+1a8c3a3aac19,Main side -1 skin 2 4,MAIN,superstructure_white,box
+728a69a312ab,Main side -1 skin 3 0,MAIN,superstructure_white,box
+f665bd978fc5,Main side -1 skin 3 3,MAIN,superstructure_white,box
+bbd89bca3bb3,Main side -1 skin 3 4,MAIN,superstructure_white,box
+2053edcbd091,Main side -1 skin 4 0,MAIN,superstructure_white,box
+236dd9d8eaa7,Main side -1 skin 4 1,MAIN,superstructure_white,box
+3de6ed87e66c,Main side -1 skin 4 2,MAIN,superstructure_white,box
+311ab90f733e,Main side -1 skin 4 3,MAIN,superstructure_white,box
+767c2cde565e,Main side -1 skin 4 4,MAIN,superstructure_white,box
+f809c0617d21,Main side -1 skin 5 0,MAIN,superstructure_white,box
+b400b64947c8,Main side -1 skin 5 3,MAIN,superstructure_white,box
+b6272627a81d,Main side -1 skin 5 4,MAIN,superstructure_white,box
+ba24f81f4c17,Main side -1 skin 6 0,MAIN,superstructure_white,box
+5e470624f4e2,Main side -1 skin 6 1,MAIN,superstructure_white,box
+968261c125a0,Main side -1 skin 6 2,MAIN,superstructure_white,box
+a84534b52c3e,Main side -1 skin 6 3,MAIN,superstructure_white,box
+7d126fcc2cff,Main side -1 skin 6 4,MAIN,superstructure_white,box
+1866b3105f79,Main side -1 skin 7 4,MAIN,superstructure_white,box
+a12327dc73a3,Main side -1 skin 8 0,MAIN,superstructure_white,box
+ab6bf462bbd8,Main side -1 skin 8 1,MAIN,superstructure_white,box
+b6c2a5e5dd94,Main side -1 skin 8 2,MAIN,superstructure_white,box
+103fb1cfd6c6,Main side -1 skin 8 3,MAIN,superstructure_white,box
+1fe9aa2b2d67,Main side -1 skin 8 4,MAIN,superstructure_white,box
+ece6e7f355b0,Main side -1 skin 9 0,MAIN,superstructure_white,box
+fb02a8386e39,Main side -1 skin 9 2,MAIN,superstructure_white,box
+862e33c48ad5,Main side -1 skin 9 3,MAIN,superstructure_white,box
+b317dffd88e8,Main side -1 skin 9 4,MAIN,superstructure_white,box
+bb0770f20fc2,Main side -1 skin 10 0,MAIN,superstructure_white,box
+ad7c984162a4,Main side -1 skin 10 1,MAIN,superstructure_white,box
+3c5260148882,Main side -1 skin 10 2,MAIN,superstructure_white,box
+f9dd88b50748,Main side -1 skin 10 3,MAIN,superstructure_white,box
+bd4574053889,Main side -1 skin 10 4,MAIN,superstructure_white,box
+65d8f7de8071,Main side -1 skin 11 0,MAIN,superstructure_white,box
+e8ebb354ad35,Main side -1 skin 11 2,MAIN,superstructure_white,box
+bada336d1671,Main side -1 skin 11 3,MAIN,superstructure_white,box
+22d8a6a2eaf4,Main side -1 skin 11 4,MAIN,superstructure_white,box
+c3cc323ad8a5,Main side -1 skin 12 0,MAIN,superstructure_white,box
+6e7f8fe15981,Main side -1 skin 12 1,MAIN,superstructure_white,box
+8251ff7d99ad,Main side -1 skin 12 2,MAIN,superstructure_white,box
+e6acc5ab2352,Main side -1 skin 12 3,MAIN,superstructure_white,box
+23fd13b8beaf,Main side -1 skin 12 4,MAIN,superstructure_white,box
+3f2d40dad01e,Main window -1 0 glass,GLASS,glass,box
+093ed418a09c,Main window -1 0 continuous frame,MAIN,window_frame,box
+91c08f171e63,Main window -1 1 glass,GLASS,glass,box
+b26d30d4a2c7,Main window -1 1 continuous frame,MAIN,window_frame,box
+7444764ff85f,Main window -1 2 glass,GLASS,glass,box
+7881fe900c89,Main window -1 2 continuous frame,MAIN,window_frame,box
+1dd574e59452,MAIN_SIDE_-1 leaf,MAIN_SIDE_-1,superstructure_white,box
+88403a6a77aa,MAIN_SIDE_-1 handle -0.1,MAIN_SIDE_-1,brushed_steel,box
+e1e1433bdba1,MAIN_SIDE_-1 handle 0.1,MAIN_SIDE_-1,brushed_steel,box
+5212c6bf30a4,Main side door rebate -1,MAIN,window_frame,box
+cf7aead3d6c5,Main window -1 4 glass,GLASS,glass,box
+80608e671ebf,Main window -1 4 continuous frame,MAIN,window_frame,box
+325638511a30,Main window -1 5 glass,GLASS,glass,box
+e62abfdec4bb,Main window -1 5 continuous frame,MAIN,window_frame,box
+6c4dc2144ba8,Upper side -1 skin 0 0,UPPER,superstructure_white,box
+ee07c863ea08,Upper side -1 skin 0 1,UPPER,superstructure_white,box
+5bae25b2bdbd,Upper side -1 skin 0 2,UPPER,superstructure_white,box
+fada7e7fc5e9,Upper side -1 skin 1 0,UPPER,superstructure_white,box
+95771e114d00,Upper side -1 skin 1 2,UPPER,superstructure_white,box
+d8c6cbc0f994,Upper side -1 skin 2 0,UPPER,superstructure_white,box
+3d416ec7d1c1,Upper side -1 skin 2 1,UPPER,superstructure_white,box
+a8d1583fd82a,Upper side -1 skin 2 2,UPPER,superstructure_white,box
+75301ee31d77,Upper side -1 skin 3 0,UPPER,superstructure_white,box
+fe0138f79adc,Upper side -1 skin 3 2,UPPER,superstructure_white,box
+4090c342ef84,Upper side -1 skin 4 0,UPPER,superstructure_white,box
+35a5a05929cd,Upper side -1 skin 4 1,UPPER,superstructure_white,box
+f96cbdacd5cc,Upper side -1 skin 4 2,UPPER,superstructure_white,box
+c59d018239d7,Upper side -1 skin 5 0,UPPER,superstructure_white,box
+1ac23f5dbc74,Upper side -1 skin 5 2,UPPER,superstructure_white,box
+1231b1456976,Upper side -1 skin 6 0,UPPER,superstructure_white,box
+6d920b65ed97,Upper side -1 skin 6 1,UPPER,superstructure_white,box
+96d6c34fc809,Upper side -1 skin 6 2,UPPER,superstructure_white,box
+e9e254c13fcc,Upper window -1 0 glass,GLASS,glass,box
+821af6aae03a,Upper window -1 0 continuous frame,UPPER,window_frame,box
+7975bf8a91d0,Upper window -1 1 glass,GLASS,glass,box
+87052cbc71ff,Upper window -1 1 continuous frame,UPPER,window_frame,box
+7f916dc73d37,Upper window -1 2 glass,GLASS,glass,box
+b311c1fae99d,Upper window -1 2 continuous frame,UPPER,window_frame,box
+8fc0a082d423,Main eave -1,UPPER,superstructure_white,box
+1d3fbb91e7a4,Upper eave -1,FLY,superstructure_white,box
+c5edb940d6f9,Main side 1 skin 0 0,MAIN,superstructure_white,box
+73debb097a24,Main side 1 skin 0 1,MAIN,superstructure_white,box
+4f54124b8c19,Main side 1 skin 0 2,MAIN,superstructure_white,box
+d694574cafd6,Main side 1 skin 0 3,MAIN,superstructure_white,box
+3b9c92a0a7ca,Main side 1 skin 0 4,MAIN,superstructure_white,box
+4e1799fea21e,Main side 1 skin 1 0,MAIN,superstructure_white,box
+aa8db661a731,Main side 1 skin 1 3,MAIN,superstructure_white,box
+93e71519b92f,Main side 1 skin 1 4,MAIN,superstructure_white,box
+512125dbfe75,Main side 1 skin 2 0,MAIN,superstructure_white,box
+2d75b1d9bd08,Main side 1 skin 2 1,MAIN,superstructure_white,box
+aefebc319708,Main side 1 skin 2 2,MAIN,superstructure_white,box
+5d8e21e9dfbd,Main side 1 skin 2 3,MAIN,superstructure_white,box
+d3663a8ba86f,Main side 1 skin 2 4,MAIN,superstructure_white,box
+8bd1a78f4fb0,Main side 1 skin 3 0,MAIN,superstructure_white,box
+bfa1d573b703,Main side 1 skin 3 3,MAIN,superstructure_white,box
+edbef994cc04,Main side 1 skin 3 4,MAIN,superstructure_white,box
+750be0dddd28,Main side 1 skin 4 0,MAIN,superstructure_white,box
+cdbada0bc674,Main side 1 skin 4 1,MAIN,superstructure_white,box
+974cd7f2eac0,Main side 1 skin 4 2,MAIN,superstructure_white,box
+53f5c87e5cab,Main side 1 skin 4 3,MAIN,superstructure_white,box
+0958852b2744,Main side 1 skin 4 4,MAIN,superstructure_white,box
+54afc5b917f2,Main side 1 skin 5 0,MAIN,superstructure_white,box
+18aa91bdc729,Main side 1 skin 5 3,MAIN,superstructure_white,box
+ade9796e23b0,Main side 1 skin 5 4,MAIN,superstructure_white,box
+56afaed45c5c,Main side 1 skin 6 0,MAIN,superstructure_white,box
+070fe7b28afe,Main side 1 skin 6 1,MAIN,superstructure_white,box
+f83a56dc689a,Main side 1 skin 6 2,MAIN,superstructure_white,box
+8702a5c98930,Main side 1 skin 6 3,MAIN,superstructure_white,box
+f2e43da90e27,Main side 1 skin 6 4,MAIN,superstructure_white,box
+d937b1639645,Main side 1 skin 7 4,MAIN,superstructure_white,box
+db215524d584,Main side 1 skin 8 0,MAIN,superstructure_white,box
+499e6bcc575a,Main side 1 skin 8 1,MAIN,superstructure_white,box
+0391ee6a9529,Main side 1 skin 8 2,MAIN,superstructure_white,box
+f4ebb7102fdf,Main side 1 skin 8 3,MAIN,superstructure_white,box
+65b1b6c81961,Main side 1 skin 8 4,MAIN,superstructure_white,box
+bba55b5b74a7,Main side 1 skin 9 0,MAIN,superstructure_white,box
+60a33ca5d80d,Main side 1 skin 9 2,MAIN,superstructure_white,box
+a1dbddf87a5b,Main side 1 skin 9 3,MAIN,superstructure_white,box
+5b1eb52f9cf4,Main side 1 skin 9 4,MAIN,superstructure_white,box
+b03b56582d62,Main side 1 skin 10 0,MAIN,superstructure_white,box
+70d85ab85010,Main side 1 skin 10 1,MAIN,superstructure_white,box
+fb74ce89e22e,Main side 1 skin 10 2,MAIN,superstructure_white,box
+363fbac9be7b,Main side 1 skin 10 3,MAIN,superstructure_white,box
+32b49b5c6c37,Main side 1 skin 10 4,MAIN,superstructure_white,box
+c67db3d10fa2,Main side 1 skin 11 0,MAIN,superstructure_white,box
+5eabd5f7cb9b,Main side 1 skin 11 2,MAIN,superstructure_white,box
+1bf036333484,Main side 1 skin 11 3,MAIN,superstructure_white,box
+91f27201678e,Main side 1 skin 11 4,MAIN,superstructure_white,box
+d35e0ed2e79b,Main side 1 skin 12 0,MAIN,superstructure_white,box
+8801c107fdde,Main side 1 skin 12 1,MAIN,superstructure_white,box
+b84deb19357a,Main side 1 skin 12 2,MAIN,superstructure_white,box
+483bfbbb4487,Main side 1 skin 12 3,MAIN,superstructure_white,box
+e8c7d238efd8,Main side 1 skin 12 4,MAIN,superstructure_white,box
+e06396a4f757,Main window 1 0 glass,GLASS,glass,box
+dda2bb9835f7,Main window 1 0 continuous frame,MAIN,window_frame,box
+dbc2e6b57065,Main window 1 1 glass,GLASS,glass,box
+684be45c4888,Main window 1 1 continuous frame,MAIN,window_frame,box
+b2aa4604ef70,Main window 1 2 glass,GLASS,glass,box
+3eea2d8cb422,Main window 1 2 continuous frame,MAIN,window_frame,box
+7627add12080,MAIN_SIDE_1 leaf,MAIN_SIDE_1,superstructure_white,box
+70fda165a87b,MAIN_SIDE_1 handle -0.1,MAIN_SIDE_1,brushed_steel,box
+5e1b444238c0,MAIN_SIDE_1 handle 0.1,MAIN_SIDE_1,brushed_steel,box
+9a0381091e45,Main side door rebate 1,MAIN,window_frame,box
+374071c989e6,Main window 1 4 glass,GLASS,glass,box
+5dbf170f8ef7,Main window 1 4 continuous frame,MAIN,window_frame,box
+0b54f8798c26,Main window 1 5 glass,GLASS,glass,box
+91d10ccb3076,Main window 1 5 continuous frame,MAIN,window_frame,box
+57232eaad976,Upper side 1 skin 0 0,UPPER,superstructure_white,box
+fa0033070cf7,Upper side 1 skin 0 1,UPPER,superstructure_white,box
+c2e8eb96f609,Upper side 1 skin 0 2,UPPER,superstructure_white,box
+f142b6c7d6b3,Upper side 1 skin 1 0,UPPER,superstructure_white,box
+14344cca2416,Upper side 1 skin 1 2,UPPER,superstructure_white,box
+6197f57e94d0,Upper side 1 skin 2 0,UPPER,superstructure_white,box
+2574b916821f,Upper side 1 skin 2 1,UPPER,superstructure_white,box
+7295f0171cc7,Upper side 1 skin 2 2,UPPER,superstructure_white,box
+19d70f5d1352,Upper side 1 skin 3 0,UPPER,superstructure_white,box
+be0800f0b87a,Upper side 1 skin 3 2,UPPER,superstructure_white,box
+1693e08a6f0f,Upper side 1 skin 4 0,UPPER,superstructure_white,box
+5647a6bdf32a,Upper side 1 skin 4 1,UPPER,superstructure_white,box
+08c642f21c91,Upper side 1 skin 4 2,UPPER,superstructure_white,box
+a4ced6f17502,Upper side 1 skin 5 0,UPPER,superstructure_white,box
+e575c30d73e5,Upper side 1 skin 5 2,UPPER,superstructure_white,box
+33dcb876a430,Upper side 1 skin 6 0,UPPER,superstructure_white,box
+f66bee801e9a,Upper side 1 skin 6 1,UPPER,superstructure_white,box
+bf21aae6fe3a,Upper side 1 skin 6 2,UPPER,superstructure_white,box
+96af05fce83f,Upper window 1 0 glass,GLASS,glass,box
+8d4c13403177,Upper window 1 0 continuous frame,UPPER,window_frame,box
+0c5456f0bf7f,Upper window 1 1 glass,GLASS,glass,box
+327112e06fdd,Upper window 1 1 continuous frame,UPPER,window_frame,box
+fe282a119936,Upper window 1 2 glass,GLASS,glass,box
+faf3a76c2228,Upper window 1 2 continuous frame,UPPER,window_frame,box
+9a2cc8e91bc5,Main eave 1,UPPER,superstructure_white,box
+c126f6878ce2,Upper eave 1,FLY,superstructure_white,box
+1dc30ec7856c,MAIN aft jamb wall -1,MAIN,superstructure_white,box
+1e4c38d9e597,MAIN aft jamb wall 1,MAIN,superstructure_white,box
+c2a901113fe9,MAIN aft door lintel,MAIN,superstructure_white,box
+bdfe45a1e4ea,MAIN_AFT leaf,MAIN_AFT,superstructure_white,box
+49a673f560df,MAIN_AFT handle -0.1,MAIN_AFT,brushed_steel,box
+17d3cdb100cc,MAIN_AFT handle 0.1,MAIN_AFT,brushed_steel,box
+1f1ffd84161b,MAIN aft door frame -1,MAIN,window_frame,box
+8191c71f97fa,MAIN aft door frame 1,MAIN,window_frame,box
+2c0c1aa0b307,MAIN aft top seal,MAIN,window_frame,box
+fe9c656db105,UPPER aft jamb wall -1,UPPER,superstructure_white,box
+b1530c399159,UPPER aft jamb wall 1,UPPER,superstructure_white,box
+ba32545d4f5f,UPPER aft door lintel,UPPER,superstructure_white,box
+ed7d29d073ac,UPPER_AFT leaf,UPPER_AFT,superstructure_white,box
+6db6b19e6b86,UPPER_AFT handle -0.1,UPPER_AFT,brushed_steel,box
+86c85f5579ff,UPPER_AFT handle 0.1,UPPER_AFT,brushed_steel,box
+43746436fd8d,UPPER aft door frame -1,UPPER,window_frame,box
+cfe7df2cf2ce,UPPER aft door frame 1,UPPER,window_frame,box
+72d2024a7afd,UPPER aft top seal,UPPER,window_frame,box
+4f2f8fac96ff,Main forward bulkhead,MAIN,superstructure_white,box
+48833a4c8506,BOW_SERVICE_DOOR leaf,BOW_SERVICE_DOOR,superstructure_white,box
+2d5c20390638,BOW_SERVICE_DOOR handle -0.1,BOW_SERVICE_DOOR,brushed_steel,box
+d98d37e8175b,BOW_SERVICE_DOOR handle 0.1,BOW_SERVICE_DOOR,brushed_steel,box
+6b3f4cbacb79,Bridge front sill,UPPER,superstructure_white,box
+6af8e24cce2e,Bridge front header,UPPER,superstructure_white,box
+c6961d6c3694,Bridge front glass -1,GLASS,glass,box
+847c661661da,Bridge front glass 0,GLASS,glass,box
+f0d48dc01355,Bridge front glass 1,GLASS,glass,box
+6d7a8111825c,Bridge continuous front frame,UPPER,window_frame,box
+50ed4f2d6597,Bridge raked corner post -1,UPPER,superstructure_white,mesh
+9ec1e56b5d9e,Bridge raked corner post 1,UPPER,superstructure_white,mesh
+b11c183b200e,Lower sealed liner -1,LOWER,interior_white,box
+7b6360f14228,Lower sealed liner 1,LOWER,interior_white,box
+ea6d70199e4a,Lower aft liner,LOWER,interior_white,box
+158a07958d75,Lower transverse -9.15,LOWER,interior_white,box
+cbafc1002646,Lower transverse -9.15_DOOR leaf,Lower transverse -9.15_DOOR,superstructure_white,box
+894be8de3f2d,Lower transverse -9.15_DOOR handle -0.1,Lower transverse -9.15_DOOR,brushed_steel,box
+b8543ffbf468,Lower transverse -9.15_DOOR handle 0.1,Lower transverse -9.15_DOOR,brushed_steel,box
+e2cecfadaa28,Lower transverse -9.15 timber jamb,LOWER,interior_wood,box
+c12084b71307,Lower transverse -1.8,LOWER,interior_white,box
+3100dee54277,Lower transverse -1.8_DOOR leaf,Lower transverse -1.8_DOOR,superstructure_white,box
+d4d961e5ef3c,Lower transverse -1.8_DOOR handle -0.1,Lower transverse -1.8_DOOR,brushed_steel,box
+d11970e5e77b,Lower transverse -1.8_DOOR handle 0.1,Lower transverse -1.8_DOOR,brushed_steel,box
+9ac0f5a84c82,Lower transverse -1.8 timber jamb,LOWER,interior_wood,box
+3b74e59694fb,Lower transverse 2.35,LOWER,interior_white,box
+70094034d16d,Lower transverse 2.35_DOOR leaf,Lower transverse 2.35_DOOR,superstructure_white,box
+3c916b24ce27,Lower transverse 2.35_DOOR handle -0.1,Lower transverse 2.35_DOOR,brushed_steel,box
+bb3bbb859563,Lower transverse 2.35_DOOR handle 0.1,Lower transverse 2.35_DOOR,brushed_steel,box
+60b38d7b0000,Lower transverse 2.35 timber jamb,LOWER,interior_wood,box
+60d32e8d83b2,Lower transverse 7.35,LOWER,interior_white,box
+aaa519d9581c,Lower transverse 7.35_DOOR leaf,Lower transverse 7.35_DOOR,superstructure_white,box
+4617d12e1873,Lower transverse 7.35_DOOR handle -0.1,Lower transverse 7.35_DOOR,brushed_steel,box
+48d5526e9ac4,Lower transverse 7.35_DOOR handle 0.1,Lower transverse 7.35_DOOR,brushed_steel,box
+73bab4101eba,Lower transverse 7.35 timber jamb,LOWER,interior_wood,box
+fe796a5fb335,Aft cabin wall -1,LOWER,interior_white,box
+445da6d5f342,Aft cabin wall -1_DOOR leaf,Aft cabin wall -1_DOOR,superstructure_white,box
+0a8bdd017676,Aft cabin wall -1_DOOR handle -0.1,Aft cabin wall -1_DOOR,brushed_steel,box
+e1d54ee10cb1,Aft cabin wall -1_DOOR handle 0.1,Aft cabin wall -1_DOOR,brushed_steel,box
+6aa9369f24b7,Aft cabin wall -1 timber jamb,LOWER,interior_wood,box
+627670532eff,Fore cabin wall -1,LOWER,interior_white,box
+b75d203678b2,Fore cabin wall -1_DOOR leaf,Fore cabin wall -1_DOOR,superstructure_white,box
+42e5e2a00cbb,Fore cabin wall -1_DOOR handle -0.1,Fore cabin wall -1_DOOR,brushed_steel,box
+8945eb08ae28,Fore cabin wall -1_DOOR handle 0.1,Fore cabin wall -1_DOOR,brushed_steel,box
+e4ab039f39d0,Fore cabin wall -1 timber jamb,LOWER,interior_wood,box
+ebab73dacb0e,ME service wall -1,LOWER,interior_white,box
+1f1687a93f54,ME service wall -1_DOOR leaf,ME service wall -1_DOOR,superstructure_white,box
+277795085902,ME service wall -1_DOOR handle -0.1,ME service wall -1_DOOR,brushed_steel,box
+738dc0c1df51,ME service wall -1_DOOR handle 0.1,ME service wall -1_DOOR,brushed_steel,box
+4fadec8bad32,ME service wall -1 timber jamb,LOWER,interior_wood,box
+69e8a244d271,aft bed base -1 0,LOWER,interior_wood,box
+3f8117cf85b3,aft mattress -1 0,LOWER,fabric,box
+4f17d29dfb82,aft pillow -1 0,LOWER,interior_white,box
+ab1ac912e6cc,aft bed base -1 1,LOWER,interior_wood,box
+16f906e5d876,aft mattress -1 1,LOWER,fabric,box
+8b8f69626f7b,aft pillow -1 1,LOWER,interior_white,box
+bcc498c47412,fore bed base -1 0,LOWER,interior_wood,box
+c811d71b9e9f,fore mattress -1 0,LOWER,fabric,box
+c5a0b99e0f7c,fore pillow -1 0,LOWER,interior_white,box
+e4508f99d28a,fore bed base -1 1,LOWER,interior_wood,box
+718710ed562b,fore mattress -1 1,LOWER,fabric,box
+0f45bedec38e,fore pillow -1 1,LOWER,interior_white,box
+ce562130a4ad,Cabin desk -1 -12.65,LOWER,interior_wood,box
+e50c556f0f51,Cabin light -1 -12.65,ELECTRICAL,lamp,box
+ffc5e56625cd,Cabin desk -1 3.1,LOWER,interior_wood,box
+dd6f1d25ff8e,Cabin light -1 3.1,ELECTRICAL,lamp,box
+de94a4914a3a,Cabin desk -1 6.5,LOWER,interior_wood,box
+58e20fef2d3b,Cabin light -1 6.5,ELECTRICAL,lamp,box
+89ccc93e836e,Master bed base -1,MAIN,interior_wood,box
+3980e9dc8c57,Master mattress -1,MAIN,fabric,box
+09f1b5e88d0a,Master pillow -1,MAIN,interior_white,box
+ecfea09f4d38,Diesel engine block -1,LOWER,engine_metal,box
+cdba696fe0b8,Engine head -1 0,LOWER,brushed_steel,box
+d6dd7e795b2c,Engine head -1 1,LOWER,brushed_steel,box
+c1c97260db87,Engine head -1 2,LOWER,brushed_steel,box
+5177f8b43e19,Engine head -1 3,LOWER,brushed_steel,box
+2b4d525e1e2b,Engine head -1 4,LOWER,brushed_steel,box
+9c7774e17662,Engine head -1 5,LOWER,brushed_steel,box
+31e31c89735a,Propeller shaft -1,HULL,brushed_steel,cylinder
+fa6e6aedf85d,Marine propeller hub -1,HULL,brass,cylinder
+8548376fdd6f,Marine propeller blade -1 0,HULL,brass,box
+43db85b506ed,Marine propeller blade -1 1,HULL,brass,box
+a14cd504c5e0,Marine propeller blade -1 2,HULL,brass,box
+0b8ed25bf279,Marine propeller blade -1 3,HULL,brass,box
+0a12b37302dd,Aft cabin wall 1,LOWER,interior_white,box
+fa85faa4ff70,Aft cabin wall 1_DOOR leaf,Aft cabin wall 1_DOOR,superstructure_white,box
+4cb5fc5f6b90,Aft cabin wall 1_DOOR handle -0.1,Aft cabin wall 1_DOOR,brushed_steel,box
+bdc9ec1538d9,Aft cabin wall 1_DOOR handle 0.1,Aft cabin wall 1_DOOR,brushed_steel,box
+b375fddeb659,Aft cabin wall 1 timber jamb,LOWER,interior_wood,box
+98547a06b92a,Fore cabin wall 1,LOWER,interior_white,box
+5e6e591377e7,Fore cabin wall 1_DOOR leaf,Fore cabin wall 1_DOOR,superstructure_white,box
+353e7c9d4fd3,Fore cabin wall 1_DOOR handle -0.1,Fore cabin wall 1_DOOR,brushed_steel,box
+db522edbad01,Fore cabin wall 1_DOOR handle 0.1,Fore cabin wall 1_DOOR,brushed_steel,box
+623736e64dfa,Fore cabin wall 1 timber jamb,LOWER,interior_wood,box
+10d23f37997a,ME service wall 1,LOWER,interior_white,box
+3c634f94cd0c,ME service wall 1_DOOR leaf,ME service wall 1_DOOR,superstructure_white,box
+39e549a95a5f,ME service wall 1_DOOR handle -0.1,ME service wall 1_DOOR,brushed_steel,box
+21e6a459117d,ME service wall 1_DOOR handle 0.1,ME service wall 1_DOOR,brushed_steel,box
+450a774c7526,ME service wall 1 timber jamb,LOWER,interior_wood,box
+e91c1848d9e3,aft bed base 1 0,LOWER,interior_wood,box
+b6283a954e66,aft mattress 1 0,LOWER,fabric,box
+f09f9e6a159e,aft pillow 1 0,LOWER,interior_white,box
+aed815a6b5d9,aft bed base 1 1,LOWER,interior_wood,box
+2c79c8ab745f,aft mattress 1 1,LOWER,fabric,box
+989944de0c8e,aft pillow 1 1,LOWER,interior_white,box
+79d5a940efef,fore bed base 1 0,LOWER,interior_wood,box
+4b6fff93e52f,fore mattress 1 0,LOWER,fabric,box
+8d919d8579db,fore pillow 1 0,LOWER,interior_white,box
+887f076e4843,fore bed base 1 1,LOWER,interior_wood,box
+8f1853355d71,fore mattress 1 1,LOWER,fabric,box
+40f06ee6d917,fore pillow 1 1,LOWER,interior_white,box
+654509919b7d,Cabin desk 1 -12.65,LOWER,interior_wood,box
+9f3ff63c04a6,Cabin light 1 -12.65,ELECTRICAL,lamp,box
+af6dd009c44c,Cabin desk 1 3.1,LOWER,interior_wood,box
+25feb9f456f3,Cabin light 1 3.1,ELECTRICAL,lamp,box
+3a2e48be94d5,Cabin desk 1 6.5,LOWER,interior_wood,box
+671461831d21,Cabin light 1 6.5,ELECTRICAL,lamp,box
+dac297d441ed,Master bed base 1,MAIN,interior_wood,box
+c16f8a2b5337,Master mattress 1,MAIN,fabric,box
+95dac2f6b723,Master pillow 1,MAIN,interior_white,box
+d725ee5799f1,Diesel engine block 1,LOWER,engine_metal,box
+4ddd380d6b7c,Engine head 1 0,LOWER,brushed_steel,box
+05a41206baa6,Engine head 1 1,LOWER,brushed_steel,box
+032844c9a3e1,Engine head 1 2,LOWER,brushed_steel,box
+255562d970b7,Engine head 1 3,LOWER,brushed_steel,box
+d32d9e75aba9,Engine head 1 4,LOWER,brushed_steel,box
+8e1012b9b7ff,Engine head 1 5,LOWER,brushed_steel,box
+fb03c4a1f971,Propeller shaft 1,HULL,brushed_steel,cylinder
+54dad90929cd,Marine propeller hub 1,HULL,brass,cylinder
+53abdea58c72,Marine propeller blade 1 0,HULL,brass,box
+db7ce52cd31f,Marine propeller blade 1 1,HULL,brass,box
+46a33f0ae189,Marine propeller blade 1 2,HULL,brass,box
+8b4462e8aa8d,Marine propeller blade 1 3,HULL,brass,box
+d11ba6920abb,Main owner cabin bulkhead,MAIN,interior_white,box
+5b91ac4668b8,Main owner cabin bulkhead_DOOR leaf,Main owner cabin bulkhead_DOOR,superstructure_white,box
+4a3614a6bb63,Main owner cabin bulkhead_DOOR handle -0.1,Main owner cabin bulkhead_DOOR,brushed_steel,box
+122a89964560,Main owner cabin bulkhead_DOOR handle 0.1,Main owner cabin bulkhead_DOOR,brushed_steel,box
+732075a20cb0,Main owner cabin bulkhead timber jamb,MAIN,interior_wood,box
+62eae6c1c859,Saloon table,MAIN,interior_wood,box
+5177605dea78,Table pedestal -4.15,MAIN,brushed_steel,box
+c6734c8a0f76,Table pedestal -2.05,MAIN,brushed_steel,box
+d20c66aca04f,Saloon bench -1,MAIN,fabric,box
+9427edf22f3f,Saloon backrest -1,MAIN,fabric,box
+f31243d7c900,Galley countertop,MAIN,countertop,box
+ba85a6804ba6,Galley cabinetry,MAIN,interior_wood,box
+c0e294673d37,Galley drawer -0.7,MAIN,interior_white,box
+497f59f9b9c0,Galley drawer 0.0,MAIN,interior_white,box
+87c4d08211fc,Galley drawer 0.7,MAIN,interior_white,box
+75311eaca208,Galley drawer 1.4,MAIN,interior_white,box
+145b544c49e5,Workshop counter,MAIN,countertop,box
+b340c6b5f815,Workshop base,MAIN,interior_white,box
+403c7b9733e5,Workshop tool board 0,MAIN,engine_metal,box
+e428cb670047,Workshop tool board 1,MAIN,engine_metal,box
+2dd2cd49d990,Workshop tool board 2,MAIN,engine_metal,box
+fb6cedfc1125,Workshop tool board 3,MAIN,engine_metal,box
+aac5a4d7d274,Workshop tool board 4,MAIN,engine_metal,box
+847666e4c7fe,Workshop tool board 5,MAIN,engine_metal,box
+f9ba1d1a1917,Workshop tool board 6,MAIN,engine_metal,box
+fbc61f73159a,Upper lounge sofa 1,UPPER,fabric,box
+50dc0eaa35fa,Upper lounge back 1,UPPER,fabric,box
+14e215fbcc06,Upper lounge table,UPPER,interior_wood,box
+cab386d436a1,Bridge console,UPPER,console,box
+752216c50d43,Bridge display bezel -0.9,UPPER,window_frame,box
+028a1b356248,Bridge navigation display -0.9,UPPER,display,box
+d58ca28b7026,Bridge display bezel 0,UPPER,window_frame,box
+510e9a764ea4,Bridge navigation display 0,UPPER,display,box
+bd675e39360a,Bridge display bezel 0.9,UPPER,window_frame,box
+6914e9193dd1,Bridge navigation display 0.9,UPPER,display,box
+004cedd94825,Bridge helm seat pedestal -0.65,UPPER,brushed_steel,cylinder
+49ae9c8748a0,Bridge helm cushion -0.65,UPPER,fabric,box
+6b878b0ec831,Bridge helm back -0.65,UPPER,fabric,box
+695444da7cf9,Bridge helm seat pedestal 0.65,UPPER,brushed_steel,cylinder
+e57b9c3e014f,Bridge helm cushion 0.65,UPPER,fabric,box
+7fb0e30dec0f,Bridge helm back 0.65,UPPER,fabric,box
+6f7d22d687a0,Bridge steering wheel,UPPER,window_frame,mesh
+6e65883b8e29,Bridge steering hub,UPPER,brushed_steel,cylinder
+8cc9a2c23b69,Bridge wheel spoke 90,UPPER,brushed_steel,beam
+efffdf8a217c,Bridge wheel spoke 210,UPPER,brushed_steel,beam
+b60dac81f4f9,Bridge wheel spoke 330,UPPER,brushed_steel,beam
+97dcb7b0435f,Bridge throttle pedestal 0.89,UPPER,window_frame,box
+6515853658eb,Bridge throttle lever 0.89,UPPER,brushed_steel,beam
+559a50fb3d7e,Bridge throttle grip 0.89,UPPER,window_frame,box
+19e5c38fa56e,Bridge throttle pedestal 1.05,UPPER,window_frame,box
+890c84d6c7c9,Bridge throttle lever 1.05,UPPER,brushed_steel,beam
+04f48e39ee5f,Bridge throttle grip 1.05,UPPER,window_frame,box
+057d07a3706a,Flybridge console,FLY,console,box
+f0090cc9119f,Flybridge display bezel -0.9,FLY,window_frame,box
+30e7582f2e9e,Flybridge navigation display -0.9,FLY,display,box
+5558a06fd1c0,Flybridge display bezel 0,FLY,window_frame,box
+a7667523b439,Flybridge navigation display 0,FLY,display,box
+ee53171ddc2f,Flybridge display bezel 0.9,FLY,window_frame,box
+1e3f6c24d0c6,Flybridge navigation display 0.9,FLY,display,box
+1c0d5e31d313,Flybridge helm seat pedestal -0.65,FLY,brushed_steel,cylinder
+b90c8c721de3,Flybridge helm cushion -0.65,FLY,fabric,box
+7bb55c0d2377,Flybridge helm back -0.65,FLY,fabric,box
+7b7198b689a9,Flybridge helm seat pedestal 0.65,FLY,brushed_steel,cylinder
+ecb67f8d7b49,Flybridge helm cushion 0.65,FLY,fabric,box
+cd459944bf9f,Flybridge helm back 0.65,FLY,fabric,box
+35a1405be51a,Flybridge steering wheel,FLY,window_frame,mesh
+7daf21e1d106,Flybridge steering hub,FLY,brushed_steel,cylinder
+6e865ed7c0c3,Flybridge wheel spoke 90,FLY,brushed_steel,beam
+68ad9dbf6337,Flybridge wheel spoke 210,FLY,brushed_steel,beam
+31b482502379,Flybridge wheel spoke 330,FLY,brushed_steel,beam
+c3ebddd29a31,Flybridge throttle pedestal 0.89,FLY,window_frame,box
+104057357f8b,Flybridge throttle lever 0.89,FLY,brushed_steel,beam
+009c8a639710,Flybridge throttle grip 0.89,FLY,window_frame,box
+b576ef78de17,Flybridge throttle pedestal 1.05,FLY,window_frame,box
+0723618a1fdc,Flybridge throttle lever 1.05,FLY,brushed_steel,beam
+8027ffba3f7b,Flybridge throttle grip 1.05,FLY,window_frame,box
+5210ccd0cbc5,ME M1 bezel,UPPER,window_frame,box
+f89f23870317,ME M1 preview face,UPPER,me_display,box
+235ba5115145,ME M2 bezel,MAIN,window_frame,box
+cfce0f0aebbb,ME M2 preview face,MAIN,me_display,box
+f0b3d8699f67,ME M3 bezel,MAIN,window_frame,box
+11c901938578,ME M3 preview face,MAIN,me_display,box
+767e2f799f36,ME M4 bezel,MAIN,window_frame,box
+c509560385c0,ME M4 preview face,MAIN,me_display,box
+47ef055ba001,ME M5 bezel,LOWER,window_frame,box
+f4212108e940,ME M5 preview face,LOWER,me_display,box
+03017e34bb27,ME M6 bezel,LOWER,window_frame,box
+987fc52690bd,ME M6 preview face,LOWER,me_display,box
+1fcb13c82508,ME rack -0.8,LOWER,console,box
+ede8e31595e1,ME drive slot -0.8 0,LOWER,engine_metal,box
+af42eedcc2d3,ME status -0.8 0,ELECTRICAL,lamp,box
+bd8b57a5afdb,ME drive slot -0.8 1,LOWER,engine_metal,box
+7263d66a1b22,ME status -0.8 1,ELECTRICAL,lamp,box
+c73db0db9989,ME drive slot -0.8 2,LOWER,engine_metal,box
+d2fd30b49c08,ME status -0.8 2,ELECTRICAL,lamp,box
+a25d9755090d,ME drive slot -0.8 3,LOWER,engine_metal,box
+93d23be832c8,ME status -0.8 3,ELECTRICAL,lamp,box
+26d146a6458a,ME drive slot -0.8 4,LOWER,engine_metal,box
+5481c90b3132,ME status -0.8 4,ELECTRICAL,lamp,box
+76b8be806af7,ME rack 0.2,LOWER,console,box
+2fa4ba0d5c30,ME drive slot 0.2 0,LOWER,engine_metal,box
+75aa987efdf4,ME status 0.2 0,ELECTRICAL,lamp,box
+8aac81ca47f8,ME drive slot 0.2 1,LOWER,engine_metal,box
+538d1748413e,ME status 0.2 1,ELECTRICAL,lamp,box
+a9a53247c185,ME drive slot 0.2 2,LOWER,engine_metal,box
+ca1dbae1e363,ME status 0.2 2,ELECTRICAL,lamp,box
+803b1c8bb81e,ME drive slot 0.2 3,LOWER,engine_metal,box
+af326834f5c9,ME status 0.2 3,ELECTRICAL,lamp,box
+70955d942bfc,ME drive slot 0.2 4,LOWER,engine_metal,box
+56b7a98c6b2d,ME status 0.2 4,ELECTRICAL,lamp,box
+ddeeb3162625,Stern boarding platform,MAIN,teak,mesh
+b8e3ca846b3d,Platform access stair -1 0,MAIN,teak,box
+c38540a0a9b2,Platform access stair -1 1,MAIN,teak,box
+348daea0f281,Platform access stair -1 2,MAIN,teak,box
+55c590c111f2,Platform access stair -1 3,MAIN,teak,box
+207d1fb4ba1b,Platform access stair -1 4,MAIN,teak,box
+b445449b86a8,MAIN rail post -1 -13.0,MAIN,brushed_steel,beam
+13b80762a2f3,MAIN rail post -1 -11,MAIN,brushed_steel,beam
+be5c5b70dcf4,MAIN rail span -1 -11 0.52,MAIN,brushed_steel,beam
+12b55648fb16,MAIN rail span -1 -11 1.08,MAIN,brushed_steel,beam
+a2da66b8901f,MAIN rail post -1 -9,MAIN,brushed_steel,beam
+331735293702,MAIN rail span -1 -9 0.52,MAIN,brushed_steel,beam
+4cd20c29e156,MAIN rail span -1 -9 1.08,MAIN,brushed_steel,beam
+09f96341f662,MAIN rail post -1 -8.45,MAIN,brushed_steel,beam
+6f78ee5cd8cb,MAIN rail span -1 -8.45 0.52,MAIN,brushed_steel,beam
+cfbb2f02777e,MAIN rail span -1 -8.45 1.08,MAIN,brushed_steel,beam
+80a5825f276f,MAIN rail post -1 -7.15,MAIN,brushed_steel,beam
+67b62a4c456d,MAIN rail post -1 -5,MAIN,brushed_steel,beam
+acbf6cdbad8a,MAIN rail span -1 -5 0.52,MAIN,brushed_steel,beam
+544e160c3f17,MAIN rail span -1 -5 1.08,MAIN,brushed_steel,beam
+e21f7bdcf7e9,MAIN rail post -1 -3,MAIN,brushed_steel,beam
+5efea74c63e5,MAIN rail span -1 -3 0.52,MAIN,brushed_steel,beam
+bfc6864a85b0,MAIN rail span -1 -3 1.08,MAIN,brushed_steel,beam
+3e425e47ed7b,MAIN rail post -1 2,MAIN,brushed_steel,beam
+74e2feef377c,MAIN rail post -1 4,MAIN,brushed_steel,beam
+3823f2e97213,MAIN rail span -1 4 0.52,MAIN,brushed_steel,beam
+8e32d4d8081e,MAIN rail span -1 4 1.08,MAIN,brushed_steel,beam
+1c823a6f634c,MAIN rail post -1 6,MAIN,brushed_steel,beam
+e934648cfcd5,MAIN rail span -1 6 0.52,MAIN,brushed_steel,beam
+6af2791f5cde,MAIN rail span -1 6 1.08,MAIN,brushed_steel,beam
+abaac08c5b9a,UPPER rail post -1 -10.9,UPPER,brushed_steel,beam
+4243497873f4,UPPER rail post -1 -8.5,UPPER,brushed_steel,beam
+11ae0e56c2f7,UPPER rail span -1 -8.5 0.52,UPPER,brushed_steel,beam
+a3d142cd8720,UPPER rail span -1 -8.5 1.08,UPPER,brushed_steel,beam
+1e38e0c306e0,UPPER rail post -1 -6.1,UPPER,brushed_steel,beam
+55df627f7477,UPPER rail span -1 -6.1 0.52,UPPER,brushed_steel,beam
+dca3b29b974f,UPPER rail span -1 -6.1 1.08,UPPER,brushed_steel,beam
+f7f65535311b,UPPER rail post -1 7.2,UPPER,brushed_steel,beam
+e2cdea56e7f5,UPPER rail post -1 9.1,UPPER,brushed_steel,beam
+a3c0a65f7984,UPPER rail span -1 9.1 0.52,UPPER,brushed_steel,beam
+9f4617d1061f,UPPER rail span -1 9.1 1.08,UPPER,brushed_steel,beam
+2e8bb2fe0171,UPPER rail post -1 11,UPPER,brushed_steel,beam
+4bf5a010f489,UPPER rail span -1 11 0.52,UPPER,brushed_steel,beam
+6ba3f2ad0d84,UPPER rail span -1 11 1.08,UPPER,brushed_steel,beam
+40eb48e54519,UPPER rail post -1 12.3,UPPER,brushed_steel,beam
+1a19aa6a4d77,UPPER rail span -1 12.3 0.52,UPPER,brushed_steel,beam
+5f76ac97cc4a,UPPER rail span -1 12.3 1.08,UPPER,brushed_steel,beam
+34b0cb22f2e1,UPPER rail post -1 13.3,UPPER,brushed_steel,beam
+2d8cd9aad8c9,UPPER rail span -1 13.3 0.52,UPPER,brushed_steel,beam
+b157ebd58fc0,UPPER rail span -1 13.3 1.08,UPPER,brushed_steel,beam
+13bfb4263fa1,UPPER rail post -1 14.15,UPPER,brushed_steel,beam
+29f56932df0c,UPPER rail span -1 14.15 0.52,UPPER,brushed_steel,beam
+b026a9ca2c05,UPPER rail span -1 14.15 1.08,UPPER,brushed_steel,beam
+2a009ad9db15,FLY rail post -1 -5.5,FLY,brushed_steel,beam
+422ed59b89f9,FLY rail post -1 -3,FLY,brushed_steel,beam
+0ff0e1d1a27c,FLY rail span -1 -3 0.52,FLY,brushed_steel,beam
+3f8933fb582c,FLY rail span -1 -3 1.08,FLY,brushed_steel,beam
+8a6d464175bc,FLY rail post -1 -1,FLY,brushed_steel,beam
+81ca06fbb249,FLY rail span -1 -1 0.52,FLY,brushed_steel,beam
+4645f1c9af06,FLY rail span -1 -1 1.08,FLY,brushed_steel,beam
+0687132c0a25,FLY rail post -1 1.2,FLY,brushed_steel,beam
+e1f86bd5f7ef,FLY rail span -1 1.2 0.52,FLY,brushed_steel,beam
+a73394b1dd80,FLY rail span -1 1.2 1.08,FLY,brushed_steel,beam
+564dfcc28555,FLY rail post -1 3.1,FLY,brushed_steel,beam
+3da8e54b99c8,FLY rail span -1 3.1 0.52,FLY,brushed_steel,beam
+3be85e0554bf,FLY rail span -1 3.1 1.08,FLY,brushed_steel,beam
+82749bba59af,GANGWAY_-1 folded walkway,GANGWAY_-1,teak,box
+756392210d7a,GANGWAY_-1_RAIL_-1 post 4.35,GANGWAY_-1_RAIL_-1,brushed_steel,beam
+a5019acec6d7,GANGWAY_-1_RAIL_-1 post 5.65,GANGWAY_-1_RAIL_-1,brushed_steel,beam
+e7e9d75b06d3,GANGWAY_-1_RAIL_-1 post 6.95,GANGWAY_-1_RAIL_-1,brushed_steel,beam
+b7e2be40bd60,GANGWAY_-1_RAIL_-1 handrail,GANGWAY_-1_RAIL_-1,brushed_steel,beam
+30a66c9f04a2,GANGWAY_-1_RAIL_1 post 4.35,GANGWAY_-1_RAIL_1,brushed_steel,beam
+80393f8378b5,GANGWAY_-1_RAIL_1 post 5.65,GANGWAY_-1_RAIL_1,brushed_steel,beam
+256760e9b5a1,GANGWAY_-1_RAIL_1 post 6.95,GANGWAY_-1_RAIL_1,brushed_steel,beam
+a8678876f316,GANGWAY_-1_RAIL_1 handrail,GANGWAY_-1_RAIL_1,brushed_steel,beam
+1d5a4e274a8e,Recovery ladder -1,MAIN,brushed_steel,beam
+aa467b5143c6,Recovery ladder inner -1,MAIN,brushed_steel,beam
+637441d1beba,Recovery rung -1 0,MAIN,brushed_steel,beam
+5442176faf1d,Recovery rung -1 1,MAIN,brushed_steel,beam
+c4bfd700f643,Recovery rung -1 2,MAIN,brushed_steel,beam
+e1d994b066ce,Recovery rung -1 3,MAIN,brushed_steel,beam
+d7c162a7cdbd,Recovery rung -1 4,MAIN,brushed_steel,beam
+c173d204e627,Recovery rung -1 5,MAIN,brushed_steel,beam
+54f104c36e3e,Recovery rung -1 6,MAIN,brushed_steel,beam
+5d8805cb1e22,Platform access stair 1 0,MAIN,teak,box
+2bb9466ae398,Platform access stair 1 1,MAIN,teak,box
+2b467e55744f,Platform access stair 1 2,MAIN,teak,box
+9a7e6027c729,Platform access stair 1 3,MAIN,teak,box
+c36cceb41017,Platform access stair 1 4,MAIN,teak,box
+dc4ecc7abeda,MAIN rail post 1 -13.0,MAIN,brushed_steel,beam
+603c0facd6f4,MAIN rail post 1 -11,MAIN,brushed_steel,beam
+f849298b697f,MAIN rail span 1 -11 0.52,MAIN,brushed_steel,beam
+4fdb2c64e185,MAIN rail span 1 -11 1.08,MAIN,brushed_steel,beam
+21dde4c04d52,MAIN rail post 1 -9,MAIN,brushed_steel,beam
+2d7b0c7a10d6,MAIN rail span 1 -9 0.52,MAIN,brushed_steel,beam
+abad0c93391b,MAIN rail span 1 -9 1.08,MAIN,brushed_steel,beam
+3052d6a2fe69,MAIN rail post 1 -8.45,MAIN,brushed_steel,beam
+bc1ef49b0955,MAIN rail span 1 -8.45 0.52,MAIN,brushed_steel,beam
+3a901fbeaaf0,MAIN rail span 1 -8.45 1.08,MAIN,brushed_steel,beam
+131808ef80d4,MAIN rail post 1 -7.15,MAIN,brushed_steel,beam
+7e314ca13f21,MAIN rail post 1 -5,MAIN,brushed_steel,beam
+85429cfcc9b9,MAIN rail span 1 -5 0.52,MAIN,brushed_steel,beam
+191d85d8ef15,MAIN rail span 1 -5 1.08,MAIN,brushed_steel,beam
+c30f4564fedf,MAIN rail post 1 -3,MAIN,brushed_steel,beam
+a9cd71d23e77,MAIN rail span 1 -3 0.52,MAIN,brushed_steel,beam
+b374ea23838e,MAIN rail span 1 -3 1.08,MAIN,brushed_steel,beam
+569ed3c99da6,MAIN rail post 1 2,MAIN,brushed_steel,beam
+6f4160575e11,MAIN rail post 1 4,MAIN,brushed_steel,beam
+ab754e252723,MAIN rail span 1 4 0.52,MAIN,brushed_steel,beam
+72019059cc68,MAIN rail span 1 4 1.08,MAIN,brushed_steel,beam
+6e9043722c2b,MAIN rail post 1 6,MAIN,brushed_steel,beam
+b87b02d21888,MAIN rail span 1 6 0.52,MAIN,brushed_steel,beam
+2c75f4633f53,MAIN rail span 1 6 1.08,MAIN,brushed_steel,beam
+c7515f946f05,UPPER rail post 1 -10.9,UPPER,brushed_steel,beam
+831e510c8bc6,UPPER rail post 1 -8.5,UPPER,brushed_steel,beam
+9a3c4c177295,UPPER rail span 1 -8.5 0.52,UPPER,brushed_steel,beam
+ad4d5ea6d478,UPPER rail span 1 -8.5 1.08,UPPER,brushed_steel,beam
+9f435e310575,UPPER rail post 1 -6.1,UPPER,brushed_steel,beam
+8a0c45cbfcb0,UPPER rail span 1 -6.1 0.52,UPPER,brushed_steel,beam
+821d37089085,UPPER rail span 1 -6.1 1.08,UPPER,brushed_steel,beam
+14f32b6bfbe7,UPPER rail post 1 7.2,UPPER,brushed_steel,beam
+eb0e000b23de,UPPER rail post 1 9.1,UPPER,brushed_steel,beam
+2e12856ce872,UPPER rail span 1 9.1 0.52,UPPER,brushed_steel,beam
+be9665d5f5d5,UPPER rail span 1 9.1 1.08,UPPER,brushed_steel,beam
+967592f3abef,UPPER rail post 1 11,UPPER,brushed_steel,beam
+76838fabb4e7,UPPER rail span 1 11 0.52,UPPER,brushed_steel,beam
+b677b162a655,UPPER rail span 1 11 1.08,UPPER,brushed_steel,beam
+4c232d27d1d2,UPPER rail post 1 12.3,UPPER,brushed_steel,beam
+963f312dd879,UPPER rail span 1 12.3 0.52,UPPER,brushed_steel,beam
+4b5aa124ff28,UPPER rail span 1 12.3 1.08,UPPER,brushed_steel,beam
+1f8f85958f54,UPPER rail post 1 13.3,UPPER,brushed_steel,beam
+59f5adccc611,UPPER rail span 1 13.3 0.52,UPPER,brushed_steel,beam
+db749ad2f4d3,UPPER rail span 1 13.3 1.08,UPPER,brushed_steel,beam
+84af369d1bd5,UPPER rail post 1 14.15,UPPER,brushed_steel,beam
+ab78c88597d7,UPPER rail span 1 14.15 0.52,UPPER,brushed_steel,beam
+2bcd2c68ac2e,UPPER rail span 1 14.15 1.08,UPPER,brushed_steel,beam
+dba4cce566df,FLY rail post 1 -5.5,FLY,brushed_steel,beam
+41e75af99b7a,FLY rail post 1 -3,FLY,brushed_steel,beam
+da50ab082b83,FLY rail span 1 -3 0.52,FLY,brushed_steel,beam
+d94d1f4e3d76,FLY rail span 1 -3 1.08,FLY,brushed_steel,beam
+f9f299c3b627,FLY rail post 1 -1,FLY,brushed_steel,beam
+520515f1c267,FLY rail span 1 -1 0.52,FLY,brushed_steel,beam
+b49d18ae5123,FLY rail span 1 -1 1.08,FLY,brushed_steel,beam
+391020fdbe54,FLY rail post 1 1.2,FLY,brushed_steel,beam
+2dff48055507,FLY rail span 1 1.2 0.52,FLY,brushed_steel,beam
+22d5427ff298,FLY rail span 1 1.2 1.08,FLY,brushed_steel,beam
+361a9b236eda,FLY rail post 1 3.1,FLY,brushed_steel,beam
+ff70c7631089,FLY rail span 1 3.1 0.52,FLY,brushed_steel,beam
+26d4d853d02a,FLY rail span 1 3.1 1.08,FLY,brushed_steel,beam
+b349c97eb095,GANGWAY_1 folded walkway,GANGWAY_1,teak,box
+e0650296577a,GANGWAY_1_RAIL_-1 post 4.35,GANGWAY_1_RAIL_-1,brushed_steel,beam
+e2a1f14b0ce0,GANGWAY_1_RAIL_-1 post 5.65,GANGWAY_1_RAIL_-1,brushed_steel,beam
+dbc4b67afa7e,GANGWAY_1_RAIL_-1 post 6.95,GANGWAY_1_RAIL_-1,brushed_steel,beam
+f1ee1860c9e5,GANGWAY_1_RAIL_-1 handrail,GANGWAY_1_RAIL_-1,brushed_steel,beam
+b6ecd2fc4b95,GANGWAY_1_RAIL_1 post 4.35,GANGWAY_1_RAIL_1,brushed_steel,beam
+7a1379341fd2,GANGWAY_1_RAIL_1 post 5.65,GANGWAY_1_RAIL_1,brushed_steel,beam
+458ec4e221fb,GANGWAY_1_RAIL_1 post 6.95,GANGWAY_1_RAIL_1,brushed_steel,beam
+42c3f8af5589,GANGWAY_1_RAIL_1 handrail,GANGWAY_1_RAIL_1,brushed_steel,beam
+6b96600c467c,Recovery ladder 1,MAIN,brushed_steel,beam
+d63191803f5c,Recovery ladder inner 1,MAIN,brushed_steel,beam
+7030c145f19d,Recovery rung 1 0,MAIN,brushed_steel,beam
+e453c9b3962d,Recovery rung 1 1,MAIN,brushed_steel,beam
+7ee8c78e7256,Recovery rung 1 2,MAIN,brushed_steel,beam
+c26c6452ba16,Recovery rung 1 3,MAIN,brushed_steel,beam
+e0d2a195a03b,Recovery rung 1 4,MAIN,brushed_steel,beam
+eb509a4ab5e6,Recovery rung 1 5,MAIN,brushed_steel,beam
+b20e0d811a9e,Recovery rung 1 6,MAIN,brushed_steel,beam
+876c34321df5,Flybridge canopy,FLY,superstructure_white,mesh
+bf4948629c0c,Canopy pillar -2.25 -3.8,FLY,brushed_steel,beam
+6b95c1015a0b,Canopy pillar -2.25 0.5,FLY,brushed_steel,beam
+3bc078acbfb0,Canopy pillar 2.25 -3.8,FLY,brushed_steel,beam
+0142fe6ae138,Canopy pillar 2.25 0.5,FLY,brushed_steel,beam
+3ca06095f77f,Radar mast,FITTINGS,superstructure_white,cylinder
+e2afbebfec69,Radar scanner,FITTINGS,superstructure_white,box
+183b82cee0fe,Radar dome -0.85,FITTINGS,superstructure_white,cylinder
+be20ba3c4445,Antenna -0.85,FITTINGS,brushed_steel,beam
+1d0772df9b62,Radar dome 0.85,FITTINGS,superstructure_white,cylinder
+b69a3be72d0b,Antenna 0.85,FITTINGS,brushed_steel,beam
+c1d85ca12e19,Cleat base -1 -12.4,FITTINGS,brushed_steel,box
+de76ac9bcd2e,Cleat horn -1 -12.4,FITTINGS,brushed_steel,beam
+03e6b5b99d88,Cleat base 1 -12.4,FITTINGS,brushed_steel,box
+e760c4ba2feb,Cleat horn 1 -12.4,FITTINGS,brushed_steel,beam
+8bb93d65afcc,Cleat base -1 -9.0,FITTINGS,brushed_steel,box
+71775f9310e3,Cleat horn -1 -9.0,FITTINGS,brushed_steel,beam
+679f9df3ef29,Cleat base 1 -9.0,FITTINGS,brushed_steel,box
+49c19179b29d,Cleat horn 1 -9.0,FITTINGS,brushed_steel,beam
+b6f503ee1d0e,Cleat base -1 8.8,FITTINGS,brushed_steel,box
+7413fa9c9483,Cleat horn -1 8.8,FITTINGS,brushed_steel,beam
+1aa61459a3b3,Cleat base 1 8.8,FITTINGS,brushed_steel,box
+df4567aa1d50,Cleat horn 1 8.8,FITTINGS,brushed_steel,beam
+b7213a5540dd,Cleat base -1 11.0,FITTINGS,brushed_steel,box
+b1b24ec2a248,Cleat horn -1 11.0,FITTINGS,brushed_steel,beam
+f71bffd657b1,Cleat base 1 11.0,FITTINGS,brushed_steel,box
+d13364254f88,Cleat horn 1 11.0,FITTINGS,brushed_steel,beam
+0505c91518fe,LOWER ceiling light -11,ELECTRICAL,lamp,box
+1dad3119d157,LOWER ceiling light -7,ELECTRICAL,lamp,box
+b67231e72d4d,LOWER ceiling light -3,ELECTRICAL,lamp,box
+f185cc015407,LOWER ceiling light 1,ELECTRICAL,lamp,box
+2ad1ac6b30c8,LOWER ceiling light 5,ELECTRICAL,lamp,box
+49d788578c50,MAIN ceiling light -8,ELECTRICAL,lamp,box
+73fdf051d599,MAIN ceiling light -4,ELECTRICAL,lamp,box
+02b8e3615892,MAIN ceiling light 0,ELECTRICAL,lamp,box
+7fa347743435,MAIN ceiling light 4,ELECTRICAL,lamp,box
+de44beced6f5,UPPER ceiling light -3,ELECTRICAL,lamp,box
+e71ccde5ff20,UPPER ceiling light 1,ELECTRICAL,lamp,box
+3eebdf2abbfa,UPPER ceiling light 4,ELECTRICAL,lamp,box
+21f925d713ad,Navigation lamp -1,ELECTRICAL,port_lamp,box
+a2a528c595fc,Navigation lamp 1,ELECTRICAL,starboard_lamp,box
+073aac1c8e97,Forecastle portrait window -1 0 glass,GLASS,glass,box
+ee3a7d52a139,Forecastle portrait window -1 0 continuous frame,FITTINGS,window_frame,box
+a54d2e850f20,Forecastle portrait window -1 1 glass,GLASS,glass,box
+856da2e24a72,Forecastle portrait window -1 1 continuous frame,FITTINGS,window_frame,box
+48e96c732a24,Forecastle portrait window -1 2 glass,GLASS,glass,box
+d8336e959ff2,Forecastle portrait window -1 2 continuous frame,FITTINGS,window_frame,box
+0870b0bd1839,Lower cabin port -1 0 glass,GLASS,glass,box
+e6d263c809ec,Lower cabin port -1 0 continuous frame,FITTINGS,window_frame,box
+507a2c9d2371,Cabin port continuous reveal -1 0,LOWER,interior_white,mesh
+02f2f12d13f6,Lower cabin port -1 1 glass,GLASS,glass,box
+13dd14e49eb7,Lower cabin port -1 1 continuous frame,FITTINGS,window_frame,box
+2a84473ac866,Cabin port continuous reveal -1 1,LOWER,interior_white,mesh
+7699a8698a53,Lower cabin port -1 2 glass,GLASS,glass,box
+58c7e3ab98d6,Lower cabin port -1 2 continuous frame,FITTINGS,window_frame,box
+940bee1a2f6c,Cabin port continuous reveal -1 2,LOWER,interior_white,mesh
+7d4d39b28ad7,Lower cabin port -1 3 glass,GLASS,glass,box
+d69c92251bad,Lower cabin port -1 3 continuous frame,FITTINGS,window_frame,box
+c2a85f1ea8cc,Cabin port continuous reveal -1 3,LOWER,interior_white,mesh
+4391ed2e51d1,Lower cabin port -1 4 glass,GLASS,glass,box
+7e87e4607478,Lower cabin port -1 4 continuous frame,FITTINGS,window_frame,box
+fdb1cd2c9a6a,Cabin port continuous reveal -1 4,LOWER,interior_white,mesh
+94ef62e0a7c2,Forecastle portrait window 1 0 glass,GLASS,glass,box
+cb55163cf2a9,Forecastle portrait window 1 0 continuous frame,FITTINGS,window_frame,box
+659263076ce3,Forecastle portrait window 1 1 glass,GLASS,glass,box
+27137a9cd559,Forecastle portrait window 1 1 continuous frame,FITTINGS,window_frame,box
+274c8a54076e,Forecastle portrait window 1 2 glass,GLASS,glass,box
+70841769a4cd,Forecastle portrait window 1 2 continuous frame,FITTINGS,window_frame,box
+d856678f7fb1,Lower cabin port 1 0 glass,GLASS,glass,box
+0ca3239229c9,Lower cabin port 1 0 continuous frame,FITTINGS,window_frame,box
+e37c3aadf597,Cabin port continuous reveal 1 0,LOWER,interior_white,mesh
+3f7f8071fe0e,Lower cabin port 1 1 glass,GLASS,glass,box
+cb3048b0484e,Lower cabin port 1 1 continuous frame,FITTINGS,window_frame,box
+89109671f32c,Cabin port continuous reveal 1 1,LOWER,interior_white,mesh
+e2b393bd07dc,Lower cabin port 1 2 glass,GLASS,glass,box
+f07d9b5538d2,Lower cabin port 1 2 continuous frame,FITTINGS,window_frame,box
+d1a41919ed19,Cabin port continuous reveal 1 2,LOWER,interior_white,mesh
+b757cd04b276,Lower cabin port 1 3 glass,GLASS,glass,box
+bd1152745e72,Lower cabin port 1 3 continuous frame,FITTINGS,window_frame,box
+774897b14594,Cabin port continuous reveal 1 3,LOWER,interior_white,mesh
+ca5665127d09,Lower cabin port 1 4 glass,GLASS,glass,box
+bdf633314944,Lower cabin port 1 4 continuous frame,FITTINGS,window_frame,box
+2b55aaaca96a,Cabin port continuous reveal 1 4,LOWER,interior_white,mesh

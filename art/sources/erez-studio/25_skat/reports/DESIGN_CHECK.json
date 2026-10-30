@@ -1,0 +1,10 @@
+{
+  "revision": "SK01",
+  "parts": 948,
+  "groups": 17,
+  "cargo_modules": 24,
+  "cargo_slot_target": 1296,
+  "unique_part_names": true,
+  "units": "Minecraft blocks",
+  "runtime_inventory_verified": false
+}

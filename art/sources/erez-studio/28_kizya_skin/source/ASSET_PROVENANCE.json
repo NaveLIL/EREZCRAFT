@@ -1,0 +1,22 @@
+{
+  "revision": "PK02",
+  "active": true,
+  "art_mode": "built-in image_gen",
+  "owner_reference": "references/owner_reference.png",
+  "raw_generated_art": "source/painted_sheet_PK02_original.png",
+  "raw_generated_art_sha256": "4e222b5b9cca51682bbd36d2fe3858260073043cee861d99158c49873827d7af",
+  "prompt": "source/painted_sheet_prompt.txt",
+  "format_operations": "Native UV region selection, resolution conversion, packing into CPM 128x128 and standard Java slim 64x64 layouts.",
+  "borrowed_block_textures_used": false,
+  "layout_reference_only": "references/alex_uv_layout.png; vanilla Alex UV dimensions only, its artwork is not sampled by PK02.",
+  "retired_trial": "archive/PK01_block_texture_trial; rejected by owner, not a delivery candidate",
+  "geometry_authority": "source/avatar_PK02.json; Blender scenes and CPM files are exports from this source",
+  "units": "Minecraft player-model pixels, 16 pixels = 1 block",
+  "game_dependency": {
+    "name": "Custom Player Models",
+    "version": "0.6.27a",
+    "minecraft": "1.21.1 NeoForge",
+    "source": "https://github.com/tom5454/CustomPlayerModels",
+    "sha256": "b5d3a473998648eefdf646e10a48af95dac57add0df681ca4407e83c716d6c84"
+  }
+}

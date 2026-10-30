@@ -1,0 +1,34 @@
+{
+  "checked_on": "2026-10-28",
+  "reference_only": true,
+  "downloaded_photographs_used_as_textures": false,
+  "species": [
+    {
+      "species": "Pterinochilus murinus",
+      "used_for": "SK01 / Skirmisher",
+      "interpretation": "Orange colour form, existing pixel artwork recoloured; not a biological anatomy reconstruction",
+      "sources": [
+        "https://felicina.ru/news/beshenyj-apelsin-zagadochnyj-frukt-ili-neobychnoe-zhivotnoe/",
+        "https://senecaparkzoo.org/mombasa-golden-starburst-tarantula/"
+      ]
+    },
+    {
+      "species": "Poecilotheria rufilata",
+      "used_for": "SP01 / Spitter",
+      "interpretation": "Olive-green/yellow body, dark markings and rusty setae; lime saturation deliberately intensified for Interstice",
+      "sources": [
+        "https://www.giantspiders.com/species/poecilotheria-spp/",
+        "https://www.thedefiantforest.com/blogs/news/giant-red-slate-tarantula-care-and-species-guide-poecilotheria-rufilata"
+      ]
+    },
+    {
+      "species": "Ephebopus cyanognathus",
+      "used_for": "SP02 / Spitter",
+      "interpretation": "Blue-violet chelicerae, yellow limb bands, olive/emerald family of colours; deliberately brighter fantasy interpretation, not an exact adult or juvenile specimen",
+      "sources": [
+        "https://www.urbantarantulas.com/products/ephebopus-cyanognathus-blue-fang",
+        "https://exoticsunlimitedusa.com/products/ephebopus-cyanognathus-blue-fang-tarantula"
+      ]
+    }
+  ]
+}

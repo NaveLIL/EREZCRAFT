@@ -1,0 +1,42 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-Xmx1G",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\kizya28\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-Dorg.gradle.jvmargs=-Xmx1G",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\kizya28\\.verification\\kizya02",
+    "-PprogressionPackSource=D:/repos/Minecraft/EREZCRAFT/.verification/armor_a01/.verification/pack-source",
+    "runProgressionCreate"
+  ],
+  "owner_profile_used": false,
+  "started_utc": "2026-10-28T14:46:52.194767+00:00",
+  "harness_sha256": "2f1a552b7710f4bae28509b38a3f0fe04aa23cb005e951218bf9e70efd0b5266",
+  "passed": false,
+  "pid": 8796,
+  "exit_code": 0,
+  "duration_seconds": 198.34,
+  "proof": {
+    "painted_64_skin_loaded": true,
+    "local_skin_fixture_not_account_login": true,
+    "cpm_config_parallel_probe_calls": 8000,
+    "model_elements": 139,
+    "cpm_packet_bytes": 18347,
+    "self_contained_model": true,
+    "skin_fixture": "Server assigns self-contained CPM packet to three owned players; unmodified client receives through CPM tracking protocol",
+    "passed": false,
+    "reason": "java.lang.IllegalStateException: CPM model not rendered: null",
+    "phase": 1,
+    "pid": 12640,
+    "prepared_fixture_not_survival": true,
+    "owner_profile_used": false,
+    "screenshots": [
+      "kizya-vanilla-64-front.png",
+      "kizya-vanilla-64-back.png",
+      "kizya-failure.png"
+    ]
+  }
+}

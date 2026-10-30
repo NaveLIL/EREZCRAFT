@@ -1,0 +1,74 @@
+[
+  {
+    "name": "copper",
+    "file": "source/textures_SK02/copper.png",
+    "roughness": 0.6,
+    "emission": 0
+  },
+  {
+    "name": "brass",
+    "file": "source/textures_SK02/brass.png",
+    "roughness": 0.57,
+    "emission": 0
+  },
+  {
+    "name": "teal",
+    "file": "source/textures_SK02/teal.png",
+    "roughness": 0.76,
+    "emission": 0
+  },
+  {
+    "name": "ivory",
+    "file": "source/textures_SK02/ivory.png",
+    "roughness": 0.8,
+    "emission": 0
+  },
+  {
+    "name": "rubber",
+    "file": "source/textures_SK02/rubber.png",
+    "roughness": 0.94,
+    "emission": 0
+  },
+  {
+    "name": "lamp",
+    "file": "source/textures_SK02/lamp.png",
+    "roughness": 0.65,
+    "emission": 1.3
+  },
+  {
+    "name": "cyan",
+    "file": "source/textures_SK02/cyan.png",
+    "roughness": 0.65,
+    "emission": 0.65
+  },
+  {
+    "name": "wood",
+    "file": "source/textures_SK02/wood.png",
+    "roughness": 0.9,
+    "emission": 0
+  },
+  {
+    "name": "graphite",
+    "file": "source/textures_SK02/graphite.png",
+    "roughness": 0.81,
+    "emission": 0
+  },
+  {
+    "name": "steel",
+    "file": "source/textures_SK02/steel.png",
+    "roughness": 0.72,
+    "emission": 0
+  },
+  {
+    "name": "deck",
+    "file": "source/textures_SK02/deck.png",
+    "roughness": 0.85,
+    "emission": 0
+  },
+  {
+    "name": "glass",
+    "file": "source/textures_SK02/glass.png",
+    "roughness": 0.16,
+    "emission": 0.015
+  }
+]

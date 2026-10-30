@@ -1,0 +1,51 @@
+[
+  {
+    "name": "bark",
+    "file": "source\\textures\\bark.png",
+    "roughness": 0.93,
+    "specular": 0.1,
+    "emission": 0.05
+  },
+  {
+    "name": "dark_bark",
+    "file": "source\\textures\\dark_bark.png",
+    "roughness": 0.93,
+    "specular": 0.1,
+    "emission": 0.05
+  },
+  {
+    "name": "joints",
+    "file": "source\\textures\\joints.png",
+    "roughness": 0.93,
+    "specular": 0.1,
+    "emission": 0.05
+  },
+  {
+    "name": "cut_wood",
+    "file": "source\\textures\\cut_wood.png",
+    "roughness": 0.93,
+    "specular": 0.1,
+    "emission": 0.05
+  },
+  {
+    "name": "moss",
+    "file": "source\\textures\\moss.png",
+    "roughness": 0.93,
+    "specular": 0.1,
+    "emission": 0.05
+  },
+  {
+    "name": "horn",
+    "file": "source\\textures\\horn.png",
+    "roughness": 0.55,
+    "specular": 0.1,
+    "emission": 0.05
+  },
+  {
+    "name": "eyes",
+    "file": "source\\textures\\eyes.png",
+    "roughness": 0.22,
+    "specular": 0.45,
+    "emission": 0.02
+  }
+]

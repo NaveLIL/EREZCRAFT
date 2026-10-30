@@ -94,12 +94,42 @@ public final class FaunaFeedbackGameTests {
             double step=hunter.position().subtract(previous[0]).horizontalDistance();
             if(++age[0]>30){
                 travelled[0]+=step;stalled[0]=step<.005?stalled[0]+1:0;longest[0]=Math.max(longest[0],stalled[0]);
-                h.assertTrue(hunter.phase()==VaultHunter.Phase.CHASE&&hunter.getTarget()==player,"Visible moving prey lost during pursuit");
+                h.assertTrue(hunter.phase()==VaultHunter.Phase.CHASE&&hunter.getTarget()==player,"Visible moving prey lost during pursuit: phase="+hunter.phase()+" hunter="+hunter.position()+" player="+player.position()+" player_health="+player.getHealth()+" player_alive="+player.isAlive()+" target="+(hunter.getTarget()==player)+" perceives="+hunter.getSensing().hasLineOfSight(player)+" age="+age[0]);
             }previous[0]=hunter.position();
         });
         h.runAtTickTime(320,()->{
             h.assertTrue(travelled[0]>30,"Pursuit distance="+travelled[0]+" pause="+longest[0]+" path="+hunter.getNavigation().getPath());
             h.assertTrue(longest[0]<=2,"Continuous visible pursuit inserted "+longest[0]+" idle ticks");h.succeed();
         });
+    }
+
+    @net.minecraft.gametest.framework.GameTest(template="empty")
+    public static void restingSpidersHaveNoAmbientChatter(GameTestHelper h){
+        var spider=Interstice.CAVE_RIFT_SPIDER.get().create(h.getLevel());int[] sounds={0};
+        java.util.function.Consumer<net.neoforged.neoforge.event.PlayLevelSoundEvent> listener=event->{if(emittedBy(event,spider))sounds[0]++;};
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(listener);
+        try{spider.playSound(net.minecraft.sounds.SoundEvents.SPIDER_AMBIENT,.15F,1);h.assertTrue(sounds[0]==1,"Sound interception control failed");sounds[0]=0;for(var variant:pro.erez.interstice.entity.CaveRiftSpiderEntity.Variant.values()){spider.setVariant(variant);for(int i=0;i<30;i++)spider.playAmbientSound();}h.assertTrue(sounds[0]==0,"Calm tarantulas cannot emit periodic vanilla monster chatter");}
+        finally{net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(listener);spider.discard();}h.succeed();
+    }
+
+    @GameTest(template="empty",batch="feedback_spider_burst_sound",timeoutTicks=30)
+    public static void lurkerBurstDoesNotRestoreLoudVanillaHiss(GameTestHelper h) {
+        var s=spider(h);s.setVariant(CaveRiftSpiderEntity.Variant.LURKER);
+        int[] count={0};float[] peak={0};
+        java.util.function.Consumer<net.neoforged.neoforge.event.PlayLevelSoundEvent> sounds=event->{
+            if(emittedBy(event,s)){count[0]++;peak[0]=Math.max(peak[0],event.getNewVolume());}
+        };
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(sounds);
+        try {
+            s.triggerAmbushBurst();
+            h.assertTrue(s.isBursting()&&count[0]>0,"Burst did not execute its real sound path");
+            h.assertTrue(peak[0]<=.15001F,"Burst restored loud spider sound: "+peak[0]);
+        } finally {net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(sounds);}
+        h.succeed();
+    }
+
+    private static boolean emittedBy(net.neoforged.neoforge.event.PlayLevelSoundEvent event,CaveRiftSpiderEntity s) {
+        return event.getLevel()==s.level() && (event instanceof net.neoforged.neoforge.event.PlayLevelSoundEvent.AtEntity e && e.getEntity()==s
+                || event instanceof net.neoforged.neoforge.event.PlayLevelSoundEvent.AtPosition pos && pos.getPosition().distanceToSqr(s.position())<.000001);
     }
 }

@@ -1,0 +1,70 @@
+{
+  "dh_loaded": true,
+  "started_utc": "2026-10-29T13:47:23.586194100Z",
+  "physics_paused_for_geometry_test": true,
+  "full_vessel_me_network": false,
+  "sea_propulsion_tested": false,
+  "phase": 7,
+  "owner_profile_used": false,
+  "walked_stairs": [
+    {
+      "index": 0,
+      "walk_ticks": 30,
+      "local_x": 1.8500000014901161,
+      "local_y": 4.25,
+      "local_z": -3.494582638144493,
+      "flying": false,
+      "on_ground": true
+    },
+    {
+      "index": 1,
+      "walk_ticks": 30,
+      "local_x": 0.050000011920928955,
+      "local_y": 4.25,
+      "local_z": 13.255417361855507,
+      "flying": false,
+      "on_ground": true
+    },
+    {
+      "index": 2,
+      "walk_ticks": 24,
+      "local_x": 1.8500000014901161,
+      "local_y": 7.0,
+      "local_z": -5.042459070682526,
+      "flying": false,
+      "on_ground": true
+    },
+    {
+      "index": 3,
+      "walk_ticks": 26,
+      "local_x": -1.699999999254942,
+      "local_y": 9.75,
+      "local_z": 0.6472230441868305,
+      "flying": false,
+      "on_ground": true
+    }
+  ],
+  "construction_origin": "32, 100, 16",
+  "ship_uuid": "dff6be5c-4df4-4b94-bfc1-40d65663462a",
+  "native_cells": 1755,
+  "mechanism_cells_opened": 200,
+  "native_walk_routes": 4,
+  "chunk_settlement": {
+    "purpose": "NE01 geometry final save",
+    "server_tick": 765,
+    "elapsed_actual_server_ticks": 174,
+    "stable_actual_server_ticks": 20,
+    "holders_checked": 1937,
+    "generation_ref_count": 0,
+    "save_futures_pending": 0,
+    "holders_not_ready_for_saving": 0,
+    "pending_generation_tasks": 0,
+    "sable_virtual_storage_holders": 7,
+    "save_futures_failed": 0,
+    "timed_out": false,
+    "non_quiet_examples": []
+  },
+  "passed": true,
+  "error": "",
+  "process_exit_code": 0
+}

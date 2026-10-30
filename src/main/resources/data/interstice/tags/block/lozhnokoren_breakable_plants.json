@@ -1,0 +1,49 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "interstice:venom_reed",
+      "required": false
+    },
+    {
+      "id": "interstice:spore_pod",
+      "required": false
+    },
+    {
+      "id": "interstice:pale_vine",
+      "required": false
+    },
+    {
+      "id": "interstice:crown_fruit",
+      "required": false
+    },
+    {
+      "id": "interstice:pale_fern",
+      "required": false
+    },
+    {
+      "id": "interstice:pale_litter",
+      "required": false
+    },
+    {
+      "id": "interstice:tide_sprout",
+      "required": false
+    },
+    {
+      "id": "interstice:glow_bloom",
+      "required": true
+    },
+    {
+      "id": "interstice:hanging_glow_bloom",
+      "required": true
+    },
+    {
+      "id": "interstice:sting_frond",
+      "required": true
+    },
+    {
+      "id": "interstice:clingweed",
+      "required": true
+    }
+  ]
+}

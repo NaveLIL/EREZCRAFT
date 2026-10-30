@@ -1,0 +1,416 @@
+{
+  "status": "BEHAVIOUR_VERIFIED_WITH_DIRECTIONAL_ATTACK_FINDING",
+  "version": "0.7.0-preview.41-spider-behaviour",
+  "component": {
+    "command": [
+      "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "-classpath",
+      "D:\\repos\\Minecraft\\EREZCRAFT\\gradle\\wrapper\\gradle-wrapper.jar",
+      "org.gradle.wrapper.GradleWrapperMain",
+      "--no-daemon",
+      "--console=plain",
+      "-Pmod_version=0.7.0-preview.41-spider-behaviour",
+      "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\s41green",
+      "-PprogressionPackSource=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\blade-release-20261028\\client",
+      "assemble",
+      "runFaunaGameTestServer",
+      "runHunterGameTestServer"
+    ],
+    "passed": true,
+    "started_utc": "2026-10-28T09:54:18.909322+00:00",
+    "pid": 13608,
+    "exit_code": 0,
+    "required_pass_counts": [
+      15,
+      49
+    ],
+    "seconds": 99.21900000000096
+  },
+  "static": {
+    "passed": true,
+    "candidate_sha256": "ecaa2a253d56c95d69520490a9645d3387ce0fda90ec1420225a73b791f6e849",
+    "reference_sha256": "baaf75bcd1220d4d68ab97f23fa26081443786abf179d50473d53962d270c42f",
+    "models": [
+      {
+        "variant": "lurker",
+        "revision": "lurker_LS04",
+        "cuboids": 309,
+        "bones": 53,
+        "quads": 1854,
+        "source_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+        "mesh_sha256": "11c8ad2bf2e614f8b1fa7c1612f5a15d7cb1999eeb7e13ac0fd00e84b2297761",
+        "atlas_sha256": "71105ab5152a678cbd305fbc9ff0c756f4a6a5c4ee37b8f35b570722ad5ad720",
+        "exact_rgba_tiles": 22
+      },
+      {
+        "variant": "skirmisher",
+        "revision": "skirmisher_SK01",
+        "cuboids": 309,
+        "bones": 53,
+        "quads": 1854,
+        "source_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+        "mesh_sha256": "89e3db4ae106e88788bf382e651a310015093eab9dced24b13f6609bf9af35b6",
+        "atlas_sha256": "8de4c651cada18575adb3b56eb8ec9bd911f2e2a841080655deadfa87823abf0",
+        "exact_rgba_tiles": 22
+      },
+      {
+        "variant": "spitter",
+        "revision": "spitter_SP02",
+        "cuboids": 309,
+        "bones": 53,
+        "quads": 1854,
+        "source_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+        "mesh_sha256": "ed2be578a1017f27f1e27b8b1644fc41f57dc1530ed08ff14f1e5f563a815754",
+        "atlas_sha256": "6d3ce33f8cb16e79ebddf07ef842e6f5aae541a4407de33e2ca4b51fe662b46f",
+        "exact_rgba_tiles": 22
+      }
+    ],
+    "changed_previous_classes": [
+      "pro/erez/interstice/entity/CaveRiftSpiderEntity.class"
+    ],
+    "new_classes": [],
+    "previous_classes_preserved": 562,
+    "previous_png_preserved": 212,
+    "previous_ogg_preserved": 12,
+    "exact_total_quads": 5562,
+    "real_biological_simulation_claimed": false
+  },
+  "confirmed_bug": {
+    "path": "src/main/java/pro/erez/interstice/entity/CaveRiftSpiderEntity.java",
+    "method": "triggerAmbushBurst",
+    "before_volume": 1.3,
+    "after_volume": 0.15,
+    "red_reproduction": "D:/repos/Minecraft/EREZCRAFT/.verification/spider-behaviour-20261028/component-red03/component-gradle.log",
+    "failure": "Burst restored loud spider sound: 1.3"
+  },
+  "initial_native": {
+    "receipt": "docs/verification/spider_behaviour/native-initial.json",
+    "checks": 101,
+    "passed_checks": 99,
+    "raw_passed": false,
+    "note": "Two broad volume assertions included physical fall impacts. Final runner preserves raw sound events and audits vocal/step volume separately. No physical sound was removed or muted to satisfy this correction."
+  },
+  "controls": {
+    "version": "0.7.0-preview.41-spider-behaviour",
+    "variants": [
+      "SKIRMISHER",
+      "LURKER",
+      "SPITTER"
+    ],
+    "stages": [
+      "IDLE",
+      "CREATIVE",
+      "SPECTATOR",
+      "SURVIVAL_FAR",
+      "SURVIVAL_NEAR",
+      "HIDDEN",
+      "REACQUIRE",
+      "DISABLED",
+      "RESUME",
+      "DEAD"
+    ],
+    "rest_ticks": 400,
+    "far_pursuit_ticks": 400,
+    "hidden_memory_ticks": 240,
+    "no_target_attack_route_injection": true,
+    "artificial_controls": [
+      "Survival player health increased to 1000; no gravity",
+      "Player repositioning between scenarios",
+      "NoAI only in explicitly named DISABLED stage; death in DEAD stage"
+    ],
+    "sound_criteria": {
+      "no_ambient": true,
+      "step_volume_max": 0.015,
+      "vocal_volume_max": 0.15,
+      "landing_impacts": "Recorded separately; original physical landing sounds retained"
+    },
+    "production_scope": "Only ambush-start sound volume 1.3 to .15; AI and model assets unchanged",
+    "pending": null
+  },
+  "scope": {
+    "AI": "unchanged",
+    "geometry_UV_pixels": "unchanged",
+    "owner_profile_used": false,
+    "production_updated": false,
+    "production": "alpha.22/sequence22/preview.38-clock-grip",
+    "production_changes_since_candidate40": "Only triggerAmbushBurst sound volume 1.3 -> 0.15. Directional attack gate is not implemented."
+  },
+  "native_final": {
+    "receipt": "docs/verification/spider_behaviour/native-final.json",
+    "passed": true,
+    "stages": 30,
+    "checks": 102,
+    "loaded_mods": 106,
+    "DH": true,
+    "dimension": "interstice:islands_v6",
+    "shots": 22,
+    "damage_events": 58,
+    "ambient_events": 0
+  },
+  "idle_observations": [
+    {
+      "run": "native01",
+      "rows": [
+        {
+          "variant": "SKIRMISHER",
+          "ticks": 400,
+          "stationary_percent": 87.75,
+          "travel_blocks": 6.0389434579283545,
+          "wall_ticks": 0,
+          "ceiling_ticks": 0,
+          "ambient_hiss": 0
+        },
+        {
+          "variant": "LURKER",
+          "ticks": 400,
+          "stationary_percent": 87.75,
+          "travel_blocks": 7.831037037045812,
+          "wall_ticks": 22,
+          "ceiling_ticks": 371,
+          "ambient_hiss": 0
+        },
+        {
+          "variant": "SPITTER",
+          "ticks": 400,
+          "stationary_percent": 86.5,
+          "travel_blocks": 5.286560007468423,
+          "wall_ticks": 0,
+          "ceiling_ticks": 0,
+          "ambient_hiss": 0
+        }
+      ]
+    },
+    {
+      "run": "native02",
+      "rows": [
+        {
+          "variant": "SKIRMISHER",
+          "ticks": 400,
+          "stationary_percent": 98.5,
+          "travel_blocks": 0.17428632681862274,
+          "wall_ticks": 0,
+          "ceiling_ticks": 0,
+          "ambient_hiss": 0
+        },
+        {
+          "variant": "LURKER",
+          "ticks": 400,
+          "stationary_percent": 87.75,
+          "travel_blocks": 7.831037037045812,
+          "wall_ticks": 22,
+          "ceiling_ticks": 371,
+          "ambient_hiss": 0
+        },
+        {
+          "variant": "SPITTER",
+          "ticks": 400,
+          "stationary_percent": 93.5,
+          "travel_blocks": 1.7172626778492213,
+          "wall_ticks": 0,
+          "ceiling_ticks": 0,
+          "ambient_hiss": 0
+        }
+      ]
+    }
+  ],
+  "review_images": [
+    "docs/verification/spider_behaviour/skirmisher-survival_far.png",
+    "docs/verification/spider_behaviour/lurker-idle.png",
+    "docs/verification/spider_behaviour/spitter-survival_near.png"
+  ],
+  "functional_checks_passed": true,
+  "frontal_attack_requirement_passed": false,
+  "facing": {
+    "diagnostic_runner_passed": true,
+    "receipt": "docs/verification/spider_behaviour/facing-run.json",
+    "findings": [
+      {
+        "variant": "LURKER",
+        "combat_kind": "MELEE",
+        "live_ai": true,
+        "target_injected": false,
+        "attacks_called_by_fixture": false,
+        "position_and_orientation_pinned_for_diagnostic": true,
+        "front_hits": 2,
+        "side_hits": 2,
+        "rear_hits": 2,
+        "front_only_contract_passed": false,
+        "impacts": [
+          {
+            "tick": 8,
+            "position": "FRONT",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": 1,
+            "damage": 8
+          },
+          {
+            "tick": 29,
+            "position": "FRONT",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": 1,
+            "damage": 8
+          },
+          {
+            "tick": 50,
+            "position": "SIDE",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": 0,
+            "damage": 8
+          },
+          {
+            "tick": 71,
+            "position": "SIDE",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": 0,
+            "damage": 7
+          },
+          {
+            "tick": 92,
+            "position": "REAR",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": -1,
+            "damage": 8
+          },
+          {
+            "tick": 113,
+            "position": "REAR",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": -1,
+            "damage": 7
+          }
+        ]
+      },
+      {
+        "variant": "SKIRMISHER",
+        "combat_kind": "MELEE",
+        "live_ai": true,
+        "target_injected": false,
+        "attacks_called_by_fixture": false,
+        "position_and_orientation_pinned_for_diagnostic": true,
+        "front_hits": 2,
+        "side_hits": 2,
+        "rear_hits": 2,
+        "front_only_contract_passed": false,
+        "impacts": [
+          {
+            "tick": 6,
+            "position": "FRONT",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": 1,
+            "damage": 5
+          },
+          {
+            "tick": 27,
+            "position": "FRONT",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": 1,
+            "damage": 5
+          },
+          {
+            "tick": 48,
+            "position": "SIDE",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": 0,
+            "damage": 4
+          },
+          {
+            "tick": 69,
+            "position": "SIDE",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": 0,
+            "damage": 5
+          },
+          {
+            "tick": 90,
+            "position": "REAR",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": -1,
+            "damage": 5
+          },
+          {
+            "tick": 111,
+            "position": "REAR",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": -1,
+            "damage": 4
+          }
+        ]
+      },
+      {
+        "variant": "SPITTER",
+        "combat_kind": "RANGED",
+        "live_ai": true,
+        "target_injected": false,
+        "attacks_called_by_fixture": false,
+        "position_and_orientation_pinned_for_diagnostic": true,
+        "front_hits": 1,
+        "side_hits": 1,
+        "rear_hits": 2,
+        "front_only_contract_passed": false,
+        "impacts": [
+          {
+            "tick": 7,
+            "position": "FRONT",
+            "body_yaw": 0,
+            "head_yaw": -10,
+            "forward_dot_target": 1,
+            "damage": 3
+          },
+          {
+            "tick": 45,
+            "position": "SIDE",
+            "body_yaw": 10,
+            "head_yaw": 10,
+            "forward_dot_target": -0.17364817766693033,
+            "damage": 3
+          },
+          {
+            "tick": 83,
+            "position": "REAR",
+            "body_yaw": 10,
+            "head_yaw": 10,
+            "forward_dot_target": -0.984807753012208,
+            "damage": 3
+          },
+          {
+            "tick": 121,
+            "position": "REAR",
+            "body_yaw": 0,
+            "head_yaw": 0,
+            "forward_dot_target": -1,
+            "damage": 3
+          }
+        ]
+      }
+    ],
+    "interpretation": "Real AI damage events occur with target beside and behind the unchanged body orientation. Diagnostic pins positions/headings to isolate the directional constraint, but does not inject targets or call attacks. Successful diagnostic execution is not a pass of the front-only requirement.",
+    "unresolved": true
+  },
+  "limitations": [
+    "Prepared isolated scenes and diagnostic probes; natural Survival/balance and real server capacity remain open",
+    "Idle percentages are two short 20-second observations per variant, not natural-history statistics",
+    "Player health was raised to 1000 and gravity disabled in native scenarios",
+    "Facing audit pins actor positions and heading; damage amounts in this audit are not balance acceptance",
+    "Landing impact sounds retained and recorded separately from vocal/step sounds",
+    "No production rollout, owner-profile installation or GitHub push"
+  ],
+  "review_images_reviewed": true,
+  "directional_finding_followup": {
+    "resolved": true,
+    "version": "0.7.0-preview.42-frontal-spiders",
+    "report": "docs/verification/SPIDER_FACING_FIX.json",
+    "note": "Historical observations above remain unchanged; real AI now turns before attacking."
+  }
+}

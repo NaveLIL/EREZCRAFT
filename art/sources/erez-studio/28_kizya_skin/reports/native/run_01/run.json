@@ -1,0 +1,22 @@
+{
+  "command": [
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\toolchain\\jdk-21.0.12.1+1\\bin\\java.exe",
+    "-Xmx1G",
+    "-classpath",
+    "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\kizya28\\gradle\\wrapper\\gradle-wrapper.jar",
+    "org.gradle.wrapper.GradleWrapperMain",
+    "--no-daemon",
+    "--console=plain",
+    "-Dorg.gradle.jvmargs=-Xmx1G",
+    "-PintersticeRunRoot=D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\kizya28\\.verification\\kizya01",
+    "-PprogressionPackSource=D:/repos/Minecraft/EREZCRAFT/.verification/armor_a01/.verification/pack-source",
+    "runProgressionCreate"
+  ],
+  "owner_profile_used": false,
+  "started_utc": "2026-10-28T14:43:24.120105+00:00",
+  "harness_sha256": "2f1a552b7710f4bae28509b38a3f0fe04aa23cb005e951218bf9e70efd0b5266",
+  "passed": false,
+  "pid": 31300,
+  "exit_code": 1,
+  "duration_seconds": 20.14
+}

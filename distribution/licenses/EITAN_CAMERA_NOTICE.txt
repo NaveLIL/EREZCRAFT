@@ -1,0 +1,6 @@
+EREZCRAFT Eitan camera adapter
+
+The independent nearby, one-pass panoramic adapter was informed by the render-state isolation in SecurityCraft FrameFeedHandler (1.21.1 branch), under MIT.
+Source: https://github.com/Geforce132/SecurityCraft/blob/1.21.1/src/main/java/net/geforcemods/securitycraft/entity/camera/FrameFeedHandler.java
+License: SecurityCraft-camera-reference-MIT.txt
+SecurityCraft itself is not bundled or required.

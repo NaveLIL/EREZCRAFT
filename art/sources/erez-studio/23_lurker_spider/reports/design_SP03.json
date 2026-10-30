@@ -1,0 +1,398 @@
+{
+  "design": "SP03",
+  "baseline": "SP02",
+  "source": "D:\\repos\\Blender\\creations\\23_lurker_spider\\source\\spitter_SP02.bbmodel",
+  "role": "spitter",
+  "variant_scale": 0.55,
+  "base_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+  "model_sha256": "d0ee659fad1b0385a2ad307b8c5077e59e0401e2cc22d260ee6ab178bee1c898",
+  "geometry_identical_to_SP02": true,
+  "all_uv_and_texture_indices_identical": true,
+  "eye_positions_identical": true,
+  "eyes_atlas_bytes_identical": true,
+  "animations_identical": true,
+  "alpha_and_dimensions_identical": true,
+  "pixel_category_masks_preserved": true,
+  "new_painted_details": false,
+  "contrast_factors": {
+    "legs": 0.16,
+    "abdomen": 0.13,
+    "carapace": 0.14,
+    "knee": 0.18,
+    "hair": 0.35,
+    "fangs": 0.22,
+    "eyes": 1.0
+  },
+  "original_palettes": {
+    "legs": [
+      "102a28",
+      "16413b",
+      "225f50",
+      "348369",
+      "55ac7c"
+    ],
+    "abdomen": [
+      "163e29",
+      "205e36",
+      "368844",
+      "55ae54",
+      "83ce70"
+    ],
+    "carapace": [
+      "29472b",
+      "3c6635",
+      "598a43",
+      "7aaf55",
+      "add578"
+    ],
+    "knee": [
+      "6e7b25",
+      "8d9b31",
+      "b0bd43",
+      "d2db61",
+      "e6eb95"
+    ],
+    "hair": [
+      "293f2b",
+      "3d5b36",
+      "587c45",
+      "7ea356",
+      "a9c875"
+    ],
+    "eyes": [
+      "080909",
+      "0c0d0c",
+      "111211",
+      "181916",
+      "28251d"
+    ],
+    "fangs": [
+      "20184d",
+      "2c2679",
+      "3c40ad",
+      "5864d8",
+      "879cec"
+    ]
+  },
+  "softened_palettes": {
+    "legs": [
+      "1f574a",
+      "205a4d",
+      "225f50",
+      "256554",
+      "2a6b57"
+    ],
+    "abdomen": [
+      "327e40",
+      "338342",
+      "368844",
+      "3a8d46",
+      "40914a"
+    ],
+    "carapace": [
+      "528140",
+      "558541",
+      "598a43",
+      "5e8f46",
+      "65944a"
+    ],
+    "knee": [
+      "a4b13e",
+      "aab740",
+      "b0bd43",
+      "b6c248",
+      "bac552"
+    ],
+    "hair": [
+      "48673c",
+      "4f7040",
+      "587c45",
+      "658a4b",
+      "749756"
+    ],
+    "eyes": [
+      "080909",
+      "0c0d0c",
+      "111211",
+      "181916",
+      "28251d"
+    ],
+    "fangs": [
+      "363798",
+      "383aa2",
+      "3c40ad",
+      "4248b6",
+      "4c54bb"
+    ]
+  },
+  "matte_body_roughness": 0.96,
+  "matte_body_specular": 0.08,
+  "textures": [
+    {
+      "file": "spitter_SP03_carapace.png",
+      "role": "carapace",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "8efde4e4f5529422aed0860fc3f7d7e6a9e9e8292daeae92c68744bce34c0524"
+    },
+    {
+      "file": "spitter_SP03_abdomen.png",
+      "role": "abdomen",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "234d551868dc1b7fbd8b8a7845282d279ca59c0c454bc90751e0f3407ea737b4"
+    },
+    {
+      "file": "spitter_SP03_fangs.png",
+      "role": "fangs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "ef1d6ea962eed900d6b9c8d1c332024955d98e3212ef20a2a5c0b4b45d544260"
+    },
+    {
+      "file": "spitter_SP03_legs.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "4b5d3f103ed0c132693b4a430bcd34ffb8a5ebfb80d49b80bd832fed117623d5"
+    },
+    {
+      "file": "spitter_SP03_knee_b8a07280.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "b32da53f5f1ecd53a087b86b0404a6815c5ce323d5522fe6a9e3ba5c85196ea7"
+    },
+    {
+      "file": "spitter_SP03_knee_db61b267.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "b32da53f5f1ecd53a087b86b0404a6815c5ce323d5522fe6a9e3ba5c85196ea7"
+    },
+    {
+      "file": "spitter_SP03_knee_a6aaeebf.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "d1227f7638af1f96affe60a4508f24bc893df639d49a43d699f4f227b201452e"
+    },
+    {
+      "file": "spitter_SP03_knee_afdcf1ac.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "d1227f7638af1f96affe60a4508f24bc893df639d49a43d699f4f227b201452e"
+    },
+    {
+      "file": "spitter_SP03_knee_ba6d967a.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "22beb20af8eae9643e1b5db6cce13a34b63b4fa61bc797d6823f4a833a2426a6"
+    },
+    {
+      "file": "spitter_SP03_knee_23396947.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "ec3242d5c9ef148f75be86ecd78a6538f72c577ef0d465f3cb4d34c743137d95"
+    },
+    {
+      "file": "spitter_SP03_knee_b86ffb08.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "ec3242d5c9ef148f75be86ecd78a6538f72c577ef0d465f3cb4d34c743137d95"
+    },
+    {
+      "file": "spitter_SP03_knee_d9200491.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "22beb20af8eae9643e1b5db6cce13a34b63b4fa61bc797d6823f4a833a2426a6"
+    },
+    {
+      "file": "spitter_SP03_knee_cfde820b.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "94dcbbd1a8eb511feb310edb15cfcb0f72c7ebdd27fda2fb67d9bc986533a09b"
+    },
+    {
+      "file": "spitter_SP03_knee_93827777.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "94dcbbd1a8eb511feb310edb15cfcb0f72c7ebdd27fda2fb67d9bc986533a09b"
+    },
+    {
+      "file": "spitter_SP03_knee_2cb3375d.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "51edb0c2e0f7f3a7dbc2d1d9b8182117547aa68be6d3a0bd7f5b4c8bcff8d8a8"
+    },
+    {
+      "file": "spitter_SP03_knee_9e184af3.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "51edb0c2e0f7f3a7dbc2d1d9b8182117547aa68be6d3a0bd7f5b4c8bcff8d8a8"
+    },
+    {
+      "file": "spitter_SP03_knee_9c16bf06.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "c94c04057d792c9be518c77088bac684d36c892a61089b2d32c4516eac21f663"
+    },
+    {
+      "file": "spitter_SP03_knee_01bb0c8d.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "c94c04057d792c9be518c77088bac684d36c892a61089b2d32c4516eac21f663"
+    },
+    {
+      "file": "spitter_SP03_knee_26bd0432.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "3a5a1c14b7f51b83c8547bab36b797d2e44cd821cc98b0202b258b9b7e56b6b6"
+    },
+    {
+      "file": "spitter_SP03_knee_b66db3ea.png",
+      "role": "legs",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "3a5a1c14b7f51b83c8547bab36b797d2e44cd821cc98b0202b258b9b7e56b6b6"
+    },
+    {
+      "file": "spitter_SP03_eyes.png",
+      "role": "eyes",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": true,
+      "sha256": "492fa18479cefb3ee660a49f16e8b71e1181a3557bac4b42c6bdba125bd141ac"
+    },
+    {
+      "file": "spitter_SP03_hair.png",
+      "role": "hair",
+      "alpha_identical": true,
+      "size": [
+        128,
+        128
+      ],
+      "only_rgb_palette_substitution": true,
+      "eyes_bytes_identical": null,
+      "sha256": "4079dbdb1715b4f38ed62f76a3188cf6ac3a2af69f2a66d79131ed481f778c42"
+    }
+  ],
+  "game_verified": false,
+  "status": "Single-variant visual trial; selected SP02 retained"
+}

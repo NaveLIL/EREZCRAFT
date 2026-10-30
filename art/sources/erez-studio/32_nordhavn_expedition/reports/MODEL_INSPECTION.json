@@ -1,0 +1,919 @@
+{
+  "revision": "NE01-A06",
+  "mesh_objects": 909,
+  "triangles": 37648,
+  "nonmanifold_meshes": [],
+  "zero_area_meshes": [],
+  "hull_dimensions_xyz_m": [
+    7.320000171661377,
+    29.440000534057617,
+    6.949999809265137
+  ],
+  "full_open_pose_bounds": [
+    [
+      -6.203345775604248,
+      -15.2264404296875,
+      -0.1550000160932541
+    ],
+    [
+      6.203345775604248,
+      14.720000267028809,
+      14.550000190734863
+    ]
+  ],
+  "window_rays": 827,
+  "window_ray_failures": [],
+  "clearance_samples": [
+    {
+      "name": "AFT_LOWER step 0",
+      "position_m": [
+        1.85,
+        -7.84,
+        1.725
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 1",
+      "position_m": [
+        1.85,
+        -7.52,
+        1.95
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 2",
+      "position_m": [
+        1.85,
+        -7.2,
+        2.1750000000000003
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 3",
+      "position_m": [
+        1.85,
+        -6.88,
+        2.4
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 4",
+      "position_m": [
+        1.85,
+        -6.5600000000000005,
+        2.625
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 5",
+      "position_m": [
+        1.85,
+        -6.24,
+        2.8500000000000005
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 6",
+      "position_m": [
+        1.85,
+        -5.92,
+        3.075
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 7",
+      "position_m": [
+        1.85,
+        -5.6,
+        3.3
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 8",
+      "position_m": [
+        1.85,
+        -5.279999999999999,
+        3.525
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 9",
+      "position_m": [
+        1.85,
+        -4.96,
+        3.75
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 10",
+      "position_m": [
+        1.85,
+        -4.640000000000001,
+        3.975
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER step 11",
+      "position_m": [
+        1.85,
+        -4.32,
+        4.200000000000001
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "AFT_LOWER landing",
+      "position_m": [
+        1.85,
+        -3.8499999999999996,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 0",
+      "position_m": [
+        0,
+        8.11,
+        1.725
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 1",
+      "position_m": [
+        0,
+        8.43,
+        1.95
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 2",
+      "position_m": [
+        0,
+        8.75,
+        2.1750000000000003
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 3",
+      "position_m": [
+        0,
+        9.07,
+        2.4
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 4",
+      "position_m": [
+        0,
+        9.39,
+        2.625
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 5",
+      "position_m": [
+        0,
+        9.71,
+        2.8500000000000005
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 6",
+      "position_m": [
+        0,
+        10.030000000000001,
+        3.075
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 7",
+      "position_m": [
+        0,
+        10.35,
+        3.3
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 8",
+      "position_m": [
+        0,
+        10.67,
+        3.525
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 9",
+      "position_m": [
+        0,
+        10.99,
+        3.75
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 10",
+      "position_m": [
+        0,
+        11.31,
+        3.975
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER step 11",
+      "position_m": [
+        0,
+        11.63,
+        4.200000000000001
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FORE_LOWER landing",
+      "position_m": [
+        0,
+        12.100000000000001,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 0",
+      "position_m": [
+        1.85,
+        -8.75,
+        4.429166666666667
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 1",
+      "position_m": [
+        1.85,
+        -8.450000000000001,
+        4.658333333333333
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 2",
+      "position_m": [
+        1.85,
+        -8.15,
+        4.8875
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 3",
+      "position_m": [
+        1.85,
+        -7.8500000000000005,
+        5.116666666666667
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 4",
+      "position_m": [
+        1.85,
+        -7.550000000000001,
+        5.345833333333333
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 5",
+      "position_m": [
+        1.85,
+        -7.25,
+        5.575
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 6",
+      "position_m": [
+        1.85,
+        -6.95,
+        5.804166666666667
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 7",
+      "position_m": [
+        1.85,
+        -6.65,
+        6.033333333333333
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 8",
+      "position_m": [
+        1.85,
+        -6.3500000000000005,
+        6.2625
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 9",
+      "position_m": [
+        1.85,
+        -6.050000000000001,
+        6.491666666666667
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 10",
+      "position_m": [
+        1.85,
+        -5.75,
+        6.720833333333333
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP step 11",
+      "position_m": [
+        1.85,
+        -5.450000000000001,
+        6.95
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "MAIN_UP landing",
+      "position_m": [
+        1.85,
+        -5.15,
+        6.95
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 0",
+      "position_m": [
+        -1.7,
+        -3.6399999999999997,
+        7.179166666666667
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 1",
+      "position_m": [
+        -1.7,
+        -3.32,
+        7.408333333333333
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 2",
+      "position_m": [
+        -1.7,
+        -3.0,
+        7.6375
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 3",
+      "position_m": [
+        -1.7,
+        -2.6799999999999997,
+        7.866666666666667
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 4",
+      "position_m": [
+        -1.7,
+        -2.36,
+        8.095833333333333
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 5",
+      "position_m": [
+        -1.7,
+        -2.04,
+        8.325
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 6",
+      "position_m": [
+        -1.7,
+        -1.7199999999999998,
+        8.554166666666667
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 7",
+      "position_m": [
+        -1.7,
+        -1.4,
+        8.783333333333333
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 8",
+      "position_m": [
+        -1.7,
+        -1.0799999999999996,
+        9.0125
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 9",
+      "position_m": [
+        -1.7,
+        -0.7599999999999998,
+        9.241666666666667
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 10",
+      "position_m": [
+        -1.7,
+        -0.43999999999999995,
+        9.470833333333333
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP step 11",
+      "position_m": [
+        -1.7,
+        -0.11999999999999966,
+        9.7
+      ],
+      "height_m": 2.2,
+      "width_m": 0.7,
+      "step_allowance_m": 0.6,
+      "intersections": []
+    },
+    {
+      "name": "FLY_UP landing",
+      "position_m": [
+        -1.7,
+        0.35000000000000053,
+        9.7
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Lower fore hall2.9",
+      "position_m": [
+        0,
+        2.9,
+        1.5
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Lower fore hall3.8",
+      "position_m": [
+        0,
+        3.8,
+        1.5
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Lower fore hall5.2",
+      "position_m": [
+        0,
+        5.2,
+        1.5
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Lower fore hall6.5",
+      "position_m": [
+        0,
+        6.5,
+        1.5
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Lower fore hall7.1",
+      "position_m": [
+        0,
+        7.1,
+        1.5
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Main hall-8.4",
+      "position_m": [
+        0.55,
+        -8.4,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Main hall-7",
+      "position_m": [
+        0.55,
+        -7,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Main hall-5",
+      "position_m": [
+        0.55,
+        -5,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Main hall-3.8",
+      "position_m": [
+        0.55,
+        -3.8,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Main hall-2.8",
+      "position_m": [
+        0.55,
+        -2.8,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Main hall-1.5",
+      "position_m": [
+        0.55,
+        -1.5,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Main hall0",
+      "position_m": [
+        0.55,
+        0,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Main hall1.2",
+      "position_m": [
+        0.55,
+        1.2,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Upper hall-3",
+      "position_m": [
+        -0.5,
+        -3,
+        6.95
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Upper hall-1.8",
+      "position_m": [
+        -0.5,
+        -1.8,
+        6.95
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Upper hall-0.7",
+      "position_m": [
+        -0.5,
+        -0.7,
+        6.95
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Helm approach-0.2",
+      "position_m": [
+        0,
+        -0.2,
+        6.95
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Master side3.3",
+      "position_m": [
+        1.8,
+        3.3,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Master side4.6",
+      "position_m": [
+        1.8,
+        4.6,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    },
+    {
+      "name": "Master side6.4",
+      "position_m": [
+        1.8,
+        6.4,
+        4.2
+      ],
+      "height_m": 2.2,
+      "width_m": 0.6,
+      "step_allowance_m": 0.0,
+      "intersections": []
+    }
+  ],
+  "clearance_failures": [],
+  "nonpositive_volume_meshes": [],
+  "passed_geometry": true,
+  "passed_sampled_clearance": true,
+  "geometry_sha256": "525402529f2f2747b66b3465f9ad0f9073bf8b943b90a25e6b545064f09a4ae6",
+  "assembly_sha256": "dfec079317b04cb897ed6970c3886e1a51fd49d1eae74e3445f5a0b8cea4f853",
+  "limitations": [
+    "Static evaluated mesh inspection only, not Minecraft walking or exported block collision acceptance.",
+    "Clearance samples use a 0.60m wide box and 2.20m headroom; stair samples exclude the bottom 0.60m to permit normal stepping.",
+    "No continuous swept-volume proof for doors or gangways.",
+    "Small AE2 raft compatibility is separate from full-vessel ME integration."
+  ],
+  "glb_round_trip_passed": true,
+  "glb_meshes": 909,
+  "glb_bounds_error_m": 5.960464477539063e-08,
+  "closed_bounds_m": [
+    [
+      -3.68208384513855,
+      -15.2264404296875,
+      -0.1550000160932541
+    ],
+    [
+      3.68208384513855,
+      14.720000267028809,
+      14.550000190734863
+    ]
+  ]
+}

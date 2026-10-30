@@ -1,0 +1,4342 @@
+{
+  "date": "2026-10-30",
+  "origin": "D:/repos/Blender/creations",
+  "scope": "Authoring projects 23-32. Sources and concepts are preserved as authored; runtime acceptance is documented separately.",
+  "total_files": 721,
+  "total_bytes": 404375400,
+  "excluded_classes": [
+    "Local logs",
+    "Compiled JAR/class outputs",
+    "Duplicate review ZIPs",
+    "Blender automatic backups",
+    "Caches, credentials and runtime profiles"
+  ],
+  "files": [
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/assembly/lozhnokoren_LK01.blend",
+      "bytes": 410441,
+      "sha256": "fc251015e07762caba5c59bea0411301dfcdc777380ca1c99666e076b4ebb0a9"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/exports/lozhnokoren_LK01.glb",
+      "bytes": 703804,
+      "sha256": "1f737b8f097b678db0f1a832c52089ff61e3e9d71e0926731449d218719ac297"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/crawl_00.png",
+      "bytes": 499266,
+      "sha256": "6e175ff7db479d03c208d87dc0a2e9fa02e0c266f867e0c7c892c8e442dc49aa"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/crawl_01.png",
+      "bytes": 498020,
+      "sha256": "16ef266adc63eaf422c807b30c860e47bf074657a086b3ed7c22ea91a13d8918"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/crawl_02.png",
+      "bytes": 496534,
+      "sha256": "cb2aae867de8d12c246965f4530826271e196928d3368d460f8ee8801992dc48"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/crawl_03.png",
+      "bytes": 496639,
+      "sha256": "2f0ff6f1aaea6d134ce76f99aa6a95dc4e6870700b0e5695b922f6dca516fad5"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/crawl_04.png",
+      "bytes": 496333,
+      "sha256": "039d26b6dd743a8a8c791a86d2e3273bc2a0e5e2a47dfd729c3815713d02918a"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/crawl_05.png",
+      "bytes": 497137,
+      "sha256": "6eb07745a8e91c2bb0f5878e9525cc1865d213296bbd987ec6b32c9df4dec04a"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/crawl_06.png",
+      "bytes": 497964,
+      "sha256": "7a792b92000a4b7994250902344542f31dbbcba4d9c09a54fef2881f2c236305"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/crawl_07.png",
+      "bytes": 498919,
+      "sha256": "6a43194d774b6b3b15a45b571230d46a7f62c843e4f7c957b9028663c638d075"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/lozhnokoren_LK01_crawl.gif",
+      "bytes": 1686549,
+      "sha256": "14b4e6dd88fc8861c6db6e92041c532f9027cb2bb3c32a3ea4a528fd163d37e9"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/lozhnokoren_LK01_crawl.webp",
+      "bytes": 196596,
+      "sha256": "dc62756ec92e048ebe80b4695d78fd59664e100c4e92cd899f99fab6e2ce1b20"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/lozhnokoren_LK01_hero.png",
+      "bytes": 1812834,
+      "sha256": "5329784acc4781b5a7006ec30c2e0edf2b714e37c951c20eda803e085dba2b15"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/lozhnokoren_LK01_review.jpg",
+      "bytes": 299776,
+      "sha256": "c68f249ad2dd31a7c5403c78c118c37ea23fd31e09951f7322fb299a7779c31a"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/lozhnokoren_LK01_side.png",
+      "bytes": 1682950,
+      "sha256": "4fbb74c5b5b761601f6c317543519fae3876fbcc34a76fed9e801100a244828b"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/lozhnokoren_LK01_threat.png",
+      "bytes": 1730499,
+      "sha256": "6c5d000db093f8b8def44e4186ee5bf17e94fab9d851a2060edb79e88b85b660"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/preview/lozhnokoren_LK01_top.png",
+      "bytes": 1774276,
+      "sha256": "5f65900f87549f30e1bebb776e4f8ecd376a779cb1367fc951e369be2953c0a5"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/README.md",
+      "bytes": 7865,
+      "sha256": "df9bf84f305a170391e6539f742cc5086de18a4c822b672e753e5cc66a9b806d"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/references/imagegen_prompt.txt",
+      "bytes": 2304,
+      "sha256": "919d09cb7de9ac60b92335643f17c72bf7d71544205505c5625689486b2df793"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/references/lozhnokoren_concept_LK01.png",
+      "bytes": 2338536,
+      "sha256": "0f6f05598975414803f4816720b6976876d81b4bf2dd61bfddf5330e2739c9d1"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/reports/blender_LK01.json",
+      "bytes": 647,
+      "sha256": "ca4d05b21a341e9592cdbfd9a5d6a2177a0c57768b11999b564f54f58f267590"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/reports/design_LK01.json",
+      "bytes": 663,
+      "sha256": "2462a8033fb452780a6ab09e0ed2ddd8d49e1c36f1d0124b9701eeef3b2aec54"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/reports/GLB_IMPORT_CHECK.json",
+      "bytes": 311,
+      "sha256": "4fb96770805416ce5e2e26f1701d83adca1c30b9a1fe066461071df263b79057"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/reports/LK01_ARTIFACTS.json",
+      "bytes": 1902,
+      "sha256": "738b4b00ba203bea132837d34c5db53e3b89ad9ccf0a1d393e6cc7354132c0a5"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/reports/SAVED_BLEND_CHECK.json",
+      "bytes": 2167,
+      "sha256": "5c7ac6a871ebdcd6c2f85cea733fb7e6626894c7002b9b459c589a64d6eb6331"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/reports/TOP_FRAME_CHECK.json",
+      "bytes": 233,
+      "sha256": "f13285c636266f58212db45bbee766d90e83b65ccdedeebb09053b85d76a8c99"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/ASSET_PROVENANCE.json",
+      "bytes": 4254,
+      "sha256": "6b5806c4f72655734c57f52e348fbe16bfdb003b02ea2b954e95aa0e2261a68c"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/lozhnokoren_LK01.bbmodel",
+      "bytes": 892310,
+      "sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/originals/beech_log_side.png",
+      "bytes": 372,
+      "sha256": "29fa0c448cf26e190f2f736d1f1ebc3eb7cf4d3006712ba58aa63a8b61a75808"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/originals/grass_top.png",
+      "bytes": 348,
+      "sha256": "dce0f22011225ddd2b0b86f223c5699c020c681379b9e0ecc2be948a5e5dba79"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/originals/maple_log_side.png",
+      "bytes": 243,
+      "sha256": "ccfee5d05c3baea0c628d6050d77ae68feb643ba996ba6e97e9ba0d09a532003"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/originals/maple_log_top.png",
+      "bytes": 303,
+      "sha256": "f9561bfb710537d7e54c45853951780d2690b477135a8b1943ca8286ec48e73e"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/requirements.json",
+      "bytes": 1242,
+      "sha256": "26a1b2d7a9f2a3fbe329e039604a9470aa31481c4b644660895ca9fd6e8c8f7f"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/textures/bark.png",
+      "bytes": 245,
+      "sha256": "2abd2340bfc244111079a27c65ab14c6ae4bec487a32f20bbd06affe3df738fe"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/textures/cut_wood.png",
+      "bytes": 287,
+      "sha256": "a6ae7367f6b1345f15b0241b28aa857568b0bf52bc4d434fcb51aa19f4161fd4"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/textures/dark_bark.png",
+      "bytes": 242,
+      "sha256": "d1dead65d9f6c5d19f89f7334073dafe320a981f567e259131d611d0b1294965"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/textures/eyes.png",
+      "bytes": 295,
+      "sha256": "921b4239cc68682e5aebf540a9aaa9b08ec2e0544cb515e094abe4250644f0c6"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/textures/horn.png",
+      "bytes": 293,
+      "sha256": "36d1cebc20db5f8bd9a926c10958cce16448b4d912055f057cf8007d90d0c73a"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/textures/joints.png",
+      "bytes": 288,
+      "sha256": "32f35da48610d01e763f0909010c8d5ef766a4dc560f895313d8777cf7f91c9b"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/textures/moss.png",
+      "bytes": 355,
+      "sha256": "1302235b0fd41e4c3556354a256f3c751153a46bde1cbf278e8181e2cfad1b86"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/source/texture_manifest.json",
+      "bytes": 1029,
+      "sha256": "157c2511ef5c6c5d8384d1fbe8e741b529317e0fe483aa50c996cb9413c6edac"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/tools/build_model.py",
+      "bytes": 13638,
+      "sha256": "5d563295908f76d1f35d63a2db9c0ed76d73519a0f1bffb8ea653ab999827906"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/tools/build_scene.py",
+      "bytes": 11629,
+      "sha256": "48750f94c533f80c02d11031c98ab4ebbd69e1f8fdfd81179084541d8b1d9c5b"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/tools/check_blender_asset.py",
+      "bytes": 2540,
+      "sha256": "54f7b27bdb3cb439dec493fe23f62a69558c7378fb7fb3ce16b833e060eb433f"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/tools/check_glb.py",
+      "bytes": 1129,
+      "sha256": "d14b93aa9bfa45c7278db498767839d7925db21d215598e49af4e133b4ee648a"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/tools/package_review.py",
+      "bytes": 7710,
+      "sha256": "a50c451912e02968cbc0fe229e21550c6b80c6937339339a350eb259448e54b2"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/tools/prepare_assets.py",
+      "bytes": 3572,
+      "sha256": "60671dba62eb436e59998e84d35ad6e088458342650fcebc275f29c14c2c6c0f"
+    },
+    {
+      "project": "24_lozhnokoren",
+      "path": "24_lozhnokoren/tools/render_top.py",
+      "bytes": 1193,
+      "sha256": "1c0d20cb9b17153d78ee6078534ca27c51faf973d0baa012372540c4c90877b7"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/assembly/skat_SK01.blend",
+      "bytes": 777046,
+      "sha256": "403d0fec03d56fb6bbc897451435c8dff8c65fac2a1a12082ec2b836832f988f"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/assembly/skat_SK02.blend",
+      "bytes": 1021241,
+      "sha256": "70dd33ee001ec37272b4a47d4e51a61a1d9200c4e4abd12957494e576da0fc5f"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/assembly/skat_SK03.blend",
+      "bytes": 1058735,
+      "sha256": "67219b897b4c8427e33755e0bac623276d7b68eb863aac90623fa7f77059b02b"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/assembly/skat_SK04.blend",
+      "bytes": 1066410,
+      "sha256": "7d7b2aefb97f04eb47167119683d11fbaf77854102722756c507a08c6dc7cd93"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/exports/skat_SK01.glb",
+      "bytes": 1500020,
+      "sha256": "ad884c9589152fff15c7e896c778269bd4b3799bb7329440aad02a515619f264"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/exports/skat_SK02.glb",
+      "bytes": 2573224,
+      "sha256": "140cdfff199ba03165aea53af1c1d70a814028cc3ad820c706542d27210d1f66"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/exports/skat_SK03.glb",
+      "bytes": 2710688,
+      "sha256": "b16db945fbf4e53015ed446f9b5549ad30b61f0e354b4aadad47ae1dfe22f9aa"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/exports/skat_SK04.glb",
+      "bytes": 2704548,
+      "sha256": "096fa2eea053bcd9f6b71348a117e38863f317529b91653e1b9de9675c3e08ce"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/INTEGRATION.md",
+      "bytes": 7593,
+      "sha256": "ef1cd893d37dc0ef10f5e08085d770d4b44e095a6007e97a9e3ce741c3f0cca1"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/INTEGRATION_SK03.md",
+      "bytes": 3300,
+      "sha256": "5b5557eb63291018b70d36e51c83e7afcba3a1239d4b85d6b4be86ea907bedc7"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/preserved/large_SK02_as_seen.png",
+      "bytes": 3217423,
+      "sha256": "1c901dc08c74e22093441164fcc3140287c13fa5b645d5fee20f73178b2575d2"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/preserved/small_SK01_as_seen.png",
+      "bytes": 2399111,
+      "sha256": "cd6661e3113732f99958d0499296b59cba24a0e64997801e3440a6682f745555"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK01_aft.png",
+      "bytes": 2309730,
+      "sha256": "ae07d6cb908503db8dfb9623eb1c514bf8f25341632bf3a170bd08f80182461c"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK01_cabin.png",
+      "bytes": 2489598,
+      "sha256": "1147c40f705bd4204231855f2235af9feb85fbf3fccab8213d7268f0b70df1e4"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK01_cutaway.png",
+      "bytes": 2279968,
+      "sha256": "dfc803fc474fdb1804cb709f4fb38ff0757026877e1c49de3ec92b46c799b145"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK01_hero.png",
+      "bytes": 2399111,
+      "sha256": "cd6661e3113732f99958d0499296b59cba24a0e64997801e3440a6682f745555"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK01_hold.png",
+      "bytes": 2635300,
+      "sha256": "8239d0c52b9c00c17eb4415e8e198a1d198fed72d9902576ae97a83d90ab1144"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK01_side.png",
+      "bytes": 1838803,
+      "sha256": "9f95f074134c2c0c384e56ad39c9fac4d6333517effe55ff39846df7fb2490ed"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK01_top.png",
+      "bytes": 1986741,
+      "sha256": "b23a8feddd068ced41e7bb7869e55fa5ca488ee323df4b7f6d55764f09ee73a3"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK02_aft.png",
+      "bytes": 3143521,
+      "sha256": "8f375e0e4321c79596748309195268ffc544c72a0b5282a04c0a396587ccc969"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK02_cabin.png",
+      "bytes": 3193228,
+      "sha256": "4c0062bf3c082d5acb176ba41f3ef5c21001c136bcdfb26198d4048d4b03b9a0"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK02_cutaway.png",
+      "bytes": 2810087,
+      "sha256": "b773ba269f478596fa822faf2d9f685c9f0f1390a55cd9ee7eaa9da5b6df6845"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK02_hero.png",
+      "bytes": 3218642,
+      "sha256": "8dfce80bf0ead9c2f39fca79cf344fab5184771d405f48b9f1a05e22c68f1d70"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK02_hold.png",
+      "bytes": 3180384,
+      "sha256": "bcc5d0c04eac19368ccb1c36ffdf9ccd8bfc22d60bfd9d69d6037bb0688b013c"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK02_reference_comparison.jpg",
+      "bytes": 425337,
+      "sha256": "30aa5b7d33599831adfd6137c019b92b644daa6ed6546898a67679c9c42ed391"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK02_review.jpg",
+      "bytes": 652364,
+      "sha256": "2091c0a5f1105a5a140463bdd48854d0d2d2722fd42776d50dc3992bf6871400"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK02_side.png",
+      "bytes": 2387314,
+      "sha256": "00e7fb4976c6c6ee1c8c6c2cee84ba2a77327ab6ce0b424a899676e123287866"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK02_top.png",
+      "bytes": 2399622,
+      "sha256": "5a67791ad70745319bfcd4a46b64d56c53057713720811841e43129c67600d38"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK03_aft.png",
+      "bytes": 2561734,
+      "sha256": "a32e42831141ebf29ce37c4b65a62f71e734aaab1c1d69715046471a2e862822"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK03_boarding.png",
+      "bytes": 2238400,
+      "sha256": "af08e1daf07387025d55109d66424a042af1fd66c3274e226db364bd6783f70b"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK03_cutaway.png",
+      "bytes": 2262045,
+      "sha256": "8f15598d8d35af3deeb36dac48f3a7767b0044bb10f206eebce4e8a8d21a700c"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK03_hero.png",
+      "bytes": 2617307,
+      "sha256": "8fffd7100e7fd8291c103b36732c0d7795e70121e1ae49898cca8ebd117743b5"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_SK03_stair.png",
+      "bytes": 2313655,
+      "sha256": "6e7b1794685387e043d776430683436ec95d1b357faad693ec2a2079a66b59f7"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/preview/skat_small_and_large.jpg",
+      "bytes": 339057,
+      "sha256": "0a0a4d958250bc7d314b7676992fbba49d0d61ef4ea8edd49a89f88a9e54449c"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/README.md",
+      "bytes": 9395,
+      "sha256": "32653ca70b72e6c587a5895f27336dda4982b8548ebf4da93118ea54327a2752"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/references/imagegen_prompt.txt",
+      "bytes": 2362,
+      "sha256": "83268abbba519e3b425cfcf0dc404c5528a6e225a8e6f18eaf02501df93f3612"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/references/skat_concept_SK01.png",
+      "bytes": 2593160,
+      "sha256": "8bb6270e1337af5628538090f3b3b71ffaadc6c715a81d1c3d080074b7642b87"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/BLENDER_BUILD.json",
+      "bytes": 590,
+      "sha256": "04f154f2e68ea141ad3f42b3eb436a3c5f5f0fdfb32c3a46a911015c6e411961"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/BLENDER_BUILD_SK02.json",
+      "bytes": 592,
+      "sha256": "eeb8adc83aef22c5250bb659be97ec8b2749f9c0e800239aeda252150c5ee5f8"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/BLENDER_BUILD_SK03.json",
+      "bytes": 593,
+      "sha256": "831157dae329438af4fd53b5487f7694bee96f6b534f50794399bef2d9861ae9"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/BLENDER_BUILD_SK04.json",
+      "bytes": 593,
+      "sha256": "2b8ffd32dc07831c2fe2d91265706f095e9ccc70b6bf2aa4a6c099ea79c1c47e"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/BOTH_VARIANTS_PRESERVED.json",
+      "bytes": 2259,
+      "sha256": "7f79fee4cc624092e262f91333e95b7d902022aae5500f474f7e7d2eafd43129"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/DESIGN_CHECK.json",
+      "bytes": 218,
+      "sha256": "8097486f8d3771c12edb3c06997b586413445504630db7dba75a034f27c3baa0"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/DESIGN_SK02.json",
+      "bytes": 148,
+      "sha256": "76f6c29e943b221a7c407975e5c431e1a104c7804b0bb5f5c74f49c99d360689"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/DESIGN_SK04.json",
+      "bytes": 304,
+      "sha256": "b7d6d7f1c0053ceb62700ca44f885c078c9a06fbfa10be830b90a2104ef76c8f"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/GLB_IMPORT_SK02.json",
+      "bytes": 243,
+      "sha256": "d4f81531c08e4a0859e3e014ee3d5a55f8c1c856895e12e921a38cbb1437f493"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/PRESERVED_SK01_CHECK.json",
+      "bytes": 264,
+      "sha256": "12d0bef78b5283f3f75c888b035f1aec6ca7068992c5f5213a7c98618c85d9e3"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/REQUIREMENTS_SK03.json",
+      "bytes": 2515,
+      "sha256": "0203d19a9e8b58d8df1de608f6e69900797c67f1d64491310561573d8f3adc49"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/RUNTIME_VERIFICATION_SK03.json",
+      "bytes": 1056,
+      "sha256": "5fd471167d53beb42eb8aa46db1505cb274aa89453db61c493318e23b30e71ae"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/SAVED_BLEND_SK02.json",
+      "bytes": 1538,
+      "sha256": "33b43c5b8f60ea407ed2dc2ff0c2bf1074d564efbc07399212eeb09f5208d7b0"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/reports/SK02_ARTIFACTS.json",
+      "bytes": 6217,
+      "sha256": "ed49966bfab7cbb2778688307b3de8a1f8aeca4791edf20f8e69cf09297659e2"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/ASSET_PROVENANCE.json",
+      "bytes": 7509,
+      "sha256": "89ed4ff8873d628e41e12f8ed2058522c3a1be1f494ee4be9dad8cd59ec31a85"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/ASSET_PROVENANCE_SK02.json",
+      "bytes": 8249,
+      "sha256": "06d1fe8c2fb13f9fb9518129abf2cdc82d5b9d0ed4ae9b45b49bd0ccc2f65599"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/originals/maple_planks.png",
+      "bytes": 282,
+      "sha256": "a68c62d9bab0058b8054fba6f1db26444fc624bd59305d93176ae1b8953fed69"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/originals/steel_block.png",
+      "bytes": 296,
+      "sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/requirements.json",
+      "bytes": 3406,
+      "sha256": "1b836102d51a6c08872f4835f2594fc41694cf566b5cf45a91f27ef689c596f8"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/selection.json",
+      "bytes": 1054,
+      "sha256": "cb5f8c74cf78943efe279f6fa99a0bb806fcfeb0cc7846e905bc0703daf0e7e1"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/skat_SK01.json",
+      "bytes": 361826,
+      "sha256": "61e968d5b6912bf5d7a7a427d9c3cd747d17d95268ef3d5f69ebc5c41d40ad8f"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/skat_SK02.json",
+      "bytes": 649681,
+      "sha256": "4375751e7612637136a8b983dcf94032d779e550e07ef8147b05880063dfd5bb"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/skat_SK03.json",
+      "bytes": 687597,
+      "sha256": "fb3b855e297c45e94130d7ae75bcfb8b07b13514b0731a5991406745d1fc16f8"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/skat_SK04.json",
+      "bytes": 693997,
+      "sha256": "7a7dfacf8f2b3fa73128d7e513f6094493a109e2f2ef3f46eff5814d840a61fc"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/brass.png",
+      "bytes": 284,
+      "sha256": "86239279a152a98922f568898b5527b592cc9d18414d7d9c71cd548d6de69920"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/copper.png",
+      "bytes": 282,
+      "sha256": "1f2d1a762c56722a83fa1b63c25c2de447224713ea00dc87a1c9fa0c90deaa4c"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/cyan.png",
+      "bytes": 262,
+      "sha256": "5db0f79d74edf1952921eb773c236e190ff1c8e912ba8b1c4dc6cc506fd2b605"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/glass.png",
+      "bytes": 250,
+      "sha256": "24fd60834c72f887d06efa0b4c9bea7fbca505fa4020ee694d0ad076ddbebcce"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/graphite.png",
+      "bytes": 251,
+      "sha256": "33dfdf76185bb60a5b7e814127c64dce6b7588a612d7c3695d1505d92ef55a12"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/ivory.png",
+      "bytes": 282,
+      "sha256": "334b32f136013de7666f12b4f36652757d12a2d32711f1ed784ee2d9ce655018"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/lamp.png",
+      "bytes": 277,
+      "sha256": "6caeca49fcb20d53057e419484564112c9a010c09ddcb02636f991ce4c63e90e"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/rubber.png",
+      "bytes": 268,
+      "sha256": "8d316f023600d5ea88c043ff588806b3bb6b4a2e7c9c42f8351e0de53265f51e"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/steel.png",
+      "bytes": 269,
+      "sha256": "f77a3ad6f62ecaf2e88a55b1a957fcf77fe02ab6771b42e409cbda565c88b827"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/teal.png",
+      "bytes": 273,
+      "sha256": "9dde6332b73ba9bde8faa76cd24d58265c9530f1f7057e827465e8e3ff831789"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures/wood.png",
+      "bytes": 245,
+      "sha256": "81482b9726acebd956a59c3010f90de818986559080241523fd7eb52578541de"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/brass.png",
+      "bytes": 284,
+      "sha256": "86239279a152a98922f568898b5527b592cc9d18414d7d9c71cd548d6de69920"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/copper.png",
+      "bytes": 282,
+      "sha256": "1f2d1a762c56722a83fa1b63c25c2de447224713ea00dc87a1c9fa0c90deaa4c"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/cyan.png",
+      "bytes": 262,
+      "sha256": "5db0f79d74edf1952921eb773c236e190ff1c8e912ba8b1c4dc6cc506fd2b605"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/deck.png",
+      "bytes": 265,
+      "sha256": "4bd0b6e6077ab071a9d1b8d95c8f36bd5065ac14d0655bd69d49ebe12fa641a8"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/glass.png",
+      "bytes": 269,
+      "sha256": "18852fba78af7527381aa8257d1fff930bf3899a797b1a5667200b2a72691699"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/graphite.png",
+      "bytes": 265,
+      "sha256": "6219cdacd7168c83e74a780ca99a45beee3478ec5f1042a55dab8c637a96150d"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/ivory.png",
+      "bytes": 282,
+      "sha256": "334b32f136013de7666f12b4f36652757d12a2d32711f1ed784ee2d9ce655018"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/lamp.png",
+      "bytes": 277,
+      "sha256": "6caeca49fcb20d53057e419484564112c9a010c09ddcb02636f991ce4c63e90e"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/rubber.png",
+      "bytes": 268,
+      "sha256": "8d316f023600d5ea88c043ff588806b3bb6b4a2e7c9c42f8351e0de53265f51e"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/steel.png",
+      "bytes": 273,
+      "sha256": "bdbc9226911f0a2f403e239c2f37fec0ae99aa1f1bbbdd8d55691da5e13ff012"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/teal.png",
+      "bytes": 273,
+      "sha256": "9dde6332b73ba9bde8faa76cd24d58265c9530f1f7057e827465e8e3ff831789"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/textures_SK02/wood.png",
+      "bytes": 245,
+      "sha256": "81482b9726acebd956a59c3010f90de818986559080241523fd7eb52578541de"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/texture_manifest.json",
+      "bytes": 1307,
+      "sha256": "3366a5f1975e2e0748e21f2b780770ff9fd95ca6b505847e58ca7fdda0b508e9"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/texture_manifest_SK02.json",
+      "bytes": 1487,
+      "sha256": "943db5212170d336b44c6e242996dc8e15607784e11ac49157b3c37b4cb47330"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/source/texture_manifest_SK03.json",
+      "bytes": 1487,
+      "sha256": "943db5212170d336b44c6e242996dc8e15607784e11ac49157b3c37b4cb47330"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/build_design.py",
+      "bytes": 15192,
+      "sha256": "37d3f7988ee7873f9e39d94018e1d8f88ccff595e55be158066592dcfe7d0d39"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/build_design_SK02.py",
+      "bytes": 22523,
+      "sha256": "4adebd4b737070f16858d8979ce75a110273ac0969f16c7e7654de2c5c116881"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/build_design_SK03.py",
+      "bytes": 9377,
+      "sha256": "61ed32754221ed8aaf028b40ebd02ef72d322bf66cae0ea77c13ae48cf01b096"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/build_design_SK04.py",
+      "bytes": 4402,
+      "sha256": "7c05eb397f45857a159e6b7581854fa44c81ea3f59c29a949f5c6773c3c32f4a"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/build_scene.py",
+      "bytes": 13511,
+      "sha256": "8c73b2c05790e836750238f52eb0002cf68a6ff1d46a038cf2faa53c4e2cf7ed"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/build_scene_SK02.py",
+      "bytes": 16049,
+      "sha256": "055f5224b50d4b2fff4e5a50c6faf905488ff3aa055172dc1ff1f6ba772db13c"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/build_scene_SK03.py",
+      "bytes": 16429,
+      "sha256": "cb0f516f26021e1603ad2582d2f4ecbfdd0a5f2af719e55c84d78337573098ca"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/build_scene_SK04.py",
+      "bytes": 16480,
+      "sha256": "58372bedee8819721db0fc52f95ef8e5f7a30a252017ac72acca680d77ba0fdb"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/package_SK02.py",
+      "bytes": 6563,
+      "sha256": "0a5058311f1e99bede98dafde2094327f191ab8c45ed6430faa72d8926d54f52"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/prepare_assets.py",
+      "bytes": 4283,
+      "sha256": "b891050e9b239f9f3ad3b81ba9c4268b1f5e22109304cefa5d212dcc0a679c0f"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/verify_blender_SK02.py",
+      "bytes": 6112,
+      "sha256": "a8ca10fdd89f6ed7983c9d47925fb35002a54312054959eac39d019342b53f0a"
+    },
+    {
+      "project": "25_skat",
+      "path": "25_skat/tools/verify_small_SK01.py",
+      "bytes": 1743,
+      "sha256": "2fb55d9581c3dabdfe424fc0f9e610bd8828a978faed57cb8a7d862d8cbc9d69"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/assembly/lower_ocean_OC01.blend",
+      "bytes": 137090,
+      "sha256": "e7e3581afc594fcf2b2005560f643d0e9b7049b553bbcd79a9bc8bdf294597b5"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_00.png",
+      "bytes": 655437,
+      "sha256": "08be1fd77c69f7f697c33d649fbddb711b374c72dd0ae4c48fb4a0b6a8bb2cf6"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_01.png",
+      "bytes": 656697,
+      "sha256": "11c7b91de12c80736df3c2aeb6c96944207c53fc2e211f16dcace10830df192f"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_02.png",
+      "bytes": 655195,
+      "sha256": "948058dd334b2d845197a3d9101346744ff57387ea5ad9ef467883e393d6b85e"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_03.png",
+      "bytes": 655218,
+      "sha256": "1f1017b56ebab440f740daeb254058ca9f604955b5f3875a5910038e24b8e5b1"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_04.png",
+      "bytes": 655147,
+      "sha256": "7acbe6dadbfdc68ab84461a56d7a0d13d2323850ff29923f0ecf86b130f8a54b"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_05.png",
+      "bytes": 656087,
+      "sha256": "319567de1a20fb28bd9b7fc31fc3414d8847f35a1edaaf66f6bd23d54124251b"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_06.png",
+      "bytes": 655615,
+      "sha256": "53a8d8d7ff4a43d9bbe323a22e9cbd37562b947d351806a2dc478149d3cd7510"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_07.png",
+      "bytes": 655874,
+      "sha256": "add76265de9c3ec4b3765f4799253d2bc0b7e1aa150a1655e47ef49cc01d4438"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_08.png",
+      "bytes": 655414,
+      "sha256": "e5483eb17690b16678cb8f1f1a37acc8fcac9cdab5d30e6284649fea26303ca0"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_09.png",
+      "bytes": 656318,
+      "sha256": "e897a963f48d3f12a5129b3a632a17ede7e7b20482373676644aac7c3b213622"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_10.png",
+      "bytes": 656359,
+      "sha256": "ac128ad3262b3c44b1a1b21dd14e52b6344b8e1d545162bc66c76b33f1d9fc85"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_11.png",
+      "bytes": 657394,
+      "sha256": "2a647209515592b5d5976133a7122f8ca03c8565e7168f7b3d8c25c9a73b60f5"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_12.png",
+      "bytes": 657624,
+      "sha256": "1b590e7659b77d862191037cea40f400055ee396788c6d98c69328d5c15bacdc"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_13.png",
+      "bytes": 655388,
+      "sha256": "74f43bfa5f59e15964feb584db2dc3cb89ed39fe2e2cfaf9ba7e5046fa371006"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_14.png",
+      "bytes": 656462,
+      "sha256": "ed66b07484e0015f882c5be54c98ea43d15a577531ec00179cfcd672f00fe260"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/loop_15.png",
+      "bytes": 656685,
+      "sha256": "99a9e50f50ade215da94a543475da459144fa5e2bbca58f403981ce00bc3ab5e"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/OC01_continuous_motion.gif",
+      "bytes": 6114363,
+      "sha256": "cb3c4bb0aeb7bd35d5fc5204b1f424db591689fd99adc26e5193945b23025bd5"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/OC01_loop_end_control.png",
+      "bytes": 1542773,
+      "sha256": "e973acf93677259398cca4571bc6cd0a1a9f529c757bcfb655349758762d4053"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/OC01_native_material.png",
+      "bytes": 1713035,
+      "sha256": "ebf9b075bd5cc7022668741ad81a7c1415193463e3d5202e310ba14a4c4569e1"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/OC01_patch_control.png",
+      "bytes": 1542577,
+      "sha256": "562e26dbe830695a41ff973fede8872385d709e981ca2b5cfa8841b811f2bf4f"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/preview/OC01_single_control.png",
+      "bytes": 1542728,
+      "sha256": "7e63692c7c43e6292e04b983cb82c2fcc871b9a8a48a417cc65a37aa08982544"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/README.md",
+      "bytes": 5551,
+      "sha256": "6ab996477633aa5f3b1a7e6cb67f2c2d6e3cb65f0a2d32d366966e601094c587"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/references/imagegen_prompt.txt",
+      "bytes": 2610,
+      "sha256": "686f520affe488c809f9d28121ffef665a42be9a60aa4f60d7d7f9ecfa8f3443"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/references/lower_ocean_OC01_concept.png",
+      "bytes": 1810754,
+      "sha256": "7349398a429ba99b99e343f25df8e059f8bc36c972d9a6d25dae140d378633ca"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/reports/ARTIFACTS.json",
+      "bytes": 2196,
+      "sha256": "fa58bab30d513c4e6abab69ee7929d92b9eb5561576f84501d54cf2d754a1a20"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/reports/CONTINUITY.json",
+      "bytes": 548,
+      "sha256": "0ef073190f1aa1ee2b1912b046ee48029ee041c9bff7a2810ccda1449dab53a0"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/reports/NATIVE_BUILD.json",
+      "bytes": 384,
+      "sha256": "ca01381db6528a4b3eb49855d485e59f73d4062b44951a719456f0a22b8b669c"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/reports/RENDER_CONTINUITY.json",
+      "bytes": 801,
+      "sha256": "c51477d2d7cc1dbf4854fd98bb0335f0817aed54363f6546e20663d95833c160"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/source/material_OC01.json",
+      "bytes": 2176,
+      "sha256": "50d7c26f1e73cd393b59cf6259118193de13fc91c324d4a1e37e5895b61992f1"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/tools/build_material.py",
+      "bytes": 9981,
+      "sha256": "3c4e8f87ba3b8f61b1b06159c9106838899a59c0b63634a7f0dd8f364493408d"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/tools/check_continuity.py",
+      "bytes": 2831,
+      "sha256": "c23eec993fcb514c6dfc5843e7fba8ff9acb95d8f2250aa156053a720b248f78"
+    },
+    {
+      "project": "26_lower_ocean",
+      "path": "26_lower_ocean/tools/package_review.py",
+      "bytes": 2563,
+      "sha256": "85246d4106169770b750d569beda7c4a3a120b1e90b362653ceb72245acff3ac"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/assembly/two_seas_BN01.blend",
+      "bytes": 1668938,
+      "sha256": "cd43e407eabbd48540fe26074efdcbce4d0e95c62ec476212892f52ff46bbdde"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/exports/two_seas_BN01_banner.jpg",
+      "bytes": 1034729,
+      "sha256": "a930a6045d255992ac4f858d0366bd2d438d81a3c5485079948f8f0c9fc5f617"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/preview/two_seas_BN01_banner.png",
+      "bytes": 5381901,
+      "sha256": "7584215a550473a0bfbd80928fe8bb7fa61d9328a1c109a9e8ddf3acc94e2426"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/preview/two_seas_BN01_draft.png",
+      "bytes": 1405531,
+      "sha256": "1d093b3d637179c2641481f713e279b98c82427e157ef7d928ea6a430951660e"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/README.md",
+      "bytes": 5292,
+      "sha256": "068f6d74570676373542977c94da668908c07bb2eb526888c0c4bd6f062e5533"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/reports/ARTIFACTS.json",
+      "bytes": 1588,
+      "sha256": "0e26036780646d85f066e7fe298a7cf9e0e53a1a099092f6194fa840b4b3f256"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/reports/banner.json",
+      "bytes": 653,
+      "sha256": "145c154183f7b37e0bd96e42103785377f41593c2644ef61a4133a5adda8fdb9"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/reports/draft.json",
+      "bytes": 652,
+      "sha256": "a9ee75b4c277fa7e7d044801f4a6aab3cd831cb5b707c495c9d86084c57c72ea"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/reports/SCENE_CHECK.json",
+      "bytes": 2073,
+      "sha256": "eeefc6b973e9d09db5c37f12b32dba80a61f38291b81c6529ada0427fc9a032e"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/source/banner_BN01.json",
+      "bytes": 1440,
+      "sha256": "9f9bc3f06bbc1bee732e9ee32efe48f03fc632a1f8252bdc1eb73b62e84cbec9"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/source/erezcraft-emblem.png",
+      "bytes": 36124,
+      "sha256": "940adeeb393ca9cd32e869149d8dd3289c7c9a0ac56de8fc16c8470646892139"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/tools/build_banner.py",
+      "bytes": 20231,
+      "sha256": "30341e66f24f51cc9c90cb84cb6243da948a98fea12b71cdb41d3f3fd687e3d8"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/tools/package_banner.py",
+      "bytes": 1225,
+      "sha256": "75abc081b4dcc1bb8d8c078645c55ec4c90fed81e16e661dd24a5fbf12888775"
+    },
+    {
+      "project": "27_two_seas_banner",
+      "path": "27_two_seas_banner/tools/verify_scene.py",
+      "bytes": 2975,
+      "sha256": "2cf752cb818caed164f344a11a2da5ea52b33aa54876dc0c98812bb6fca4d372"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/archive/PK01_block_texture_trial/ASSET_PROVENANCE.json",
+      "bytes": 6515,
+      "sha256": "949e7f609c5b20310d053f7dd99bec6234b56074981cd79ac28d5633b609972d"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/archive/PK01_block_texture_trial/avatar_atlas_PK01.png",
+      "bytes": 1565,
+      "sha256": "39e542edfb2e7a72323d5c6a8e09bbd3e6df3abcfba19060c9fdc5a63bcce12e"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/archive/PK01_block_texture_trial/avatar_PK01.json",
+      "bytes": 802962,
+      "sha256": "a830f5f4785fadd85f7b84a370b087ad999ad2928d7873bdc447f79609e2574f"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/archive/PK01_block_texture_trial/Kizya_Pink_PK01.blend",
+      "bytes": 193382,
+      "sha256": "4e3e49c35240d6c5fe84fd56208a99f60a42fe182b0f7cd74fd917d46394007c"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/archive/PK01_block_texture_trial/PK01_back.png",
+      "bytes": 1648951,
+      "sha256": "0a2c489265381294b4a32c183a80b01acb9c219f2117dd8232f3f953488484cc"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/archive/PK01_block_texture_trial/PK01_face.png",
+      "bytes": 1000834,
+      "sha256": "b38576eb83e8ac1cbabfe0e38cb94d70ad0b7e90c25f1cab67a39963364ad29a"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/archive/PK01_block_texture_trial/PK01_front.png",
+      "bytes": 1626093,
+      "sha256": "fddc56cce127bef51113f7a98a0eabe1934253af497531c4d2429e65ec65c20f"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/archive/PK01_block_texture_trial/PK01_quarter.png",
+      "bytes": 1725694,
+      "sha256": "e1584740c7cb9fbe932c191bf8a3fb375c699824f6470ca981e72301a8437b49"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/archive/PK01_block_texture_trial/PK01_side.png",
+      "bytes": 1485859,
+      "sha256": "997d8cfcf4505e782a6410431d3b1fc54c79797c5a5fd9f26dfd07309174fdfb"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/assembly/Kizya_Pink_PK01.blend",
+      "bytes": 193382,
+      "sha256": "4e3e49c35240d6c5fe84fd56208a99f60a42fe182b0f7cd74fd917d46394007c"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/assembly/Kizya_Pink_PK02.blend",
+      "bytes": 188872,
+      "sha256": "5ae58eff18303bf7efd8655a91f35762471180d303eab3c682a7ce89f51e5946"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/assembly/Kizya_Pink_PK02_Vanilla.blend",
+      "bytes": 196335,
+      "sha256": "d0f2de827eb88fc968d810899b6d8e9172a04ac830cf4842d2a4a686c6808cb1"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/exports/Kizya_Pink_PK01.cpmproject",
+      "bytes": 12687,
+      "sha256": "30dfd728a90081cc691caeaa541392548069101c9a0d75bdae7958e06bd9c21d"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/exports/Kizya_Pink_PK02.cpmmodel",
+      "bytes": 20098,
+      "sha256": "0821df5931a6c5364428fcd00f1c9269b567a15edc191a00bfbec411210eab36"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/exports/Kizya_Pink_PK02.cpmproject",
+      "bytes": 26721,
+      "sha256": "e21110f578c6d50e449fc369ea11a707d0d8ac593245548b8b58ed1e0ed426a6"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/exports/Kizya_Pink_PK02_slim_64x64.png",
+      "bytes": 3848,
+      "sha256": "dff45c41b5dba627f827c8c081291a6de25c5e79379ef2333ac5a2eb2b694874"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-after-reload.png",
+      "bytes": 235458,
+      "sha256": "a01a8d23b483224f985b155b4f53cd061cc3f14d996a8c7804e73fd66c2ac222"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-bare-back.png",
+      "bytes": 172574,
+      "sha256": "d7a1bf0788ebefcf0d50b2e8a632238bd86b245d39288c841ca1869a8438fff0"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-bare-crouch.png",
+      "bytes": 238025,
+      "sha256": "d093fd07fd9477e9d6d7ae1ea4962b50bd3870543c0a99b6f4b80ebe4a7c4f83"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-bare-front.png",
+      "bytes": 177108,
+      "sha256": "26e1a9acff53cbc25a74a23c75c2105f3c7b4d0495c64723e640f758f797cc40"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-bare-quarter.png",
+      "bytes": 369156,
+      "sha256": "8dd409cde53d30d5c62102818e30652c17405331f146a2023925034b1e425196"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-bare-walking.png",
+      "bytes": 250800,
+      "sha256": "74f311a77acafc5ab279eb44f3c8857d7ac078e401e2a865ed22b017080720b1"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-cat-iron-netherite.png",
+      "bytes": 214110,
+      "sha256": "84223dec0e812607c61ce61495019e9d5a856d88fdeb8bb4d6361ce5c48c186d"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-elytra-backpacks.png",
+      "bytes": 209602,
+      "sha256": "0e594c1587fbd6f749d3c5a8b124d1e9271e7388fd32127819669fb714f66c6b"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-elytra-flight.png",
+      "bytes": 216968,
+      "sha256": "1e8b109ebeb31f363e9a8053cb489907c7228f858499b84cf4a1c6c31260800e"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-failure.png",
+      "bytes": 171078,
+      "sha256": "5aab47bf08b9228fac9fe83ed0a2916f77c2e7105cebd4300413a523072cf302"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-first-person-unarmed.png",
+      "bytes": 199004,
+      "sha256": "f5984282286dbfbdf52940c6b3cd51faf74400e9415a5912455e9021efdb16f6"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-mixed-slots.png",
+      "bytes": 230473,
+      "sha256": "69568a9bda4cfbbeb1c80e2b3a0071057c50a6dec4ad76c513efd101d04046f7"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-realm-armor-back.png",
+      "bytes": 223532,
+      "sha256": "81a0d048069d84a0aa1440650710cc75a4122e3c87de45f162c2945d917ea275"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-realm-armor-front.png",
+      "bytes": 239345,
+      "sha256": "b57ee1d4ddb718f47b400c1ca24843716e665acaa0e930060d928073ece86231"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-swimming.png",
+      "bytes": 294661,
+      "sha256": "e611b94f5c3f7813dfaa288fe7a6281ef8de0b408ffe39212f898ca691a3c756"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-vanilla-64-back.png",
+      "bytes": 159345,
+      "sha256": "b6c6fc29f8e7013b16ae14cfccdfbe1567cbead18fd52ad9dca64d9f2bea5c40"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/native/kizya-vanilla-64-front.png",
+      "bytes": 156693,
+      "sha256": "5286393f89fa532b553a64a4d754ecc752f0bb2fc9f187f61f047e53aa151dc5"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK01_back.png",
+      "bytes": 1648951,
+      "sha256": "0a2c489265381294b4a32c183a80b01acb9c219f2117dd8232f3f953488484cc"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK01_face.png",
+      "bytes": 1000834,
+      "sha256": "b38576eb83e8ac1cbabfe0e38cb94d70ad0b7e90c25f1cab67a39963364ad29a"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK01_front.png",
+      "bytes": 1626093,
+      "sha256": "fddc56cce127bef51113f7a98a0eabe1934253af497531c4d2429e65ec65c20f"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK01_quarter.png",
+      "bytes": 1725694,
+      "sha256": "e1584740c7cb9fbe932c191bf8a3fb375c699824f6470ca981e72301a8437b49"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK01_side.png",
+      "bytes": 1485859,
+      "sha256": "997d8cfcf4505e782a6410431d3b1fc54c79797c5a5fd9f26dfd07309174fdfb"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK02_back.png",
+      "bytes": 1471350,
+      "sha256": "b4fa0350679f269949a9e0e8212ff7b283cb0262f8362c97e1877db0cbcb9fcc"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK02_face.png",
+      "bytes": 905858,
+      "sha256": "c4ae1d26ac055882e0e3a9486a68bce6bd9c4bc51b1ec9fe67657e2203aa24f1"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK02_front.png",
+      "bytes": 1470788,
+      "sha256": "dba783746eebc2a213358c8513ebbc8c0cbe254356dfc91423a104ab032a6f9f"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK02_quarter.png",
+      "bytes": 1557262,
+      "sha256": "e9ee3030950aa7e8daa8f3f577c5884f1002d7e1d06fc5182ae7add7ffc8572d"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK02_side.png",
+      "bytes": 1410743,
+      "sha256": "e8a697c188e1b525a791145a1f174d646840ced4d307484a368ebe3a1312bf52"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK02_vanilla_back.png",
+      "bytes": 1425100,
+      "sha256": "1e68003c1ae5a6fcd37dabb81e5fadfd076e1c4cf5f9dee9b14ee802078a1cd6"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK02_vanilla_front.png",
+      "bytes": 1416175,
+      "sha256": "647b005dd34787f43f4995cb47212904e37deac36798810ccb719769f087d76c"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/preview/PK02_vanilla_quarter.png",
+      "bytes": 1489441,
+      "sha256": "48ea34844be37286679cf032b1b28913525ebb1be9dbaa0bbf9fc45164139313"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/README.md",
+      "bytes": 4929,
+      "sha256": "7fbc32a69c35fca4b897651bb9fa85809c3be2b42ea5cddfbacf7df4da9a18fd"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/references/alex_uv_layout.png",
+      "bytes": 958,
+      "sha256": "99391ed9dff9581ec88daf23b9b028adc9ac91f52889edcff1c982d0923c0cff"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/references/owner_reference.png",
+      "bytes": 2197700,
+      "sha256": "475b9e89d5a3b76658f0eb47dccc769bf33cc169baa794b67da61e27ced522cb"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/ACCOUNT_TARGET.json",
+      "bytes": 258,
+      "sha256": "9bafa7727bfca549610d5c7b19125e49aeb5bb9dc7b94236ece1a1a80be6439a"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/BLENDER_BUILD.json",
+      "bytes": 241,
+      "sha256": "7c1113baf4e0d1b44ad017a8126138717c88c4d425daf6fec80549e6a506e080"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/CPM_FORMAT_CHECK.json",
+      "bytes": 4106,
+      "sha256": "7155c70efd32e724e4634ca0462210a21b9b4796169bfa0f79bc1fae7823f263"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/DELIVERY_MANIFEST.json",
+      "bytes": 1767,
+      "sha256": "db27fd9adb3485fcc3415114f4dafeb1525e4034f0a477ebad3ff71a3deecf51"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/editor_adapters/HeadlessBiomeHandler.java",
+      "bytes": 967,
+      "sha256": "78f2dfa6ed51754ff7efe55210b948de0a8003a17699ebc4c9b0d77de0d47633"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/editor_adapters/HeadlessBlockHandler.java",
+      "bytes": 1265,
+      "sha256": "1291fbef3ada2094f8c6e6e1d2af24ff6993ad239849d114cbd1ed4ba7012d9b"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/editor_adapters/HeadlessEntityHandler.java",
+      "bytes": 807,
+      "sha256": "58ed1ba932bdf55628e8c2404a64707523becc2e0a7f3078fe4c8fea63977e94"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/editor_adapters/HeadlessItemHandler.java",
+      "bytes": 1183,
+      "sha256": "5f4803ac540d11836ff01f5b94ec80fe11846898797bd09efbf60047a000979c"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/EREZ_ID_SKIN_CHECK.json",
+      "bytes": 214,
+      "sha256": "cd7db1616e289f7e829d52c596ba6769949c813db97cdaa9bb4a4cb848c467ad"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/LIVE_ASSIGNMENT_20261029.json",
+      "bytes": 755,
+      "sha256": "164a0c8166349ea444976a6b27f87adc6905dbc30546738bb4e4507dc2b2e7f1"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/MODEL_BUILD.json",
+      "bytes": 257,
+      "sha256": "7fa85910aa3e5a795658a6c8349f3071cffb1baa4e7fdd992971ac1015699494"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/native/KizyaNative.java",
+      "bytes": 25828,
+      "sha256": "de422a3dc54d07629d7dccbff7d6e7c60c23d9e012e7c068094867111c1626c8"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/native/run_01/run.json",
+      "bytes": 893,
+      "sha256": "6b0c62e47e53f64989c0ff0c4d0bd9e2cfef640f721bf030c0535a0e466c3f96"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/native/run_02/run.json",
+      "bytes": 1633,
+      "sha256": "93489d915a865dd014920f5ca59e1bf98f4b53635fdd7456c4abdc1f12abe5ed"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/native/run_03/run.json",
+      "bytes": 1023,
+      "sha256": "3add8858e5c0720875237749a5f6413d78fc82ea7f8baaa20d203f3a413cfac6"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/native/run_04/run.json",
+      "bytes": 2422,
+      "sha256": "5d80c1682b285b3a19456d89e4a1e114de3325a0ac0e28ee4038c960343a7f57"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/native/run_05/run.json",
+      "bytes": 2423,
+      "sha256": "6a9120e33a5518c82f3de18c9813953d8be8a0eaa1026bef183cf896ab75da49"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/native/run_06/run.json",
+      "bytes": 2975,
+      "sha256": "55f2529887645278e599ad276e6f80fe60e7db842d8c90acd59064bd7c6da64b"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/NATIVE_CANDIDATE.json",
+      "bytes": 228967,
+      "sha256": "821dcbe0abde19a251fc9a832342bb89dfa9fb960c8bddf9f0f3b803e0b76a09"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/PAINTED_EXPORT.json",
+      "bytes": 508,
+      "sha256": "52e0c13ef6ed7c8505c42870bfe75fd5eec94f8e80b4f471694ea6b6425c1d73"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/reports/VERIFICATION_SUMMARY.json",
+      "bytes": 490,
+      "sha256": "17b3c8eb98412a558da68fc6ad25668e1bb3ba50230a253181c9c63292f2703e"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/ASSET_PROVENANCE.json",
+      "bytes": 1222,
+      "sha256": "c96506cbd068310f81bd1d2da4e69549f3a63da45ad5151f9e61fef200c3cd30"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/avatar_atlas_PK01.png",
+      "bytes": 1565,
+      "sha256": "39e542edfb2e7a72323d5c6a8e09bbd3e6df3abcfba19060c9fdc5a63bcce12e"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/avatar_atlas_PK02.png",
+      "bytes": 13250,
+      "sha256": "d484eadca0a80546204a67d17fa1a192b068d2c72a275f11518305af8269a06a"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/avatar_PK01.json",
+      "bytes": 802962,
+      "sha256": "a830f5f4785fadd85f7b84a370b087ad999ad2928d7873bdc447f79609e2574f"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/avatar_PK02.json",
+      "bytes": 662054,
+      "sha256": "d195b28bf4549c5d92337ae8998dd2deca6c9f87975683682b1bbb0afe94ccef"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/originals/linen_pattern.png",
+      "bytes": 127,
+      "sha256": "0be27d43f3a41aa9fed0e909affe1167ca7c746c270b757b23d6ec90826e161f"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/originals/maple_log_side.png",
+      "bytes": 243,
+      "sha256": "ccfee5d05c3baea0c628d6050d77ae68feb643ba996ba6e97e9ba0d09a532003"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/originals/steel_block.png",
+      "bytes": 296,
+      "sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/PACKED_UV_LAYOUT.json",
+      "bytes": 35971,
+      "sha256": "397f0552a5f51610585543d087f6d7b989fc1baf5c83eb53b81349c9932c8e01"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/painted_sheet_PK02_original.png",
+      "bytes": 1402404,
+      "sha256": "4e222b5b9cca51682bbd36d2fe3858260073043cee861d99158c49873827d7af"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/painted_sheet_prompt.txt",
+      "bytes": 2599,
+      "sha256": "29de2dbe3cac3d66034cdb00cc0480bebce08aae946c7230061220971e3a6fa6"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/blush.png",
+      "bytes": 135,
+      "sha256": "efee34d7f1de5eedca5e1ac5d3d71de2b465897503af395414e5e36f07096fc5"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/eyes.png",
+      "bytes": 278,
+      "sha256": "54ef5685413f7ce64337fe51a0ae850a9271f3e804e614a60cc130a2eff538ec"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/hair.png",
+      "bytes": 223,
+      "sha256": "46fc445c395bae316f597d73cac65b3ee6516d37a18f938cf058eb38738a1cad"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/hair_light.png",
+      "bytes": 226,
+      "sha256": "612210a9d6de0474982f814bcb0f441a609573b7ab6294054bacc58b83a0e371"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/hair_shadow.png",
+      "bytes": 228,
+      "sha256": "219c960feffa14f56a1a1dcea8e27ca96ac7512ecf12b14cacbb3ae31fbbb085"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/pink.png",
+      "bytes": 135,
+      "sha256": "f6f40793d8e5ff88c128b1d65d5f790008a7736cc461e7a046d05dfba119d995"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/pink_dark.png",
+      "bytes": 135,
+      "sha256": "f600079a1f5e012f9dda9f2251abca51a321673e71f8bd1297d1975a83a43082"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/pink_light.png",
+      "bytes": 139,
+      "sha256": "9e7f2c15570e221d548adf1285a20cb05f6247ac1ee9721e70bd9f12b1876f89"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/skin.png",
+      "bytes": 250,
+      "sha256": "fa0b63e11761537f923277459baf7cb871c89c15537d60b5d3bcf47b95c79ba4"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/sole.png",
+      "bytes": 135,
+      "sha256": "6472b4c835d99f43d218bc5625b36970c1c810d8753d12a72e59784ee5fd1bf5"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/white.png",
+      "bytes": 139,
+      "sha256": "a34e47c77e6d8ab99b347690d36fd809871ebf7d53c43c877988096f16ffb887"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/palette_tiles/white_shadow.png",
+      "bytes": 139,
+      "sha256": "3dc6f7d30b3255b5a4e6417e098a49bdc6670fb496021e4c6fa2dd7d9a989996"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/source/selection.json",
+      "bytes": 543,
+      "sha256": "b2b84ff3b1b455991e098a9a63d991039d7a7df62bd677e1f09e5e176deec2c6"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/build_blender.py",
+      "bytes": 6360,
+      "sha256": "49f36e5330ecb444b89269109ffdafa2035a72b6bc203e4a8897d7738c4bf221"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/build_blender_PK02.py",
+      "bytes": 8660,
+      "sha256": "0f7ae39119459b2787715f4c0ea658c8970228831b04a6a94c2a586067919099"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/build_model.py",
+      "bytes": 11152,
+      "sha256": "b7cc96c74bf97eb7b0171aaa3a3a833060d4feeb1e003d438683b6cab86527d4"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/build_model_PK02.py",
+      "bytes": 5156,
+      "sha256": "7d3e7e3961575103402002193835d9649212cb495979795f81478f0cfec238d2"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/CompileSkin.java",
+      "bytes": 6581,
+      "sha256": "adb6b66bf5c96454ea4545f50ed5ea24083838c0614bbfbc25c9ae31bd2431d9"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/compile_cpm.py",
+      "bytes": 1547,
+      "sha256": "ac1910bdc2eda8cec42b340e09762a5a5d156d96cf964783c75adf0da9ff3588"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/GenerateAdapters.java",
+      "bytes": 1658,
+      "sha256": "90f77a084e52b6ea56b2d6ecc03bcf02178a96da5cb40b006b9755b075a444fe"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/package_review.py",
+      "bytes": 8110,
+      "sha256": "a64e348514c5a1665fef0430fd53126ddb97a29ffd1468ebfc902b46985bb070"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/prepare_native_candidate.py",
+      "bytes": 6985,
+      "sha256": "1acd5a7173091b286d34b5a4d5de7f64f63496dfc9484df2203a49cd8a03766d"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/prepare_painted_export.py",
+      "bytes": 4284,
+      "sha256": "989b44a0261d7367b1630dde41b38094d67d3f390aa5e088fa2dfa90903bcb48"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/run_native.py",
+      "bytes": 3638,
+      "sha256": "1a4ef0f61ad74cbef8123355202576c05a15d3844bb684c0320390dba82546ab"
+    },
+    {
+      "project": "28_kizya_skin",
+      "path": "28_kizya_skin/tools/validate_erez_id.mjs",
+      "bytes": 697,
+      "sha256": "04ffe9df98b5cda878abfdbe87a1eb9be463afea77ef2268e250174c148c122f"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/assembly/calico_MC01.blend",
+      "bytes": 199121,
+      "sha256": "47afc5f883978db1aad6f34e6454bf27bfb4f315a35a03261cf42ab5da947833"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/exports/calico_MC01.glb",
+      "bytes": 252296,
+      "sha256": "84ad962f7f93ae7cbce5084e99b0a455a21571c9fedce07010a6f8ab5e500345"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/preview/calico_MC01_aft.png",
+      "bytes": 2241981,
+      "sha256": "17aff00ebd49e70e8cacbac37a6fba36337a8ca9da33fdd29a22541d8c97da49"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/preview/calico_MC01_deck.png",
+      "bytes": 2116665,
+      "sha256": "f58053d5b7dd19d13f3f8752c6d9e51a498c77873f915c6cd1c6c285f938e167"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/preview/calico_MC01_face.png",
+      "bytes": 2213550,
+      "sha256": "08ab5c666f33bc696e2a6f0e83458a42892c917243a3c135bb3a2ab1d12778ec"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/preview/calico_MC01_front.png",
+      "bytes": 2038891,
+      "sha256": "2db795f2f77b9d91588f556af34d47e75fe147e75d210ab0919572d8387f7e7c"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/preview/calico_MC01_hero.png",
+      "bytes": 2199837,
+      "sha256": "87e8a175bc89c1efc65db736acf8d09f1d2efe0542fb7c24302f31d727ddd8d1"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/preview/calico_MC01_side.png",
+      "bytes": 2005054,
+      "sha256": "24f811fcfeeb5bfddf50009de409cd9b5e1ed4d9f7500946aac690cd968c76e4"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/README.md",
+      "bytes": 4643,
+      "sha256": "3ef3368171a6e89b9ffc131b44c4b229afb553d6931f821fdd2ed6094eb28e0d"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/references/owner_calico_sketch.jpg",
+      "bytes": 41708,
+      "sha256": "5795cb559ba6aedfa041792dd3b4f3a2b6e33bd68927e4c3f6e859489d578b8a"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/references/owner_skat_afloat.png",
+      "bytes": 2361179,
+      "sha256": "db28f2ddbc4fb6f4d3bb9ff0f168dbd2e2f864a00e438354dc4d4f4ed3ed0de0"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/reports/BLENDER_BUILD.json",
+      "bytes": 795,
+      "sha256": "865b6ea8010913b8c8e4488e5a6b9b824bb5fee876a02a594d4e5986b4682295"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/reports/DELIVERY_MANIFEST.json",
+      "bytes": 2716,
+      "sha256": "2bb3e606a34e8d16843549510e3467b4135e21ac8f963c3d6447710846ced7f3"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/reports/GEOMETRY_CHECK.json",
+      "bytes": 505,
+      "sha256": "43b782b0c800ebaab6a0abdad847823e0cc2db59a367eb4b2c3f9f265aa524ce"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/reports/SKAT_PRESERVATION_BASELINE.json",
+      "bytes": 1694,
+      "sha256": "c1b3b95d53b0147e62b7183c50dbaa057eebeaefee667221c950c84d73e33337"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/source/calico_MC01.json",
+      "bytes": 105230,
+      "sha256": "9f5301f522a0a73466b5d37bf7296609e3ceb3c4aea8ecc26b4a72d4192a8834"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/source/selection.json",
+      "bytes": 488,
+      "sha256": "f8f17dcb31ab171c8b44ac3d5552c88bd23b96b283a135dd88a25b7ff513dbcf"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/source/sound_design.json",
+      "bytes": 371,
+      "sha256": "115d90198b31524f0c27c054fa252f23310c213233ec647422fdb3846f697dbd"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/tools/build_design.py",
+      "bytes": 11837,
+      "sha256": "70be1a515d9c8020cc931067256329ac55308b47985992c7551bc37b76f48293"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/tools/build_scene.py",
+      "bytes": 9218,
+      "sha256": "4835bcc721ac4b0a21f79d820a5b6e55dd0f06810498a4932795dcace03b23ba"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/tools/package_review.py",
+      "bytes": 6405,
+      "sha256": "36f4d662db1279587b72038c94745d847060f922f070310f613f771f9d2b6761"
+    },
+    {
+      "project": "29_calico_ship",
+      "path": "29_calico_ship/tools/verify_model.py",
+      "bytes": 2770,
+      "sha256": "3d8576034ac9c46520acd45f71059b32b41805256603771b91ec8b672832bfb1"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/assembly/erez_ribbon_LG01.blend",
+      "bytes": 233849,
+      "sha256": "975209bf4b9eb90ebb8ed305af7c1f512dbe50b94d9d331a73b35a3a63209cf1"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/exports/erez_ribbon_LG01.glb",
+      "bytes": 259100,
+      "sha256": "49b10009a889c07d7b633168d24f4b1e14d589b04f0e21fc7292d3916fdfbc01"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/exports/erez_ribbon_LG01_wall_2x2.glb",
+      "bytes": 259168,
+      "sha256": "ea8703058ecb1dd6f02064bf0509dfc22e132cb2c67a9762e03c884cccbc47d9"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/preview/erez_ribbon_LG01_detail.png",
+      "bytes": 2237795,
+      "sha256": "b6c9fb618cfd0a3a61428501c69af3f2c87a8d402bb1be1827e3a9c3a209361b"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/preview/erez_ribbon_LG01_front.png",
+      "bytes": 2191550,
+      "sha256": "5012dd1b896eaf82159b06968a001ac0d4634d298a73dd79e500925e710141ba"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/preview/erez_ribbon_LG01_quarter.png",
+      "bytes": 2141020,
+      "sha256": "68f474b3a29e465e2bd09e56a33f351aefddced6b81fd6153d39151c702eced2"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/preview/erez_ribbon_LG01_transparent.png",
+      "bytes": 1147317,
+      "sha256": "c3f70300b93fc5209d125f05e670ae220c4a4d67649c40769cd772a259c23e79"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/references/owner_logo.jpg",
+      "bytes": 42253,
+      "sha256": "dd3befb850bc3e64a3075e693989eb00b90a6d60e0680c3b06b25f0258790e8f"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/reports/BLENDER_BUILD.json",
+      "bytes": 370,
+      "sha256": "f3bd2bb61e4fbeae63670d80e5a2707de162789c06742911d535245f66e34ecd"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/reports/BRANDING_BASELINE.json",
+      "bytes": 1887,
+      "sha256": "b15cc49014aff88bc7db4d3ca9cd7c42ccd51f9c11775e37b967c448677360d3"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/source/ribbon_LG01.json",
+      "bytes": 3645,
+      "sha256": "6a49294277283f57a5b10726bfd4414984faafeccdeb40fa15c485368a313fbd"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/tools/build_scene.py",
+      "bytes": 10141,
+      "sha256": "212880e375e27632d916ae32ca3795305eac76f70057c01c26ce9c8f97f5af4f"
+    },
+    {
+      "project": "30_erez_ribbon_logo",
+      "path": "30_erez_ribbon_logo/tools/prepare_design.py",
+      "bytes": 2367,
+      "sha256": "9c6eefe1c41430aa5f976d4bfe4f36b63fea19cf81836be44f365d1e09db6a64"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/archive/E01_flat_rear/build_design.py",
+      "bytes": 18246,
+      "sha256": "358f032579c15624b4497822fe7018579ba3f588f3e7f10fb62d98e6dd22bc78"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/archive/E01_flat_rear/eitan_E01.json",
+      "bytes": 226845,
+      "sha256": "6d2ab4657b6587526abc892321b6a9b9bfa3b3e2d7595c7b792d6261f4b87da9"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/archive/E01_flat_rear/eitan_E01_boarding.png",
+      "bytes": 2144754,
+      "sha256": "8493cf75518007334a6656171f17ff681e39d4464d5256cb6719ddad7a3a5fd9"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/archive/E01_flat_rear/eitan_E01_rear.png",
+      "bytes": 2099756,
+      "sha256": "fbf64dfa99620c99838e51d47a69f88b8443009aa5f39f68fe38f0601724eb7d"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/assembly/eitan_E01.blend",
+      "bytes": 436949,
+      "sha256": "3649d0f8e9131a9af6064817185eb7cf92082de270ee1e81439fa3b20d5e3407"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/docs/assembly.md",
+      "bytes": 1870,
+      "sha256": "fae5abb00d04793eaacbc17fc3c91dcca883b70dcdf77b025cca2a705733531d"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/docs/ASSUMPTIONS.md",
+      "bytes": 7319,
+      "sha256": "e11d6613bfdbbd229420b380c22a95100e87c488c66586a37f86243adea39063"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/docs/bom.csv",
+      "bytes": 27325,
+      "sha256": "9618d0835cf4518a89ee50a0f8f465fc813f1e686c936ddd1d3e6da28c4037b9"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/docs/REVIEW_E01_R3.md",
+      "bytes": 10600,
+      "sha256": "6b99dec0e3fa08e5da3dc69840927a3afa0efa25b4067f65bf2fe21904c87243"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/eitan_E01_boarding.glb",
+      "bytes": 2301324,
+      "sha256": "72a52b386c75284fd15b6a6b591824f9e1713d39b7a717c081b8256a75fb6c2a"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/eitan_E01_closed.glb",
+      "bytes": 2301324,
+      "sha256": "72a52b386c75284fd15b6a6b591824f9e1713d39b7a717c081b8256a75fb6c2a"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/eitan_runtime.json",
+      "bytes": 24462632,
+      "sha256": "8db725d91a68f927cc45bfe84b229f2e9493e5b90f4efc627ccf58076759489d"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/eitan_vehicle.json",
+      "bytes": 10048125,
+      "sha256": "d79615d909dc937d7017309e6bfffa5a71130772477f4e73b321563c50809a9b"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/black.png",
+      "bytes": 70,
+      "sha256": "bd80e938afe46ec059f24031962aefc66209726dc986ece0f1c27ce53f63f31c"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/dust.png",
+      "bytes": 70,
+      "sha256": "1a42679a1010a0d865fef93136ecfa50cc39d6a6a7678c5b4f649fb8faf287e8"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/equipment.png",
+      "bytes": 70,
+      "sha256": "c85e690d45b129390a0c3e6f640b945992cd9d14905f98ec90a2677ff944a1d0"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/floor.png",
+      "bytes": 70,
+      "sha256": "44bffba75f41bb29adc64f702656db0581bf8a72dc6974f1388a349c7a9b6ff0"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/glass.png",
+      "bytes": 70,
+      "sha256": "edf65e80d59510dfe7671a924583a7ea122500eaa3f3eeea06cd7c89b1c535d3"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/ivory.png",
+      "bytes": 70,
+      "sha256": "7735c897268cd8992de75c464d0c275b1389fefa307f58c1989fd46e133a202d"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/lamp.png",
+      "bytes": 70,
+      "sha256": "f904ba1a26cc40670ae313019e25c0f41a3250c6eef19443158c87ead475c7b0"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/lens.png",
+      "bytes": 70,
+      "sha256": "750ebc35d8814ef69f5eb74e1512dc7c43ef21b59f5b3de3f9ce7b0f239fb242"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/olive.png",
+      "bytes": 70,
+      "sha256": "4b12ba6d0ce34d5529d7c5d1b166d10d7f0c7a71241ea09657a5b19ce944b653"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/olive_dark.png",
+      "bytes": 70,
+      "sha256": "6183b646c2b8d15f1f1a7ceff6ed2b68facb539e5be3331e46210ae2088ce45d"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/olive_light.png",
+      "bytes": 70,
+      "sha256": "3f622b72cb32a3f8925c23f16fd7dda9d0fcce077511896a49dd217847adf8ba"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/red.png",
+      "bytes": 70,
+      "sha256": "a9bfdeefc25cebee838217c0e388f958b9670833c000617d3a3d6a546c1b91c2"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/red_label.png",
+      "bytes": 70,
+      "sha256": "71a2849cf8e07b5328061afc0ab3bad8b722c6f97a284ee573c1ba8b5c1a5e39"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/rubber.png",
+      "bytes": 70,
+      "sha256": "2cee44d09a0ac2562ed07d61832274c56c5a37a4d941e24ef8e707a81793d987"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/rubber_dust.png",
+      "bytes": 70,
+      "sha256": "09a32b221260219ece1a5e5b461b8fa8650781ca1940ef547ca7ba6ecdd2f792"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/screen.png",
+      "bytes": 70,
+      "sha256": "0c008f7fba14aed2e7eab7d6e16af5f8011dc352aa30a38551beca8915e977af"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/seat_pad.png",
+      "bytes": 70,
+      "sha256": "1d1a7d2fda93ec014f4c927c650a7b5e9589995c634838b68224e41dc6b12acb"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/steel.png",
+      "bytes": 70,
+      "sha256": "52a8e3933e355e80218398dafac51b7d230aed7877b81cb0ee1cc73d3677fbd5"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/strap.png",
+      "bytes": 70,
+      "sha256": "d58bf664d3610a614ee67f60492b80dad2db32161398c543c3d3421887e967f1"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/exports/minecraft/textures/vent.png",
+      "bytes": 70,
+      "sha256": "d38ac60add873668f38af427c29badbef2d7b773eb7602715615c0d744498429"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_boarding.png",
+      "bytes": 1234476,
+      "sha256": "06ad1ce429cfb80f8aaec5138112b2cae482076d8b8cf0a19a651bcac46f1c05"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_cutaway.png",
+      "bytes": 1295307,
+      "sha256": "d2b0f3dae6fef0ad49a3f887dbc091c4f8265c176570bceb79d289abc8f9979d"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_door.png",
+      "bytes": 1239797,
+      "sha256": "03d4207ae70eb9460e1975e2c60c01aaaf1cc2bda6c56c81071bf4a88c4f094a"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_driver.png",
+      "bytes": 947049,
+      "sha256": "ac5d698e0b6c9da433f6dc9754c60653c39a04761494ff06ea5f8597c7b993c1"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_hatches.png",
+      "bytes": 1294094,
+      "sha256": "a6d0fe03e2a2ebe296c24772bf514702b270f6b4bb689f908104ac0ab1e4fd65"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_hero.png",
+      "bytes": 1219740,
+      "sha256": "d22c6711d6b7be12a189757a6f2fa434cbdce6725ccd1c8b3fef86a8600c38a2"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_interior.png",
+      "bytes": 1256611,
+      "sha256": "464ea5d4155367aed7764c2b86cb1d6de094958d1af1a2935a4af8f6389fbb82"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_opening.gif",
+      "bytes": 4239714,
+      "sha256": "6abe5a80441b22f408117ba48c9dfec65a87659967ba5d5a4592e068c187327b"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_rear.png",
+      "bytes": 1209491,
+      "sha256": "06026825c42ef5e06814a3d18bc7580ffedd388e063d8def64a4d7b3e9e3802c"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_rear_detail.png",
+      "bytes": 1310128,
+      "sha256": "547d46c6d4a9dbb1257e61d5e70e7113a9306cea490479067871965749944274"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/eitan_E01_side.png",
+      "bytes": 1169311,
+      "sha256": "ea91407b5356fd016b0fccac478c7451cda17512248401118056940467a2cee1"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/001.png",
+      "bytes": 785949,
+      "sha256": "41976f57efd85e7e4f5fa70b7d766c42b3c82fdac12cf0d9c00d6542df8a0ea7"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/009.png",
+      "bytes": 788986,
+      "sha256": "9a415b378a315f85c069ade0aed2927107d1c7f8fb65f5a7c5a5f01e6bb1bccb"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/017.png",
+      "bytes": 798578,
+      "sha256": "d945264dfeceb201b6f81e449bba445a3ae3b92fbf66dfd4492354a56a1b758b"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/025.png",
+      "bytes": 801683,
+      "sha256": "09b342d2384d3bd397da1a4968a0fc02e63130afc52203efeecd8f729b67f269"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/033.png",
+      "bytes": 807572,
+      "sha256": "02fbbde08b6174b0aa8e9efb5c320f63816f1ae90b9b6553ab9085b6a51255d5"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/041.png",
+      "bytes": 810260,
+      "sha256": "134aeab36d86956d62392ce71f4d69b8005d2eb4bc9069700073377b05c53b30"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/049.png",
+      "bytes": 801496,
+      "sha256": "2ecd60d91aa2659f8d307a1945d44087b9e91360e24b9c37de873eaee2af9e9d"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/057.png",
+      "bytes": 789154,
+      "sha256": "f9939dcc33d6aed646aae1ea28bb2f63410bd9f97fa970f277c3cf3f7e56c67f"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/061.png",
+      "bytes": 785949,
+      "sha256": "07f4b4748121b87281f9c8b7c617e209b9d1d448b7e8b1a25447e87ee6ae5677"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/069.png",
+      "bytes": 785426,
+      "sha256": "8dfe9358ac37469488d6b5e2708d27c68899bcdb3b1d9795bd9aac76580c623b"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/077.png",
+      "bytes": 788578,
+      "sha256": "a73c708246b648f3ef8f50de9d9104b8d8b9c8b610f0b33f2dd3b022f82fe0a2"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/081.png",
+      "bytes": 789246,
+      "sha256": "e3784926047df6aae86eec0ce6211ca424b4ed52541476a7f89c1e8b9e9d7c78"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/089.png",
+      "bytes": 785982,
+      "sha256": "50bdc5fa7b2122e7bf2c61d3219f1a20759808b5ffc6e06dade1c70b92620ae4"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/097.png",
+      "bytes": 785869,
+      "sha256": "ad7cf45e266d4c43482a76dbd1aeacea76d7498baa63e5cceb057a1e99d602a9"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/preview/motion/101.png",
+      "bytes": 785949,
+      "sha256": "3c0e9b033e1096ea1fb938044352500261bed791a50985925dab950c00af6adb"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/project.json",
+      "bytes": 12936,
+      "sha256": "ac2b73279287f03cdf77898e8fa8595145087293aafdf159529cfd6039a55673"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/README.md",
+      "bytes": 8604,
+      "sha256": "a8b83a499a23347541c8b11b5e85a77455d879bbcbc5d550b9179924fd3e072d"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/references/download_log.json",
+      "bytes": 803,
+      "sha256": "60e25581bc06e8ceed13201bff90d4ab52005914fc6edf56d31970ae7e5f89b5"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/references/early_troop_reference.png",
+      "bytes": 395941,
+      "sha256": "662cfdce6e26b9df2f7f6fc4fdc4c1fbf5318feeed96a63e92eeeda0e1761b1b"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/references/idf_ramps.jpg",
+      "bytes": 212,
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/references/interior_driver.jpg",
+      "bytes": 208772,
+      "sha256": "2663732aa537d2bfafcd34e09639affe34c56f074e33a399de8dd2529038b835"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/references/owner_front.jpg",
+      "bytes": 119207,
+      "sha256": "2a3422a20087a6d435238ab81e7af5bcb5a55b5e65f535216a310f1e5e593855"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/references/owner_rear.jpg",
+      "bytes": 142424,
+      "sha256": "1d0ed64728ec1190600afd999d2c9d2371f47d78d41693d5c7db9fbc7abaaf53"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/BLENDER_BUILD.json",
+      "bytes": 699,
+      "sha256": "5223a51e4071e340488b8419007ac92215cebab9ac25870b139d349a2be60245"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/concept.html",
+      "bytes": 5317,
+      "sha256": "762599abfa1408160b72b772ccae8b57866d1d857febfecb63ff440f5b4a9352"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/DELIVERY_MANIFEST.json",
+      "bytes": 4843,
+      "sha256": "3564d69db02d876a0baa9c469a0ab3f34726fe54d9b618ebe1569a1cb3bc8e10"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/FOOTWELL.json",
+      "bytes": 6340,
+      "sha256": "01000248a5f45e2834ac6c9cb3ecab96b264f79ae9d63f4d214db0cb1e295926"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/GAME_RUNTIME.json",
+      "bytes": 89833,
+      "sha256": "7e0643061c30b5fdf15f6d641e41e9cb4c6d489da1b6b9a8f0b08f3a3dfee515"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/HATCH_SEAL.json",
+      "bytes": 561,
+      "sha256": "36b00453ac5ef873edd8db0eb94a7fac8e849e8ceb40b99497e29e1942003bf5"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/MINECRAFT_EXPORT.json",
+      "bytes": 933,
+      "sha256": "090d3b6ee1a191472bf127ac985e15016cc5058a081c4a29f51c9e73f7051906"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/MODEL_CHECK.json",
+      "bytes": 3390,
+      "sha256": "b1a25ac7b8f2628ba2dcc49a380948706191f87929dfa7e40018c2d76fd80531"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/MOTION_RENDER.json",
+      "bytes": 347,
+      "sha256": "3aedfd24f53fb9dd4a04c26508f72010508e383ed631d535fb344574ad00112a"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/ROOF_FIT.json",
+      "bytes": 1936,
+      "sha256": "1227733738446b4116bb40762fa49c7f3d744c10695fc86d8314ec55b5986fd5"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/status-concept.json",
+      "bytes": 28212,
+      "sha256": "5e3338f8cf3b76d896f7c205cfdbbc5fcaf389d63bde2af56a06cc9ac4c05e6e"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/reports/VEHICLE_EXPORT.json",
+      "bytes": 777,
+      "sha256": "22c632fc163d8c937ee6bb4f5a8e50e41ca5b59d4a3fc315c3cf222552fcb432"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/source/eitan_E01.json",
+      "bytes": 275837,
+      "sha256": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/source/game_integration.json",
+      "bytes": 2649,
+      "sha256": "6f66c50c247ca0eb8071ab74695bad4b994342473a35a59104c1f09cecb7a855"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/source/parameters.json",
+      "bytes": 1099,
+      "sha256": "0daf9fafe81684f8a4a86d7a8722ef73908706701c03ed18229357af82c43013"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/source/sources.json",
+      "bytes": 3582,
+      "sha256": "76b7cd112d7179553464075340330745c61e9aaf42cc11057367c31759b38159"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/build_design.py",
+      "bytes": 27126,
+      "sha256": "67f0e6d1cad657043cc16e229f2b0edafa0dfa33eee5d28d0b93c005451a527b"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/build_runtime.py",
+      "bytes": 485,
+      "sha256": "061ae70a3477d7a6eac0678e6cbc21f1466169b5224566926178f20f32d4b520"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/build_runtime_r5.py",
+      "bytes": 457,
+      "sha256": "e2fe76a392940e6e5728d0cec760d0dd4a47323b074dc00d3ca1bcd4999d96dd"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/build_scene.py",
+      "bytes": 14691,
+      "sha256": "f35e89d3d204627b5922493f0213d842dec4ff1bd7f727291b33e3041cb33c5f"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/export_minecraft.py",
+      "bytes": 8048,
+      "sha256": "6766ba9bbea78c108fccf9c871915c6a6d6ec1288ea532d607fdc629ff8969ba"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/export_vehicle.py",
+      "bytes": 10847,
+      "sha256": "56f5ba9b7425ef36874505f542045c1b98ed2f14d9581d10eb8dbcf5ef5886d3"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/inspect_roof_review.py",
+      "bytes": 6973,
+      "sha256": "b0f5dedb5dbb9b8986d8763b6f041762608089c74fdb9ba918b6b54f7e320660"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/mechanism_state.py",
+      "bytes": 2193,
+      "sha256": "e8db935cd9fe6afac810a1e70f147ea94d48d3bbd68cd5ff7b2f1cd3f7f8bb61"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/package_review.py",
+      "bytes": 8887,
+      "sha256": "c8760d699c5a91f5576cea45fac69bf3178e386fb7ba7bba215426774629ce30"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/prepare_records.py",
+      "bytes": 19453,
+      "sha256": "3fe9ececf6e74d73898cececb5b9cea62b2f06bb7f9b6480b7fc9a62e8b03fb8"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/record_runtime.py",
+      "bytes": 4778,
+      "sha256": "fd7139713b21eb962fe5f654e4099beab23c3c97ee5b49297f68ebdc2e4aa362"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/render_motion.py",
+      "bytes": 1127,
+      "sha256": "a3d34eae196861178bbb2251c31340c89e459a2db87fc153f520c4a7aeadddb6"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/verify_footwell.py",
+      "bytes": 2312,
+      "sha256": "7e6861e6caa9b05146a21dd69115d42f0e01db79e3cc3882ea2a12a1cf367cac"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/verify_hatch_seal.py",
+      "bytes": 2226,
+      "sha256": "c8bc9de600e210c8cc4bd4b47c7a49ad34a555702452aae1ebbbf6aa029787e2"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/verify_model.py",
+      "bytes": 10359,
+      "sha256": "7b6a581d79707509570837e49421568dee144023a5785f7ce425864a37650a7b"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/tools/verify_roof_fit.py",
+      "bytes": 5291,
+      "sha256": "0d06ab30eb9bbcad428af31395d3798d55f982574c66361b72a2da964e232a10"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/evidence/E01-R3-GEOMETRY.json",
+      "bytes": 3701,
+      "sha256": "430f5ab03476012ff015ec6aad5296a3893633653ad4f12abdd97011d963e644"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/evidence/E01-R4-GEOMETRY.json",
+      "bytes": 4449,
+      "sha256": "467f0defe934b4cf2ffd94f3690b88956223431436d4dc7e8c685169b174b593"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/evidence/E01-R7-GAME.json",
+      "bytes": 5676,
+      "sha256": "2c5d2cc5d76b1c62f7d9b44620d1a5a1270996c19f302e6dea6908bea4488d3f"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/failures/hatch-seal-before-gasket.json",
+      "bytes": 10488,
+      "sha256": "c8d00711c9c9956a63dcfe708e07c9bfc43bf0e7bd11b3f60cce44501d562e8b"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/model-inspection-R4.json",
+      "bytes": 2311,
+      "sha256": "b4fc1217b1509fbb0dec692ea01a0999d569b5a50e6c935db0c4b78e89676374"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/model-inspection.json",
+      "bytes": 2099,
+      "sha256": "5dae95e74a7c9b014cf9af1d0121e735d19562b5c86c0e2282e7b4de1bee7d24"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/native/eitan-native-R4.json",
+      "bytes": 640,
+      "sha256": "747bdaced0801aedfd3a4d69ea36aeac806a11ae276494fb97eaa9b5c1056f12"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/review-20261029/geometry-review.json",
+      "bytes": 10538,
+      "sha256": "e28035e03822807aedc1649a27533b522111e54a2cd572ccdcc5248037dbec38"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/review-20261029/imod-2023-eitan.jpeg",
+      "bytes": 216420,
+      "sha256": "83c7c307d1d586b50df5eccc5775027f40c40de6863ca8925b7b67cdb1edc78b"
+    },
+    {
+      "project": "31_eitan_apc",
+      "path": "31_eitan_apc/verification/runtime-r7-inspection.json",
+      "bytes": 2926,
+      "sha256": "9d54aa16f382c5cc924a43ed895793401db9cc2576cb90235c90e9951e4cfb5f"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/assembly/ne01.blend",
+      "bytes": 1210303,
+      "sha256": "dfec079317b04cb897ed6970c3886e1a51fd49d1eae74e3445f5a0b8cea4f853"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/docs/assembly.md",
+      "bytes": 1679,
+      "sha256": "66d3b03ba51b3cd7694104dd7732d3ed6e5f65024499d448c20dd98a148a2ff9"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/docs/bom.csv",
+      "bytes": 57004,
+      "sha256": "2880e03160ddf903b12d1df16e16f201f98a38cfb612032edbe66cb7f2b63065"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/exports/minecraft/ne01_collision_cells.json",
+      "bytes": 715045,
+      "sha256": "c7b8ec9f59b6e20eb6534e75ac58741170af8bbd21fe93a50bcc9ff9ec15fda0"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/exports/minecraft/ne01_render_cells.json",
+      "bytes": 30112591,
+      "sha256": "9cd19493c9a2b8f82c3f19f8bccc028a5026c7aed7cf2868260f89bcf89dccdb"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/exports/minecraft/ne01_runtime.json",
+      "bytes": 34817953,
+      "sha256": "a39a24a6164917809dab1399c4908f959d8be37c04447a0405668ca0a373d0e2"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/exports/ne01.glb",
+      "bytes": 3568840,
+      "sha256": "8f9b3e89cc47a94f3d6973e78c70359202b40b287121032f38568db7882aa1d5"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/preview/ne01_afloat.png",
+      "bytes": 1594392,
+      "sha256": "9933b1fcdf3cb592e8630e254bcd37d2937478663eeb6c85caa9a4935b27bdcc"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/preview/ne01_bridge.png",
+      "bytes": 1592064,
+      "sha256": "8574a2f12f26faa7b4b9245778881bd42dc8022fd488f9af82b5dbfade005216"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/preview/ne01_cutaway.png",
+      "bytes": 1672792,
+      "sha256": "71c672529f4f3c8fd002adaf7d4a5be7c9c31c6694637cc12652ab1184d9fb89"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/preview/ne01_hero.png",
+      "bytes": 1587624,
+      "sha256": "b69d3fed635e87d855141ce50cb089f6a15f6850cb67aedb6a585b65306454d3"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/preview/ne01_lower_interior.png",
+      "bytes": 1565327,
+      "sha256": "5e5247612543d4b10ddd3fdc7eb4995a16a7d848b628ffd93d34564a01c902ff"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/preview/ne01_main_interior.png",
+      "bytes": 1763978,
+      "sha256": "de068d6b365eba3b5f8c40f9f1dfd35d096b853df2e4db67ff579d7aa3464056"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/preview/ne01_rear.png",
+      "bytes": 1621690,
+      "sha256": "3d81fe15e0544991bb450dd131ae863c5ffcb8f920914be550353457dd2defa1"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/preview/ne01_side.png",
+      "bytes": 1455385,
+      "sha256": "8d69622c170b71408965ea84ac2b1ddbdfa09ac444b6dbdcba518034cd7fcb56"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/project.json",
+      "bytes": 13476,
+      "sha256": "8706dd08bd26b31d5ea751f3fb5ea6883e51e0bf6c3441f12b81181b27174475"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/README.md",
+      "bytes": 1331,
+      "sha256": "383ee50322727129d2dc6caca313313468a4283d05ed9b3a67a1e183def670a2"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/BLENDER_BUILD.json",
+      "bytes": 414,
+      "sha256": "3965b0a8172479899ee95b303e1fa0ae58961ad23def4c8a25c31a349f150853"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/COLLISION_EXPORT.json",
+      "bytes": 15298,
+      "sha256": "bf8f00479c9197ec8137b0acdc5a3af8f5c064fa96dc12d4f2f1ef1a1d8ca633"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/concept.html",
+      "bytes": 3505,
+      "sha256": "09b2280724ac4068cbb634af768238a849ec87276600b21277b9660b15695fa5"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/engineering.html",
+      "bytes": 3486,
+      "sha256": "1407e17e595f79a2c78bfecd32bd6c13ba4c04976586c37eef9399e9831d251a"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/HISTORICAL_PROJECT_A02.json",
+      "bytes": 11622,
+      "sha256": "57afef313bd5ed899413e214dca36b3a3634ab13950c44bb2364de033db7f4de"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/MODEL_INSPECTION.json",
+      "bytes": 18819,
+      "sha256": "6774056ffe790ecb5451e12972453ffdb0027c396a1b984438ae861ba3327087"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/NATIVE_A06.json",
+      "bytes": 57022,
+      "sha256": "2ca590f398115efd30ea7754afb49b382e0cfc960d443e28a33913d13c8e689f"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/NATIVE_ME_A05.json",
+      "bytes": 15190,
+      "sha256": "43cef3fd448e714f84b2bab6c06f08254d0a03abf11f9e6a1baac4722077f091"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/PREVIEW_RENDER.json",
+      "bytes": 422,
+      "sha256": "68de40aa3e2982949453dea83e39ea8b76a58fadd0eb5514cb17ba7b8dfb6832"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/RENDER_EXPORT.json",
+      "bytes": 590,
+      "sha256": "2529795773d23e47d2cf239cb288a669d6d1219facb27f21bb8e109df5ba0c66"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/REVIEW_MANIFEST.json",
+      "bytes": 8523,
+      "sha256": "b6bddec706b44b6ee406de305be5d57dc9bf6eaefa4daa5ac4f39433f5f4701d"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/RUNTIME_EXPORT.json",
+      "bytes": 457,
+      "sha256": "ddc10dbce046c7563688517b4996293e73fb0130858acb257fc05eecb6e5377e"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/status-concept.json",
+      "bytes": 5439,
+      "sha256": "cac7b97cb82cc1d7971be393fd494956fc8babb1f6bed65ff6d2b51911c3731b"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/reports/status-engineering.json",
+      "bytes": 5556,
+      "sha256": "2353ea0ec53f69b8524a6f8bd5a47334f7d0d6365642cb6c2371e589ffc8b2cc"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/source/ne01.json",
+      "bytes": 528213,
+      "sha256": "525402529f2f2747b66b3465f9ad0f9073bf8b943b90a25e6b545064f09a4ae6"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/source/OWNER_A06.md",
+      "bytes": 2255,
+      "sha256": "e65482c61cc2ce9491d8f74f77a5834cbba94b3f3481ed120ba7e9ab9e85781c"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/source/OWNER_DECISIONS.md",
+      "bytes": 1992,
+      "sha256": "bff5fd610810fe0e1039dc8ea366c5a54c8b53f4f84dc36802c8c768784ec06b"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/source/parameters.json",
+      "bytes": 802,
+      "sha256": "c77533c12da8b65f59d76704478a3ad524dafdd30780fc482403254e496db84c"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/source/sources.json",
+      "bytes": 1062,
+      "sha256": "366a8f7c42cbcf6ce74729d5453efe1e7004eead7ec28ce331cb496f49f93ac0"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/source/texture_manifest.json",
+      "bytes": 6806,
+      "sha256": "164792aef76f917618f74a71306f7bd439edc9939137b771f46d97c64bcafa8e"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/brass.png",
+      "bytes": 20283,
+      "sha256": "1d98f97d5d648700f98490e2c8818ace870e361838f3d655d70d42a068330f57"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/brushed_steel.png",
+      "bytes": 26131,
+      "sha256": "cb3ba81391efbcf8d2d4cde4c8d495de0d3e9992f52d1519b45766c67ea88026"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/console.png",
+      "bytes": 20272,
+      "sha256": "e5e263aeef7e6d8e20896f51a6606148a3572aa3a14bf4bf316348b52c7f14f3"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/countertop.png",
+      "bytes": 20317,
+      "sha256": "1187e949d37bff0c4a65d0bd685d7454a8ea0a257bf3c2e5a18559cd3f32ed29"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/display.png",
+      "bytes": 21545,
+      "sha256": "6aaeddbfb8e0be126731ad7c0f50a71cc4f13dcd86d177f0c2664176277ec37e"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/engine_metal.png",
+      "bytes": 20312,
+      "sha256": "cb6029cbb8d8dee91b7115731bdf2fc276b09d792e81bdc5c8ca8ad7f0e37fff"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/fabric.png",
+      "bytes": 23220,
+      "sha256": "5b8454888d343a039915c2a77bed062e8d5f6c231c3f798a1930bc31005913dd"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/glass.png",
+      "bytes": 20321,
+      "sha256": "2ab2b791759ab5ec90ff828fcfe6da3d2354eb5db57de1ef062c857f6692567e"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/hull_ivory.png",
+      "bytes": 20327,
+      "sha256": "0a1c4d9cea403c4a934daa8b1d7586d2253f618c35fffd761f494d8536483df5"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/interior_floor.png",
+      "bytes": 20282,
+      "sha256": "ad711f020b9e6133ab6e80cdd1a453dd6bef4947324529e1a8d34782c548f835"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/interior_white.png",
+      "bytes": 20362,
+      "sha256": "e34f5e60a24dd3256c5f5bdd0d207e3eb963cfba76531204c29000e4f9dec07c"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/interior_wood.png",
+      "bytes": 38078,
+      "sha256": "0654dd9f2089f0524951b617705f9105f897b9934fe12e05581e40e7ccf159c6"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/lamp.png",
+      "bytes": 20352,
+      "sha256": "66ac9e8c93b274d55711216a68b7a885ca8e3a5e6724531a0da0bf3b3d0f8426"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/me_display.png",
+      "bytes": 23956,
+      "sha256": "1596213c1494785aed71e6b31d35e94f64ef18b75c1a84a9ddb72d9b5a31fb00"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/port_lamp.png",
+      "bytes": 20413,
+      "sha256": "ecf7ab3bf964e12f6fdc1b767a01f5e3360e94776a36c03ca7ef75d9bc4e1cf8"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/starboard_lamp.png",
+      "bytes": 20333,
+      "sha256": "00ba03d3b494a409471bf8792cd4d985d416ee2c362072c6467f0c5532d07806"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/superstructure_white.png",
+      "bytes": 20305,
+      "sha256": "929df774bd9ffb6a1686dbadfb5ddc9792f175a03989036cf0e00e79a5bc95a8"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/teak.png",
+      "bytes": 37982,
+      "sha256": "2eda57586edc3b39365d3b313693eb8c68a05af923685dac2086941574cefd95"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/textures/window_frame.png",
+      "bytes": 20314,
+      "sha256": "f277ccc5c04bea481ede1e0a701fc3169366e444b9e7e4b5deae99a9feb8eaee"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/build_design.py",
+      "bytes": 30178,
+      "sha256": "cfb80f3113c38ff870250c50104486e7db3830086026d44a2ed71a4db257e03f"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/build_scene.py",
+      "bytes": 13061,
+      "sha256": "b55eb31f37bb89387f34538289e284dcb57c1763f7c5d5d50d181d43b3d5e2b7"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/export_collision.py",
+      "bytes": 6838,
+      "sha256": "aa894827ed16a753fd5f4a93d8f21e44c4887a33b12148cde08c0113d835be85"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/export_render_cells.py",
+      "bytes": 5050,
+      "sha256": "c6c76042f4b9141c1e4112b535f17f1e6533277a935a8670edce399e0a10ba4b"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/export_runtime.py",
+      "bytes": 3956,
+      "sha256": "8cd7356375322eb88b10bf3bb090a9e9f67864bae58d98a8c415266d99775de8"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/inspect_collision_points.py",
+      "bytes": 1381,
+      "sha256": "3bf73350e6f0824b63868648ce73cf4322b9dc8aab94ae7ff78833d34c636018"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/inspect_fore_clearance.py",
+      "bytes": 1162,
+      "sha256": "5bb9226f45e2c2e20c4e1e24212b79b59b62d83bff12d23a4253f85b2568591f"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/package_review.py",
+      "bytes": 5160,
+      "sha256": "fc7c2648ca9bd3cb85b4cb7867038c83b14509505bd7e53b2232974ecc95231f"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/prepare_records.py",
+      "bytes": 7619,
+      "sha256": "3aa1208ea2770447c7b0c56ec570b8d535427dd15c306618b2740e12defa8df9"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/render_existing.py",
+      "bytes": 2532,
+      "sha256": "48431673c0e3bfc1de5f92f4b4140a1d701c30f0c2657e5122e38c36c9441002"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/tools/verify_model.py",
+      "bytes": 6278,
+      "sha256": "f62862d4478189a3a6297c93f128b27de438c32040b0f8f13ecbbb88bd35ccba"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/verification/evidence/INSPECTION-A06.json",
+      "bytes": 5697,
+      "sha256": "e5ba1c5fa1313f786f5613000e6a12d9576e6288cf82f0b2bd20b7ac26e91651"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/verification/evidence/NATIVE-A06.json",
+      "bytes": 4823,
+      "sha256": "6fa9b01494362352dda11871e73ff0fe7b324f4b9d15b2b38ccc465f2901ae8b"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/verification/evidence/NE01-A02-GEOMETRY.json",
+      "bytes": 5378,
+      "sha256": "3e3d1ceeffe5649666afce5564286475ddf974ceb1cee771995a99923e79ccf1"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/verification/model-inspection.json",
+      "bytes": 1826,
+      "sha256": "59166a92f917525db62b9e8fd808986622e914418941a4b24e02fc1732857ddd"
+    },
+    {
+      "project": "32_nordhavn_expedition",
+      "path": "32_nordhavn_expedition/verification/native-a06.json",
+      "bytes": 1098,
+      "sha256": "5fb504f4d4a4b7da9a834a07ef0c0c3d78e9f4680c29ba8119374769bcb48cee"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/assembly/lurker_LS01.blend",
+      "bytes": 244552,
+      "sha256": "509fb5652211b33b44af2be3dcc7533bbdff71e4d9885a3133eb7e2b0161b1d4"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/assembly/lurker_LS02.blend",
+      "bytes": 301169,
+      "sha256": "d729ef1e8f025786401601277e128eddb174b5b9d7a50727abf9dd2e5592c89b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/assembly/lurker_LS03.blend",
+      "bytes": 410718,
+      "sha256": "553a4529ab55272b5afaa0e536a645c4bb60998e0902fa18eb2a0ef89d42d731"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/assembly/lurker_LS04.blend",
+      "bytes": 475926,
+      "sha256": "47306373a739dbb8a09b2b2c3826b899bd7602bc925b5a0372f0649a040185d3"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/assembly/skirmisher_SK01.blend",
+      "bytes": 474079,
+      "sha256": "94992cdc73a1b24eafd4cef67a486f3edaebdcf98dabcbb41e5eeb4aaa8846a5"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/assembly/spitter_SP01.blend",
+      "bytes": 476252,
+      "sha256": "1836b021aff263673bf70d6dae6f6da100f40eb4c8a4adede17e79917ca99c6e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/assembly/spitter_SP02.blend",
+      "bytes": 475170,
+      "sha256": "f5858e3bfc6b501c1fd45ffbd91fc99b4175e80ec92483c2b8eafcdeca2d8f38"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/assembly/spitter_SP03.blend",
+      "bytes": 531387,
+      "sha256": "66887e8b316852a620e4ea4a72f68d705e69aab73d61cac55a5fd8bf2c054ace"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/exports/lurker_LS01.glb",
+      "bytes": 313284,
+      "sha256": "2b4bcec24a47931cc6fda28281057b47bab0fe4ad15980c987f1e1c8189be864"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/exports/lurker_LS02.glb",
+      "bytes": 527964,
+      "sha256": "95a9f433ea9f965c81d1eaa88a0072da91709f5516af6a968665590b4da5fcd6"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/exports/lurker_LS03.glb",
+      "bytes": 530100,
+      "sha256": "f3e1190150766c0f56cd46e3d0be7fb074fcdd7bddb11c7b21bb84cdf0021297"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/exports/lurker_LS04.glb",
+      "bytes": 599520,
+      "sha256": "97508098cad56b1fac6ca7258bcecbd656158840aa8b317af488dc6b1b783a25"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/exports/skirmisher_SK01.glb",
+      "bytes": 600056,
+      "sha256": "bd25e32b43ad5e046ae7df1f4bbf0a1f9415aa1c6dac43cc112cbcd079796b06"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/exports/spitter_SP01.glb",
+      "bytes": 599836,
+      "sha256": "ae542db03ebc916e0be540f409ab63ce06b94ffb646381ea5050bbb702042da6"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/exports/spitter_SP02.glb",
+      "bytes": 600820,
+      "sha256": "2cf28a7d1563350c4dacce279f6a4003b962b23102a1697e65b7faef6a47a4cb"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/exports/spitter_SP03.glb",
+      "bytes": 598336,
+      "sha256": "bf2ffc78f496e372d033dfe629dd4b6e1cbe1fb4dfe7492262c7195cc886688f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS01_front.png",
+      "bytes": 1664864,
+      "sha256": "ce9ae5438d3078f717af6d0129c7c9e7bd357920d67083d1d11d92708c42cbd1"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS01_quarter.png",
+      "bytes": 1733139,
+      "sha256": "783cf9dd8c85fa9914fe3a7a56ed5c8e95693d5c854b5b28a16c25dcff6de11c"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS01_top.png",
+      "bytes": 1689863,
+      "sha256": "d43e7b1fd12d7727d0f5b3f4ac2247dd8c23c7df025d85aec8b8190ba3a01df9"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS02_front.png",
+      "bytes": 1663131,
+      "sha256": "4c658c224586713eb89b79bc830404ca976db0f04411081478025f8ced100f94"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS02_quarter.png",
+      "bytes": 1736315,
+      "sha256": "24b141531f536ee88bf3cf5773100fec8592adfc12b3adb9cad34ee1f727d4ff"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS02_review.jpg",
+      "bytes": 273788,
+      "sha256": "2fdfb749be1b797b5b2daa12e612f9d14c6f49755e2d92f2319810e0e326b29d"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS02_top.png",
+      "bytes": 1684551,
+      "sha256": "cd9a85662d9d8a902b7cc8f887b8e3f39b5a289c7f79e84cf11c9a60e05ee6ff"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS03_front.png",
+      "bytes": 1663187,
+      "sha256": "e36227630c7c70e70a30210ab8d162d8045f9d496b0e8b745ab8611e3c753f3d"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS03_quarter.png",
+      "bytes": 1735987,
+      "sha256": "d4fceef5b201508b975d99a4e1d3cb1a72af4dc970f885ed4874613e876f27df"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS03_review.jpg",
+      "bytes": 286574,
+      "sha256": "2127299b604eea1e62959f8a016cef79760ef599990464ee4a9b77f96e87eee5"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS03_top.png",
+      "bytes": 1691403,
+      "sha256": "f11beb7bfd325a4b559001aa1a29f7ba99aa0f7fc76d87139e04ea46fe2d9444"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS04_front.png",
+      "bytes": 1671218,
+      "sha256": "ce17156db3e9ee2fc16ac0ecf8e9c7fbc3ea05e3d526f639296fda305d96d7c8"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS04_quarter.png",
+      "bytes": 1740909,
+      "sha256": "217f95372138d2d97959a30b1e217c96a7e2a0cc7ea0c6f1abc96767152b248f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS04_review.jpg",
+      "bytes": 293655,
+      "sha256": "4ca8b414eb3cf38aa28df8f1f4e7887be3629aa18d65252233393b57b4b9bc6b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_LS04_top.png",
+      "bytes": 1721492,
+      "sha256": "49af5c9e16d2582643cdb1cee619abe6ea0bb2ff036565eb6685cbd035024032"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_original_LS02_quarter.png",
+      "bytes": 1673869,
+      "sha256": "6d06539cb7dd404a8ed6b00fb0551dc544ee6c13113c7cb5332ae46f59bb7394"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_original_LS03_quarter.png",
+      "bytes": 1733293,
+      "sha256": "58e8fbaddb59b10606853fce9e412abd061c797bf61cd8955e02d31c3f0d414b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_original_LS04_quarter.png",
+      "bytes": 1735987,
+      "sha256": "49e4ba37838de571b589ede6cfe800e56bc7faed3267264b51c2c2e92b0b2b87"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/lurker_original_quarter.png",
+      "bytes": 1673869,
+      "sha256": "3f445f2522a5769753deca8f0b305a5687e7135ed2fe8a84dd6c4d0f47c2fe87"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/skirmisher_SK01_front.png",
+      "bytes": 1230644,
+      "sha256": "e8b54d53fbc92225d7d94943d42bf207457c85184333dc8d59241140ed8ca21b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/skirmisher_SK01_quarter.png",
+      "bytes": 1290330,
+      "sha256": "e2d794f81351b9f2d227e4f2c510b35a006638e5dd4bebe7749f867e6b1e491a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/species_palette_review.jpg",
+      "bytes": 395402,
+      "sha256": "df7128589acaea530cad1868d87811d0b79c63bd32fc72784cd6b1932ae85b7d"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/spitter_original_SP03_front.png",
+      "bytes": 1739945,
+      "sha256": "fb9036c5fdffa6a8da8a17cfa721e9bf9502b59c3880de5d5441209b71bf388b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/spitter_original_SP03_quarter.png",
+      "bytes": 1833831,
+      "sha256": "8c511f2e73a8fc0e686176bdd5c569248d4384eaa1623555159a70a88f9b6822"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/spitter_SP01_front.png",
+      "bytes": 1218877,
+      "sha256": "65535c3bac125478d415317ba51c22c667d8a49ecc8b13dfc449edfe822d59c4"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/spitter_SP01_quarter.png",
+      "bytes": 1285523,
+      "sha256": "36c00c5821944d69cf08cc13730a86a61febbbade5b6f30e141ef730483c9c07"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/spitter_SP02_front.png",
+      "bytes": 1233143,
+      "sha256": "487e6fb9d52fc8f659a21239ef238e0218702e9511559443ca0e1c78611a1352"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/spitter_SP02_quarter.png",
+      "bytes": 1299744,
+      "sha256": "0dba531c206ec11ded04e479ad709c8426aacaf0a719ae59f009b96930d46257"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/spitter_SP03_front.png",
+      "bytes": 1657090,
+      "sha256": "6650bc7030b9e65641331e28695baa1ff9815441a99359cf4c197a7af8cb2938"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/spitter_SP03_quarter.png",
+      "bytes": 1711835,
+      "sha256": "facbf0167dcd2498fcb2c8561e74971333dad48376e0c1d0ca7d4589cfd5925f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/preview/spitter_SP03_review.jpg",
+      "bytes": 336900,
+      "sha256": "dfefdfb64e2dea0992b69bb43db72f00dbdf387a0f3af4bd3616384bcf689b88"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/README.md",
+      "bytes": 18121,
+      "sha256": "ef6b1661bede3e3df4a96f5460868368e602f0c57a164d211c5e42bc1a73a81a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/references/1-36817.jpg",
+      "bytes": 109847,
+      "sha256": "da43efce05a1901d7158ce071cb4ca5e9885bb154dc2c96445684ac5d9351f00"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/references/2-36816.jpg",
+      "bytes": 67892,
+      "sha256": "0fc26879977d56c3bc2c8debf739978a06af4f9a216605ac8e5fb9aa3b9599db"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/references/3-36815.jpg",
+      "bytes": 174015,
+      "sha256": "a106bff1c302409aab9e9ea874046091683107d63abb5f718527823f361aa958"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/references/sources.json",
+      "bytes": 755,
+      "sha256": "74893a1d04742a2ced7ae9779ddd64bb45bf09fcd8004357c7331d3f56626146"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/references/species_sources.json",
+      "bytes": 1514,
+      "sha256": "670abf5c79c2d50c71def5797706dd8375284089514d044e043dfaa4dc42bc4e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/artifacts_LS02.json",
+      "bytes": 971,
+      "sha256": "8b36531fe679a681072686da36dcce7de42b797c20e342113a874832b0aa2f16"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/artifacts_LS03.json",
+      "bytes": 1005,
+      "sha256": "be5ae369da1a7ce7dfac62a840902382164b2b68456d4022e184e076c6beac78"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/artifacts_LS04.json",
+      "bytes": 1142,
+      "sha256": "62d798fb1f6ce8d931c816de81805b3a34c7540009e98247de9dc88c6960f94a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/blender_LS01.json",
+      "bytes": 292,
+      "sha256": "38a4b355cb88834902b0879028e193dc94e04966a1f964bcf55d1f4ac9de8f75"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/blender_LS02.json",
+      "bytes": 292,
+      "sha256": "ed912179c0e0219abb714da0abe32ed77b2c2e30d1d79c7e703fc64bf8ef62b1"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/blender_LS03.json",
+      "bytes": 325,
+      "sha256": "745f21380e42b24449fc8405b050b214963172772ff9c5334cc6cda2b699c476"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/blender_LS04.json",
+      "bytes": 325,
+      "sha256": "f5a617fb1d8f178eba912ada1e278ffc36ff6f3a183044f6bad877a9d8c67f4d"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/blender_SK01.json",
+      "bytes": 399,
+      "sha256": "a4a8d30f921e086daeb68fe068fde57f15214f2faf0f2bc55fa9c10587a9ec4e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/blender_SP01.json",
+      "bytes": 396,
+      "sha256": "ebc7bf5abd28aafff157c86c140b86ca96529d7ab3afa7378229543c975e818b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/blender_SP02.json",
+      "bytes": 396,
+      "sha256": "c5983cdfdc7c53022f867a9e112f08ab814380f5deaca5960dc34545e8f8b574"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/blender_SP03.json",
+      "bytes": 436,
+      "sha256": "0331d39c02b81a0ce9befc8dfcf0412942f3b133bce0cd0b313258ca9a88b9ff"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/design_LS01.json",
+      "bytes": 5667,
+      "sha256": "9fade243a62b21e57cf1ed32ae51f091146a6e406fdec9a35f40fdce9255f805"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/design_LS02.json",
+      "bytes": 5667,
+      "sha256": "2d76aa8ebdb8103e109903ac479fe75d52b7f354b6c7325bd97a544e05df8675"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/design_LS03.json",
+      "bytes": 9042,
+      "sha256": "73b2473a8bce5f57db167f0cb5e74669fc58d47a9080a847764c3eabe8607d39"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/design_LS04.json",
+      "bytes": 24991,
+      "sha256": "0a33b4575852b3835a661cf16193afa4834cbfb86f29741ce87856fd5c435934"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/design_SK01.json",
+      "bytes": 25153,
+      "sha256": "fa174632cbb909ce6cb6fcf547bf4bfd3b51873407e1686f78a316cdfd23b6f5"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/design_SP01.json",
+      "bytes": 25114,
+      "sha256": "20b5a7e36ef67ffb84c3dbcc21d28113dd1df8e9adfa3bb9df7dca15cdf37c8e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/design_SP02.json",
+      "bytes": 25134,
+      "sha256": "c4535d3f8ca1d261c3e0580480b6d7d6bd160386731521e7c1111f51d64e8da2"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/design_SP03.json",
+      "bytes": 10049,
+      "sha256": "29024e91a5510856ece8928bb001c9dcfee16de5fc7d661f917b30be5538a356"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/game_integration_20261028.json",
+      "bytes": 584,
+      "sha256": "e0faf109ef8846c1b57008ebce50b1f8ce18a59589a52b4ca313491e05db4f0b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/SPECIES_PALETTES.json",
+      "bytes": 4090,
+      "sha256": "55c670212bc9fe33b27dbd2f699261cafc1b435e5709f3c9937f4c5c59364fa7"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/reports/SURFACE_SP03.json",
+      "bytes": 989,
+      "sha256": "d4591884bc049a9c892c6bd9db2ed19692d808d8108ca08c941fa8b5bbdcebbe"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/cave_rift_spider_lurker.png",
+      "bytes": 2358,
+      "sha256": "cb0cbf58498fe5c8a83526a82a2a71edf90290d240fd8c9b36e420f7ddbecd53"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS01.bbmodel",
+      "bytes": 545527,
+      "sha256": "1362e3812f37f2831ac884e346fbfad508411fc4e94fbfe55f079535d1d3e0cf"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS02.bbmodel",
+      "bytes": 773994,
+      "sha256": "c2ba24e96532cba56ac782103f0982cf4610d6dbf6b1a434b81e40b3f2d2d7ac"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS03.bbmodel",
+      "bytes": 772956,
+      "sha256": "ac1303da83b72284a4d569bea20fc41beb6d0426bd90ca5cd159ea40620a703b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04.bbmodel",
+      "bytes": 872347,
+      "sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_abdomen.png",
+      "bytes": 2598,
+      "sha256": "888ae809a178b74315bf3f36a5bafd708fe8aa27fb66768271db80b2a82040f4"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_carapace.png",
+      "bytes": 2616,
+      "sha256": "1c69d2f80ef555aa64c31e44f1c1fb57ce06764a2e8b4e2c30cdbb4bef13e94a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_eyes.png",
+      "bytes": 2601,
+      "sha256": "492fa18479cefb3ee660a49f16e8b71e1181a3557bac4b42c6bdba125bd141ac"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_fangs.png",
+      "bytes": 2631,
+      "sha256": "13d1e6ba41816ed02fa90b8808173864d9627a78bff380beb5a988fada618e4c"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_hair.png",
+      "bytes": 2625,
+      "sha256": "8125bd5757150cc07117a57b244acdb9169f26397c50716e56252486c8123b13"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_01bb0c8d.png",
+      "bytes": 2815,
+      "sha256": "14c5685af299434624c34acb038c71cf08c757a314c1aea2c11443463174e118"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_23396947.png",
+      "bytes": 2816,
+      "sha256": "6f2042b70c4bf27567bccfb075edc51ecc8caedefb923dbc937bfbe4e749465f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_26bd0432.png",
+      "bytes": 2705,
+      "sha256": "4baa4dbe92b8991f2c4efbde1be9eb8677d8893da5d4534b8a1a7d3f88ea3f3e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_2cb3375d.png",
+      "bytes": 2698,
+      "sha256": "7f345db5f453466132828d2380ab558b7ee0c6ee02245372aa4efb2b79969111"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_93827777.png",
+      "bytes": 2833,
+      "sha256": "f3f9955ada1deea23bb52dc6ad28cef49077d0abb0de3b58b5dae782c6ac5a7a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_9c16bf06.png",
+      "bytes": 2815,
+      "sha256": "14c5685af299434624c34acb038c71cf08c757a314c1aea2c11443463174e118"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_9e184af3.png",
+      "bytes": 2698,
+      "sha256": "7f345db5f453466132828d2380ab558b7ee0c6ee02245372aa4efb2b79969111"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_a6aaeebf.png",
+      "bytes": 2727,
+      "sha256": "a06ae8fb500b39b6e9b80e98b65a88d29e0c29ce6c4096dab61bf6d3c790b4e0"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_afdcf1ac.png",
+      "bytes": 2727,
+      "sha256": "a06ae8fb500b39b6e9b80e98b65a88d29e0c29ce6c4096dab61bf6d3c790b4e0"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_b66db3ea.png",
+      "bytes": 2705,
+      "sha256": "4baa4dbe92b8991f2c4efbde1be9eb8677d8893da5d4534b8a1a7d3f88ea3f3e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_b86ffb08.png",
+      "bytes": 2816,
+      "sha256": "6f2042b70c4bf27567bccfb075edc51ecc8caedefb923dbc937bfbe4e749465f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_b8a07280.png",
+      "bytes": 2814,
+      "sha256": "1e32a74c56ed84321b9d6617586921e6d32271131440f826716bed32315c5de8"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_ba6d967a.png",
+      "bytes": 2732,
+      "sha256": "bc3bb2730444006f23a44b21edd776fb9078d5b723c2475fa325f7804ab434d5"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_cfde820b.png",
+      "bytes": 2833,
+      "sha256": "f3f9955ada1deea23bb52dc6ad28cef49077d0abb0de3b58b5dae782c6ac5a7a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_d9200491.png",
+      "bytes": 2732,
+      "sha256": "bc3bb2730444006f23a44b21edd776fb9078d5b723c2475fa325f7804ab434d5"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_knee_db61b267.png",
+      "bytes": 2814,
+      "sha256": "1e32a74c56ed84321b9d6617586921e6d32271131440f826716bed32315c5de8"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/lurker_LS04_legs.png",
+      "bytes": 2680,
+      "sha256": "ba74cfbd148a715f2159114e4a5715d194ae49d85db895b1ea2700d709cd5e0e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/selection.json",
+      "bytes": 661,
+      "sha256": "1704800eed76751f7023f71f5c300b3bfe7134a714c2579b3e599e94bb9f0a80"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01.bbmodel",
+      "bytes": 872990,
+      "sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_abdomen.png",
+      "bytes": 2688,
+      "sha256": "f36b380da048e44b4208b978d3a9e4220a0ff584f6a58b0a0b4efc634e07aac4"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_carapace.png",
+      "bytes": 2691,
+      "sha256": "396be7b5a0de18089bd452494f9c9e52ad8bde00bc565fad8361fa4758c66be5"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_eyes.png",
+      "bytes": 2601,
+      "sha256": "492fa18479cefb3ee660a49f16e8b71e1181a3557bac4b42c6bdba125bd141ac"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_fangs.png",
+      "bytes": 2631,
+      "sha256": "13d1e6ba41816ed02fa90b8808173864d9627a78bff380beb5a988fada618e4c"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_hair.png",
+      "bytes": 2648,
+      "sha256": "e06fbebb579b81075cbac82637c5466390c15d2c5aa9d1b49b4e618e8ca58d7e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_01bb0c8d.png",
+      "bytes": 2847,
+      "sha256": "845df37941e7b7c60a1eec5d7409d66cd82b5c7883dd87ea550e73d0f15a2d9f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_23396947.png",
+      "bytes": 2820,
+      "sha256": "d5fcd631733ed077bd9dc5ba8c56bb8934f2bb6c4c6298c10502d8213f1f47f3"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_26bd0432.png",
+      "bytes": 2717,
+      "sha256": "603c2327b0109b43880b9e020ccde43f3ba06c5481841e892440b1cb71d7a400"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_2cb3375d.png",
+      "bytes": 2714,
+      "sha256": "aa227443031ba490cb9b8115402a1b200547eb7964495a8490ad647e5f81edaa"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_93827777.png",
+      "bytes": 2837,
+      "sha256": "54c596bad3669f28ef7d75d27b68b4c7b53d8461b5cd88782b2a979f6e46c7ba"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_9c16bf06.png",
+      "bytes": 2847,
+      "sha256": "845df37941e7b7c60a1eec5d7409d66cd82b5c7883dd87ea550e73d0f15a2d9f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_9e184af3.png",
+      "bytes": 2714,
+      "sha256": "aa227443031ba490cb9b8115402a1b200547eb7964495a8490ad647e5f81edaa"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_a6aaeebf.png",
+      "bytes": 2715,
+      "sha256": "ed593a1833baacc361514fbf54acd115239f418259864f754351012ca1635028"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_afdcf1ac.png",
+      "bytes": 2715,
+      "sha256": "ed593a1833baacc361514fbf54acd115239f418259864f754351012ca1635028"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_b66db3ea.png",
+      "bytes": 2717,
+      "sha256": "603c2327b0109b43880b9e020ccde43f3ba06c5481841e892440b1cb71d7a400"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_b86ffb08.png",
+      "bytes": 2820,
+      "sha256": "d5fcd631733ed077bd9dc5ba8c56bb8934f2bb6c4c6298c10502d8213f1f47f3"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_b8a07280.png",
+      "bytes": 2831,
+      "sha256": "ba0bd6e7d3e6cd630dc1af902f2c22dd839e770a5575c068b20cb18850bcc48a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_ba6d967a.png",
+      "bytes": 2720,
+      "sha256": "ca61bd21f28675ec7ce483f32e7a3a3782dcbb8aabb21362894f00ef30aebd4f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_cfde820b.png",
+      "bytes": 2837,
+      "sha256": "54c596bad3669f28ef7d75d27b68b4c7b53d8461b5cd88782b2a979f6e46c7ba"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_d9200491.png",
+      "bytes": 2720,
+      "sha256": "ca61bd21f28675ec7ce483f32e7a3a3782dcbb8aabb21362894f00ef30aebd4f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_knee_db61b267.png",
+      "bytes": 2831,
+      "sha256": "ba0bd6e7d3e6cd630dc1af902f2c22dd839e770a5575c068b20cb18850bcc48a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/skirmisher_SK01_legs.png",
+      "bytes": 2702,
+      "sha256": "afa92bc020ba3e0a6a78953078862e19bdc263091a85fe26589251a3f8600737"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01.bbmodel",
+      "bytes": 872831,
+      "sha256": "e5bcb4f2a0015124861c7d47881c3ef851139253bf341139c8f9d1187fdf1a6a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_abdomen.png",
+      "bytes": 2686,
+      "sha256": "e171cd070d5e5a660a1912bf98ce7c4ad3fdc4fba0f5414e6da6bc7b6459dd21"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_carapace.png",
+      "bytes": 2656,
+      "sha256": "90385084e46480e7af12be83c4483474d02df3fc029fff83b750299133fdcbe6"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_eyes.png",
+      "bytes": 2601,
+      "sha256": "492fa18479cefb3ee660a49f16e8b71e1181a3557bac4b42c6bdba125bd141ac"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_fangs.png",
+      "bytes": 2742,
+      "sha256": "50baefbce53d09c3755cb6b16ae3f6fe01d25e7511de7f900178414c4c8a37ac"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_hair.png",
+      "bytes": 2604,
+      "sha256": "d6cf9b7219cda476c875a7bbb56d0d01dcd56cea3aeec823044a540637b09081"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_01bb0c8d.png",
+      "bytes": 2830,
+      "sha256": "cdf7a6ef809b12e0573925fcd96178c59fb297ea7024ae6c08b679ea0d02f278"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_23396947.png",
+      "bytes": 2796,
+      "sha256": "644b58a5b380f4fa243fa0553c2d9048c71eb52dd6d4af8f47d19a178fb16b39"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_26bd0432.png",
+      "bytes": 2739,
+      "sha256": "236363d56e5ceb51fa91496702faa7d555240e50b969643f9c45215604ee6e01"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_2cb3375d.png",
+      "bytes": 2721,
+      "sha256": "efe450a07ae45f809c3f99709e621dc6830b701357018378d4c585e83d26b937"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_93827777.png",
+      "bytes": 2826,
+      "sha256": "b41cfadf71fedb5132f713ac73c1d6b834bf5881221027645f92f7082a2ab9af"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_9c16bf06.png",
+      "bytes": 2830,
+      "sha256": "cdf7a6ef809b12e0573925fcd96178c59fb297ea7024ae6c08b679ea0d02f278"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_9e184af3.png",
+      "bytes": 2721,
+      "sha256": "efe450a07ae45f809c3f99709e621dc6830b701357018378d4c585e83d26b937"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_a6aaeebf.png",
+      "bytes": 2721,
+      "sha256": "3dc578f026c4733c9a77709a1e0938c41a87da66d1c7fc7604e262ac4160d975"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_afdcf1ac.png",
+      "bytes": 2721,
+      "sha256": "3dc578f026c4733c9a77709a1e0938c41a87da66d1c7fc7604e262ac4160d975"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_b66db3ea.png",
+      "bytes": 2739,
+      "sha256": "236363d56e5ceb51fa91496702faa7d555240e50b969643f9c45215604ee6e01"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_b86ffb08.png",
+      "bytes": 2796,
+      "sha256": "644b58a5b380f4fa243fa0553c2d9048c71eb52dd6d4af8f47d19a178fb16b39"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_b8a07280.png",
+      "bytes": 2808,
+      "sha256": "8ae7416ae8ebdb08f0bfbc60f23c062371e6c917728fa159924c5176378088d1"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_ba6d967a.png",
+      "bytes": 2724,
+      "sha256": "548084811e2da1b3fab5c263130c5bab53eeeefb0fbfcb85e582bf75f14cc519"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_cfde820b.png",
+      "bytes": 2826,
+      "sha256": "b41cfadf71fedb5132f713ac73c1d6b834bf5881221027645f92f7082a2ab9af"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_d9200491.png",
+      "bytes": 2724,
+      "sha256": "548084811e2da1b3fab5c263130c5bab53eeeefb0fbfcb85e582bf75f14cc519"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_knee_db61b267.png",
+      "bytes": 2808,
+      "sha256": "8ae7416ae8ebdb08f0bfbc60f23c062371e6c917728fa159924c5176378088d1"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP01_legs.png",
+      "bytes": 2708,
+      "sha256": "29af4d8bcb0f41a9580b5e6968bedf60c037bd0ec882d9cea2c8b27be2be8bb3"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02.bbmodel",
+      "bytes": 874148,
+      "sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_abdomen.png",
+      "bytes": 2732,
+      "sha256": "52bd46d49ed00fe7e5a5da05592f59b0498a01c81e9e69844b9f61fa986ae651"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_carapace.png",
+      "bytes": 2579,
+      "sha256": "8737c609597db6c9f19e3ae5773c20913f45e6f27d4546d817c84a2b251c9b52"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_eyes.png",
+      "bytes": 2601,
+      "sha256": "492fa18479cefb3ee660a49f16e8b71e1181a3557bac4b42c6bdba125bd141ac"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_fangs.png",
+      "bytes": 2750,
+      "sha256": "d1fb85400a76e8f69416cd792b63809b915c2a17f4f7bab80e91cd6242f2171a"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_hair.png",
+      "bytes": 2613,
+      "sha256": "060f4271a6d81b32657cc95361159751eb2067ea1b8311d7d4b01e7c8b0023d1"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_01bb0c8d.png",
+      "bytes": 2911,
+      "sha256": "0184101d86431a89dcba4294e1611c2f73b34d521ef7ee8f1b23d3e8fd658c05"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_23396947.png",
+      "bytes": 2863,
+      "sha256": "697ccef72410c9094a0016546d4f1c9745ec169eece5d5f698d5f6539d99ece0"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_26bd0432.png",
+      "bytes": 2779,
+      "sha256": "3163a68fb2bdb5a71993863627c990adb3aa89f5e336385eaced31b3430d59ca"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_2cb3375d.png",
+      "bytes": 2774,
+      "sha256": "e2bc0247727e11cfcaf01e7ac830f1651dbda91ba61a0a02990e4e671a79b0af"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_93827777.png",
+      "bytes": 2934,
+      "sha256": "9b26c7a8ef6e8c02ed0752bc9e741d5a15d628547a061c2ce9f4e73689f143fc"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_9c16bf06.png",
+      "bytes": 2911,
+      "sha256": "0184101d86431a89dcba4294e1611c2f73b34d521ef7ee8f1b23d3e8fd658c05"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_9e184af3.png",
+      "bytes": 2774,
+      "sha256": "e2bc0247727e11cfcaf01e7ac830f1651dbda91ba61a0a02990e4e671a79b0af"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_a6aaeebf.png",
+      "bytes": 2743,
+      "sha256": "3fbce9fec29c482ddf4c5d762636227f0c941ee2f9563acb457a0542a4e1b045"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_afdcf1ac.png",
+      "bytes": 2743,
+      "sha256": "3fbce9fec29c482ddf4c5d762636227f0c941ee2f9563acb457a0542a4e1b045"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_b66db3ea.png",
+      "bytes": 2779,
+      "sha256": "3163a68fb2bdb5a71993863627c990adb3aa89f5e336385eaced31b3430d59ca"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_b86ffb08.png",
+      "bytes": 2863,
+      "sha256": "697ccef72410c9094a0016546d4f1c9745ec169eece5d5f698d5f6539d99ece0"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_b8a07280.png",
+      "bytes": 2858,
+      "sha256": "42b9770f226ec4060b67497fca19d88ec37dedcf9ed8142a36479f3d867d6041"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_ba6d967a.png",
+      "bytes": 2772,
+      "sha256": "9b9f103d926b1d066cd2f8f67fb46b7b45243d5b0f077c0a8e895241f6fe83f1"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_cfde820b.png",
+      "bytes": 2934,
+      "sha256": "9b26c7a8ef6e8c02ed0752bc9e741d5a15d628547a061c2ce9f4e73689f143fc"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_d9200491.png",
+      "bytes": 2772,
+      "sha256": "9b9f103d926b1d066cd2f8f67fb46b7b45243d5b0f077c0a8e895241f6fe83f1"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_knee_db61b267.png",
+      "bytes": 2858,
+      "sha256": "42b9770f226ec4060b67497fca19d88ec37dedcf9ed8142a36479f3d867d6041"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP02_legs.png",
+      "bytes": 2757,
+      "sha256": "acb4407f5a814682b645c105cd20bc27f9481567d3acae4e035a0126444d2e72"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03.bbmodel",
+      "bytes": 870770,
+      "sha256": "d0ee659fad1b0385a2ad307b8c5077e59e0401e2cc22d260ee6ab178bee1c898"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_abdomen.png",
+      "bytes": 2645,
+      "sha256": "234d551868dc1b7fbd8b8a7845282d279ca59c0c454bc90751e0f3407ea737b4"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_carapace.png",
+      "bytes": 2620,
+      "sha256": "8efde4e4f5529422aed0860fc3f7d7e6a9e9e8292daeae92c68744bce34c0524"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_eyes.png",
+      "bytes": 2601,
+      "sha256": "492fa18479cefb3ee660a49f16e8b71e1181a3557bac4b42c6bdba125bd141ac"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_fangs.png",
+      "bytes": 2658,
+      "sha256": "ef1d6ea962eed900d6b9c8d1c332024955d98e3212ef20a2a5c0b4b45d544260"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_hair.png",
+      "bytes": 2598,
+      "sha256": "4079dbdb1715b4f38ed62f76a3188cf6ac3a2af69f2a66d79131ed481f778c42"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_01bb0c8d.png",
+      "bytes": 2775,
+      "sha256": "c94c04057d792c9be518c77088bac684d36c892a61089b2d32c4516eac21f663"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_23396947.png",
+      "bytes": 2707,
+      "sha256": "ec3242d5c9ef148f75be86ecd78a6538f72c577ef0d465f3cb4d34c743137d95"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_26bd0432.png",
+      "bytes": 2651,
+      "sha256": "3a5a1c14b7f51b83c8547bab36b797d2e44cd821cc98b0202b258b9b7e56b6b6"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_2cb3375d.png",
+      "bytes": 2645,
+      "sha256": "51edb0c2e0f7f3a7dbc2d1d9b8182117547aa68be6d3a0bd7f5b4c8bcff8d8a8"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_93827777.png",
+      "bytes": 2754,
+      "sha256": "94dcbbd1a8eb511feb310edb15cfcb0f72c7ebdd27fda2fb67d9bc986533a09b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_9c16bf06.png",
+      "bytes": 2775,
+      "sha256": "c94c04057d792c9be518c77088bac684d36c892a61089b2d32c4516eac21f663"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_9e184af3.png",
+      "bytes": 2645,
+      "sha256": "51edb0c2e0f7f3a7dbc2d1d9b8182117547aa68be6d3a0bd7f5b4c8bcff8d8a8"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_a6aaeebf.png",
+      "bytes": 2650,
+      "sha256": "d1227f7638af1f96affe60a4508f24bc893df639d49a43d699f4f227b201452e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_afdcf1ac.png",
+      "bytes": 2650,
+      "sha256": "d1227f7638af1f96affe60a4508f24bc893df639d49a43d699f4f227b201452e"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_b66db3ea.png",
+      "bytes": 2651,
+      "sha256": "3a5a1c14b7f51b83c8547bab36b797d2e44cd821cc98b0202b258b9b7e56b6b6"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_b86ffb08.png",
+      "bytes": 2707,
+      "sha256": "ec3242d5c9ef148f75be86ecd78a6538f72c577ef0d465f3cb4d34c743137d95"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_b8a07280.png",
+      "bytes": 2708,
+      "sha256": "b32da53f5f1ecd53a087b86b0404a6815c5ce323d5522fe6a9e3ba5c85196ea7"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_ba6d967a.png",
+      "bytes": 2641,
+      "sha256": "22beb20af8eae9643e1b5db6cce13a34b63b4fa61bc797d6823f4a833a2426a6"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_cfde820b.png",
+      "bytes": 2754,
+      "sha256": "94dcbbd1a8eb511feb310edb15cfcb0f72c7ebdd27fda2fb67d9bc986533a09b"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_d9200491.png",
+      "bytes": 2641,
+      "sha256": "22beb20af8eae9643e1b5db6cce13a34b63b4fa61bc797d6823f4a833a2426a6"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_knee_db61b267.png",
+      "bytes": 2708,
+      "sha256": "b32da53f5f1ecd53a087b86b0404a6815c5ce323d5522fe6a9e3ba5c85196ea7"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/source/spitter_SP03_legs.png",
+      "bytes": 2632,
+      "sha256": "4b5d3f103ed0c132693b4a430bcd34ffb8a5ebfb80d49b80bd832fed117623d5"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/build_design.py",
+      "bytes": 7744,
+      "sha256": "137febe89b56c7a695f9907d414fe7e8d61672c4969d6f890e74c360576ad460"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/build_scene.py",
+      "bytes": 13570,
+      "sha256": "e7549c259e9bcdf2636149b9b2e467d9defbbf61512e267cf2087ace75592a61"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/color_LS04.py",
+      "bytes": 11660,
+      "sha256": "88fc3fd633422d615e8a06ae576b20124dc9d23c61efd00f4e7d7c0ebad7599f"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/inspect_source.py",
+      "bytes": 515,
+      "sha256": "eac2e868363d3710ad88646238fbbabcfdd4919e34f6c1f7986b5c88256cf557"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/natural_surface_SP03.py",
+      "bytes": 3872,
+      "sha256": "a43268e61b1658921bd99a692e45201297300985573be277ea0bf112cb072fca"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/package_review.py",
+      "bytes": 4818,
+      "sha256": "a8071f05dbd4a8b75faaac2d73d12238dd7f9e26df410be60f0ca6b7431eb6a1"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/package_species_review.py",
+      "bytes": 5258,
+      "sha256": "3a56ce86fae198d3bebb76e40d2f0fd2ed7467a8ccbcb60816eacd977f4bd209"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/package_surface_SP03.py",
+      "bytes": 2979,
+      "sha256": "6edd5bef5a1a9e054dfaa6691c97328dbeb6a050815809598fc813c8e0cca8da"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/render_species_variants.py",
+      "bytes": 1001,
+      "sha256": "f49e3e9065b9ee2bd43eeb5b744373c56a965efa9fbff69668f81ce2bae41dd4"
+    },
+    {
+      "project": "23_lurker_spider",
+      "path": "23_lurker_spider/tools/thicken_legs_LS03.py",
+      "bytes": 3364,
+      "sha256": "8d83915b233a2042d3971919c8beb67453f76f9045bc6489601cecbf85684e60"
+    }
+  ]
+}

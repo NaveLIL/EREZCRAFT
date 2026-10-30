@@ -1,0 +1,52 @@
+{
+  "checked_on": "2026-10-28",
+  "owner_constraints": [
+    "Selected mesh, proportions, UVs, pixel pattern and palette are immutable",
+    "No visible breathing/pumping abdomen and no perpetual idle fidgeting",
+    "Nearly silent resting behaviour",
+    "Movement should reflect tarantula locomotion rather than mammalian breathing"
+  ],
+  "sources": [
+    {
+      "url": "https://ask.extension.org/kb/faq.php?id=407631",
+      "kind": "University Extension expert explanation",
+      "finding": "Gas exchange through book lungs; no diaphragm-driven inhalation/exhalation. Do not animate mammalian-looking body expansion."
+    },
+    {
+      "url": "https://cronfa.swan.ac.uk/Record/cronfa69148",
+      "kind": "Primary experimental study abstract, Uddin and Arbuckle, Arachnology 20(1)",
+      "finding": "Pterinochilus murinus defensive responses include fleeing, rearing and biting. Enclosure context changes which response appears; do not equate orange colour with permanent attacking or restlessness."
+    },
+    {
+      "url": "https://www.mapress.com/zt/article/view/zootaxa.1849.1.3",
+      "kind": "Primary taxonomic and natural-history paper, West et al. 2008",
+      "finding": "Ephebopus is generally fossorial. Genus-level natural history supports retreat-oriented interpretation; it does not support the fictional ranged-spit ability."
+    },
+    {
+      "url": "https://sicb.org/abstracts/differential-limb-function-during-locomotion-on-the-level-and-over-obstacles-in-the-tarantula/",
+      "kind": "Primary locomotion study abstract on juvenile P. murinus",
+      "finding": "Leg roles are differentiated: rear pair mainly propulsive, front pairs also stabilize/explore, third pair stabilizes. Avoid making every leg a synchronized decorative oscillator."
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6766366/",
+      "kind": "Primary kinematic study, Eupalaestrus weijenberghi, a different theraphosid species",
+      "finding": "Walking and slopes studied; anterior and posterior limb functions differ. Cross-species inspiration only, not a measured gait of E. cyanognathus."
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13106993/",
+      "kind": "Primary field natural-history study, Zamani and West 2026, Ecology and Evolution, DOI 10.1002/ece3.73329",
+      "finding": "E. cyanognathus juveniles use arboreal retreats; later stages move to ground burrows. Life stage matters. This is background for behaviour design; the current game does not simulate life-stage shifts."
+    }
+  ],
+  "application": {
+    "rest": "Use the authored fixed rest pose; remove perpetual breathing IDLE playback.",
+    "locomotion": "Retain existing native MOVE channels on their unchanged pivots; drive them from actual native limb swing, including vertical surface travel.",
+    "sound": "No idle monster chatter; footsteps and event sounds attenuated. No new sound assets.",
+    "combat": "Existing fantasy roles, attack timings, damage, targeting, navigation and hitboxes remain intact.",
+    "limitations": [
+      "Lurker LS04 species is not identified in its owner photo-reference metadata; no specific species identity is invented.",
+      "No burrow construction, mating behaviour or life-stage simulation is claimed.",
+      "No claim of universal silence: some tarantulas can produce defensive sounds, unlike a permanent ambient loop."
+    ]
+  }
+}

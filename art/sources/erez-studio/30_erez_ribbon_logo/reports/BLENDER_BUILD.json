@@ -1,0 +1,17 @@
+{
+  "revision": "LG01",
+  "ribbon_samples": 343,
+  "ribbon_vertices": 3430,
+  "ribbon_faces": 3428,
+  "native_folded_solid": true,
+  "reference": "references/owner_logo.jpg",
+  "raster_textures_used": false,
+  "exported_wall_diameter_blocks": 2,
+  "game_registered": false,
+  "views": [
+    "front",
+    "quarter",
+    "detail",
+    "transparent"
+  ]
+}

@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "id": "32_nordhavn_expedition",
+  "title": "NE01 expedition vessel for EREZCRAFT",
+  "revision": "NE01-A02",
+  "purpose": "Dimensionally referenced virtual vessel geometry and material review. Minecraft implementation in progress; not manufacturing certification.",
+  "units": {
+    "length": "mm",
+    "force": "N",
+    "stress": "MPa",
+    "torque": "N*m",
+    "angle": "deg",
+    "time": "s"
+  },
+  "manufacturing": {
+    "profile_id": "fdm_unqualified",
+    "qualification_evidence": [],
+    "applicable": false,
+    "rationale": "Virtual game asset only. No physical manufacturing process is asserted."
+  },
+  "requirements": [
+    {
+      "id": "TOPOLOGY",
+      "text": "Evaluated source solids are manifold",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "nonmanifold_meshes",
+        "unit": "count",
+        "operator": "equals",
+        "value": 0
+      }
+    },
+    {
+      "id": "FACE-AREA",
+      "text": "No zero-area mesh faces",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "zero_area_meshes",
+        "unit": "count",
+        "operator": "equals",
+        "value": 0
+      }
+    },
+    {
+      "id": "WINDOWS",
+      "text": "Sampled window edges and glass panes have a near shell hit",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "window_ray_failures",
+        "unit": "count",
+        "operator": "equals",
+        "value": 0
+      }
+    },
+    {
+      "id": "ROUTES",
+      "text": "Static 0.60m body / 2.20m headroom samples pass in the model, with explicit stepping allowance",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "clearance_failures",
+        "unit": "count",
+        "operator": "equals",
+        "value": 0
+      }
+    },
+    {
+      "id": "BERTHS",
+      "text": "Ten authored berth positions; not Minecraft sleeping acceptance",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "berths",
+        "unit": "count",
+        "operator": "equals",
+        "value": 10
+      }
+    },
+    {
+      "id": "TERMINALS",
+      "text": "Six reserved terminal positions; no working network claimed",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "terminal_positions",
+        "unit": "count",
+        "operator": "equals",
+        "value": 6
+      }
+    },
+    {
+      "id": "MATERIALS",
+      "text": "Nineteen original custom material textures, no third-party pixels",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "original_textures",
+        "unit": "count",
+        "operator": "equals",
+        "value": 19
+      }
+    },
+    {
+      "id": "LAYER-SPLIT",
+      "text": "Render cells keep opaque paint and transparent glazing separate",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "separate_render_layers",
+        "unit": "bool",
+        "operator": "equals",
+        "value": true
+      }
+    },
+    {
+      "id": "EXPORT-SEAMS",
+      "text": "Cell boundary positions snap to exact 0/1 after serialization",
+      "method": "inspection",
+      "required_for": [
+        "concept"
+      ],
+      "acceptance": {
+        "metric": "boundary_snap_violations",
+        "unit": "count",
+        "operator": "equals",
+        "value": 0
+      }
+    },
+    {
+      "id": "GAME-WALK",
+      "text": "Actual full client player walking and exported collision acceptance",
+      "method": "inspection",
+      "required_for": [
+        "engineering"
+      ],
+      "acceptance": {
+        "metric": "native_walk_passed",
+        "unit": "bool",
+        "operator": "equals",
+        "value": true
+      }
+    },
+    {
+      "id": "ME-COLD",
+      "text": "Real powered AE2 network survives movement and clean cold reload",
+      "method": "inspection",
+      "required_for": [
+        "engineering"
+      ],
+      "acceptance": {
+        "metric": "native_me_cold_passed",
+        "unit": "bool",
+        "operator": "equals",
+        "value": true
+      }
+    },
+    {
+      "id": "GAME-SEAMS",
+      "text": "No exterior sky cracks after actual Minecraft export and rendering",
+      "method": "inspection",
+      "required_for": [
+        "engineering"
+      ],
+      "acceptance": {
+        "metric": "native_seams_passed",
+        "unit": "bool",
+        "operator": "equals",
+        "value": true
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "GAME-ADAPTATION",
+      "text": "Layout, details, mechanisms and material appearance are adapted, not manufacturer production data.",
+      "state": "accepted",
+      "rationale": "Owner requested a real vessel basis and a playable adaptation.",
+      "required_for": [
+        "concept"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "RUNTIME-OPEN",
+      "description": "Full-vessel native collision, propulsion, boarding, sleeping and multiplayer remain unaccepted.",
+      "state": "open",
+      "rationale": "Model inspection and the separate small AE2/Sable compatibility fixture do not prove the complete vessel.",
+      "required_for": [
+        "engineering"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "DESIGN",
+      "path": "tools/build_design.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "SCENE-BUILDER",
+      "path": "tools/build_scene.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "INSPECTION-SCRIPT",
+      "path": "tools/verify_model.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "RENDER-EXPORTER",
+      "path": "tools/export_render_cells.py",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "GEOMETRY",
+      "path": "source/ne01.json",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "PARAMETERS",
+      "path": "source/parameters.json",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEXTURES",
+      "path": "source/texture_manifest.json",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "SOURCES",
+      "path": "source/sources.json",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "DECISIONS",
+      "path": "source/OWNER_DECISIONS.md",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "ASSEMBLY",
+      "path": "assembly/ne01.blend",
+      "role": "assembly",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "BOM",
+      "path": "docs/bom.csv",
+      "role": "bom",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "MANUAL",
+      "path": "docs/assembly.md",
+      "role": "instructions",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "GLB",
+      "path": "exports/ne01.glb",
+      "role": "export",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "RENDER-CELLS",
+      "path": "exports/minecraft/ne01_render_cells.json",
+      "role": "export",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "MODEL-CHECK",
+      "path": "reports/MODEL_INSPECTION.json",
+      "role": "report",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "RENDER-CHECK",
+      "path": "reports/RENDER_EXPORT.json",
+      "role": "report",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-HULL_IVORY",
+      "path": "textures/hull_ivory.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-SUPERSTRUCTURE_WHITE",
+      "path": "textures/superstructure_white.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-INTERIOR_WHITE",
+      "path": "textures/interior_white.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-TEAK",
+      "path": "textures/teak.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-INTERIOR_FLOOR",
+      "path": "textures/interior_floor.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-INTERIOR_WOOD",
+      "path": "textures/interior_wood.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-FABRIC",
+      "path": "textures/fabric.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-BRUSHED_STEEL",
+      "path": "textures/brushed_steel.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-BRASS",
+      "path": "textures/brass.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-WINDOW_FRAME",
+      "path": "textures/window_frame.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-GLASS",
+      "path": "textures/glass.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-ENGINE_METAL",
+      "path": "textures/engine_metal.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-CONSOLE",
+      "path": "textures/console.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-COUNTERTOP",
+      "path": "textures/countertop.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-DISPLAY",
+      "path": "textures/display.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-ME_DISPLAY",
+      "path": "textures/me_display.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-LAMP",
+      "path": "textures/lamp.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-PORT_LAMP",
+      "path": "textures/port_lamp.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    },
+    {
+      "id": "TEX-STARBOARD_LAMP",
+      "path": "textures/starboard_lamp.png",
+      "role": "source",
+      "required_for": [
+        "concept"
+      ]
+    }
+  ],
+  "calculations": [],
+  "evidence": [
+    {
+      "id": "NE01-A02-GEOMETRY",
+      "record": "verification/evidence/NE01-A02-GEOMETRY.json"
+    }
+  ]
+}

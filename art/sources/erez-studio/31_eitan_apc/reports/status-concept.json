@@ -1,0 +1,410 @@
+{
+  "schema_version": 1,
+  "project_id": "31_eitan_apc",
+  "revision": "E01-R7",
+  "level": "concept",
+  "ready": true,
+  "blockers": [],
+  "requirements": [
+    {
+      "id": "DIM-L",
+      "text": "Nominal model length 8000mm, excluding deployed mechanisms",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "DIM-W",
+      "text": "Nominal model width 3000mm",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "DIM-H",
+      "text": "Nominal height 3000mm excluding flexible antennas",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "SEATS",
+      "text": "Twelve distinct seating positions",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "WHEELS",
+      "text": "Eight wheel hub pivots",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "RAMP-GROUND",
+      "text": "Ramp shell remains above ground over the prescribed continuous rotation",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "SEAT-FOLD",
+      "text": "All nine folding pans rise in stowed pose",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "STATE",
+      "text": "Interaction contract passes mutual-exclusion and stationary-opening cases",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Exact categorical comparison"
+        }
+      ]
+    },
+    {
+      "id": "EXPORT",
+      "text": "Both GLB states reopen as geometry",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Exact categorical comparison"
+        }
+      ]
+    },
+    {
+      "id": "REAR-RECESS",
+      "text": "Photo-informed projecting aft shoulders: ramp outer face recessed at least 550mm; design estimate, not manufacturer dimension",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "REAR-RISE",
+      "text": "Raised faceted aft shoulders above nominal 2600mm roof; photo-informed design estimate",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "REAR-MOTION",
+      "text": "No triangle-surface intersections with the changed rear bay at prescribed ramp/door sample poses; no continuous collision claim",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R3-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: docs/ASSUMPTIONS.md; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py"
+        },
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "ROOF-FIT",
+      "text": "Supported hatch rims, unobstructed apertures, sealed centre seam and sampled lid-to-roof clearance",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Exact categorical comparison"
+        }
+      ]
+    },
+    {
+      "id": "BOW-JOINT",
+      "text": "Adjacent bow/main patches agree in transverse outer plane within 1mm virtual mesh comparison",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R4-GEOMETRY",
+          "status": "stale",
+          "reason": "Project definition changed; Missing source dependency hashes; Changed/missing dependency: assembly/eitan_E01.blend; Changed/missing dependency: exports/eitan_E01_boarding.glb; Changed/missing dependency: exports/eitan_E01_closed.glb; Changed/missing dependency: reports/MODEL_CHECK.json; Changed/missing dependency: reports/ROOF_FIT.json; Changed/missing dependency: source/eitan_E01.json; Changed/missing dependency: source/game_integration.json; Changed/missing dependency: source/parameters.json; Changed/missing dependency: tools/build_design.py; Changed/missing dependency: tools/build_scene.py; Changed/missing dependency: tools/prepare_records.py"
+        },
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "HATCH-VISIBILITY",
+      "text": "Closed roof has no outward visibility rays in the sampled fan; not a fluid-seal certification",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "FOOTWELL-VISIBILITY",
+      "text": "Sampled driver floor and wheelhouse rays are blocked",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Interval containment; project policy, not a probability guarantee"
+        }
+      ]
+    },
+    {
+      "id": "GAME-NATIVE",
+      "text": "Fresh drive, cold reload, Complementary and one dedicated TCP/UDP driver passed with DH",
+      "required": true,
+      "status": "pass",
+      "attempts": [
+        {
+          "evidence": "E01-R7-GAME",
+          "status": "pass",
+          "reason": "Exact categorical comparison"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E01-R3-GEOMETRY",
+      "usable": false,
+      "reasons": [
+        "Project definition changed",
+        "Missing source dependency hashes",
+        "Changed/missing dependency: assembly/eitan_E01.blend",
+        "Changed/missing dependency: docs/ASSUMPTIONS.md",
+        "Changed/missing dependency: exports/eitan_E01_boarding.glb",
+        "Changed/missing dependency: exports/eitan_E01_closed.glb",
+        "Changed/missing dependency: reports/MODEL_CHECK.json",
+        "Changed/missing dependency: source/eitan_E01.json",
+        "Changed/missing dependency: source/game_integration.json",
+        "Changed/missing dependency: source/parameters.json",
+        "Changed/missing dependency: tools/build_design.py",
+        "Changed/missing dependency: tools/build_scene.py"
+      ]
+    },
+    {
+      "id": "E01-R4-GEOMETRY",
+      "usable": false,
+      "reasons": [
+        "Project definition changed",
+        "Missing source dependency hashes",
+        "Changed/missing dependency: assembly/eitan_E01.blend",
+        "Changed/missing dependency: exports/eitan_E01_boarding.glb",
+        "Changed/missing dependency: exports/eitan_E01_closed.glb",
+        "Changed/missing dependency: reports/MODEL_CHECK.json",
+        "Changed/missing dependency: reports/ROOF_FIT.json",
+        "Changed/missing dependency: source/eitan_E01.json",
+        "Changed/missing dependency: source/game_integration.json",
+        "Changed/missing dependency: source/parameters.json",
+        "Changed/missing dependency: tools/build_design.py",
+        "Changed/missing dependency: tools/build_scene.py",
+        "Changed/missing dependency: tools/prepare_records.py"
+      ]
+    },
+    {
+      "id": "E01-R7-GAME",
+      "usable": true,
+      "reasons": []
+    }
+  ],
+  "manufacturing_profile": "fdm_unqualified",
+  "basis_sha256": "0394be50e714bd787c4efe9031a976bdc2a20739ac71deebb0f381bd42f8874d",
+  "tool_sha256": "f827ee741f4643bd11ddd5caeb986c88ac7460b7934256d5dcf5cbffb069279e",
+  "generated_at": "2026-10-29T21:29:11+00:00",
+  "scope": "Local evidence consistency gate; no certification, independent review, or authenticity guarantee"
+}

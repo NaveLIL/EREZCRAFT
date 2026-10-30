@@ -1,0 +1,32 @@
+{
+  "revision": "E01-R7",
+  "source_parts": 569,
+  "mesh_objects": 573,
+  "groups": 28,
+  "metres_per_blender_unit": 1,
+  "seats": 12,
+  "troop_seats": 9,
+  "crew_seats": 3,
+  "roof_openings": 3,
+  "roof_lids": 4,
+  "rear_openings": 2,
+  "rear_ramp_open_deg": 118.72311373330247,
+  "independent_door_in_ramp": true,
+  "driven_telescoping_actuators": 2,
+  "folding_seat_pans": 9,
+  "pose_frames": {
+    "1": "travel",
+    "41": "boarding",
+    "61": "travel",
+    "81": "door",
+    "101": "travel",
+    "121": "service",
+    "161": "travel"
+  },
+  "rendered_views": [
+    "driver",
+    "cutaway"
+  ],
+  "runtime_registered": false,
+  "offroad_driving_tested": false
+}

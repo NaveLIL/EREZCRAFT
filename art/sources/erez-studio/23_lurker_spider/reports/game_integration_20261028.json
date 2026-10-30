@@ -1,0 +1,16 @@
+{
+  "status": "IMPLEMENTED_AND_VERIFIED_LOCALLY",
+  "version": "0.7.0-preview.40-studio-spiders",
+  "selected": {
+    "lurker": "LS04",
+    "skirmisher": "SK01",
+    "spitter": "SP02"
+  },
+  "report": "D:/repos/Minecraft/EREZCRAFT/docs/verification/SPIDER_MODELS.json",
+  "human_report": "D:/repos/Minecraft/EREZCRAFT/docs/SPIDER_COMBAT.md",
+  "jar_sha256": "baaf75bcd1220d4d68ab97f23fa26081443786abf179d50473d53962d270c42f",
+  "source_geometry_and_pixels_unchanged": true,
+  "source_selection_record_preserved": true,
+  "production_installed": false,
+  "owner_profile_used": false
+}

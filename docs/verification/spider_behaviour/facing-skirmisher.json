@@ -1,0 +1,62 @@
+{
+  "variant": "SKIRMISHER",
+  "combat_kind": "MELEE",
+  "live_ai": true,
+  "target_injected": false,
+  "attacks_called_by_fixture": false,
+  "position_and_orientation_pinned_for_diagnostic": true,
+  "front_hits": 2,
+  "side_hits": 2,
+  "rear_hits": 2,
+  "front_only_contract_passed": false,
+  "impacts": [
+    {
+      "tick": 6,
+      "position": "FRONT",
+      "body_yaw": 0.0,
+      "head_yaw": 0.0,
+      "forward_dot_target": 1.0,
+      "damage": 5.0
+    },
+    {
+      "tick": 27,
+      "position": "FRONT",
+      "body_yaw": 0.0,
+      "head_yaw": 0.0,
+      "forward_dot_target": 1.0,
+      "damage": 5.0
+    },
+    {
+      "tick": 48,
+      "position": "SIDE",
+      "body_yaw": 0.0,
+      "head_yaw": 0.0,
+      "forward_dot_target": 0.0,
+      "damage": 4.0
+    },
+    {
+      "tick": 69,
+      "position": "SIDE",
+      "body_yaw": 0.0,
+      "head_yaw": 0.0,
+      "forward_dot_target": 0.0,
+      "damage": 5.0
+    },
+    {
+      "tick": 90,
+      "position": "REAR",
+      "body_yaw": 0.0,
+      "head_yaw": 0.0,
+      "forward_dot_target": -1.0,
+      "damage": 5.0
+    },
+    {
+      "tick": 111,
+      "position": "REAR",
+      "body_yaw": 0.0,
+      "head_yaw": 0.0,
+      "forward_dot_target": -1.0,
+      "damage": 4.0
+    }
+  ]
+}

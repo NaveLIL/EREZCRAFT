@@ -1,0 +1,194 @@
+[
+  {
+    "name": "copper",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/copper.png",
+    "derived_sha256": "1f2d1a762c56722a83fa1b63c25c2de447224713ea00dc87a1c9fa0c90deaa4c",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "brass",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/brass.png",
+    "derived_sha256": "86239279a152a98922f568898b5527b592cc9d18414d7d9c71cd548d6de69920",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "teal",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/teal.png",
+    "derived_sha256": "9dde6332b73ba9bde8faa76cd24d58265c9530f1f7057e827465e8e3ff831789",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "ivory",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/ivory.png",
+    "derived_sha256": "334b32f136013de7666f12b4f36652757d12a2d32711f1ed784ee2d9ce655018",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "rubber",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/rubber.png",
+    "derived_sha256": "8d316f023600d5ea88c043ff588806b3bb6b4a2e7c9c42f8351e0de53265f51e",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "lamp",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/lamp.png",
+    "derived_sha256": "6caeca49fcb20d53057e419484564112c9a010c09ddcb02636f991ce4c63e90e",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "cyan",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/cyan.png",
+    "derived_sha256": "5db0f79d74edf1952921eb773c236e190ff1c8e912ba8b1c4dc6cc506fd2b605",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "wood",
+    "source_file": "crown-tree/maple_planks.png",
+    "saved_original": "source/originals/maple_planks.png",
+    "source_sha256": "a68c62d9bab0058b8054fba6f1db26444fc624bd59305d93176ae1b8953fed69",
+    "derived_file": "source/textures_SK02/wood.png",
+    "derived_sha256": "81482b9726acebd956a59c3010f90de818986559080241523fd7eb52578541de",
+    "license": "CC0-1.0",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "graphite",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/graphite.png",
+    "derived_sha256": "6219cdacd7168c83e74a780ca99a45beee3478ec5f1042a55dab8c637a96150d",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "steel",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/steel.png",
+    "derived_sha256": "bdbc9226911f0a2f403e239c2f37fec0ae99aa1f1bbbdd8d55691da5e13ff012",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "deck",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/deck.png",
+    "derived_sha256": "4bd0b6e6077ab071a9d1b8d95c8f36bd5065ac14d0655bd69d49ebe12fa641a8",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  },
+  {
+    "name": "glass",
+    "source_file": "gui-materials/steel_block.png",
+    "saved_original": "source/originals/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "derived_file": "source/textures_SK02/glass.png",
+    "derived_sha256": "18852fba78af7527381aa8257d1fff930bf3899a797b1a5667200b2a72691699",
+    "license": "CC0-1.0",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "size": [
+      16,
+      16
+    ],
+    "changes": "Bijective RGB palette substitution only. Original pixel positions, dimensions and alpha preserved."
+  }
+]

@@ -1,0 +1,269 @@
+{
+  "observed_utc": "2026-10-28T11:59:26.162Z",
+  "checked_projects": [
+    {
+      "folder": "24_lozhnokoren",
+      "revision": "LK01",
+      "all_hashes_match": true,
+      "checked": 7,
+      "files": [
+        {
+          "file": "references/lozhnokoren_concept_LK01.png",
+          "bytes": 2338536,
+          "sha256": "0f6f05598975414803f4816720b6976876d81b4bf2dd61bfddf5330e2739c9d1",
+          "matches": true
+        },
+        {
+          "file": "references/imagegen_prompt.txt",
+          "bytes": 2304,
+          "sha256": "919d09cb7de9ac60b92335643f17c72bf7d71544205505c5625689486b2df793",
+          "matches": true
+        },
+        {
+          "file": "source/lozhnokoren_LK01.bbmodel",
+          "bytes": 892310,
+          "sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3",
+          "matches": true
+        },
+        {
+          "file": "assembly/lozhnokoren_LK01.blend",
+          "bytes": 410441,
+          "sha256": "fc251015e07762caba5c59bea0411301dfcdc777380ca1c99666e076b4ebb0a9",
+          "matches": true
+        },
+        {
+          "file": "exports/lozhnokoren_LK01.glb",
+          "bytes": 703804,
+          "sha256": "1f737b8f097b678db0f1a832c52089ff61e3e9d71e0926731449d218719ac297",
+          "matches": true
+        },
+        {
+          "file": "preview/lozhnokoren_LK01_review.jpg",
+          "bytes": 299776,
+          "sha256": "c68f249ad2dd31a7c5403c78c118c37ea23fd31e09951f7322fb299a7779c31a",
+          "matches": true
+        },
+        {
+          "file": "preview/lozhnokoren_LK01_crawl.gif",
+          "bytes": 1686549,
+          "sha256": "14b4e6dd88fc8861c6db6e92041c532f9027cb2bb3c32a3ea4a528fd163d37e9",
+          "matches": true
+        }
+      ],
+      "game_verified": false
+    },
+    {
+      "folder": "25_skat",
+      "revision": "SK02",
+      "all_hashes_match": true,
+      "checked": 22,
+      "files": [
+        {
+          "file": "source/skat_SK02.json",
+          "bytes": 649681,
+          "sha256": "4375751e7612637136a8b983dcf94032d779e550e07ef8147b05880063dfd5bb",
+          "matches": true
+        },
+        {
+          "file": "assembly/skat_SK02.blend",
+          "bytes": 1021241,
+          "sha256": "70dd33ee001ec37272b4a47d4e51a61a1d9200c4e4abd12957494e576da0fc5f",
+          "matches": true
+        },
+        {
+          "file": "exports/skat_SK02.glb",
+          "bytes": 2573224,
+          "sha256": "140cdfff199ba03165aea53af1c1d70a814028cc3ad820c706542d27210d1f66",
+          "matches": true
+        },
+        {
+          "file": "references/skat_concept_SK01.png",
+          "bytes": 2593160,
+          "sha256": "8bb6270e1337af5628538090f3b3b71ffaadc6c715a81d1c3d080074b7642b87",
+          "matches": true
+        },
+        {
+          "file": "references/imagegen_prompt.txt",
+          "bytes": 2362,
+          "sha256": "83268abbba519e3b425cfcf0dc404c5528a6e225a8e6f18eaf02501df93f3612",
+          "matches": true
+        },
+        {
+          "file": "README.md",
+          "bytes": 9395,
+          "sha256": "32653ca70b72e6c587a5895f27336dda4982b8548ebf4da93118ea54327a2752",
+          "matches": true
+        },
+        {
+          "file": "INTEGRATION.md",
+          "bytes": 7593,
+          "sha256": "ef1cd893d37dc0ef10f5e08085d770d4b44e095a6007e97a9e3ce741c3f0cca1",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_SK02_hero.png",
+          "bytes": 3218642,
+          "sha256": "8dfce80bf0ead9c2f39fca79cf344fab5184771d405f48b9f1a05e22c68f1d70",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_SK02_aft.png",
+          "bytes": 3143521,
+          "sha256": "8f375e0e4321c79596748309195268ffc544c72a0b5282a04c0a396587ccc969",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_SK02_cutaway.png",
+          "bytes": 2810087,
+          "sha256": "b773ba269f478596fa822faf2d9f685c9f0f1390a55cd9ee7eaa9da5b6df6845",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_SK02_hold.png",
+          "bytes": 3180384,
+          "sha256": "bcc5d0c04eac19368ccb1c36ffdf9ccd8bfc22d60bfd9d69d6037bb0688b013c",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_SK02_cabin.png",
+          "bytes": 3193228,
+          "sha256": "4c0062bf3c082d5acb176ba41f3ef5c21001c136bcdfb26198d4048d4b03b9a0",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_SK02_top.png",
+          "bytes": 2399622,
+          "sha256": "5a67791ad70745319bfcd4a46b64d56c53057713720811841e43129c67600d38",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_SK02_side.png",
+          "bytes": 2387314,
+          "sha256": "00e7fb4976c6c6ee1c8c6c2cee84ba2a77327ab6ce0b424a899676e123287866",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_SK02_review.jpg",
+          "bytes": 652364,
+          "sha256": "2091c0a5f1105a5a140463bdd48854d0d2d2722fd42776d50dc3992bf6871400",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_SK02_reference_comparison.jpg",
+          "bytes": 425337,
+          "sha256": "30aa5b7d33599831adfd6137c019b92b644daa6ed6546898a67679c9c42ed391",
+          "matches": true
+        },
+        {
+          "file": "reports/SAVED_BLEND_SK02.json",
+          "bytes": 1538,
+          "sha256": "33b43c5b8f60ea407ed2dc2ff0c2bf1074d564efbc07399212eeb09f5208d7b0",
+          "matches": true
+        },
+        {
+          "file": "reports/GLB_IMPORT_SK02.json",
+          "bytes": 243,
+          "sha256": "d4f81531c08e4a0859e3e014ee3d5a55f8c1c856895e12e921a38cbb1437f493",
+          "matches": true
+        },
+        {
+          "file": "preview/skat_small_and_large.jpg",
+          "bytes": 339057,
+          "sha256": "0a0a4d958250bc7d314b7676992fbba49d0d61ef4ea8edd49a89f88a9e54449c",
+          "matches": true
+        },
+        {
+          "file": "source/selection.json",
+          "bytes": 1054,
+          "sha256": "cb5f8c74cf78943efe279f6fa99a0bb806fcfeb0cc7846e905bc0703daf0e7e1",
+          "matches": true
+        },
+        {
+          "file": "preview/preserved/small_SK01_as_seen.png",
+          "bytes": 2399111,
+          "sha256": "cd6661e3113732f99958d0499296b59cba24a0e64997801e3440a6682f745555",
+          "matches": true
+        },
+        {
+          "file": "preview/preserved/large_SK02_as_seen.png",
+          "bytes": 3217423,
+          "sha256": "1c901dc08c74e22093441164fcc3140287c13fa5b645d5fee20f73178b2575d2",
+          "matches": true
+        }
+      ],
+      "game_verified": false
+    }
+  ],
+  "oc01": {
+    "revision": "OC01",
+    "source_project": "26_lower_ocean",
+    "source_material_sha256": "50d7c26f1e73cd393b59cf6259118193de13fc91c324d4a1e37e5895b61992f1",
+    "source_blend_sha256": "e7e3581afc594fcf2b2005560f643d0e9b7049b553bbcd79a9bc8bdf294597b5",
+    "scope": "Current priority: native large-area still and naturally flowing lower-toxin colour-material trial"
+  },
+  "banner": {
+    "revision": "BN01",
+    "project": "27_two_seas_banner",
+    "reviewed_utc": "2026-10-28T12:18:33.841Z",
+    "status": "Final 3200x1400 PNG, JPEG, editable blend and artifact report now present; final image reviewed",
+    "all_hashes_match": true,
+    "checked": 8,
+    "files": [
+      {
+        "file": "preview/two_seas_BN01_banner.png",
+        "bytes": 5381901,
+        "sha256": "7584215a550473a0bfbd80928fe8bb7fa61d9328a1c109a9e8ddf3acc94e2426",
+        "matches": true
+      },
+      {
+        "file": "exports/two_seas_BN01_banner.jpg",
+        "bytes": 1034729,
+        "sha256": "a930a6045d255992ac4f858d0366bd2d438d81a3c5485079948f8f0c9fc5f617",
+        "matches": true
+      },
+      {
+        "file": "assembly/two_seas_BN01.blend",
+        "bytes": 1668938,
+        "sha256": "cd43e407eabbd48540fe26074efdcbce4d0e95c62ec476212892f52ff46bbdde",
+        "matches": true
+      },
+      {
+        "file": "source/banner_BN01.json",
+        "bytes": 1440,
+        "sha256": "9f9bc3f06bbc1bee732e9ee32efe48f03fc632a1f8252bdc1eb73b62e84cbec9",
+        "matches": true
+      },
+      {
+        "file": "source/erezcraft-emblem.png",
+        "bytes": 36124,
+        "sha256": "940adeeb393ca9cd32e869149d8dd3289c7c9a0ac56de8fc16c8470646892139",
+        "matches": true
+      },
+      {
+        "file": "tools/build_banner.py",
+        "bytes": 20231,
+        "sha256": "30341e66f24f51cc9c90cb84cb6243da948a98fea12b71cdb41d3f3fd687e3d8",
+        "matches": true
+      },
+      {
+        "file": "reports/SCENE_CHECK.json",
+        "bytes": 2073,
+        "sha256": "eeefc6b973e9d09db5c37f12b32dba80a61f38291b81c6529ada0427fc9a032e",
+        "matches": true
+      },
+      {
+        "file": "README.md",
+        "bytes": 5292,
+        "sha256": "068f6d74570676373542977c94da668908c07bb2eb526888c0c4bd6f062e5533",
+        "matches": true
+      }
+    ],
+    "gameplay_concepts_only": [
+      "hanging jellyfish",
+      "Strizh survey craft",
+      "Plastun",
+      "small upper-sea swimmers"
+    ],
+    "published": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "project": "Skat / SK02",
+  "user_request_ru": "Имба, давай его разработаем, да и думаю места под ресурсы там должно быть не мало, а красивые дизайны я люблю))",
+  "intent": "Develop a visually distinctive, spacious cargo expedition catamaran for EREZCRAFT's lower toxic sea, using the established block-based Create/Sable direction.",
+  "scope": "Concept, editable game art model, measured interior layout, proposed modular storage and integration specification. No publication or server changes.",
+  "style": ["vanilla-scale cuboid geometry", "16x16 source textures", "graphite, restrained teal and copper", "industrial Create machinery", "separate twin bows", "long stepped bows and sloped bridge matching the original concept", "cargo below the main deck"],
+  "requirements": [
+    {"id":"R01","text":"Two visibly separate hulls and bow channel","verification":"Native source geometry, front/hero render"},
+    {"id":"R02","text":"24 modeled cargo drawers in two banks, six bays and two tiers","verification":"Source and saved-scene counts; cutaway render"},
+    {"id":"R03","text":"Continuous central aisle at least 2.5 blocks wide and 2 blocks clear high; stairs in a separate aft bay","verification":"Saved-scene AABB exclusion against declared aisle; visual cutaway"},
+    {"id":"R04","text":"Forward two-seat cabin, two air propeller assemblies, aft folded crane","verification":"Saved-scene count and renders"},
+    {"id":"R05","text":"Editable local source, packed Blender scene and self-contained GLB","verification":"Reopen scene and reimport GLB"},
+    {"id":"R06","text":"Existing verified CC0 texture pixels changed by RGB palette only","verification":"Hash, color mapping, alpha and dimension checks"},
+    {"id":"R07","text":"Separate visual design from working Minecraft transport","verification":"Readme, source metadata and integration specification"}
+  ],
+  "capacity_assumption": "24 custom cargo modules x 54 slots = 1296 target slots; 82944 items only if every slot holds a full 64-stack. Drawers are modeled art, not implemented inventories.",
+  "unknowns": ["Sable buoyancy for the two custom Interstice fluid types", "thrust and power budget", "actual simulated mass and center of mass", "passenger shelter and toxin exposure while moving", "cargo mass implementation", "multiplayer boarding, chunk reload and server performance"],
+  "units": "Minecraft blocks, one Blender unit per block. No real material density, loads or manufacturing tolerances are assumed.",
+  "source_of_parameters": "User direction, prior agreed Skat concept, local game dimension and visual layout choices. All dimensions are editable game-design choices.",
+  "owner_correction_ru": "Первая модель слишком далеко ушла от первоначального концепта. Владелец предпочитает реализм и просит сохранить обещанное качество внешности. SK02 пересобрана по исходной картинке. Последующим прямым поручением владелец попросил сохранить обе версии: маленький SK01 и большой SK02, включая показанные рендеры.",
+  "physics_verified": false,
+  "runtime_registered": false
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "reference_sha256": "ecaa2a253d56c95d69520490a9645d3387ce0fda90ec1420225a73b791f6e849",
+  "candidate_sha256": "ac927cb2ace1117ecb17d3577bd942e8d4e7343b04d495a0e17a01b7965594a5",
+  "changed_logic_classes": [
+    "pro/erez/interstice/entity/CaveRiftSpiderEntity.class",
+    "pro/erez/interstice/entity/client/CaveRiftSpiderRenderer.class"
+  ],
+  "debug_line_shifts_only": [
+    {
+      "class": "pro/erez/interstice/entity/CaveRiftSpiderEntity$1.class",
+      "javap_code_sha256": "7a89fa1c4d88d8590c6800aebf95961a6f5b6002a827d7eb87a6562640d314e6"
+    },
+    {
+      "class": "pro/erez/interstice/entity/CaveRiftSpiderEntity$Variant.class",
+      "javap_code_sha256": "e70d3a89dfb84477c4b35cd22d2e5bdc8081c5b51add2c05e3bcfdd3ae19a33e"
+    }
+  ],
+  "previous_classes_byte_exact": 559,
+  "previous_classes_same_code": 561,
+  "png_preserved": 212,
+  "ogg_preserved": 12,
+  "mesh_json_preserved": 3
+}

@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-10-29T09:23:11.774Z",
+  "release_sequence": 23,
+  "mod_version": "0.7.0-preview.98-skat-server",
+  "scope": "Read-only production observations during owner session; not a capacity or client FPS acceptance",
+  "players_online": 1,
+  "dimension": "interstice:islands_v6",
+  "owner_created_skat": true,
+  "skat_hulls": 1,
+  "skat_mass": 44.86074699999975,
+  "skat_physics_active": true,
+  "overall_tps": 20,
+  "overall_mspt": 9.481,
+  "v6_mspt": 8.049,
+  "tick_sample_before": {
+    "average_ms": 9.6,
+    "p50_ms": 9.4,
+    "p95_ms": 11.5,
+    "p99_ms": 16.5,
+    "samples": 100
+  },
+  "tick_sample_with_skat": {
+    "average_ms": 9.5,
+    "p50_ms": 9.4,
+    "p95_ms": 11.5,
+    "p99_ms": 14.1,
+    "samples": 100
+  },
+  "chunky_running": false,
+  "server_cpu_percent": 29.71,
+  "server_ram_gib": 12.06,
+  "server_ram_limit_gib": 16,
+  "host_available_ram_mib": 6992,
+  "owner_reports_severe_lag": true,
+  "client_fps_measured": false,
+  "lag_cause_identified": false,
+  "restart_performed": false,
+  "graphics_settings_changed": false,
+  "world_changes_by_diagnostics": false
+}

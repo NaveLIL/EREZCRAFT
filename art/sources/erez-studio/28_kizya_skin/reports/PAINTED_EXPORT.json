@@ -1,0 +1,20 @@
+{
+  "revision": "PK02",
+  "original_painted_sheet_size": [
+    1254,
+    1254
+  ],
+  "painted_atlas_size": [
+    128,
+    128
+  ],
+  "packed_painted_regions": 167,
+  "java_skin_size": [
+    64,
+    64
+  ],
+  "skin_type": "slim",
+  "operation": "UV repacking and resolution conversion of new painted artwork; no semantic repainting or borrowed block textures",
+  "account_skin_changed": false,
+  "standard_skin_sha256": "dff45c41b5dba627f827c8c081291a6de25c5e79379ef2333ac5a2eb2b694874"
+}

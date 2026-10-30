@@ -1,0 +1,17 @@
+{
+  "revision": "OC01",
+  "source_sha256": "50d7c26f1e73cd393b59cf6259118193de13fc91c324d4a1e37e5895b61992f1",
+  "period_blocks": 64,
+  "period_seconds": 16,
+  "cross_patch_value_error": 0.0,
+  "spatial_wrap_max_error": 1.587618925213974e-14,
+  "time_loop_max_error": 6.855627177060342e-15,
+  "two_sided_seam_probe_errors": [
+    0.003164464393072941,
+    0.0003164614586639303,
+    3.16461608864671e-05
+  ],
+  "continuous_world_field": true,
+  "rendered_mesh_seams_checked_separately": true,
+  "minecraft_or_DH_verified": false
+}

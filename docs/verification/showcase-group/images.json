@@ -1,0 +1,16 @@
+[
+  {
+    "file": "group-photo.png",
+    "width": 3840,
+    "height": 1600,
+    "bytes": 10740745,
+    "sha256": "aef28ae1d83ac1a4bfcceb80ca8dad3f63b25ada91474796b0b7a35403092dd0"
+  },
+  {
+    "file": "friends-close.png",
+    "width": 3840,
+    "height": 1600,
+    "bytes": 11274686,
+    "sha256": "7facfa5d71c04fd5c519eed8705aca8e3bab5d0985c5068a96688ffbaef85a78"
+  }
+]

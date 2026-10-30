@@ -1,0 +1,16 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "prototype": "SK01",
+  "renders": "Studio renders, not in-game evidence",
+  "comparison_baseline": "LS03",
+  "existing_move_clip_imported": true,
+  "minecraft_scale": 0.6,
+  "span_blocks": 2.8257843255996704,
+  "role": "skirmisher",
+  "views": [
+    "quarter",
+    "front"
+  ],
+  "prototype_mesh_objects": 309,
+  "native_game_verified": false
+}

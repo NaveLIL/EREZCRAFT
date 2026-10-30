@@ -1,0 +1,11 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "prototype": "LS04",
+  "renders": "Studio renders, not in-game evidence",
+  "comparison_baseline": "LS03",
+  "existing_move_clip_imported": true,
+  "minecraft_scale": 0.85,
+  "span_blocks": 4.003194093704224,
+  "prototype_mesh_objects": 309,
+  "native_game_verified": false
+}

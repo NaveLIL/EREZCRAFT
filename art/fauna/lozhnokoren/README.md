@@ -1,0 +1,1 @@
+Исходники LK01 из Blender/creations/24_lozhnokoren/source сохранены без изменения байтов. В этом каталоге исходный префикс source/ опущен. Семь текстур и четыре оригинала CC0 лежат в textures/ и originals/. Полная передача и поведение: docs/LOZHNOKOREN.md; runtime provenance: assets/interstice/provenance/lozhnokoren.json. Иллюстрация концепта не используется как игровая текстура.

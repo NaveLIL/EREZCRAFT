@@ -1,0 +1,13 @@
+{
+  "revision": "OC01",
+  "independent_patches": 64,
+  "patch_size_blocks": 16,
+  "spatial_period_blocks": 64,
+  "loop_seconds": 16,
+  "coordinates_source": "ShaderNodeNewGeometry.Position",
+  "shader_nodes": 143,
+  "mathematical_source": "source/material_OC01.json",
+  "native_material_saved": true,
+  "minecraft_or_DH_verified": false,
+  "game_files_modified": false
+}

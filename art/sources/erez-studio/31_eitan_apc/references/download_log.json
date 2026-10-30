@@ -1,0 +1,21 @@
+[
+  {
+    "file": "idf_ramps.jpg",
+    "bytes": 212,
+    "url": "https://www.idf.il/media/l4xjukgk/c95f931d-9d59-430b-9daf-410120f03277.jpg",
+    "valid_image": false,
+    "validation_error": "cannot identify image file 'D:\\\\repos\\\\Blender\\\\creations\\\\31_eitan_apc\\\\references\\\\idf_ramps.jpg'"
+  },
+  {
+    "file": "interior_driver.jpg",
+    "bytes": 208772,
+    "url": "https://ynet-pic1.yit.co.il/cdn-cgi/image/format%3Dauto/picserver6/crop_images/2025/09/13/r1GxAOoKfjeg/r1GxAOoKfjeg_0_0_2667_2000_0_x-large.jpg",
+    "valid_image": true
+  },
+  {
+    "file": "early_troop_reference.png",
+    "bytes": 395941,
+    "url": "https://4.bp.blogspot.com/-iyDNgUsaatk/WlKW2r7CDoI/AAAAAAAAA3I/sMkzUZl3ouMVf7kRFL5BgyD0oELxa094wCLcBGAs/s640/11.png",
+    "valid_image": true
+  }
+]

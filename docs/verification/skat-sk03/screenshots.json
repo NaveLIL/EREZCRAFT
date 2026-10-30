@@ -1,0 +1,57 @@
+[
+  {
+    "file": "docs/verification/skat-sk03/01-bow.png",
+    "title": "Нос и фары",
+    "sha256": "4987eb56555f76026aa5f96a1bdf29c9d7e72e140486961c939e443b9781e8e6",
+    "width": 1920,
+    "height": 1080,
+    "night_vision": false,
+    "hud": false,
+    "lighting_mask": 7,
+    "source_run": "0.7.0-preview.98-skat-server / reload"
+  },
+  {
+    "file": "docs/verification/skat-sk03/02-stern.png",
+    "title": "Закрытая корма",
+    "sha256": "79e43874284d44a2b2f0bfc0605b7cafc8fa9930ee88b4a45e848505e283cf85",
+    "width": 1920,
+    "height": 1080,
+    "night_vision": false,
+    "hud": false,
+    "lighting_mask": 7,
+    "source_run": "0.7.0-preview.98-skat-server / reload"
+  },
+  {
+    "file": "docs/verification/skat-sk03/03-boarding.png",
+    "title": "Борт и посадочная лестница",
+    "sha256": "e4aa0e89586007d790f10e5bbbaa4ce54b6cd2d197df43a6aa9c12bb5775d7d4",
+    "width": 1920,
+    "height": 1080,
+    "night_vision": false,
+    "hud": false,
+    "lighting_mask": 7,
+    "source_run": "0.7.0-preview.98-skat-server / reload"
+  },
+  {
+    "file": "docs/verification/skat-sk03/04-hold.png",
+    "title": "Трюм",
+    "sha256": "04c246775d02b13ae67b96e99d124749d2c97e61fd64c6ba036baa86f5dc082b",
+    "width": 1920,
+    "height": 1080,
+    "night_vision": false,
+    "hud": false,
+    "lighting_mask": 7,
+    "source_run": "0.7.0-preview.98-skat-server / reload"
+  },
+  {
+    "file": "docs/verification/skat-sk03/05-cabin.png",
+    "title": "Рубка",
+    "sha256": "abb73d1f1d55be77c913b2ee406b9ace74d0d38f8f173701c96263a13b372660",
+    "width": 1920,
+    "height": 1080,
+    "night_vision": false,
+    "hud": false,
+    "lighting_mask": 7,
+    "source_run": "0.7.0-preview.98-skat-server / reload"
+  }
+]

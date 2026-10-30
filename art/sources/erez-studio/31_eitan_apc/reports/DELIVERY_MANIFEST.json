@@ -1,0 +1,138 @@
+{
+  "README.md": {
+    "bytes": 6831,
+    "sha256": "e210c63a0dc0879c647ea9b7c30ae304193dd4019012df016aa5bfa8eb259686"
+  },
+  "project.json": {
+    "bytes": 8422,
+    "sha256": "1c0a1d0cb1a6c5148547d17e529fc85e8d2c5d35acfafa8e18314d1f7a94038e"
+  },
+  "source/eitan_E01.json": {
+    "bytes": 245175,
+    "sha256": "2be60f4845c623efe148d6d5b0b442f5ce6a46bbb1537e5b89ee7dae0fe1a842"
+  },
+  "source/game_integration.json": {
+    "bytes": 2217,
+    "sha256": "54d1469b33d83ff793280f00ad08df5651b693e5beb12a10bca4d116278c8210"
+  },
+  "source/parameters.json": {
+    "bytes": 1099,
+    "sha256": "41761be126fe7451c4c2569eeffd284a2477918cb72258e73e5b2f60046923d3"
+  },
+  "source/sources.json": {
+    "bytes": 3582,
+    "sha256": "76b7cd112d7179553464075340330745c61e9aaf42cc11057367c31759b38159"
+  },
+  "tools/build_design.py": {
+    "bytes": 21556,
+    "sha256": "0dfe392437a076429f460735cfb35864bf3cf9a384eed677594a546c3daa3fa2"
+  },
+  "tools/build_scene.py": {
+    "bytes": 14617,
+    "sha256": "1bf63b36e65616ce60a3e1cabdbfa80135f572bdd860e783c1839e901c655d68"
+  },
+  "tools/mechanism_state.py": {
+    "bytes": 2193,
+    "sha256": "e8db935cd9fe6afac810a1e70f147ea94d48d3bbd68cd5ff7b2f1cd3f7f8bb61"
+  },
+  "tools/package_review.py": {
+    "bytes": 8887,
+    "sha256": "c8760d699c5a91f5576cea45fac69bf3178e386fb7ba7bba215426774629ce30"
+  },
+  "tools/prepare_records.py": {
+    "bytes": 15949,
+    "sha256": "708d92527b51bdf36be2f86259f91d28e729692483e25de7f865f1267bd3195f"
+  },
+  "tools/render_motion.py": {
+    "bytes": 1127,
+    "sha256": "a3d34eae196861178bbb2251c31340c89e459a2db87fc153f520c4a7aeadddb6"
+  },
+  "tools/verify_model.py": {
+    "bytes": 10359,
+    "sha256": "7b6a581d79707509570837e49421568dee144023a5785f7ce425864a37650a7b"
+  },
+  "docs/assembly.md": {
+    "bytes": 1460,
+    "sha256": "8cb80870435987d0a042f2c0bee2a78c013e6405be0f336925bdb4293c25b8f9"
+  },
+  "docs/ASSUMPTIONS.md": {
+    "bytes": 5622,
+    "sha256": "a8046b47501c61b299ff05beae6266e89a9c03ac5afd73754e9ca04cc2292060"
+  },
+  "docs/bom.csv": {
+    "bytes": 26830,
+    "sha256": "7fcefa5c2ae6547cbeded85f7ca0f04c56a4b5745d0efdc911f5473043fa96d9"
+  },
+  "assembly/eitan_E01.blend": {
+    "bytes": 431046,
+    "sha256": "c152abbf8fdd19610c3333e42f4f20586ceaf5a6a5516c61a718cd7ec7fbe366"
+  },
+  "exports/eitan_E01_boarding.glb": {
+    "bytes": 2276688,
+    "sha256": "ceb93f0b0deabc7881e6b063ef57ca8b912e1f64fa2a97208372984c5bf9c57c"
+  },
+  "exports/eitan_E01_closed.glb": {
+    "bytes": 2276688,
+    "sha256": "ceb93f0b0deabc7881e6b063ef57ca8b912e1f64fa2a97208372984c5bf9c57c"
+  },
+  "preview/eitan_E01_boarding.png": {
+    "bytes": 2137412,
+    "sha256": "6e90cd46aeaabefcc2c27f3c59d101c135e2221b99aa8d96ee9701026c3d6518"
+  },
+  "preview/eitan_E01_cutaway.png": {
+    "bytes": 2226126,
+    "sha256": "0d0945fb516e0fb2521d2c020e837c79d57e8965422e6b3c7089e41b9e336d03"
+  },
+  "preview/eitan_E01_door.png": {
+    "bytes": 2136193,
+    "sha256": "b486f10390969f9bbe9a223c06a8c47aee0b5284a9e35e1fa32b35d6c3391e9a"
+  },
+  "preview/eitan_E01_hatches.png": {
+    "bytes": 2214110,
+    "sha256": "98e39f2fe5222a666372b62f6f87a68d1915c31283f6bb19fe6e97f2e9d03a7a"
+  },
+  "preview/eitan_E01_hero.png": {
+    "bytes": 2121406,
+    "sha256": "6e726d8affbed4de3cd6410f9f0eab73115efc922771c7a7b2b4675cdc09bfa1"
+  },
+  "preview/eitan_E01_interior.png": {
+    "bytes": 2149545,
+    "sha256": "1d9a6907159d868013fa59cd5588c3ebfc34e814e9061273b95900aad6843ec1"
+  },
+  "preview/eitan_E01_rear.png": {
+    "bytes": 2095719,
+    "sha256": "58095e0d5cdc26d583acf980269f2a1360d19bb15ae09a47379d305fbc2899d5"
+  },
+  "preview/eitan_E01_rear_detail.png": {
+    "bytes": 2249106,
+    "sha256": "6cef0264f83486cbc56329dccd70675b95504c254d7e9d2c318c592c8407050d"
+  },
+  "preview/eitan_E01_side.png": {
+    "bytes": 2021085,
+    "sha256": "44fa7b78e7a8e2330c514cac5246af3212ef82f8c47fc361d1f8e1a985e10e4a"
+  },
+  "preview/eitan_E01_opening.gif": {
+    "bytes": 4239714,
+    "sha256": "6abe5a80441b22f408117ba48c9dfec65a87659967ba5d5a4592e068c187327b"
+  },
+  "reports/MODEL_CHECK.json": {
+    "bytes": 3390,
+    "sha256": "e2ee56afecc0799f70bf62a34e7a0c635fb7e251722204a60a9c7152c7b0b935"
+  },
+  "reports/BLENDER_BUILD.json": {
+    "bytes": 806,
+    "sha256": "11cff9c8967e6150fccd3c86c77b4cc04dff69400729ec2c1618d1ce38fe166a"
+  },
+  "reports/MOTION_RENDER.json": {
+    "bytes": 347,
+    "sha256": "3aedfd24f53fb9dd4a04c26508f72010508e383ed631d535fb344574ad00112a"
+  },
+  "reports/concept.html": {
+    "bytes": 3269,
+    "sha256": "3f26cc3ec73d8bcf4475453f8b35645963036bbd20083ea85ffd8f4b02bc647e"
+  },
+  "verification/evidence/E01-R3-GEOMETRY.json": {
+    "bytes": 3701,
+    "sha256": "430f5ab03476012ff015ec6aad5296a3893633653ad4f12abdd97011d963e644"
+  }
+}

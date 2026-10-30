@@ -1,0 +1,150 @@
+{
+  "revision": "E01-R7",
+  "passed": true,
+  "assembly_sha256": "3649d0f8e9131a9af6064817185eb7cf92082de270ee1e81439fa3b20d5e3407",
+  "geometry_sha256": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c",
+  "mesh_objects": 573,
+  "evaluated_triangles": 54088,
+  "nonmanifold_meshes": [],
+  "zero_area_meshes": [],
+  "bounds_min_m": [
+    -1.5,
+    -4.0,
+    -2.6464462280273438e-05
+  ],
+  "bounds_max_m": [
+    1.5,
+    4.014499664306641,
+    3.0
+  ],
+  "dimensions_m_xyz": [
+    3.0,
+    8.01449966430664,
+    3.0000264644622803
+  ],
+  "height_excludes_flexible_antennas": true,
+  "seats": 12,
+  "troop_seats": 9,
+  "crew_seats": 3,
+  "wheels": 8,
+  "true_roof_apertures": [
+    "roof centre fore",
+    "crew roof",
+    "troop roof"
+  ],
+  "rear_recess_mm": 589.9999141693115,
+  "rear_shoulder_rise_above_nominal_roof_mm": 167.39597320556632,
+  "last_troop_pan_to_ramp_hinge_mm": 250.00000000000045,
+  "rear_ramp_surface_collision_samples_deg": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    36,
+    40,
+    44,
+    48,
+    52,
+    56,
+    60,
+    64,
+    68,
+    72,
+    76,
+    80,
+    84,
+    88,
+    92,
+    96,
+    100,
+    104,
+    108,
+    112,
+    116,
+    118.72311373330247
+  ],
+  "rear_ramp_sampled_surface_intersections": [],
+  "rear_door_surface_collision_samples_deg": [
+    0,
+    19,
+    38,
+    57,
+    76,
+    95
+  ],
+  "rear_door_sampled_surface_intersections": [],
+  "ramp_continuous_min_z_mm": 6.7671403174819345,
+  "ramp_clearance_method": "Analytic extrema of every evaluated ramp vertex under prescribed X-axis rotation over full interval; flat ground only.",
+  "folded_pans_rising": 9,
+  "actuator_endpoint_max_error_mm": 0.0002384185791015625,
+  "actuator_sample_frames": [
+    1,
+    11,
+    21,
+    31,
+    41,
+    51,
+    61,
+    81,
+    101,
+    121,
+    161
+  ],
+  "state_contract": {
+    "passed": true,
+    "checks": [
+      "door blocked with lowered ramp",
+      "ramp blocked with open door",
+      "ramp blocked while moving",
+      "door blocked while moving",
+      "four independent roof lids",
+      "nine independent seat pans"
+    ],
+    "game_adapter_installed": false
+  },
+  "exports": {
+    "eitan_E01_closed.glb": {
+      "meshes": 573,
+      "bounds_min": [
+        -1.5,
+        -4.0,
+        -2.6464462280273438e-05
+      ],
+      "bounds_max": [
+        1.5,
+        4.014499664306641,
+        3.0
+      ]
+    },
+    "eitan_E01_boarding.glb": {
+      "meshes": 573,
+      "bounds_min": [
+        -1.5,
+        -4.0,
+        -2.6464462280273438e-05
+      ],
+      "bounds_max": [
+        1.5,
+        4.014499664306641,
+        3.0
+      ]
+    }
+  },
+  "glb_round_trip_passed": true,
+  "interior_nominal_clear_height_mm": 1600,
+  "standing_player_1800mm_fits": false,
+  "runtime_registered": false,
+  "offroad_driving_tested": false,
+  "manufacturing_verified": false,
+  "limitations": [
+    "Opening directions/angles and detailed dimensions are documented adaptations, not a factory drawing.",
+    "No complete continuous collision proof between all vehicle parts, occupants and terrain.",
+    "Actuator linkage sampled at listed poses; not force/friction/hydraulic simulation.",
+    "No Minecraft runtime integration or driving test."
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "revision": "NE01-A05",
+  "geometry_sha256": "1302b87854b8e968047928a20a2ce38128d40e21a6c346b128eb28bb4fcae057",
+  "assembly_sha256": "9c6c87e5cfeb78ffef81a3955de28a92584dc99ca1243785615d3d6653a44935",
+  "profile": ".verification\\ne01h06\\studioMarineAe2",
+  "proof": {
+    "dh_loaded": true,
+    "started_utc": "2026-10-29T13:47:23.586194100Z",
+    "physics_paused_for_geometry_test": true,
+    "full_vessel_me_network": false,
+    "sea_propulsion_tested": false,
+    "phase": 7,
+    "owner_profile_used": false,
+    "walked_stairs": [
+      {
+        "index": 0,
+        "walk_ticks": 30,
+        "local_x": 1.8500000014901161,
+        "local_y": 4.25,
+        "local_z": -3.494582638144493,
+        "flying": false,
+        "on_ground": true
+      },
+      {
+        "index": 1,
+        "walk_ticks": 30,
+        "local_x": 0.050000011920928955,
+        "local_y": 4.25,
+        "local_z": 13.255417361855507,
+        "flying": false,
+        "on_ground": true
+      },
+      {
+        "index": 2,
+        "walk_ticks": 24,
+        "local_x": 1.8500000014901161,
+        "local_y": 7.0,
+        "local_z": -5.042459070682526,
+        "flying": false,
+        "on_ground": true
+      },
+      {
+        "index": 3,
+        "walk_ticks": 26,
+        "local_x": -1.699999999254942,
+        "local_y": 9.75,
+        "local_z": 0.6472230441868305,
+        "flying": false,
+        "on_ground": true
+      }
+    ],
+    "construction_origin": "32, 100, 16",
+    "ship_uuid": "dff6be5c-4df4-4b94-bfc1-40d65663462a",
+    "native_cells": 1755,
+    "mechanism_cells_opened": 200,
+    "native_walk_routes": 4,
+    "chunk_settlement": {
+      "purpose": "NE01 geometry final save",
+      "server_tick": 765,
+      "elapsed_actual_server_ticks": 174,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1937,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "sable_virtual_storage_holders": 7,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    },
+    "passed": true,
+    "error": "",
+    "process_exit_code": 0
+  },
+  "copied_artifact_sha256": {
+    "marine-vessel.json": "ded9cc92cfe2fd03eaeeca042511cfe7d73c34762cb542eb27dead324cff57a2",
+    "ne01-native-bridge.png": "d2f9fcfe5eae77526518f0841ac076b32096dc8cd57ef64d24aea2171d09ccfe",
+    "ne01-native-exterior-closed.png": "89b39162aa1f3319a97c90a7be1ef1595cd5a50f20fa530bbc6bc0a528fb4dd4",
+    "ne01-native-exterior-open.png": "e5f0da68bb2b1adfd896137e54de1a5b447fb5450a8d94eba4ea6e9c3b75b8ff",
+    "ne01-native-main-interior.png": "cfc3dfaff70682a0e2af75a54ee9fc9cfb03f29e0a636041547f679fcd69166a",
+    "ne01-native-stair-0.png": "4c78b526337c77ac033f210c0bdea08eaeeedf71929dda4b4f315f59fdef7ce0",
+    "ne01-native-stair-1.png": "c0d93964f63db2304f91a9d64696680510dc4222fa5bbf2b16dddf2572516551",
+    "ne01-native-stair-2.png": "b2b8d0a3f532fdf0b3595e34e081e1f4c22732c7b3ae0cc64f673cd6b6a66e8b",
+    "ne01-native-stair-3.png": "4bc0c823e103a642718698482f3780f2c95e197efed66cb673e84bcc1a9656d9"
+  },
+  "scope": "Native Creative walking on four stair flights on paused Sable hull with DH. Source geometry and exported collision accepted for these routes.",
+  "previous_attempts": [
+    {
+      "profile": "ne01h02",
+      "result": "BE pose did not update cached collision; replaced with blockstate pose."
+    },
+    {
+      "profile": "ne01h03",
+      "result": "Insufficient stepping headroom at fore stair approach."
+    },
+    {
+      "profile": "ne01h04",
+      "result": "Main stair approach was behind an aft bulkhead."
+    },
+    {
+      "profile": "ne01h05",
+      "result": "Sable expanded stepping volume touched a canopy post."
+    },
+    {
+      "profile": "ne01h06",
+      "result": "All four routes passed, grounded and without flight; clean exit 0."
+    }
+  ],
+  "limitations": [
+    "No Survival or multiplayer acceptance.",
+    "Physics was paused; no sea propulsion or stability acceptance.",
+    "Mechanisms were opened through authoritative blockstates; ordinary player click and actor-blocked closure are separate checks.",
+    "This is four stair routes, not every possible route or a continuous mechanism swept path."
+  ]
+}

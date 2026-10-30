@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "id": "E01-R7-GAME",
+  "created_at": "2026-10-29T21:29:07+00:00",
+  "method": "inspection",
+  "result": "pass",
+  "origin": "operator_record",
+  "observations": {
+    "DIM-L": {
+      "metric": "length_mm",
+      "value": 8014.499664306641,
+      "unit": "mm"
+    },
+    "DIM-W": {
+      "metric": "width_mm",
+      "value": 3000.0,
+      "unit": "mm"
+    },
+    "DIM-H": {
+      "metric": "height_mm",
+      "value": 3000.0264644622803,
+      "unit": "mm"
+    },
+    "RAMP-GROUND": {
+      "metric": "ramp_continuous_min_z_mm",
+      "value": 6.7671403174819345,
+      "unit": "mm"
+    },
+    "REAR-RECESS": {
+      "metric": "rear_recess_mm",
+      "value": 589.9999141693115,
+      "unit": "mm"
+    },
+    "REAR-RISE": {
+      "metric": "rear_shoulder_rise_mm",
+      "value": 167.39597320556632,
+      "unit": "mm"
+    },
+    "BOW-JOINT": {
+      "metric": "bow_main_side_offset_mm",
+      "value": 0.00011920928955078125,
+      "unit": "mm"
+    },
+    "SEATS": {
+      "metric": "seats",
+      "value": 12,
+      "unit": "count"
+    },
+    "WHEELS": {
+      "metric": "wheels",
+      "value": 8,
+      "unit": "count"
+    },
+    "SEAT-FOLD": {
+      "metric": "folded_pans_rising",
+      "value": 9,
+      "unit": "count"
+    },
+    "REAR-MOTION": {
+      "metric": "rear_sampled_surface_intersections",
+      "value": 0,
+      "unit": "count"
+    },
+    "HATCH-VISIBILITY": {
+      "metric": "roof_visibility_misses",
+      "value": 0,
+      "unit": "count"
+    },
+    "FOOTWELL-VISIBILITY": {
+      "metric": "footwell_visibility_misses",
+      "value": 0,
+      "unit": "count"
+    },
+    "STATE": {
+      "metric": "state_contract_passed",
+      "value": true,
+      "unit": "bool"
+    },
+    "EXPORT": {
+      "metric": "glb_round_trip_passed",
+      "value": true,
+      "unit": "bool"
+    },
+    "ROOF-FIT": {
+      "metric": "roof_fit_passed",
+      "value": true,
+      "unit": "bool"
+    },
+    "GAME-NATIVE": {
+      "metric": "game_native_passed",
+      "value": true,
+      "unit": "bool"
+    }
+  },
+  "dependencies": {
+    "assembly/eitan_E01.blend": "3649d0f8e9131a9af6064817185eb7cf92082de270ee1e81439fa3b20d5e3407",
+    "docs/ASSUMPTIONS.md": "e11d6613bfdbbd229420b380c22a95100e87c488c66586a37f86243adea39063",
+    "exports/eitan_E01_boarding.glb": "72a52b386c75284fd15b6a6b591824f9e1713d39b7a717c081b8256a75fb6c2a",
+    "exports/eitan_E01_closed.glb": "72a52b386c75284fd15b6a6b591824f9e1713d39b7a717c081b8256a75fb6c2a",
+    "reports/FOOTWELL.json": "01000248a5f45e2834ac6c9cb3ecab96b264f79ae9d63f4d214db0cb1e295926",
+    "reports/GAME_RUNTIME.json": "7e0643061c30b5fdf15f6d641e41e9cb4c6d489da1b6b9a8f0b08f3a3dfee515",
+    "reports/HATCH_SEAL.json": "36b00453ac5ef873edd8db0eb94a7fac8e849e8ceb40b99497e29e1942003bf5",
+    "reports/MODEL_CHECK.json": "b1a25ac7b8f2628ba2dcc49a380948706191f87929dfa7e40018c2d76fd80531",
+    "reports/ROOF_FIT.json": "1227733738446b4116bb40762fa49c7f3d744c10695fc86d8314ec55b5986fd5",
+    "reports/VEHICLE_EXPORT.json": "22c632fc163d8c937ee6bb4f5a8e50e41ca5b59d4a3fc315c3cf222552fcb432",
+    "source/eitan_E01.json": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c",
+    "source/game_integration.json": "6f66c50c247ca0eb8071ab74695bad4b994342473a35a59104c1f09cecb7a855",
+    "source/parameters.json": "0daf9fafe81684f8a4a86d7a8722ef73908706701c03ed18229357af82c43013",
+    "source/sources.json": "76b7cd112d7179553464075340330745c61e9aaf42cc11057367c31759b38159",
+    "tools/build_design.py": "67f0e6d1cad657043cc16e229f2b0edafa0dfa33eee5d28d0b93c005451a527b",
+    "tools/build_runtime.py": "061ae70a3477d7a6eac0678e6cbc21f1466169b5224566926178f20f32d4b520",
+    "tools/build_scene.py": "f35e89d3d204627b5922493f0213d842dec4ff1bd7f727291b33e3041cb33c5f",
+    "tools/export_minecraft.py": "6766ba9bbea78c108fccf9c871915c6a6d6ec1288ea532d607fdc629ff8969ba",
+    "tools/export_vehicle.py": "56f5ba9b7425ef36874505f542045c1b98ed2f14d9581d10eb8dbcf5ef5886d3",
+    "tools/mechanism_state.py": "e8db935cd9fe6afac810a1e70f147ea94d48d3bbd68cd5ff7b2f1cd3f7f8bb61",
+    "tools/prepare_records.py": "3fe9ececf6e74d73898cececb5b9cea62b2f06bb7f9b6480b7fc9a62e8b03fb8",
+    "tools/record_runtime.py": "fd7139713b21eb962fe5f654e4099beab23c3c97ee5b49297f68ebdc2e4aa362",
+    "tools/verify_footwell.py": "7e6861e6caa9b05146a21dd69115d42f0e01db79e3cc3882ea2a12a1cf367cac",
+    "tools/verify_hatch_seal.py": "c8bc9de600e210c8cc4bd4b47c7a49ad34a555702452aae1ebbbf6aa029787e2",
+    "tools/verify_model.py": "7b6a581d79707509570837e49421568dee144023a5785f7ce425864a37650a7b",
+    "tools/verify_roof_fit.py": "0d06ab30eb9bbcad428af31395d3798d55f982574c66361b72a2da964e232a10",
+    "verification/runtime-r7-inspection.json": "9d54aa16f382c5cc924a43ed895793401db9cc2576cb90235c90e9951e4cfb5f"
+  },
+  "basis_sha256": "0394be50e714bd787c4efe9031a976bdc2a20739ac71deebb0f381bd42f8874d",
+  "tool_sha256": "f827ee741f4643bd11ddd5caeb986c88ac7460b7934256d5dcf5cbffb069279e",
+  "tool_version": "0.1.0",
+  "limitations": [
+    "one real dedicated Survival driver",
+    "11 passenger dummies are not 11 players",
+    "no production capacity claim",
+    "weapons, APS, armour simulation and recipes deferred",
+    "Virtual game model, no manufacturing, armour or physical vehicle certification.",
+    "Discrete collision samples are not a continuous clearance proof."
+  ],
+  "details": {
+    "setup": "Blender 5.2.2 evaluated geometry and traced original reports; separate full-pack Java21 native processes with DH. Geometric report flags describe only their own scope."
+  }
+}

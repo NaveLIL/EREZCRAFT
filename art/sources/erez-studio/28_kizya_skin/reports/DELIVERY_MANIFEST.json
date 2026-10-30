@@ -1,0 +1,50 @@
+{
+  "README.md": {
+    "bytes": 4677,
+    "sha256": "ba885aa88f7d31edf4c166a1fead09847400824597137ed7566a04d8940767ea"
+  },
+  "source/painted_sheet_prompt.txt": {
+    "bytes": 2599,
+    "sha256": "29de2dbe3cac3d66034cdb00cc0480bebce08aae946c7230061220971e3a6fa6"
+  },
+  "source/ASSET_PROVENANCE.json": {
+    "bytes": 1222,
+    "sha256": "c96506cbd068310f81bd1d2da4e69549f3a63da45ad5151f9e61fef200c3cd30"
+  },
+  "exports/Kizya_Pink_PK02_slim_64x64.png": {
+    "bytes": 3848,
+    "sha256": "dff45c41b5dba627f827c8c081291a6de25c5e79379ef2333ac5a2eb2b694874"
+  },
+  "exports/Kizya_Pink_PK02.cpmmodel": {
+    "bytes": 20098,
+    "sha256": "0821df5931a6c5364428fcd00f1c9269b567a15edc191a00bfbec411210eab36"
+  },
+  "exports/Kizya_Pink_PK02.cpmproject": {
+    "bytes": 26721,
+    "sha256": "e21110f578c6d50e449fc369ea11a707d0d8ac593245548b8b58ed1e0ed426a6"
+  },
+  "preview/PK02_front.png": {
+    "bytes": 1470788,
+    "sha256": "dba783746eebc2a213358c8513ebbc8c0cbe254356dfc91423a104ab032a6f9f"
+  },
+  "preview/PK02_quarter.png": {
+    "bytes": 1557262,
+    "sha256": "e9ee3030950aa7e8daa8f3f577c5884f1002d7e1d06fc5182ae7add7ffc8572d"
+  },
+  "preview/PK02_back.png": {
+    "bytes": 1471350,
+    "sha256": "b4fa0350679f269949a9e0e8212ff7b283cb0262f8362c97e1877db0cbcb9fcc"
+  },
+  "reports/native/run_06/run.json": {
+    "bytes": 2975,
+    "sha256": "55f2529887645278e599ad276e6f80fe60e7db842d8c90acd59064bd7c6da64b"
+  },
+  "preview/native/kizya-bare-quarter.png": {
+    "bytes": 369156,
+    "sha256": "8dd409cde53d30d5c62102818e30652c17405331f146a2023925034b1e425196"
+  },
+  "preview/native/kizya-after-reload.png": {
+    "bytes": 235458,
+    "sha256": "a01a8d23b483224f985b155b4f53cd061cc3f14d996a8c7804e73fd66c2ac222"
+  }
+}

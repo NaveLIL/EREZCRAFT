@@ -1,0 +1,33 @@
+{
+  "revision": "E01-R4",
+  "source_project": "D:\\repos\\Blender\\creations\\31_eitan_apc",
+  "geometry_sha256": "507a194fa39c7255ccd7b41f3b546bd0ea9eb48090fcdab6ff342831f161a4b8",
+  "assembly_sha256": "d0e65ec99ff2276a9fc3c3f442e5ce5abb6e5b9a89594e6b79aee5fcff324b52",
+  "runtime_sha256": "8db725d91a68f927cc45bfe84b229f2e9493e5b90f4efc627ccf58076759489d",
+  "cells": 120,
+  "materials": 20,
+  "texture_sha256": {
+    "olive": "4b12ba6d0ce34d5529d7c5d1b166d10d7f0c7a71241ea09657a5b19ce944b653",
+    "olive_light": "3f622b72cb32a3f8925c23f16fd7dda9d0fcce077511896a49dd217847adf8ba",
+    "olive_dark": "6183b646c2b8d15f1f1a7ceff6ed2b68facb539e5be3331e46210ae2088ce45d",
+    "dust": "1a42679a1010a0d865fef93136ecfa50cc39d6a6a7678c5b4f649fb8faf287e8",
+    "rubber": "2cee44d09a0ac2562ed07d61832274c56c5a37a4d941e24ef8e707a81793d987",
+    "black": "bd80e938afe46ec059f24031962aefc66209726dc986ece0f1c27ce53f63f31c",
+    "steel": "52a8e3933e355e80218398dafac51b7d230aed7877b81cb0ee1cc73d3677fbd5",
+    "ivory": "7735c897268cd8992de75c464d0c275b1389fefa307f58c1989fd46e133a202d",
+    "floor": "44bffba75f41bb29adc64f702656db0581bf8a72dc6974f1388a349c7a9b6ff0",
+    "seat_pad": "1d1a7d2fda93ec014f4c927c650a7b5e9589995c634838b68224e41dc6b12acb",
+    "strap": "d58bf664d3610a614ee67f60492b80dad2db32161398c543c3d3421887e967f1",
+    "equipment": "c85e690d45b129390a0c3e6f640b945992cd9d14905f98ec90a2677ff944a1d0",
+    "screen": "0c008f7fba14aed2e7eab7d6e16af5f8011dc352aa30a38551beca8915e977af",
+    "glass": "edf65e80d59510dfe7671a924583a7ea122500eaa3f3eeea06cd7c89b1c535d3",
+    "red": "a9bfdeefc25cebee838217c0e388f958b9670833c000617d3a3d6a546c1b91c2",
+    "red_label": "71a2849cf8e07b5328061afc0ab3bad8b722c6f97a284ee573c1ba8b5c1a5e39",
+    "vent": "d38ac60add873668f38af427c29badbef2d7b773eb7602715615c0d744498429",
+    "lens": "750ebc35d8814ef69f5eb74e1512dc7c43ef21b59f5b3de3f9ce7b0f239fb242",
+    "lamp": "f904ba1a26cc40670ae313019e25c0f41a3250c6eef19443158c87ead475c7b0",
+    "rubber_dust": "09a32b221260219ece1a5e5b461b8fa8650781ca1940ef547ca7ba6ecdd2f792"
+  },
+  "pixels": "Flat authored source palette; no manufacturer/reference photograph pixels",
+  "status": "Opt-in native geometry preview. Offroad drive, independent smooth mechanisms and seat passengers pending."
+}

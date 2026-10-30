@@ -1,0 +1,15 @@
+{
+  "recorded_on": "2026-10-28",
+  "selected": {
+    "lurker": "LS04",
+    "skirmisher": "SK01",
+    "spitter": "SP02"
+  },
+  "surface_style": "Original striped pixel pattern retained for all three spiders by explicit user choice.",
+  "active_trial": null,
+  "archived_trials": ["SP01", "SP03"],
+  "spitter_confirmation": "User selected the emerald variant with yellow joints (SP02).",
+  "status": "Local model and palette selection; no game installation or publication.",
+  "decision": "After comparing the softer SP03 with striped SP02, the user chose to keep all spiders striped because the richer visual appearance is preferred.",
+  "open_feedback": null
+}

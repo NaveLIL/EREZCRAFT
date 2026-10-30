@@ -1,0 +1,113 @@
+{
+  "method": "inspection",
+  "result": "pass",
+  "observations": {
+    "DIM-L": {
+      "metric": "length_mm",
+      "value": 8014.499664306641,
+      "unit": "mm"
+    },
+    "DIM-W": {
+      "metric": "width_mm",
+      "value": 3000.0,
+      "unit": "mm"
+    },
+    "DIM-H": {
+      "metric": "height_mm",
+      "value": 3000.0264644622803,
+      "unit": "mm"
+    },
+    "RAMP-GROUND": {
+      "metric": "ramp_continuous_min_z_mm",
+      "value": 6.7671403174819345,
+      "unit": "mm"
+    },
+    "REAR-RECESS": {
+      "metric": "rear_recess_mm",
+      "value": 589.9999141693115,
+      "unit": "mm"
+    },
+    "REAR-RISE": {
+      "metric": "rear_shoulder_rise_mm",
+      "value": 167.39597320556632,
+      "unit": "mm"
+    },
+    "BOW-JOINT": {
+      "metric": "bow_main_side_offset_mm",
+      "value": 0.00011920928955078125,
+      "unit": "mm"
+    },
+    "SEATS": {
+      "metric": "seats",
+      "value": 12,
+      "unit": "count"
+    },
+    "WHEELS": {
+      "metric": "wheels",
+      "value": 8,
+      "unit": "count"
+    },
+    "SEAT-FOLD": {
+      "metric": "folded_pans_rising",
+      "value": 9,
+      "unit": "count"
+    },
+    "REAR-MOTION": {
+      "metric": "rear_sampled_surface_intersections",
+      "value": 0,
+      "unit": "count"
+    },
+    "HATCH-VISIBILITY": {
+      "metric": "roof_visibility_misses",
+      "value": 0,
+      "unit": "count"
+    },
+    "FOOTWELL-VISIBILITY": {
+      "metric": "footwell_visibility_misses",
+      "value": 0,
+      "unit": "count"
+    },
+    "STATE": {
+      "metric": "state_contract_passed",
+      "value": true,
+      "unit": "bool"
+    },
+    "EXPORT": {
+      "metric": "glb_round_trip_passed",
+      "value": true,
+      "unit": "bool"
+    },
+    "ROOF-FIT": {
+      "metric": "roof_fit_passed",
+      "value": true,
+      "unit": "bool"
+    },
+    "GAME-NATIVE": {
+      "metric": "game_native_passed",
+      "value": true,
+      "unit": "bool"
+    }
+  },
+  "dependencies": [
+    "reports/MODEL_CHECK.json",
+    "reports/ROOF_FIT.json",
+    "reports/HATCH_SEAL.json",
+    "reports/FOOTWELL.json",
+    "reports/VEHICLE_EXPORT.json",
+    "reports/GAME_RUNTIME.json",
+    "assembly/eitan_E01.blend",
+    "exports/eitan_E01_closed.glb",
+    "exports/eitan_E01_boarding.glb"
+  ],
+  "details": {
+    "setup": "Blender 5.2.2 evaluated geometry and traced original reports; separate full-pack Java21 native processes with DH. Geometric report flags describe only their own scope."
+  },
+  "limitations": [
+    "one real dedicated Survival driver",
+    "11 passenger dummies are not 11 players",
+    "no production capacity claim",
+    "weapons, APS, armour simulation and recipes deferred",
+    "Virtual game model, no manufacturing, armour or physical vehicle certification.",
+    "Discrete collision samples are not a continuous clearance proof."
+  ]
+}

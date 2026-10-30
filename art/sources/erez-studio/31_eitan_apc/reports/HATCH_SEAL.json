@@ -1,0 +1,10 @@
+{
+  "revision": "E01-R7",
+  "passed": true,
+  "geometry_sha256": "a92c45770ba02dbde6b399dc127355156e7485a725a1da95c2c3e8f655f1801c",
+  "assembly_sha256": "3649d0f8e9131a9af6064817185eb7cf92082de270ee1e81439fa3b20d5e3407",
+  "script_sha256": "c8bc9de600e210c8cc4bd4b47c7a49ad34a555702452aae1ebbbf6aa029787e2",
+  "closed_roof_visibility_rays": 12960,
+  "misses": [],
+  "scope": "Five virtual viewpoints per lid, upward fan to 85 degrees, 5/10 degree grid. Separate native closed-pose inspection; no continuous sealing or manufacturing certification."
+}

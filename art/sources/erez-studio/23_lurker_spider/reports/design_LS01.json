@@ -1,0 +1,236 @@
+{
+  "design": "LS01",
+  "purpose": "Blender/Blockbench model prototype; not installed in Minecraft",
+  "variant": "LURKER",
+  "minecraft_scale": 0.85,
+  "source": "D:\\repos\\Minecraft\\EREZCRAFT\\art\\sources\\cc0\\sea_spider\\sea_spider.bbmodel",
+  "source_sha256": "34465b3323fba2e4617561a9b157f79d363ffab292502e758b020801ce6ee901",
+  "texture_sha256": "cb0cbf58498fe5c8a83526a82a2a71edf90290d240fd8c9b36e420f7ddbecd53",
+  "model_sha256": "1362e3812f37f2831ac884e346fbfad508411fc4e94fbfe55f079535d1d3e0cf",
+  "original_cubes": 48,
+  "prototype_cubes": 185,
+  "groups_identical": true,
+  "animations_identical": true,
+  "leg_lengths": [
+    {
+      "part": "left_first_leg",
+      "longitudinal_axis": 2,
+      "length": 8,
+      "length_preserved": true
+    },
+    {
+      "part": "right_first_leg",
+      "longitudinal_axis": 2,
+      "length": 8,
+      "length_preserved": true
+    },
+    {
+      "part": "right_first_leg2",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_first_leg2",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_first_leg3",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_first_leg3",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_first_leg4",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_first_leg4",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_second_leg",
+      "longitudinal_axis": 2,
+      "length": 8,
+      "length_preserved": true
+    },
+    {
+      "part": "right_second_leg",
+      "longitudinal_axis": 2,
+      "length": 8,
+      "length_preserved": true
+    },
+    {
+      "part": "_left_fourth_leg2",
+      "longitudinal_axis": 2,
+      "length": 8,
+      "length_preserved": true
+    },
+    {
+      "part": "right_fourth_leg",
+      "longitudinal_axis": 2,
+      "length": 8,
+      "length_preserved": true
+    },
+    {
+      "part": "left_third_leg",
+      "longitudinal_axis": 2,
+      "length": 8,
+      "length_preserved": true
+    },
+    {
+      "part": "right_third_leg",
+      "longitudinal_axis": 2,
+      "length": 8,
+      "length_preserved": true
+    },
+    {
+      "part": "right_fourth_leg4",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "_leftfourth_leg2",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "_leftfourth_leg",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "_left_fourth_leg",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_fourth_leg2",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_fourth_leg3",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_third_leg2",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_second_leg2",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_third_leg3",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_second_leg3",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_third_leg2",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_second_leg2",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_second_leg3",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_third_leg3",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_second_leg4",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_third_leg4",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_second_leg4",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_third_leg4",
+      "longitudinal_axis": 2,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "left_first_leg5",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_first_leg5",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "_leftfourth_leg3",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    },
+    {
+      "part": "right_fourth_leg5",
+      "longitudinal_axis": 0,
+      "length": 16,
+      "length_preserved": true
+    }
+  ],
+  "leg_lengths_all_preserved": true,
+  "texture_bytes_identical": true,
+  "license": "Original sea spider by atcg / CC0-1.0; new LS01 geometry authored for EREZCRAFT",
+  "game_verified": false
+}

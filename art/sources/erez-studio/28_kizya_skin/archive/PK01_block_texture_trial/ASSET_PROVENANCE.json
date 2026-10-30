@@ -1,0 +1,122 @@
+[
+  {
+    "role": "skin",
+    "source_file": "gui-materials/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "fa0b63e11761537f923277459baf7cb871c89c15537d60b5d3bcf47b95c79ba4"
+  },
+  {
+    "role": "hair",
+    "source_file": "crown-tree/maple_log_side.png",
+    "source_sha256": "ccfee5d05c3baea0c628d6050d77ae68feb643ba996ba6e97e9ba0d09a532003",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "46fc445c395bae316f597d73cac65b3ee6516d37a18f938cf058eb38738a1cad"
+  },
+  {
+    "role": "hair_light",
+    "source_file": "crown-tree/maple_log_side.png",
+    "source_sha256": "ccfee5d05c3baea0c628d6050d77ae68feb643ba996ba6e97e9ba0d09a532003",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "612210a9d6de0474982f814bcb0f441a609573b7ab6294054bacc58b83a0e371"
+  },
+  {
+    "role": "hair_shadow",
+    "source_file": "crown-tree/maple_log_side.png",
+    "source_sha256": "ccfee5d05c3baea0c628d6050d77ae68feb643ba996ba6e97e9ba0d09a532003",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "219c960feffa14f56a1a1dcea8e27ca96ac7512ecf12b14cacbb3ae31fbbb085"
+  },
+  {
+    "role": "white",
+    "source_file": "gui-materials/linen_pattern.png",
+    "source_sha256": "0be27d43f3a41aa9fed0e909affe1167ca7c746c270b757b23d6ec90826e161f",
+    "author": "Kenney",
+    "source_url": "https://kenney.nl/assets/pattern-pack-pixel",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "a34e47c77e6d8ab99b347690d36fd809871ebf7d53c43c877988096f16ffb887"
+  },
+  {
+    "role": "white_shadow",
+    "source_file": "gui-materials/linen_pattern.png",
+    "source_sha256": "0be27d43f3a41aa9fed0e909affe1167ca7c746c270b757b23d6ec90826e161f",
+    "author": "Kenney",
+    "source_url": "https://kenney.nl/assets/pattern-pack-pixel",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "3dc6f7d30b3255b5a4e6417e098a49bdc6670fb496021e4c6fa2dd7d9a989996"
+  },
+  {
+    "role": "pink",
+    "source_file": "gui-materials/linen_pattern.png",
+    "source_sha256": "0be27d43f3a41aa9fed0e909affe1167ca7c746c270b757b23d6ec90826e161f",
+    "author": "Kenney",
+    "source_url": "https://kenney.nl/assets/pattern-pack-pixel",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "f6f40793d8e5ff88c128b1d65d5f790008a7736cc461e7a046d05dfba119d995"
+  },
+  {
+    "role": "pink_light",
+    "source_file": "gui-materials/linen_pattern.png",
+    "source_sha256": "0be27d43f3a41aa9fed0e909affe1167ca7c746c270b757b23d6ec90826e161f",
+    "author": "Kenney",
+    "source_url": "https://kenney.nl/assets/pattern-pack-pixel",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "9e7f2c15570e221d548adf1285a20cb05f6247ac1ee9721e70bd9f12b1876f89"
+  },
+  {
+    "role": "pink_dark",
+    "source_file": "gui-materials/linen_pattern.png",
+    "source_sha256": "0be27d43f3a41aa9fed0e909affe1167ca7c746c270b757b23d6ec90826e161f",
+    "author": "Kenney",
+    "source_url": "https://kenney.nl/assets/pattern-pack-pixel",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "f600079a1f5e012f9dda9f2251abca51a321673e71f8bd1297d1975a83a43082"
+  },
+  {
+    "role": "eyes",
+    "source_file": "gui-materials/steel_block.png",
+    "source_sha256": "a6eada1cd49f59309f3edb55e725eb896d4c8e4a6f97c00c68e84ac7d945288c",
+    "author": "JoeEnderman",
+    "source_url": "https://opengameart.org/content/assorted-minecraft-style-textures",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "54ef5685413f7ce64337fe51a0ae850a9271f3e804e614a60cc130a2eff538ec"
+  },
+  {
+    "role": "blush",
+    "source_file": "gui-materials/linen_pattern.png",
+    "source_sha256": "0be27d43f3a41aa9fed0e909affe1167ca7c746c270b757b23d6ec90826e161f",
+    "author": "Kenney",
+    "source_url": "https://kenney.nl/assets/pattern-pack-pixel",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "efee34d7f1de5eedca5e1ac5d3d71de2b465897503af395414e5e36f07096fc5"
+  },
+  {
+    "role": "sole",
+    "source_file": "gui-materials/linen_pattern.png",
+    "source_sha256": "0be27d43f3a41aa9fed0e909affe1167ca7c746c270b757b23d6ec90826e161f",
+    "author": "Kenney",
+    "source_url": "https://kenney.nl/assets/pattern-pack-pixel",
+    "license": "CC0-1.0",
+    "changes": "Bijective RGB palette only; source drawing, 16x16 dimensions and alpha preserved; unmodified tile packed into CPM atlas",
+    "derived_tile_sha256": "6472b4c835d99f43d218bc5625b36970c1c810d8753d12a72e59784ee5fd1bf5"
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "access_date": "2026-10-29",
+  "sources": [
+    {
+      "id": "OWNER-PHOTOS",
+      "kind": "owner supplied reference photographs",
+      "locator": "references/owner_front.jpg; references/owner_rear.jpg",
+      "supports": [
+        "visible silhouette",
+        "8x8 layout",
+        "rear ramp and corner pods"
+      ],
+      "limits": "Perspective images do not give precise dimensions or all hinge axes."
+    },
+    {
+      "id": "NOMINAL-OVERVIEW",
+      "kind": "owner-linked secondary overview used as working constraint",
+      "url": "https://en.wikipedia.org/wiki/Eitan_AFV",
+      "locator": "Specifications: Length/Width/Height",
+      "supports": [
+        "8.0m nominal length",
+        "3.0m nominal width",
+        "3.0m nominal height"
+      ],
+      "limits": "Rounded public values; height datum and variant boundaries unspecified; not manufacturer dimensional drawings."
+    },
+    {
+      "id": "IMOD-2023",
+      "kind": "primary developer announcement",
+      "url": "https://mod.gov.il/en/press-releases/press-room/delivery-of-first-eitan-armored-personnel-carriers-apc-to-the-israel-defense-forces-nahal-infantry-brigade",
+      "date": "2023-05-28",
+      "locator": "Eitan APC - Background Information",
+      "supports": [
+        "eight wheels",
+        "twelve personnel",
+        "camera/monitor based awareness"
+      ],
+      "limits": "No engineering section drawing or detailed dimensions."
+    },
+    {
+      "id": "FIRSTHAND-TOUR",
+      "kind": "firsthand vehicle tour and trainer interviews",
+      "url": "https://breakingdefense.com/2023/10/inside-israel-defense-forces-training-on-more-versatile-eitan-apc/",
+      "date": "2023-10-04",
+      "locator": "Interior tour and twelve-person seating paragraphs",
+      "supports": [
+        "driver, commander, gunner and nine troops",
+        "rear exit ramp",
+        "crew displays and protected roof viewing"
+      ],
+      "limits": "Does not establish exact chair/hatch coordinates."
+    },
+    {
+      "id": "INTERIOR-PHOTO",
+      "kind": "firsthand press photograph",
+      "url": "https://www.ynetnews.com/magazine/article/rkqtpjznle",
+      "locator": "The inside of Eitan, Photo: Nir Ben Zaken; references/interior_driver.jpg",
+      "supports": [
+        "perforated folding troop seat shells",
+        "inward facing side rows",
+        "central aisle",
+        "service channels",
+        "front crew consoles"
+      ],
+      "limits": "Image-based interpretation only; not every one of the twelve seats is visible."
+    },
+    {
+      "id": "EARLY-INTERIOR",
+      "kind": "secondary-hosted early video still used for visual corroboration only",
+      "url": "https://armor-il.blogspot.com/2018/01/eitan-and-new-years-update.html",
+      "locator": "references/early_troop_reference.png",
+      "supports": [
+        "seat shell visual style",
+        "extinguishers and front service equipment"
+      ],
+      "limits": "Early configuration; no exact numerical claim taken from this source."
+    },
+    {
+      "id": "OFFROAD-BINARY",
+      "kind": "installed primary software artifact",
+      "locator": "D:/repos/Minecraft/EREZCRAFT/docs/CREATE_OFFROAD_AUDIT.md",
+      "supports": [
+        "wheel physics backend exists",
+        "radius is a TireLike component",
+        "redstone steering and braking",
+        "Sable force application"
+      ],
+      "limits": "No eight-wheel chassis test in this project; block-grid physical contacts require integration work."
+    }
+  ]
+}

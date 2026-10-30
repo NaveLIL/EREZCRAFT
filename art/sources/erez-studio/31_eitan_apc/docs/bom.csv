@@ -1,0 +1,570 @@
+id,name,group,material,shape
+P0001,central floor,HULL,floor,box
+P0002,V belly -1,HULL,olive_dark,mesh
+P0003,raised wheelwell -1,HULL,olive_dark,box
+P0004,sloped modular side -1 0,HULL,olive_light,mesh
+P0005,armor fastener -1 0 -2.41 1.66,HULL,steel,cylinder
+P0006,armor fastener -1 0 -2.41 2.4,HULL,steel,cylinder
+P0007,armor fastener -1 0 -1.31 1.66,HULL,steel,cylinder
+P0008,armor fastener -1 0 -1.31 2.4,HULL,steel,cylinder
+P0009,sloped modular side -1 1,HULL,olive,mesh
+P0010,armor fastener -1 1 -1.0899999999999999 1.66,HULL,steel,cylinder
+P0011,armor fastener -1 1 -1.0899999999999999 2.4,HULL,steel,cylinder
+P0012,armor fastener -1 1 -0.11 1.66,HULL,steel,cylinder
+P0013,armor fastener -1 1 -0.11 2.4,HULL,steel,cylinder
+P0014,sloped modular side -1 2,HULL,olive_light,mesh
+P0015,armor fastener -1 2 0.11 1.66,HULL,steel,cylinder
+P0016,armor fastener -1 2 0.11 2.4,HULL,steel,cylinder
+P0017,armor fastener -1 2 1.0899999999999999 1.66,HULL,steel,cylinder
+P0018,armor fastener -1 2 1.0899999999999999 2.4,HULL,steel,cylinder
+P0019,sloped modular side -1 3,HULL,olive,mesh
+P0020,armor fastener -1 3 1.31 1.66,HULL,steel,cylinder
+P0021,armor fastener -1 3 1.31 2.4,HULL,steel,cylinder
+P0022,armor fastener -1 3 2.29 1.66,HULL,steel,cylinder
+P0023,armor fastener -1 3 2.29 2.4,HULL,steel,cylinder
+P0024,sloped modular side -1 4,HULL,olive_light,mesh
+P0025,armor fastener -1 4 2.51 1.66,HULL,steel,cylinder
+P0026,armor fastener -1 4 2.51 2.4,HULL,steel,cylinder
+P0027,armor fastener -1 4 2.92 1.66,HULL,steel,cylinder
+P0028,armor fastener -1 4 2.92 2.4,HULL,steel,cylinder
+P0029,wheel arch scallops -1,HULL,olive,mesh
+P0030,rubber mudflap -1 -3.43,HULL,rubber,box
+P0031,rubber mudflap -1 3.38,HULL,rubber,box
+P0032,interior liner -1,INTERIOR,ivory,box
+P0033,overhead service channel -1,INTERIOR,ivory,box
+P0034,vent outlet -1 0,INTERIOR,vent,cylinder
+P0035,channel plate -1 0,INTERIOR,red_label,box
+P0036,vent outlet -1 1,INTERIOR,vent,cylinder
+P0037,channel plate -1 1,INTERIOR,red_label,box
+P0038,vent outlet -1 2,INTERIOR,vent,cylinder
+P0039,channel plate -1 2,INTERIOR,red_label,box
+P0040,vent outlet -1 3,INTERIOR,vent,cylinder
+P0041,channel plate -1 3,INTERIOR,red_label,box
+P0042,vent outlet -1 4,INTERIOR,vent,cylinder
+P0043,channel plate -1 4,INTERIOR,red_label,box
+P0044,vent outlet -1 5,INTERIOR,vent,cylinder
+P0045,channel plate -1 5,INTERIOR,red_label,box
+P0046,vent outlet -1 6,INTERIOR,vent,cylinder
+P0047,channel plate -1 6,INTERIOR,red_label,box
+P0048,vent outlet -1 7,INTERIOR,vent,cylinder
+P0049,channel plate -1 7,INTERIOR,red_label,box
+P0050,vent outlet -1 8,INTERIOR,vent,cylinder
+P0051,channel plate -1 8,INTERIOR,red_label,box
+P0052,V belly 1,HULL,olive_dark,mesh
+P0053,raised wheelwell 1,HULL,olive_dark,box
+P0054,sloped modular side 1 0,HULL,olive_light,mesh
+P0055,armor fastener 1 0 -2.41 1.66,HULL,steel,cylinder
+P0056,armor fastener 1 0 -2.41 2.4,HULL,steel,cylinder
+P0057,armor fastener 1 0 -1.31 1.66,HULL,steel,cylinder
+P0058,armor fastener 1 0 -1.31 2.4,HULL,steel,cylinder
+P0059,sloped modular side 1 1,HULL,olive,mesh
+P0060,armor fastener 1 1 -1.0899999999999999 1.66,HULL,steel,cylinder
+P0061,armor fastener 1 1 -1.0899999999999999 2.4,HULL,steel,cylinder
+P0062,armor fastener 1 1 -0.11 1.66,HULL,steel,cylinder
+P0063,armor fastener 1 1 -0.11 2.4,HULL,steel,cylinder
+P0064,sloped modular side 1 2,HULL,olive_light,mesh
+P0065,armor fastener 1 2 0.11 1.66,HULL,steel,cylinder
+P0066,armor fastener 1 2 0.11 2.4,HULL,steel,cylinder
+P0067,armor fastener 1 2 1.0899999999999999 1.66,HULL,steel,cylinder
+P0068,armor fastener 1 2 1.0899999999999999 2.4,HULL,steel,cylinder
+P0069,sloped modular side 1 3,HULL,olive,mesh
+P0070,armor fastener 1 3 1.31 1.66,HULL,steel,cylinder
+P0071,armor fastener 1 3 1.31 2.4,HULL,steel,cylinder
+P0072,armor fastener 1 3 2.29 1.66,HULL,steel,cylinder
+P0073,armor fastener 1 3 2.29 2.4,HULL,steel,cylinder
+P0074,sloped modular side 1 4,HULL,olive_light,mesh
+P0075,armor fastener 1 4 2.51 1.66,HULL,steel,cylinder
+P0076,armor fastener 1 4 2.51 2.4,HULL,steel,cylinder
+P0077,armor fastener 1 4 2.92 1.66,HULL,steel,cylinder
+P0078,armor fastener 1 4 2.92 2.4,HULL,steel,cylinder
+P0079,wheel arch scallops 1,HULL,olive,mesh
+P0080,rubber mudflap 1 -3.43,HULL,rubber,box
+P0081,rubber mudflap 1 3.38,HULL,rubber,box
+P0082,interior liner 1,INTERIOR,ivory,box
+P0083,overhead service channel 1,INTERIOR,ivory,box
+P0084,vent outlet 1 0,INTERIOR,vent,cylinder
+P0085,channel plate 1 0,INTERIOR,red_label,box
+P0086,vent outlet 1 1,INTERIOR,vent,cylinder
+P0087,channel plate 1 1,INTERIOR,red_label,box
+P0088,vent outlet 1 2,INTERIOR,vent,cylinder
+P0089,channel plate 1 2,INTERIOR,red_label,box
+P0090,vent outlet 1 3,INTERIOR,vent,cylinder
+P0091,channel plate 1 3,INTERIOR,red_label,box
+P0092,vent outlet 1 4,INTERIOR,vent,cylinder
+P0093,channel plate 1 4,INTERIOR,red_label,box
+P0094,vent outlet 1 5,INTERIOR,vent,cylinder
+P0095,channel plate 1 5,INTERIOR,red_label,box
+P0096,vent outlet 1 6,INTERIOR,vent,cylinder
+P0097,channel plate 1 6,INTERIOR,red_label,box
+P0098,vent outlet 1 7,INTERIOR,vent,cylinder
+P0099,channel plate 1 7,INTERIOR,red_label,box
+P0100,vent outlet 1 8,INTERIOR,vent,cylinder
+P0101,channel plate 1 8,INTERIOR,red_label,box
+P0102,main sloped glacis,HULL,olive_light,mesh
+P0103,lower nose,HULL,olive,mesh
+P0104,front identification plate,HULL,olive_dark,box
+P0105,bow cheek -1,HULL,olive,mesh
+P0106,headlight recess -1,HULL,black,box
+P0107,headlight lens -1,HULL,lens,box
+P0108,front towing eye -1,HULL,steel,ring
+P0109,folded mirror arm -1,HULL,steel,box
+P0110,folded mirror -1,HULL,olive_dark,box
+P0111,mirror glass -1,HULL,glass,box
+P0112,bow cheek 1,HULL,olive,mesh
+P0113,headlight recess 1,HULL,black,box
+P0114,headlight lens 1,HULL,lens,box
+P0115,front towing eye 1,HULL,steel,ring
+P0116,folded mirror arm 1,HULL,steel,box
+P0117,folded mirror 1,HULL,olive_dark,box
+P0118,mirror glass 1,HULL,glass,box
+P0119,hood seam 0,HULL,olive_dark,box
+P0120,hood seam 1,HULL,olive_dark,box
+P0121,hood seam 2,HULL,olive_dark,box
+P0122,hood seam 3,HULL,olive_dark,box
+P0123,hood seam 4,HULL,olive_dark,box
+P0124,hood service latch -0.93 -3.5,HULL,steel,box
+P0125,hood service latch -0.93 -2.83,HULL,steel,box
+P0126,hood service latch 0.0 -3.5,HULL,steel,box
+P0127,hood service latch 0.0 -2.83,HULL,steel,box
+P0128,hood service latch 0.93 -3.5,HULL,steel,box
+P0129,hood service latch 0.93 -2.83,HULL,steel,box
+P0130,roof centre fore,ROOF,olive,box
+P0131,glacis roof transition,ROOF,olive,box
+P0132,stepped roof transition,ROOF,olive,mesh
+P0133,crew roof,ROOF,olive_light,box
+P0134,troop roof,ROOF,olive,box
+P0135,recessed aft roof lintel,HULL,olive_light,box
+P0136,driver hatch gasket,ROOF,black,box
+P0137,driver hatch lid,DRIVER_HATCH,olive_light,box
+P0138,driver hinge -1,DRIVER_HATCH,steel,cylinder
+P0139,driver hinge 1,DRIVER_HATCH,steel,cylinder
+P0140,driver grab handle,DRIVER_HATCH,steel,beam
+P0141,driver periscope body 0,ROOF,olive_dark,box
+P0142,driver periscope glass 0,ROOF,glass,box
+P0143,driver periscope body 1,ROOF,olive_dark,box
+P0144,driver periscope glass 1,ROOF,glass,box
+P0145,driver periscope body 2,ROOF,olive_dark,box
+P0146,driver periscope glass 2,ROOF,glass,box
+P0147,commander hatch gasket,ROOF,black,box
+P0148,commander hatch lid,COMMANDER_HATCH,olive_light,box
+P0149,commander hinge -1,COMMANDER_HATCH,steel,cylinder
+P0150,commander hinge 1,COMMANDER_HATCH,steel,cylinder
+P0151,commander grab handle,COMMANDER_HATCH,steel,beam
+P0152,commander periscope body 0,ROOF,olive_dark,box
+P0153,commander periscope glass 0,ROOF,glass,box
+P0154,commander periscope body 1,ROOF,olive_dark,box
+P0155,commander periscope glass 1,ROOF,glass,box
+P0156,commander periscope body 2,ROOF,olive_dark,box
+P0157,commander periscope glass 2,ROOF,glass,box
+P0158,troop hatch half -1,TROOP_HATCH_L,olive_light,box
+P0159,troop hatch handle -1,TROOP_HATCH_L,steel,beam
+P0160,"troop hatch hinge (-1, 1.08)",TROOP_HATCH_L,steel,cylinder
+P0161,"troop hatch hinge (-1, 1.92)",TROOP_HATCH_L,steel,cylinder
+P0162,troop hatch half 1,TROOP_HATCH_R,olive_light,box
+P0163,troop hatch handle 1,TROOP_HATCH_R,steel,beam
+P0164,"troop hatch hinge (1, 1.08)",TROOP_HATCH_R,steel,cylinder
+P0165,"troop hatch hinge (1, 1.92)",TROOP_HATCH_R,steel,cylinder
+P0166,projecting aft hull shoulder -1,HULL,olive,mesh
+P0167,rear service cover -1,HULL,olive_light,box
+P0168,rear light surround -1,HULL,black,box
+P0169,rear red lamp -1,HULL,red,box
+P0170,service cover hinge -1 1.85,HULL,steel,box
+P0171,service cover hinge -1 2.37,HULL,steel,box
+P0172,service cover pull -1,HULL,steel,beam
+P0173,aft shoulder cap seam -1,HULL,olive_dark,box
+P0174,recess passage cheek -1,HULL,olive_dark,box
+P0175,lower aft corner -1,HULL,olive_dark,mesh
+P0176,lower corner access cover -1,HULL,olive,box
+P0177,towing socket -1,HULL,olive_dark,box
+P0178,towing clevis -1 -0.071,HULL,steel,box
+P0179,towing clevis -1 0.071,HULL,steel,box
+P0180,towing cross pin -1,HULL,steel,cylinder
+P0181,rear towing shackle -1,HULL,steel,ring
+P0182,rear skid bracket -1,HULL,olive_dark,box
+P0183,rear skid -1,HULL,olive_dark,box
+P0184,fixed ramp jamb -1,HULL,olive,box
+P0185,ramp side seal -1,HULL,black,box
+P0186,projecting aft hull shoulder 1,HULL,olive,mesh
+P0187,rear service cover 1,HULL,olive_light,box
+P0188,rear light surround 1,HULL,black,box
+P0189,rear red lamp 1,HULL,red,box
+P0190,service cover hinge 1 1.85,HULL,steel,box
+P0191,service cover hinge 1 2.37,HULL,steel,box
+P0192,service cover pull 1,HULL,steel,beam
+P0193,aft shoulder cap seam 1,HULL,olive_dark,box
+P0194,recess passage cheek 1,HULL,olive_dark,box
+P0195,lower aft corner 1,HULL,olive_dark,mesh
+P0196,lower corner access cover 1,HULL,olive,box
+P0197,towing socket 1,HULL,olive_dark,box
+P0198,towing clevis 1 -0.071,HULL,steel,box
+P0199,towing clevis 1 0.071,HULL,steel,box
+P0200,towing cross pin 1,HULL,steel,cylinder
+P0201,rear towing shackle 1,HULL,steel,ring
+P0202,rear skid bracket 1,HULL,olive_dark,box
+P0203,rear skid 1,HULL,olive_dark,box
+P0204,fixed ramp jamb 1,HULL,olive,box
+P0205,ramp side seal 1,HULL,black,box
+P0206,continuous ramp frame,RAMP,olive,mesh
+P0207,ramp door leaf,RAMP_DOOR,olive_light,box
+P0208,door inner pad,RAMP_DOOR,ivory,box
+P0209,door hinge 1.24,RAMP_DOOR,steel,cylinder
+P0210,door hinge 2.12,RAMP_DOOR,steel,cylinder
+P0211,door outside handle,RAMP_DOOR,steel,box
+P0212,door inside handle,RAMP_DOOR,steel,box
+P0213,ramp handrail -1,RAMP,steel,beam
+P0214,"ramp grip (-1, 0)",RAMP,floor,box
+P0215,"ramp grip (-1, 1)",RAMP,floor,box
+P0216,"ramp grip (-1, 2)",RAMP,floor,box
+P0217,"ramp grip (-1, 3)",RAMP,floor,box
+P0218,"ramp grip (-1, 4)",RAMP,floor,box
+P0219,ramp main hinge -1,HULL,steel,cylinder
+P0220,ramp handrail 1,RAMP,steel,beam
+P0221,"ramp grip (1, 0)",RAMP,floor,box
+P0222,"ramp grip (1, 1)",RAMP,floor,box
+P0223,"ramp grip (1, 2)",RAMP,floor,box
+P0224,"ramp grip (1, 3)",RAMP,floor,box
+P0225,"ramp grip (1, 4)",RAMP,floor,box
+P0226,ramp main hinge 1,HULL,steel,cylinder
+P0227,WHEEL_L1 tyre,WHEEL_L1,rubber,tire
+P0228,WHEEL_L1 rim,WHEEL_L1,dust,cylinder
+P0229,WHEEL_L1 rim lip,WHEEL_L1,olive_dark,ring
+P0230,WHEEL_L1 hub,WHEEL_L1,olive_light,cylinder
+P0231,WHEEL_L1 lug 0,WHEEL_L1,steel,cylinder
+P0232,WHEEL_L1 lug 1,WHEEL_L1,steel,cylinder
+P0233,WHEEL_L1 lug 2,WHEEL_L1,steel,cylinder
+P0234,WHEEL_L1 lug 3,WHEEL_L1,steel,cylinder
+P0235,WHEEL_L1 lug 4,WHEEL_L1,steel,cylinder
+P0236,WHEEL_L1 lug 5,WHEEL_L1,steel,cylinder
+P0237,WHEEL_L1 lug 6,WHEEL_L1,steel,cylinder
+P0238,WHEEL_L1 lug 7,WHEEL_L1,steel,cylinder
+P0239,WHEEL_L1 lug 8,WHEEL_L1,steel,cylinder
+P0240,WHEEL_L1 lug 9,WHEEL_L1,steel,cylinder
+P0241,WHEEL_L1 wishbone -0.16,HULL,steel,beam
+P0242,WHEEL_L1 wishbone 0.16,HULL,steel,beam
+P0243,WHEEL_L1 damper,HULL,olive_dark,beam
+P0244,WHEEL_L1 coil 0,HULL,steel,ring
+P0245,WHEEL_L1 coil 1,HULL,steel,ring
+P0246,WHEEL_L1 coil 2,HULL,steel,ring
+P0247,WHEEL_L1 coil 3,HULL,steel,ring
+P0248,WHEEL_L1 coil 4,HULL,steel,ring
+P0249,WHEEL_L1 coil 5,HULL,steel,ring
+P0250,WHEEL_L2 tyre,WHEEL_L2,rubber,tire
+P0251,WHEEL_L2 rim,WHEEL_L2,dust,cylinder
+P0252,WHEEL_L2 rim lip,WHEEL_L2,olive_dark,ring
+P0253,WHEEL_L2 hub,WHEEL_L2,olive_light,cylinder
+P0254,WHEEL_L2 lug 0,WHEEL_L2,steel,cylinder
+P0255,WHEEL_L2 lug 1,WHEEL_L2,steel,cylinder
+P0256,WHEEL_L2 lug 2,WHEEL_L2,steel,cylinder
+P0257,WHEEL_L2 lug 3,WHEEL_L2,steel,cylinder
+P0258,WHEEL_L2 lug 4,WHEEL_L2,steel,cylinder
+P0259,WHEEL_L2 lug 5,WHEEL_L2,steel,cylinder
+P0260,WHEEL_L2 lug 6,WHEEL_L2,steel,cylinder
+P0261,WHEEL_L2 lug 7,WHEEL_L2,steel,cylinder
+P0262,WHEEL_L2 lug 8,WHEEL_L2,steel,cylinder
+P0263,WHEEL_L2 lug 9,WHEEL_L2,steel,cylinder
+P0264,WHEEL_L2 wishbone -0.16,HULL,steel,beam
+P0265,WHEEL_L2 wishbone 0.16,HULL,steel,beam
+P0266,WHEEL_L2 damper,HULL,olive_dark,beam
+P0267,WHEEL_L2 coil 0,HULL,steel,ring
+P0268,WHEEL_L2 coil 1,HULL,steel,ring
+P0269,WHEEL_L2 coil 2,HULL,steel,ring
+P0270,WHEEL_L2 coil 3,HULL,steel,ring
+P0271,WHEEL_L2 coil 4,HULL,steel,ring
+P0272,WHEEL_L2 coil 5,HULL,steel,ring
+P0273,WHEEL_L3 tyre,WHEEL_L3,rubber,tire
+P0274,WHEEL_L3 rim,WHEEL_L3,dust,cylinder
+P0275,WHEEL_L3 rim lip,WHEEL_L3,olive_dark,ring
+P0276,WHEEL_L3 hub,WHEEL_L3,olive_light,cylinder
+P0277,WHEEL_L3 lug 0,WHEEL_L3,steel,cylinder
+P0278,WHEEL_L3 lug 1,WHEEL_L3,steel,cylinder
+P0279,WHEEL_L3 lug 2,WHEEL_L3,steel,cylinder
+P0280,WHEEL_L3 lug 3,WHEEL_L3,steel,cylinder
+P0281,WHEEL_L3 lug 4,WHEEL_L3,steel,cylinder
+P0282,WHEEL_L3 lug 5,WHEEL_L3,steel,cylinder
+P0283,WHEEL_L3 lug 6,WHEEL_L3,steel,cylinder
+P0284,WHEEL_L3 lug 7,WHEEL_L3,steel,cylinder
+P0285,WHEEL_L3 lug 8,WHEEL_L3,steel,cylinder
+P0286,WHEEL_L3 lug 9,WHEEL_L3,steel,cylinder
+P0287,WHEEL_L3 wishbone -0.16,HULL,steel,beam
+P0288,WHEEL_L3 wishbone 0.16,HULL,steel,beam
+P0289,WHEEL_L3 damper,HULL,olive_dark,beam
+P0290,WHEEL_L3 coil 0,HULL,steel,ring
+P0291,WHEEL_L3 coil 1,HULL,steel,ring
+P0292,WHEEL_L3 coil 2,HULL,steel,ring
+P0293,WHEEL_L3 coil 3,HULL,steel,ring
+P0294,WHEEL_L3 coil 4,HULL,steel,ring
+P0295,WHEEL_L3 coil 5,HULL,steel,ring
+P0296,WHEEL_L4 tyre,WHEEL_L4,rubber,tire
+P0297,WHEEL_L4 rim,WHEEL_L4,dust,cylinder
+P0298,WHEEL_L4 rim lip,WHEEL_L4,olive_dark,ring
+P0299,WHEEL_L4 hub,WHEEL_L4,olive_light,cylinder
+P0300,WHEEL_L4 lug 0,WHEEL_L4,steel,cylinder
+P0301,WHEEL_L4 lug 1,WHEEL_L4,steel,cylinder
+P0302,WHEEL_L4 lug 2,WHEEL_L4,steel,cylinder
+P0303,WHEEL_L4 lug 3,WHEEL_L4,steel,cylinder
+P0304,WHEEL_L4 lug 4,WHEEL_L4,steel,cylinder
+P0305,WHEEL_L4 lug 5,WHEEL_L4,steel,cylinder
+P0306,WHEEL_L4 lug 6,WHEEL_L4,steel,cylinder
+P0307,WHEEL_L4 lug 7,WHEEL_L4,steel,cylinder
+P0308,WHEEL_L4 lug 8,WHEEL_L4,steel,cylinder
+P0309,WHEEL_L4 lug 9,WHEEL_L4,steel,cylinder
+P0310,WHEEL_L4 wishbone -0.16,HULL,steel,beam
+P0311,WHEEL_L4 wishbone 0.16,HULL,steel,beam
+P0312,WHEEL_L4 damper,HULL,olive_dark,beam
+P0313,WHEEL_L4 coil 0,HULL,steel,ring
+P0314,WHEEL_L4 coil 1,HULL,steel,ring
+P0315,WHEEL_L4 coil 2,HULL,steel,ring
+P0316,WHEEL_L4 coil 3,HULL,steel,ring
+P0317,WHEEL_L4 coil 4,HULL,steel,ring
+P0318,WHEEL_L4 coil 5,HULL,steel,ring
+P0319,WHEEL_R1 tyre,WHEEL_R1,rubber,tire
+P0320,WHEEL_R1 rim,WHEEL_R1,dust,cylinder
+P0321,WHEEL_R1 rim lip,WHEEL_R1,olive_dark,ring
+P0322,WHEEL_R1 hub,WHEEL_R1,olive_light,cylinder
+P0323,WHEEL_R1 lug 0,WHEEL_R1,steel,cylinder
+P0324,WHEEL_R1 lug 1,WHEEL_R1,steel,cylinder
+P0325,WHEEL_R1 lug 2,WHEEL_R1,steel,cylinder
+P0326,WHEEL_R1 lug 3,WHEEL_R1,steel,cylinder
+P0327,WHEEL_R1 lug 4,WHEEL_R1,steel,cylinder
+P0328,WHEEL_R1 lug 5,WHEEL_R1,steel,cylinder
+P0329,WHEEL_R1 lug 6,WHEEL_R1,steel,cylinder
+P0330,WHEEL_R1 lug 7,WHEEL_R1,steel,cylinder
+P0331,WHEEL_R1 lug 8,WHEEL_R1,steel,cylinder
+P0332,WHEEL_R1 lug 9,WHEEL_R1,steel,cylinder
+P0333,WHEEL_R1 wishbone -0.16,HULL,steel,beam
+P0334,WHEEL_R1 wishbone 0.16,HULL,steel,beam
+P0335,WHEEL_R1 damper,HULL,olive_dark,beam
+P0336,WHEEL_R1 coil 0,HULL,steel,ring
+P0337,WHEEL_R1 coil 1,HULL,steel,ring
+P0338,WHEEL_R1 coil 2,HULL,steel,ring
+P0339,WHEEL_R1 coil 3,HULL,steel,ring
+P0340,WHEEL_R1 coil 4,HULL,steel,ring
+P0341,WHEEL_R1 coil 5,HULL,steel,ring
+P0342,WHEEL_R2 tyre,WHEEL_R2,rubber,tire
+P0343,WHEEL_R2 rim,WHEEL_R2,dust,cylinder
+P0344,WHEEL_R2 rim lip,WHEEL_R2,olive_dark,ring
+P0345,WHEEL_R2 hub,WHEEL_R2,olive_light,cylinder
+P0346,WHEEL_R2 lug 0,WHEEL_R2,steel,cylinder
+P0347,WHEEL_R2 lug 1,WHEEL_R2,steel,cylinder
+P0348,WHEEL_R2 lug 2,WHEEL_R2,steel,cylinder
+P0349,WHEEL_R2 lug 3,WHEEL_R2,steel,cylinder
+P0350,WHEEL_R2 lug 4,WHEEL_R2,steel,cylinder
+P0351,WHEEL_R2 lug 5,WHEEL_R2,steel,cylinder
+P0352,WHEEL_R2 lug 6,WHEEL_R2,steel,cylinder
+P0353,WHEEL_R2 lug 7,WHEEL_R2,steel,cylinder
+P0354,WHEEL_R2 lug 8,WHEEL_R2,steel,cylinder
+P0355,WHEEL_R2 lug 9,WHEEL_R2,steel,cylinder
+P0356,WHEEL_R2 wishbone -0.16,HULL,steel,beam
+P0357,WHEEL_R2 wishbone 0.16,HULL,steel,beam
+P0358,WHEEL_R2 damper,HULL,olive_dark,beam
+P0359,WHEEL_R2 coil 0,HULL,steel,ring
+P0360,WHEEL_R2 coil 1,HULL,steel,ring
+P0361,WHEEL_R2 coil 2,HULL,steel,ring
+P0362,WHEEL_R2 coil 3,HULL,steel,ring
+P0363,WHEEL_R2 coil 4,HULL,steel,ring
+P0364,WHEEL_R2 coil 5,HULL,steel,ring
+P0365,WHEEL_R3 tyre,WHEEL_R3,rubber,tire
+P0366,WHEEL_R3 rim,WHEEL_R3,dust,cylinder
+P0367,WHEEL_R3 rim lip,WHEEL_R3,olive_dark,ring
+P0368,WHEEL_R3 hub,WHEEL_R3,olive_light,cylinder
+P0369,WHEEL_R3 lug 0,WHEEL_R3,steel,cylinder
+P0370,WHEEL_R3 lug 1,WHEEL_R3,steel,cylinder
+P0371,WHEEL_R3 lug 2,WHEEL_R3,steel,cylinder
+P0372,WHEEL_R3 lug 3,WHEEL_R3,steel,cylinder
+P0373,WHEEL_R3 lug 4,WHEEL_R3,steel,cylinder
+P0374,WHEEL_R3 lug 5,WHEEL_R3,steel,cylinder
+P0375,WHEEL_R3 lug 6,WHEEL_R3,steel,cylinder
+P0376,WHEEL_R3 lug 7,WHEEL_R3,steel,cylinder
+P0377,WHEEL_R3 lug 8,WHEEL_R3,steel,cylinder
+P0378,WHEEL_R3 lug 9,WHEEL_R3,steel,cylinder
+P0379,WHEEL_R3 wishbone -0.16,HULL,steel,beam
+P0380,WHEEL_R3 wishbone 0.16,HULL,steel,beam
+P0381,WHEEL_R3 damper,HULL,olive_dark,beam
+P0382,WHEEL_R3 coil 0,HULL,steel,ring
+P0383,WHEEL_R3 coil 1,HULL,steel,ring
+P0384,WHEEL_R3 coil 2,HULL,steel,ring
+P0385,WHEEL_R3 coil 3,HULL,steel,ring
+P0386,WHEEL_R3 coil 4,HULL,steel,ring
+P0387,WHEEL_R3 coil 5,HULL,steel,ring
+P0388,WHEEL_R4 tyre,WHEEL_R4,rubber,tire
+P0389,WHEEL_R4 rim,WHEEL_R4,dust,cylinder
+P0390,WHEEL_R4 rim lip,WHEEL_R4,olive_dark,ring
+P0391,WHEEL_R4 hub,WHEEL_R4,olive_light,cylinder
+P0392,WHEEL_R4 lug 0,WHEEL_R4,steel,cylinder
+P0393,WHEEL_R4 lug 1,WHEEL_R4,steel,cylinder
+P0394,WHEEL_R4 lug 2,WHEEL_R4,steel,cylinder
+P0395,WHEEL_R4 lug 3,WHEEL_R4,steel,cylinder
+P0396,WHEEL_R4 lug 4,WHEEL_R4,steel,cylinder
+P0397,WHEEL_R4 lug 5,WHEEL_R4,steel,cylinder
+P0398,WHEEL_R4 lug 6,WHEEL_R4,steel,cylinder
+P0399,WHEEL_R4 lug 7,WHEEL_R4,steel,cylinder
+P0400,WHEEL_R4 lug 8,WHEEL_R4,steel,cylinder
+P0401,WHEEL_R4 lug 9,WHEEL_R4,steel,cylinder
+P0402,WHEEL_R4 wishbone -0.16,HULL,steel,beam
+P0403,WHEEL_R4 wishbone 0.16,HULL,steel,beam
+P0404,WHEEL_R4 damper,HULL,olive_dark,beam
+P0405,WHEEL_R4 coil 0,HULL,steel,ring
+P0406,WHEEL_R4 coil 1,HULL,steel,ring
+P0407,WHEEL_R4 coil 2,HULL,steel,ring
+P0408,WHEEL_R4 coil 3,HULL,steel,ring
+P0409,WHEEL_R4 coil 4,HULL,steel,ring
+P0410,WHEEL_R4 coil 5,HULL,steel,ring
+P0411,TROOP_SEAT_L1 perforated back,INTERIOR,ivory,seat_back
+P0412,TROOP_SEAT_L1 seat pan,TROOP_SEAT_L1,ivory,box
+P0413,TROOP_SEAT_L1 olive pad,TROOP_SEAT_L1,seat_pad,box
+P0414,TROOP_SEAT_L1 suspension rail,INTERIOR,steel,beam
+P0415,TROOP_SEAT_L1 harness -0.17,INTERIOR,strap,beam
+P0416,TROOP_SEAT_L1 harness 0.17,INTERIOR,strap,beam
+P0417,TROOP_SEAT_L1 belt buckle,TROOP_SEAT_L1,steel,box
+P0418,TROOP_SEAT_L2 perforated back,INTERIOR,ivory,seat_back
+P0419,TROOP_SEAT_L2 seat pan,TROOP_SEAT_L2,ivory,box
+P0420,TROOP_SEAT_L2 olive pad,TROOP_SEAT_L2,seat_pad,box
+P0421,TROOP_SEAT_L2 suspension rail,INTERIOR,steel,beam
+P0422,TROOP_SEAT_L2 harness -0.17,INTERIOR,strap,beam
+P0423,TROOP_SEAT_L2 harness 0.17,INTERIOR,strap,beam
+P0424,TROOP_SEAT_L2 belt buckle,TROOP_SEAT_L2,steel,box
+P0425,TROOP_SEAT_L3 perforated back,INTERIOR,ivory,seat_back
+P0426,TROOP_SEAT_L3 seat pan,TROOP_SEAT_L3,ivory,box
+P0427,TROOP_SEAT_L3 olive pad,TROOP_SEAT_L3,seat_pad,box
+P0428,TROOP_SEAT_L3 suspension rail,INTERIOR,steel,beam
+P0429,TROOP_SEAT_L3 harness -0.17,INTERIOR,strap,beam
+P0430,TROOP_SEAT_L3 harness 0.17,INTERIOR,strap,beam
+P0431,TROOP_SEAT_L3 belt buckle,TROOP_SEAT_L3,steel,box
+P0432,TROOP_SEAT_L4 perforated back,INTERIOR,ivory,seat_back
+P0433,TROOP_SEAT_L4 seat pan,TROOP_SEAT_L4,ivory,box
+P0434,TROOP_SEAT_L4 olive pad,TROOP_SEAT_L4,seat_pad,box
+P0435,TROOP_SEAT_L4 suspension rail,INTERIOR,steel,beam
+P0436,TROOP_SEAT_L4 harness -0.17,INTERIOR,strap,beam
+P0437,TROOP_SEAT_L4 harness 0.17,INTERIOR,strap,beam
+P0438,TROOP_SEAT_L4 belt buckle,TROOP_SEAT_L4,steel,box
+P0439,TROOP_SEAT_L5 perforated back,INTERIOR,ivory,seat_back
+P0440,TROOP_SEAT_L5 seat pan,TROOP_SEAT_L5,ivory,box
+P0441,TROOP_SEAT_L5 olive pad,TROOP_SEAT_L5,seat_pad,box
+P0442,TROOP_SEAT_L5 suspension rail,INTERIOR,steel,beam
+P0443,TROOP_SEAT_L5 harness -0.17,INTERIOR,strap,beam
+P0444,TROOP_SEAT_L5 harness 0.17,INTERIOR,strap,beam
+P0445,TROOP_SEAT_L5 belt buckle,TROOP_SEAT_L5,steel,box
+P0446,TROOP_SEAT_R1 perforated back,INTERIOR,ivory,seat_back
+P0447,TROOP_SEAT_R1 seat pan,TROOP_SEAT_R1,ivory,box
+P0448,TROOP_SEAT_R1 olive pad,TROOP_SEAT_R1,seat_pad,box
+P0449,TROOP_SEAT_R1 suspension rail,INTERIOR,steel,beam
+P0450,TROOP_SEAT_R1 harness -0.17,INTERIOR,strap,beam
+P0451,TROOP_SEAT_R1 harness 0.17,INTERIOR,strap,beam
+P0452,TROOP_SEAT_R1 belt buckle,TROOP_SEAT_R1,steel,box
+P0453,TROOP_SEAT_R2 perforated back,INTERIOR,ivory,seat_back
+P0454,TROOP_SEAT_R2 seat pan,TROOP_SEAT_R2,ivory,box
+P0455,TROOP_SEAT_R2 olive pad,TROOP_SEAT_R2,seat_pad,box
+P0456,TROOP_SEAT_R2 suspension rail,INTERIOR,steel,beam
+P0457,TROOP_SEAT_R2 harness -0.17,INTERIOR,strap,beam
+P0458,TROOP_SEAT_R2 harness 0.17,INTERIOR,strap,beam
+P0459,TROOP_SEAT_R2 belt buckle,TROOP_SEAT_R2,steel,box
+P0460,TROOP_SEAT_R3 perforated back,INTERIOR,ivory,seat_back
+P0461,TROOP_SEAT_R3 seat pan,TROOP_SEAT_R3,ivory,box
+P0462,TROOP_SEAT_R3 olive pad,TROOP_SEAT_R3,seat_pad,box
+P0463,TROOP_SEAT_R3 suspension rail,INTERIOR,steel,beam
+P0464,TROOP_SEAT_R3 harness -0.17,INTERIOR,strap,beam
+P0465,TROOP_SEAT_R3 harness 0.17,INTERIOR,strap,beam
+P0466,TROOP_SEAT_R3 belt buckle,TROOP_SEAT_R3,steel,box
+P0467,TROOP_SEAT_R4 perforated back,INTERIOR,ivory,seat_back
+P0468,TROOP_SEAT_R4 seat pan,TROOP_SEAT_R4,ivory,box
+P0469,TROOP_SEAT_R4 olive pad,TROOP_SEAT_R4,seat_pad,box
+P0470,TROOP_SEAT_R4 suspension rail,INTERIOR,steel,beam
+P0471,TROOP_SEAT_R4 harness -0.17,INTERIOR,strap,beam
+P0472,TROOP_SEAT_R4 harness 0.17,INTERIOR,strap,beam
+P0473,TROOP_SEAT_R4 belt buckle,TROOP_SEAT_R4,steel,box
+P0474,CREW_DRIVER pedestal,INTERIOR,steel,box
+P0475,CREW_DRIVER cushion,INTERIOR,seat_pad,box
+P0476,CREW_DRIVER back,INTERIOR,ivory,box
+P0477,CREW_DRIVER back pad,INTERIOR,seat_pad,box
+P0478,CREW_DRIVER headrest,INTERIOR,seat_pad,box
+P0479,CREW_COMMANDER pedestal,INTERIOR,steel,box
+P0480,CREW_COMMANDER cushion,INTERIOR,seat_pad,box
+P0481,CREW_COMMANDER back,INTERIOR,ivory,box
+P0482,CREW_COMMANDER back pad,INTERIOR,seat_pad,box
+P0483,CREW_COMMANDER headrest,INTERIOR,seat_pad,box
+P0484,CREW_OPERATOR pedestal,INTERIOR,steel,box
+P0485,CREW_OPERATOR cushion,INTERIOR,seat_pad,box
+P0486,CREW_OPERATOR back,INTERIOR,ivory,box
+P0487,CREW_OPERATOR back pad,INTERIOR,seat_pad,box
+P0488,CREW_OPERATOR headrest,INTERIOR,seat_pad,box
+P0489,sealed engine bay,INTERIOR,olive_dark,box
+P0490,engine partition liner,INTERIOR,ivory,box
+P0491,driver console,INTERIOR,ivory,box
+P0492,driver steering wheel,INTERIOR,black,ring
+P0493,steering spoke 0,INTERIOR,black,beam
+P0494,steering spoke 120,INTERIOR,black,beam
+P0495,steering spoke 240,INTERIOR,black,beam
+P0496,driver monitor 0,INTERIOR,black,mesh
+P0497,driver display 0,INTERIOR,screen,box
+P0498,driver monitor 1,INTERIOR,black,mesh
+P0499,driver display 1,INTERIOR,screen,box
+P0500,driver monitor 2,INTERIOR,black,mesh
+P0501,driver display 2,INTERIOR,screen,box
+P0502,commander display bezel,INTERIOR,black,mesh
+P0503,commander display,INTERIOR,screen,box
+P0504,commander control shelf,INTERIOR,ivory,box
+P0505,commander controller,INTERIOR,black,cylinder
+P0506,operator display bezel,INTERIOR,black,mesh
+P0507,operator display,INTERIOR,screen,box
+P0508,operator control shelf,INTERIOR,ivory,box
+P0509,operator controller,INTERIOR,black,cylinder
+P0510,electronics rack -1,INTERIOR,equipment,box
+P0511,"radio unit (-1, 0)",INTERIOR,black,box
+P0512,"radio unit (-1, 1)",INTERIOR,black,box
+P0513,"radio unit (-1, 2)",INTERIOR,black,box
+P0514,"radio unit (-1, 3)",INTERIOR,black,box
+P0515,"radio unit (-1, 4)",INTERIOR,black,box
+P0516,overhead grab rail -1,INTERIOR,steel,beam
+P0517,electronics rack 1,INTERIOR,equipment,box
+P0518,"radio unit (1, 0)",INTERIOR,black,box
+P0519,"radio unit (1, 1)",INTERIOR,black,box
+P0520,"radio unit (1, 2)",INTERIOR,black,box
+P0521,"radio unit (1, 3)",INTERIOR,black,box
+P0522,"radio unit (1, 4)",INTERIOR,black,box
+P0523,overhead grab rail 1,INTERIOR,steel,beam
+P0524,extinguisher -1,INTERIOR,red,cylinder
+P0525,extinguisher top -1,INTERIOR,ivory,box
+P0526,extinguisher 1,INTERIOR,red,cylinder
+P0527,extinguisher top 1,INTERIOR,ivory,box
+P0528,equipment bag,INTERIOR,seat_pad,box
+P0529,floor grip strip 0,INTERIOR,steel,box
+P0530,floor grip strip 1,INTERIOR,steel,box
+P0531,floor grip strip 2,INTERIOR,steel,box
+P0532,floor grip strip 3,INTERIOR,steel,box
+P0533,floor grip strip 4,INTERIOR,steel,box
+P0534,floor grip strip 5,INTERIOR,steel,box
+P0535,floor grip strip 6,INTERIOR,steel,box
+P0536,floor grip strip 7,INTERIOR,steel,box
+P0537,interior ceiling lamp -0.1,ROOF,lamp,box
+P0538,interior ceiling lamp 1.1,ROOF,lamp,box
+P0539,interior ceiling lamp 2.4,ROOF,lamp,box
+P0540,remote station base,ROOF,olive_dark,cylinder
+P0541,remote station body,ROOF,olive_light,box
+P0542,remote station optics,ROOF,black,box
+P0543,optics lens,ROOF,glass,box
+P0544,remote station receiver,ROOF,olive_dark,box
+P0545,visual barrel,ROOF,black,cylinder
+P0546,roof electronics -1,ROOF,olive_dark,box
+P0547,sensor face -1,ROOF,black,box
+P0548,"roof rack (-1, -0.95)",ROOF,olive_dark,beam
+P0549,"roof rack (-1, 0.36)",ROOF,olive_dark,beam
+P0550,roof rack top -1,ROOF,olive_dark,beam
+P0551,antenna socket -1,ROOF,olive_dark,cylinder
+P0552,flexible antenna -1,ANTENNAS,black,beam
+P0553,roof electronics 1,ROOF,olive_dark,box
+P0554,sensor face 1,ROOF,black,box
+P0555,"roof rack (1, -0.95)",ROOF,olive_dark,beam
+P0556,"roof rack (1, 0.36)",ROOF,olive_dark,beam
+P0557,roof rack top 1,ROOF,olive_dark,beam
+P0558,antenna socket 1,ROOF,olive_dark,cylinder
+P0559,flexible antenna 1,ANTENNAS,black,beam
+P0560,troop hatch centre underlap,TROOP_HATCH_L,olive_dark,box
+P0561,sealed fore footwell floor,HULL,floor,mesh
+P0562,front wheelwell liner -1,HULL,floor,mesh
+P0563,front wheelwell liner 1,HULL,floor,mesh
+P0564,driver instruments mount,INTERIOR,steel,box
+P0565,driver instruments case,INTERIOR,black,mesh
+P0566,driver instruments,INTERIOR,screen,box
+P0567,steering column,INTERIOR,steel,cylinder
+P0568,steering hub,INTERIOR,steel,cylinder
+P0569,troop hatch gasket,ROOF,black,box

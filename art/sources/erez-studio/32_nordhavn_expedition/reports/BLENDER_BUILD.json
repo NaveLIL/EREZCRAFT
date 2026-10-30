@@ -1,0 +1,16 @@
+{
+  "revision": "NE01-A06",
+  "source_parts": 909,
+  "mesh_objects": 909,
+  "windows": 35,
+  "doors": 16,
+  "beds": 10,
+  "terminals": 6,
+  "textures": 19,
+  "geometry_sha256": "525402529f2f2747b66b3465f9ad0f9073bf8b943b90a25e6b545064f09a4ae6",
+  "assembly_sha256": "dfec079317b04cb897ed6970c3886e1a51fd49d1eae74e3445f5a0b8cea4f853",
+  "rendered_views": [
+    ""
+  ],
+  "minecraft_tested": false
+}

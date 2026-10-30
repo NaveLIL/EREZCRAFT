@@ -1,0 +1,217 @@
+{
+  "revision": "SK02",
+  "active_source": "source/skat_SK02.json",
+  "preserved_variants": [
+    "SK01",
+    "SK02"
+  ],
+  "parts": 1615,
+  "cargo_modules": 24,
+  "cargo_capacity_target_slots": 1296,
+  "capacity_implemented": false,
+  "palette_checks": [
+    {
+      "name": "copper",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "brass",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "teal",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "ivory",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "rubber",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "lamp",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "cyan",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "wood",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "graphite",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "steel",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "deck",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    },
+    {
+      "name": "glass",
+      "source_hash": true,
+      "palette_only": true,
+      "bijective": true,
+      "alpha_and_size_preserved": true
+    }
+  ],
+  "both_variants_preserved": true,
+  "saved_scene_verified": true,
+  "self_contained_glb_verified": true,
+  "native_game_verified": false,
+  "physics_verified": false,
+  "imagegen_mode": "built-in",
+  "prompt_file": "references/imagegen_prompt.txt",
+  "artifacts": [
+    {
+      "file": "source/skat_SK02.json",
+      "bytes": 649681,
+      "sha256": "4375751e7612637136a8b983dcf94032d779e550e07ef8147b05880063dfd5bb"
+    },
+    {
+      "file": "assembly/skat_SK02.blend",
+      "bytes": 1021241,
+      "sha256": "70dd33ee001ec37272b4a47d4e51a61a1d9200c4e4abd12957494e576da0fc5f"
+    },
+    {
+      "file": "exports/skat_SK02.glb",
+      "bytes": 2573224,
+      "sha256": "140cdfff199ba03165aea53af1c1d70a814028cc3ad820c706542d27210d1f66"
+    },
+    {
+      "file": "references/skat_concept_SK01.png",
+      "bytes": 2593160,
+      "sha256": "8bb6270e1337af5628538090f3b3b71ffaadc6c715a81d1c3d080074b7642b87"
+    },
+    {
+      "file": "references/imagegen_prompt.txt",
+      "bytes": 2362,
+      "sha256": "83268abbba519e3b425cfcf0dc404c5528a6e225a8e6f18eaf02501df93f3612"
+    },
+    {
+      "file": "README.md",
+      "bytes": 9395,
+      "sha256": "32653ca70b72e6c587a5895f27336dda4982b8548ebf4da93118ea54327a2752"
+    },
+    {
+      "file": "INTEGRATION.md",
+      "bytes": 7593,
+      "sha256": "ef1cd893d37dc0ef10f5e08085d770d4b44e095a6007e97a9e3ce741c3f0cca1"
+    },
+    {
+      "file": "preview/skat_SK02_hero.png",
+      "bytes": 3218642,
+      "sha256": "8dfce80bf0ead9c2f39fca79cf344fab5184771d405f48b9f1a05e22c68f1d70"
+    },
+    {
+      "file": "preview/skat_SK02_aft.png",
+      "bytes": 3143521,
+      "sha256": "8f375e0e4321c79596748309195268ffc544c72a0b5282a04c0a396587ccc969"
+    },
+    {
+      "file": "preview/skat_SK02_cutaway.png",
+      "bytes": 2810087,
+      "sha256": "b773ba269f478596fa822faf2d9f685c9f0f1390a55cd9ee7eaa9da5b6df6845"
+    },
+    {
+      "file": "preview/skat_SK02_hold.png",
+      "bytes": 3180384,
+      "sha256": "bcc5d0c04eac19368ccb1c36ffdf9ccd8bfc22d60bfd9d69d6037bb0688b013c"
+    },
+    {
+      "file": "preview/skat_SK02_cabin.png",
+      "bytes": 3193228,
+      "sha256": "4c0062bf3c082d5acb176ba41f3ef5c21001c136bcdfb26198d4048d4b03b9a0"
+    },
+    {
+      "file": "preview/skat_SK02_top.png",
+      "bytes": 2399622,
+      "sha256": "5a67791ad70745319bfcd4a46b64d56c53057713720811841e43129c67600d38"
+    },
+    {
+      "file": "preview/skat_SK02_side.png",
+      "bytes": 2387314,
+      "sha256": "00e7fb4976c6c6ee1c8c6c2cee84ba2a77327ab6ce0b424a899676e123287866"
+    },
+    {
+      "file": "preview/skat_SK02_review.jpg",
+      "bytes": 652364,
+      "sha256": "2091c0a5f1105a5a140463bdd48854d0d2d2722fd42776d50dc3992bf6871400"
+    },
+    {
+      "file": "preview/skat_SK02_reference_comparison.jpg",
+      "bytes": 425337,
+      "sha256": "30aa5b7d33599831adfd6137c019b92b644daa6ed6546898a67679c9c42ed391"
+    },
+    {
+      "file": "reports/SAVED_BLEND_SK02.json",
+      "bytes": 1538,
+      "sha256": "33b43c5b8f60ea407ed2dc2ff0c2bf1074d564efbc07399212eeb09f5208d7b0"
+    },
+    {
+      "file": "reports/GLB_IMPORT_SK02.json",
+      "bytes": 243,
+      "sha256": "d4f81531c08e4a0859e3e014ee3d5a55f8c1c856895e12e921a38cbb1437f493"
+    },
+    {
+      "file": "preview/skat_small_and_large.jpg",
+      "bytes": 339057,
+      "sha256": "0a0a4d958250bc7d314b7676992fbba49d0d61ef4ea8edd49a89f88a9e54449c"
+    },
+    {
+      "file": "source/selection.json",
+      "bytes": 1054,
+      "sha256": "cb5f8c74cf78943efe279f6fa99a0bb806fcfeb0cc7846e905bc0703daf0e7e1"
+    },
+    {
+      "file": "preview/preserved/small_SK01_as_seen.png",
+      "bytes": 2399111,
+      "sha256": "cd6661e3113732f99958d0499296b59cba24a0e64997801e3440a6682f745555"
+    },
+    {
+      "file": "preview/preserved/large_SK02_as_seen.png",
+      "bytes": 3217423,
+      "sha256": "1c901dc08c74e22093441164fcc3140287c13fa5b645d5fee20f73178b2575d2"
+    }
+  ]
+}

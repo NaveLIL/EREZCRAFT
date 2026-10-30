@@ -1,0 +1,17 @@
+{
+  "selected_revision": "PK02",
+  "owner_visual_approval": false,
+  "account": "kizya",
+  "reference": "references/owner_reference.png",
+  "requirements": [
+    "Newly painted texture, no block texture reuse",
+    "Slim arms",
+    "Long layered pastel pink hair",
+    "White sweater and dusty-pink pinafore shorts",
+    "Pink striped socks and platform shoes",
+    "Vanilla pivots and equipment clearance",
+    "Preserve owner profiles and live server"
+  ],
+  "not_delivered_to_account": true,
+  "retired_revision": "PK01"
+}

@@ -1,0 +1,300 @@
+{
+  "purpose": "Native Minecraft staged group photograph; no compositing, no AI imagery",
+  "dimension": "interstice:islands_v6",
+  "seed": 20261030,
+  "base": [
+    448,
+    416
+  ],
+  "shelter": {
+    "bounds": [
+      [
+        -9,
+        43,
+        4
+      ],
+      [
+        9,
+        44,
+        14
+      ]
+    ],
+    "material": "interstice:gloomcrown_planks",
+    "posts": [
+      [
+        -8,
+        5
+      ],
+      [
+        -8,
+        13
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        8,
+        13
+      ]
+    ]
+  },
+  "bay": {
+    "bounds": [
+      [
+        -40,
+        31,
+        -4
+      ],
+      [
+        -12,
+        51,
+        26
+      ]
+    ],
+    "fluid": "interstice:heavy_toxin",
+    "fluid_max_y": 34,
+    "air_min_y": 35
+  },
+  "promontory": {
+    "bounds": [
+      [
+        18,
+        34,
+        -3
+      ],
+      [
+        31,
+        37,
+        12
+      ]
+    ],
+    "top": "interstice:abyssal_turf",
+    "fill": "interstice:riftstone"
+  },
+  "vehicles": [
+    {
+      "type": "skat",
+      "origin": [
+        -25,
+        35,
+        10
+      ],
+      "yaw_degrees": 90
+    },
+    {
+      "type": "eitan",
+      "origin": [
+        13,
+        38,
+        9
+      ],
+      "yaw_degrees": 145,
+      "open": [
+        "RAMP",
+        "DRIVER_HATCH",
+        "COMMANDER_HATCH",
+        "TROOP_HATCH_L",
+        "TROOP_HATCH_R"
+      ]
+    },
+    {
+      "type": "eitan",
+      "origin": [
+        20,
+        38,
+        26
+      ],
+      "yaw_degrees": -25,
+      "open": [
+        "DRIVER_HATCH",
+        "COMMANDER_HATCH",
+        "TROOP_HATCH_L",
+        "TROOP_HATCH_R"
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "tier": "riftsilver",
+      "at": [
+        -5.7,
+        38,
+        6.8
+      ],
+      "yaw": 167,
+      "crouched": true
+    },
+    {
+      "tier": "riftsteel",
+      "at": [
+        -3.7,
+        38,
+        7.2
+      ],
+      "yaw": 180
+    },
+    {
+      "tier": "engineer",
+      "at": [
+        -1.5,
+        38,
+        6.8
+      ],
+      "yaw": 191
+    },
+    {
+      "tier": "aegis",
+      "at": [
+        1,
+        38,
+        7.1
+      ],
+      "yaw": 160
+    },
+    {
+      "tier": "kotomyaf",
+      "at": [
+        3.3,
+        38,
+        7.4
+      ],
+      "yaw": 173,
+      "crouched": true
+    },
+    {
+      "tier": "engineer",
+      "at": [
+        5.4,
+        38,
+        8
+      ],
+      "yaw": 193,
+      "helmet": false
+    },
+    {
+      "tier": "riftsilver",
+      "at": [
+        -3,
+        38,
+        10
+      ],
+      "yaw": 165,
+      "helmet": false
+    },
+    {
+      "tier": "riftsteel",
+      "at": [
+        1,
+        38,
+        10.2
+      ],
+      "yaw": 185
+    },
+    {
+      "tier": "diamond",
+      "at_ground": [
+        10,
+        37,
+        3
+      ],
+      "yaw": 160,
+      "native_tide": true
+    },
+    {
+      "tier": "diamond",
+      "at_ground": [
+        13,
+        37,
+        3
+      ],
+      "yaw": 195,
+      "native_tide": true
+    }
+  ],
+  "fauna": [
+    {
+      "type": "lozhnokoren",
+      "at": [
+        24,
+        38,
+        4
+      ],
+      "yaw": 130,
+      "phase": "WARNING"
+    },
+    {
+      "type": "cave_rift_spider",
+      "variant": 0,
+      "at": [
+        -3,
+        37,
+        3
+      ],
+      "yaw": 165
+    },
+    {
+      "type": "cave_rift_spider",
+      "variant": 1,
+      "at": [
+        9,
+        38,
+        8
+      ],
+      "yaw": 210
+    },
+    {
+      "type": "cave_rift_spider",
+      "variant": 2,
+      "at": [
+        -4,
+        41.9,
+        9
+      ],
+      "yaw": 180,
+      "ceiling": true
+    }
+  ],
+  "camera": {
+    "at": [
+      12,
+      44,
+      -38
+    ],
+    "target": [
+      1,
+      40.8,
+      10
+    ],
+    "vertical_fov": 34,
+    "resolution": [
+      3840,
+      1600
+    ]
+  },
+  "lighting": "Physical torches, lanterns, powered vehicle lights and three placed floor shroomlights near the large creature",
+  "night_vision": false,
+  "shaders": "Original Complementary Reimagined r5.9.3, loaded by Iris with Interstice V6 bridge",
+  "owner_world_used": false,
+  "production_modified": false,
+  "extra_floor_lights": [
+    [
+      24,
+      37,
+      4,
+      "minecraft:shroomlight"
+    ],
+    [
+      21,
+      37,
+      2,
+      "minecraft:shroomlight"
+    ],
+    [
+      27,
+      37,
+      7,
+      "minecraft:shroomlight"
+    ]
+  ]
+}

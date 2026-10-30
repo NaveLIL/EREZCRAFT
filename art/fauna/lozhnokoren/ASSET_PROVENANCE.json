@@ -1,0 +1,107 @@
+[
+  {
+    "name": "bark",
+    "source_file": "crown-tree/maple_log_side.png",
+    "source_sha256": "ccfee5d05c3baea0c628d6050d77ae68feb643ba996ba6e97e9ba0d09a532003",
+    "license": "CC0-1.0",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "derived_file": "source\\textures\\bark.png",
+    "derived_sha256": "2abd2340bfc244111079a27c65ab14c6ae4bec487a32f20bbd06affe3df738fe",
+    "changes": "RGB palette substitution only; dimensions, pixel positions and alpha preserved",
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "name": "dark_bark",
+    "source_file": "crown-tree/maple_log_side.png",
+    "source_sha256": "ccfee5d05c3baea0c628d6050d77ae68feb643ba996ba6e97e9ba0d09a532003",
+    "license": "CC0-1.0",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "derived_file": "source\\textures\\dark_bark.png",
+    "derived_sha256": "d1dead65d9f6c5d19f89f7334073dafe320a981f567e259131d611d0b1294965",
+    "changes": "RGB palette substitution only; dimensions, pixel positions and alpha preserved",
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "name": "joints",
+    "source_file": "pale-gardens/beech_log_side.png",
+    "source_sha256": "29fa0c448cf26e190f2f736d1f1ebc3eb7cf4d3006712ba58aa63a8b61a75808",
+    "license": "CC0-1.0",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "derived_file": "source\\textures\\joints.png",
+    "derived_sha256": "32f35da48610d01e763f0909010c8d5ef766a4dc560f895313d8777cf7f91c9b",
+    "changes": "RGB palette substitution only; dimensions, pixel positions and alpha preserved",
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "name": "cut_wood",
+    "source_file": "crown-tree/maple_log_top.png",
+    "source_sha256": "f9561bfb710537d7e54c45853951780d2690b477135a8b1943ca8286ec48e73e",
+    "license": "CC0-1.0",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "derived_file": "source\\textures\\cut_wood.png",
+    "derived_sha256": "a6ae7367f6b1345f15b0241b28aa857568b0bf52bc4d434fcb51aa19f4161fd4",
+    "changes": "RGB palette substitution only; dimensions, pixel positions and alpha preserved",
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "name": "moss",
+    "source_file": "pale-gardens/grass_top.png",
+    "source_sha256": "dce0f22011225ddd2b0b86f223c5699c020c681379b9e0ecc2be948a5e5dba79",
+    "license": "CC0-1.0",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "derived_file": "source\\textures\\moss.png",
+    "derived_sha256": "1302235b0fd41e4c3556354a256f3c751153a46bde1cbf278e8181e2cfad1b86",
+    "changes": "RGB palette substitution only; dimensions, pixel positions and alpha preserved",
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "name": "horn",
+    "source_file": "pale-gardens/beech_log_side.png",
+    "source_sha256": "29fa0c448cf26e190f2f736d1f1ebc3eb7cf4d3006712ba58aa63a8b61a75808",
+    "license": "CC0-1.0",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "derived_file": "source\\textures\\horn.png",
+    "derived_sha256": "36d1cebc20db5f8bd9a926c10958cce16448b4d912055f057cf8007d90d0c73a",
+    "changes": "RGB palette substitution only; dimensions, pixel positions and alpha preserved",
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "name": "eyes",
+    "source_file": "crown-tree/maple_log_top.png",
+    "source_sha256": "f9561bfb710537d7e54c45853951780d2690b477135a8b1943ca8286ec48e73e",
+    "license": "CC0-1.0",
+    "author": "ARoachIFoundOnMyPillow",
+    "source_url": "https://opengameart.org/content/16x16-block-texture-set",
+    "derived_file": "source\\textures\\eyes.png",
+    "derived_sha256": "921b4239cc68682e5aebf540a9aaa9b08ec2e0544cb515e094abe4250644f0c6",
+    "changes": "RGB palette substitution only; dimensions, pixel positions and alpha preserved",
+    "size": [
+      16,
+      16
+    ]
+  }
+]

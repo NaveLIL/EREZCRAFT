@@ -153,6 +153,7 @@ public final class Interstice {
                 pro.erez.interstice.gear.RealmArmaments.displayItems(output);
                 output.accept(pro.erez.interstice.gear.FieldJournal.JOURNAL.get());
                 pro.erez.interstice.tether.RiftTethers.displayItems(output);
+                if(net.neoforged.fml.ModList.get().isLoaded("aeronautics"))output.accept(pro.erez.interstice.ship.SkatShips.BLUEPRINT.get());
                 pro.erez.interstice.lift.RealmLift.displayItems(output);
                 pro.erez.interstice.rift.RiftInitiation.displayItems(output);
                 pro.erez.interstice.navigation.RealmNavigation.displayItems(output);
@@ -208,6 +209,7 @@ public final class Interstice {
         pro.erez.interstice.navigation.RealmNavigation.register(bus);
         pro.erez.interstice.fauna.RealmFauna.register(bus);
         pro.erez.interstice.fauna.StrongRealmFauna.register(bus);
+        pro.erez.interstice.fauna.LozhnokorenFauna.register(bus);
         pro.erez.interstice.entity.SpiderBrain.register(bus);
         pro.erez.interstice.fauna.TideFauna.register(bus);
         pro.erez.interstice.ecology.RealmEcology.register(bus);
@@ -215,6 +217,10 @@ public final class Interstice {
         pro.erez.interstice.gear.RealmArmaments.register(bus);
         pro.erez.interstice.gear.FieldJournal.register(bus);
         pro.erez.interstice.tether.RiftTethers.register(bus);
+        if(net.neoforged.fml.ModList.get().isLoaded("aeronautics")&&net.neoforged.fml.ModList.get().isLoaded("sable")&&net.neoforged.fml.ModList.get().isLoaded("create"))pro.erez.interstice.vehicle.VehiclesBootstrap.register(bus);
+        if(Boolean.getBoolean("interstice.ne01Preview")&&net.neoforged.fml.ModList.get().isLoaded("sable")&&net.neoforged.fml.ModList.get().isLoaded("ae2"))pro.erez.interstice.ship.MarineShips.register(bus);
+        if(Boolean.getBoolean("interstice.eitanPreview"))pro.erez.interstice.vehicle.EitanPreview.register(bus);
+
         pro.erez.interstice.lift.RealmLift.register(bus);
         DENSITIES.register(bus);
         NeoForge.EVENT_BUS.addListener(pro.erez.interstice.food.TideHeart::tick);

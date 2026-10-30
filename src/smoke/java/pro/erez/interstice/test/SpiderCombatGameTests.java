@@ -57,6 +57,7 @@ public final class SpiderCombatGameTests {
         var owner = new CaveRiftSpiderEntity(Interstice.CAVE_RIFT_SPIDER.get(), helper.getLevel());
         owner.setVariant(CaveRiftSpiderEntity.Variant.SPITTER);
         owner.setNoAi(true); owner.setNoGravity(true); owner.setPersistenceRequired();
+        owner.setYRot(-90);owner.yBodyRot=owner.yHeadRot=-90;
         owner.moveTo(helper.absolutePos(pos).getBottomCenter());
         helper.getLevel().addFreshEntity(owner); cleanup(helper, owner);
         return owner;

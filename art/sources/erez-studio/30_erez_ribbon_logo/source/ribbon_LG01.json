@@ -1,0 +1,276 @@
+{
+  "revision": "LG01",
+  "name": "EREZ / purple ribbon emblem",
+  "geometry_authority": "source/ribbon_LG01.json",
+  "reference": "references/owner_logo.jpg",
+  "coordinates": "Authoring frame: X right, -Y front, Z up. Knots use reference image px; conversion is (px-640)/120, (640-py)/120.",
+  "knots_px_depth_twist": [
+    [
+      480,
+      242,
+      0.16,
+      0
+    ],
+    [
+      830,
+      242,
+      0.16,
+      0
+    ],
+    [
+      892,
+      266,
+      0.03,
+      8
+    ],
+    [
+      912,
+      319,
+      -0.18,
+      15
+    ],
+    [
+      875,
+      378,
+      -0.46,
+      8
+    ],
+    [
+      802,
+      388,
+      -0.58,
+      0
+    ],
+    [
+      664,
+      325,
+      -0.58,
+      0
+    ],
+    [
+      536,
+      252,
+      -0.52,
+      0
+    ],
+    [
+      469,
+      241,
+      -0.38,
+      0
+    ],
+    [
+      396,
+      292,
+      -0.25,
+      0
+    ],
+    [
+      351,
+      391,
+      -0.21,
+      0
+    ],
+    [
+      371,
+      486,
+      -0.18,
+      0
+    ],
+    [
+      468,
+      568,
+      -0.03,
+      0
+    ],
+    [
+      626,
+      637,
+      0.13,
+      0
+    ],
+    [
+      774,
+      699,
+      0.18,
+      0
+    ],
+    [
+      850,
+      703,
+      0.14,
+      0
+    ],
+    [
+      894,
+      661,
+      -0.08,
+      10
+    ],
+    [
+      893,
+      610,
+      -0.29,
+      16
+    ],
+    [
+      852,
+      567,
+      -0.5,
+      8
+    ],
+    [
+      786,
+      560,
+      -0.58,
+      0
+    ],
+    [
+      658,
+      594,
+      -0.62,
+      0
+    ],
+    [
+      515,
+      653,
+      -0.62,
+      0
+    ],
+    [
+      405,
+      734,
+      -0.55,
+      0
+    ],
+    [
+      353,
+      841,
+      -0.39,
+      0
+    ],
+    [
+      352,
+      940,
+      -0.26,
+      0
+    ],
+    [
+      402,
+      1013,
+      -0.32,
+      0
+    ],
+    [
+      477,
+      1031,
+      -0.43,
+      0
+    ],
+    [
+      584,
+      982,
+      -0.57,
+      0
+    ],
+    [
+      712,
+      914,
+      -0.62,
+      0
+    ],
+    [
+      801,
+      886,
+      -0.53,
+      0
+    ],
+    [
+      860,
+      913,
+      -0.35,
+      8
+    ],
+    [
+      901,
+      964,
+      -0.14,
+      18
+    ],
+    [
+      892,
+      1016,
+      0.06,
+      8
+    ],
+    [
+      842,
+      1035,
+      0.16,
+      0
+    ],
+    [
+      766,
+      1035,
+      0.18,
+      0
+    ],
+    [
+      648,
+      1035,
+      0.18,
+      0
+    ],
+    [
+      531,
+      1035,
+      0.18,
+      0
+    ],
+    [
+      452,
+      1014,
+      0.18,
+      0
+    ],
+    [
+      411,
+      975,
+      0.18,
+      0
+    ]
+  ],
+  "pixels_per_art_unit": 120,
+  "image_center_px": [
+    640,
+    640
+  ],
+  "ribbon_width": 0.72,
+  "ribbon_thickness": 0.075,
+  "ribbon_crown": 0,
+  "samples_per_span": 9,
+  "width_segments": 4,
+  "end_taper_length": 0.16,
+  "disc_radius": 5.17,
+  "disc_depth": 0.32,
+  "disc_front_y": 0.49,
+  "palette": {
+    "ribbon_front": "#8D43A6",
+    "ribbon_back": "#54266D",
+    "ribbon_edge": "#B676CA",
+    "disc": "#191A1C",
+    "rim": "#303135"
+  },
+  "game_export": {
+    "format": "GLB",
+    "wall_badge_diameter_blocks": 2,
+    "geometry_ready_only": true,
+    "registered_in_minecraft": false
+  },
+  "requirements": [
+    "Trace supplied purple ribbon logo rather than replace with a font",
+    "Three-dimensional ribbon folds and foreground/background crossings",
+    "Dark round base",
+    "Preserve existing branding and previous authored projects"
+  ]
+}

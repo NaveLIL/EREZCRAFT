@@ -1,0 +1,30 @@
+{
+  "status": "local_implementation_native_pending",
+  "candidate": "0.7.0-preview.62-skat",
+  "jar_sha256": "42f686589c99d9b75de9eadbb8da931b81472541eec0f0666175599b8e4a570c",
+  "build_passed": true,
+  "cpu_geometry": {
+    "passed": true,
+    "cpu_only": true,
+    "cells": 1435,
+    "collision_boxes": 9744,
+    "hold_walk_samples": 35,
+    "cargo_face_samples": 48,
+    "gameplay_verified": false
+  },
+  "existing_png_count": 214,
+  "existing_png_preserved": true,
+  "worldgen_geometry_class_count": 136,
+  "worldgen_geometry_preserved": true,
+  "new_texture_count": 12,
+  "new_textures_match_author_source": true,
+  "changed_existing_classes": [
+    "pro/erez/interstice/Interstice.class",
+    "pro/erez/interstice/ocean/ToxinHullOcclusion.class",
+    "pro/erez/interstice/tide/ShelterDetector.class"
+  ],
+  "native_gameplay_verified": false,
+  "production_changed": false,
+  "owner_game_pid": 27760,
+  "launch_guard_verified": true
+}

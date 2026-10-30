@@ -1,0 +1,11 @@
+{
+  "glb_reimported_in_blender": true,
+  "mesh_objects": 357,
+  "grasp_animation_travel_blocks": {
+    "left": 1.2043961275263806,
+    "right": 1.2043961275263806
+  },
+  "sample_crawl_foot_travel_blocks": 0.09974282863931828,
+  "animations_play_after_import": true,
+  "native_game_verified": false
+}

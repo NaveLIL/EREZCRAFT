@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-28",
+  "candidate": "0.7.0-preview.49-ocean-dh-neoforge",
+  "passed": true,
+  "native": {
+    "version": "0.7.0-preview.49-ocean-dh-neoforge",
+    "dh_loaded": true,
+    "mod_count": 106,
+    "owner_profile_used": false,
+    "phase": 8,
+    "loaded_full_chunks": 289,
+    "tagged_columns": 1440478,
+    "uniform_uploads": 5661,
+    "patched_sources": 2,
+    "actual_shader_class": "com.seibel.distanthorizons.common.render.openGl.terrain.GlDhTerrainShaderProgram_neoforge",
+    "actual_far_ocean_mask_pixels": 179222,
+    "far_pixels_after_reload": 179107,
+    "far_pixels_after_moving": 176548,
+    "actual_dimension": "interstice:islands_v6",
+    "render_distance_chunks": 3,
+    "no_world_geometry_edits": true,
+    "passed": true,
+    "reason": "",
+    "pid": 30192,
+    "settled": {
+      "purpose": "ocean_dh_shutdown",
+      "server_tick": 6179,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1089,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    }
+  },
+  "preservation": {
+    "passed": true,
+    "candidate_sha256": "281752f4bdc3d9ed88bfae295898b76c1e65818e869d2823359795d156cae332",
+    "unchanged_assets_and_data": 1558,
+    "changed_existing_classes": [],
+    "unchanged_existing_classes": 583,
+    "added_classes": [
+      "pro/erez/interstice/client/LowerOceanDh$Binding.class",
+      "pro/erez/interstice/client/LowerOceanDh.class",
+      "pro/erez/interstice/mixin/DhLowerOceanColumnMixin.class",
+      "pro/erez/interstice/mixin/DhLowerOceanShaderSourceMixin.class",
+      "pro/erez/interstice/mixin/DhLowerOceanTextureDetailMixin.class",
+      "pro/erez/interstice/mixin/DhLowerOceanTextureRegistryMixin.class",
+      "pro/erez/interstice/mixin/DhLowerOceanUniformMixin.class"
+    ]
+  },
+  "scope": "Default upstream DH OpenGL renderer, shaders OFF, actual V6; animated Minecraft atlas shared with near ocean",
+  "shader_pack_scope": "Complementary keeps its existing LOD-color fallback; shared OC01 sampling there is not implemented or accepted by this test.",
+  "owner_profile": ".verification/oc48n2/studioLowerOceanDh",
+  "protected_after_handoff": true,
+  "owner_visual_acceptance": {
+    "accepted": true,
+    "date": "2026-10-28",
+    "evidence": "Owner approved with screenshot codex-clipboard-a347d65a-b857-44e4-a9e8-60b3412c6253.png; performance equivalence was a question, not a measured acceptance."
+  },
+  "production_unchanged": "alpha.22 / sequence22 / preview.38-clock-grip",
+  "logs": [
+    ".verification/lower-ocean-dh-20261028/native06.log"
+  ],
+  "failed_diagnostics": [
+    "native02: no shared atlas upload; wrong generic DH class",
+    "native03: binding change insufficient; wrong generic DH class",
+    "native04: diagnostic inspected generic class",
+    "native05: reproduced flat sea, identified NeoForge renderer"
+  ],
+  "cold_owner_review": {
+    "passed": true,
+    "player_has_control": true,
+    "dh_loaded": true,
+    "process_id": 14216,
+    "log": ".verification/lower-ocean-dh-20261028/review02.log",
+    "actual_run": "runStudioLowerOceanDh -PoceanDhReview=true"
+  }
+}

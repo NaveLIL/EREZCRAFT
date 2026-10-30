@@ -125,4 +125,14 @@ public final class SpiderBrainGameTests {
         h.runAtTickTime(175,()->{h.assertTrue(s.getTarget()==p&&!s.isBursting()&&!SpiderBrain.canBurst(s),"Continuous sight renewed an infinite sprint instead of the 80-tick rest");});
         h.runAtTickTime(260,()->{h.assertTrue(s.getTarget()==p&&s.isBursting(),"Lurker never resumed combat after finite rest");h.succeed();});
     }
+
+    @GameTest(template="empty",batch="spider_sbl_stationary_pursuit",timeoutTicks=450)
+    public static void skirmisherEventuallyBitesStationaryVisiblePreyFromEightBlocks(GameTestHelper h) {
+        room(h);var s=spider(h,CaveRiftSpiderEntity.Variant.SKIRMISHER);var p=prey(h);
+        boolean[] acquired={false},flanked={false};
+        h.onEachTick(()->{acquired[0]|=s.getTarget()==p;flanked[0]|=s.combatTactic().equals("FLANK");});
+        h.runAtTickTime(400,()->{
+            h.assertTrue(acquired[0]&&flanked[0]&&p.getHealth()<1000,"Long visible pursuit never reached a real bite: pos="+s.position()+" distance="+s.distanceTo(p)+" tactic="+s.combatTactic()+" health="+p.getHealth());h.succeed();
+        });
+    }
 }

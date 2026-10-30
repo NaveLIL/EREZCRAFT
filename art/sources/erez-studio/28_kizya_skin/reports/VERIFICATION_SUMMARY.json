@@ -1,0 +1,13 @@
+{
+  "revision": "PK02",
+  "native_client_passed": true,
+  "proof": "reports/native/run_06/run.json",
+  "mod_count": 108,
+  "distant_horizons_loaded": true,
+  "cpm_packet_bytes": 20020,
+  "game_fixture": "Isolated integrated server, mock connected actors, source baseline preview.21; not public alpha.22 or dedicated/multiclient/Survival",
+  "ereZ_id_png_validator_passed": true,
+  "live_account_changed": false,
+  "live_server_changed": false,
+  "owner_profiles_used": false
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "N96-SPECS",
+    "url": "https://nordhavn.com/nordhavn-yacht-models/n96/",
+    "scope": "Published LOA 29.44m / beam 7.32m; real reference, not game tuning."
+  },
+  {
+    "id": "N96-GA",
+    "url": "https://nordhavn.com/wp-content/uploads/2019/08/N96-GA-drawing.pdf",
+    "scope": "Reviewed published general arrangement; interior adapted for Minecraft player."
+  },
+  {
+    "id": "N96-PROFILE",
+    "url": "https://nordhavn.com/wp-content/uploads/2019/08/N96-profile-drawing.pdf",
+    "scope": "External silhouette and stepped decks reference; no manufacturer 3D asset copied."
+  },
+  {
+    "id": "OWNER",
+    "path": "source/OWNER_A06.md",
+    "scope": "Implementation, custom textures, seam priority, profile correction, >=50 km/h, live navigation panels; owner closed Minecraft for isolated testing."
+  },
+  {
+    "id": "RUNTIME-AUDIT",
+    "path": "D:/repos/Minecraft/EREZCRAFT/docs/MARINE_EXPEDITION_VESSEL.md",
+    "scope": "Actual Skat lessons, installed AE2/Sable versions and unverified runtime gates."
+  }
+]

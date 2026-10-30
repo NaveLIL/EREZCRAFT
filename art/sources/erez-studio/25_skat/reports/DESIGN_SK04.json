@@ -1,0 +1,10 @@
+{
+  "revision": "SK04",
+  "base_sha256": "fb3b855e297c45e94130d7ae75bcfb8b07b13514b0731a5991406745d1fc16f8",
+  "joined_pairs": 702,
+  "changed_panels": 516,
+  "glazing_panels": 10,
+  "cargo_modules": 26,
+  "outer_limits_not_extended_by_panel_joining": true,
+  "physical_certification": false
+}

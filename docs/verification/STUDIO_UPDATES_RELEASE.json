@@ -1,0 +1,130 @@
+{
+  "published": true,
+  "sequence": 23,
+  "release_id": "techmagic-0-1-0-alpha-23-skat-ocean-fauna",
+  "mod_version": "0.7.0-preview.98-skat-server",
+  "jar_sha256": "2bf65b335c51b52b7c2ece95a29878a4e6d68c584328738e549d68e38676d2dd",
+  "server": {
+    "passed": true,
+    "server_jars": 67,
+    "old_jars_unchanged": 66,
+    "mod_version": "0.7.0-preview.98-skat-server",
+    "jar_sha256": "2bf65b335c51b52b7c2ece95a29878a4e6d68c584328738e549d68e38676d2dd",
+    "healthy": true,
+    "online_auth_required": true,
+    "owner_only_op4": true,
+    "server_properties_unchanged": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false,
+    "backups_created": false,
+    "started_at": "2026-10-29T09:02:05.938929137Z",
+    "players": "There are 0 of a max of 10 players online: \n"
+  },
+  "publication": {
+    "sourceSequence": 22,
+    "sequence": 23,
+    "releaseId": "techmagic-0-1-0-alpha-23-skat-ocean-fauna",
+    "oldCatalogSha256": "9993e5e9c6592fe99745b74ab3dc42482007d5098d79a3361554d3d94985ce3d",
+    "newCatalogSha256": "ea7d9d0d0551f6458e973256d73e1e02343c2220f65f018ee861403e0fbe7d32",
+    "files": 89,
+    "clientJars": 79,
+    "unchangedBaseFiles": 87,
+    "removed": [
+      "mods/interstice-0.7.0-preview.38-clock-grip.jar"
+    ],
+    "changed": [
+      {
+        "path": "config/erezcraft-pack.json",
+        "size": 173,
+        "sha256": "3530130cab16fa6bc8ecd53f8edce524bdfd01e7dcf11f3daca4a104cb38afb3",
+        "url": "https://files.erezcraft.com/blobs/3530130cab16fa6bc8ecd53f8edce524bdfd01e7dcf11f3daca4a104cb38afb3",
+        "policy": "managed"
+      },
+      {
+        "path": "mods/interstice-0.7.0-preview.98-skat-server.jar",
+        "size": 23847146,
+        "sha256": "2bf65b335c51b52b7c2ece95a29878a4e6d68c584328738e549d68e38676d2dd",
+        "url": "https://files.erezcraft.com/blobs/2bf65b335c51b52b7c2ece95a29878a4e6d68c584328738e549d68e38676d2dd",
+        "policy": "managed"
+      }
+    ],
+    "stage": "D:\\repos\\Minecraft\\EREZCRAFT\\.verification\\updates-release-20261029",
+    "public_https_verified": true,
+    "signatures_verified": true,
+    "uploaded_files": 4,
+    "uploaded_bytes": 23880201,
+    "game_server_restarted": true,
+    "world_regenerated": false,
+    "player_worlds_replaced": false
+  },
+  "features": [
+    "Engineer D02 / E12",
+    "LS04 SK01 SP02 spider models and frontal attacks",
+    "Lozhnokoren LK01, motion and F3+B fixes",
+    "OC01 lower toxin with vanilla / DH integration",
+    "Lower toxin waves, hull sealing and 200-tick boat dissolution",
+    "Skat SK03: steering, fuel, cargo, boarding, hatch, three lighting circuits, cold login"
+  ],
+  "native_report": "docs/verification/SKAT_SK03.json",
+  "active_dedicated_ship": {
+    "passed": true,
+    "candidate": "0.7.0-preview.98-skat-server",
+    "cells": 1509,
+    "source_meshes": 1702,
+    "ship_uuid": "df704f00-67f9-476d-a37b-cfc90d430eb0",
+    "mass": 44.860746999999904,
+    "active_force_load": true,
+    "tps": 20,
+    "raw_output": "Added force-loading tickets for 1 sub-level(s)\r\n\u001b[0m\r\nFound 1 sub-levels:\r\n\u001b[0mdf704f00-67f9-476d-a37b-cfc90d430eb0:\r\n\u001b[0m    Position: 1.3635907173156738 37.133056640625 0.6461941599845886\r\n\u001b[0m    Orientation: -0.012701630592346191 0.014091192744672298 0.03870512545108795 0.9990706443786621\r\n\u001b[0m    Mass: 44.860746999999904\r\n\u001b[0m    Linear Velocity: 0.013558957725763321 0.22570881247520447 0.01447832491248846\r\n\u001b[0m    Angular Velocity: 0.00615430623292923 -8.454789640381932E-4 -0.010966761037707329\r\n\u001b[0m\r\ninterstice:islands_v6: 20.000 TPS (1.834 ms/tick)\r\n\u001b[0m\r\n",
+    "scope": "Actual authored hull, official Sable assembly and server ticking; no two-player voyage",
+    "owner_worlds_used": false,
+    "production_changed": false
+  },
+  "regressions": {
+    "passed": true,
+    "candidate": "0.7.0-preview.98-skat-server",
+    "jar_sha256": "2bf65b335c51b52b7c2ece95a29878a4e6d68c584328738e549d68e38676d2dd",
+    "native_passed": true,
+    "cold_passed": true,
+    "current_wave_tests": 7,
+    "previous_behavior_tests": {
+      "passed": true,
+      "candidate": "0.7.0-preview.97-skat-lights",
+      "suites": {
+        "engineer": 17,
+        "spiderFacing": 18,
+        "lozhnokoren": 18
+      },
+      "passedTests": 53,
+      "gameTestScope": "component tests without DH/Sable; full native DH tests separate",
+      "log": "D:/repos/Minecraft/EREZCRAFT/.verification/skat-20261029/release-regressions97.log"
+    },
+    "server_fix_delta": {
+      "passed": true,
+      "changed": [
+        "pro/erez/interstice/ocean/ToxinHullOcclusion$View.class",
+        "pro/erez/interstice/ocean/ToxinHullOcclusion.class",
+        "META-INF/neoforge.mods.toml"
+      ],
+      "added": [
+        "pro/erez/interstice/ocean/SableHullAccess.class"
+      ],
+      "all_assets_and_data_unchanged": true,
+      "baseline": "0.7.0-preview.97-skat-lights",
+      "candidate": "0.7.0-preview.98-skat-server",
+      "sha256": "2bf65b335c51b52b7c2ece95a29878a4e6d68c584328738e549d68e38676d2dd"
+    },
+    "scope": "53 behavior tests on byte-identical behavior classes in97; current full native and wave checks on98; dedicated check recorded separately"
+  },
+  "backups_created": false,
+  "user_worlds_replaced": false,
+  "owner_profile_modified": false,
+  "owner_download_test": "Owner will perform; Installer was not run",
+  "game_opened_at_end": false,
+  "remaining": [
+    "Two real players sailing and capacity",
+    "Natural Survival balance and ship recipe/progression",
+    "New ship lights with Complementary enabled",
+    "Crane remains decorative; cargo item weight does not change mass; open hatch leaf has no moving collision"
+  ]
+}

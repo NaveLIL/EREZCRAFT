@@ -1,0 +1,15 @@
+{
+  "project": "Mikan",
+  "revision": "MC01",
+  "owner_visual_approval": false,
+  "authoritative_geometry": "source/calico_MC01.json",
+  "owner_request": "Calico ship from supplied sketch with a volumetric muzzle",
+  "artwork": "Native Blender mesh and solid color materials; no generated illustration",
+  "horn": {
+    "sound": "meow",
+    "owner_approved": true,
+    "required_for_game_integration": true
+  },
+  "runtime_registered": false,
+  "physics_verified": false
+}

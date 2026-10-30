@@ -1,0 +1,192 @@
+{
+  "technical_checks_passed": true,
+  "date": "2026-10-28",
+  "version": "0.7.0-preview.44-lozhnokoren",
+  "asset_audit": {
+    "passed": true,
+    "candidate_sha256": "c75675aff9f350cd1bc39b0a9a2e0675248a38b4d951bca56576302c6a206bc9",
+    "reference_sha256": "9ab605efda24cd77fcad20b383cdd877cd277975dd62c6bc77a92d74b5d0a5ec",
+    "source_sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3",
+    "source_cubes": 357,
+    "bones": 88,
+    "quads": 2142,
+    "source_clips_exact": true,
+    "exact_rgba_tiles": 7,
+    "corner_error_model_units": 1.464821375527116e-14,
+    "dimensions_source_xyz_blocks": [
+      4.325760638244933,
+      3.2029279139154787,
+      10.661991858647474
+    ],
+    "previous_classes_byte_exact": 566,
+    "changed_previous_classes": [
+      "pro/erez/interstice/Interstice.class",
+      "pro/erez/interstice/ToxicLiquidBlock.class",
+      "pro/erez/interstice/fauna/RealmFaunaHazards.class"
+    ],
+    "debug_line_shifts_only": [],
+    "previous_png_byte_exact": 213,
+    "previous_ogg_byte_exact": 12,
+    "previous_data_files_byte_exact": 693
+  },
+  "component": {
+    "required": 15,
+    "passed": 15,
+    "log": ".verification/lozhnokoren-lk01-20261028/component04.log",
+    "artificial_gametest_server_without_DH_known_exception": true
+  },
+  "native": {
+    "distant_horizons_loaded": true,
+    "mod_count": 106,
+    "version": "0.7.0-preview.44-lozhnokoren",
+    "live_phase": 15,
+    "initial": {
+      "cuboids": 357,
+      "bones": 88,
+      "vertices": 8568,
+      "source_sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3",
+      "mesh_sha256": "0bdf71d36f67c6e50db9bc0d4cb80c29c22fe399355f888b0adecd85840b1d44",
+      "source_threat_key_exact": true,
+      "parts": 15
+    },
+    "after_reload": {
+      "cuboids": 357,
+      "bones": 88,
+      "vertices": 8568,
+      "source_sha256": "732f654ee2e5e04285afc87c12745e64a0b9c12afcaf1167ac408a94c6554ee3",
+      "mesh_sha256": "0bdf71d36f67c6e50db9bc0d4cb80c29c22fe399355f888b0adecd85840b1d44",
+      "source_threat_key_exact": true,
+      "parts": 15
+    },
+    "resource_reload_checked": true,
+    "actual_attack_health_lost": 21.64801,
+    "actual_attack_hits": 1,
+    "actual_tree_blocks_broken": 4,
+    "actual_forward_walk_blocks": 11.220766006886226,
+    "lower_contact_server_ticks": 159,
+    "lower_sea_contact_80_ticks": true,
+    "upper_contact_server_ticks": 123,
+    "upper_sea_contact_80_ticks": true,
+    "natural_spawn_pipeline_controlled_forest_fixture": true,
+    "natural_spawn_rate_or_survival_acceptance": false,
+    "review_world_ready": true,
+    "actual_dimension": "interstice:islands_v6",
+    "passed": true,
+    "reason": "",
+    "pid": 33728,
+    "phase": 15,
+    "owner_profile_used": false,
+    "prepared_fixture_not_survival": true,
+    "screenshots": [
+      "lozhnokoren-gallery-scale.png",
+      "lozhnokoren-front.png",
+      "lozhnokoren-side.png",
+      "lozhnokoren-warning-graspers.png",
+      "lozhnokoren-impact.png",
+      "lozhnokoren-crawl.png",
+      "lozhnokoren-lower-sea.png",
+      "lozhnokoren-upper-sea.png"
+    ],
+    "settled": {
+      "purpose": "lozhnokoren_shutdown",
+      "server_tick": 1508,
+      "elapsed_actual_server_ticks": 19,
+      "stable_actual_server_ticks": 20,
+      "holders_checked": 1225,
+      "generation_ref_count": 0,
+      "save_futures_pending": 0,
+      "holders_not_ready_for_saving": 0,
+      "pending_generation_tasks": 0,
+      "save_futures_failed": 0,
+      "timed_out": false,
+      "non_quiet_examples": []
+    },
+    "exit_code": 0,
+    "seconds": 285.875
+  },
+  "screenshots": [
+    {
+      "file": "docs/verification/lozhnokoren/lozhnokoren-gallery-scale.png",
+      "sha256": "60bbe60965d2d21df76b416aaad3ea989147c95cb7ed344e9007b122d19b1b8d"
+    },
+    {
+      "file": "docs/verification/lozhnokoren/lozhnokoren-front.png",
+      "sha256": "8369dd42e8491898e057bbd344c14c402ee846e350c24551cad69075813ceab1"
+    },
+    {
+      "file": "docs/verification/lozhnokoren/lozhnokoren-side.png",
+      "sha256": "c1194da9d8fd287f446831d2df63efda41e9c90d7d6bdac7655b6a59d8f69499"
+    },
+    {
+      "file": "docs/verification/lozhnokoren/lozhnokoren-warning-graspers.png",
+      "sha256": "4c18bf5a847749597d8d7949ce277f2504c47ddfeaa9c52dbc6d38c4107dd067"
+    },
+    {
+      "file": "docs/verification/lozhnokoren/lozhnokoren-impact.png",
+      "sha256": "dd9fd468b3eefd7e2da2562c6210667cdce7dad4165c03f396c3a94d121e52fc"
+    },
+    {
+      "file": "docs/verification/lozhnokoren/lozhnokoren-crawl.png",
+      "sha256": "ee46ec59865b100727bb1501a7d98259d0d967d6f138eca627135ddd1d0ad0c6"
+    },
+    {
+      "file": "docs/verification/lozhnokoren/lozhnokoren-lower-sea.png",
+      "sha256": "6f00d21888ba993b2b5065b584ec6758b8c84f2d98994412d4fe9708b3cafda9"
+    },
+    {
+      "file": "docs/verification/lozhnokoren/lozhnokoren-upper-sea.png",
+      "sha256": "b5149a516c5aeb9da6761610c99380e65c5ee70785912be3e6a06123e7c2bd8e"
+    }
+  ],
+  "production_updated": false,
+  "owner_visual_approval_received": false,
+  "owner_profile_used": false,
+  "review_profile": ".verification/lk44n2/studioLozhnokoren",
+  "limitations": [
+    "Prepared controlled V6 fixture, not a natural Survival encounter or spawn-rate/server-capacity acceptance.",
+    "15 physical anatomical envelopes approximate the357-cuboid mesh and do not reproduce every moving claw/foot contour.",
+    "Direct steering stops at obstacles; no full articulated path planner through dense forest or upper-ocean swimming AI.",
+    "Bark logs under a natural canopy cannot be reliably distinguished from player-placed bark logs.",
+    "Loot is provisional; no new progression recipes.",
+    "Vanilla/NeoForge multipart protocol verified within integrated client; separate-player dedicated-server combat still open."
+  ],
+  "attempts": [
+    {
+      "component": "02",
+      "passed": false,
+      "reason": "Wall fixture intersected victim bounding box; suffocation was misread as an attack. Victim moved clear; stone-blocked hit check passes."
+    },
+    {
+      "component": "03",
+      "passed": 12
+    },
+    {
+      "component": "04",
+      "passed": 15
+    },
+    {
+      "native": "01",
+      "technical_passed": true,
+      "visual_issue": "First two frames captured loading screen; final run waits for screen to clear."
+    },
+    {
+      "native": "02",
+      "technical_passed": true,
+      "natural_spawn_pipeline_fixture": true
+    }
+  ],
+  "publish_gate": "Only after the owner tests the creature visually and approves the prepared update package.",
+  "cold_review": {
+    "passed": true,
+    "different_jvm_from_test": true,
+    "pid": 32052,
+    "distant_horizons_loaded": true,
+    "actual_dimension": "interstice:islands_v6",
+    "saved_health": 240,
+    "multipart_ids": 15,
+    "player_has_control": true,
+    "production_updated": false
+  },
+  "review_profile_is_now_owner_controlled": true,
+  "do_not_use_review_profile_for_automated_tests": true
+}

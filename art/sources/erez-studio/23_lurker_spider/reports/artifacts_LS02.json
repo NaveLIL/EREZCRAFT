@@ -1,0 +1,29 @@
+{
+  "revision": "LS02",
+  "files": {
+    "source/lurker_LS02.bbmodel": {
+      "bytes": 773994,
+      "sha256": "c2ba24e96532cba56ac782103f0982cf4610d6dbf6b1a434b81e40b3f2d2d7ac"
+    },
+    "assembly/lurker_LS02.blend": {
+      "bytes": 301169,
+      "sha256": "d729ef1e8f025786401601277e128eddb174b5b9d7a50727abf9dd2e5592c89b"
+    },
+    "exports/lurker_LS02.glb": {
+      "bytes": 527964,
+      "sha256": "95a9f433ea9f965c81d1eaa88a0072da91709f5516af6a968665590b4da5fcd6"
+    },
+    "preview/lurker_LS02_review.jpg": {
+      "bytes": 273788,
+      "sha256": "2fdfb749be1b797b5b2daa12e612f9d14c6f49755e2d92f2319810e0e326b29d"
+    }
+  },
+  "unique_element_ids": true,
+  "new_bristle_and_eye_uv_samples_opaque": true,
+  "original_groups_and_animations_preserved": true,
+  "leg_segment_count": 36,
+  "all_leg_longitudinal_extents_preserved": true,
+  "original_texture_bytes_preserved": true,
+  "reference_photos": 3,
+  "game_verified": false
+}

@@ -1,0 +1,27 @@
+{
+  "revision": "SK03",
+  "blender_version": "5.2.2 LTS",
+  "meshes": 1702,
+  "groups": 24,
+  "bounds_min": [
+    -5.679999828338623,
+    -13.335000038146973,
+    0.050000011920928955
+  ],
+  "bounds_max": [
+    5.679999828338623,
+    12.489999771118164,
+    8.6477632522583
+  ],
+  "dimensions_blocks_xyz": [
+    11.359999656677246,
+    25.824999809265137,
+    8.597763240337372
+  ],
+  "all_source_images_packed": true,
+  "cargo_modules": 24,
+  "target_capacity_slots": 1296,
+  "renders_are_studio": true,
+  "physics_verified": false,
+  "runtime_registered": false
+}

@@ -11,7 +11,19 @@
     "DhChunkyInitializationMixin",
     "DhIslandGeneratorMixin",
     "DhTaskPickerRejectionMixin",
-    "EngineerBreathingMixin"
+    "EngineerBreathingMixin",
+    "ToxinBoatMixin",
+    "ToxinBoatItemMixin",
+    "ToxinBoatDropMixin",
+    "SableToxinWavesMixin",
+    "LowerToxinShoreInvalidationMixin",
+    "SkatLightDiagnosticMixin",
+    "SkatPlotLightMixin",
+    "SkatChunkMapAccessor",
+    "SkatPlayerLoginMixin",
+    "EitanPassengerLoadMixin",
+    "EitanWheelContactMixin",
+    "EitanStepClearanceMixin"
   ],
   "client": [
     "ClientLevelGeometryMixin",
@@ -26,7 +38,26 @@
     "IrisV6BlockMaterialsMixin",
     "AegisNightVisionMixin",
     "AegisOutlineMixin",
-    "AegisOutlineColorMixin"
+    "AegisOutlineColorMixin",
+    "LowerOceanVanillaUvMixin",
+    "LowerOceanSodiumUvMixin",
+    "DhLowerOceanTextureRegistryMixin",
+    "DhLowerOceanColumnMixin",
+    "DhLowerOceanTextureDetailMixin",
+    "DhLowerOceanShaderSourceMixin",
+    "DhLowerOceanUniformMixin",
+    "LowerToxinMeshInvalidationMixin",
+    "ToxinBoatRendererMixin",
+    "IrisLowerToxinUniformMixin",
+    "EitanMinecraftAccess",
+    "EitanGameRendererAccess",
+    "EitanCameraAccess",
+    "EitanCameraViewMixin",
+    "EitanCameraProjectionMixin",
+    "EitanSensorSkyMixin",
+    "EitanIrisCameraMixin",
+    "EitanDhCameraMixin",
+    "EitanLevelRendererAccess"
   ],
   "injectors": {
     "defaultRequire": 1

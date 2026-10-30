@@ -1,0 +1,23 @@
+{
+  "source_blend_sha256": "c152abbf8fdd19610c3333e42f4f20586ceaf5a6a5516c61a718cd7ec7fbe366",
+  "frames": [
+    1,
+    9,
+    17,
+    25,
+    33,
+    41,
+    49,
+    57,
+    61,
+    69,
+    77,
+    81,
+    89,
+    97,
+    101
+  ],
+  "native_blender_renders": true,
+  "scene_file_modified": false,
+  "runtime_test": false
+}

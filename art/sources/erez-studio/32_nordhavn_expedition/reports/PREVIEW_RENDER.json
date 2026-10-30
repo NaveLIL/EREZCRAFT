@@ -1,0 +1,10 @@
+{
+  "revision": "NE01-A06",
+  "assembly_sha256": "dfec079317b04cb897ed6970c3886e1a51fd49d1eae74e3445f5a0b8cea4f853",
+  "source_sha256": "525402529f2f2747b66b3465f9ad0f9073bf8b943b90a25e6b545064f09a4ae6",
+  "views": {
+    "side": "8d69622c170b71408965ea84ac2b1ddbdfa09ac444b6dbdcba518034cd7fcb56",
+    "hero": "b69d3fed635e87d855141ce50cb089f6a15f6850cb67aedb6a585b65306454d3"
+  },
+  "assembly_modified": false
+}

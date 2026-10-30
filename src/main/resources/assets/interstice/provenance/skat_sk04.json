@@ -1,0 +1,16 @@
+{
+  "source": "Blender/creations/25_skat",
+  "revision": "SK04",
+  "axis_mapping": "Minecraft (x,y,z) = Blender (x+.5,z,y)",
+  "source_meshes": 1708,
+  "block_cells": 1509,
+  "base_files": {
+    "source\\skat_SK02.json": "4375751e7612637136a8b983dcf94032d779e550e07ef8147b05880063dfd5bb",
+    "assembly\\skat_SK02.blend": "70dd33ee001ec37272b4a47d4e51a61a1d9200c4e4abd12957494e576da0fc5f"
+  },
+  "files": {
+    "source\\ASSET_PROVENANCE_SK02.json": "06d1fe8c2fb13f9fb9518129abf2cdc82d5b9d0ed4ae9b45b49bd0ccc2f65599",
+    "source\\skat_SK04.json": "7a7dfacf8f2b3fa73128d7e513f6094493a109e2f2ef3f46eff5814d840a61fc",
+    "assembly\\skat_SK04.blend": "7d7b2aefb97f04eb47167119683d11fbaf77854102722756c507a08c6dc7cd93"
+  }
+}

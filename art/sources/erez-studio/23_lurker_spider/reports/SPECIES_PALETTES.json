@@ -1,0 +1,110 @@
+{
+  "review": "D:\\repos\\Blender\\creations\\23_lurker_spider\\preview\\species_palette_review.jpg",
+  "review_sha256": "df7128589acaea530cad1868d87811d0b79c63bd32fc72784cd6b1932ae85b7d",
+  "variants": [
+    {
+      "revision": "SK01",
+      "role": "skirmisher",
+      "variant_scale": 0.6,
+      "geometry_identical_to_LS03": true,
+      "eye_positions_unchanged": true,
+      "uv_unchanged": true,
+      "animations_unchanged": true,
+      "all_texture_alpha_and_dimensions_preserved": true,
+      "embedded_texture_bytes_match": true,
+      "files": {
+        "source/skirmisher_SK01.bbmodel": {
+          "bytes": 872990,
+          "sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231"
+        },
+        "assembly/skirmisher_SK01.blend": {
+          "bytes": 474079,
+          "sha256": "94992cdc73a1b24eafd4cef67a486f3edaebdcf98dabcbb41e5eeb4aaa8846a5"
+        },
+        "exports/skirmisher_SK01.glb": {
+          "bytes": 600056,
+          "sha256": "bd25e32b43ad5e046ae7df1f4bbf0a1f9415aa1c6dac43cc112cbcd079796b06"
+        },
+        "preview/skirmisher_SK01_quarter.png": {
+          "bytes": 1290330,
+          "sha256": "e2d794f81351b9f2d227e4f2c510b35a006638e5dd4bebe7749f867e6b1e491a"
+        },
+        "preview/skirmisher_SK01_front.png": {
+          "bytes": 1230644,
+          "sha256": "e8b54d53fbc92225d7d94943d42bf207457c85184333dc8d59241140ed8ca21b"
+        }
+      },
+      "game_verified": false
+    },
+    {
+      "revision": "SP01",
+      "role": "spitter",
+      "variant_scale": 0.55,
+      "geometry_identical_to_LS03": true,
+      "eye_positions_unchanged": true,
+      "uv_unchanged": true,
+      "animations_unchanged": true,
+      "all_texture_alpha_and_dimensions_preserved": true,
+      "embedded_texture_bytes_match": true,
+      "files": {
+        "source/spitter_SP01.bbmodel": {
+          "bytes": 872831,
+          "sha256": "e5bcb4f2a0015124861c7d47881c3ef851139253bf341139c8f9d1187fdf1a6a"
+        },
+        "assembly/spitter_SP01.blend": {
+          "bytes": 476252,
+          "sha256": "1836b021aff263673bf70d6dae6f6da100f40eb4c8a4adede17e79917ca99c6e"
+        },
+        "exports/spitter_SP01.glb": {
+          "bytes": 599836,
+          "sha256": "ae542db03ebc916e0be540f409ab63ce06b94ffb646381ea5050bbb702042da6"
+        },
+        "preview/spitter_SP01_quarter.png": {
+          "bytes": 1285523,
+          "sha256": "36c00c5821944d69cf08cc13730a86a61febbbade5b6f30e141ef730483c9c07"
+        },
+        "preview/spitter_SP01_front.png": {
+          "bytes": 1218877,
+          "sha256": "65535c3bac125478d415317ba51c22c667d8a49ecc8b13dfc449edfe822d59c4"
+        }
+      },
+      "game_verified": false
+    },
+    {
+      "revision": "SP02",
+      "role": "spitter",
+      "variant_scale": 0.55,
+      "geometry_identical_to_LS03": true,
+      "eye_positions_unchanged": true,
+      "uv_unchanged": true,
+      "animations_unchanged": true,
+      "all_texture_alpha_and_dimensions_preserved": true,
+      "embedded_texture_bytes_match": true,
+      "files": {
+        "source/spitter_SP02.bbmodel": {
+          "bytes": 874148,
+          "sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7"
+        },
+        "assembly/spitter_SP02.blend": {
+          "bytes": 475170,
+          "sha256": "f5858e3bfc6b501c1fd45ffbd91fc99b4175e80ec92483c2b8eafcdeca2d8f38"
+        },
+        "exports/spitter_SP02.glb": {
+          "bytes": 600820,
+          "sha256": "2cf28a7d1563350c4dacce279f6a4003b962b23102a1697e65b7faef6a47a4cb"
+        },
+        "preview/spitter_SP02_quarter.png": {
+          "bytes": 1299744,
+          "sha256": "0dba531c206ec11ded04e479ad709c8426aacaf0a719ae59f009b96930d46257"
+        },
+        "preview/spitter_SP02_front.png": {
+          "bytes": 1233143,
+          "sha256": "487e6fb9d52fc8f659a21239ef238e0218702e9511559443ca0e1c78611a1352"
+        }
+      },
+      "game_verified": false
+    }
+  ],
+  "reference_only_species": true,
+  "game_verified": false
+}

@@ -1,0 +1,28 @@
+{
+  "project": "Skat",
+  "active_working_variant": "SK02",
+  "preserve_both": true,
+  "owner_request_ru": "Продолжай, гдавное сохрани оба рендера и маленький кораблик и большой",
+  "variants": {
+    "SK01": {
+      "label_ru": "Маленький кораблик",
+      "status": "preserved",
+      "source": "source/skat_SK01.json",
+      "scene": "assembly/skat_SK01.blend",
+      "export": "exports/skat_SK01.glb",
+      "hero": "preview/skat_SK01_hero.png",
+      "as_seen_snapshot": "preview/preserved/small_SK01_as_seen.png"
+    },
+    "SK02": {
+      "label_ru": "Большой корабль",
+      "status": "working_visual_prototype",
+      "source": "source/skat_SK02.json",
+      "scene": "assembly/skat_SK02.blend",
+      "export": "exports/skat_SK02.glb",
+      "hero": "preview/skat_SK02_hero.png",
+      "as_seen_snapshot": "preview/preserved/large_SK02_as_seen.png"
+    }
+  },
+  "original_concept": "references/skat_concept_SK01.png",
+  "game_integration_complete": false
+}

@@ -1,0 +1,330 @@
+{
+  "id": "NE01",
+  "revision": "P01",
+  "date": "2026-10-29",
+  "status": "preliminary_design_not_3d_model_or_runtime",
+  "prototype": {
+    "name": "Nordhavn 96",
+    "length_m": 29.44,
+    "beam_m": 7.32,
+    "published_draft_m": 2.49,
+    "units": "1 metre = 1 Minecraft block",
+    "draft_is_not_game_tuning": true
+  },
+  "intended_berths": 10,
+  "terminals": 6,
+  "storage": "one genuine AE2 network; no mirrored inventories or cargo chests",
+  "requirements": {
+    "clear_door_width_m": 1,
+    "clear_door_height_m": 2.1,
+    "corridor_width_m": 1.2,
+    "side_walkway_width_m": 1,
+    "stair_width_m": 1.2,
+    "route_headroom_m": 2.2
+  },
+  "requirements_are_targets_not_verified_geometry": true,
+  "me": {
+    "controller": 1,
+    "initial_drives": 2,
+    "expansion_drives": 4,
+    "dense_backbone_default_channels": 32,
+    "independent_house_supply": true,
+    "installed_moving_network_tested": false
+  },
+  "propulsion": {
+    "existing_skat": "air propellers",
+    "proposed": "two submerged propellers, rudder and docking thrusters",
+    "implemented": false
+  },
+  "schematic_coordinates": "x stern to bow; y across beam; zone allocation only, no detailed furniture/collision or stair tread geometry",
+  "decks": [
+    {
+      "id": "fly",
+      "name": "ОБЗОРНАЯ ПАЛУБА",
+      "rooms": [
+        {
+          "name": "Зона отдыха под навесом",
+          "x": 9,
+          "width": 7.5,
+          "y": 0,
+          "height": 4.6,
+          "kind": "room"
+        },
+        {
+          "name": "Второй пост",
+          "x": 17,
+          "width": 3,
+          "y": 0,
+          "height": 4,
+          "kind": "room"
+        }
+      ],
+      "terminals": []
+    },
+    {
+      "id": "bridge",
+      "name": "ВЕРХНЯЯ ПАЛУБА",
+      "rooms": [
+        {
+          "name": "Открытая площадка",
+          "x": 2,
+          "width": 4,
+          "y": 0,
+          "height": 6,
+          "kind": "outside"
+        },
+        {
+          "name": "Общая зона отдыха",
+          "x": 7,
+          "width": 6.7,
+          "y": 0,
+          "height": 4.8,
+          "kind": "room"
+        },
+        {
+          "name": "Рабочий стол",
+          "x": 14,
+          "width": 2.8,
+          "y": -1.35,
+          "height": 2,
+          "kind": "room"
+        },
+        {
+          "name": "Лестница",
+          "x": 14,
+          "width": 2.8,
+          "y": 1.35,
+          "height": 2,
+          "kind": "stair"
+        },
+        {
+          "name": "Закрытый мостик",
+          "x": 17.2,
+          "width": 4.8,
+          "y": 0,
+          "height": 4.8,
+          "kind": "room"
+        }
+      ],
+      "terminals": [
+        {
+          "id": "M1",
+          "x": 20,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "main",
+      "name": "ГЛАВНАЯ ПАЛУБА",
+      "rooms": [
+        {
+          "name": "Кормовая площадка",
+          "x": 0.8,
+          "width": 3,
+          "y": 0,
+          "height": 5.8,
+          "kind": "outside"
+        },
+        {
+          "name": "Тамбур",
+          "x": 4.1,
+          "width": 2.0,
+          "y": -1.5,
+          "height": 2.2,
+          "kind": "room"
+        },
+        {
+          "name": "Мастерская",
+          "x": 6.4,
+          "width": 3.7,
+          "y": -1.65,
+          "height": 2.0,
+          "kind": "room"
+        },
+        {
+          "name": "Лестница",
+          "x": 6.4,
+          "width": 3.7,
+          "y": 1.65,
+          "height": 2.0,
+          "kind": "stair"
+        },
+        {
+          "name": "Салон / столовая",
+          "x": 10.5,
+          "width": 6.6,
+          "y": 0,
+          "height": 4.8,
+          "kind": "room"
+        },
+        {
+          "name": "Камбуз",
+          "x": 17.5,
+          "width": 3,
+          "y": -1.4,
+          "height": 2.2,
+          "kind": "room"
+        },
+        {
+          "name": "Лестница",
+          "x": 17.5,
+          "width": 3,
+          "y": 1.4,
+          "height": 2.2,
+          "kind": "stair"
+        },
+        {
+          "name": "Главная каюта",
+          "x": 21,
+          "width": 4.3,
+          "y": 0,
+          "height": 3.1,
+          "kind": "room"
+        }
+      ],
+      "terminals": [
+        {
+          "id": "M2",
+          "x": 5,
+          "y": -1.5
+        },
+        {
+          "id": "M3",
+          "x": 8.2,
+          "y": -1.65
+        },
+        {
+          "id": "M4",
+          "x": 19,
+          "y": -1.4
+        }
+      ]
+    },
+    {
+      "id": "lower",
+      "name": "НИЖНЯЯ ПАЛУБА",
+      "rooms": [
+        {
+          "name": "Каюта · 2 места",
+          "x": 1,
+          "width": 4,
+          "y": -1.8,
+          "height": 2.2,
+          "kind": "room"
+        },
+        {
+          "name": "Каюта · 2 места",
+          "x": 1,
+          "width": 4,
+          "y": 1.8,
+          "height": 2.2,
+          "kind": "room"
+        },
+        {
+          "name": "Машинный отсек",
+          "x": 5.5,
+          "width": 7.2,
+          "y": 0,
+          "height": 5.6,
+          "kind": "machinery"
+        },
+        {
+          "name": "МЕ-аппаратная",
+          "x": 13.1,
+          "width": 3,
+          "y": -1.8,
+          "height": 2.3,
+          "kind": "me"
+        },
+        {
+          "name": "Санузлы",
+          "x": 13.1,
+          "width": 3,
+          "y": 1.8,
+          "height": 2.3,
+          "kind": "room"
+        },
+        {
+          "name": "Каюта · 2 места",
+          "x": 16.5,
+          "width": 5.5,
+          "y": -1.8,
+          "height": 2.3,
+          "kind": "room"
+        },
+        {
+          "name": "Каюта · 2 места",
+          "x": 16.5,
+          "width": 5.5,
+          "y": 1.8,
+          "height": 2.3,
+          "kind": "room"
+        },
+        {
+          "name": "Выход наверх",
+          "x": 22.5,
+          "width": 2.5,
+          "y": 0,
+          "height": 2,
+          "kind": "stair"
+        }
+      ],
+      "terminals": [
+        {
+          "id": "M5",
+          "x": 18.2,
+          "y": 0
+        },
+        {
+          "id": "M6",
+          "x": 14.6,
+          "y": -1.8
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "N96",
+      "url": "https://nordhavn.com/nordhavn-yacht-models/n96/",
+      "scope": "Published nominal dimensions and vessel identity"
+    },
+    {
+      "id": "N96-GA",
+      "url": "https://nordhavn.com/wp-content/uploads/2019/08/N96-GA-drawing.pdf",
+      "scope": "Visually reviewed general arrangement; own schematic is an adaptation"
+    },
+    {
+      "id": "N96-PROFILE",
+      "url": "https://nordhavn.com/wp-content/uploads/2019/08/N96-profile-drawing.pdf",
+      "scope": "Visually reviewed external profile"
+    },
+    {
+      "id": "AE2-TERMINALS",
+      "url": "https://guide.appliedenergistics.org/1.21.1/items-blocks-machines/terminals/",
+      "scope": "Native network access parts"
+    },
+    {
+      "id": "AE2-CHANNELS",
+      "url": "https://guide.appliedenergistics.org/1.21.1/ae2-mechanics/channels/",
+      "scope": "Default 8/32 cable capacities"
+    },
+    {
+      "id": "SABLE-1222",
+      "url": "https://github.com/ryanhcode/sable/issues/1222",
+      "scope": "Reported save crash on older 2.0.3/19.2.17; current pair not tested"
+    },
+    {
+      "id": "SABLE-1396",
+      "url": "https://github.com/ryanhcode/sable/pull/1396",
+      "scope": "Open proposed fix, not assumed to be in installed Sable"
+    },
+    {
+      "id": "SABLE-RELEASES",
+      "url": "https://github.com/ryanhcode/sable/releases",
+      "scope": "2.0.6 notes; absence of fix text is not proof of a current bug"
+    }
+  ],
+  "implementation_stage": "first separate powered AE2 + Sable saving/movement proof, then walkable greybox, then detailed exterior and systems"
+}

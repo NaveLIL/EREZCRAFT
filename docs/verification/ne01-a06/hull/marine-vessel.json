@@ -1,0 +1,72 @@
+{
+  "dh_loaded": true,
+  "started_utc": "2026-10-29T15:30:58.404733100Z",
+  "physics_paused_for_geometry_test": true,
+  "full_vessel_me_network": false,
+  "sea_propulsion_tested": false,
+  "phase": 7,
+  "layout_revision": "NE01-A06",
+  "geometry_sha256": "525402529f2f2747b66b3465f9ad0f9073bf8b943b90a25e6b545064f09a4ae6",
+  "owner_profile_used": false,
+  "walked_stairs": [
+    {
+      "index": 0,
+      "walk_ticks": 30,
+      "local_x": 1.8500000014901161,
+      "local_y": 4.25,
+      "local_z": -3.494582638144493,
+      "flying": false,
+      "on_ground": true
+    },
+    {
+      "index": 1,
+      "walk_ticks": 27,
+      "local_x": 0.0,
+      "local_y": 4.25,
+      "local_z": 12.355680752545595,
+      "flying": false,
+      "on_ground": true
+    },
+    {
+      "index": 2,
+      "walk_ticks": 24,
+      "local_x": 1.8500000014901161,
+      "local_y": 7.0,
+      "local_z": -5.042459070682526,
+      "flying": false,
+      "on_ground": true
+    },
+    {
+      "index": 3,
+      "walk_ticks": 26,
+      "local_x": -1.699999999254942,
+      "local_y": 9.75,
+      "local_z": 0.6472230441868305,
+      "flying": false,
+      "on_ground": true
+    }
+  ],
+  "construction_origin": "32, 100, 16",
+  "ship_uuid": "2d239e57-73c4-4bc9-afce-582b1d0bca15",
+  "native_cells": 1669,
+  "mechanism_cells_opened": 200,
+  "native_walk_routes": 4,
+  "chunk_settlement": {
+    "purpose": "NE01 geometry final save",
+    "server_tick": 768,
+    "elapsed_actual_server_ticks": 165,
+    "stable_actual_server_ticks": 20,
+    "holders_checked": 1937,
+    "generation_ref_count": 0,
+    "save_futures_pending": 0,
+    "holders_not_ready_for_saving": 0,
+    "pending_generation_tasks": 0,
+    "sable_virtual_storage_holders": 7,
+    "save_futures_failed": 0,
+    "timed_out": false,
+    "non_quiet_examples": []
+  },
+  "passed": true,
+  "error": "",
+  "process_exit_code": 0
+}

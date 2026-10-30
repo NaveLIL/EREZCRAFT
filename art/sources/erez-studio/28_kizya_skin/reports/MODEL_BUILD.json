@@ -1,0 +1,12 @@
+{
+  "revision": "PK01",
+  "parts": 179,
+  "quads": 1074,
+  "texture_size": [
+    128,
+    128
+  ],
+  "skin_type": "slim",
+  "source_geometry_sha256": "a830f5f4785fadd85f7b84a370b087ad999ad2928d7873bdc447f79609e2574f",
+  "game_verified": false
+}

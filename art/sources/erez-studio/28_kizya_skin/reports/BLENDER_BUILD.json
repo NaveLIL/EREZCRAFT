@@ -1,0 +1,14 @@
+{
+  "revision": "PK02",
+  "source": "source/avatar_PK02.json",
+  "parts": 139,
+  "packed_atlas": true,
+  "rendered_views": [
+    "front",
+    "quarter",
+    "back",
+    "side",
+    "face"
+  ],
+  "native_game_verified": false
+}

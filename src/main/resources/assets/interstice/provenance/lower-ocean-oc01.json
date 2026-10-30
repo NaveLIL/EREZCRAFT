@@ -1,0 +1,107 @@
+{
+  "revision": "OC01",
+  "source_project": "Blender/creations/26_lower_ocean",
+  "author": "EREZCRAFT studio",
+  "material_parameters_sha256": "50d7c26f1e73cd393b59cf6259118193de13fc91c324d4a1e37e5895b61992f1",
+  "source_build_script_sha256": "3c4e8f87ba3b8f61b1b06159c9106838899a59c0b63634a7f0dd8f364493408d",
+  "sources": [
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_00.png",
+      "png_sha256": "08be1fd77c69f7f697c33d649fbddb711b374c72dd0ae4c48fb4a0b6a8bb2cf6",
+      "rgba_sha256": "948c80cbb9c57852dbaa75bdfae64945f0c23ea0ea6e6834ea873cfa46bdeb30"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_01.png",
+      "png_sha256": "11c7b91de12c80736df3c2aeb6c96944207c53fc2e211f16dcace10830df192f",
+      "rgba_sha256": "b38ab4c3aa41aaf0ca6953899e1c0a4bea6fd9c91dbe341c94ae8b8dc8b8eda0"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_02.png",
+      "png_sha256": "948058dd334b2d845197a3d9101346744ff57387ea5ad9ef467883e393d6b85e",
+      "rgba_sha256": "393eaf787b44c1a201d10c154e08a960d8a417d1c2b1024843cb8bcb28c56e49"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_03.png",
+      "png_sha256": "1f1017b56ebab440f740daeb254058ca9f604955b5f3875a5910038e24b8e5b1",
+      "rgba_sha256": "7657867bf82be0b1333140b557817c49d830dee07d19e06f919bd1785229686f"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_04.png",
+      "png_sha256": "7acbe6dadbfdc68ab84461a56d7a0d13d2323850ff29923f0ecf86b130f8a54b",
+      "rgba_sha256": "bbc4204984e1dc5be80cb20afeb60133ed1498852d7323b758e97a1cdde2d98d"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_05.png",
+      "png_sha256": "319567de1a20fb28bd9b7fc31fc3414d8847f35a1edaaf66f6bd23d54124251b",
+      "rgba_sha256": "a6236ece3e1f802e68687b2cf5ffbde285c4c1446923f5bfe4b09336962490d9"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_06.png",
+      "png_sha256": "53a8d8d7ff4a43d9bbe323a22e9cbd37562b947d351806a2dc478149d3cd7510",
+      "rgba_sha256": "8b8c10f1aa104c126dd64fc40b188501e03c3579a2cc13934c9f343cdacb9835"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_07.png",
+      "png_sha256": "add76265de9c3ec4b3765f4799253d2bc0b7e1aa150a1655e47ef49cc01d4438",
+      "rgba_sha256": "2bba2cea72c05633a25ff8f1d2ae0c74cf28b82e0af09e22e75cb00a842e4995"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_08.png",
+      "png_sha256": "e5483eb17690b16678cb8f1f1a37acc8fcac9cdab5d30e6284649fea26303ca0",
+      "rgba_sha256": "fdbd09939d2d0f3cac1d9a13875289c04b0472f90050782bfebf42fca940edee"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_09.png",
+      "png_sha256": "e897a963f48d3f12a5129b3a632a17ede7e7b20482373676644aac7c3b213622",
+      "rgba_sha256": "bfc34890b6cf6b4d2d29aea6a0a55375f4d2c5b9fb09a2792e5f9d25ad8bed5e"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_10.png",
+      "png_sha256": "ac128ad3262b3c44b1a1b21dd14e52b6344b8e1d545162bc66c76b33f1d9fc85",
+      "rgba_sha256": "a33aad5ff341ed9a53160319f9c433dde417cb7d0e6172d63c4500d368ad7aac"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_11.png",
+      "png_sha256": "2a647209515592b5d5976133a7122f8ca03c8565e7168f7b3d8c25c9a73b60f5",
+      "rgba_sha256": "deb399fde114a2c15d7f9b8f695aae0851b1aca66b6a14818d997da95c9abc81"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_12.png",
+      "png_sha256": "1b590e7659b77d862191037cea40f400055ee396788c6d98c69328d5c15bacdc",
+      "rgba_sha256": "4898ac8a5b2e17af397c49492a5c84428b355621ee91b53e8ae776f4f91571b6"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_13.png",
+      "png_sha256": "74f43bfa5f59e15964feb584db2dc3cb89ed39fe2e2cfaf9ba7e5046fa371006",
+      "rgba_sha256": "00fb72fb6fc319aa39d83f2c8749497997e1a8b011dd074587b8e3a150667cde"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_14.png",
+      "png_sha256": "ed66b07484e0015f882c5be54c98ea43d15a577531ec00179cfcd672f00fe260",
+      "rgba_sha256": "06d6d3fdbe0b67003a5c4aad3290b0238c22aef8400c348a65fd96ca45f83083"
+    },
+    {
+      "file": "art/materials/lower-ocean-oc01/source/frames/loop_15.png",
+      "png_sha256": "99a9e50f50ade215da94a543475da459144fa5e2bbca58f403981ce00bc3ab5e",
+      "rgba_sha256": "81b146d6fad1fb4c9a71118d4305650349aa38343cbd056882c07e0910951ed9"
+    }
+  ],
+  "runtime_png_sha256": "dd2f979c3832514ccb824758adb99d89ef8e1401f71c7d082a140d7730c061fd",
+  "frame_size": [
+    1280,
+    1280
+  ],
+  "source_tile_size": [
+    640,
+    640
+  ],
+  "frames": 16,
+  "period_ticks": 320,
+  "period_seconds": 16,
+  "world_period_blocks": 64,
+  "source_texels_per_block": 10,
+  "packing": "Each original unlit material frame copied exactly four times; no resize, repaint, colour or alpha change",
+  "uv_projection": "u=X-0.5*(Y-(lowerSeaTop+8/9)), v=Z-(Y-(lowerSeaTop+8/9)); one shared world field across faces",
+  "sampling": "Quad-local period origin with duplicate tile gutter; exact shared phase across block/chunk boundaries",
+  "scope": "Material colour only. Blender roughness, bump and scene lighting are not baked into this albedo. Concept illustration not used as texture."
+}

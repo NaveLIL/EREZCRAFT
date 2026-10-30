@@ -1,0 +1,23 @@
+{
+  "revision": "OC01",
+  "method": "Same material, world position and orthographic camera: 64 independent mesh patches versus one unsplit plane",
+  "comparison_size": [
+    1024,
+    1024
+  ],
+  "world_window_blocks": [
+    64,
+    64
+  ],
+  "control_density_pixels_per_block": 16,
+  "max_channel_difference_0_255": 1,
+  "mean_channel_difference_0_255": 0.0002988179524739583,
+  "pixel_identical": false,
+  "independent_patches_and_single_plane_agree": true,
+  "spatial_and_temporal_math": "reports/CONTINUITY.json",
+  "render_loop_end_max_channel_error_0_255": 1,
+  "render_loop_end_mean_channel_error_0_255": 0.00013097127278645834,
+  "loop_preview_frames": 16,
+  "loop_seconds": 16,
+  "proof_scope": "Blender material only; no Minecraft, DH, Iris or network verification"
+}

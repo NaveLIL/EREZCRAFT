@@ -1,0 +1,142 @@
+{
+  "dh_loaded": true,
+  "version": "0.7.0-preview.121-vehicle-fleet",
+  "started_utc": "2026-10-30T04:05:41.000529Z",
+  "phase": 10,
+  "mode": "glass",
+  "owner_profile_used": false,
+  "max_tilt_all_phases": 0.06543936321827235,
+  "saved_pose_loaded_from_sable_index": {
+    "uuid": "a31a1ec8-d88c-4c1a-8fcc-099b130dd3d3",
+    "x": -1382.5018310546875,
+    "y": 37.02584457397461,
+    "z": -5355.14453125,
+    "source": "r.-3.-11.0.slvls",
+    "slot": 0,
+    "sha256": "990e08630cf15abf563ad4be79ccb8c97c07d2ca09348bd17fe14fa07f9f0f6c",
+    "world_modified": false
+  },
+  "cold_load_at_saved_ship": "-1383, 35, -5356",
+  "saved_world_x": -1382.2677001953125,
+  "saved_world_z": -5355.14453125,
+  "glass": {
+    "glass_sprite_uploads": 1,
+    "glass_sprite_mip_levels": 5,
+    "viewer_mode": "spectator for a stationary eye; survival tested separately",
+    "shader_pack_in_use": false,
+    "actual_skat_glass": true,
+    "same_frozen_pose": true,
+    "diagnostic_night_vision": true,
+    "near_ocean": true,
+    "opaque_sprite_control": true,
+    "restored_views": 3,
+    "normal_capture_no_night_vision": true,
+    "lighting_mask": 7,
+    "dh_loaded": true,
+    "dry_hull_cells": 17201,
+    "passed": true,
+    "cases": [
+      {
+        "window": "port",
+        "before": {
+          "actual_camera_local": "(-1,587E+0  5,817E+0 -4,460E+0)",
+          "actual_world_view": "(-6,642E-1 -2,935E-1  6,875E-1)",
+          "red": 48.492292524005485,
+          "green": 80.72788708847736,
+          "blue": 75.9635727451989,
+          "restored_toxin_chroma_pixels": 0,
+          "sea_pixels": 0,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "after": {
+          "actual_camera_local": "(-1,587E+0  5,817E+0 -4,460E+0)",
+          "actual_world_view": "(-6,618E-1 -3,043E-1  6,851E-1)",
+          "red": 48.48959405006859,
+          "green": 48.15619212962963,
+          "blue": 46.127753129286695,
+          "restored_toxin_chroma_pixels": 416154,
+          "sea_pixels": 296961,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "restored_missing_sea": true
+      },
+      {
+        "window": "front",
+        "before": {
+          "actual_camera_local": "(-2,087E+0  5,817E+0 -4,360E+0)",
+          "actual_world_view": "(-7,078E-1 -2,539E-1 -6,592E-1)",
+          "red": 49.381766546639234,
+          "green": 74.42970250342935,
+          "blue": 70.76688957475994,
+          "restored_toxin_chroma_pixels": 0,
+          "sea_pixels": 3808,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "after": {
+          "actual_camera_local": "(-2,087E+0  5,817E+0 -4,360E+0)",
+          "actual_world_view": "(-7,084E-1 -2,504E-1 -6,599E-1)",
+          "red": 53.2034036351166,
+          "green": 54.92892125342936,
+          "blue": 51.439826603223594,
+          "restored_toxin_chroma_pixels": 310057,
+          "sea_pixels": 188279,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "restored_missing_sea": true
+      },
+      {
+        "window": "starboard",
+        "before": {
+          "actual_camera_local": "( 1,413E+0  5,817E+0 -4,460E+0)",
+          "actual_world_view": "( 6,586E-1 -2,585E-1 -7,067E-1)",
+          "red": 39.30269311556928,
+          "green": 58.60943501371742,
+          "blue": 56.5458108281893,
+          "restored_toxin_chroma_pixels": 0,
+          "sea_pixels": 0,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "after": {
+          "actual_camera_local": "( 1,413E+0  5,817E+0 -4,460E+0)",
+          "actual_world_view": "( 6,575E-1 -2,642E-1 -7,056E-1)",
+          "red": 40.524793167009605,
+          "green": 41.659705075445814,
+          "blue": 39.454027349108365,
+          "restored_toxin_chroma_pixels": 245406,
+          "sea_pixels": 109410,
+          "pixels": 933120,
+          "x0": 96,
+          "x1": 1824,
+          "y0": 162,
+          "y1": 702
+        },
+        "restored_missing_sea": true
+      }
+    ],
+    "stage": 3,
+    "view": 3
+  },
+  "passed": true,
+  "error": "",
+  "process_exit_code": 0
+}

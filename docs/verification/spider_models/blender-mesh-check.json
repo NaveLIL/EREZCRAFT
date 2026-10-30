@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "models": [
+    {
+      "variant": "lurker",
+      "cuboids": 309,
+      "faces": 1854,
+      "max_local_vertex_error": 1.4080697887663973e-06,
+      "max_uv_error": 2.384185793236071e-08,
+      "same_face_winding": true
+    },
+    {
+      "variant": "skirmisher",
+      "cuboids": 309,
+      "faces": 1854,
+      "max_local_vertex_error": 1.4080697887663973e-06,
+      "max_uv_error": 2.384185793236071e-08,
+      "same_face_winding": true
+    },
+    {
+      "variant": "spitter",
+      "cuboids": 309,
+      "faces": 1854,
+      "max_local_vertex_error": 1.4080697887663973e-06,
+      "max_uv_error": 2.384185793236071e-08,
+      "same_face_winding": true
+    }
+  ],
+  "private_photographs_exported": false
+}

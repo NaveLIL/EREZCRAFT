@@ -1,0 +1,51 @@
+{
+  "revision": "OC01",
+  "purpose": "Visual concept and mathematical continuity study for EREZCRAFT's lower toxic sea",
+  "authoritative_material_parameters": "source/material_OC01.json",
+  "user_request_ru": "Норм, давай попробуем сделать, жду консепт, особенно важно что бы оно непрерывно смотрелось, как единое",
+  "units": "Minecraft blocks; 1 Blender unit per block",
+  "spatial_period_blocks": 64,
+  "animation_period_seconds": 16,
+  "texels_per_block_preview": 16,
+  "chunk_grid_blocks": 16,
+  "domain_warp": [
+    {"kx":1,"ky":-1,"kt":1,"phase":0.4,"weight":2.4},
+    {"kx":2,"ky":1,"kt":-1,"phase":1.7,"weight":0.7}
+  ],
+  "broad_currents": [
+    {"kx":1,"ky":2,"kt":-1,"phase":0.7,"weight":0.14},
+    {"kx":2,"ky":-1,"kt":-1,"phase":2.0,"weight":0.10},
+    {"kx":3,"ky":1,"kt":1,"phase":4.1,"weight":0.07},
+    {"kx":5,"ky":-3,"kt":0,"phase":0.2,"weight":0.04}
+  ],
+  "ribbon": {"kx":4,"ky":7,"kt":-1,"phase":0,"weight":0.12},
+  "fine_ripples": [
+    {"kx":29,"ky":17,"kt":-2,"phase":0.3,"weight":0.025},
+    {"kx":17,"ky":-43,"kt":1,"phase":2.1,"weight":0.015}
+  ],
+  "base_palette_linear_rgb": [
+    [0.008,0.0007,0.0025],
+    [0.027,0.0018,0.007],
+    [0.065,0.005,0.015],
+    [0.104,0.012,0.025]
+  ],
+  "film_copper_linear_rgb": [0.085,0.042,0.024],
+  "film_violet_linear_rgb": [0.043,0.023,0.065],
+  "film_max_mix": 0.22,
+  "periodic_noise": {
+    "mapping": "4D torus: R*cos(ax), R*sin(ax), R*cos(ay), R*sin(ay); ax=2*pi*(x/64-t/16)+0.22*warp, ay=2*pi*y/64+0.18*warp",
+    "torus_radius": 2.5,
+    "base_scale": 1.1,
+    "base_detail": 4.0,
+    "base_roughness": 0.62,
+    "base_distortion": 1.4,
+    "fine_scale": 14.0,
+    "fine_detail": 2.0
+  },
+  "node_coordinates": "Shared world position, not each mesh object's UV or local coordinate origin",
+  "preview_only": true,
+  "minecraft_runtime_installed": false,
+  "DH_or_Iris_verified": false,
+  "original_texture_files_modified": false,
+  "limitations": "This continuous Blender material is a design/continuity proof. It is not a drop-in 16x16 Minecraft animated atlas or an implementation of the game ocean renderer."
+}

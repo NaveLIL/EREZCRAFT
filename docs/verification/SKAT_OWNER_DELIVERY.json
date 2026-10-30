@@ -1,0 +1,149 @@
+{
+  "recorded_at": "2026-10-29T09:53:53.828Z",
+  "owner_authorized": "Delete all owner-created ships and deliver one at current owner position",
+  "release_sequence": 23,
+  "mod_version": "0.7.0-preview.98-skat-server",
+  "old_owner_skat_hulls_removed": 3,
+  "old_names": "Скат SK03",
+  "two_old_hulls_overlapped_near": [
+    57,
+    37,
+    104
+  ],
+  "crash": "ServerHangWatchdog in Sable Rapier3D.step; exact native trigger unproven, overlapping hulls suspected",
+  "diagnostic_mistake": "Bare sable paused toggles instead of querying; it was once invoked during inspection; subsequent commands used explicit booleans",
+  "fresh_stock_source": "data/interstice/skat/sk03.json",
+  "schematic": {
+    "cells": 1509,
+    "roles": {
+      "boarding": 28,
+      "part": 1331,
+      "lamp": 92,
+      "cargo": 24,
+      "engine": 2,
+      "propeller": 2,
+      "seat": 2,
+      "opening": 27,
+      "helm": 1
+    },
+    "size": [
+      13,
+      9,
+      27
+    ],
+    "min": [
+      -6,
+      0,
+      -14
+    ],
+    "sha256": "61c9a0839c7c377e4869bf61954c5bbedb7e2b0d5df3df35861a01e5f4332045",
+    "size_bytes": 12495,
+    "both_engine_fuel_ticks": 64000,
+    "source": "data/interstice/skat/sk03.json"
+  },
+  "temporary_clone_removed": true,
+  "active_hulls": 1,
+  "persisted_hulls_after_save": 1,
+  "spawn_requested": [
+    6.953751174203788,
+    38,
+    91.6523870023719
+  ],
+  "both_propellers_present": true,
+  "both_engine_fuel_ticks_observed": [
+    63855,
+    63855
+  ],
+  "lighting_mask": 7,
+  "physics_resumed": true,
+  "world_saved": true,
+  "temporary_terrain_forceloads_removed": true,
+  "terrain_blocks_changed": false,
+  "backups_created": false,
+  "server_tps": 20,
+  "average_mspt": 12.9,
+  "p95_mspt": 18,
+  "p99_mspt": 21.6,
+  "client_fps_measured": false,
+  "graphics_settings_changed": false,
+  "live_evidence": {
+    "execute in interstice:islands_v6 centered_in_sub_level @e run data get block ~3 ~6 ~23 FuelTicks": "20481035, 134, 20481055 has the following block data: 63855",
+    "execute in interstice:islands_v6 centered_in_sub_level @e run data get block ~9 ~6 ~23 FuelTicks": "20481041, 134, 20481055 has the following block data: 63855",
+    "execute in interstice:islands_v6 centered_in_sub_level @e run execute if block ~3 ~6 ~24 interstice:skat_propeller": "Test passed",
+    "execute in interstice:islands_v6 centered_in_sub_level @e run execute if block ~9 ~6 ~24 interstice:skat_propeller": "Test passed",
+    "execute in interstice:islands_v6 centered_in_sub_level @e run data get block ~6 ~4 ~8 Lighting": "20481038, 132, 20481040 has the following block data: 7",
+    "save-all flush": "Saving the game (this may take a moment!)\nSaved the game",
+    "execute in interstice:islands_v6 run sable storage find_all_sub_levels": "Скат SK03:\n    Position: 10.166529658888557 36.884113312157425 99.00413513044056\n    World Bounds: 23.017118897289038 x 10.660619684727862 x 30.328183222562075",
+    "execute in interstice:islands_v6 run sable info @e": "Found 1 sub-levels:\nСкат SK03:\n    Position: 10.203498840332031 37.00859069824219 98.99687957763672\n    Orientation: 0.016343697905540466 0.19194698333740234 0.04346257820725441 0.9803062081336975\n    Mass: 44.24525799999998\n    Linear Velocity: 0.10703734308481216 0.3974693715572357 -0.022975947707891464\n    Angular Velocity: -0.011457312852144241 -3.435855614952743E-4 -0.05167217180132866",
+    "tick query": "The game is running normally\nTarget tick rate: 20.0 per second.\nAverage time per tick: 12.9ms (Target: 50.0ms)\nPercentiles: P50: 12.7ms P95: 18.0ms P99: 21.6ms, sample: 100"
+  },
+  "force_load_evidence": {
+    "execute in interstice:islands_v6 run forceload remove 139 -1": "Unmarked chunk [8, -1] in interstice:islands_v6 for force loading",
+    "execute in interstice:islands_v6 run forceload query 57 104": "Chunk at [3, 6] in interstice:islands_v6 is not marked for force loading",
+    "execute in interstice:islands_v6 run forceload query 139 -1": "Chunk at [8, -1] in interstice:islands_v6 is not marked for force loading",
+    "execute in interstice:islands_v6 run sable info @e": "Found 1 sub-levels:\nСкат SK03:\n    Position: 8.514430046081543 37.73507308959961 99.77057647705078\n    Orientation: 2.886425063479692E-4 0.016311243176460266 0.013899004086852074 0.9997703433036804\n    Mass: 44.225023999999976\n    Linear Velocity: 0.17737555503845215 0.1327831894159317 -0.034688401967287064\n    Angular Velocity: -0.009985779412090778 0.005684030242264271 -0.02613789215683937",
+    "execute in interstice:islands_v6 run sable storage find_all_sub_levels": "SKAT_OWNER_20261029:\n    Position: 139.0188446044922 50.96063995361328 -0.719620406627655\n    World Bounds: 13.0 x 9.0 x 27.0",
+    "tick query": "The game is running normally\nTarget tick rate: 20.0 per second.\nAverage time per tick: 10.2ms (Target: 50.0ms)\nPercentiles: P50: 9.7ms P95: 13.3ms P99: 17.4ms, sample: 100",
+    "neoforge tps interstice:islands_v6": "interstice:islands_v6: 20.000 TPS (8.856 ms/tick)",
+    "list": "There are 1 of a max of 10 players online: _NaveL_IL",
+    "state": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":980018,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-10-29T09:38:46.605953264Z\",\"FinishedAt\":\"2026-10-29T09:38:46.314258301Z\",\"Health\":{\"Status\":\"healthy\",\"FailingStreak\":0,\"Log\":[{\"Start\":\"2026-10-29T09:48:26.589187518Z\",\"End\":\"2026-10-29T09:48:26.650808523Z\",\"ExitCode\":0,\"Output\":\"localhost:25565 : version=1.21.1 online=1 max=10 motd='EREZCRAFT | Techmagic + Interstice V6'\\n\"},{\"Start\":\"2026-10-29T09:49:00.234305166Z\",\"End\":\"2026-10-29T09:49:00.29527673Z\",\"ExitCode\":0,\"Output\":\"localhost:25565 : version=1.21.1 online=1 max=10 motd='EREZCRAFT | Techmagic + Interstice V6'\\n\"},{\"Start\":\"2026-10-29T09:49:33.882051623Z\",\"End\":\"2026-10-29T09:49:33.94114777Z\",\"ExitCode\":0,\"Output\":\"localhost:25565 : version=1.21.1 online=1 max=10 motd='EREZCRAFT | Techmagic + Interstice V6'\\n\"},{\"Start\":\"2026-10-29T09:50:07.527955378Z\",\"End\":\"2026-10-29T09:50:07.587076582Z\",\"ExitCode\":0,\"Output\":\"localhost:25565 : version=1.21.1 online=1 max=10 motd='EREZCRAFT | Techmagic + Interstice V6'\\n\"},{\"Start\":\"2026-10-29T09:50:41.169296327Z\",\"End\":\"2026-10-29T09:50:41.227923216Z\",\"ExitCode\":0,\"Output\":\"localhost:25565 : version=1.21.1 online=1 max=10 motd='EREZCRAFT | Techmagic + Interstice V6'\\n\"}]}} restarts=3\n",
+    "recent_warnings": [
+      "[29Oct2026 14:44:42.167] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_twilightforest_sortingwood_narrow - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_twilightforest_sortingwood_narrow",
+      "[29Oct2026 14:44:42.168] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_tfc_douglas_fir_narrow - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_tfc_douglas_fir_narrow",
+      "[29Oct2026 14:44:42.170] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_biomesoplenty_hellbark_narrow - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_biomesoplenty_hellbark_narrow",
+      "[29Oct2026 14:44:42.181] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_natures_spirit_redwood_wide - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_natures_spirit_redwood_wide",
+      "[29Oct2026 14:44:42.183] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_tfc_sycamore_narrow - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_tfc_sycamore_narrow",
+      "[29Oct2026 14:44:42.184] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_tfc_aspen_narrow - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_tfc_aspen_narrow",
+      "[29Oct2026 14:44:42.184] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_create_dd_spirit_wide - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_create_dd_spirit_wide",
+      "[29Oct2026 14:44:42.185] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_quark_blossom_wide - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_quark_blossom_wide",
+      "[29Oct2026 14:44:42.185] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_twilightforest_canopy_wide - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_twilightforest_canopy_wide",
+      "[29Oct2026 14:44:42.186] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_byg_ether - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_byg_ether",
+      "[29Oct2026 14:44:42.191] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_quark_blossom - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_quark_blossom",
+      "[29Oct2026 14:44:42.197] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_byg_bulbis - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_byg_bulbis",
+      "[29Oct2026 14:44:42.198] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_byg_cypress_narrow - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_byg_cypress_narrow",
+      "[29Oct2026 14:44:42.199] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_blue_skies_maple_wide - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_blue_skies_maple_wide",
+      "[29Oct2026 14:44:42.203] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_quark_azalea - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_quark_azalea",
+      "[29Oct2026 14:44:42.205] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_twilightforest_timewood_wide - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_twilightforest_timewood_wide",
+      "[29Oct2026 14:44:42.209] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_twilightforest_transwood - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_twilightforest_transwood",
+      "[29Oct2026 14:44:42.211] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_biomesoplenty_redwood_narrow - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_biomesoplenty_redwood_narrow",
+      "[29Oct2026 14:44:42.211] [Worker-ResourceReload-1/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:railways:blocks/track_create_dd_smoked_narrow - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: railways:track_create_dd_smoked_narrow",
+      "[29Oct2026 14:44:46.297] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 6269ms or 125 ticks behind"
+    ]
+  },
+  "remaining": "Blueprint placement currently checks ordinary terrain but does not reject an overlapping existing Sable body; collision prevention needs a separately verified code fix. No claim that underlying Sable native hang was repaired.",
+  "owner_confirmed_sailing": true,
+  "sailing_telemetry": {
+    "samples": [
+      {
+        "utc": "2026-10-29T09:58:41Z",
+        "ship": "Found 1 sub-levels:\nСкат SK03:\n    Position: -11.434690475463867 36.53900146484375 70.84004211425781\n    Orientation: 0.0063571869395673275 0.4140874445438385 0.019794978201389313 0.909999668598175\n    Mass: 44.215257999999984\n    Linear Velocity: -0.03934048116207123 0.38093823194503784 0.035838332027196884\n    Angular Velocity: 0.017214316874742508 4.999139127903618E-5 0.018487485125660896",
+        "left_rpm": "20481035, 134, 20481055 has the following block data: 0.0f",
+        "left_fuel": "20481035, 134, 20481055 has the following block data: 62462",
+        "right_rpm": "20481041, 134, 20481055 has the following block data: 0.0f",
+        "right_fuel": "20481041, 134, 20481055 has the following block data: 62462"
+      },
+      {
+        "utc": "2026-10-29T09:58:45Z",
+        "ship": "Found 1 sub-levels:\nСкат SK03:\n    Position: -11.261041641235352 37.23698425292969 70.8526611328125\n    Orientation: 0.02428581565618515 0.4141135513782501 -9.230032446794212E-4 0.9099007248878479\n    Mass: 44.215257999999984\n    Linear Velocity: 0.05042272433638573 0.03760739043354988 -0.004852902609854937\n    Angular Velocity: -0.0032054961193352938 2.794779429677874E-4 -0.01917218789458275",
+        "left_rpm": "20481035, 134, 20481055 has the following block data: 0.0f",
+        "left_fuel": "20481035, 134, 20481055 has the following block data: 62462",
+        "right_rpm": "20481041, 134, 20481055 has the following block data: 0.0f",
+        "right_fuel": "20481041, 134, 20481055 has the following block data: 62462"
+      },
+      {
+        "utc": "2026-10-29T09:58:50Z",
+        "ship": "Found 1 sub-levels:\nСкат SK03:\n    Position: -11.278363227844238 36.77610778808594 70.81441497802734\n    Orientation: 0.03708089515566826 0.4133622348308563 -0.014336541295051575 0.9096983671188354\n    Mass: 44.215257999999984\n    Linear Velocity: -0.06154646724462509 0.08379071950912476 -0.029460446909070015\n    Angular Velocity: -0.014903945848345757 -6.655594188487157E-5 0.029168307781219482",
+        "left_rpm": "20481035, 134, 20481055 has the following block data: 0.0f",
+        "left_fuel": "20481035, 134, 20481055 has the following block data: 62462",
+        "right_rpm": "20481041, 134, 20481055 has the following block data: 0.0f",
+        "right_fuel": "20481041, 134, 20481055 has the following block data: 62462"
+      }
+    ],
+    "read_only": true,
+    "tick_query": "The game is running normally\nTarget tick rate: 20.0 per second.\nAverage time per tick: 9.4ms (Target: 50.0ms)\nPercentiles: P50: 8.7ms P95: 12.6ms P99: 14.5ms, sample: 100",
+    "v6_tps": "interstice:islands_v6: 20.000 TPS (8.298 ms/tick)",
+    "state": "healthy restarts=3",
+    "scope": "Owner confirmed ship started moving; subsequent read-only samples captured neutral (both engine RPM=0) and stable 20 TPS. These samples do not establish the cause of the initial delay or a measured powered cruise speed."
+  },
+  "initial_motion_delay_cause_identified": false
+}

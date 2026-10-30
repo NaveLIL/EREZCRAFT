@@ -1,0 +1,74 @@
+{
+  "revision": "SK02",
+  "saved_blend_reopened": true,
+  "source_parts_matched": 1615,
+  "cargo_modules": 24,
+  "packed_images_verified": [
+    "copper.png",
+    "brass.png",
+    "teal.png",
+    "ivory.png",
+    "rubber.png",
+    "lamp.png",
+    "cyan.png",
+    "wood.png",
+    "graphite.png",
+    "steel.png",
+    "deck.png",
+    "glass.png"
+  ],
+  "uvs_present": true,
+  "flat_shaded_vehicle": true,
+  "all_vehicle_parts_visible_on_open": true,
+  "clear_aisle_blocks_xyz": [
+    2.5,
+    7.4999998807907104,
+    2.0600000619888306
+  ],
+  "aisle_blockers": [],
+  "stairs_open_hatch_pose": [
+    {
+      "step": 0,
+      "headroom_blockers": []
+    },
+    {
+      "step": 1,
+      "headroom_blockers": []
+    },
+    {
+      "step": 2,
+      "headroom_blockers": []
+    },
+    {
+      "step": 3,
+      "headroom_blockers": []
+    },
+    {
+      "step": 4,
+      "headroom_blockers": []
+    },
+    {
+      "step": 5,
+      "headroom_blockers": []
+    }
+  ],
+  "rotors": {
+    "Port": {
+      "blades": 6,
+      "motion_at_frame13_blocks": 2.201135101958943,
+      "minimum_swept_radial_gap_blocks": 0.047682764517989806
+    },
+    "Starboard": {
+      "blades": 6,
+      "motion_at_frame13_blocks": 2.2011356164608094,
+      "minimum_swept_radial_gap_blocks": 0.047682764517989806
+    }
+  },
+  "dimensions_blocks_xyz": [
+    11.110000610351562,
+    25.675000190734863,
+    8.597763240337372
+  ],
+  "physics_verified": false,
+  "runtime_inventory_verified": false
+}

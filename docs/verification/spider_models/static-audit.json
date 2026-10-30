@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "candidate_sha256": "baaf75bcd1220d4d68ab97f23fa26081443786abf179d50473d53962d270c42f",
+  "reference_sha256": "01514f05817099db9e5d9353e171ba4681f1dde9df984d5d93fe34aa4d36cb5e",
+  "models": [
+    {
+      "variant": "lurker",
+      "revision": "lurker_LS04",
+      "cuboids": 309,
+      "bones": 53,
+      "quads": 1854,
+      "source_sha256": "6936ee05b3d48cb91c3468bdcd24a2498ef9a2b8fb0a3101b92b0583c8eb98af",
+      "mesh_sha256": "11c8ad2bf2e614f8b1fa7c1612f5a15d7cb1999eeb7e13ac0fd00e84b2297761",
+      "atlas_sha256": "71105ab5152a678cbd305fbc9ff0c756f4a6a5c4ee37b8f35b570722ad5ad720",
+      "exact_rgba_tiles": 22
+    },
+    {
+      "variant": "skirmisher",
+      "revision": "skirmisher_SK01",
+      "cuboids": 309,
+      "bones": 53,
+      "quads": 1854,
+      "source_sha256": "0933befdbeb64cc51a7813f5d7b94e3c4777ea6d1cadea2e6cc0428c5603f231",
+      "mesh_sha256": "89e3db4ae106e88788bf382e651a310015093eab9dced24b13f6609bf9af35b6",
+      "atlas_sha256": "8de4c651cada18575adb3b56eb8ec9bd911f2e2a841080655deadfa87823abf0",
+      "exact_rgba_tiles": 22
+    },
+    {
+      "variant": "spitter",
+      "revision": "spitter_SP02",
+      "cuboids": 309,
+      "bones": 53,
+      "quads": 1854,
+      "source_sha256": "3dc4553e80891cd129ec062329210c583965f28913ad9fa7967e5ce499cbe1c7",
+      "mesh_sha256": "ed2be578a1017f27f1e27b8b1644fc41f57dc1530ed08ff14f1e5f563a815754",
+      "atlas_sha256": "6d3ce33f8cb16e79ebddf07ef842e6f5aae541a4407de33e2ca4b51fe662b46f",
+      "exact_rgba_tiles": 22
+    }
+  ],
+  "changed_previous_classes": [
+    "pro/erez/interstice/entity/CaveRiftSpiderEntity.class",
+    "pro/erez/interstice/entity/client/CaveRiftSpiderModel.class",
+    "pro/erez/interstice/entity/client/CaveRiftSpiderRenderer.class"
+  ],
+  "new_classes": [
+    "pro/erez/interstice/entity/client/CaveRiftSpiderModel$Bone.class",
+    "pro/erez/interstice/entity/client/CaveRiftSpiderModel$Face.class",
+    "pro/erez/interstice/entity/client/CaveRiftSpiderModel$Mesh.class"
+  ],
+  "previous_classes_preserved": 557,
+  "previous_png_preserved": 209,
+  "previous_ogg_preserved": 12,
+  "exact_total_quads": 5562,
+  "real_biological_simulation_claimed": false
+}

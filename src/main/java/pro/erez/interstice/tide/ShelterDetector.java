@@ -70,6 +70,7 @@ public final class ShelterDetector {
      */
     public static boolean isSheltered(Level level, Entity entity) {
         if (level == null || entity == null) return false;
+        if(net.neoforged.fml.ModList.get().isLoaded("aeronautics")&&net.neoforged.fml.ModList.get().isLoaded("sable")&&pro.erez.interstice.ship.SkatShelter.sheltered(level,entity))return true;
         GeometryProfile profile = GeometryProfiles.get(level);
         var box = entity.getBoundingBox();
 

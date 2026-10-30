@@ -52,6 +52,7 @@ public final class ToxicLiquidBlock extends LiquidBlock {
 
     public static void onEntityTick(EntityTickEvent.Post event) {
         if (!(event.getEntity() instanceof LivingEntity living) || !living.isAlive()) return;
+        if(living instanceof pro.erez.interstice.fauna.Lozhnokoren)return;
         Level world = living.level();
         if (world.isClientSide
                 || (living instanceof Player player && (player.isCreative() || player.isSpectator()))) return;
@@ -60,7 +61,7 @@ public final class ToxicLiquidBlock extends LiquidBlock {
         // Stored on each entity so crossing several liquid cells cannot multiply damage.
         if (data.contains("interstice:last_toxin_tick") && now - data.getLong("interstice:last_toxin_tick") < 20) return;
         var box = living.getBoundingBox().deflate(0.001);
-        boolean touching = false,onlyLower=true;
+        boolean touching = pro.erez.interstice.ocean.LowerToxinSurface.overlap(world,box)>0,onlyLower=true;
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         for (int x=Mth.floor(box.minX); x<Mth.ceil(box.maxX); x++)
             for (int y=Mth.floor(box.minY); y<Mth.ceil(box.maxY); y++)

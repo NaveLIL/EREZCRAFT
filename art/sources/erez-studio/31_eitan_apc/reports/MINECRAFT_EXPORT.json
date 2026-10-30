@@ -1,0 +1,25 @@
+{
+  "revision": "E01-R4",
+  "cells": 120,
+  "triangles": {
+    "render_triangles": 168354
+  },
+  "voxels": {
+    "static": 79111,
+    "0": 26335,
+    "1": 27542,
+    "2": 26537,
+    "3": 27814
+  },
+  "max_integer_plane_snap_error_m": 2.6464462280273438e-05,
+  "collision_resolution": 16,
+  "maximum_surface_inflation_m": 0.10825317547305482,
+  "geometry_sha256": "507a194fa39c7255ccd7b41f3b546bd0ea9eb48090fcdab6ff342831f161a4b8",
+  "assembly_sha256": "d0e65ec99ff2276a9fc3c3f442e5ce5abb6e5b9a89594e6b79aee5fcff324b52",
+  "runtime_sha256": "8db725d91a68f927cc45bfe84b229f2e9493e5b90f4efc627ccf58076759489d",
+  "limitations": [
+    "Conservative voxel solids; native crouch routes must be checked.",
+    "Four inspection poses are endpoint snapshots, not an animated gameplay controller.",
+    "Wheel collision is included in the stationary preview; Offroad chassis must replace it with tire contacts."
+  ]
+}
